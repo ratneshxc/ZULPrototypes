@@ -40,12 +40,7 @@ export default class login extends React.Component {
 }
 const styles = StyleSheet.create({
 
-  error: {
-    color: 'red',
-    fontSize: 18,
-    marginBottom: 7,
-    fontWeight: '600'
-  },
+
   backgroundVideo: {
     position: 'absolute',
     top: 0,
@@ -54,17 +49,3 @@ const styles = StyleSheet.create({
     right: 0,
   },
 });
-const options = {
-  auto: 'placeholders',
-  fields: {
-    username: {
-      error: 'username is required'
-    },
-    password: {
-      error: 'password is required',
-      password: true,
-      secureTextEntry: true
-    },
-
-  },
-};
