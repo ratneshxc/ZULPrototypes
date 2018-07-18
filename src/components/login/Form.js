@@ -22,7 +22,7 @@ export default class App extends Component {
         />
            <Button
           style={{
-            fontSize:20,
+            fontSize:16,
             color:'#fff',
             backgroundColor:'#009CDF',
             borderRadius:20,
@@ -33,7 +33,7 @@ export default class App extends Component {
        <View style={{flexDirection:'row'}}>
        <Button
           style={{
-           fontSize:16,
+           fontSize:14,
            color:'#000000',
               borderRadius:20,
            padding:12,right:12,width:180
@@ -42,7 +42,7 @@ export default class App extends Component {
        >Forgot password?</Button>
         <Button
           style={{
-           fontSize:16,
+           fontSize:14,
            color:'#000000',
           borderRadius:20,
            left:10,
@@ -58,10 +58,12 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    top:50,
+    left:9,
+    top:90,
     justifyContent: 'center',
     marginTop: 50,
     padding: 20,
+    
     
   },
   input: {
@@ -71,5 +73,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     marginBottom: 10,
+    borderRadius:5
   },
 });
