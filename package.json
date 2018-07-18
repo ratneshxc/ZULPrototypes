@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.4.1",
     "react-native": "0.55.4",
+    "react-native-button": "^2.3.0",
     "react-native-flexi-radio-button": "^0.2.2",
     "react-native-progress": "^3.5.0",
     "react-native-swipe-gestures": "^1.0.2",
