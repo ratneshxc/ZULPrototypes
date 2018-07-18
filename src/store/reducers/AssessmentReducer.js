@@ -12,9 +12,11 @@ const initialState = {
         }, {
             label: '1-2 times', value: '4'
         }],
-        ansType: 'single'
+        ansType: 'single',
+        progressBar: 0.1
     },
-    questions: []
+    questions: [],
+    isNextQuestionLoading: false
 }
 
 
@@ -26,6 +28,10 @@ const AssessmentReducer = (state = initialState, action) => {
         }
         case 'AssessmentReducer_GetQuestion': {
             state = { ...state, currentQuestion: action.payload }
+            break;
+        }
+        case 'AssessmentReducer_IsNextQuestionLoading': {
+            state = { ...state, isNextQuestionLoading: action.payload }
             break;
         }
     }

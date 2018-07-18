@@ -6,7 +6,8 @@ import Question from './Question';
 
 const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion,
-    questions: state.Assessment.questions
+    questions: state.Assessment.questions,
+    isNextQuestionLoading: state.Assessment.isNextQuestionLoading
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -29,11 +30,12 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: '1-2 times', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:0.1
         }, {
             no: 2,
             statement: "What do you do on a daily basis to ensure that you stay healthy?",
-            imageURL: require('../../assests/images/illness-image.jpg'),
+            imageURL: require('../../assests/images/health-image.jpg'),
             options: [{
                 label: 'I exercise', value: '1'
             }, {
@@ -43,7 +45,8 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: 'I do not do anything', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:0.2
         }, {
             no: 3,
             statement: "Do you spend more time working than socializing or pursuing a hobby?",
@@ -57,7 +60,8 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: 'Always', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:0.4
         }, {
             no: 4,
             statement: "Are you aware of things that you are passionate about?",
@@ -71,7 +75,8 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: 'Yes, I am pursuing my passion', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:0.5
         }, {
             no: 5,
             statement: "Are you troubled or saddened by day to day activities?",
@@ -85,7 +90,8 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: 'Not at all', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:0.6
         }, {
             no: 6,
             statement: "Are you disappointed with yourself?",
@@ -99,7 +105,8 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: 'I am never dissapointed as success and failure are both part of life', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:0.7
         }, {
             no: 7,
             statement: "How is your interaction with family and friends?",
@@ -113,7 +120,8 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: 'I am friendly with everyone', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:0.9
         }, {
             no: 8,
             statement: "Are you disappointed with the level of your sexual activity, desire and satisfaction?",
@@ -127,7 +135,8 @@ const mapDispatchToProps = dispatch => ({
             }, {
                 label: 'Never', value: '4'
             }],
-            ansType: 'single'
+            ansType: 'single',
+            progressBar:1
         }]
     }),
 })
@@ -159,8 +168,7 @@ class Assessment extends Component {
                 style={{ flex: 1 }}
                 onSwipe={(direction, state) => this.onSwipe(direction, state)}
             >
-                <Question />
-                {/* <Button title="Next Question" onPress={this.goToNextQuestion} /> */}
+               {this.props.isNextQuestionLoading===false && <Question />} 
             </GestureRecognizer>
         );
     }
