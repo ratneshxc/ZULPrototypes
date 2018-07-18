@@ -2,7 +2,7 @@ const initialState = {
     currentQuestion: {
         no: 1,
         statement: "How often have you fallen ill in the past year?",
-        imageURL: require('../../assests/images/illness-image.jpg'),
+        imageURL: require('../../assests/images/illness-image.png'),
         options: [{
             label: 'More than 15 times', value: '1'
         }, {

@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
         payload: [{
             no: 1,
             statement: "How often have you fallen ill in the past year?",
-            imageURL: require('../../assests/images/illness-image.jpg'),
+            imageURL: require('../../assests/images/illness-image.png'),
             options: [{
                 label: 'More than 15 times', value: '1'
             }, {
@@ -35,7 +35,7 @@ const mapDispatchToProps = dispatch => ({
         }, {
             no: 2,
             statement: "What do you do on a daily basis to ensure that you stay healthy?",
-            imageURL: require('../../assests/images/health-image.jpg'),
+            imageURL: require('../../assests/images/health-image.png'),
             options: [{
                 label: 'I exercise', value: '1'
             }, {
@@ -50,7 +50,7 @@ const mapDispatchToProps = dispatch => ({
         }, {
             no: 3,
             statement: "Do you spend more time working than socializing or pursuing a hobby?",
-            imageURL: require('../../assests/images/hobby-image.jpg'),
+            imageURL: require('../../assests/images/hobby-image.png'),
             options: [{
                 label: 'Never', value: '1'
             }, {
@@ -65,7 +65,7 @@ const mapDispatchToProps = dispatch => ({
         }, {
             no: 4,
             statement: "Are you aware of things that you are passionate about?",
-            imageURL: require('../../assests/images/passion-image.jpg'),
+            imageURL: require('../../assests/images/passion-image.png'),
             options: [{
                 label: 'I do not find anything that I am passionate about', value: '1'
             }, {
@@ -80,7 +80,7 @@ const mapDispatchToProps = dispatch => ({
         }, {
             no: 5,
             statement: "Are you troubled or saddened by day to day activities?",
-            imageURL: require('../../assests/images/dioppointed-image.jpg'),
+            imageURL: require('../../assests/images/dioppointed-image.png'),
             options: [{
                 label: 'All the time', value: '1'
             }, {
@@ -95,7 +95,7 @@ const mapDispatchToProps = dispatch => ({
         }, {
             no: 6,
             statement: "Are you disappointed with yourself?",
-            imageURL: require('../../assests/images/sad-image.jpg'),
+            imageURL: require('../../assests/images/sad-image.png'),
             options: [{
                 label: 'I am always dissapointed with myself', value: '1'
             }, {
@@ -110,7 +110,7 @@ const mapDispatchToProps = dispatch => ({
         }, {
             no: 7,
             statement: "How is your interaction with family and friends?",
-            imageURL: require('../../assests/images/family-image.jpg'),
+            imageURL: require('../../assests/images/family-image.png'),
             options: [{
                 label: 'I dont like talking to people', value: '1'
             }, {
@@ -125,7 +125,7 @@ const mapDispatchToProps = dispatch => ({
         }, {
             no: 8,
             statement: "Are you disappointed with the level of your sexual activity, desire and satisfaction?",
-            imageURL: require('../../assests/images/satifaction-image.jpg'),
+            imageURL: require('../../assests/images/satifaction-image.png'),
             options: [{
                 label: 'Always', value: '1'
             }, {
