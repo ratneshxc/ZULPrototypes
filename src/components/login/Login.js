@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Button,StyleSheet } from 'react-native';
-
+	{/*Login*/}
 export default class Login extends Component {
   takeAssessment = () => {
     this.props.navigation.navigate('Assessment');
