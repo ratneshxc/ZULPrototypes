@@ -16,17 +16,17 @@ export default class login extends React.Component {
       <View>
         <ImageBackground source={require('../../assests/images/Yoga2.jpg')}
           style={{ width: screenWidth, height: screenHeight }}>
-          <Image source={require('../../assests/images/zul.png')} style={{ left: 110, top: 100, width: 100, height: 100 }}>
+          <Image source={require('../../assests/images/zul.png')} style={{ left: 125, top: 100, width: 100, height: 100 }}>
           </Image>
           <View><Form /></View>
-          <View style={{ top: 50 }}><Text style={{ padding: 12, fontSize: 16, color: '#000000', textAlign: 'center' }}><Text style={{ fontWeight: 'bold' }}>20,000</Text> people have already taken assessment.Would you try?</Text></View>
+          <View style={{ top: 60 }}><Text style={{ padding: 30, fontSize: 14, color: '#000000', textAlign: 'center' }}><Text style={{ fontWeight: 'bold' }}>20,000</Text> people have already taken assessment.Would you try?</Text></View>
           <View style={{ top: 40, left: 2 }}>
             <Button
               style={{
-                fontSize: 20,
+                fontSize: 16,
                 color: '#fff',
                 backgroundColor: '#009CDF',
-                left: 20,
+                left: 28,
                 borderRadius: 20,
                 padding: 12, width: 300
               }}
