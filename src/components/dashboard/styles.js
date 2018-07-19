@@ -21,6 +21,7 @@ export default {
     alignItems: "center",
     justifyContent: "center",
     marginTop: 10,
+    marginBottom:10,
     padding:10
   },
   score:{

@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import {View} from 'react-native';
-import { Content, Card, CardItem, Icon,Text, Body,Button} from "native-base";
+import { Content,Fab, Card, CardItem, Icon,IconNB,Text, Body,Button} from "native-base";
 
 import styles from "./styles.js";
 export default class TabOne extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: false
+    };
+  }
   render() {
     return (
       <Content padder>
@@ -24,11 +30,6 @@ export default class TabOne extends Component {
           <CardItem >
             
             <Body style={{flex:1}}>
-            {/* <View style={styles.flexRow}>
-            <View style={styles.flexRow}>
-              </View>
-                <Icon name="share" style={{height:20}}/>
-              </View> */}
             <View style={styles.flexRow}>
               <View>
                 <Icon name="paper" />
@@ -43,6 +44,13 @@ export default class TabOne extends Component {
             </Body>
           </CardItem>
         </Card>
+        <Card>
+          <CardItem>
+            <Body>
+              <Text style={{fontWeight:'bold'}}>We have some Recommendations for you</Text>
+            </Body>
+          </CardItem>
+          </Card>
         <Card>
           <CardItem>
             <Body>
@@ -77,6 +85,25 @@ export default class TabOne extends Component {
             </Body>
           </CardItem>
         </Card>
+        <Fab
+            active={this.state.active}
+            direction="up"
+            containerStyle={{}}
+            style={{ backgroundColor: "#5067FF" }}
+            position="bottomRight"
+            onPress={() => this.setState({ active: !this.state.active })}
+          >
+            <IconNB name="md-add" />
+            <Button style={{ backgroundColor: "#34A34F" }}>
+              <IconNB name="logo-whatsapp" />
+            </Button>
+            <Button style={{ backgroundColor: "#3B5998" }}>
+              <IconNB name="logo-facebook" />
+            </Button>
+            <Button disabled style={{ backgroundColor: "#DD5144" }}>
+              <IconNB name="ios-mail" />
+            </Button>
+          </Fab>
       </Content>
     );
   }
