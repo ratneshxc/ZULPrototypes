@@ -1,51 +1,37 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions, ImageBackground } from 'react-native';
-import Button from 'react-native-button'
-import Form from './Form'
+import { View, Text, Image, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import Button from 'react-native-button';
+import Form from './Form';
+import LoginFooter from './LoginFooter';
 
 export default class login extends React.Component {
-
   takeAssessment = () => {
     this.props.navigation.navigate('Assessment');
   }
 
   render() {
-    let screenWidth = Dimensions.get('window').width
-    let screenHeight = Dimensions.get('window').height
     return (
-      <View>
-        <ImageBackground source={require('../../assests/images/Yoga2.jpg')}
-          style={{ width: screenWidth, height: screenHeight }}>
-          <Image source={require('../../assests/images/zul.png')} style={{ left: 125, top: 100, width: 100, height: 100 }}>
-          </Image>
-          <View><Form /></View>
-          <View style={{ top: 60 }}><Text style={{ padding: 30, fontSize: 14, color: '#000000', textAlign: 'center' }}><Text style={{ fontWeight: 'bold' }}>20,000</Text> people have already taken assessment.Would you try?</Text></View>
-          <View style={{ top: 40, left: 2 }}>
-            <Button
-              style={{
-                fontSize: 16,
-                color: '#fff',
-                backgroundColor: '#009CDF',
-                left: 28,
-                borderRadius: 20,
-                padding: 12, width: 300
-              }}
-              onPress={this.takeAssessment}
-            >Take Assessment</Button>
-          </View>
-        </ImageBackground>
-      </View>
+      <ImageBackground style={styles.loginContainer} source={require('../../assests/images/animation.gif')}>
+        <View style={styles.loginInnerContainer}>
+          <Form />
+          <LoginFooter takeAssessment={this.takeAssessment} />
+        </View>
+      </ImageBackground>
     )
   }
 }
+
 const styles = StyleSheet.create({
-
-
-  backgroundVideo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+  loginContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-});
+  loginInnerContainer: {
+    backgroundColor: '#00000066',
+    flex: 1,
+    marginHorizontal: 30,
+    marginVertical: 80,
+    padding: 10
+  }
+})

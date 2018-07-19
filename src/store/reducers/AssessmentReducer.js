@@ -2,7 +2,7 @@ const initialState = {
     currentQuestion: {
         no: 1,
         statement: "How often have you fallen ill in the past year?",
-        imageURL: require('../../assests/images/illness-image.jpg'),
+        imageURL: require('../../assests/images/illness-image.png'),
         options: [{
             label: 'More than 15 times', value: '1'
         }, {
@@ -12,9 +12,11 @@ const initialState = {
         }, {
             label: '1-2 times', value: '4'
         }],
-        ansType: 'single'
+        ansType: 'single',
+        progressBar: 0.1
     },
-    questions: []
+    questions: [],
+    isNextQuestionLoading: false
 }
 
 
@@ -26,6 +28,10 @@ const AssessmentReducer = (state = initialState, action) => {
         }
         case 'AssessmentReducer_GetQuestion': {
             state = { ...state, currentQuestion: action.payload }
+            break;
+        }
+        case 'AssessmentReducer_IsNextQuestionLoading': {
+            state = { ...state, isNextQuestionLoading: action.payload }
             break;
         }
     }

@@ -1,78 +1,63 @@
 import React, { Component } from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
-import Button from 'react-native-button';
+import { TextInput, View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 export default class App extends Component {
-  onLogin() {
-   console.log('login');
-  }
 
   render() {
     return (
-         <View style={styles.container}>
-        <TextInput  underlineColorAndroid='transparent'
+      <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
+        </View>
+        <TextInput underlineColorAndroid='transparent'
           placeholder={'Username'}
           placeholderTextColor='white'
           style={styles.input}
         />
-        <TextInput  underlineColorAndroid='transparent'
+
+        <TextInput underlineColorAndroid='transparent'
           placeholder={'Password'}
           placeholderTextColor='white'
           secureTextEntry={true}
           style={styles.input}
         />
-           <Button
-          style={{
-            fontSize:16,
-            color:'#fff',
-            backgroundColor:'#009CDF',
-            borderRadius:20,
-            padding:12,width:300
-          }}
-          onPress={this.onLogin.bind(this)}
-        >Login</Button>
-       <View style={{flexDirection:'row'}}>
-       <Button
-          style={{
-           fontSize:14,
-           color:'#000000',
-              borderRadius:20,
-           padding:12,right:12,width:180
-       }}
-         onPress={this.forgotPassword}
-       >Forgot password?</Button>
-        <Button
-          style={{
-           fontSize:14,
-           color:'#000000',
-          borderRadius:20,
-           left:10,
-           padding:12,width:100
-       }}
-         onPress={this.Register}
-       >Register</Button>
-           </View>
-           </View>
+        <TouchableOpacity style={styles.logInBtn}>
+          <Text style={styles.whiteText}>Login</Text>
+        </TouchableOpacity>
+        <View>          
+          <TouchableOpacity style={styles.forgotBtn}>
+            <Text style={styles.whiteText}>Forgot password?</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    left:9,
-    top:90,
-    justifyContent: 'center',
-    marginTop: 50,
-    padding: 20,
-    
-    
+    flex: 7
   },
   input: {
-    width: 300,
-    height: 44,
-    padding: 10,
-    borderWidth: 1,
-    borderColor: 'black',
-    marginBottom: 10,
-    borderRadius:5
+    margin: 5,
+    backgroundColor:'#dedede63'
   },
+  loginLogo: {
+    height: 150,
+    width: 150
+  },
+  logoContainer: {
+    alignItems: 'center'
+  },
+  logInBtn: {
+    backgroundColor: '#27ae60',
+    margin: 5,
+    alignItems: 'center',
+    padding: 10
+  },
+  forgotBtn: {
+   padding:5
+  },
+  whiteText:{
+    color:'#ffffff'
+  }
 });
