@@ -1,10 +1,48 @@
 import React, { Component } from "react";
-import { Content, Card, CardItem, Text, Body } from "native-base";
+import {View} from 'react-native';
+import { Content, Card, CardItem, Icon,Text, Body,Button} from "native-base";
 
+import styles from "./styles.js";
 export default class TabOne extends Component {
   render() {
     return (
       <Content padder>
+      {/*Filters */}
+      <View style={{flex:1,flexDirection:'row'}}>
+       <Button bordered rounded primary style={styles.filter}>
+            <Text>Daily</Text>
+          </Button>
+          <Button bordered rounded primary style={styles.filter}>
+            <Text>weekly</Text>
+          </Button>
+          <Button bordered rounded primary style={styles.filter}>
+            <Text>Monthly</Text>
+          </Button>
+       </View>
+       {/*Stats */}
+       <Card style={styles.scoreCard}>
+          <CardItem >
+            
+            <Body style={{flex:1}}>
+            {/* <View style={styles.flexRow}>
+            <View style={styles.flexRow}>
+              </View>
+                <Icon name="share" style={{height:20}}/>
+              </View> */}
+            <View style={styles.flexRow}>
+              <View>
+                <Icon name="paper" />
+              </View>
+              <View style={styles.score}>
+                 <Text>100/500</Text>
+              </View>
+              <View>
+                <Icon name="share" />
+              </View>
+              </View>
+            </Body>
+          </CardItem>
+        </Card>
         <Card>
           <CardItem>
             <Body>
@@ -43,3 +81,4 @@ export default class TabOne extends Component {
     );
   }
 }
+
