@@ -3,11 +3,12 @@ import {
   } from 'react-navigation';
   import Login from '../components/login/Login';
   import Assessment from '../components/assessment/Assessment';
-  import Dashboard from "../components/dashboard/Dashboard";
-  
+  import Register from '../components/register/Register';
+  import Dashboard from '../components/dashboard/Dashboard'
   const AppRoute = createSwitchNavigator({
     Login: { screen: Login },
     Assessment: { screen: Assessment },
+    Register: { screen: Register },
     Dashboard:{screen: Dashboard}
   });
   

@@ -7,6 +7,10 @@ export default class LoginFooter extends React.Component {
         this.props.takeAssessment();
     }
 
+    goRegister = () => {
+        this.props.goRegister();
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -15,7 +19,7 @@ export default class LoginFooter extends React.Component {
                     <Text style={styles.textWhite}>Take Assessment</Text>
                 </TouchableOpacity>
                 <Text style={styles.orStatement}>OR</Text>
-                <TouchableOpacity style={styles.registerBtn} onPress={this.takeAssessment}>
+                <TouchableOpacity style={styles.registerBtn} onPress={this.goRegister}>
                     <Text style={styles.textWhite}>Register</Text>
                 </TouchableOpacity>
             </View>
