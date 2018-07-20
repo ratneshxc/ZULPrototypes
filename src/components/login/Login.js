@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   loginInnerContainer: {
-    backgroundColor: '#00000066',
+    backgroundColor: '#00000054',
     flex: 1,
     marginHorizontal: 30,
     marginVertical: 80,

@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import * as Progress from 'react-native-progress';
 import FadeInView from '../animations/FadeInView';
 import SlideRightView from '../animations/SlideRightView';
+import OptionsSection from './OptionsSection';
+import LikeSection from './LikeSection';
+import QuestionHeader from './QuestionHeader';
+
 
 const mapStateToProps = state => ({
   currentQuestion: state.Assessment.currentQuestion
@@ -11,21 +15,26 @@ const mapStateToProps = state => ({
 
 
 class QuestionSection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     const currentQuestion = this.props.currentQuestion;
     return (
 
       <ImageBackground source={currentQuestion.imageURL} resizeMode="cover" style={styles.backImage}>
+        <QuestionHeader />
+        <Progress.Bar style={{borderRadius:0,borderWidth:0,marginLeft:-1,padding:0}} progress={currentQuestion.progressBar} width={null} color={"#0366d6"} unfilledColor={'#ffffff'} />
         <SlideRightView>
           <View style={styles.questionView}>
-            <View style={styles.questionHeader}></View>
-            <Progress.Bar progress={currentQuestion.progressBar} width={null} color={"#0366d6"} unfilledColor={'#ffffff'} />
-
+            <OptionsSection />          
             <View style={styles.questionContainer}>
               <FadeInView duration={500} delay={200}>
                 <Text style={styles.questionStatement}>{currentQuestion.statement}</Text>
               </FadeInView>
             </View>
+            <LikeSection />
           </View>
         </SlideRightView>
       </ImageBackground>
@@ -48,9 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     padding: 10
   },
-  questionHeader: {
-    flex: 1
-  },
+
   questionContainer: {
     flex: 9,
     justifyContent: 'flex-end',

@@ -6,7 +6,7 @@ import {
   
   const AppRoute = createSwitchNavigator({
     Login: { screen: Login },
-    Assessment: { screen: Assessment },
+    Assessment: { screen: Assessment }
   });
   
   export default AppRoute;

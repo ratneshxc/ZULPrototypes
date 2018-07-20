@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
   },
   input: {
     margin: 5,
-    backgroundColor:'#dedede63'
+    backgroundColor:'#dedede63',
+    padding:10
   },
   loginLogo: {
     height: 150,
