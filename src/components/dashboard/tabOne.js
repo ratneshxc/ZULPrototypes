@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {View} from 'react-native';
-import { Content,Fab, Card, CardItem, Icon,IconNB,Text, Body,Button} from "native-base";
+import { Container,Content,Fab, Card, CardItem, Icon,IconNB,Text, Body,Button} from "native-base";
+import * as Progress from 'react-native-progress';
 
 import styles from "./styles.js";
 export default class TabOne extends Component {
@@ -12,7 +13,8 @@ export default class TabOne extends Component {
   }
   render() {
     return (
-      <Content padder>
+    <Container>
+      <Content padder >
       {/*Filters */}
       <View style={{flex:1,flexDirection:'row'}}>
        <Button bordered rounded primary style={styles.filter}>
@@ -44,67 +46,111 @@ export default class TabOne extends Component {
             </Body>
           </CardItem>
         </Card>
+        {/*Recommendtation cards*/}
         <Card>
           <CardItem>
-            <Body>
-              <Text style={{fontWeight:'bold'}}>We have some Recommendations for you</Text>
+            <Body style={styles.flexRow}>
+               <Text style={{fontWeight:'bold'}}>We have some recommendation for you </Text>
             </Body>
           </CardItem>
           </Card>
+
         <Card>
           <CardItem>
-            <Body>
-              <Text>NativeBase is open source and free.</Text>
+            <Body style={styles.flexRow}>
+            <Icon name="paper" style={{marginRight:5}} />
+              <Text style={{flex:1,fontWeight:'bold'}}>Walk 5 kms per day</Text>
+              <Icon name="paper" style={{marginRight:5}}/>
+              <Text>2/8</Text>
+
             </Body>
           </CardItem>
           <CardItem>
             <Body>
-              <Text>Platform specific codebase for components</Text>
+            <Progress.Bar progress={50}  color={"#dc3545"} unfilledColor={'red'} />
             </Body>
           </CardItem>
           <CardItem>
-            <Body>
-              <Text>
-                Any native third-party libraries can be included along with
-                NativeBase.
-              </Text>
-            </Body>
-          </CardItem>
-          <CardItem>
-            <Body>
-              <Text>
-                Single file to theme your app and NativeBase components.
-              </Text>
-            </Body>
-          </CardItem>
-          <CardItem>
-            <Body>
-              <Text>
-                Gives an ease to include different font types in your app.
-              </Text>
+            <Body  style={styles.flexRow}>
+              <Text style={{flex:1}}>Last Updated: 2:45 PM</Text>
+              <Icon name="paper" style={{marginRight:5}}/>
+              <Text style={{marginRight:5}}>3000</Text>
+              <Icon name="paper"/>
             </Body>
           </CardItem>
         </Card>
-        <Fab
-            active={this.state.active}
-            direction="up"
-            containerStyle={{}}
-            style={{ backgroundColor: "#5067FF" }}
-            position="bottomRight"
-            onPress={() => this.setState({ active: !this.state.active })}
-          >
-            <IconNB name="md-add" />
-            <Button style={{ backgroundColor: "#34A34F" }}>
-              <IconNB name="logo-whatsapp" />
-            </Button>
-            <Button style={{ backgroundColor: "#3B5998" }}>
-              <IconNB name="logo-facebook" />
-            </Button>
-            <Button disabled style={{ backgroundColor: "#DD5144" }}>
-              <IconNB name="ios-mail" />
-            </Button>
-          </Fab>
+
+          <Card>
+          <CardItem>
+            <Body style={styles.flexRow}>
+            <Icon name="paper" style={{marginRight:5}} />
+              <Text style={{flex:1,fontWeight:'bold'}}>Save $5000 for a month</Text>
+              <Icon name="paper" style={{marginRight:5}}/>
+              <Text>15/30</Text>
+
+            </Body>
+          </CardItem>
+          <CardItem>
+            <Body>
+            <Progress.Bar progress={300}  color={"#ffc107"} unfilledColor={'red'} />
+            </Body>
+          </CardItem>
+          <CardItem>
+            <Body  style={styles.flexRow}>
+              <Text style={{flex:1}}>Last Updated : Yesterday</Text>
+              <Icon name="paper" style={{marginRight:5}}/>
+              <Text style={{marginRight:5}}>4000</Text>
+              <Icon name="paper"/>
+            </Body>
+          </CardItem>
+        </Card>
+
+          <Card>
+          <CardItem>
+            <Body style={styles.flexRow}>
+            <Icon name="paper" style={{marginRight:5}} />
+              <Text style={{flex:1,fontWeight:'bold'}}>Guided Breathing Exercise</Text>
+              <Icon name="paper" style={{marginRight:5}}/>
+              <Text>20/30</Text>
+
+            </Body>
+          </CardItem>
+          <CardItem>
+            <Body>
+            <Progress.Bar progress={500}  color={"#28a745"} unfilledColor={'red'} />
+            </Body>
+          </CardItem>
+          <CardItem>
+            <Body  style={styles.flexRow}>
+              <Text style={{flex:1}}>Last Updated: 12 Jun 2018</Text>
+              <Icon name="paper" style={{marginRight:5}}/>
+              <Text style={{marginRight:5}}>300</Text>
+              <Icon name="paper"/>
+            </Body>
+          </CardItem>
+        </Card>
+
       </Content>
+              <Fab
+              active={this.state.active}
+              direction="up"
+              containerStyle={{}}
+              style={{ backgroundColor: "#5067FF" }}
+              position="bottomRight"
+              onPress={() => this.setState({ active: !this.state.active })}
+            >
+              <IconNB name="md-add" />
+              <Button style={{ backgroundColor: "#34A34F" }}>
+                <IconNB name="logo-whatsapp" />
+              </Button>
+              <Button style={{ backgroundColor: "#3B5998" }}>
+                <IconNB name="logo-facebook" />
+              </Button>
+              <Button disabled style={{ backgroundColor: "#DD5144" }}>
+                <IconNB name="ios-mail" />
+              </Button>
+            </Fab> 
+            </Container>
     );
   }
 }
