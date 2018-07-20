@@ -5,7 +5,6 @@ import ZingUpLifeStore from './src/store/ZingUpLifeStore';
 import { Provider } from 'react-redux';
 
 
-
 export default class App extends Component {
   render() {
     return (
