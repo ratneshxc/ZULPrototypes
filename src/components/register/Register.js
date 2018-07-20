@@ -8,12 +8,9 @@ import Form from './Form';
 
 export default class Register extends React.Component {
 
-  takeAssessment = () => {
-    this.props.navigation.navigate('Assessment');
-  }
-
-  Register = () => {
-    this.props.navigation.navigate('Register');
+  
+  Dashboard = () => {
+    this.props.navigation.navigate('Dashboard');
   }
 
   render() {
@@ -26,7 +23,7 @@ export default class Register extends React.Component {
           <ImageBackground source={require('../../assests/images/reg-bg1.jpg')}
             style={{ width: screenWidth, height: screenHeight-25 }}>
 
-            <View><Form /></View>
+            <View><Form Dashboard={this.Dashboard} /></View>
 
           </ImageBackground>
         </View>
