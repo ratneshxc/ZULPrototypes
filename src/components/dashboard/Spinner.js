@@ -14,7 +14,7 @@ export default class Spinner extends React.Component{
             shadowColor="#999"
             bgColor="#fff"
         >
-      <Image style={{width:80,height:80,borderRadius:50}} source={require('../images/suresh.png')} />
+      <Image style={{width:80,height:80,borderRadius:50}} source={require('../../assests/images/suresh.png')} />
     </ProgressCircle>
     <Text style={{ fontSize: 14,fontWeight:'bold',color:'#000000' }}>{'30%'}</Text>  
   </View>

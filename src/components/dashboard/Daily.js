@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { AppRegistry, ProgressBarAndroid, FlatList, StyleSheet, Text, View, Image, ScrollView, Button, Dimensions, ImageBackground } from 'react-native';
 
-import dashboardData from '../data/dashboardData';
+import dashboardData from '../../data/dashboardData';
 
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
 

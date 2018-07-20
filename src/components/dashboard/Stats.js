@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Dimensions, FlatList, Image } from 'react-native';
-import summaryData from '../data/summaryData'
+import summaryData from '../../data/summaryData'
 import { Card } from 'react-native-cards'
 class FlatListItem extends Component {
     render() {
