@@ -24,7 +24,7 @@ export default class Register extends React.Component {
 
         <View>
           <ImageBackground source={require('../../assests/images/reg-bg1.jpg')}
-            style={{ width: screenWidth, height: screenHeight }}>
+            style={{ width: screenWidth, height: screenHeight-25 }}>
 
             <View><Form /></View>
 
