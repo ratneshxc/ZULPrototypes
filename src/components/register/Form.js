@@ -68,7 +68,7 @@ export default class App extends Component {
             <View style={styles.container}>
 
                 <View style={styles.formFields}>
-                 <form id="register-form">
+                 {/* <form id="register-form"> */}
                     <View style={styles.logoContainer}>
                         <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
                     </View>
@@ -108,11 +108,13 @@ export default class App extends Component {
                         placeholder={"Password"}
                         placeholderTextColor='white'
                         style={styles.input}
+                        secureTextEntry={true}
                     />
                     <TextInput underlineColorAndroid='transparent'
                         placeholder={"Re-Password"}
                         placeholderTextColor='white'
                         style={styles.input}
+                        secureTextEntry={true}
                     />
 
 
@@ -120,7 +122,7 @@ export default class App extends Component {
                         style={styles.regBtn}
                         onPress={this.onRegister.bind(this)}
                     >Register</Button>
-                    </form>
+                    {/* </form> */}
                 </View>
 
 
