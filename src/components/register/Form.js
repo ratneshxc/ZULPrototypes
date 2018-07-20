@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { TextInput, View, StyleSheet, TouchableOpacity, AppRegistry, Text } from 'react-native';
+import {
+    TextInput, View, StyleSheet,
+    TouchableOpacity, AppRegistry, Text, Image
+
+} from 'react-native';
 import Button from 'react-native-button';
 import { DatePickerDialog } from 'react-native-datepicker-dialog';
 import moment from 'moment';
@@ -9,17 +13,18 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            height: null,
-            weight: null,
-            //heightText: '',
-            //weightText: '',
-            bmi: '',
+            name: "",
+            email: "",
+            phoneNumber: "",
+            passwrod: "",
+            rePassword: "",
             dobText: 'DOB',
             dobDate: null,
         }
     }
 
     onRegister() {
+        document.getElementById("register-form").reset();
         console.log('Register');
     }
 
@@ -55,36 +60,20 @@ export default class App extends Component {
         });
     }
 
-    /**
-     * Height Field On change
-     */
-    onChangeHeight = (inputVal) => {
-        this.setState({ height: inputVal })
-    }
 
-
-    /**
-     * Weight Field On change
-     */
-    onChangeWeight = (inputVal) => {
-        this.setState({ weight: inputVal })
-    }
-    // /**
-    //  * BMI Field On change
-    //  */ 
-    // onChangeHeight = () =>{
-    //     this.setState({
-    //         height : "CM"
-    //     })
-    // }
-
-    onChangeWeight
 
     render() {
         return (
+
             <View style={styles.container}>
 
                 <View style={styles.formFields}>
+                    {/* <form id="register-form"> */}
+                    <View style={styles.logoContainer}>
+                        <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
+                    </View>
+                    <Text style={styles.titleText}>Create a new account</Text>
+
                     <TextInput underlineColorAndroid='transparent'
                         placeholder={"Name"}
                         placeholderTextColor='white' keyboardAppearance="default"
@@ -97,6 +86,12 @@ export default class App extends Component {
                         style={styles.input} value={this.state.dobText}
                     /> */}
 
+                    <TextInput underlineColorAndroid='transparent'
+                        placeholder={"Email"}
+                        placeholderTextColor='white' keyboardType={"email-address"}
+                        style={styles.input}
+                    />
+
                     <TouchableOpacity onPress={this.onDOBPress.bind(this)} >
                         <View style={styles.datePickerBox}>
                             <Text style={styles.datePickerText}>{this.state.dobText}</Text>
@@ -104,44 +99,30 @@ export default class App extends Component {
                     </TouchableOpacity>
 
                     <TextInput underlineColorAndroid='transparent'
-                        placeholder={"Height"}
-                        placeholderTextColor='white' keyboardType={"numeric"}
-                        style={styles.input}
-                        value={this.state.height}
-                        onChange={this.onChangeHeight}
-                    />
-                    <TextInput underlineColorAndroid='transparent'
-                        placeholder={"Weight"}
-                        placeholderTextColor='white' keyboardType={"numeric"}
-                        style={styles.input} value={this.state.weight}
-                        onChange={this.onChangeWeight}
-                    />
-                    <TextInput underlineColorAndroid='transparent'
-                        placeholder={"BMI"}
-                        placeholderTextColor='white' keyboardType={"numeric"}
-                        style={styles.input} value={this.state.bmi}
-                        onChange={this.onChangeBmi}
-                    />
-                    <TextInput underlineColorAndroid='transparent'
                         placeholder={"Phone Number"}
                         placeholderTextColor='white' keyboardType={"numeric"}
                         style={styles.input}
                     />
 
+                    <TextInput underlineColorAndroid='transparent'
+                        placeholder={"Password"}
+                        placeholderTextColor='white'
+                        style={styles.input}
+                        secureTextEntry={true}
+                    />
+                    <TextInput underlineColorAndroid='transparent'
+                        placeholder={"Re-Password"}
+                        placeholderTextColor='white'
+                        style={styles.input}
+                        secureTextEntry={true}
+                    />
+
 
                     <Button
-                        style={{
-                            fontSize: 16,
-                            color: '#fff',
-                            backgroundColor: '#27ae60',
-                            borderRadius: 20,
-                            padding: 12, width: "100%",
-                            borderWidth: 1,
-                            borderColor: '#ABABAB',
-
-                        }}
+                        style={styles.regBtn}
                         onPress={this.onRegister.bind(this)}
                     >Register</Button>
+                    {/* </form> */}
                 </View>
 
 
@@ -149,6 +130,7 @@ export default class App extends Component {
                 <DatePickerDialog ref="dobDialog" onDatePicked={this.onDOBDatePicked.bind(this)} />
 
             </View>
+
         );
     }
 }
@@ -158,11 +140,24 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 100,
     },
+    loginLogo: {
+        height: 150,
+        width: 150
+    },
+    logoContainer: {
+        alignItems: 'center'
+    },
+    titleText: {
+        fontSize: 16,
+        //fontWeight: "bold",
+        color: "white",
+        textAlign: "center"
+    },
     formFields: {
         marginLeft: "10%",
         width: "80%",
         backgroundColor: '#00000066',
-        padding:20
+        padding: 20
     },
     input: {
         width: "100%",
@@ -171,7 +166,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ABABAB',
         marginBottom: 10,
-        borderRadius: 5
+        borderRadius: 5,
+        color: "white"
     },
 
     datePickerBox: {
@@ -193,6 +189,13 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         color: 'white',
     },
+    regBtn: {
+        fontSize: 16,
+        color: '#fff',
+        backgroundColor: '#00AC46',
+        borderRadius: 10,
+        padding: 10, width: "100%",
+    }
 
 });
 AppRegistry.registerComponent('App', () => App);
