@@ -15,6 +15,9 @@ export default {
     alignItems: "center",
     justifyContent: "center",
   },
+  activeFilter:{
+    backgroundColor:'#EBF0F1',
+  },
   scoreCard:{
     marginLeft:halfwidth,
     marginRight:halfwidth,
