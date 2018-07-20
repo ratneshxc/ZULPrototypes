@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     TextInput, View, StyleSheet,
     TouchableOpacity, AppRegistry, Text, Image
-    
+
 } from 'react-native';
 import Button from 'react-native-button';
 import { DatePickerDialog } from 'react-native-datepicker-dialog';
@@ -64,15 +64,15 @@ export default class App extends Component {
 
     render() {
         return (
-            
+
             <View style={styles.container}>
 
                 <View style={styles.formFields}>
-                 {/* <form id="register-form"> */}
+                    {/* <form id="register-form"> */}
                     <View style={styles.logoContainer}>
                         <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
                     </View>
-                    <Text style={{ fontSize: 16, fontWeight: "bold", color: "white" }}>Create a new account</Text>
+                    <Text style={styles.titleText}>Create a new account</Text>
 
                     <TextInput underlineColorAndroid='transparent'
                         placeholder={"Name"}
@@ -130,7 +130,7 @@ export default class App extends Component {
                 <DatePickerDialog ref="dobDialog" onDatePicked={this.onDOBDatePicked.bind(this)} />
 
             </View>
-            
+
         );
     }
 }
@@ -147,6 +147,12 @@ const styles = StyleSheet.create({
     logoContainer: {
         alignItems: 'center'
     },
+    titleText: {
+        fontSize: 16,
+        //fontWeight: "bold",
+        color: "white",
+        textAlign: "center"
+    },
     formFields: {
         marginLeft: "10%",
         width: "80%",
@@ -160,7 +166,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ABABAB',
         marginBottom: 10,
-        borderRadius: 5
+        borderRadius: 5,
+        color: "white"
     },
 
     datePickerBox: {
