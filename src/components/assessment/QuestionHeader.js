@@ -12,7 +12,7 @@ export default class QuestionHeader extends React.Component {
                 </View>
                 <View style={styles.headerRight}>
                     <Badge success>
-                        <Text style={{color:'#ffffff',fontWeight:'bold',marginTop:4}}>Score : 25</Text>
+                        <Text style={{color:'#ffffff',fontWeight:'bold',marginTop:3}}>Score : 25</Text>
                     </Badge>
                 </View>
             </View>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     header: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight:'bold',
         color: '#ffffff'
     },

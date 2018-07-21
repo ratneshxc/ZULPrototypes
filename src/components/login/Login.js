@@ -9,12 +9,16 @@ export default class login extends React.Component {
     this.props.navigation.navigate('Assessment');
   }
 
+  goRegister = () => {
+    this.props.navigation.navigate('Register');
+  }
+
   render() {
     return (
       <ImageBackground style={styles.loginContainer} source={require('../../assests/images/animation.gif')}>
         <View style={styles.loginInnerContainer}>
           <Form />
-          <LoginFooter takeAssessment={this.takeAssessment} />
+          <LoginFooter takeAssessment={this.takeAssessment} goRegister={this.goRegister} />
         </View>
       </ImageBackground>
     )

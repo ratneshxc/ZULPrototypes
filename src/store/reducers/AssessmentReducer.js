@@ -13,7 +13,7 @@ const initialState = {
             label: '1-2 times', value: '4'
         }],
         ansType: 'single',
-        progressBar: 0.1,
+        progressBar: 0,
         likes:25
     },
     questions: [],

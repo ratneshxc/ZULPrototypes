@@ -42,11 +42,8 @@ const styles = StyleSheet.create({
     optionsBody: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'flex-end'
-    },
-    icon: {
-        height: 20,
-        width: 20
+        justifyContent: 'flex-end',
+        height:30
     },
     likeText: {
         color: '#ffffff',

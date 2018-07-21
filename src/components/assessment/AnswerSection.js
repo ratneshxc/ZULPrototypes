@@ -28,31 +28,33 @@ class AnswerSection extends Component {
       setTimeout(() => {
         this.props.goToQuestion(this.props.questions[this.props.currentQuestion.no]);
         this.props.loadingNextQuestion(false);
-      }, 200)
+      }, 100)
     }, 500)
 
   }
   render() {
     return (
-      <ScrollView style={styles.optionView}>
-        <RadioGroup
-          size={24}
-          thickness={2}
-          color='rgb(0, 96, 168)'
-          highlightColor='#3956976b'
-          onSelect={(index, value) => this.goToNextQuestion()}
-        >
-          {this.props.currentQuestion.options.map((x, i) => (
+        <ScrollView style={styles.optionView}>
+          <RadioGroup
+            size={24}
+            thickness={2}
+            color='rgb(0, 96, 168)'
+            highlightColor='#3956976b'
+            onSelect={(index, value) => this.goToNextQuestion()}
+          >
+            {this.props.currentQuestion.options.map((x, i) => (
 
-            <RadioButton style={styles.radio} key={i} value={x.value} >
-              <FadeInView duration={500} delay={i * 100 + 200}>
-                <Text style={styles.labeltext}>{x.label}</Text>
-              </FadeInView>
-            </RadioButton>
+              <RadioButton style={styles.radio} key={i} value={x.value} >
+                <FadeInView duration={500} delay={i * 100 + 200}>
+                  <Text style={styles.labeltext}>{x.label}</Text>
+                </FadeInView>
+              </RadioButton>
 
-          ))}
-        </RadioGroup>
-      </ScrollView>
+            ))}
+          </RadioGroup>
+          <View></View>
+        </ScrollView>
+        
     );
   }
 }
@@ -65,13 +67,13 @@ const styles = StyleSheet.create({
   radio: {
     padding: 20,
     backgroundColor: '#d6dff552',
-    marginTop: 10,
-    borderRadius:10
+    marginVertical: 2,
+    borderRadius: 10
   },
   labeltext: {
     fontSize: 18,
     marginLeft: 10,
-    color:'rgb(0, 96, 168)'
+    color: 'rgb(0, 96, 168)'
   }
 })
 

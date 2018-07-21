@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
                 label: '1-2 times', value: '4'
             }],
             ansType: 'single',
-            progressBar:0.1,
+            progressBar:0,
             likes:25
         }, {
             no: 2,
@@ -102,13 +102,13 @@ const mapDispatchToProps = dispatch => ({
             statement: "Are you disappointed with yourself?",
             imageURL: require('../../assests/images/sad-image.png'),
             options: [{
-                label: 'I am always dissapointed with myself', value: '1'
+                label: 'I am always disappointed with myself', value: '1'
             }, {
-                label: 'I am dissapointed frequently when I cannot reach personal goals', value: '2'
+                label: 'I am disappointed frequently when I cannot reach personal goals', value: '2'
             }, {
                 label: 'Sometimes when my expectations are not met', value: '3'
             }, {
-                label: 'I am never dissapointed as success and failure are both part of life', value: '4'
+                label: 'I am never disappointed as success and failure are both part of life', value: '4'
             }],
             ansType: 'single',
             progressBar:0.7,
@@ -166,6 +166,11 @@ class Assessment extends Component {
                 break;
         }
     }
+    
+    goToLogin = () => {
+        this.props.navigation.navigate('Login');
+      }
+
     componentWillMount() {
         this.props.getAllQuestion();
     }
@@ -176,7 +181,7 @@ class Assessment extends Component {
                 style={{ flex: 1 }}
                 onSwipe={(direction, state) => this.onSwipe(direction, state)}
             >
-               {this.props.isNextQuestionLoading===false && <Question />} 
+               {this.props.isNextQuestionLoading===false && <Question goToLoginClick={this.goToLogin} />} 
             </GestureRecognizer>
         );
     }
