@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image, Button } from 'react-native';
+import { Text, View, Image, Button, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 import Question from './Question';
@@ -31,8 +31,8 @@ const mapDispatchToProps = dispatch => ({
                 label: '1-2 times', value: '4'
             }],
             ansType: 'single',
-            progressBar:0,
-            likes:25
+            progressBar: 0,
+            likes: 25
         }, {
             no: 2,
             statement: "What do you do on a daily basis to ensure that you stay healthy?",
@@ -47,8 +47,8 @@ const mapDispatchToProps = dispatch => ({
                 label: 'I do not do anything', value: '4'
             }],
             ansType: 'single',
-            progressBar:0.2,
-            likes:50
+            progressBar: 0.2,
+            likes: 50
         }, {
             no: 3,
             statement: "Do you spend more time working than socializing or pursuing a hobby?",
@@ -63,8 +63,8 @@ const mapDispatchToProps = dispatch => ({
                 label: 'Always', value: '4'
             }],
             ansType: 'single',
-            progressBar:0.4,
-            likes:35
+            progressBar: 0.4,
+            likes: 35
         }, {
             no: 4,
             statement: "Are you aware of things that you are passionate about?",
@@ -79,8 +79,8 @@ const mapDispatchToProps = dispatch => ({
                 label: 'Yes, I am pursuing my passion', value: '4'
             }],
             ansType: 'single',
-            progressBar:0.5,
-            likes:55
+            progressBar: 0.5,
+            likes: 55
         }, {
             no: 5,
             statement: "Are you troubled or saddened by day to day activities?",
@@ -95,8 +95,8 @@ const mapDispatchToProps = dispatch => ({
                 label: 'Not at all', value: '4'
             }],
             ansType: 'single',
-            progressBar:0.6,
-            likes:85
+            progressBar: 0.6,
+            likes: 85
         }, {
             no: 6,
             statement: "Are you disappointed with yourself?",
@@ -111,8 +111,8 @@ const mapDispatchToProps = dispatch => ({
                 label: 'I am never disappointed as success and failure are both part of life', value: '4'
             }],
             ansType: 'single',
-            progressBar:0.7,
-            likes:5
+            progressBar: 0.7,
+            likes: 5
         }, {
             no: 7,
             statement: "How is your interaction with family and friends?",
@@ -127,8 +127,8 @@ const mapDispatchToProps = dispatch => ({
                 label: 'I am friendly with everyone', value: '4'
             }],
             ansType: 'single',
-            progressBar:0.9,
-            likes:25
+            progressBar: 0.9,
+            likes: 25
         }, {
             no: 8,
             statement: "Are you disappointed with the level of your sexual activity, desire and satisfaction?",
@@ -143,8 +143,8 @@ const mapDispatchToProps = dispatch => ({
                 label: 'Never', value: '4'
             }],
             ansType: 'single',
-            progressBar:1,
-            likes:154
+            progressBar: 1,
+            likes: 154
         }]
     }),
 })
@@ -166,10 +166,32 @@ class Assessment extends Component {
                 break;
         }
     }
-    
+
     goToLogin = () => {
         this.props.navigation.navigate('Login');
-      }
+    }
+
+    onDismiss = () => {
+        Alert.alert(
+            // This is Alert Dialog Title
+            'Dismiss Test',
+            // This is Alert Dialog Message. 
+            'Are you sure you wanna quit wellness test ?',
+            [
+                // Cancel Button in Alert Dialog.
+                { text: 'Cancel', onPress: () => console.log('Cancel Button Pressed'), style: 'cancel' },
+                // OK Button in Alert Dialog
+                {
+                    text: 'OK', onPress: () => {
+                        console.log('OK ButtonPressed')
+                        this.props.navigation.navigate('Login');
+                    }
+                },
+
+            ]
+
+        )
+    }
 
     componentWillMount() {
         this.props.getAllQuestion();
@@ -181,7 +203,8 @@ class Assessment extends Component {
                 style={{ flex: 1 }}
                 onSwipe={(direction, state) => this.onSwipe(direction, state)}
             >
-               {this.props.isNextQuestionLoading===false && <Question goToLoginClick={this.goToLogin} />} 
+                {this.props.isNextQuestionLoading === false &&
+                    <Question onDismiss={this.onDismiss} goToLoginClick={this.goToLogin} />}
             </GestureRecognizer>
         );
     }

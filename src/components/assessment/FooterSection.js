@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
 import { Button, Icon, Text } from 'native-base';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion,
     questions: state.Assessment.questions
-  })
-  
-  const mapDispatchToProps = dispatch => ({
+})
+
+const mapDispatchToProps = dispatch => ({
     goToQuestion: (question) => dispatch({
-      type: 'AssessmentReducer_GetQuestion',
-      payload: question
+        type: 'AssessmentReducer_GetQuestion',
+        payload: question
     }),
     loadingNextQuestion: (isLoading) => dispatch({
-      type: 'AssessmentReducer_IsNextQuestionLoading',
-      payload: isLoading
-    })    
-  })
+        type: 'AssessmentReducer_IsNextQuestionLoading',
+        payload: isLoading
+    })
+})
 
 
 class FooterSection extends React.Component {
 
     goToNextQuestion = () => {
         setTimeout(() => {
-          this.props.loadingNextQuestion(true);
-          setTimeout(() => {
-            this.props.goToQuestion(this.props.questions[this.props.currentQuestion.no]);
-            this.props.loadingNextQuestion(false);
-          }, 200)
+            this.props.loadingNextQuestion(true);
+            setTimeout(() => {
+                this.props.goToQuestion(this.props.questions[this.props.currentQuestion.no]);
+                this.props.loadingNextQuestion(false);
+            }, 200)
         }, 500)
     }
 
@@ -36,14 +37,15 @@ class FooterSection extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.footerBtn}>
-                    <Button danger style={styles.btn} onPress={this.props.goToLoginClick}>
-
+                    <Button danger style={styles.btn} onPress={this.props.onDismiss}>
                         <Text>Cancel</Text>
                     </Button>
+                    {/* <FontAwesome style={{ fontSize: 32 }}>
+                        {Icons.star}
+                    </FontAwesome> */}
                 </View>
                 <View style={styles.submitBtn}>
                     <Button success style={styles.btn}>
-
                         <Text>Submit</Text>
                     </Button>
                 </View>
@@ -51,13 +53,22 @@ class FooterSection extends React.Component {
                     <Button info style={styles.btn} onPress={this.goToNextQuestion}>
                         <Text>Skip</Text>
                     </Button>
+                    {/* <FontAwesome style={{ fontSize: 32 }}>
+                        {Icons.forward}
+                    </FontAwesome>
+                    <Icon
+                        name='youtubeSquare'
+                        type='FontAwesome'
+                        color='#f50'
+                        onPress={() => console.log('hello')} /> */}
+
                 </View>
             </View>
         )
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(FooterSection)
+export default connect(mapStateToProps, mapDispatchToProps)(FooterSection)
 
 
 const styles = StyleSheet.create({
@@ -66,7 +77,8 @@ const styles = StyleSheet.create({
     },
     footerBtn: {
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        justifyContent: 'center'
     },
     submitBtn: {
         flex: 2,
@@ -75,6 +87,6 @@ const styles = StyleSheet.create({
     btn: {
         flex: 1,
         margin: 5,
-        justifyContent:'center'
+        justifyContent: 'center'
     }
 })

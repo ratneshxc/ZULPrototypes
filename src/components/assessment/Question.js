@@ -16,7 +16,7 @@ export default class Question extends Component {
                 <View style={{ flex: 1 }}>
                     <AnswerSection />
                 </View>
-                <FooterSection goToLoginClick={this.props.goToLoginClick} />
+                <FooterSection onDismiss={this.props.onDismiss} goToLoginClick={this.props.goToLoginClick} />
             </View>
         );
     }
