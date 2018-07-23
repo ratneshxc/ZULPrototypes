@@ -60,7 +60,10 @@ export default class App extends Component {
         });
     }
 
-
+    // Redirect Dashboard Screen
+    Dashboard = () => {
+        this.props.Dashboard();
+      }
 
     render() {
         return (
@@ -120,7 +123,8 @@ export default class App extends Component {
 
                     <Button
                         style={styles.regBtn}
-                        onPress={this.onRegister.bind(this)}
+                        //onPress={this.onRegister.bind(this)}
+                        onPress={this.Dashboard}
                     >Register</Button>
                     {/* </form> */}
                 </View>

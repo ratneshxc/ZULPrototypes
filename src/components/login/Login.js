@@ -3,8 +3,20 @@ import { View, Text, Image, StyleSheet, ImageBackground, TouchableOpacity } from
 import Button from 'react-native-button';
 import Form from './Form';
 import LoginFooter from './LoginFooter';
+import WallpaperAnimation from '../animations/WallpaperAnimation';
 
 export default class login extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      imageURL:require('../../assests/images/loginwallpaper.jpg')
+    }
+    setInterval(()=>{
+      this.setState({
+        imageURL:require('../../assests/images/loginwallpaper1.jpg')
+      })
+    },20000);
+  }
   takeAssessment = () => {
     this.props.navigation.navigate('Assessment');
   }
@@ -15,27 +27,33 @@ export default class login extends React.Component {
 
   render() {
     return (
-      <ImageBackground style={styles.loginContainer} source={require('../../assests/images/animation.gif')}>
+      <View style={{ flex: 1 }}>
+        <WallpaperAnimation>
+          <Image style={styles.loginContainer} resizeMode="cover" source={this.state.imageURL}>
+          </Image>
+        </WallpaperAnimation>
         <View style={styles.loginInnerContainer}>
           <Form />
           <LoginFooter takeAssessment={this.takeAssessment} goRegister={this.goRegister} />
         </View>
-      </ImageBackground>
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
   loginContainer: {
-    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    width:'100%',
+    height:'100%'
   },
   loginInnerContainer: {
     backgroundColor: '#00000054',
     flex: 1,
     marginHorizontal: 30,
     marginVertical: 80,
-    padding: 10
+    padding: 10,
+    position: 'absolute'
   }
 })

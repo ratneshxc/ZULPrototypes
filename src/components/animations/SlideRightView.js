@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Animated, Easing } from 'react-native';
+import { Animated } from 'react-native';
 
 class SlideRightView extends Component {
     constructor() {
@@ -18,15 +18,7 @@ class SlideRightView extends Component {
             }
         ).start();
     }
-    componentWillUnmount() {
-        Animated.timing(
-            this.state.translateXValue,
-            {
-                toValue: -300,
-                duration: 200
-            }
-        ).start();
-    }
+ 
     render() {
         let { translateXValue } = this.state;
         return (
