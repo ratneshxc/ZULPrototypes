@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => ({
         type: 'AssessmentReducer_GetQuestion',
         payload: question
     }),
+    //Questions Obj
     getAllQuestion: () => dispatch({
         type: 'AssessmentReducer_GetAllQuestions',
         payload: [{
