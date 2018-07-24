@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import * as Progress from 'react-native-progress';
 import FadeInView from '../animations/FadeInView';
 import SlideRightView from '../animations/SlideRightView';
-import OptionsSection from './OptionsSection';
-import LikeSection from './LikeSection';
+// import OptionsSection from './OptionsSection';
+// import LikeSection from './LikeSection';
 import QuestionHeader from './QuestionHeader';
 
 
@@ -28,13 +28,13 @@ class QuestionSection extends Component {
         <Progress.Bar style={{borderRadius:0,borderWidth:0,marginLeft:-1,padding:0}} progress={currentQuestion.progressBar} width={null} color={"#0366d6"} unfilledColor={'#ffffff'} />
         <SlideRightView>
           <View style={styles.questionView}>
-            <OptionsSection />          
+            {/* <OptionsSection />           */}
             <View style={styles.questionContainer}>
               <FadeInView duration={500} delay={200}>
                 <Text style={styles.questionStatement}>{currentQuestion.statement}</Text>
               </FadeInView>
             </View>
-            <LikeSection />
+            {/* <LikeSection /> */}
           </View>
         </SlideRightView>
       </ImageBackground>
@@ -54,12 +54,12 @@ const styles = StyleSheet.create({
     margin: 15,
     backgroundColor: '#00000066',
     flex: 1,
-    justifyContent: 'flex-end',
-    padding: 10
+    padding: 10,
+    flexDirection:'column'
   },
 
   questionContainer: {
-    flex: 9,
+    flex: 1,
     justifyContent: 'flex-end',
   },
   questionStatement: {

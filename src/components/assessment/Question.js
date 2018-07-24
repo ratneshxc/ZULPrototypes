@@ -5,6 +5,7 @@ import QuestionSection from '../assessment/QuestionSection';
 import AnswerSection from '../assessment/AnswerSection';
 import FooterSection from './FooterSection';
 
+
 export default class Question extends Component {
     render() {
         return (
@@ -17,6 +18,7 @@ export default class Question extends Component {
                     <AnswerSection />
                 </View>
                 <FooterSection goToLoginClick={this.props.goToLoginClick} />
+
             </View>
         );
     }

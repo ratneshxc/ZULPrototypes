@@ -22,7 +22,6 @@ class LikeSection extends React.Component {
     }
     render() {
         return (
-            <View style={{ flex: 1, flexDirection: 'row' }}>
                 <View style={styles.optionsBody}>
                     <Text style={styles.likeText}>{this.props.currentQuestion.likes}</Text>
                     <TouchableOpacity onPress={this.iconClickHandler}>
@@ -31,7 +30,6 @@ class LikeSection extends React.Component {
                         </Text>
                     </TouchableOpacity>
                 </View>
-            </View>
         )
     }
 }
@@ -40,7 +38,6 @@ export default connect(mapStateToProps)(LikeSection)
 
 const styles = StyleSheet.create({
     optionsBody: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-end',
         height:30

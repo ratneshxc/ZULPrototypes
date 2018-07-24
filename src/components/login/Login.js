@@ -6,17 +6,32 @@ import LoginFooter from './LoginFooter';
 import WallpaperAnimation from '../animations/WallpaperAnimation';
 
 export default class login extends React.Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      imageURL:require('../../assests/images/loginwallpaper.jpg')
+    this.wallpaperPaths = [
+      { path: require('../../assests/images/loginwallpapers/img01.png') },
+      { path: require('../../assests/images/loginwallpapers/img02.png') },
+      { path: require('../../assests/images/loginwallpapers/img03.png') },
+      { path: require('../../assests/images/loginwallpapers/img04.png') },
+      { path: require('../../assests/images/loginwallpapers/img05.png') }]
+    this.state = {
+      imageURL: this.wallpaperPaths[0].path
     }
-    setInterval(()=>{
-      this.setState({
-        imageURL:require('../../assests/images/loginwallpaper1.jpg')
-      })
-    },20000);
   }
+
+  componentDidMount() {
+    let i = 1;
+    this.backInterval = setInterval(() => {
+      this.setState({
+        imageURL: this.wallpaperPaths[i].path
+      })
+      i === 4 ? i = 0 : i++;
+    }, 20000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.backInterval);
+  }
+
   takeAssessment = () => {
     this.props.navigation.navigate('Assessment');
   }
@@ -45,8 +60,8 @@ const styles = StyleSheet.create({
   loginContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    width:'100%',
-    height:'100%'
+    width: '100%',
+    height: '100%'
   },
   loginInnerContainer: {
     backgroundColor: '#00000054',

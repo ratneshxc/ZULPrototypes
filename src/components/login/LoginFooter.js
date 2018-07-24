@@ -16,7 +16,7 @@ export default class LoginFooter extends React.Component {
             <View style={styles.container}>
                 <Text style={styles.statement}><Text style={{fontWeight:'bold'}}>78,20,083</Text> people have already taken assessments</Text>
                 <TouchableOpacity style={styles.takeAssessmentBtn} onPress={this.takeAssessment}>
-                    <Text style={styles.textWhite}>Take Assessment</Text>
+                    <Text style={styles.textWhite}>Check Your Wellness</Text>
                 </TouchableOpacity>
                 <Text style={styles.orStatement}>OR</Text>
                 <TouchableOpacity style={styles.registerBtn} onPress={this.goRegister}>

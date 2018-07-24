@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { View, StyleSheet,TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Root, ActionSheet, Button } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import TutorialModal from './TutorialModal';
+import { connect } from 'react-redux'
 
 var BUTTONS = [
     { text: "Give Feedback on this question", icon: "flag" },
@@ -11,29 +13,39 @@ var BUTTONS = [
 var DESTRUCTIVE_INDEX = 3;
 var CANCEL_INDEX = 4;
 
+const mapDispatchToProps = dispatch => ({
+    openTutorialModal: () => dispatch({
+        type: 'TutorialReducer_TutorialVisible',
+        payload: true
+    })
+})
+
 class OptionsSection extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+   
     render() {
         return (
             <Root>
                 <View style={styles.questionHeader}>
-                    <TouchableOpacity  onPress={() =>
-                                ActionSheet.show(
-                                    {
-                                        options: BUTTONS,
-                                        cancelButtonIndex: CANCEL_INDEX,
-                                        destructiveButtonIndex: DESTRUCTIVE_INDEX
-                                    },
-                                    buttonIndex => {
-                                        this.setState({ clicked: BUTTONS[buttonIndex] });
-                                    }
-                                )}>
-                        <Icon name="ellipsis-h" style={styles.moreIcon} size={30} color="#ffffff" />
+                    <TouchableOpacity style={styles.icons} onPress={this.props.openTutorialModal}>
+                        <Icon name="info-circle" size={25} color="#ffffff" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.icons} onPress={() =>
+                    
+                        ActionSheet.show(
+                            {
+                                options: BUTTONS,
+                                cancelButtonIndex: CANCEL_INDEX,
+                                destructiveButtonIndex: DESTRUCTIVE_INDEX,
+                                
+                            },
+                            buttonIndex => {
+                                this.setState({ clicked: BUTTONS[buttonIndex] });
+                            }
+                        )}>
+                        <Icon name="ellipsis-h" size={25} color="#ffffff" />
                     </TouchableOpacity>
                 </View>
+                <TutorialModal />
             </Root>
         )
     }
@@ -41,13 +53,15 @@ class OptionsSection extends Component {
 
 const styles = StyleSheet.create({
     questionHeader: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-end'
     },
-    moreIcon: {
-        padding: 5
+    icons: {
+        paddingHorizontal: 5,
+        paddingVertical: 5,
+        minWidth: 35,
+        alignItems: 'center'
     }
 })
-export default OptionsSection;
+export default connect(null, mapDispatchToProps)(OptionsSection);
 

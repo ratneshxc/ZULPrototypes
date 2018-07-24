@@ -1,80 +1,116 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Button, Icon, Text } from 'native-base';
-import {connect} from 'react-redux';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { ActionSheet, Root } from 'native-base';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { connect } from 'react-redux';
+import TutorialModal from './TutorialModal';
+
+var BUTTONS = [
+    { text: "Give Feedback on this question", icon: "flag" },
+    { text: "Report", icon: "flag", iconColor: "#fa213b" },
+    { text: "Cancel", icon: "close" }
+];
+var DESTRUCTIVE_INDEX = 3;
+var CANCEL_INDEX = 4;
 
 const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion,
     questions: state.Assessment.questions
-  })
-  
-  const mapDispatchToProps = dispatch => ({
+})
+
+const mapDispatchToProps = dispatch => ({
     goToQuestion: (question) => dispatch({
-      type: 'AssessmentReducer_GetQuestion',
-      payload: question
+        type: 'AssessmentReducer_GetQuestion',
+        payload: question
     }),
     loadingNextQuestion: (isLoading) => dispatch({
-      type: 'AssessmentReducer_IsNextQuestionLoading',
-      payload: isLoading
-    })    
-  })
+        type: 'AssessmentReducer_IsNextQuestionLoading',
+        payload: isLoading
+    }),
+    openTutorialModal: () => dispatch({
+        type: 'TutorialReducer_TutorialVisible',
+        payload: true
+    })
+})
 
 
 class FooterSection extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            iconColor: '#000000'
+        }
+    }
 
+    iconClickHandler = () => {
+        this.setState({
+            iconColor: this.state.iconColor === '#000000' ? '#ff0000' : '#000000'
+        })
+    }
     goToNextQuestion = () => {
         setTimeout(() => {
-          this.props.loadingNextQuestion(true);
-          setTimeout(() => {
-            this.props.goToQuestion(this.props.questions[this.props.currentQuestion.no]);
-            this.props.loadingNextQuestion(false);
-          }, 200)
+            this.props.loadingNextQuestion(true);
+            setTimeout(() => {
+                this.props.goToQuestion(this.props.questions[this.props.currentQuestion.no]);
+                this.props.loadingNextQuestion(false);
+            }, 200)
         }, 500)
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.footerBtn}>
-                    <Button danger style={styles.btn} onPress={this.props.goToLoginClick}>
+                <View style={styles.comment}>
+                    <TouchableOpacity style={styles.btn}>
+                        <Text>Write a Comment...</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.btnContainer}>
+                    <TouchableOpacity style={styles.btn} onPress={this.props.openTutorialModal}>
+                        <Icon name="info-circle" size={25} color="#000000" />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn} onPress={this.iconClickHandler}>
+                        <Icon name="heart" size={25} color={this.state.iconColor} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btn} onPress={() =>
 
-                        <Text>Cancel</Text>
-                    </Button>
-                </View>
-                <View style={styles.submitBtn}>
-                    <Button success style={styles.btn}>
+                        ActionSheet.show(
+                            {
+                                options: BUTTONS,
+                                cancelButtonIndex: CANCEL_INDEX,
+                                destructiveButtonIndex: DESTRUCTIVE_INDEX,
 
-                        <Text>Submit</Text>
-                    </Button>
+                            },
+                            buttonIndex => {
+                                this.setState({ clicked: BUTTONS[buttonIndex] });
+                            }
+                        )}>
+                        <Icon name="ellipsis-v" size={25} color="#000000" />
+                    </TouchableOpacity>
                 </View>
-                <View style={styles.footerBtn}>
-                    <Button info style={styles.btn} onPress={this.goToNextQuestion}>
-                        <Text>Skip</Text>
-                    </Button>
-                </View>
+                <TutorialModal />
             </View>
         )
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(FooterSection)
+export default connect(mapStateToProps, mapDispatchToProps)(FooterSection)
 
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row'
     },
-    footerBtn: {
-        flex: 1,
-        flexDirection: 'row'
+    comment: {
+        flex: 1
     },
-    submitBtn: {
-        flex: 2,
-        flexDirection: 'row'
+    btnContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
     },
     btn: {
-        flex: 1,
-        margin: 5,
-        justifyContent:'center'
+        padding: 10,
+        marginHorizontal: 5
     }
 })
