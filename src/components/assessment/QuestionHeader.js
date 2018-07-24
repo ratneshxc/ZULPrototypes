@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import {Badge} from 'native-base';
+import { Badge } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class QuestionHeader extends React.Component {
@@ -11,9 +11,7 @@ export default class QuestionHeader extends React.Component {
                     <Text style={styles.header}>Wholesomeness</Text>
                 </View>
                 <View style={styles.headerRight}>
-                    <Badge success>
-                        <Text style={{color:'#ffffff',fontWeight:'bold',marginTop:3}}>Score : 25</Text>
-                    </Badge>
+                    <Text style={{ color: '#ffffff', fontWeight: 'bold', marginTop: 3 }}><Icon name="trophy" style={{ marginRight: 5 }} size={20} /><Text>25</Text></Text>
                 </View>
             </View>
         )
@@ -30,7 +28,7 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 20,
-        fontWeight:'bold',
+        fontWeight: 'bold',
         color: '#ffffff'
     },
     headerLeft: {

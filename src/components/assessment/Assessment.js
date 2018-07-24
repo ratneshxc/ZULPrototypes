@@ -24,14 +24,15 @@ const mapDispatchToProps = dispatch => ({
             options: [{
                 label: 'More than 15 times', value: '1'
             }, {
-                label: '10-15 times', value: '2'
+                label: '10 to 15 times', value: '2'
             }, {
-                label: '5-10 times', value: '3'
+                label: '5 to 10 times', value: '3'
             }, {
-                label: '1-2 times', value: '4'
+                label: '1 to 2 times', value: '4'
             }],
             ansType: 'single',
             progressBar: 0,
+            progressBarColor:'#ff2626',
             likes: 25
         }, {
             no: 2,
@@ -48,6 +49,7 @@ const mapDispatchToProps = dispatch => ({
             }],
             ansType: 'single',
             progressBar: 0.2,
+            progressBarColor:'#ff2626',
             likes: 50
         }, {
             no: 3,
@@ -64,6 +66,7 @@ const mapDispatchToProps = dispatch => ({
             }],
             ansType: 'single',
             progressBar: 0.4,
+            progressBarColor:'#f75f3c',
             likes: 35
         }, {
             no: 4,
@@ -80,6 +83,7 @@ const mapDispatchToProps = dispatch => ({
             }],
             ansType: 'single',
             progressBar: 0.5,
+            progressBarColor:'#f75f3c',
             likes: 55
         }, {
             no: 5,
@@ -96,6 +100,7 @@ const mapDispatchToProps = dispatch => ({
             }],
             ansType: 'single',
             progressBar: 0.6,
+            progressBarColor:'#e0a012',
             likes: 85
         }, {
             no: 6,
@@ -112,6 +117,7 @@ const mapDispatchToProps = dispatch => ({
             }],
             ansType: 'single',
             progressBar: 0.7,
+            progressBarColor:'#e0a012',
             likes: 5
         }, {
             no: 7,
@@ -128,6 +134,7 @@ const mapDispatchToProps = dispatch => ({
             }],
             ansType: 'single',
             progressBar: 0.9,
+            progressBarColor:'#309830',
             likes: 25
         }, {
             no: 8,
@@ -144,6 +151,7 @@ const mapDispatchToProps = dispatch => ({
             }],
             ansType: 'single',
             progressBar: 1,
+            progressBarColor:'#309830',
             likes: 154
         }]
     }),
@@ -169,28 +177,6 @@ class Assessment extends Component {
 
     goToLogin = () => {
         this.props.navigation.navigate('Login');
-    }
-
-    onDismiss = () => {
-        Alert.alert(
-            // This is Alert Dialog Title
-            'Dismiss Test',
-            // This is Alert Dialog Message. 
-            'Are you sure you wanna quit wellness test ?',
-            [
-                // Cancel Button in Alert Dialog.
-                { text: 'Cancel', onPress: () => console.log('Cancel Button Pressed'), style: 'cancel' },
-                // OK Button in Alert Dialog
-                {
-                    text: 'OK', onPress: () => {
-                        console.log('OK ButtonPressed')
-                        this.props.navigation.navigate('Login');
-                    }
-                },
-
-            ]
-
-        )
     }
 
     componentWillMount() {

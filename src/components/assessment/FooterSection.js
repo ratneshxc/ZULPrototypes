@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
 import { ActionSheet, Root } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
 import TutorialModal from './TutorialModal';
 
 var BUTTONS = [
-    { text: "Give Feedback on this question", icon: "flag" },
+    { text: "Give feedback on this question", icon: "flag" },
     { text: "Report", icon: "flag", iconColor: "#fa213b" },
+    { text: "Quit the assessment", icon: "close" },
     { text: "Cancel", icon: "close" }
 ];
 var DESTRUCTIVE_INDEX = 3;
@@ -83,6 +84,16 @@ class FooterSection extends React.Component {
                             },
                             buttonIndex => {
                                 this.setState({ clicked: BUTTONS[buttonIndex] });
+                                if (BUTTONS[buttonIndex].text === 'Quit the assessment')
+                                    Alert.alert(
+                                        'Quit Assessment',
+                                        'Are you sure you want to exit from wellness assessment?',
+                                        [
+                                            { text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                                            { text: 'Yes', onPress: () => this.props.goToLoginClick() },
+                                        ],
+                                        { cancelable: false }
+                                    )
                             }
                         )}>
                         <Icon name="ellipsis-v" size={25} color="#000000" />

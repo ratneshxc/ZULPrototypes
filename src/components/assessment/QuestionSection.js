@@ -25,7 +25,7 @@ class QuestionSection extends Component {
 
       <ImageBackground source={currentQuestion.imageURL} resizeMode="cover" style={styles.backImage}>
         <QuestionHeader />
-        <Progress.Bar style={{borderRadius:0,borderWidth:0,marginLeft:-1,padding:0}} progress={currentQuestion.progressBar} width={null} color={"#0366d6"} unfilledColor={'#ffffff'} />
+        <Progress.Bar style={{borderRadius:0,borderWidth:0,marginLeft:-1,padding:0}} progress={currentQuestion.progressBar} width={null} color={currentQuestion.progressBarColor} unfilledColor={'#ffffff'} />
         <SlideRightView>
           <View style={styles.questionView}>
             {/* <OptionsSection />           */}

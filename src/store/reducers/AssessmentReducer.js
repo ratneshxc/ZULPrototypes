@@ -6,14 +6,15 @@ const initialState = {
         options: [{
             label: 'More than 15 times', value: '1'
         }, {
-            label: '10-15 times', value: '2'
+            label: '10 to 15 times', value: '2'
         }, {
-            label: '5-10 times', value: '3'
+            label: '5 to 10 times', value: '3'
         }, {
-            label: '1-2 times', value: '4'
+            label: '1 to 2 times', value: '4'
         }],
         ansType: 'single',
         progressBar: 0,
+        progressBarColor:'#ff2626',
         likes:25
     },
     questions: [],
