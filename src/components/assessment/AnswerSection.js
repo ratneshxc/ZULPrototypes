@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
   },
   radio: {
     padding: 20,
-    backgroundColor: '#d6dff552',
     marginVertical: 2,
     borderRadius: 10
   },
