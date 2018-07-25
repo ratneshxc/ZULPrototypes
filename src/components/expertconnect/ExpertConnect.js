@@ -4,10 +4,11 @@ import { AppRegistry, ProgressBarAndroid, FlatList, StyleSheet, Text, View, Imag
 
 import dashboardData from '../../data/expertConnectListData';
 
-//import { Card, CardItem,CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
-
-
-import { Card, CardItem } from 'native-base';
+import { Card, CardItem, Right, Left, Body } from 'native-base';
+import Favorite from './FavoriteAction';
+import MailAction from './MailAction';
+import CallAction from './CallAction';
+import BookAction from './BookAction';
 
 class FlatListItem extends Component {
 
@@ -23,7 +24,7 @@ class FlatListItem extends Component {
 
             <View >
 
-                <Card style={{ height: 120 }}>
+                <Card>
 
                     <CardItem style={{
 
@@ -67,7 +68,7 @@ class FlatListItem extends Component {
 
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={{ flex: 5 }}>$37</Text>
+                                <Text style={{ flex: 5 }}>$37 .. 30 Reviews</Text>
 
 
 
@@ -87,40 +88,32 @@ class FlatListItem extends Component {
 
 
                             </View>
-                            <View style={{ flex: 1, flexDirection: 'column' }}>
-
-                                <View style={{ flexDirection: 'row' }}>
-
-                                    <Text style={{ flex: 7 }}>{this.props.item.time}</Text>
-
-                                    <View style={{ flex: 1 }}>
-                                    </View>
-
-                                    <Image
-
-                                        source={{ uri: this.props.item.peopleImageUrl }}
-
-                                        style={{ width: 20, height: 20 }}
-
-                                    >
-
-                                    </Image>
-                                    <View style={{ flex: 0.25 }}></View>
-                                    <Text>{this.props.item.people}</Text>
-
-                                    <View style={{ flex: 0.5 }}>
-
-                                    </View>
-
-                                    <View style={{ flex: 1 }}></View>
-
-                                </View>
-
-                            </View>
 
                         </View>
                     </CardItem>
+                    <CardItem style={{
+
+
+
+                        backgroundColor: '#AAAAAA'
+
+
+                    }}
+                        footer>
+                        <Left>
+                            <Favorite />
+                        </Left>
+                        <Body>
+                            </Body>
+                        <Right style={{ flexDirection: 'row' }}>
+                            <MailAction />
+                            <CallAction />
+                            <BookAction />
+
+                        </Right>
+                    </CardItem>
                 </Card>
+
 
             </View>
 
