@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { Root } from 'native-base';
 import Zula from './src/components/Zula/Zula';
 
+
 export default class App extends Component {
   render() {
     return (
@@ -20,5 +21,6 @@ export default class App extends Component {
     );
   }
 }
+
 
 

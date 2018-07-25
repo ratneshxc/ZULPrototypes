@@ -1,6 +1,7 @@
 const initialState = {
     zulaMessageText: '',
-    isZulaMessageContainerVisible: false
+    isZulaMessageContainerVisible: false,
+    isZulaAccessible: true
 }
 
 
@@ -12,6 +13,10 @@ const ZulaReducer = (state = initialState, action) => {
         }
         case 'ZulaReducer_Sleep': {
             state = { ...state, zulaMessageText: '', isZulaMessageContainerVisible: false }
+            break;
+        }
+        case 'ZulaReducer_Access': {
+            state = { ...state, isZulaAccessible: action.payload }
             break;
         }
     }

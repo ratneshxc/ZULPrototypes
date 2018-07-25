@@ -4,18 +4,18 @@ const initialState = {
         statement: "How often have you fallen ill in the past year?",
         imageURL: require('../../assests/images/illness-image.png'),
         options: [{
-            label: 'More than 15 times', value: '1'
+            label: 'More than 15 times', value: '1', isSelected: false
         }, {
-            label: '10 to 15 times', value: '2'
+            label: '10 to 15 times', value: '2', isSelected: false
         }, {
-            label: '5 to 10 times', value: '3'
+            label: '5 to 10 times', value: '3', isSelected: false
         }, {
-            label: '1 to 2 times', value: '4'
+            label: '1 to 2 times', value: '4', isSelected: false
         }],
         ansType: 'single',
         progressBar: 0,
-        progressBarColor:'#ff2626',
-        likes:25
+        progressBarColor: '#ff2626',
+        likes: 25
     },
     questions: [],
     isNextQuestionLoading: false

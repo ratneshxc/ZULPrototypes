@@ -96,14 +96,13 @@ class ZulaWakeUpbtn extends Component {
 
     }
     wakeUpZula = () => {
-        let text = 'Hi KK, I am zula. How can I help you?';
+        let text = 'Hi KK, I am ZULA. How can I help you?';
         this.zulaSpeak(text);
     }
-    async zulaSpeak(text) {
+    zulaSpeak(text) {
         this.props.zulaText(text);
-        await Tts.getInitStatus().then(() => {
-            Tts.speak(text);
-        });
+        Tts.speak(text);
+
 
     }
     zulaAction = (ordermsg) => {
@@ -116,9 +115,10 @@ class ZulaWakeUpbtn extends Component {
             this.zulaSpeak(this.props.currentQuestion.options[3].label);
         } else if (ordermsg.contains('bye')) {
             this.zulaSpeak('Bye KK!');
-            this.props.zulaSleep();
         } else if (ordermsg.contains('hey')) {
             this.wakeUpZula();
+        } else {
+            this.zulaSpeak('I beg your parden.');
         }
     }
 

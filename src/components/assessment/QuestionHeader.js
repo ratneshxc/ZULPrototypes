@@ -21,7 +21,7 @@ export default class QuestionHeader extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#0366d6d9',
+        backgroundColor: '#5067ffd1',
         paddingVertical: 10,
         paddingHorizontal: 15,
         flexDirection: 'row'

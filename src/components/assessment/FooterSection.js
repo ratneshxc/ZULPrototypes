@@ -74,7 +74,6 @@ class FooterSection extends React.Component {
                         <Icon name="heart" size={25} color={this.state.iconColor} />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.btn} onPress={() =>
-
                         ActionSheet.show(
                             {
                                 options: BUTTONS,

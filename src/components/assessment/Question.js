@@ -4,9 +4,18 @@ import { Text, View } from 'react-native';
 import QuestionSection from '../assessment/QuestionSection';
 import AnswerSection from '../assessment/AnswerSection';
 import FooterSection from './FooterSection';
+import { connect } from 'react-redux';
 
+const mapStateToProps = state => ({
+   
+})
 
-export default class Question extends Component {
+const mapDispatchToProps = dispatch => ({
+
+})
+
+class Question extends Component {
+ 
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -24,3 +33,4 @@ export default class Question extends Component {
     }
 }
 
+export default connect(mapStateToProps,mapDispatchToProps)(Question);

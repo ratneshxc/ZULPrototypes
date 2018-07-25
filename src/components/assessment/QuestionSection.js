@@ -15,10 +15,7 @@ const mapStateToProps = state => ({
 
 
 class QuestionSection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+
   render() {
     const currentQuestion = this.props.currentQuestion;
     return (
