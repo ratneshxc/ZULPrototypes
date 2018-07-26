@@ -15,6 +15,10 @@ const mapDispatchToProps = dispatch => ({
     type: 'AssessmentReducer_GetQuestion',
     payload: question
   }),
+  getAllQuestion: (questions) => dispatch({
+    type: 'AssessmentReducer_GetAllQuestions',
+    payload: questions
+  }),
   loadingNextQuestion: (isLoading) => dispatch({
     type: 'AssessmentReducer_IsNextQuestionLoading',
     payload: isLoading
@@ -22,42 +26,51 @@ const mapDispatchToProps = dispatch => ({
 })
 
 class AnswerSection extends Component {
-  goToNextQuestion = () => {
+
+  selectAnswer = (index) => {
+    this.props.questions[this.props.currentQuestion.no - 1].selectedIndex = index;
+    this.props.getAllQuestion(this.props.questions);
+    let questionIndex = this.props.currentQuestion.no;
+    if (this.props.currentQuestion.no >= this.props.questions.length) {
+      questionIndex--;
+    }
     setTimeout(() => {
       this.props.loadingNextQuestion(true);
       setTimeout(() => {
-        this.props.goToQuestion(this.props.questions[this.props.currentQuestion.no]);
+        this.props.goToQuestion(this.props.questions[questionIndex]);
         this.props.loadingNextQuestion(false);
-      }, 100)
+      }, 200)
     }, 500)
-
   }
+
   render() {
     return (
-        <ScrollView style={styles.optionView}>
-          <RadioGroup
-            size={24}
-            thickness={2}
-            color='rgb(0, 96, 168)'
-            highlightColor='#3956976b'
-            onSelect={(index, value) => this.goToNextQuestion()}
-          >
-            {this.props.currentQuestion.options.map((x, i) => (
+      <ScrollView style={styles.optionView}>
+        <RadioGroup
+          size={24}
+          thickness={2}
+          color='rgb(0, 96, 168)'
+          highlightColor='#3956976b'
+          selectedIndex={this.props.currentQuestion.selectedIndex}
+          onSelect={(index, value) => this.selectAnswer(index)}
+        >
+          {this.props.currentQuestion.options.map((x, i) => (
 
-              <RadioButton style={styles.radio} key={i} value={x.value} >
-                <FadeInView duration={500} delay={i * 100 + 200}>
-                  <Text style={styles.labeltext}>{x.label}</Text>
-                </FadeInView>
-              </RadioButton>
+            <RadioButton style={styles.radio} key={i} value={x.value} >
+              <FadeInView duration={500} delay={i * 100 + 200}>
+                <Text style={styles.labeltext}>{x.label}</Text>
+              </FadeInView>
+            </RadioButton>
 
-            ))}
-          </RadioGroup>
-          <View></View>
-        </ScrollView>
-        
+          ))}
+        </RadioGroup>
+        <View></View>
+      </ScrollView>
+
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   optionView: {

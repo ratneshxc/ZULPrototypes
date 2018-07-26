@@ -7,7 +7,7 @@ import FooterSection from './FooterSection';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-   
+    isNextQuestionLoading: state.Assessment.isNextQuestionLoading
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 class Question extends Component {
- 
+
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -24,7 +24,7 @@ class Question extends Component {
                     <QuestionSection />
                 </View>
                 <View style={{ flex: 1 }}>
-                    <AnswerSection />
+                    {!this.props.isNextQuestionLoading && <AnswerSection />}
                 </View>
                 <FooterSection goToLoginClick={this.props.goToLoginClick} />
 
@@ -33,4 +33,4 @@ class Question extends Component {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Question);
+export default connect(mapStateToProps, mapDispatchToProps)(Question);

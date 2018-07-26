@@ -15,7 +15,8 @@ const initialState = {
         ansType: 'single',
         progressBar: 0,
         progressBarColor: '#ff2626',
-        likes: 25
+        likes: 25,
+        selectedIndex: null
     },
     questions: [],
     isNextQuestionLoading: false

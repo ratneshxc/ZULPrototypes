@@ -7,7 +7,8 @@ import Voice from 'react-native-voice';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const mapStateToProps = state => ({
-    currentQuestion: state.Assessment.currentQuestion
+    currentQuestion: state.Assessment.currentQuestion,
+    questions: state.Assessment.questions
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -17,6 +18,18 @@ const mapDispatchToProps = dispatch => ({
     }),
     zulaSleep: () => dispatch({
         type: 'ZulaReducer_Sleep'
+    }),
+    goToQuestion: (question) => dispatch({
+        type: 'AssessmentReducer_GetQuestion',
+        payload: question
+    }),
+    getAllQuestion: (questions) => dispatch({
+        type: 'AssessmentReducer_GetAllQuestions',
+        payload: questions
+    }),
+    loadingNextQuestion: (isLoading) => dispatch({
+        type: 'AssessmentReducer_IsNextQuestionLoading',
+        payload: isLoading
     })
 })
 
@@ -102,8 +115,26 @@ class ZulaWakeUpbtn extends Component {
     zulaSpeak(text) {
         this.props.zulaText(text);
         Tts.speak(text);
+    }
+    selectAnswer = (index) => {
+        this.props.questions[this.props.currentQuestion.no - 1].selectedIndex = index;
+        this.props.getAllQuestion(this.props.questions);
 
+        setTimeout(() => {
+            this.props.loadingNextQuestion(true);
+            setTimeout(() => {
+                this.props.goToQuestion(this.props.questions[this.props.currentQuestion.no]);
+                this.props.loadingNextQuestion(false);
+            }, 200)
+        }, 500)
+    }
 
+    getIndexOfOption = (text) => {
+        let selectedIndex = -1;
+        this.props.currentQuestion.options.map((x, i) => {
+            x.label.toLowerCase() === text.toLowerCase() ? selectedIndex = i : null
+        })
+        return selectedIndex;
     }
     zulaAction = (ordermsg) => {
         if (ordermsg.contains('question') && ordermsg.contains('read')) {
@@ -115,10 +146,24 @@ class ZulaWakeUpbtn extends Component {
             this.zulaSpeak(this.props.currentQuestion.options[3].label);
         } else if (ordermsg.contains('bye')) {
             this.zulaSpeak('Bye KK!');
+            this.props.zulaSleep();
         } else if (ordermsg.contains('hey')) {
             this.wakeUpZula();
+        } else if (ordermsg.contains('select')) {
+            let selectedOption = ordermsg.split(" ");
+            selectedOption.shift();
+            selectedOption = selectedOption.join(" ").trim();
+            let index = this.getIndexOfOption(selectedOption);
+            if (index < 0) {
+                this.zulaSpeak('I did not find the option');
+            } else {
+                this.selectAnswer(index);
+                this.zulaSpeak(`${selectedOption} is selected`);
+            }
+
         } else {
             this.zulaSpeak('I beg your parden.');
+
         }
     }
 

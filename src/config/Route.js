@@ -38,9 +38,9 @@ const TabRoute = createBottomTabNavigator({
 
 
 const AppRoute = createSwitchNavigator({
-  // Login: { screen: Login },
-  // Assessment: { screen: Assessment },
-  // Register: { screen: Register },
+  Login: { screen: Login },
+  Assessment: { screen: Assessment },
+  Register: { screen: Register },
   Home: { screen: TabRoute }
 });
 
