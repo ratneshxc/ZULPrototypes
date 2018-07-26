@@ -43,22 +43,31 @@ class FlatListItem extends Component {
 
 
                     }}>
-                        <View style={{ flexDirection: 'column', flex: 1 }}>
+                        <View style={{ flexDirection: 'column',flex:1,marginRight:5}}>
                             <Image style={{ width: 50, height: 50, borderRadius: 100}} source={require('../../assests/images/suresh.png')} />
-                            <Text style={{ marginTop:10 }}>70%</Text>
-                            <Progress.Bar style={{borderRadius:0,borderWidth:0,marginLeft:-1,padding:0}} progress={0.7} width={50} color={"#28a745"} unfilledColor={'#AAAAAA'} />
-                            <Text style={{ }}>150 votes</Text>
-                            <Text
-                                        style={{ color: "#17a2b8", textDecorationStyle: "solid", textDecorationLine: "underline" }}>
-                                        30 Reviews
-                                 </Text>
+                            <View style={{ flexDirection: 'row' }}>
+
+<Text style={[styles.textStyle, { color: "#28a745" }]}>Available </Text>
+
+
+
+</View>
+<View style={{ flexDirection: 'row'}}>
+
+<Text style={[styles.textStyle, { marginRight: 10 }]}>$37 
+</Text>
+
+
+
+</View>
+
                         </View>
 
                         <View style={{ flex: 2, flexDirection: 'column' }}>
 
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={[styles.textStyle, { fontWeight: 'bold' }]}>Dr. Pritam Kurunukar</Text>
+                                <Text style={[styles.textStyle, { fontWeight: 'bold' }]}>Dr. Pritam K</Text>
 
 
 
@@ -77,37 +86,30 @@ class FlatListItem extends Component {
 
 
                             </View>
+                      
+                       
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={styles.textStyle}>9 years of experience</Text>
+<Text style={styles.textStyle}>BrookField Hospital</Text>
 
 
 
-                            </View>
-                            <View style={{ flexDirection: 'row', marginTop: 10 }}>
+</View>
 
-                                <Text style={[styles.textStyle, { marginRight: 10 }]}>$37 
-                                </Text>
+                           
+                       
 
-
-
-                            </View>
-
-
-                            <View style={{ flexDirection: 'row' }}>
-
-                                <Text style={[styles.textStyle, { color: "#28a745" }]}>Available today </Text>
-
-
-
-                            </View>
-                            <View style={{ flexDirection: 'row' }}>
-
-                                <Text style={styles.textStyle}>BrookField Hospital</Text>
-
-
-
-                            </View>
+                        </View>
+                        <View style={{ flexDirection: 'column', marginLeft:5}}>
+                            <Text style={{color:"#000"}}>70%</Text>
+                            <Progress.Bar style={{borderRadius:0,borderWidth:0,marginLeft:-1,padding:0}} progress={0.7} width={50} color={"#28a745"} unfilledColor={'#AAAAAA'} />
+                            <Text style={{color:"#000" }}>150 votes</Text>
+                            <Text style={{color:"#000" }}>9 yrs exp</Text>
+                            <Text
+                                        style={{ color: "#17a2b8", textDecorationStyle: "solid", textDecorationLine: "underline" }}>
+                                        30 Reviews
+                                 </Text>
+                               
 
                         </View>
                     </CardItem>
@@ -205,7 +207,7 @@ const styles = StyleSheet.create({
     flatListItem: {
         color: '#000',
         padding: 10,
-        fontSize: 16,
+        fontSize: 15,
         flex: 1
     },
     container: {
@@ -223,7 +225,7 @@ const styles = StyleSheet.create({
         flex: 5,
         fontFamily: 'Arial',
         color: "#222",
-        fontSize: 16,
+        fontSize: 15,
     }
 
 });
