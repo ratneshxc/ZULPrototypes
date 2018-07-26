@@ -10,6 +10,7 @@ import MailAction from './MailAction';
 import CallAction from './CallAction';
 import BookAction from './BookAction';
 import FilterAction from './FilterAction';
+import ExpertConnectHeader from './ExpertConnectHeader';
 
 class FlatListItem extends Component {
 
@@ -138,14 +139,15 @@ export default class Daily extends Component {
         return (
             <View style={{ flex: 1, marginBottom: 50 ,flexDirection:'column'}}>
 
-            <View style={{marginTop:5}} >
+            {/* <View style={{marginTop:5}} >
                 <View style={{flex:1}}>
                 <Text style={{marginLeft:10,fontWeight:'bold'}}>EXPERT CONNECT</Text>
                     </View>
                 <View style={{marginRight:5}}>
                     <FilterAction />
                 </View>
-            </View>
+            </View> */}
+            <ExpertConnectHeader />
 
                 <View style={[styles.flatListItem]}>
 
