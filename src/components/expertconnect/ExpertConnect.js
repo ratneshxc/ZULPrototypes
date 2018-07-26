@@ -28,12 +28,14 @@ class FlatListItem extends Component {
 
             <View >
 
-                <Card>
+                <Card style={ {
+                    padding:2,
+                }}>
 
                     <CardItem style={{
 
                         flex: 2,
-
+                        padding:2,
                         flexDirection: 'row',
 
                         backgroundColor: '#FFFFFF',
@@ -43,23 +45,13 @@ class FlatListItem extends Component {
 
 
                     }}>
-                        <View style={{ flexDirection: 'column',flex:1,marginRight:5}}>
-                            <Image style={{ width: 50, height: 50, borderRadius: 100}} source={require('../../assests/images/suresh.png')} />
-                            <View style={{ flexDirection: 'row' }}>
-
-<Text style={[styles.textStyle, { color: "#28a745" }]}>Available </Text>
-
-
-
-</View>
-<View style={{ flexDirection: 'row'}}>
-
-<Text style={[styles.textStyle, { marginRight: 10 }]}>$37 
-</Text>
+                        <View style={{ flexDirection: 'column', marginRight: 10 }}>
+                            <Image style={{ width: 50, height: 50, borderRadius: 100 }} source={require('../../assests/images/suresh.png')} />
+                             <Text style={[{ color: "#28a745",marginTop:9 }]}>Available</Text>
+                             <Text style={[{color:"black"}]}>$37</Text>
 
 
 
-</View>
 
                         </View>
 
@@ -86,30 +78,37 @@ class FlatListItem extends Component {
 
 
                             </View>
-                      
-                       
-                            <View style={{ flexDirection: 'row' }}>
 
-<Text style={styles.textStyle}>BrookField Hospital</Text>
+<View style={{ flexDirection: 'row' }}>
+
+<Text style={styles.textStyle}>9 yrs exp</Text>
 
 
 
 </View>
+                            <View style={{ flexDirection: 'row' }}>
 
-                           
-                       
+                                <Text style={styles.textStyle}>BrookField Hospital</Text>
+
+
+
+                            </View>
+
+
+
 
                         </View>
-                        <View style={{ flexDirection: 'column', marginLeft:5}}>
-                            <Text style={{color:"#000"}}>70%</Text>
-                            <Progress.Bar style={{borderRadius:0,borderWidth:0,marginLeft:-1,padding:0}} progress={0.7} width={50} color={"#28a745"} unfilledColor={'#AAAAAA'} />
-                            <Text style={{color:"#000" }}>150 votes</Text>
-                            <Text style={{color:"#000" }}>9 yrs exp</Text>
+                        <View style={{ flexDirection: 'column', marginLeft: 5 }}>
+                            <Text style={{ color: "#000" }}>70%</Text>
+                            <Progress.Bar style={{ borderRadius: 0, borderWidth: 0, marginLeft: -1, padding: 0 }} progress={0.7} width={50} color={"#28a745"} unfilledColor={'#AAAAAA'} />
+                            <Text style={{ color: "#000" }}>150 votes</Text>
                             <Text
-                                        style={{ color: "#17a2b8", textDecorationStyle: "solid", textDecorationLine: "underline" }}>
-                                        30 Reviews
+                                style={{ color: "#17a2b8", textDecorationStyle: "solid", textDecorationLine: "underline" }}>
+                                30 Reviews
                                  </Text>
-                               
+                                 <Text style={{ color: "#000" }}> </Text>
+                                 <Text style={{ color: "#000" }}> </Text>
+
 
                         </View>
                     </CardItem>
@@ -117,7 +116,10 @@ class FlatListItem extends Component {
 
 
 
-                        backgroundColor: '#FFFFFF'
+                        backgroundColor: '#FFFFFF',
+                        padding:2,
+                        height:30,
+                        marginTop:2
 
 
                     }}
@@ -152,20 +154,12 @@ export default class Daily extends Component {
         console.log('Button pressed');
 
     }
+ 
 
     render() {
 
         return (
             <View style={{ flex: 1, marginBottom: 50, flexDirection: 'column' }}>
-
-                {/* <View style={{marginTop:5}} >
-                <View style={{flex:1}}>
-                <Text style={{marginLeft:10,fontWeight:'bold'}}>EXPERT CONNECT</Text>
-                    </View>
-                <View style={{marginRight:5}}>
-                    <FilterAction />
-                </View>
-            </View> */}
                 <ExpertConnectHeader />
 
                 <View style={[styles.flatListItem]}>
@@ -173,7 +167,8 @@ export default class Daily extends Component {
                     <FlatList
 
                         data={dashboardData}
-
+                      
+    
                         renderItem={({ item, index }) => {
                             return (
 
