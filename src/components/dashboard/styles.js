@@ -17,7 +17,7 @@ export default {
   },
   activeFilter:{
     backgroundColor:'#EBF0F1',
-  },
+  }, 
   scoreCard:{
     marginLeft:halfwidth,
     marginRight:halfwidth,

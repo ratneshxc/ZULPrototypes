@@ -33,7 +33,8 @@ class FlatListItem extends Component {
 
                         flexDirection: 'row',
 
-                        backgroundColor: '#FFFFFF'
+                        backgroundColor: '#FFFFFF',
+                        
 
 
                     }}>
@@ -47,36 +48,21 @@ class FlatListItem extends Component {
 
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={{ flex: 5, fontWeight: 'bold' }}>Dr. Pritam Kurunukar</Text>
+                                <Text style={[styles.textStyle,{fontWeight: 'bold'}]}>Dr. Pritam Kurunukar</Text>
 
 
 
                             </View>
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={{ flex: 5 }}>MBBS,DOMS,Fellowship in Glaucoma</Text>
+                                <Text style={styles.textStyle}>MBBS,DOMS,Fellowship in Glaucoma</Text>
 
 
 
                             </View>
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={{ flex: 5 }}>Dermitologist</Text>
-
-
-
-                            </View>
-
-                            <View style={{ flexDirection: 'row' }}>
-
-                                <Text style={{ flex: 5 }}>$37 .. 30 Reviews</Text>
-
-
-
-                            </View>
-                            <View style={{ flexDirection: 'row' }}>
-
-                                <Text style={{ flex: 5 }}>9 years of experience</Text>
+                                <Text style={styles.textStyle}>Dermitologist</Text>
 
 
 
@@ -84,7 +70,22 @@ class FlatListItem extends Component {
 
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={{ flex: 5 }}>Available today at BrookField Hospital</Text>
+                                <Text style={styles.textStyle}>$37 .. 30 Reviews</Text>
+
+
+
+                            </View>
+                            <View style={{ flexDirection: 'row' ,marginTop:10}}>
+
+                                <Text style={styles.textStyle}>9 years of experience</Text>
+
+
+
+                            </View>
+
+                            <View style={{ flexDirection: 'row' }}>
+
+                                <Text style={styles.textStyle}>Available today at BrookField Hospital</Text>
 
 
 
@@ -96,7 +97,7 @@ class FlatListItem extends Component {
 
 
 
-                        backgroundColor: '#AAAAAA'
+                        backgroundColor: '#FFFFFF'
 
 
                     }}
@@ -146,7 +147,7 @@ export default class Daily extends Component {
                 </View>
             </View>
 
-                <View style={{flex:1}}>
+                <View style={[styles.flatListItem]}>
 
                     <FlatList
 
@@ -183,9 +184,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     flatListItem: {
-        color: '#eee',
+        color: '#000',
         padding: 10,
-        fontSize: 16
+        fontSize: 16,
+        flex:1
     },
     container: {
 
@@ -197,6 +199,12 @@ const styles = StyleSheet.create({
 
         right: 10
 
+    },
+    textStyle:{
+        flex: 5, 
+        fontFamily: 'Arial',
+        color:"#222",
+        fontSize: 16,
     }
 
 });
