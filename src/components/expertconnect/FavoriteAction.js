@@ -11,13 +11,13 @@ class LikeSection extends React.Component {
     constructor() {
         super();
         this.state = {
-            iconColor: '#AAAAAA'
+            iconColor: '#000000'
         }
     }
 
     iconClickHandler = () => {
         this.setState({
-            iconColor: this.state.iconColor === '#AAAAAA' ? '#ff0000' : '#AAAAAA'
+            iconColor: this.state.iconColor === '#000000' ? '#ff0000' : '#000000'
         })
     }
     render() {
