@@ -4,12 +4,15 @@ import { AppRegistry, ProgressBarAndroid, FlatList, StyleSheet, Text, View, Imag
 
 import dashboardData from '../../data/expertConnectListData';
 
+import * as Progress from 'react-native-progress';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card, CardItem, Right, Left, Body } from 'native-base';
 import Favorite from './FavoriteAction';
 import MailAction from './MailAction';
 import CallAction from './CallAction';
 import BookAction from './BookAction';
 import FilterAction from './FilterAction';
+import ExpertConnectHeader from './ExpertConnectHeader';
 
 class FlatListItem extends Component {
 
@@ -25,37 +28,45 @@ class FlatListItem extends Component {
 
             <View >
 
-                <Card>
+                <Card style={ {
+                    padding:2,
+                }}>
 
                     <CardItem style={{
 
                         flex: 2,
-
+                        padding:2,
                         flexDirection: 'row',
 
                         backgroundColor: '#FFFFFF',
-                        
+                        borderBottomColor: '#AAAAAA',
+                        borderBottomWidth: 1
+
 
 
                     }}>
-                        <View style={{ flexDirection: 'column' }}>
-                            <Image style={{ width: 50, height: 50, borderRadius: 100, marginRight: 5 }} source={require('../../assests/images/suresh.png')} />
-                            <Text style={{ marginRight: 5, flex: 1 }}>70%</Text>
-                            <Text style={{ marginRight: 5 }}>150 votes</Text>
+                        <View style={{ flexDirection: 'column', marginRight: 10 }}>
+                            <Image style={{ width: 50, height: 50, borderRadius: 100 }} source={require('../../assests/images/suresh.png')} />
+                             <Text style={[{ color: "#28a745",marginTop:9 }]}>Available</Text>
+                             <Text style={[{color:"black"}]}>$37</Text>
+
+
+
+
                         </View>
 
-                        <View style={{ flex: 1, flexDirection: 'column' }}>
+                        <View style={{ flex: 2, flexDirection: 'column' }}>
 
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={[styles.textStyle,{fontWeight: 'bold'}]}>Dr. Pritam Kurunukar</Text>
+                                <Text style={[styles.textStyle, { fontWeight: 'bold' }]}>Dr. Pritam K</Text>
 
 
 
                             </View>
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={styles.textStyle}>MBBS,DOMS,Fellowship in Glaucoma</Text>
+                                <Text style={styles.textStyle}>MBBS,DOMS</Text>
 
 
 
@@ -68,28 +79,36 @@ class FlatListItem extends Component {
 
                             </View>
 
+<View style={{ flexDirection: 'row' }}>
+
+<Text style={styles.textStyle}>9 yrs exp</Text>
+
+
+
+</View>
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={styles.textStyle}>$37 .. 30 Reviews</Text>
-
-
-
-                            </View>
-                            <View style={{ flexDirection: 'row' ,marginTop:10}}>
-
-                                <Text style={styles.textStyle}>9 years of experience</Text>
+                                <Text style={styles.textStyle}>BrookField Hospital</Text>
 
 
 
                             </View>
 
-                            <View style={{ flexDirection: 'row' }}>
-
-                                <Text style={styles.textStyle}>Available today at BrookField Hospital</Text>
 
 
 
-                            </View>
+                        </View>
+                        <View style={{ flexDirection: 'column', marginLeft: 5 }}>
+                            <Text style={{ color: "#000" }}>70%</Text>
+                            <Progress.Bar style={{ borderRadius: 0, borderWidth: 0, marginLeft: -1, padding: 0 }} progress={0.7} width={50} color={"#28a745"} unfilledColor={'#AAAAAA'} />
+                            <Text style={{ color: "#000" }}>150 votes</Text>
+                            <Text
+                                style={{ color: "#17a2b8", textDecorationStyle: "solid", textDecorationLine: "underline" }}>
+                                30 Reviews
+                                 </Text>
+                                 <Text style={{ color: "#000" }}> </Text>
+                                 <Text style={{ color: "#000" }}> </Text>
+
 
                         </View>
                     </CardItem>
@@ -97,7 +116,10 @@ class FlatListItem extends Component {
 
 
 
-                        backgroundColor: '#FFFFFF'
+                        backgroundColor: '#FFFFFF',
+                        padding:2,
+                        height:30,
+                        marginTop:2
 
 
                     }}
@@ -106,8 +128,8 @@ class FlatListItem extends Component {
                             <Favorite />
                         </Left>
                         <Body>
-                            </Body>
-                        <Right style={{ flexDirection: 'row' }}>
+                        </Body>
+                        <Right style={{ flexDirection: 'row', paddingRight: 10 }}>
                             <MailAction />
                             <CallAction />
                             <BookAction />
@@ -132,27 +154,21 @@ export default class Daily extends Component {
         console.log('Button pressed');
 
     }
+ 
 
     render() {
 
         return (
-            <View style={{ flex: 1, marginBottom: 50 ,flexDirection:'column'}}>
-
-            <View style={{marginTop:5}} >
-                <View style={{flex:1}}>
-                <Text style={{marginLeft:10,fontWeight:'bold'}}>EXPERT CONNECT</Text>
-                    </View>
-                <View style={{marginRight:5}}>
-                    <FilterAction />
-                </View>
-            </View>
+            <View style={{ flex: 1, marginBottom: 50, flexDirection: 'column' }}>
+                <ExpertConnectHeader />
 
                 <View style={[styles.flatListItem]}>
 
                     <FlatList
 
                         data={dashboardData}
-
+                      
+    
                         renderItem={({ item, index }) => {
                             return (
 
@@ -186,8 +202,8 @@ const styles = StyleSheet.create({
     flatListItem: {
         color: '#000',
         padding: 10,
-        fontSize: 16,
-        flex:1
+        fontSize: 15,
+        flex: 1
     },
     container: {
 
@@ -200,11 +216,11 @@ const styles = StyleSheet.create({
         right: 10
 
     },
-    textStyle:{
-        flex: 5, 
+    textStyle: {
+        flex: 5,
         fontFamily: 'Arial',
-        color:"#222",
-        fontSize: 16,
+        color: "#222",
+        fontSize: 15,
     }
 
 });
