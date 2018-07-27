@@ -31,6 +31,10 @@ const mapDispatchToProps = dispatch => ({
     openTutorialModal: () => dispatch({
         type: 'TutorialReducer_TutorialVisible',
         payload: true
+    }),
+    closeCommentModal: () => dispatch({
+        type: 'CommentReducer_ShowComment',
+        payload: true
     })
 })
 
@@ -62,7 +66,7 @@ class FooterSection extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.comment}>
-                    <TouchableOpacity style={styles.btn}>
+                    <TouchableOpacity style={styles.btn} onPress={this.props.closeCommentModal}>
                         <Text>Write a Comment...</Text>
                     </TouchableOpacity>
                 </View>

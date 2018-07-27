@@ -5,6 +5,7 @@ import { Root } from 'native-base';
 import { connect } from 'react-redux';
 import Zula from './src/components/Zula/Zula';
 import Reward from './src/components/reward/Reward';
+import Comment from './src/components/comment/Comment';
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
@@ -22,6 +23,7 @@ class ZingUpLifeApp extends Component {
                 </Root>
                 <Zula />
                 <Reward />
+                <Comment />
                 {this.props.isCongratulationVisible && <Image style={{ position: 'absolute', top: 0, left: 0, width: deviceWidth, height: deviceHeight }} source={require('./src/assests/images/congratulation-anim.gif')} />}
             </View>
         );

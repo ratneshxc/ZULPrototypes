@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Alert } from 'react-native';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
 import { connect } from 'react-redux';
 import FadeInView from '../animations/FadeInView';
@@ -43,29 +43,39 @@ class AnswerSection extends Component {
     this.props.questions[this.props.currentQuestion.no - 1].selectedIndex = index;
     this.props.getAllQuestion(this.props.questions);
     let questionIndex = this.props.currentQuestion.no;
-    if (this.props.currentQuestion.no >= this.props.questions.length) {
-      questionIndex--;
-    }
-    if (this.props.currentQuestion.no == 5) {
-      this.props.addReward(100);
-      this.props.congratulate(true);
-      setTimeout(()=>{
-        this.props.openRewardModal(true);
-      },500)
-      setTimeout(() => {
-        this.props.congratulate(false);
-      }, 1800)
-    } else {
-      setTimeout(() => {
-        this.props.loadingNextQuestion(true);
+    if (questionIndex !== this.props.questions.length) {
+      if (this.props.currentQuestion.no >= this.props.questions.length) {
+        questionIndex--;
+      }
+      if (this.props.currentQuestion.no == 5) {
+        this.props.addReward(100);
+        this.props.congratulate(true);
         setTimeout(() => {
-          this.props.goToQuestion(this.props.questions[questionIndex]);
-          this.props.loadingNextQuestion(false);
-        }, 200)
-      }, 500)
+          this.props.openRewardModal(true);
+        }, 500)
+        setTimeout(() => {
+          this.props.congratulate(false);
+        }, 1800)
+      } else {
+        setTimeout(() => {
+          this.props.loadingNextQuestion(true);
+          setTimeout(() => {
+            this.props.goToQuestion(this.props.questions[questionIndex]);
+            this.props.loadingNextQuestion(false);
+          }, 200)
+        }, 500)
+      }
+    } else {
+      Alert.alert(
+        'Congratulations',
+        'Just one more step to go. Do you want to submit assessment and get report?',
+        [
+          { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+          { text: 'Get Report', onPress: () => {} },
+        ],
+        { cancelable: false }
+      )
     }
-
-
   }
 
   render() {
