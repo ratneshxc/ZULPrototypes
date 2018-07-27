@@ -159,7 +159,7 @@ export default class Daily extends Component {
     render() {
 
         return (
-            <View style={{ flex: 1, marginBottom: 50, flexDirection: 'column' }}>
+            <View style={{ flex: 1, flexDirection: 'column' }}>
                 <ExpertConnectHeader />
 
                 <View style={[styles.flatListItem]}>

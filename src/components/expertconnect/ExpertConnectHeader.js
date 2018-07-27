@@ -1,41 +1,75 @@
-import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import React, { Component } from "react";
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Text,
+  Button,
+  Left,
+  Right,
+  Body,
+  Segment,Badge
+} from "native-base";
 
+import{View} from "react-native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 export default class QuestionHeader extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          seg: 4
+        };
+      }
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.headerLeft}>
-                    <Text style={styles.header}>Expert Connect</Text>
-                </View>
-                <View style={styles.headerRight}>
-                    <Text style={{ color: '#ffffff', fontWeight: 'bold', marginTop: 3 }}><Icon name="filter" style={{ marginRight: 5 }} size={20} /></Text>
-                </View>
-            </View>
+           
+            <View>
+            <Header hasSegment>
+              <Left>
+                <Button transparent onPress={() => this.props.navigation.goBack()}>
+                  <Icon name="chevron-left" size={25} style={{color:"#FFFFFF"}} />
+                </Button>
+              </Left>
+              <Body>
+                <Title>Expert Connect</Title>
+              </Body>
+              <Right>
+                <Button transparent>
+                  <Icon name="filter" size={25} style={{color:"#FFFFFF"}} />
+                </Button>
+              </Right>
+            </Header>
+            <Segment >
+      
+              <Badge
+                first
+                active={true}
+                onPress={() => this.setState({ seg: 1 })}
+                style={{marginRight:10,borderLeftColor:"#ffffff",backgroundColor:"#ffffff",}}
+              >
+                <Text style={{color:"#3475DF"}}>2 Filters Active</Text>
+              </Badge>
+              <Badge
+                first
+                active={true}
+                onPress={() => this.setState({ seg: 1 })}
+                style={{marginRight:10,borderLeftColor:"#ffffff",backgroundColor:"#ffffff",}}
+              >
+                <Text style={{color:"#3475DF"}}>AECS Lay..</Text>
+              </Badge>
+              <Badge
+                first
+                active={true}
+                onPress={() => this.setState({ seg: 1 })}
+                style={{marginRight:10,borderLeftColor:"#ffffff",backgroundColor:"#ffffff",}}
+              >
+                <Text style={{color:"#3475DF"}}>MBBS</Text>
+              </Badge>
+         
+            </Segment>
+    </View>
+          
         )
     }
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#5067ffd1',
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        flexDirection: 'row'
-    },
-    header: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#ffffff'
-    },
-    headerLeft: {
-        flex: 1
-    },
-    headerRight: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-end'
-    }
-})
