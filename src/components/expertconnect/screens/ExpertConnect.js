@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 
 import { AppRegistry, ProgressBarAndroid, FlatList, StyleSheet, Text, View, Image, ScrollView, Button, Dimensions, ImageBackground } from 'react-native';
 
-import dashboardData from '../../data/expertConnectListData';
+import dashboardData from '../../../data/expertConnectListData';
 
 import * as Progress from 'react-native-progress';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card, CardItem, Right, Left, Body } from 'native-base';
-import Favorite from './FavoriteAction';
-import MailAction from './MailAction';
-import CallAction from './CallAction';
-import BookAction from './BookAction';
-import FilterAction from './FilterAction';
-import ExpertConnectHeader from './ExpertConnectHeader';
+import Favorite from '../components/FavoriteAction';
+import MailAction from '../components/MailAction';
+import CallAction from '../components/CallAction';
+import BookAction from '../components/BookAction';
+import ExpertConnectHeader from '../components/ExpertConnectHeader';
 
 class FlatListItem extends Component {
 
@@ -46,7 +45,7 @@ class FlatListItem extends Component {
 
                     }}>
                         <View style={{ flexDirection: 'column', marginRight: 10 }}>
-                            <Image style={{ width: 50, height: 50, borderRadius: 100 }} source={require('../../assests/images/suresh.png')} />
+                            <Image style={{ width: 50, height: 50, borderRadius: 100 }} source={require('../../../assests/images/suresh.png')} />
                              <Text style={[{ color: "#28a745",marginTop:9 }]}>Available</Text>
                              <Text style={[{color:"black"}]}>$37</Text>
 
@@ -159,7 +158,7 @@ export default class Daily extends Component {
     render() {
 
         return (
-            <View style={{ flex: 1, marginBottom: 50, flexDirection: 'column' }}>
+            <View style={{ flex: 1, flexDirection: 'column' }}>
                 <ExpertConnectHeader />
 
                 <View style={[styles.flatListItem]}>
