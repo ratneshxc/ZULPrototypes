@@ -22,6 +22,18 @@ const mapDispatchToProps = dispatch => ({
   loadingNextQuestion: (isLoading) => dispatch({
     type: 'AssessmentReducer_IsNextQuestionLoading',
     payload: isLoading
+  }),
+  addReward: (reward) => dispatch({
+    type: 'RewardReducer_AddReward',
+    payload: reward
+  }),
+  congratulate: (value) => dispatch({
+    type: 'RewardReducer_Congratulate',
+    payload: value
+  }),
+  openRewardModal: (value) => dispatch({
+    type: 'RewardReducer_RewardModalVisible',
+    payload: value
   })
 })
 
@@ -34,13 +46,26 @@ class AnswerSection extends Component {
     if (this.props.currentQuestion.no >= this.props.questions.length) {
       questionIndex--;
     }
-    setTimeout(() => {
-      this.props.loadingNextQuestion(true);
+    if (this.props.currentQuestion.no == 5) {
+      this.props.addReward(100);
+      this.props.congratulate(true);
+      setTimeout(()=>{
+        this.props.openRewardModal(true);
+      },500)
       setTimeout(() => {
-        this.props.goToQuestion(this.props.questions[questionIndex]);
-        this.props.loadingNextQuestion(false);
-      }, 200)
-    }, 500)
+        this.props.congratulate(false);
+      }, 1800)
+    } else {
+      setTimeout(() => {
+        this.props.loadingNextQuestion(true);
+        setTimeout(() => {
+          this.props.goToQuestion(this.props.questions[questionIndex]);
+          this.props.loadingNextQuestion(false);
+        }, 200)
+      }, 500)
+    }
+
+
   }
 
   render() {

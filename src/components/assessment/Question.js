@@ -10,9 +10,6 @@ const mapStateToProps = state => ({
     isNextQuestionLoading: state.Assessment.isNextQuestionLoading
 })
 
-const mapDispatchToProps = dispatch => ({
-
-})
 
 class Question extends Component {
 
@@ -33,4 +30,4 @@ class Question extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Question);
+export default connect(mapStateToProps)(Question);

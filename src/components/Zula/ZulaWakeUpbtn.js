@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
+import { View, StyleSheet, Text, Dimensions, Image, TouchableHighlight } from 'react-native';
 import Tts from 'react-native-tts';
-import { Fab, Button } from 'native-base';
 import { connect } from 'react-redux';
 import Voice from 'react-native-voice';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -113,8 +112,8 @@ class ZulaWakeUpbtn extends Component {
         this.zulaSpeak(text);
     }
     zulaSpeak(text) {
-        this.props.zulaText(text);
         Tts.speak(text);
+        this.props.zulaText(text);
     }
     selectAnswer = (index) => {
         this.props.questions[this.props.currentQuestion.no - 1].selectedIndex = index;
@@ -181,23 +180,25 @@ class ZulaWakeUpbtn extends Component {
         Tts.removeAllListeners();
     }
     render() {
-        let width = Dimensions.get('screen').width / 2 - 45;
-        let height = Dimensions.get('screen').height / 2 - 150;
         return (
-            <Fab
-                containerStyle={{}}
-                style={{ backgroundColor: '#5067FF', bottom: 50 }}
-                position="bottomRight"
-                onPress={this._startRecognizing.bind(this)}
-            >
-                <Icon name="microphone" type="FontAwesome" />
-            </Fab>
+            <TouchableHighlight style={styles.zulaBtn} onPress={this._startRecognizing.bind(this)}>
+                <Image style={styles.zula} source={require('../../assests/images/zula/zula-anim.gif')} />
+            </TouchableHighlight>
         )
     }
 }
+
+
 const styles = StyleSheet.create({
     zulaBtn: {
-        zIndex: 10
+        position: 'absolute',
+        bottom: 50,
+        left: Dimensions.get('window').width - 80,
+        borderRadius: 50
+    },
+    zula: {
+        width: 80,
+        height: 80
     }
 })
 
