@@ -6,6 +6,8 @@ import Assessment from '../components/assessment/Assessment';
 import Register from '../components/register/Register';
 import Dashboard from '../components/dashboard/Dashboard';
 import ExpertConnect from '../components/expertconnect/screens/ExpertConnect';
+import ExpertFilter from '../components/expertconnect/screens/ExpertFilter'
+
 import AssessmentReport from '../components/report/AssessmentReport';
 import Goals from '../components/goals/Goals';
 import Community from '../components/community/Community';
@@ -81,6 +83,15 @@ const TabRoute = createBottomTabNavigator({
     showIcon: true,
     swipeEnabled: false,
   }, )
+
+// const AppRoute = createSwitchNavigator({
+//   Login: { screen: Login },
+//   Assessment: { screen: Assessment },
+//   Register: { screen: Register },
+//   Home: { screen: TabRoute },
+//   ExpertFilter:{screen:ExpertFilter}, 
+//   AssessmentReport: { screen: AssessmentReport }
+// });
 
 // const AppRoute = createSwitchNavigator({
 //   Login: { screen: Login },

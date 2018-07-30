@@ -9,21 +9,28 @@ const GoalComponent = (props) => {
                 <View>
                     <Thumbnail source={props.goalObj.imageURL} />
                 </View>
-                <View style={{ flex: 1 ,paddingLeft:5}}>
-                    <View style={{ flexDirection: 'row'}}>
+                <View style={{ flex: 1, paddingLeft: 5 }}>
+                    <View style={{ flexDirection: 'row' }}>
                         <View style={{ flex: 1 }}>
                             <Text style={{ color: '#000000' }}>{props.goalObj.title}</Text>
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-                            <Text>Created: <Text style={{ fontWeight: 'bold' }}>{props.goalObj.createDate}</Text></Text>
+                            <Text style={{fontSize: 10}}>Created: <Text style={{ fontWeight: 'bold' }}>{props.goalObj.createDate}</Text></Text>
                         </View>
                     </View>
-                    <Text note>{props.goalObj.description}</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flex: 1 }}>
+                            <Text note>{props.goalObj.description}</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                            <Text style={{ fontSize: 10,marginTop:30 }}>{props.goalObj.completion} completed</Text>
+                        </View>
+                    </View>
                 </View>
             </View>
-            <View style={{ width: props.goalObj.completion, height: 5, backgroundColor: '#01d300' }}>
+            <View style={{ width: props.goalObj.completion, height: 3, backgroundColor: '#01d300' }}>
             </View>
-        </Card>
+        </Card >
     )
 }
 const styles = StyleSheet.create({

@@ -2,34 +2,34 @@ const initialState = {
     isWishVisible: true,
     goals: [
         {
-            imageURL: require('../../assests/images/Yoga2.jpg'),
+            imageURL: require('../../assests/images/goals/running.jpg'),
             title:'Running',
             description:'23 km completed in 10 days',
-            completion:'30%',
+            completion:'60%',
             createDate:'20/01/2018',
             remaining:'2 hrs'
         },
         {
-            imageURL: require('../../assests/images/Yoga2.jpg'),
-            title:'Running',
-            description:'23 km completed in 10 days',
-            completion:'30%',
+            imageURL: require('../../assests/images/goals/morning.jpg'),
+            title:'Morning Habbits for your health',
+            description:'Drink 3 bottles of fresh water everyday',
+            completion:'80%',
             createDate:'20/01/2018',
             remaining:'2 hrs'
         },
         {
-            imageURL: require('../../assests/images/Yoga2.jpg'),
-            title:'Running',
-            description:'23 km completed in 10 days',
-            completion:'30%',
+            imageURL: require('../../assests/images/goals/money.jpg'),
+            title:'Save money for trip',
+            description:'Save more that 5000 rs everyday by avoiding having junk food',
+            completion:'20%',
             createDate:'20/01/2018',
             remaining:'2 hrs'
         },
         {
-            imageURL: require('../../assests/images/Yoga2.jpg'),
-            title:'Running',
-            description:'23 km completed in 10 days',
-            completion:'30%',
+            imageURL: require('../../assests/images/goals/relationship.jpg'),
+            title:'Connect with near and dear',
+            description:'Call and ask the status of parent',
+            completion:'90%',
             createDate:'20/01/2018',
             remaining:'2 hrs'
         }
