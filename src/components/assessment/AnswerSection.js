@@ -71,7 +71,11 @@ class AnswerSection extends Component {
         'Just one more step to go. Do you want to submit assessment and get report?',
         [
           { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-          { text: 'Get Report', onPress: () => {} },
+          {
+            text: 'Get Report', onPress: () => {
+              this.props.goToReportClick();
+            }
+          },
         ],
         { cancelable: false }
       )

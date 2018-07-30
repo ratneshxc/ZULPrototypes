@@ -1,8 +1,6 @@
 import React from 'react'
-import {
-  createSwitchNavigator,
-  createBottomTabNavigator
-} from 'react-navigation';
+import { createSwitchNavigator, createBottomTabNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Login from '../components/login/Login';
 import Assessment from '../components/assessment/Assessment';
 import Register from '../components/register/Register';
@@ -10,41 +8,98 @@ import Dashboard from '../components/dashboard/Dashboard';
 import ExpertConnect from '../components/expertconnect/screens/ExpertConnect';
 import ExpertFilter from '../components/expertconnect/screens/ExpertFilter'
 
+import AssessmentReport from '../components/report/AssessmentReport';
+import Goals from '../components/goals/Goals';
+import Community from '../components/community/Community';
+import History from '../components/history/History';
 
 const TabRoute = createBottomTabNavigator({
-  Dashboard: Dashboard,
-  ExpertConnect: ExpertConnect,
-},
-  {
-    navigationOptions: ({ navigation }) => ({
+  Dashboard: {
+    screen: Dashboard,
+    navigationOptions: {
+      title: 'Today',
       tabBarIcon: ({ focused, tintColor }) => {
-        const { routeName } = navigation.state;
-        let iconName;
-        if (routeName === 'Home') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-        } else if (routeName === 'Settings') {
-          iconName = `ios-options${focused ? '' : '-outline'}`;
-        }
-
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
-        return null;
-      },
-    }),
+        const iconName = `home${focused ? '' : ''}`;
+        return <Icon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  },
+  Goals: {
+    screen: Goals,
+    navigationOptions: {
+      title: 'Goals',
+      tabBarIcon: ({ focused, tintColor }) => {
+        const iconName = `home${focused ? '' : ''}`;
+        return <Icon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  },
+  Community: {
+    screen: Community,
+    navigationOptions: {
+      title: 'Community',
+      tabBarIcon: ({ focused, tintColor }) => {
+        const iconName = `home${focused ? '' : ''}`;
+        return <Icon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  },
+  ExpertConnect: {
+    screen: ExpertConnect,
+    navigationOptions: {
+      title: 'Expert',
+      tabBarIcon: ({ focused, tintColor }) => {
+        const iconName = `home${focused ? '' : ''}`;
+        return <Icon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  },
+  History: {
+    screen: History,
+    navigationOptions: {
+      title: 'History',
+      tabBarIcon: ({ focused, tintColor }) => {
+        const iconName = `home${focused ? '' : ''}`;
+        return <Icon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  }
+}, {
+    tabBarPosition: 'bottom',
+    animationEnabled: false,
     tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
+      activeTintColor: '#5067FF',
+      inactiveTintColor: '#000000',
+      inactiveBackgroundColor: '#ffffff',
+      activeBackgroundColor: '#ffffff',
+      labelStyle: {
+        fontSize: 10,
+        paddingBottom: 3,
+      },
+      style: {
+        backgroundColor: '#ffffff',
+      },
     },
-  });
-
+    showIcon: true,
+    swipeEnabled: false,
+  }, )
 
 const AppRoute = createSwitchNavigator({
   Login: { screen: Login },
   Assessment: { screen: Assessment },
   Register: { screen: Register },
   Home: { screen: TabRoute },
-  ExpertFilter:{screen:ExpertFilter}
+  ExpertFilter:{screen:ExpertFilter},
+  AssessmentReport: { screen: AssessmentReport }
 });
+
+// const AppRoute = createSwitchNavigator({
+//   Home: { screen: TabRoute },
+//   Login: { screen: Login },
+//   Assessment: { screen: Assessment },
+//   Register: { screen: Register },
+//   AssessmentReport: { screen: AssessmentReport }
+// });
 
 
 export default AppRoute;
