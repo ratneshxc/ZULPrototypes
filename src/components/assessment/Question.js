@@ -21,7 +21,7 @@ class Question extends Component {
                     <QuestionSection />
                 </View>
                 <View style={{ flex: 1 }}>
-                    {!this.props.isNextQuestionLoading && <AnswerSection />}
+                    {!this.props.isNextQuestionLoading && <AnswerSection goToReportClick={this.props.goToReportClick} />}
                 </View>
                 <FooterSection goToLoginClick={this.props.goToLoginClick} />
 

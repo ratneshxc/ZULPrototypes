@@ -108,7 +108,7 @@ class ZulaWakeUpbtn extends Component {
 
     }
     wakeUpZula = () => {
-        let text = 'Hi KK, I am ZULA. How can I help you?';
+        let text = 'Hello friends, chai pilo, garam garam chai';
         this.zulaSpeak(text);
     }
     zulaSpeak(text) {
