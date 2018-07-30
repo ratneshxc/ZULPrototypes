@@ -89,7 +89,7 @@ const AppRoute = createSwitchNavigator({
   Assessment: { screen: Assessment },
   Register: { screen: Register },
   Home: { screen: TabRoute },
-  ExpertFilter:{screen:ExpertFilter},
+  ExpertFilter:{screen:ExpertFilter}, 
   AssessmentReport: { screen: AssessmentReport }
 });
 

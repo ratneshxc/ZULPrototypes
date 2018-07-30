@@ -13,6 +13,7 @@ import CallAction from '../components/CallAction';
 import BookAction from '../components/BookAction';
 import ExpertConnectHeader from '../components/ExpertConnectHeader';
 
+
 class FlatListItem extends Component {
 
     _onPressButton(e) {
@@ -153,13 +154,16 @@ export default class Daily extends Component {
         console.log('Button pressed');
 
     }
- 
+    
+    filterList = () => {
+        this.props.navigation.navigate('ExpertFilter');
+      }
 
     render() {
 
         return (
             <View style={{ flex: 1, flexDirection: 'column' }}>
-                <ExpertConnectHeader />
+                <ExpertConnectHeader filterList={this.filterList}/>
 
                 <View style={[styles.flatListItem]}>
 
