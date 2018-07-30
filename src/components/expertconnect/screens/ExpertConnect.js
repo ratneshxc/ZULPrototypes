@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { AppRegistry, ProgressBarAndroid, FlatList, StyleSheet, Text, View, Image, ScrollView, Button, Dimensions, ImageBackground } from 'react-native';
 
-import dashboardData from '../../../data/expertConnectListData';
+import expertListData from '../../../data/expertConnectListData';
 
 import * as Progress from 'react-native-progress';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -28,27 +28,25 @@ class FlatListItem extends Component {
 
             <View >
 
-                <Card style={ {
-                    padding:2,
+                <Card style={{
+                    padding: 2,
                 }}>
 
                     <CardItem style={{
 
                         flex: 2,
-                        padding:2,
+                        padding: 2,
                         flexDirection: 'row',
 
-                        backgroundColor: '#FFFFFF',
-                        borderBottomColor: '#AAAAAA',
-                        borderBottomWidth: 1
+                       
 
 
 
                     }}>
                         <View style={{ flexDirection: 'column', marginRight: 10 }}>
                             <Image style={{ width: 50, height: 50, borderRadius: 100 }} source={require('../../../assests/images/suresh.png')} />
-                             <Text style={[{ color: "#28a745",marginTop:9 }]}>Available</Text>
-                             <Text style={[{color:"black"}]}>$37</Text>
+                            <Text style={[{ color: "#28a745", marginTop: 9 }]}>{this.props.item.availableON}</Text>
+                            <Text style={[{ color: "black" }]}>{this.props.item.fee}</Text>
 
 
 
@@ -59,36 +57,36 @@ class FlatListItem extends Component {
 
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={[styles.textStyle, { fontWeight: 'bold' }]}>Dr. Pritam K</Text>
+                                <Text style={[styles.textStyle, { fontWeight: 'bold' }]}>{this.props.item.name}</Text>
 
 
 
                             </View>
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={styles.textStyle}>MBBS,DOMS</Text>
+                                <Text style={styles.textStyle}>{this.props.item.education}</Text>
 
 
 
                             </View>
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={styles.textStyle}>Dermitologist</Text>
+                                <Text style={styles.textStyle}>{this.props.item.designation}</Text>
 
 
 
                             </View>
 
-<View style={{ flexDirection: 'row' }}>
-
-<Text style={styles.textStyle}>9 yrs exp</Text>
-
-
-
-</View>
                             <View style={{ flexDirection: 'row' }}>
 
-                                <Text style={styles.textStyle}>BrookField Hospital</Text>
+                                <Text style={styles.textStyle}>{this.props.item.experience}</Text>
+
+
+
+                            </View>
+                            <View style={{ flexDirection: 'row' }}>
+
+                                <Text style={styles.textStyle}>{this.props.item.location}</Text>
 
 
 
@@ -99,15 +97,15 @@ class FlatListItem extends Component {
 
                         </View>
                         <View style={{ flexDirection: 'column', marginLeft: 5 }}>
-                            <Text style={{ color: "#000" }}>70%</Text>
-                            <Progress.Bar style={{ borderRadius: 0, borderWidth: 0, marginLeft: -1, padding: 0 }} progress={0.7} width={50} color={"#28a745"} unfilledColor={'#AAAAAA'} />
-                            <Text style={{ color: "#000" }}>150 votes</Text>
+                            <Text style={{ color: "#000" }}>{this.props.item.reviewSummary.positiveVote}%</Text>
+                            <Progress.Bar style={{ borderRadius: 0, borderWidth: 0, marginLeft: -1, padding: 0 }} progress={this.props.item.reviewSummary.progress} width={80} color={this.props.item.reviewSummary.progressColor} unfilledColor={'#AAAAAA'} />
+                            <Text style={{ color: "#000" }}>{this.props.item.reviewSummary.totalVotes} Votes</Text>
                             <Text
                                 style={{ color: "#17a2b8", textDecorationStyle: "solid", textDecorationLine: "underline" }}>
-                                30 Reviews
+                              {this.props.item.reviewSummary.totalReviews} Reviews
                                  </Text>
-                                 <Text style={{ color: "#000" }}> </Text>
-                                 <Text style={{ color: "#000" }}> </Text>
+                            <Text style={{ color: "#000" }}> </Text>
+                            <Text style={{ color: "#000" }}> </Text>
 
 
                         </View>
@@ -117,9 +115,9 @@ class FlatListItem extends Component {
 
 
                         backgroundColor: '#FFFFFF',
-                        padding:2,
-                        height:30,
-                        marginTop:2
+                        padding: 2,
+                        height: 30,
+                        marginTop: 2
 
 
                     }}
@@ -154,24 +152,24 @@ export default class Daily extends Component {
         console.log('Button pressed');
 
     }
-    
+
     filterList = () => {
         this.props.navigation.navigate('ExpertFilter');
-      }
+    }
 
     render() {
 
         return (
             <View style={{ flex: 1, flexDirection: 'column' }}>
-                <ExpertConnectHeader filterList={this.filterList}/>
+                <ExpertConnectHeader filterList={this.filterList} />
 
                 <View style={[styles.flatListItem]}>
 
                     <FlatList
 
-                        data={dashboardData}
-                      
-    
+                        data={expertListData}
+
+
                         renderItem={({ item, index }) => {
                             return (
 
