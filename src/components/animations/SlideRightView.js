@@ -18,7 +18,7 @@ class SlideRightView extends Component {
             }
         ).start();
     }
- 
+
     render() {
         let { translateXValue } = this.state;
         return (

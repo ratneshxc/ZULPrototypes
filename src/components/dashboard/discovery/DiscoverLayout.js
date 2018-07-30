@@ -10,7 +10,7 @@ const DiscoverLayout = () => {
             <View>
                 <H3>Discover Today</H3>
             </View>
-            <PodcastComponent />
+            {/* <PodcastComponent /> */}
             <WeekStatus />
         </View>
     )

@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { ListItem, Body, Right, Left ,Thumbnail} from 'native-base';
+import { Thumbnail, Card } from 'native-base';
 
-const GoalComponent = () => {
+const GoalComponent = (props) => {
     return (
-
-        <ListItem avatar>
-            <Left>
-                <Thumbnail source={require('../../../assests/images/Yoga2.jpg')} />
-            </Left>
-            <Body>
-                <Text style={{color:'#000000'}}>10000 steps per day</Text>
-                <Text note>Doing what you like will always keep you happy . .</Text>
-            </Body>
-            <Right>
-                <Text note>20% completed</Text>
-            </Right>
-        </ListItem>
-
+        <Card>
+            <View style={{ flexDirection: 'row', padding: 5 }}>
+                <View>
+                    <Thumbnail source={props.goalObj.imageURL} />
+                </View>
+                <View style={{ flex: 1 ,paddingLeft:5}}>
+                    <View style={{ flexDirection: 'row'}}>
+                        <View style={{ flex: 1 }}>
+                            <Text style={{ color: '#000000' }}>{props.goalObj.title}</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                            <Text>Created: <Text style={{ fontWeight: 'bold' }}>{props.goalObj.createDate}</Text></Text>
+                        </View>
+                    </View>
+                    <Text note>{props.goalObj.description}</Text>
+                </View>
+            </View>
+            <View style={{ width: props.goalObj.completion, height: 5, backgroundColor: '#01d300' }}>
+            </View>
+        </Card>
     )
 }
 const styles = StyleSheet.create({
