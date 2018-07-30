@@ -7,7 +7,8 @@ import Login from '../components/login/Login';
 import Assessment from '../components/assessment/Assessment';
 import Register from '../components/register/Register';
 import Dashboard from '../components/dashboard/Dashboard';
-import ExpertConnect from '../components/expertconnect/ExpertConnect';
+import ExpertConnect from '../components/expertconnect/screens/ExpertConnect';
+import ExpertFilter from '../components/expertconnect/screens/ExpertFilter'
 
 
 const TabRoute = createBottomTabNavigator({
@@ -41,7 +42,8 @@ const AppRoute = createSwitchNavigator({
   Login: { screen: Login },
   Assessment: { screen: Assessment },
   Register: { screen: Register },
-  Home: { screen: TabRoute }
+  Home: { screen: TabRoute },
+  ExpertFilter:{screen:ExpertFilter}
 });
 
 

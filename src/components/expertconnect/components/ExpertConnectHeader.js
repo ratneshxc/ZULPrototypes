@@ -21,6 +21,10 @@ export default class QuestionHeader extends React.Component {
           seg: 4
         };
       }
+      filterExperts = () => {
+        alert("yo");
+        this.props.navigation.navigate('ExpertFilter');
+      }
     render() {
         return (
            
@@ -35,7 +39,7 @@ export default class QuestionHeader extends React.Component {
                 <Title>Expert Connect</Title>
               </Body>
               <Right>
-                <Button transparent>
+                <Button transparent  onPress={() => this.props.filterExperts}>
                   <Icon name="filter" size={25} style={{color:"#FFFFFF"}} />
                 </Button>
               </Right>
