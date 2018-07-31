@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import AssessmentSummaryComponent from './AssessmentSummaryComponent';
 import { connect } from 'react-redux';
-import { H3 } from 'native-base';
 
 const mapStateToProps = state => ({
     assessment: state.Dashboard.assessment
@@ -56,7 +55,7 @@ class AssessmentSummaryLayout extends Component {
         return (
             <View style={styles.container}>
                 <View>
-                    <H3>Wellness</H3>
+                    <Text style={{fontSize:18,marginLeft:5}}>Wellness</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#ffffff',
         padding: 5,
-        marginTop: 10
+        marginTop: 3
     },
     blocks: {
         flex: 1,

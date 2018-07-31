@@ -31,6 +31,7 @@ class WishModal extends Component {
                 }}>
                 <View style={styles.wishModal}>
                     <View style={styles.container}>
+                        <H3 style={{ textAlign: 'center', marginBottom: 10 }}>Morning Sanjay</H3>
                         <H3 style={{ textAlign: 'center', marginBottom: 50 }}>How are you feeling today?</H3>
                         <View style={{ flexDirection: 'row' }}>
                             <View style={styles.emojiContainer}>
@@ -70,7 +71,6 @@ class WishModal extends Component {
                             </View>
 
                         </View>
-
                     </View>
                 </View>
             </Modal>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         padding: 10,
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#00000066',
+        backgroundColor: '#0000001a',
         justifyContent: 'flex-end'
     },
     container: {

@@ -29,7 +29,7 @@ const TabRoute = createBottomTabNavigator({
     navigationOptions: {
       title: 'Goals',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `bullseye${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }
@@ -39,7 +39,7 @@ const TabRoute = createBottomTabNavigator({
     navigationOptions: {
       title: 'Community',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `comments${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }
@@ -49,7 +49,7 @@ const TabRoute = createBottomTabNavigator({
     navigationOptions: {
       title: 'Expert',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `users${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }
@@ -59,7 +59,7 @@ const TabRoute = createBottomTabNavigator({
     navigationOptions: {
       title: 'History',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `history${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }

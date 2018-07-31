@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import PodcastComponent from './PodcastComponent';
 import WeekStatus from './WeekStatus';
-import {H3 } from 'native-base';
 
 const DiscoverLayout = () => {
     return (
         <View style={styles.container}>
             <View>
-                <H3>Discover Today</H3>
+            <Text style={{fontSize:18,marginLeft:5}}>Discover Today</Text>                
             </View>
             {/* <PodcastComponent /> */}
             <WeekStatus />

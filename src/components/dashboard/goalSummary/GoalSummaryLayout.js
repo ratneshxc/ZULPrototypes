@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { List } from 'native-base';
 import GoalComponent from './GoalComponent';
-import { H3 } from 'native-base';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
@@ -13,7 +12,7 @@ const GoalSummaryLayout = (props) => {
     return (
         <View style={styles.container}>
             <View>
-                <H3>Goals</H3>
+            <Text style={{fontSize:18,marginLeft:5}}>Goals</Text>
             </View>
             <List>
                 {props.goals.map((x, i) => (
