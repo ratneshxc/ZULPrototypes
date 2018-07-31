@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import AssesmentStats from './AssesmentStats';
 import AssesmentDescription from './AssesmentDescription';
-
+import { H3 } from 'native-base';
 export default class AssessmentSummaryLayout extends Component {
   
     render() {
         return (
             <View style={styles.container}>
+              <View style={{ flex: 1, alignItems: 'center' }}>
+                    <H3>Summary</H3>
+                </View>
                 <View style={{ flexDirection: 'row' }}>
                     <AssesmentStats />
                 </View>

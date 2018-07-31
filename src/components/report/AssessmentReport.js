@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
 import ReportHeader from './ReportHeader';
 import AssesmentSummaryLayout from './AssesmentSummaryLayout';
+import RecommendationPanel from './RecommendationPanel';
 export default class AssessmentReport extends React.Component {
-    goToHome = () => {
-        this.props.navigation.navigate('Home');
-    }
+
 
     render() {
         return (
@@ -13,9 +12,8 @@ export default class AssessmentReport extends React.Component {
                 <View style={styles.container}>
                     <ReportHeader />
                     <AssesmentSummaryLayout />
-                    <TouchableOpacity onPress={this.goToHome}>
-                        <Text>Go to Dashboard</Text>
-                    </TouchableOpacity>
+                    <RecommendationPanel />
+                   
                 </View>
             </ScrollView>
         )
