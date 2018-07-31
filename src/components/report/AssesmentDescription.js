@@ -13,6 +13,7 @@ export default class AssesmentDescription extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        flex:1,
         flexDirection:'column',
         padding:10
     },

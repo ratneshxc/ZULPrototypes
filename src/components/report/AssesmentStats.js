@@ -6,6 +6,7 @@ export default class AssesmentStatus extends Component {
     return (
       <View 
         style ={{
+          flex:1,
           alignItems:"center"
 ,          marginTop:10
         }}
