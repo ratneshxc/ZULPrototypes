@@ -8,15 +8,15 @@ export default class AssessmentSummaryLayout extends Component {
     render() {
         return (
             <View style={styles.container}>
-              <View style={{ flex: 1, alignItems: 'center' }}>
+              {/* <View style={{ flex: 1 }}>
                     <H3>Summary</H3>
-                </View>
+                </View> */}
                 <View style={{ flexDirection: 'row' }}>
                     <AssesmentStats />
                 </View>
-                <View style={{ flexDirection: 'row' }}>
+                {/* <View style={{ flexDirection: 'row' }}>
                     <AssesmentDescription />
-                </View>
+                </View> */}
             </View>
         )
     }

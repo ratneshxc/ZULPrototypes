@@ -8,14 +8,15 @@ export default class AssessmentReport extends React.Component {
 
     render() {
         return (
-            <ScrollView style={styles.container}>
-                <View style={styles.container}>
-                    <ReportHeader />
+
+            <View style={styles.container}>
+                <ReportHeader />
+                <ScrollView style={styles.container}>
                     <AssesmentSummaryLayout />
                     <RecommendationPanel />
-                   
-                </View>
-            </ScrollView>
+
+                </ScrollView>
+            </View>
         )
     }
 }
