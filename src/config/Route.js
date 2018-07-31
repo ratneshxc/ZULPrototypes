@@ -84,22 +84,30 @@ const TabRoute = createBottomTabNavigator({
     swipeEnabled: false,
   }, )
 
-const AppRoute = createSwitchNavigator({
-  Login: { screen: Login },
-  Assessment: { screen: Assessment },
-  Register: { screen: Register },
-  Home: { screen: TabRoute },
-  ExpertFilter:{screen:ExpertFilter}, 
-  AssessmentReport: { screen: AssessmentReport }
-});
-
 // const AppRoute = createSwitchNavigator({
-//   Home: { screen: TabRoute },
 //   Login: { screen: Login },
 //   Assessment: { screen: Assessment },
 //   Register: { screen: Register },
+//   Home: { screen: TabRoute },
+//   ExpertFilter:{screen:ExpertFilter}, 
 //   AssessmentReport: { screen: AssessmentReport }
 // });
+
+// const AppRoute = createSwitchNavigator({
+//   Login: { screen: Login },
+//   Assessment: { screen: Assessment },
+//   Register: { screen: Register },
+//   Home: { screen: TabRoute },
+//   AssessmentReport: { screen: AssessmentReport }
+// });
+
+const AppRoute = createSwitchNavigator({
+  Home: { screen: TabRoute },
+  Login: { screen: Login },
+  Assessment: { screen: Assessment },
+  Register: { screen: Register },
+  AssessmentReport: { screen: AssessmentReport }
+});
 
 
 export default AppRoute;

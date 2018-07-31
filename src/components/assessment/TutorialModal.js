@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Modal, Text, TouchableHighlight,Image, View,Dimensions, StyleSheet } from 'react-native';
+import { Modal, Text, TouchableHighlight,Image, View,Dimensions, StyleSheet,ScrollView, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
-import { Icon } from 'native-base';
+import { Icon, List ,ListItem, Body, Right, Left ,Thumbnail, Badge} from 'native-base';
 import { Card, CardTitle } from 'react-native-material-cards';
 
 const mapStateToProps = state => ({
@@ -19,6 +19,7 @@ const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width;
 const screenheight = windowObj.height / 5;
 const infowidth = windowObj.width *9/ 10;
+const B = (props) => <Text style={{fontWeight: 'bold'}}>{props.children}</Text>
 
 class TutorialModal extends Component {
     render() {
@@ -30,32 +31,43 @@ class TutorialModal extends Component {
                 onRequestClose={() => {
                   
                 }}>
-                <View style={styles.tutorialModal}>
+                <View style={styles.tutorialModal} enforceFocus={false}>
                     <View style={styles.tutorial}>
                         <View style={styles.modalHeader}>
-                        <Text style={{ width: 100,fontSize:16, height: 30, right:100,top:10,fontWeight:'bold'}} >Question info</Text>
-                        <Image style={{ width: 30, height: 30, left:125,top:6}} source={require('../../assests/images/WHO.jpg')}></Image>
-                        <Text style={{right:33,top:10}}>Suggested By: WHO</Text>
-                        
-                            <TouchableHighlight
+                        <Left>
+                            <Badge style={{ backgroundColor: '#7B68EE', left: 4}}>
+                                <Text style={{color:'white', top:2, fontWeight:'bold'}}>Views: 1129</Text>
+                            </Badge>
+                            </Left>
+                        <Text style={{ width: 100,fontSize:16, height: 30, right:80,top:10,fontWeight:'bold'}} >Details</Text>
+                       <TouchableHighlight
                                 style={styles.closeBtn}
                                 onPress={this.props.closeTutorialModal}>
                                 <Icon name="times-circle" type="FontAwesome" size={25} />
                             </TouchableHighlight>
                         </View>
                         <View style={styles.modalBody}>
-                        <Card style={{ width: screenwidth ,right:10 }} >
-                        <CardTitle
-              title="What do you do on a daily basis to ensure that you stay healthy?"
-              style={{width: screenwidth, height: 30, bottom:20}}
-            />
-            
-            <Image style={{ right:5 ,width: screenwidth-46, height: screenheight,  alignSelf: 'center', bottom:70}} source={require('../../assests/images/health-image.png')}></Image>
-         
-             <Text style={{ width: infowidth, alignSelf: 'center', bottom:70}}>Many of us search the world to find those that can help us achieve the health that we desire and  yet very few of us realize the ability to achieve health awaits us in our own back yard. Last month Pure Core Nourishment ran a workshop for our clients about how our own subconscious inbuilt programming can impact our health. And without question, the results for everyone who attended were phenomenal. Most of us do not realize that our ingrained Core Beliefs about who and what we are are formed in the first 5 years of life. These first five years are entirely controlled by our subconscious which controls development and reasoning and of course can be attested to by any parent. And because of that fact, our core inbuilt programming also operates very much like a 5 year old child, very literal and very much lovingly built to please. Therefore if you are focused on what is wrong with your health, 'I am sick, I am unwell..' your subconscious is only more than happy to prove you are right Transforming our health always at some point becomes about transforming our own internal conversation. Your intentions will always assist you in taking greater control of the health you desire.</Text>
-         
-          </Card>
-          <Text style={{ width: infowidth, left:5, bottom:5,fontWeight:'bold'}}>37 Views</Text>
+                            <ImageBackground source={require('../../assests/images/health-image.png')} style={{ right: 5, width: screenwidth, height: screenheight, alignSelf: 'center' }}  resizeMode="cover">
+                                <View style={styles.questionView}>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 24, padding: 5, color:'white' }}>What do you do on a daily basis to ensure that you stay healthy?</Text>
+                                </View>
+                        </ImageBackground>
+                           <List>
+                                <ListItem avatar>
+                                <Body>
+                                <Text style={{width:infowidth-30}}><B>Description: </B>
+                                        Many of us search the world to find those that can help us achieve the health that we desire and  yet very few of us realize the ability to achieve health awaits us in our own back yard. Last month Pure Core Nourishment ran a workshop for our clients about how our own subconscious inbuilt programming can impact our health. And without question, the results for everyone who attended were phenomenal. Most of us do not realize that our ingrained Core Beliefs about who and what we are are formed in the first 5 years of life. These first five years are entirely controlled by our subconscious which controls development and reasoning and of course can be attested to by any parent.</Text>
+                                        </Body>
+                                </ListItem>
+                                <ListItem avatar>
+                                <Body style={{flexDirection: 'row'}}>
+                                <Text>
+                                    <B>Suggested By: </B>WHO
+                                    </Text>
+                                     <Image style={{ width: 30, height: 30,left:15,bottom:5}} source={require('../../assests/images/WHO.jpg')}></Image>
+                                </Body>
+                                </ListItem>
+                            </List>
                         </View>
                     </View>
                 </View>
@@ -82,6 +94,14 @@ const styles = StyleSheet.create({
     modalBody: {
         flex: 1
     },
+      questionView: {
+        margin: 30,
+        backgroundColor: '#00000066',
+        flex: 1,
+        padding: 3,
+        flexDirection: 'column',
+        height:50
+      },
     closeBtn: {
         padding: 5,
         margin: 3

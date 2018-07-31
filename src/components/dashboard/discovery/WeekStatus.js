@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, ART, Dimensions,Text } from 'react-native';
+import { View, StyleSheet, ART, Dimensions, Text } from 'react-native';
 import { Card } from 'native-base';
 
 const {
@@ -24,21 +24,38 @@ const days = [
     { day: 'fri', happinessRate: 4 },
     { day: 'sat', happinessRate: 5 }]
 const WeekStatus = () => {
-
     return (
         <Card style={styles.container}>
-            <View>
-                <Text>Your Week : Good</Text>
+            <View style={{padding:5}}>
+                <Text>Your Week : <Text style={{ fontWeight: 'bold', color: '#01d300' }}>Good</Text></Text>
             </View>
             <Surface width={screenWidth - 10} height={200}>
                 <Group>
                     <Line stroke={'#000'} />
                     {days.map((x, i) => {
                         let xPos = 20 + i * ((screenWidth - 30) / 7);
-                        let yPos = 150-(10 + 26 * x.happinessRate);
+                        let yPos = 150 - (10 + 26 * x.happinessRate);
+                        let color;
+                        switch (x.happinessRate) {
+                            case 1:
+                                color = '#fe1d25';
+                                break;
+                            case 2:
+                                color = '#ff8b24';
+                                break;
+                            case 3:
+                                color = '#fef921';
+                                break;
+                            case 4:
+                                color = '#7fe611';
+                                break;
+                            case 5:
+                                color = '#01d300';
+                                break;
+                        }
                         return (
                             <Group key={i}>
-                                <Circle x={xPos} y={yPos} radius={10} fill={'yellow'} />
+                                <Circle x={xPos} y={yPos} radius={10} fill={color} />
                                 <ART.Text x={xPos} y={170} fill='#000' font={{
                                     fontFamily: 'Helvetica, Neue Helvetica, Arial',
                                     fontSize: 15,

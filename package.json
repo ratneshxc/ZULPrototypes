@@ -24,6 +24,7 @@
     "react-native-percentage-circle": "^1.0.7",
     "react-native-progress": "^3.5.0",
     "react-native-progress-circle": "^2.0.0",
+    "react-native-remote-svg": "^1.2.0",
     "react-native-snap-carousel": "^3.7.2",
     "react-native-swipe-gestures": "^1.0.2",
     "react-native-tabbar-bottom": "^1.0.4",
