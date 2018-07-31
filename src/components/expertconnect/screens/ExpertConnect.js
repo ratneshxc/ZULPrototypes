@@ -204,7 +204,8 @@ const styles = StyleSheet.create({
         color: '#000',
         padding: 10,
         fontSize: 15,
-        flex: 1
+        flex: 1,
+        backgroundColor: '#dddddd52'
     },
     container: {
 
