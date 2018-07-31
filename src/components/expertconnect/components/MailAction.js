@@ -25,7 +25,7 @@ class LikeSection extends React.Component {
                 <View style={styles.optionsBody}>
                     <TouchableOpacity onPress={this.iconClickHandler}>
                         <Text>
-                            <Icon name="wechat" size={25} style={{color:'black',marginRight:10}} />
+                            <Icon name="wechat" size={20} style={{color:'black',marginRight:15}} />
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         height:30,
-        marginRight:15
+        marginRight:5
     },
     likeText: {
         color: '#ffffff',

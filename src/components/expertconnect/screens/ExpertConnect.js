@@ -38,7 +38,7 @@ class FlatListItem extends Component {
                         padding: 2,
                         flexDirection: 'row',
 
-                       
+
 
 
 
@@ -102,37 +102,17 @@ class FlatListItem extends Component {
                             <Text style={{ color: "#000" }}>{this.props.item.reviewSummary.totalVotes} Votes</Text>
                             <Text
                                 style={{ color: "#17a2b8", textDecorationStyle: "solid", textDecorationLine: "underline" }}>
-                              {this.props.item.reviewSummary.totalReviews} Reviews
+                                {this.props.item.reviewSummary.totalReviews} Reviews
                                  </Text>
-                            <Text style={{ color: "#000" }}> </Text>
-                            <Text style={{ color: "#000" }}> </Text>
+                            <View style={{ flexDirection: 'row',marginTop:20 }}>
+                                <Favorite />
+                                <MailAction />
+                                <BookAction />
+
+                            </View>
 
 
                         </View>
-                    </CardItem>
-                    <CardItem style={{
-
-
-
-                        backgroundColor: '#FFFFFF',
-                        padding: 2,
-                        height: 30,
-                        marginTop: 2
-
-
-                    }}
-                        footer>
-                        <Left>
-                            <Favorite />
-                        </Left>
-                        <Body>
-                        </Body>
-                        <Right style={{ flexDirection: 'row', paddingRight: 10 }}>
-                            <MailAction />
-                            <CallAction />
-                            <BookAction />
-
-                        </Right>
                     </CardItem>
                 </Card>
 
