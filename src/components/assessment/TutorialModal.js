@@ -36,7 +36,7 @@ class TutorialModal extends Component {
                         <View style={styles.modalHeader}>
                         <Left>
                             <Badge style={{ backgroundColor: '#7B68EE', left: 4}}>
-                                <Text style={{color:'white', top:2, fontWeight:'bold'}}>Views: 1129</Text>
+                                <Text style={{color:'white', top:2, fontWeight:'bold'}}>1129 Views</Text>
                             </Badge>
                             </Left>
                         <Text style={{ width: 100,fontSize:16, height: 30, right:80,top:10,fontWeight:'bold'}} >Details</Text>
