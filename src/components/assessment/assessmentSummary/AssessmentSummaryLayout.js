@@ -4,58 +4,22 @@ import AssessmentSummaryComponent from './AssessmentSummaryComponent';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-    assessment: state.Dashboard.assessment
+    assessment: state.Assessment.assessmentReport
 })
 
 const mapDispatchToProps = dispatch => ({
-    notifyPhisical: (data) => dispatch({
-        type: 'DashboardReducer_PhysicalNotification',
-        payload: data
-    }),
-    notifyEmotional: (data) => dispatch({
-        type: 'DashboardReducer_EmotionalNotification',
-        payload: data
-    }),
-    notifySocial: (data) => dispatch({
-        type: 'DashboardReducer_SocialNotification',
-        payload: data
-    }),
-    notifyOccupational: (data) => dispatch({
-        type: 'DashboardReducer_OccupationalNotification',
-        payload: data
-    }),
-    notifySpiritual: (data) => dispatch({
-        type: 'DashboardReducer_SpiritualNotification',
-        payload: data
-    }),
-    notifyIntellectual: (data) => dispatch({
-        type: 'DashboardReducer_IntellectualNotification',
-        payload: data
-    }),
-    notifyFinancial: (data) => dispatch({
-        type: 'DashboardReducer_FinancialNotification',
-        payload: data
-    }),
-    notifyEnvironmental: (data) => dispatch({
-        type: 'DashboardReducer_EnvironmentalNotification',
-        payload: data
-    })
+   
 })
 
 class AssessmentSummaryLayout extends Component {
     componentWillMount() {
-        let msg = 'You have to visit dermatologist today';
-        setTimeout(() => {
-            msg = msg == 'You have to visit dermatologist today' ? 'Its time for gym' : 'You have to visit dermatologist today'
-            this.props.notifyPhisical(msg);
-        }, 10000)
-
+       
     }
     render() {
         return (
             <View style={styles.container}>
                 <View>
-                    <Text style={{fontSize:18,marginLeft:5}}>Wellness</Text>
+                    <Text style={{fontSize:18,marginLeft:5}}>Assessment</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>

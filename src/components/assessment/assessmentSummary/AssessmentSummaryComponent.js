@@ -11,22 +11,25 @@ const AssessmentSummaryComponent = (props) => {
             <View style={{ flexDirection: 'column' }}>
                 <View style={{ ...props.style, height: 3, width: props.assessObj.compPercentage }}></View>
                 <View style={{ flexDirection: 'row' }}>
-                    <View style={{ flex: 2 }}><Text style={{ fontSize: 10, fontWeight: 'bold', paddingHorizontal: 3 }}>{props.assessObj.compPercentage}</Text></View>
+                    <View style={{ flex: 2 }}>
+                        <Image
+                            style={{ height: 20, width: 30 }}
+                            source={props.assessObj.icon}
+                        />
+                    </View>
                     <View style={{ flex: 3, justifyContent: 'flex-end', flexDirection: 'row' }}><Text style={{ fontSize: 10, paddingHorizontal: 2 }}>{props.assessObj.remainingTime}</Text></View>
                 </View>
             </View>
-            <View style={{ flex: 1, alignItems: 'center' }}>
-                <Image
-                    style={{ height: 30, width: 40 }}
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                {/* <Image
+                    style={{ height: 50, width: 60 }}
                     source={props.assessObj.icon}
-                />
+                /> */}
+                <Text style={{ fontSize: 40,color:'#353535' }}>{props.assessObj.compPercentage}</Text>
+            </View>
+            <View style={{ alignItems: 'center', paddingBottom: 10 }}>
                 <Text>{props.assessObj.title.toUpperCase()}</Text>
             </View>
-            <View style={[styles.titleContainer]}>
-                {props.assessObj.notification !== '' && <Icon style={props.style1} name="bell" />}
-                <Text style={{ ...props.style1, fontSize: 12 }}>{props.assessObj.notification}</Text>
-            </View>
-
         </Card >
     )
 }

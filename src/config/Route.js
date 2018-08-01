@@ -11,7 +11,7 @@ import ExpertFilter from '../components/expertconnect/screens/ExpertFilter'
 import AssessmentReport from '../components/report/AssessmentReport';
 import Goals from '../components/goals/Goals';
 import Community from '../components/community/Community';
-import History from '../components/history/History';
+import AssessmentSummayLayout from '../components/assessment/assessmentSummary/AssessmentSummaryLayout';
 
 const TabRoute = createBottomTabNavigator({
   Dashboard: {
@@ -54,12 +54,12 @@ const TabRoute = createBottomTabNavigator({
       }
     }
   },
-  History: {
-    screen: History,
+  Assessment: {
+    screen: AssessmentSummayLayout,
     navigationOptions: {
-      title: 'History',
+      title: 'Assessments',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `history${focused ? '' : ''}`;
+        const iconName = `file${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }

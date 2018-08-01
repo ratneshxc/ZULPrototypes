@@ -19,7 +19,65 @@ const initialState = {
         selectedIndex: null
     },
     questions: [],
-    isNextQuestionLoading: false
+    isNextQuestionLoading: false,
+    assessmentReport: {
+        physical: {
+            title: 'Physical',
+            remainingTime: '2 days ago',
+            compPercentage: '25%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/physical.svg')
+        },
+        emotional: {
+            title: 'Emotional',
+            remainingTime: '5 days ago',
+            compPercentage: '35%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/emotional.svg')
+        },
+        social: {
+            title: 'Social',
+            remainingTime: '65 days ago',
+            compPercentage: '65%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/social.svg')
+        },
+        occupational: {
+            title: 'Occupational',
+            remainingTime: '83 days ago',
+            compPercentage: '85%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/occupational.svg')
+        },
+        spiritual: {
+            title: 'Spiritual',
+            remainingTime: '73 days ago',
+            compPercentage: '21%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/spiritual.svg')
+        },
+        intellectual: {
+            title: 'Intellectual',
+            remainingTime: '32 days ago',
+            compPercentage: '30%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/intellectual.svg')
+        },
+        financial: {
+            title: 'Financial',
+            remainingTime: '25 days ago',
+            compPercentage: '91%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/financial.svg')
+        },
+        environmental: {
+            title: 'Environmental',
+            remainingTime: '20 days ago',
+            compPercentage: '65%',
+            notification: '',
+            icon: require('../../assests/images/dashboard/environmental.svg')
+        }
+    }
 }
 
 

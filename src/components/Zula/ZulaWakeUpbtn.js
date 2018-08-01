@@ -112,7 +112,9 @@ class ZulaWakeUpbtn extends Component {
         this.zulaSpeak(text);
     }
     zulaSpeak(text) {
-        Tts.speak(text);
+        Tts.getInitStatus().then(() => {
+            Tts.speak(text);
+        });
         this.props.zulaText(text);
     }
     selectAnswer = (index) => {

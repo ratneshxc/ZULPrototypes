@@ -1,12 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import AssessmentSummaryLayout from './assessmentSummary/AssessmentSummaryLayout';
-import GoalSummaryLayout from './goalSummary/GoalSummaryLayout';
-import DiscoverLayout from './discovery/DiscoverLayout';
-import NewsFeeds from './newsFeeds/NewsFeeds';
-import WishModal from './wish/WishModal';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 const mapDispatchToProps = dispatch => ({
 
@@ -17,7 +13,7 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-            <View style={{flex:1}}>
+            <View style={{ flex: 1 }}>
                 <ScrollView style={styles.container}>
                     <View style={styles.header}>
                         <View style={{ flex: 1 }}>
@@ -30,13 +26,10 @@ class Dashboard extends React.Component {
                         </View>
 
                     </View>
-                    <AssessmentSummaryLayout />
-                    <GoalSummaryLayout />
-                    <DiscoverLayout />
-                    <NewsFeeds />
+                    
+
 
                 </ScrollView>
-                <WishModal />
             </View>
         )
     }

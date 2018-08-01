@@ -9,6 +9,7 @@
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.1",
+    "axios": "^0.18.0",
     "moment": "^2.22.2",
     "native-base": "^2.7.1",
     "react": "16.4.1",
@@ -21,6 +22,7 @@
     "react-native-fontawesome": "^5.7.0",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-material-cards": "^1.0.9",
+    "react-native-media-controls": "^1.1.1",
     "react-native-percentage-circle": "^1.0.7",
     "react-native-progress": "^3.5.0",
     "react-native-progress-circle": "^2.0.0",
@@ -30,10 +32,14 @@
     "react-native-tabbar-bottom": "^1.0.4",
     "react-native-tts": "^1.5.1",
     "react-native-vector-icons": "^4.6.0",
+    "react-native-video": "^3.1.0",
     "react-native-voice": "^0.2.6",
     "react-navigation": "^2.6.2",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-jest": "23.4.0",
