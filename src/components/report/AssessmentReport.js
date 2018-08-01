@@ -7,7 +7,9 @@ import ExpertsPanel from './ExpertsPanel';
 import AssesmentAction from './AssesmentAction';
 export default class AssessmentReport extends React.Component {
 
-
+    goToDashboard=()=>{
+        this.props.navigation.navigate('Home');
+    }
     render() {
         return (
 
@@ -17,7 +19,7 @@ export default class AssessmentReport extends React.Component {
                     <AssesmentSummaryLayout />
                     <RecommendationPanel />
                     <ExpertsPanel />
-                    <AssesmentAction />
+                    <AssesmentAction goToDashboard={this.goToDashboard}/>
 
                 </ScrollView>
             </View>

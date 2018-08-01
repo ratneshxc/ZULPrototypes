@@ -3,11 +3,15 @@ import { Text, View,StyleSheet } from 'react-native';
 import {Button} from 'native-base';
 
 export default class AssesmentAction extends Component {
+
+    goToDashboard=()=>{
+      this.props.goToDashboard();
+  }
   render() {
     return (
       <View style={styles.container}>    
-      <Button full primary style={styles.mt15}>
-            <Text style={{color:'white'}}>Go To Dashboard</Text>
+      <Button full primary style={styles.mt15} onPress={this.goToDashboard}>
+            <Text style={{color:'white'}} >Go To Dashboard</Text>
           </Button>
       </View>
     )
