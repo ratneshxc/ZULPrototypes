@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, Text, ScrollView, Image } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { H2 } from 'native-base';
-import AssessmentSummaryLayout from './assessmentSummary/AssessmentSummaryLayout';
-import GoalSummaryLayout from './goalSummary/GoalSummaryLayout';
-import DiscoverLayout from './discovery/DiscoverLayout';
-import NewsFeeds from './newsFeeds/NewsFeeds';
-import WishModal from './wish/WishModal';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 const mapDispatchToProps = dispatch => ({
 
@@ -17,16 +13,24 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-            <ScrollView style={styles.container}>
-                <View style={styles.header}>
-                    <Image style={{ width: 150 }} resizeMode="contain" source={require('../../assests/images/nav-logo-wide.png')} />
-                </View>
-                <AssessmentSummaryLayout />
-                <GoalSummaryLayout />
-                <DiscoverLayout />
-                <NewsFeeds />
-                <WishModal />
-            </ScrollView>
+            <View style={{ flex: 1 }}>
+                <ScrollView style={styles.container}>
+                    <View style={styles.header}>
+                        <View style={{ flex: 1 }}>
+                            <Image style={{ width: 150 }} resizeMode="contain" source={require('../../assests/images/nav-logo-wide.png')} />
+                        </View>
+                        <View>
+                            <TouchableOpacity style={{ padding: 10 }}>
+                                <Icon name="cog" type="FontAwesome" size={20} />
+                            </TouchableOpacity>
+                        </View>
+
+                    </View>
+                    
+
+
+                </ScrollView>
+            </View>
         )
     }
 }
@@ -41,6 +45,7 @@ const styles = StyleSheet.create({
     },
     header: {
         backgroundColor: '#ffffff',
-        padding: 5
+        padding: 5,
+        flexDirection: 'row'
     }
 })

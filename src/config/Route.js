@@ -11,7 +11,7 @@ import ExpertFilter from '../components/expertconnect/screens/ExpertFilter'
 import AssessmentReport from '../components/report/AssessmentReport';
 import Goals from '../components/goals/Goals';
 import Community from '../components/community/Community';
-import History from '../components/history/History';
+import AssessmentSummayLayout from '../components/assessment/assessmentSummary/AssessmentSummaryLayout';
 
 const TabRoute = createBottomTabNavigator({
   Dashboard: {
@@ -29,7 +29,7 @@ const TabRoute = createBottomTabNavigator({
     navigationOptions: {
       title: 'Goals',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `bullseye${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }
@@ -39,7 +39,7 @@ const TabRoute = createBottomTabNavigator({
     navigationOptions: {
       title: 'Community',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `comments${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }
@@ -49,17 +49,17 @@ const TabRoute = createBottomTabNavigator({
     navigationOptions: {
       title: 'Expert',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `users${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }
   },
-  History: {
-    screen: History,
+  Assessment: {
+    screen: AssessmentSummayLayout,
     navigationOptions: {
-      title: 'History',
+      title: 'Assessments',
       tabBarIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
+        const iconName = `file${focused ? '' : ''}`;
         return <Icon name={iconName} size={25} color={tintColor} />;
       }
     }

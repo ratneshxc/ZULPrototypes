@@ -2,61 +2,24 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import AssessmentSummaryComponent from './AssessmentSummaryComponent';
 import { connect } from 'react-redux';
-import { H3 } from 'native-base';
 
 const mapStateToProps = state => ({
-    assessment: state.Dashboard.assessment
+    assessment: state.Assessment.assessmentReport
 })
 
 const mapDispatchToProps = dispatch => ({
-    notifyPhisical: (data) => dispatch({
-        type: 'DashboardReducer_PhysicalNotification',
-        payload: data
-    }),
-    notifyEmotional: (data) => dispatch({
-        type: 'DashboardReducer_EmotionalNotification',
-        payload: data
-    }),
-    notifySocial: (data) => dispatch({
-        type: 'DashboardReducer_SocialNotification',
-        payload: data
-    }),
-    notifyOccupational: (data) => dispatch({
-        type: 'DashboardReducer_OccupationalNotification',
-        payload: data
-    }),
-    notifySpiritual: (data) => dispatch({
-        type: 'DashboardReducer_SpiritualNotification',
-        payload: data
-    }),
-    notifyIntellectual: (data) => dispatch({
-        type: 'DashboardReducer_IntellectualNotification',
-        payload: data
-    }),
-    notifyFinancial: (data) => dispatch({
-        type: 'DashboardReducer_FinancialNotification',
-        payload: data
-    }),
-    notifyEnvironmental: (data) => dispatch({
-        type: 'DashboardReducer_EnvironmentalNotification',
-        payload: data
-    })
+   
 })
 
 class AssessmentSummaryLayout extends Component {
     componentWillMount() {
-        let msg = 'You have to visit dermatologist today';
-        setTimeout(() => {
-            msg = msg == 'You have to visit dermatologist today' ? 'Its time for gym' : 'You have to visit dermatologist today'
-            this.props.notifyPhisical(msg);
-        }, 10000)
-
+       
     }
     render() {
         return (
             <View style={styles.container}>
                 <View>
-                    <H3>Wellness</H3>
+                    <Text style={{fontSize:18,marginLeft:5}}>Assessment</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>
@@ -101,7 +64,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#ffffff',
         padding: 5,
-        marginTop: 10
+        marginTop: 3
     },
     blocks: {
         flex: 1,
