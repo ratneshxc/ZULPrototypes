@@ -4,6 +4,7 @@ import ReportHeader from './ReportHeader';
 import AssesmentSummaryLayout from './AssesmentSummaryLayout';
 import RecommendationPanel from './RecommendationPanel';
 import ExpertsPanel from './ExpertsPanel';
+import AssesmentAction from './AssesmentAction';
 export default class AssessmentReport extends React.Component {
 
 
@@ -16,6 +17,7 @@ export default class AssessmentReport extends React.Component {
                     <AssesmentSummaryLayout />
                     <RecommendationPanel />
                     <ExpertsPanel />
+                    <AssesmentAction />
 
                 </ScrollView>
             </View>
