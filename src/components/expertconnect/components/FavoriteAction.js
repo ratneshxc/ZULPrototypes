@@ -25,7 +25,7 @@ class LikeSection extends React.Component {
                 <View style={styles.optionsBody}>
                     <TouchableOpacity onPress={this.iconClickHandler}>
                         <Text>
-                            <Icon name="heart" size={25} color={this.state.iconColor} />
+                            <Icon name="heart" size={20} color={this.state.iconColor} style={{marginRight:15}} />
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     optionsBody: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        height:30
+        height:30,
+        marginRight:5
     },
     likeText: {
         color: '#ffffff',

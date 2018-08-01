@@ -25,7 +25,7 @@ class LikeSection extends React.Component {
                 <View style={styles.optionsBody}>
                     <TouchableOpacity onPress={this.iconClickHandler}>
                         <Text>
-                            <Icon name="wechat" size={20} style={{color:'black',marginRight:15}} />
+                            <Icon name="download" size={25} style={{color:'black',marginRight:15}} />
                         </Text>
                     </TouchableOpacity>
                 </View>

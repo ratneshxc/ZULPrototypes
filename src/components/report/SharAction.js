@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion
 })
 
-class LikeSection extends React.Component {
+class ShareAction extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -25,7 +25,7 @@ class LikeSection extends React.Component {
                 <View style={styles.optionsBody}>
                     <TouchableOpacity onPress={this.iconClickHandler}>
                         <Text>
-                            <Icon name="wechat" size={20} style={{color:'black',marginRight:15}} />
+                            <Icon name="send" size={25} style={{color:'black',marginRight:15}} />
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -33,14 +33,14 @@ class LikeSection extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(LikeSection)
+export default connect(mapStateToProps)(ShareAction)
 
 const styles = StyleSheet.create({
     optionsBody: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
         height:30,
-        marginRight:5
+        marginRight:10
     },
     likeText: {
         color: '#ffffff',

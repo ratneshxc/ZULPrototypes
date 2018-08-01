@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
 import ReportHeader from './ReportHeader';
-import AssessmentStats from './AssesmentStats';
-import AsssesmentDescription from './AssesmentDescription';
+import AssesmentSummaryLayout from './AssesmentSummaryLayout';
+import RecommendationPanel from './RecommendationPanel';
 export default class AssessmentReport extends React.Component {
-    goToHome = () => {
-        this.props.navigation.navigate('Home');
-    }
+
 
     render() {
         return (
-            <View style={styles.container}>
 
-              <ReportHeader />
-              <AssessmentStats />
-              <AsssesmentDescription />
-                <TouchableOpacity onPress={this.goToHome}>
-                    <Text>Go to Dashboard</Text>
-                </TouchableOpacity>
+            <View style={styles.container}>
+                <ReportHeader />
+                <ScrollView style={styles.container}>
+                    <AssesmentSummaryLayout />
+                    <RecommendationPanel />
+
+                </ScrollView>
             </View>
         )
     }
 }
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        flexDirection:'column'
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#dddddd52'
     }
 })

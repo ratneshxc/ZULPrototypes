@@ -22,7 +22,7 @@ export default class ReportsHeader extends React.Component {
             <View>
             <Header>
              <Body>
-                <Title>Thought Control</Title>
+                <Title>Thought Control Score</Title>
               </Body>
               <Right>
                 <Button transparent >
