@@ -14,7 +14,7 @@ const RecommendationCard = (props) => {
                         style={{ height: 50, width: 60 }}
                         source={props.assessObj.icon}
                     />
-                <Text style={{marginTop:5,color:'#000000'}}>{props.assessObj.title.toUpperCase()}</Text>
+                <Text style={{marginTop:5,color:'#000000'}}>{props.assessObj.title}</Text>
             </View>
         </Card >
     )
