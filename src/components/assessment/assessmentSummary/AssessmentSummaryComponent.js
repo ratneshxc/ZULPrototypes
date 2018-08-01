@@ -4,10 +4,13 @@ import { Card, Badge } from 'native-base';
 import Image from 'react-native-remote-svg';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+goAssessmentInfo = () => {
+    this.props.goAssessmentInfo();
+}
 
 const AssessmentSummaryComponent = (props) => {
     return (
-        <Card style={[styles.container]}>
+        <Card style={[styles.container]}  onPress={this.goAssessmentInfo}>
             <View style={{ flexDirection: 'column' }}>
                 <View style={{ ...props.style, height: 3, width: props.assessObj.compPercentage }}></View>
                 <View style={{ flexDirection: 'row' }}>
