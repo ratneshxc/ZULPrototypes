@@ -29,6 +29,14 @@ import LandingTab from '../components/landingtabs/LandingTabs';
 //   AssessmentReport: { screen: AssessmentReport }
 // });
 
+// const AppRoute = createSwitchNavigator({
+//   Home: { screen: TabRoute },
+//   Login: { screen: Login },
+//   Assessment: { screen: Assessment },
+//   Register: { screen: Register },
+//   AssessmentReport: { screen: AssessmentReport }
+// });
+
 const AppRoute = createSwitchNavigator({
   Home: { screen: LandingTab },
   Login: { screen: Login },

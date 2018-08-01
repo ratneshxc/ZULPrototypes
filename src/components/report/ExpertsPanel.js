@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import RecommendationCard from './RecommendtationCard';
 import { H3 } from 'native-base';
-export class RecommendationPanel extends Component {
+export class ExpertsPanel extends Component {
     constructor() {
         super();
         this.state = {
 
             assessment: {
                 physical: {
-                    title: 'Run 5k steps',
+                    title: 'Anuradha B',
                     remainingTime: '2 days ago',
                     compPercentage: '0%',
                     notification: '',
                     icon: require('../../assests/images/dashboard/physical.svg')
                 },
                 emotional: {
-                    title: 'Go on a date',
+                    title: 'Varsha K',
                     remainingTime: '5 days ago',
                     compPercentage: '0%',
                     notification: '',
@@ -24,14 +24,14 @@ export class RecommendationPanel extends Component {
                 },
                 
                 occupational: {
-                    title: 'Define OKR',
+                    title: 'Chandni H',
                     remainingTime: '83 days ago',
                     compPercentage: '0%',
                     notification: '',
                     icon: require('../../assests/images/dashboard/occupational.svg')
                 },
                 spiritual: {
-                    title: 'Mediate',
+                    title: 'Apurv Adarsh',
                     remainingTime: '73 days ago',
                     compPercentage: '0%',
                     notification: '',
@@ -39,14 +39,14 @@ export class RecommendationPanel extends Component {
                 },
            
                 financial: {
-                    title: 'Save 50K',
+                    title: 'Karthik S M',
                     remainingTime: '25 days ago',
                     compPercentage: '0%',
                     notification: '',
                     icon: require('../../assests/images/dashboard/financial.svg')
                 },
                 environmental: {
-                    title: 'Plant a tree',
+                    title: 'Shweta Goyal',
                     remainingTime: '20 days ago',
                     compPercentage: '0%',
                     notification: '',
@@ -59,7 +59,7 @@ export class RecommendationPanel extends Component {
         return (
             <View style={styles.container}>
                 <View style={{ flex: 1, alignItems: 'center' }}>
-                    <H3>Recommendations</H3>
+                    <H3>Experts</H3>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default RecommendationPanel
+export default ExpertsPanel

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text,TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { Card, Badge } from 'native-base';
 import Image from 'react-native-remote-svg';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -9,24 +9,12 @@ const RecommendationCard = (props) => {
     return (
         <Card style={[styles.container]} transparent>
             <View style={{ flex: 1, alignItems: 'center' }}>
-                <TouchableOpacity
-                    style={{
-                        borderWidth: 1,
-                        borderColor: 'rgba(0,0,0,0.2)',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: 40,
-                        height: 40,
-                        backgroundColor: '#fff',
-                        borderRadius: 100,
-                    }}
-                >
+              
                     <Image
-                        style={{ height: 30, width: 40 }}
+                        style={{ height: 50, width: 60 }}
                         source={props.assessObj.icon}
                     />
-                </TouchableOpacity>
-                <Text>{props.assessObj.title.toUpperCase()}</Text>
+                <Text style={{marginTop:5,color:'#000000'}}>{props.assessObj.title}</Text>
             </View>
         </Card >
     )
