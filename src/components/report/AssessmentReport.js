@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-nati
 import ReportHeader from './ReportHeader';
 import AssesmentSummaryLayout from './AssesmentSummaryLayout';
 import RecommendationPanel from './RecommendationPanel';
+import ExpertsPanel from './ExpertsPanel';
 export default class AssessmentReport extends React.Component {
 
 
@@ -14,6 +15,7 @@ export default class AssessmentReport extends React.Component {
                 <ScrollView style={styles.container}>
                     <AssesmentSummaryLayout />
                     <RecommendationPanel />
+                    <ExpertsPanel />
 
                 </ScrollView>
             </View>
