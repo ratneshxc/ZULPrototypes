@@ -15,18 +15,18 @@ const RecommendationCard = (props) => {
                         borderColor: 'rgba(0,0,0,0.2)',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        width: 40,
-                        height: 40,
+                        width: 80,
+                        height: 80,
                         backgroundColor: '#fff',
                         borderRadius: 100,
                     }}
                 >
                     <Image
-                        style={{ height: 30, width: 40 }}
+                        style={{ height: 70, width: 70 }}
                         source={props.assessObj.icon}
                     />
                 </TouchableOpacity>
-                <Text>{props.assessObj.title.toUpperCase()}</Text>
+                <Text style={{marginTop:5,color:'#000000'}}>{props.assessObj.title.toUpperCase()}</Text>
             </View>
         </Card >
     )

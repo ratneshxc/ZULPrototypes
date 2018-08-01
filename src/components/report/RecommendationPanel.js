@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     },
     blocks: {
         flex: 1,
-        height: Dimensions.get('window').width / 4,
+        height: Dimensions.get('window').width / 3,
         padding: 3
     }
 });
