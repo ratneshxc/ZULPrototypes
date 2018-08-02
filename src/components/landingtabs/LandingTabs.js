@@ -9,9 +9,15 @@ import Community from '../community/Community';
 import AssessmentSummayLayout from '../assessment/assessmentSummary/AssessmentSummaryLayout';
 
 
+
+
 export default class LandingTab extends React.Component{
+    goAssessmentInfo = () => {
+        this.props.navigation.navigate('AssessmentInfo');
+      }
+      
     render(){
-        return(<TabRoute/>);
+        return(<TabRoute  screenProps={{goAssessmentInfo:this.goAssessmentInfo}}/>);
     }
 }
 

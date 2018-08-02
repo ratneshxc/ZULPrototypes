@@ -13,10 +13,14 @@ const mapDispatchToProps = dispatch => ({
 
 
 
+
 class AssessmentSummaryLayout extends Component {
     componentWillMount() {
        
     }
+    goAssessmentInfo = () => {
+    this.props.screenProps.goAssessmentInfo();
+}
     render() {
         return (
             <View style={styles.container}>
@@ -25,7 +29,7 @@ class AssessmentSummaryLayout extends Component {
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>
-                        <AssessmentSummaryComponent  goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.physical} style={{ backgroundColor: '#502f1e' }} style1={{ color: '#502f1e' }} />
+                        <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.physical} style={{ backgroundColor: '#502f1e' }} style1={{ color: '#502f1e' }} />
                     </View>
                     <View style={styles.blocks}>
                         <AssessmentSummaryComponent assessObj={this.props.assessment.emotional} style={{ backgroundColor: '#bb2133' }} style1={{ color: '#bb2133' }} />
