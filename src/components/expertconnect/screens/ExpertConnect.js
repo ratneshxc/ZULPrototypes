@@ -134,7 +134,7 @@ export default class ExpertList extends Component {
     }
 
     filterList = () => {
-        this.props.navigation.navigate('ExpertFilter');
+        this.props.screenProps.filterList();
     }
 
     render() {
