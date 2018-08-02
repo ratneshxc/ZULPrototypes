@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Card, Badge, Icon } from 'native-base';
 import Image from 'react-native-remote-svg';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
-goAssessmentInfo = () => {
-    this.props.goAssessmentInfo();
-}
+
 
 const AssessmentSummaryComponent = (props) => {
     return (
-        <Card style={[styles.container]}  onPress={this.goAssessmentInfo}>
+        <TouchableOpacity style={[styles.container]} onPress={props.goAssessmentInfo}>
+        <Card style={{flex:1}}>
             <View style={{ flexDirection: 'column' }}>
                 <View style={{ ...props.style, height: 3, width: props.assessObj.compPercentage === '' ? 0 : props.assessObj.compPercentage }}></View>
                 <View style={{ flexDirection: 'row' }}>
@@ -34,6 +33,7 @@ const AssessmentSummaryComponent = (props) => {
                 <Text>{props.assessObj.title.toUpperCase()}</Text>
             </View>
         </Card >
+        </TouchableOpacity>
     )
 }
 const styles = StyleSheet.create({
