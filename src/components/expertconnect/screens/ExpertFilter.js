@@ -3,6 +3,9 @@ import FilterHeader from '../components/FilterHeader';
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import expertFilterData from '../../../data/expertFilterData';
+
+import RadioGroup from '../components/RadioGroup';
+
 class FlatListItem extends Component {
 
   _onPressButton(e) {
@@ -12,25 +15,24 @@ class FlatListItem extends Component {
   }
 
   render() {
-    const filterItems = [];
-    for (var i = 0; i < this.props.item.options.length; i++) {
-      filterItems.push(
-        <View style={[{ flexDirection: 'row' }, styles.elemenStyle]}>
-          <Text style={styles.textStyle}>{this.props.item.options[i]}</Text>
-        </View>
-      );
-    }
+    // const filterItems = [];
+    // for (var i = 0; i < this.props.item.options.length; i++) {
+    //   filterItems.push(
+    //     <View style={[{ flexDirection: 'row' }, styles.elemenStyle]}>
+    //       <Text style={styles.textStyle}>{this.props.item.options[i]}</Text>
+    //     </View>
+    //   );
+    // }
     return (
 
       <View >
-        <View style={{ flex: 2, flexDirection: 'column' }}>
+        <View style={{ flex: 2, flexDirection: 'column',justifyContent:'flex-start' }}>
 
           <View style={[{ flexDirection: 'row' }, styles.titleStyle]}>
             <Text style={[styles.textStyle, { fontWeight: 'bold' }]}>{this.props.item.heading}</Text>
           </View>
-          {
-            filterItems
-          }
+         
+          <RadioGroup radioButtons={this.props.item.options}    />
 
 
         </View>
