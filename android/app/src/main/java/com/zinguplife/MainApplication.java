@@ -12,6 +12,7 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 import com.brentvatne.react.ReactVideoPackage;
+import com.horcrux.svg.SvgPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,7 +28,8 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new TextToSpeechPackage(),
             new VoicePackage(),
-            new ReactVideoPackage()
+            new ReactVideoPackage(),
+			new SvgPackage()
       );
     }
 
