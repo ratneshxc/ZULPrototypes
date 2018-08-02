@@ -196,6 +196,7 @@ class Assessment extends Component {
         this.props.navigation.navigate('AssessmentReport');
     }
 
+ 
     componentWillMount() {
         this.props.getAllQuestion();
     }
@@ -205,7 +206,7 @@ class Assessment extends Component {
             <GestureRecognizer
                 style={{ flex: 1 }}
                 onSwipe={(direction, state) => this.onSwipe(direction, state)}>
-                <Question onDismiss={this.onDismiss} goToReportClick={this.goToReport} goToLoginClick={this.goToLogin} />
+                <Question onDismiss={this.onDismiss} goToReportClick={this.goToReport} goToLoginClick={this.goToLogin}  />
             </GestureRecognizer>
         );
     }

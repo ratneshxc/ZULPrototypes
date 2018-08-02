@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, Text, Dimensions, ScrollView } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
 import AssessmentSummaryComponent from '../../assessment/assessmentSummary/AssessmentSummaryComponent';
 
 const screenWidth = Dimensions.get("window").width;
