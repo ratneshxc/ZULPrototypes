@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import QuestionSection from '../assessment/QuestionSection';
-import AnswerSection from '../assessment/AnswerSection';
+import QuestionSection from './QuestionSection';
+import AnswerSection from './AnswerSection';
 import FooterSection from './FooterSection';
 import { connect } from 'react-redux';
 
