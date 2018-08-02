@@ -1,6 +1,5 @@
 import React from 'react'
 import { createSwitchNavigator } from 'react-navigation';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import Login from '../components/login/Login';
 import Assessment from '../components/assessment/Assessment';
 import Register from '../components/register/Register';

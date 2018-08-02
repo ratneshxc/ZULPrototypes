@@ -2,12 +2,14 @@ import React from 'react';
 import { View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import OverallScore from './overallscore/OverallScore';
+import StatusLayout from './status/StatusLayout';
+import StatusHeader from './StatusHeader';
+import AssessmentList from './assessment/AssessmentList';
 
 const mapDispatchToProps = dispatch => ({
 
 })
-
 
 class Dashboard extends React.Component {
 
@@ -24,11 +26,11 @@ class Dashboard extends React.Component {
                                 <Icon name="cog" type="FontAwesome" size={20} />
                             </TouchableOpacity>
                         </View>
-
                     </View>
-                    
-
-
+                    <StatusHeader />
+                    <OverallScore />
+                    <StatusLayout />
+                    <AssessmentList />
                 </ScrollView>
             </View>
         )
