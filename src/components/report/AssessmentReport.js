@@ -5,6 +5,7 @@ import AssesmentSummaryLayout from './AssesmentSummaryLayout';
 import RecommendationPanel from './RecommendationPanel';
 import ExpertsPanel from './ExpertsPanel';
 import AssesmentAction from './AssesmentAction';
+
 export default class AssessmentReport extends React.Component {
 
     goToDashboard=()=>{
@@ -19,6 +20,7 @@ export default class AssessmentReport extends React.Component {
                     <AssesmentSummaryLayout />
                     <RecommendationPanel />
                     <ExpertsPanel />
+                 
                     <AssesmentAction goToDashboard={this.goToDashboard}/>
 
                 </ScrollView>

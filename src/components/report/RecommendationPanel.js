@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import RecommendationCard from './RecommendtationCard';
 import { H3 } from 'native-base';
+import Sample from './SampleGoals';
 export class RecommendationPanel extends Component {
     constructor() {
         super();
@@ -62,6 +63,9 @@ export class RecommendationPanel extends Component {
                     <H3>Recommendations</H3>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
+                    <Sample />
+                </View>
+                {/* <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>
                         <RecommendationCard assessObj={this.state.assessment.physical} style={{ backgroundColor: '#502f1e' }} style1={{ color: '#502f1e' }} />
                     </View>
@@ -82,7 +86,7 @@ export class RecommendationPanel extends Component {
                     <View style={styles.blocks}>
                         <RecommendationCard assessObj={this.state.assessment.environmental} style={{ backgroundColor: '#0a5840' }} style1={{ color: '#0a5840' }} />
                     </View>
-                </View>
+                </View> */}
             
             </View>
         )
