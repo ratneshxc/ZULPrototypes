@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 import ShareAction from './SharAction';
-import DownloadAction from './DownloadAction';
 export default class AssesmentStatus extends Component {
   render() {
     return (

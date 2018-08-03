@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import AssesmentStats from './AssesmentStats';
-import AssesmentDescription from './AssesmentDescription';
-import { H3 } from 'native-base';
+
 export default class AssessmentSummaryLayout extends Component {
   
     render() {

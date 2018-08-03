@@ -66,29 +66,6 @@ export class RecommendationPanel extends Component {
                 <View style={{ flexDirection: 'row' }}>
                     <Sample />
                 </View>
-                {/* <View style={{ flexDirection: 'row' }}>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.physical} style={{ backgroundColor: '#502f1e' }} style1={{ color: '#502f1e' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.emotional} style={{ backgroundColor: '#bb2133' }} style1={{ color: '#bb2133' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.financial} style={{ backgroundColor: '#11b7e4' }} style1={{ color: '#11b7e4' }} />
-                    </View>
-                </View>
-                <View style={{ flexDirection: 'row' }}>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.occupational} style={{ backgroundColor: '#ed8c24' }} style1={{ color: '#ed8c24' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.spiritual} style={{ backgroundColor: '#642868' }} style1={{ color: '#642868' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.environmental} style={{ backgroundColor: '#0a5840' }} style1={{ color: '#0a5840' }} />
-                    </View>
-                </View> */}
-            
             </View>
         )
     }

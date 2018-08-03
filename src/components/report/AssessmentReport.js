@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import ReportHeader from './ReportHeader';
 import AssesmentSummaryLayout from './AssesmentSummaryLayout';
 import RecommendationPanel from './RecommendationPanel';
