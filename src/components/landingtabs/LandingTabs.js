@@ -15,9 +15,12 @@ export default class LandingTab extends React.Component{
     goAssessmentInfo = () => {
         this.props.navigation.navigate('AssessmentInfo');
       }
+      filterList = () => {
+        this.props.navigation.navigate('ExpertFilter');
+    }
       
     render(){
-        return(<TabRoute  screenProps={{goAssessmentInfo:this.goAssessmentInfo}}/>);
+        return(<TabRoute  screenProps={{goAssessmentInfo:this.goAssessmentInfo,filterList:this.filterList}}/>);
     }
 }
 

@@ -125,7 +125,7 @@ class FlatListItem extends Component {
 
 }
 
-export default class Daily extends Component {
+export default class ExpertList extends Component {
 
     _onPressButton(e) {
 
@@ -134,7 +134,7 @@ export default class Daily extends Component {
     }
 
     filterList = () => {
-        this.props.navigation.navigate('ExpertFilter');
+        this.props.screenProps.filterList();
     }
 
     render() {

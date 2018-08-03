@@ -25,7 +25,7 @@ class ShareAction extends React.Component {
                 <View style={styles.optionsBody}>
                     <TouchableOpacity onPress={this.iconClickHandler}>
                         <Text>
-                            <Icon name="send" size={25} style={{color:'black',marginRight:15}} />
+                            <Icon name="share-alt" size={23} style={{color:'black',marginRight:15}} />
                         </Text>
                     </TouchableOpacity>
                 </View>
