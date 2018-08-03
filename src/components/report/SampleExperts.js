@@ -1,71 +1,78 @@
 import React, { Component } from "react";
-import { FlatList, Text } from "react-native";
-import { Card } from "react-native-elements";
+import { FlatList, Text ,Image} from "react-native";
+import { Card, CardItem } from "native-base";
 
 const data = [
-  {
-    imageUrl: "https://placebeyonce.com/160-160",
-    title: "Anuradha B",
-    desc:"Dietian"
-  },
-  {
-    imageUrl: "https://www.stevensegallery.com/160/160",
-    title: "Apurv Adarsh",
-    desc:"Dietian"
-  },
-  {
-    imageUrl: "https://www.fillmurray.com/160/160",
-    title: "Steven",
-    desc:"Dietian"
-  },
-  {
-    imageUrl: "https://placebeyonce.com/160-160",
-    title: "Varsha K",
-    desc:"Dietian"
-  },
-  {
-    imageUrl: "https://www.fillmurray.com/160/160",
-    title: "Rajnikant Kumar",
-    desc:"Dietian"
-  },
-  {
-    imageUrl: "https://placebeyonce.com/160-160",
-    title: "Chandni H",
-    desc:"Dietian"
-  }
+    {
+        imageUrl: require('../../assests/images/experts/anuradha.png'),
+        title: "Anuradha B",
+        desc: "Dietian"
+    },
+    {
+        imageUrl: require('../../assests/images/experts/adarsh.png'),
+        title: "Apurv Adarsh",
+        desc: "Physician"
+    },
+    {
+        imageUrl: require('../../assests/images/experts/steven.png'),
+        title: "Steven",
+        desc: "Life coach"
+    },
+    {
+        imageUrl:require('../../assests/images/experts/varsha.png'),
+        title: "Varsha K",
+        desc: "Life Coach"
+    },
+    {
+        imageUrl: require('../../assests/images/experts/rajni.png'),
+        title: "Rajnikant Kumar",
+        desc: "Gym Trainer"
+    }
 ];
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: data
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: data
+        };
+    }
 
-  render() {
-    return (
-      <FlatList
-        horizontal
-        data={this.state.data}
-        renderItem={({ item: rowData }) => {
-          return (
-            <Card
-              title={null}
-              image={{ uri: rowData.imageUrl }}
-              containerStyle={{ padding: 0, width: 160 }}
-            >
-              <Text>
-                {rowData.title}
-              </Text>
-              <Text style={{ marginBottom: 10 }}>
-                {rowData.desc}
-              </Text>
-            </Card>
-          );
-        }}
-        keyExtractor={(item, index) => index}
-      />
-    );
-  }
+    render() {
+        return (
+            <FlatList
+                horizontal
+                data={this.state.data}
+                renderItem={({ item: rowData }) => {
+                    return (
+                        <Card
+                            transparent
+                            style={{
+        backgroundColor: '#dddddd52'
+                            }}>
+
+                            <CardItem style={{
+
+                                flex: 2,
+                                flexDirection: 'column',
+                                backgroundColor: '#fbfbfb'
+                            }}>
+                                <Image
+                                    style={{ height: 70, width: 70 }}
+                                    source={rowData.imageUrl}
+                                />
+                                <Text  style={{marginTop:5,color:'#000000'}}>
+                                    {rowData.title}
+                                </Text>
+                                <Text style={{ marginBottom: 5 ,color:'#000000'}}>
+                                    {rowData.desc}
+                                </Text>
+                            </CardItem>
+                        </Card>
+                    );
+                }}
+                keyExtractor={(item, index) => index}
+            />
+        );
+    }
 }

@@ -64,7 +64,7 @@ export class ExpertsPanel extends Component {
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <Sample />
-                    </View>
+                </View>
                 {/* <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>
                         <RecommendationCard assessObj={this.state.assessment.physical} style={{ backgroundColor: '#502f1e' }} style1={{ color: '#502f1e' }} />
