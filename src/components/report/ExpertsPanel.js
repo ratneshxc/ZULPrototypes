@@ -59,8 +59,9 @@ export class ExpertsPanel extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{ flex: 1, alignItems: 'center' }}>
-                    <H3>Experts</H3>
+                <View style={{ flex: 1,flexDirection:'row' }}>
+                    <Text  style={{ flex: 1,color:'#000000',fontWeight:'bold',fontSize:16 }}>Experts</Text>
+                    <Text style={{color:'#28a745',fontSize:16}}>More</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <Sample />
