@@ -20,7 +20,7 @@ const TabRoute = createBottomTabNavigator({
     Dashboard: {
       screen: Dashboard,
       navigationOptions: {
-        title: 'Today',
+        title: 'Dashboard',
         tabBarIcon: ({ focused, tintColor }) => {
           const iconName = `home${focused ? '' : ''}`;
           return <Icon name={iconName} size={25} color={tintColor} />;

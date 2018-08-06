@@ -3,7 +3,6 @@ import { View, StyleSheet, Text, Dimensions, Image, TouchableHighlight } from 'r
 import Tts from 'react-native-tts';
 import { connect } from 'react-redux';
 import Voice from 'react-native-voice';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion,
@@ -195,7 +194,7 @@ const styles = StyleSheet.create({
     zulaBtn: {
         position: 'absolute',
         bottom: 50,
-        left: Dimensions.get('window').width - 80,
+        right:10,
         borderRadius: 50
     },
     zula: {

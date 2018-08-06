@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, Dimensions, ScrollView } from 'react-native';
-import AssessmentSummaryComponent from '../../assessment/assessmentSummary/AssessmentSummaryComponent';
+import AssessmentOverdueComponent from './AssessmentOverdueComponent';
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -10,34 +10,19 @@ class AssessmentList extends React.Component {
         this.state = {
             entries: [{
                 title: 'Financial',
-                remainingTime: '20 days overdue',
-                compPercentage: '',
-                notification: '',
-                icon: require('../../../assests/images/dashboard/financial.svg')
+                overdue: 20
             }, {
                 title: 'Physical',
-                remainingTime: '16 days overdue',
-                compPercentage: '',
-                notification: '',
-                icon: require('../../../assests/images/dashboard/physical.svg')
+                overdue: 16
             }, {
                 title: 'Spiritual',
-                remainingTime: '15 days overdue',
-                compPercentage: '',
-                notification: '',
-                icon: require('../../../assests/images/dashboard/spiritual.svg')
+                overdue: 15
             }, {
                 title: 'Social',
-                remainingTime: '12 days overdue',
-                compPercentage: '',
-                notification: '',
-                icon: require('../../../assests/images/dashboard/social.svg')
+                overdue: 12
             }, {
                 title: 'Emotional',
-                remainingTime: '10 days overdue',
-                compPercentage: '',
-                notification: '',
-                icon: require('../../../assests/images/dashboard/emotional.svg')
+                overdue: 10
             }]
         }
     }
@@ -45,11 +30,11 @@ class AssessmentList extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={{marginLeft:5,marginTop:5}}>Assessments Overdue</Text>
+                <Text style={{paddingHorizontal:10,color:'#353535'}}>Assessments Overdue</Text>
                 <ScrollView horizontal={true}>
                     {this.state.entries.map((x, i) => (
                         <View style={{padding:5}} key={i}>
-                            <AssessmentSummaryComponent assessObj={x} />
+                            <AssessmentOverdueComponent assessObj={x} />
                         </View>
                     ))}
                 </ScrollView>
@@ -60,8 +45,7 @@ class AssessmentList extends React.Component {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:'#ffffff',
-        margin:5
+       padding:10
     }
 })
 export default AssessmentList;
