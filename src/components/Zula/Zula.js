@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import ZulaWakeUpbtn from './ZulaWakeUpbtn';
 import ZulaMessageContainer from './ZulaMessageContainer';
 import ZulaNotification from './ZulaNotification';
+import ZulaWelcomeMessage from './ZulaWelcomeMessage';
 
 export default class Zula extends React.Component {
     render() {
@@ -11,6 +12,7 @@ export default class Zula extends React.Component {
                 <ZulaMessageContainer />
                 <ZulaWakeUpbtn />
                 {/* <ZulaNotification /> */}
+                <ZulaWelcomeMessage />
             </View>
         )
     }

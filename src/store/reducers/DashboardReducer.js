@@ -35,26 +35,26 @@ const initialState = {
             target: 20,
             ideal: '<'
         }, {
-            title: 'Office',
+            title: 'Office Time',
             value: 4,
             unit: 'Hrs',
             target: 8,
             ideal: '>'
         }, {
-            title: 'Home',
+            title: 'Home Time',
             value: 18,
             unit: 'Hrs',
             target: 20,
             ideal: '>'
         },
         {
-            title: 'Credit',
+            title: 'Credit Card Usage',
             value: 500,
             unit: 'Rs',
             target: 300,
             ideal: '<'
         },{
-            title: 'Debit',
+            title: 'Debit Card Usage',
             value: 500,
             unit: 'Rs',
             target: 300,
