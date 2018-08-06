@@ -1,48 +1,41 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { Icon } from 'native-base';
+import Image from 'react-native-remote-svg'
 const StatusHeader = (props) => {
     return (
         <View style={styles.headerSection}>
-            <View style={styles.section}>
-                <TouchableOpacity style={styles.sectionBtn}>
-                    <Text style={styles.sectionText}>Today</Text>
+            <View style={{ flexDirection: 'row', padding: 10 }}>
+                <View style={{ flex: 1,flexDirection: 'row',paddingHorizontal:10 }}>
+                    <Text style={{fontSize:17,color:'#353535'}}>Great, I am feeling </Text>
+                    <Image
+                        source={require('../../assests/images/emoji/01.svg')}
+                        style={{ width: 25, height: 25 }}
+                    />
+                </View>
+                <TouchableOpacity style={{ flexDirection: 'row',paddingHorizontal:10 }}>
+                    <Text style={{paddingVertical:5}}>Today</Text><Icon name="caret-down" style={{ marginLeft: 5 }} type="FontAwesome" />
                 </TouchableOpacity>
             </View>
-            <View style={styles.section}>
-                <TouchableOpacity style={styles.sectionBtn}>
-                    <Text style={styles.sectionText}>Week</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.section}>
-                <TouchableOpacity style={styles.sectionBtn}>
-                    <Text style={styles.sectionText}>Month</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.section}>
-                <TouchableOpacity style={styles.sectionBtn}>
-                    <Text style={styles.sectionText}>Year</Text>
-                </TouchableOpacity>
-            </View>
+            <View style={styles.horiLine}></View>
+            {/* <View style={{ padding: 5,flexDirection:'row' }}>
+                <Text style={{ fontSize: 14 }}>Good morning KK</Text>
+                <Text style={{ fontSize: 16 }}>Today</Text><Icon name="caret-down" style={{marginLeft:5}} type="FontAwesome"/>
+            </View> */}
+            {/* <View style={styles.horiLine}></View> */}
+
         </View>
     )
 }
 const styles = StyleSheet.create({
     headerSection: {
-        flexDirection: 'row'
+
     },
-    section: {
+    horiLine: {
         flex: 1,
-        padding: 5
-    },
-    sectionText: {
-        textAlign: 'center'
-    },
-    sectionBtn: {
-        borderColor: '#ddd',
-        borderWidth: 1,
-        padding: 5,
-        borderRadius: 10,
-        backgroundColor:'#ffffff'
+        height: 1,
+        backgroundColor: '#ddd',
+        marginHorizontal: 10
     }
 })
 export default StatusHeader;

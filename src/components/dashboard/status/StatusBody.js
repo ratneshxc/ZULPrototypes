@@ -24,6 +24,7 @@ const chunkArray = (myArray, chunk_size) => {
 
 const StatusBody = (props) => {
     let arrayGroup = chunkArray(props.wellnessStatusSummary, 3)
+    let arrayLength = props.wellnessStatusSummary.length;
     return (
         <View style={styles.container}>
             {
@@ -31,7 +32,13 @@ const StatusBody = (props) => {
                     <View style={styles.sectionRow} key={x}>
                         {x.map((n, j) => (
                             <View style={styles.section} key={j}>
-                                <StatusComponent statusObj={n} />
+                                {j !== 0 && <View style={{ width: 0.5, backgroundColor: '#ddd', marginVertical: 10 }}></View>}
+                                <View style={{ flex: 1, flexDirection: 'column' }}>
+                                    {i !== 0 && <View style={{ height: 0.5, backgroundColor: '#ddd', marginHorizontal: 10 }}></View>}
+                                    <View style={{padding:10}}><StatusComponent statusObj={n} /></View>
+                                    {i >= arrayLength / 3 && <View style={{ height: 0.5, backgroundColor: '#ddd', marginHorizontal: 10 }}></View>}
+                                </View>
+                                {j !== 2 && <View style={{ width: 0.5, backgroundColor: '#ddd', marginVertical: 10 }}></View>}
                             </View>
                         ))}
                     </View>
@@ -50,7 +57,8 @@ const styles = StyleSheet.create({
     },
     section: {
         flex: 1,
-        padding: 5
+        flexDirection: 'row',
+        borderColor: '#ddd'
     }
 })
 export default connect(mapStateToProps)(StatusBody);

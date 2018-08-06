@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
-import Button from 'react-native-button';
+import React from 'react';
+import { View, Image, StyleSheet } from 'react-native';
 import Form from './Form';
 import LoginFooter from './LoginFooter';
 import WallpaperAnimation from '../animations/WallpaperAnimation';
