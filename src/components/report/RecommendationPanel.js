@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
-import RecommendationCard from './RecommendtationCard';
 import { H3 } from 'native-base';
 import Sample from './SampleGoals';
 export class RecommendationPanel extends Component {
