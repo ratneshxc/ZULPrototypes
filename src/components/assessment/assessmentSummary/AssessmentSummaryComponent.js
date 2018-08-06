@@ -4,11 +4,23 @@ import { Card, Badge, Icon } from 'native-base';
 import Image from 'react-native-remote-svg';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
+import {connect} from 'react-redux'; 
 
+const mapDispatchToProps=(dispatch)=>({
+    selectCurrentAssessment:(value)=>dispatch({
+        type:'AssessmentReducer_SelectAssessmentType',
+        payload:value
+    })
+})
 
 const AssessmentSummaryComponent = (props) => {
+     selectAssessment = () => {
+        props.goAssessmentInfo();
+        props.selectCurrentAssessment(props.assessObj.title.toUpperCase());
+    }
+
     return (
-        <TouchableOpacity style={[styles.container]} onPress={props.goAssessmentInfo}>
+        <TouchableOpacity style={[styles.container]} onPress={selectAssessment}>
         <Card style={{flex:1}}>
             <View style={{ flexDirection: 'column' }}>
                 <View style={{ ...props.style, height: 3, width: props.assessObj.compPercentage === '' ? 0 : props.assessObj.compPercentage }}></View>
@@ -46,4 +58,4 @@ const styles = StyleSheet.create({
         flex: 1,
     }
 })
-export default AssessmentSummaryComponent;
+export default connect(null,mapDispatchToProps)(AssessmentSummaryComponent);

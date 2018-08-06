@@ -34,7 +34,11 @@ class AssessmentList extends React.Component {
                 <ScrollView horizontal={true}>
                     {this.state.entries.map((x, i) => (
                         <View style={{padding:5}} key={i}>
+<<<<<<< HEAD
+                            {/* <AssessmentSummaryComponent assessObj={x} /> */}
+=======
                             <AssessmentOverdueComponent assessObj={x} />
+>>>>>>> 68c3db31fecdaf94df3ddefe669e6fafb92c5f07
                         </View>
                     ))}
                 </ScrollView>

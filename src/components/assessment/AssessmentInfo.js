@@ -10,8 +10,8 @@ class AssessmentInfo extends Component {
     render() {
         return (
             <View>
-             <TouchableOpacity onPress={this.goAssessment} style={{height:30,width:300,backgroundColor:'green'}}>
-                <Text>Click Me</Text>
+             <TouchableOpacity onPress={this.goAssessment} style={{backgroundColor:'green',height:25}}>
+                <Text style={{alignSelf:'center', color:'white'}}>Take Assessment!!</Text>
                 </TouchableOpacity>
             </View>
         );
