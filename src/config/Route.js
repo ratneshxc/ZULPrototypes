@@ -5,6 +5,7 @@ import Register from '../components/register/Register';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
 import AssessmentReport from '../components/report/AssessmentReport';
 import LandingTab from '../components/landingtabs/LandingTabs';
+import ExpertFilter from '../components/expertconnect/screens/ExpertFilter'
 
 
 // const AppRoute = createSwitchNavigator({
@@ -22,7 +23,8 @@ const AppRoute = createSwitchNavigator({
   Assessment: { screen: Assessment },
   Register: { screen: Register },
   AssessmentReport: { screen: AssessmentReport },
-  AssessmentInfo: { screen: AssessmentInfo }
+  AssessmentInfo: { screen: AssessmentInfo },
+  ExpertFilter:{screen:ExpertFilter}
 });
 
 

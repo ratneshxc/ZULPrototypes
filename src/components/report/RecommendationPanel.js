@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
-import RecommendationCard from './RecommendtationCard';
+
 import { H3 } from 'native-base';
+import Sample from './SampleGoals';
 export class RecommendationPanel extends Component {
     constructor() {
         super();
@@ -58,32 +59,13 @@ export class RecommendationPanel extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{ flex: 1, alignItems: 'center' }}>
-                    <H3>Recommendations</H3>
+                <View style={{ flex: 1,flexDirection:'row' }}>
+                    <Text  style={{ flex: 1,color:'#000000',fontWeight:'bold',fontSize:16 }}>Recommendations</Text>
+                    <Text style={{color:'#28a745',fontSize:16}}>More</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.physical} style={{ backgroundColor: '#502f1e' }} style1={{ color: '#502f1e' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.emotional} style={{ backgroundColor: '#bb2133' }} style1={{ color: '#bb2133' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.financial} style={{ backgroundColor: '#11b7e4' }} style1={{ color: '#11b7e4' }} />
-                    </View>
+                    <Sample />
                 </View>
-                <View style={{ flexDirection: 'row' }}>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.occupational} style={{ backgroundColor: '#ed8c24' }} style1={{ color: '#ed8c24' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.spiritual} style={{ backgroundColor: '#642868' }} style1={{ color: '#642868' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <RecommendationCard assessObj={this.state.assessment.environmental} style={{ backgroundColor: '#0a5840' }} style1={{ color: '#0a5840' }} />
-                    </View>
-                </View>
-            
             </View>
         )
     }
