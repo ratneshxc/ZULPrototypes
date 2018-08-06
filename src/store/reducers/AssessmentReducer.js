@@ -1,82 +1,68 @@
+import QuestionData from '../../data/strengthAndEnergyData';
+
 const initialState = {
-    currentQuestion: {
-        no: 1,
-        statement: "How often have you fallen ill in the past year?",
-        imageURL: require('../../assests/images/illness-image.png'),
-        options: [{
-            label: 'More than 15 times', value: '1', isSelected: false
-        }, {
-            label: '10 to 15 times', value: '2', isSelected: false
-        }, {
-            label: '5 to 10 times', value: '3', isSelected: false
-        }, {
-            label: '1 to 2 times', value: '4', isSelected: false
-        }],
-        ansType: 'single',
-        progressBar: 0,
-        progressBarColor: '#ff2626',
-        likes: 25,
-        selectedIndex: null
-    },
+    currentQuestion: {},
     questions: [],
+    currentAssessment:"",
     isNextQuestionLoading: false,
     assessmentReport: {
         physical: {
-            title: 'Physical',
+            title: 'Strength & Energy',
             remainingTime: '2 days ago',
             compPercentage: '25%',
             notification: '',
             icon: require('../../assests/images/dashboard/physical.svg')
         },
         emotional: {
-            title: 'Emotional',
+            title: 'BIOLOGICAL AGE',
             remainingTime: '5 days ago',
             compPercentage: '35%',
             notification: '',
             icon: require('../../assests/images/dashboard/emotional.svg')
         },
         social: {
-            title: 'Social',
+            title: 'Diet Score',
             remainingTime: '65 days ago',
             compPercentage: '65%',
             notification: '',
             icon: require('../../assests/images/dashboard/social.svg')
         },
         occupational: {
-            title: 'Occupational',
+            title: 'Relationship & Intimacy',
             remainingTime: '83 days ago',
             compPercentage: '85%',
             notification: '',
             icon: require('../../assests/images/dashboard/occupational.svg')
         },
         spiritual: {
-            title: 'Spiritual',
+            title: 'Thought Control',
             remainingTime: '73 days ago',
             compPercentage: '21%',
             notification: '',
             icon: require('../../assests/images/dashboard/spiritual.svg')
         },
         intellectual: {
-            title: 'Intellectual',
+            title: 'Wholesomeness',
             remainingTime: '32 days ago',
             compPercentage: '30%',
             notification: '',
             icon: require('../../assests/images/dashboard/intellectual.svg')
         },
         financial: {
-            title: 'Financial',
+            title: 'Zest For Life',
             remainingTime: '25 days ago',
             compPercentage: '91%',
             notification: '',
             icon: require('../../assests/images/dashboard/financial.svg')
-        },
-        environmental: {
-            title: 'Environmental',
-            remainingTime: '20 days ago',
-            compPercentage: '65%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/environmental.svg')
         }
+        // ,
+        // environmental: {
+        //     title: 'Environmental',
+        //     remainingTime: '20 days ago',
+        //     compPercentage: '65%',
+        //     notification: '',
+        //     icon: require('../../assests/images/dashboard/environmental.svg')
+        // }
     }
 }
 
@@ -93,6 +79,10 @@ const AssessmentReducer = (state = initialState, action) => {
         }
         case 'AssessmentReducer_IsNextQuestionLoading': {
             state = { ...state, isNextQuestionLoading: action.payload }
+            break;
+        }
+        case 'AssessmentReducer_SelectAssessmentType': {
+            state = { ...state, currentAssessment: action.payload }
             break;
         }
     }

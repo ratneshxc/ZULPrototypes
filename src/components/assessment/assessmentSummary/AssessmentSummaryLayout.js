@@ -32,29 +32,29 @@ class AssessmentSummaryLayout extends Component {
                         <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.physical} style={{ backgroundColor: '#502f1e' }} style1={{ color: '#502f1e' }} />
                     </View>
                     <View style={styles.blocks}>
-                        <AssessmentSummaryComponent assessObj={this.props.assessment.emotional} style={{ backgroundColor: '#bb2133' }} style1={{ color: '#bb2133' }} />
+                        <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.emotional} style={{ backgroundColor: '#bb2133' }} style1={{ color: '#bb2133' }} />
                     </View>
                     <View style={styles.blocks}>
-                        <AssessmentSummaryComponent assessObj={this.props.assessment.social} style={{ backgroundColor: '#192c56' }} style1={{ color: '#192c56' }} />
-                    </View>
-                </View>
-                <View style={{ flexDirection: 'row' }}>
-                    <View style={styles.blocks}>
-                        <AssessmentSummaryComponent assessObj={this.props.assessment.occupational} style={{ backgroundColor: '#ed8c24' }} style1={{ color: '#ed8c24' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <AssessmentSummaryComponent assessObj={this.props.assessment.spiritual} style={{ backgroundColor: '#642868' }} style1={{ color: '#642868' }} />
-                    </View>
-                    <View style={styles.blocks}>
-                        <AssessmentSummaryComponent assessObj={this.props.assessment.intellectual} style={{ backgroundColor: '#fecf08' }} style1={{ color: '#fecf08' }} />
+                        <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.social} style={{ backgroundColor: '#192c56' }} style1={{ color: '#192c56' }} />
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={styles.blocks}>
-                        <AssessmentSummaryComponent assessObj={this.props.assessment.financial} style={{ backgroundColor: '#11b7e4' }} style1={{ color: '#11b7e4' }} />
+                        <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.occupational} style={{ backgroundColor: '#ed8c24' }} style1={{ color: '#ed8c24' }} />
                     </View>
                     <View style={styles.blocks}>
-                        <AssessmentSummaryComponent assessObj={this.props.assessment.environmental} style={{ backgroundColor: '#0a5840' }} style1={{ color: '#0a5840' }} />
+                        <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.spiritual} style={{ backgroundColor: '#642868' }} style1={{ color: '#642868' }} />
+                    </View>
+                    <View style={styles.blocks}>
+                        <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.intellectual} style={{ backgroundColor: '#fecf08' }} style1={{ color: '#fecf08' }} />
+                    </View>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                    <View style={styles.blocks}>
+                        <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.financial} style={{ backgroundColor: '#11b7e4' }} style1={{ color: '#11b7e4' }} />
+                    </View>
+                    <View style={styles.blocks}>
+                        {/* <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={this.props.assessment.environmental} style={{ backgroundColor: '#0a5840' }} style1={{ color: '#0a5840' }} /> */}
                     </View>
                     <View style={styles.blocks}>
 

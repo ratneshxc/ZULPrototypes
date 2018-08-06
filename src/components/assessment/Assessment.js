@@ -3,11 +3,19 @@ import { Text, View, Image, Button, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 import Question from './Question';
+import QuestionData from '../../data/strengthAndEnergyData';
+import biologicalAgeData from '../../data/biologicalAgeData';
+import dietScoreData from '../../data/dietScoreData';
+import relationshipAndIntimacyData from '../../data/relationshipAndIntimacyData';
+import thoughtControlData from '../../data/thoughtControlData';
+import wholesomeness from '../../data/wholesomeness';
+import zestForLifeData from '../../data/zestForLifeData';
 
 const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion,
     questions: state.Assessment.questions,
-    isNextQuestionLoading: state.Assessment.isNextQuestionLoading
+    isNextQuestionLoading: state.Assessment.isNextQuestionLoading,
+    currentAssessment: state.Assessment.currentAssessment
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -16,27 +24,13 @@ const mapDispatchToProps = dispatch => ({
         payload: question
     }),
     //Questions Obj
-    getAllQuestion: () => dispatch({
+    getAllQuestion: (data) => dispatch({
         type: 'AssessmentReducer_GetAllQuestions',
-        payload: [ {
-            no: 8,
-            statement: "Are you disappointed with the level of your sexual activity, desire and satisfaction?",
-            imageURL: require('../../assests/images/satifaction-image.png'),
-            options: [{
-                label: 'Always', value: '1'
-            }, {
-                label: 'Frequently', value: '2'
-            }, {
-                label: 'Sometimes', value: '3'
-            }, {
-                label: 'Never', value: '4'
-            }],
-            ansType: 'single',
-            progressBar: 1,
-            progressBarColor: '#309830',
-            likes: 154,
-            selectedIndex: null
-        }]
+        payload: data
+    }),
+    getCurrentQuestion: (data) => dispatch({
+        type: 'AssessmentReducer_GetQuestion',
+        payload: data
     }),
 })
 
@@ -70,9 +64,42 @@ class Assessment extends Component {
         this.props.navigation.navigate('AssessmentReport');
     }
 
- 
+
     componentWillMount() {
-        this.props.getAllQuestion();
+        let questions = null;
+        let question = null;
+        switch (this.props.currentAssessment) {
+            case 'Strength & Energy'.toUpperCase():
+            question=QuestionData[0];
+            questions=QuestionData;
+                break;
+            case 'BIOLOGICAL AGE'.toUpperCase():
+            question=biologicalAgeData[0];
+            questions=biologicalAgeData;
+                break;
+            case 'Diet Score'.toUpperCase():
+            question=dietScoreData[0];
+            questions=dietScoreData;
+                break;
+            case 'Relationship & Intimacy'.toUpperCase():
+            question=relationshipAndIntimacyData[0];
+            questions=relationshipAndIntimacyData;
+                break;
+            case 'Thought Control'.toUpperCase():
+            question=thoughtControlData[0];
+            questions=thoughtControlData;
+                break;
+            case 'Wholesomeness'.toUpperCase():
+            question=wholesomeness[0];
+            questions=wholesomeness;
+                break;
+            case 'Zest For Life'.toUpperCase():
+            question=zestForLifeData[0];
+            questions=zestForLifeData;
+                break;
+        }
+        this.props.getAllQuestion(questions);
+        this.props.getCurrentQuestion(question);
     }
 
     render() {
@@ -80,7 +107,7 @@ class Assessment extends Component {
             <GestureRecognizer
                 style={{ flex: 1 }}
                 onSwipe={(direction, state) => this.onSwipe(direction, state)}>
-                <Question onDismiss={this.onDismiss} goToReportClick={this.goToReport} goToLoginClick={this.goToLogin}  />
+                <Question onDismiss={this.onDismiss} goToReportClick={this.goToReport} goToLoginClick={this.goToLogin} />
             </GestureRecognizer>
         );
     }
