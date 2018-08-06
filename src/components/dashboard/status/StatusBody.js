@@ -40,7 +40,7 @@ const StatusBody = (props) => {
             <View style={styles.container}>
                 {
                     arrayGroup.map((x, i) => (
-                        <View style={styles.sectionRow} key={x}>
+                        <View style={styles.sectionRow} key={i}>
                             {x.map((n, j) => (
                                 <View style={styles.section} key={j}>
                                     {j !== 0 && <View style={{ width: 0.5, backgroundColor: '#ddd', marginVertical: 10 }}></View>}

@@ -40,34 +40,6 @@ class Dashboard extends React.Component {
                     </View>
                 </Content>
             </Container>
-
-            // <View style={{ flex: 1 }}>
-            //     <ScrollView style={styles.container}>
-            //         <View style={styles.header}>
-            //             <View style={{ flex: 1 }}>
-
-            //                 <H3 style={{color:'#ffffff',padding: 5}}>Dashboard</H3>
-            //             </View>
-            //             <View>
-            //                 <TouchableOpacity style={{ padding: 5 }}>
-            //                     <Icon name="cog" color="#ffffff" type="FontAwesome" size={20} />
-            //                 </TouchableOpacity>
-            //             </View>
-            //         </View>
-            //         <View style={styles.body}>
-            //             <View style={{ backgroundColor: '#ffffff', marginBottom: 5 }}>
-            //                 <StatusHeader />
-            //                 <OverallScore />
-            //                 <View style={{ backgroundColor: '#ddd', height: 1, marginHorizontal: 15 }}></View>
-            //                 <StatusLayout />
-            //             </View>
-            //             <View style={{ backgroundColor: '#ffffff' }}>
-            //                 <AssessmentList />
-            //             </View>
-            //         </View>
-
-            //     </ScrollView>
-            // </View>
         )
     }
 }

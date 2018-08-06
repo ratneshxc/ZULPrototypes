@@ -2,31 +2,39 @@ import React from 'react';
 import { View, StyleSheet, Text, Dimensions, TouchableOpacity } from 'react-native';
 import { Card } from 'native-base';
 import Image from 'react-native-remote-svg';
+import { connect } from 'react-redux';
 
 const width = Dimensions.get('window').width;
+
+const mapDispatchToProps = dispatch => ({
+    hideWishModal: () => dispatch({
+        type: 'ZulaReducer_Wish',
+        payload: false
+    })
+})
 
 const ZulaWelcomeMessage = (props) => {
     return (
         <View style={styles.container}>
             <Card style={styles.innerContainer}>
                 <View style={styles.body}>
-                    <View style={{flex:1}}>
-                        <Text style={{ color: '#ffffff' }}>Hey KK, How are you feeling today?</Text>
+                    <View style={{ flex: 1, marginBottom: 10 }}>
+                        <Text style={{ color: '#ffffff', fontSize: 20 }}>Good morning KK, how are you feeling today?</Text>
                     </View>
-                    <View style={{ flexDirection: 'row',flex:1}}>
-                        <TouchableOpacity style={styles.emojiContainer}>
+                    <View style={{ flexDirection: 'row', flex: 1 }}>
+                        <TouchableOpacity style={styles.emojiContainer} onPress={props.hideWishModal}>
                             <Image style={styles.emoji} source={require('../../assests/images/emoji/01.svg')} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.emojiContainer}>
+                        <TouchableOpacity style={styles.emojiContainer} onPress={props.hideWishModal}>
                             <Image style={styles.emoji} source={require('../../assests/images/emoji/02.svg')} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.emojiContainer}>
+                        <TouchableOpacity style={styles.emojiContainer} onPress={props.hideWishModal}>
                             <Image style={styles.emoji} source={require('../../assests/images/emoji/03.svg')} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.emojiContainer}>
+                        <TouchableOpacity style={styles.emojiContainer} onPress={props.hideWishModal}>
                             <Image style={styles.emoji} source={require('../../assests/images/emoji/04.svg')} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.emojiContainer}>
+                        <TouchableOpacity style={styles.emojiContainer} onPress={props.hideWishModal}>
                             <Image style={styles.emoji} source={require('../../assests/images/emoji/05.svg')} />
                         </TouchableOpacity>
                     </View>
@@ -49,11 +57,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#5067ffe3',
         borderRadius: 5,
         borderWidth: 0,
-        flex:1
+        flex: 1
     },
     body: {
         padding: 5,
-        flex:1
+        flex: 1
     },
     triangleShapeCSS: {
         width: 0,
@@ -75,7 +83,8 @@ const styles = StyleSheet.create({
     },
     emojiContainer: {
         flex: 1,
-        paddingHorizontal: 10
+        justifyContent: 'center',
+        alignItems:'center'
     }
 })
-export default ZulaWelcomeMessage;
+export default connect(null, mapDispatchToProps)(ZulaWelcomeMessage);

@@ -5,65 +5,36 @@ const initialState = {
     questions: [],
     currentAssessment:"",
     isNextQuestionLoading: false,
-    assessmentReport: {
-        physical: {
+    assessmentReport: [ {
             title: 'Strength & Energy',
             remainingTime: '2 days ago',
             compPercentage: '25%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/physical.svg')
-        },
-        emotional: {
-            title: 'BIOLOGICAL AGE',
+        },{
+            title: 'Biological Age',
             remainingTime: '5 days ago',
-            compPercentage: '35%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/emotional.svg')
-        },
-        social: {
+            compPercentage: '35%'
+        },{
             title: 'Diet Score',
             remainingTime: '65 days ago',
-            compPercentage: '65%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/social.svg')
-        },
-        occupational: {
+            compPercentage: '65%'
+        }, {
             title: 'Relationship & Intimacy',
             remainingTime: '83 days ago',
-            compPercentage: '85%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/occupational.svg')
-        },
-        spiritual: {
+            compPercentage: '85%'
+        }, {
             title: 'Thought Control',
             remainingTime: '73 days ago',
-            compPercentage: '21%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/spiritual.svg')
-        },
-        intellectual: {
+            compPercentage: '21%'
+        }, {
             title: 'Wholesomeness',
             remainingTime: '32 days ago',
-            compPercentage: '30%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/intellectual.svg')
-        },
-        financial: {
+            compPercentage: '30%'
+        }, {
             title: 'Zest For Life',
             remainingTime: '25 days ago',
-            compPercentage: '91%',
-            notification: '',
-            icon: require('../../assests/images/dashboard/financial.svg')
+            compPercentage: '91%'
         }
-        // ,
-        // environmental: {
-        //     title: 'Environmental',
-        //     remainingTime: '20 days ago',
-        //     compPercentage: '65%',
-        //     notification: '',
-        //     icon: require('../../assests/images/dashboard/environmental.svg')
-        // }
-    }
+    ]
 }
 
 

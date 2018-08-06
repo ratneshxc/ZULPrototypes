@@ -1,5 +1,4 @@
 const initialState = {
-    isWishVisible: false,
     isConfigurableDashboard: false,
     wellnessStatusSummary: [
         {
