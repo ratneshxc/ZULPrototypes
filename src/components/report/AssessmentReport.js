@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import ReportHeader from './ReportHeader';
 import AssesmentSummaryLayout from './AssesmentSummaryLayout';
 import RecommendationPanel from './RecommendationPanel';
 import ExpertsPanel from './ExpertsPanel';
 import AssesmentAction from './AssesmentAction';
+
 export default class AssessmentReport extends React.Component {
 
     goToDashboard=()=>{
@@ -19,6 +20,7 @@ export default class AssessmentReport extends React.Component {
                     <AssesmentSummaryLayout />
                     <RecommendationPanel />
                     <ExpertsPanel />
+                 
                     <AssesmentAction goToDashboard={this.goToDashboard}/>
 
                 </ScrollView>
@@ -31,5 +33,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#dddddd52'
+        
     }
 })
