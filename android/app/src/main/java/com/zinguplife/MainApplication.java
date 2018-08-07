@@ -3,7 +3,11 @@ package com.zinguplife;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.brentvatne.react.ReactVideoPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
 import net.no_mad.tts.TextToSpeechPackage;
+import com.horcrux.svg.SvgPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.wenkesj.voice.VoicePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -26,10 +30,12 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new TextToSpeechPackage(),
-            new VoicePackage(),
             new ReactVideoPackage(),
-			new SvgPackage()
+            new VectorIconsPackage(),
+            new TextToSpeechPackage(),
+            new SvgPackage(),
+            new LinearGradientPackage(),
+            new VoicePackage()
       );
     }
 

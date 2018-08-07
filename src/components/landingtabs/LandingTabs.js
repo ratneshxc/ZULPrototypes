@@ -42,8 +42,8 @@ export default class LandingTab extends React.Component {
         type="overlay"
         content={<ControlPanel closeDrawer={closeControlPanel} />}
         tapToClose={true}
-        openDrawerOffset={0.4} // 20% gap on the right side of drawer
-        panCloseMask={0.4}
+        openDrawerOffset={0.3} // 20% gap on the right side of drawer
+        panCloseMask={0.3}
         closedDrawerOffset={-3}
         styles={drawerStyles}
       >

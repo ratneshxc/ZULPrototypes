@@ -13,7 +13,7 @@ class QuestionHeader extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.headerLeft}>
-                    <Text style={styles.header}>Wholesomeness</Text>
+                    <Text style={styles.header}>{this.props.currentQuestion.Category}</Text>
                 </View>
                 <View style={styles.headerRight}>
                     <Text style={{ color: '#ffffff', fontWeight: 'bold', marginTop: 3 }}>

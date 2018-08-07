@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Strength & Energy",
         statement: "When do you eat?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_280814495-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I keep munching every now and then", value: '1'},
@@ -21,7 +21,7 @@ var statementData = [
         no:2,
         Category:"Strength & Energy",
         statement: "How do you rate your appetite after each meal?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_1132183037-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Very Hungry", value: '1'},
@@ -39,7 +39,7 @@ var statementData = [
         no:3,
         Category:"Strength & Energy",
         statement: "How many cups of coffee/tea do you drink per day?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_574800841-nw.jpg'),
         statementSuggestion:"(small size cup which can hold up to 100ml)",
         options:[
             {label:"More than 10 cups", value: '1'},
@@ -57,7 +57,7 @@ var statementData = [
         no:4,
         Category:"Strength & Energy",
         statement: "Do you add extra salt or sugar to your food?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_296066060-new.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -93,7 +93,7 @@ var statementData = [
         no:6,
         Category:"Strength & Energy",
         statement: "Do you eat/drink between meals?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_411677209-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I always eat/drink between meals", value: '1'},
@@ -111,7 +111,7 @@ var statementData = [
         no:7,
         Category:"Strength & Energy",
         statement: "Do you tend to overeat during meal?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_166093472-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -129,7 +129,7 @@ var statementData = [
         no:8,
         Category:"Strength & Energy",
         statement: "Select which of these practice you follow:",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_631974191-nw.jpg'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"Walk or cycle for short distances instead of driving", value: '1'},
@@ -149,7 +149,7 @@ var statementData = [
         no:9,
         Category:"Strength & Energy",
         statement: "You don't exercise because:",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_1132401515-new.jpg'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"My days are busy and exercise is not a high priority", value: '1'},
@@ -171,7 +171,7 @@ var statementData = [
         no:10,
         Category:"Strength & Energy",
         statement: "What is your daily physical activity level?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_748217398-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Little (less than 1 hour per week)", value: '1'},
@@ -190,7 +190,7 @@ var statementData = [
         no:11,
         Category:"Strength & Energy",
         statement: "Do you have difficulty falling asleep at night?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_516814942-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I have difficulty in falling asleep", value: '1'},
@@ -208,7 +208,7 @@ var statementData = [
         no:12,
         Category:"Strength & Energy",
         statement: "Do you feel rested and ready for the day, when you get up in the morning?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_1106887784-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Never feel rested when I wake up", value: '1'},
@@ -226,7 +226,7 @@ var statementData = [
         no:13,
         Category:"Strength & Energy",
         statement: "Do you wear tight fitting clothes such as shape wears and skinny jeans, which may restrict your movement and breathing?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_310344743-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -244,7 +244,7 @@ var statementData = [
         no:14,
         Category:"Strength & Energy",
         statement: "How many hours do you spend travelling in a car/bike?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_1096949156-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"More than 4hours", value: '1'},
@@ -262,7 +262,7 @@ var statementData = [
         no:15,
         Category:"Strength & Energy",
         statement: "Do you feel that you have a poor posture?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_617543948-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I have a bad posture", value: '1'},
@@ -280,7 +280,7 @@ var statementData = [
         no:16,
         Category:"Strength & Energy",
         statement: "Do you have breathing problems?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_216062674-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I have chronic breathing problems", value: '1'},
@@ -298,7 +298,7 @@ var statementData = [
         no:17,
         Category:"Strength & Energy",
         statement: "Do you experience headaches?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_770157496-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I have chronic headaches", value: '1'},
@@ -316,7 +316,7 @@ var statementData = [
         no:18,
         Category:"Strength & Energy",
         statement: "How is your bowel movements?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_671903152-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"More than 3 watery stools a day", value: '1'},
@@ -334,7 +334,7 @@ var statementData = [
         no:19,
         Category:"Strength & Energy",
         statement: "How often do you catch cold?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_118647259-nw.jpg'),
         statementSuggestion:"",
         options:[
             {label:"More than twice a month", value: '1'},
@@ -352,7 +352,7 @@ var statementData = [
         no:20,
         Category:"Strength & Energy",
         statement: "Have you been diagnosed with any of the following conditions:",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/shutterstock_457866949-nw.jpg'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"Arthritis", value: '1'},

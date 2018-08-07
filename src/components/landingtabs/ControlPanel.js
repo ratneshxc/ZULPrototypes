@@ -3,92 +3,68 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { Thumbnail, List, ListItem, Left, Body, Right, Button, Icon, Card } from 'native-base';
 
 export default class ControlPanel extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            menuItems: [{
-                icon: 'home',
-                title: 'Events'
-            }, {
-                icon: 'home',
-                title: 'Assessments'
-            }, {
-                icon: 'home',
-                title: 'Visits'
-            }, {
-                icon: 'home',
-                title: 'History'
-            }, {
-                icon: 'home',
-                title: 'Settings'
-            }, {
-                icon: 'home',
-                title: 'Log out'
-            }]
-        }
-    }
     render() {
         let { closeDrawer } = this.props
         return (
             <Card style={styles.container}>
                 <ScrollView>
-                    <Text style={styles.controlText}>Control Panel</Text>
-                    <View style={{ alignItems: 'center' }}>
-                        <Thumbnail source={require('../../assests/images/suresh.png')} />
-                        <Text>Pritam Kurunkar</Text>
+                    <View style={{ alignItems: 'center', paddingVertical: 30 }}>
+                        <Thumbnail large source={require('../../assests/images/suresh.png')} />
+                        <Text style={{ color: '#353535', fontSize: 20 }}>Pritam Kurunkar</Text>
+                        <Text style={{ color: '#00b386', fontStyle: 'italic' }}>Active since 90 days</Text>
                     </View>
                     <List>
                         <ListItem icon>
                             <Left>
-                                <Icon name="calendar" type="FontAwesome" />
+                                <Icon name="calendar" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
-                                <Text>Events</Text>
+                                <Text style={styles.menuText}>Events</Text>
                             </Body>
                             <Right></Right>
                         </ListItem>
                         <ListItem icon>
                             <Left>
-                                <Icon active name="home" />
+                                <Icon name="paperclip" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
-                                <Text>Assessments</Text>
+                                <Text style={styles.menuText}>Assessments</Text>
                             </Body>
                             <Right></Right>
                         </ListItem>
                         <ListItem icon>
                             <Left>
-                                <Icon active name="home" />
+                                <Icon name="user" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
-                                <Text>Oppointment</Text>
+                                <Text style={styles.menuText}>Oppointments</Text>
                             </Body>
                             <Right></Right>
                         </ListItem>
                         <ListItem icon>
                             <Left>
-                                <Icon active name="home" />
+                                <Icon name="history" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
-                                <Text>History</Text>
+                                <Text style={styles.menuText}>History</Text>
                             </Body>
                             <Right></Right>
                         </ListItem>
                         <ListItem icon>
                             <Left>
-                                <Icon active name="home" />
+                                <Icon name="cog" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
-                                <Text>Settings</Text>
+                                <Text style={styles.menuText}>Settings</Text>
                             </Body>
                             <Right></Right>
                         </ListItem>
                         <ListItem icon>
                             <Left>
-                                <Icon active name="home" />
+                                <Icon name="sign-out" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
-                                <Text>Log Out</Text>
+                                <Text style={styles.menuText}>Log Out</Text>
                             </Body>
                             <Right></Right>
                         </ListItem>
@@ -109,10 +85,7 @@ const styles = StyleSheet.create({
     controlText: {
         color: 'white',
     },
-    button: {
-        backgroundColor: 'white',
-        borderWidth: 1,
-        borderColor: 'black',
-        padding: 10,
+    menuText: {
+        fontSize: 18
     }
 })
