@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Relationship & Intimacy",
         statement: "Do you express your thoughts freely?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I find it very difficult to express my thoughts", value: '1'},
@@ -22,7 +22,7 @@ var statementData = [
         no:2,
         Category:"Relationship & Intimacy",
         statement: "Do you find it difficult to say 'NO' to people?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -41,7 +41,7 @@ var statementData = [
         no:3,
         Category:"Relationship & Intimacy",
         statement: "Do you encourage people to share their problems with you?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value: '1'},
@@ -60,7 +60,7 @@ var statementData = [
         no:4,
         Category:"Relationship & Intimacy",
         statement: "Is it difficult for you to initiate conversation?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -79,7 +79,7 @@ var statementData = [
         no:5,
         Category:"Relationship & Intimacy",
         statement: "Do you panic easily under normal circumstances?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -98,7 +98,7 @@ var statementData = [
         no:6,
         Category:"Relationship & Intimacy",
         statement: "Do you get angry, if a demand or desire is unmet?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -117,7 +117,7 @@ var statementData = [
         no:7,
         Category:"Relationship & Intimacy",
         statement: "Do you fear the upcoming changes in your life?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -136,7 +136,7 @@ var statementData = [
         no:8,
         Category:"Relationship & Intimacy",
         statement: "Do you often introspect your feelings and actions?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -155,7 +155,7 @@ var statementData = [
         no:9,
         Category:"Relationship & Intimacy",
         statement: "Do you often have mood swings?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -174,7 +174,7 @@ var statementData = [
         no:10,
         Category:"Relationship & Intimacy",
         statement: "Do you feel your family is supportive and encouraging in your efforts?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I am emotionally detached from my family", value: '1'},
@@ -192,7 +192,7 @@ var statementData = [
         no:11,
         Category:"Relationship & Intimacy",
         statement: "Pick an option that you can closely relate to:",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I am the trouble maker", value: '1'},
@@ -211,7 +211,7 @@ var statementData = [
         no:12,
         Category:"Relationship & Intimacy",
         statement: "Do you discuss your problems with your close friends and family?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I do not discuss", value: '1'},
@@ -229,7 +229,7 @@ var statementData = [
         no:13,
         Category:"Relationship & Intimacy",
         statement: "Do you have people other than family on whom you can rely upon at the moment of need?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I don't have anyone that I can rely upon", value: '1'},
@@ -247,7 +247,7 @@ var statementData = [
         no:14,
         Category:"Relationship & Intimacy",
         statement: "Does your family members make you feel valued?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value: '1'},
@@ -265,7 +265,7 @@ var statementData = [
         no:15,
         Category:"Relationship & Intimacy",
         statement: "Do you have warm and close moments together with your family?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value: '1'},
@@ -283,7 +283,7 @@ var statementData = [
         no:16,
         Category:"Relationship & Intimacy",
         statement: "Do you feel there is freedom for you to express yourself in the family?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value: '1'},
@@ -301,7 +301,7 @@ var statementData = [
         no:17,
         Category:"Relationship & Intimacy",
         statement: "Are your family members imposing their views on you?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"To great extent", value: '1'},
@@ -319,7 +319,7 @@ var statementData = [
         no:18,
         Category:"Relationship & Intimacy",
         statement: "Are you able to spend quality time with your family?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value: '1'},
@@ -337,7 +337,7 @@ var statementData = [
         no:19,
         Category:"Relationship & Intimacy",
         statement: "Are there frequent disputes in the family?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value: '1'},
@@ -355,7 +355,7 @@ var statementData = [
         no:20,
         Category:"Relationship & Intimacy",
         statement: "Does your family take your concerns seriously?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value: '1'},

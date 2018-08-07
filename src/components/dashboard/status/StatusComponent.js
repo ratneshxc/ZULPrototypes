@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { Card, H3, Icon, Badge } from 'native-base';
+import { Icon } from 'native-base';
 const StatusComponent = (props) => {
     let { title, value, target, unit, ideal } = props.statusObj;
     let finalStatus = target - value;
@@ -8,7 +8,7 @@ const StatusComponent = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.section}>
-                <Text style={{ fontSize: 13, color: '#353535' }}>{title}</Text>
+                <Text style={{ fontSize: 12, color: '#353535' }}>{title}</Text>
                 <Text style={{ color: '#353535', textAlign: 'center', fontWeight: '200', fontSize: 30 }}>{value}</Text>
                 <Text style={{ fontSize: 12, textAlign: 'center' }}>{unit}</Text>
             </View>
@@ -20,9 +20,9 @@ const StatusComponent = (props) => {
                         <Text style={{ fontSize: 12, color: textColor }}><Icon name="arrow-up" style={{ fontSize: 15 }} /> <Text>{-finalStatus + ' ' + unit}</Text> </Text>
                 }
             </View>
-            <View style={{flexDirection:'row'}}>
-                <Icon name="bullseye" style={{fontSize:10,padding:3}} type="FontAwesome" />
-                <Text style={{ fontSize: 10, color: '#353535' }}>{`${target}`}  <Text style={{ fontSize: 10 }}>{`${unit}/day`}</Text></Text>
+            <View style={{ flexDirection: 'row' }}>
+                <Icon name="bullseye" style={{ fontSize: 10, padding: 3 }} type="FontAwesome" />
+                <Text style={{ fontSize: 10 }}>{`${target}`}  <Text style={{ fontSize: 10 }}>{`${unit}/day`}</Text></Text>
             </View>
         </View>
     )

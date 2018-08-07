@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Strength & Energy",
         statement: "When do you eat?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I keep munching every now and then", value: '1'},
@@ -11,13 +11,17 @@ var statementData = [
             {label:"When I am hungry", value: '3'},
             {label:"At regular intervals", value: '4'}
         ],
-
+        ansType: 'single',
+        progressBar: 0.05,
+        progressBarColor: '#ff2626',
+        likes: 25,
+        selectedIndex: null
     },
     {  
         no:2,
         Category:"Strength & Energy",
         statement: "How do you rate your appetite after each meal?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Very Hungry", value: '1'},
@@ -26,7 +30,7 @@ var statementData = [
             {label:"Full and satisfied", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.1,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -35,7 +39,7 @@ var statementData = [
         no:3,
         Category:"Strength & Energy",
         statement: "How many cups of coffee/tea do you drink per day?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"(small size cup which can hold up to 100ml)",
         options:[
             {label:"More than 10 cups", value: '1'},
@@ -44,7 +48,7 @@ var statementData = [
             {label:"Less than 2 cups", value: '4'}
         ],
         ansType: 'multiple',
-        progressBar: 0.8,
+        progressBar: 0.15,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -53,7 +57,7 @@ var statementData = [
         no:4,
         Category:"Strength & Energy",
         statement: "Do you add extra salt or sugar to your food?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -62,7 +66,7 @@ var statementData = [
             {label:"Rarely", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.2,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -71,7 +75,7 @@ var statementData = [
         no:5,
         Category:"Strength & Energy",
         statement: "Are you conscious about the nutrient intake in your diet?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I do not keep a track of nutrition in my diet", value: '1'},
@@ -80,7 +84,7 @@ var statementData = [
             {label:"I always ensure that I eat nutrient rich food", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.25,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -89,7 +93,7 @@ var statementData = [
         no:6,
         Category:"Strength & Energy",
         statement: "Do you eat/drink between meals?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I always eat/drink between meals", value: '1'},
@@ -98,7 +102,7 @@ var statementData = [
             {label:"I strictly don't eat/drink between meals", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.3,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -107,7 +111,7 @@ var statementData = [
         no:7,
         Category:"Strength & Energy",
         statement: "Do you tend to overeat during meal?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -116,7 +120,7 @@ var statementData = [
             {label:"Never", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.35,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -125,9 +129,9 @@ var statementData = [
         no:8,
         Category:"Strength & Energy",
         statement: "Select which of these practice you follow:",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"(Select all that apply)",
-        Options:[
+        options:[
             {label:"Walk or cycle for short distances instead of driving", value: '1'},
             {label:"Involve with household activity to be fit and healthy", value: '2'},
             {label:"Take stairs over elevators", value: '3'},
@@ -136,7 +140,7 @@ var statementData = [
             {label:"None of these", value: '6'}
         ],
         ansType: 'multiple',
-        progressBar: 0.8,
+        progressBar: 0.4,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -145,7 +149,7 @@ var statementData = [
         no:9,
         Category:"Strength & Energy",
         statement: "You don't exercise because:",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"My days are busy and exercise is not a high priority", value: '1'},
@@ -158,7 +162,7 @@ var statementData = [
         ]
         ,
         ansType: 'multiple',
-        progressBar: 0.8,
+        progressBar: 0.45,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -167,7 +171,7 @@ var statementData = [
         no:10,
         Category:"Strength & Energy",
         statement: "What is your daily physical activity level?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Little (less than 1 hour per week)", value: '1'},
@@ -176,7 +180,7 @@ var statementData = [
             {label:"None", value: '4'},
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.5,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -186,7 +190,7 @@ var statementData = [
         no:11,
         Category:"Strength & Energy",
         statement: "Do you have difficulty falling asleep at night?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I have difficulty in falling asleep", value: '1'},
@@ -195,7 +199,7 @@ var statementData = [
             {label:"I can fall asleep easily", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.55,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -204,7 +208,7 @@ var statementData = [
         no:12,
         Category:"Strength & Energy",
         statement: "Do you feel rested and ready for the day, when you get up in the morning?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never feel rested when I wake up", value: '1'},
@@ -213,7 +217,7 @@ var statementData = [
             {label:"Yes, Every morning", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.6,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -222,7 +226,7 @@ var statementData = [
         no:13,
         Category:"Strength & Energy",
         statement: "Do you wear tight fitting clothes such as shape wears and skinny jeans, which may restrict your movement and breathing?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -231,7 +235,7 @@ var statementData = [
             {label:"Never", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.65,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -240,7 +244,7 @@ var statementData = [
         no:14,
         Category:"Strength & Energy",
         statement: "How many hours do you spend travelling in a car/bike?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"More than 4hours", value: '1'},
@@ -249,7 +253,7 @@ var statementData = [
             {label:"less than an hour", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.7,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -258,7 +262,7 @@ var statementData = [
         no:15,
         Category:"Strength & Energy",
         statement: "Do you feel that you have a poor posture?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I have a bad posture", value: '1'},
@@ -267,7 +271,7 @@ var statementData = [
             {label:"I do not have a bad posture", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.75,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -276,7 +280,7 @@ var statementData = [
         no:16,
         Category:"Strength & Energy",
         statement: "Do you have breathing problems?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I have chronic breathing problems", value: '1'},
@@ -294,7 +298,7 @@ var statementData = [
         no:17,
         Category:"Strength & Energy",
         statement: "Do you experience headaches?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I have chronic headaches", value: '1'},
@@ -303,7 +307,7 @@ var statementData = [
             {label:"I do not experience headaches", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.85,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -312,7 +316,7 @@ var statementData = [
         no:18,
         Category:"Strength & Energy",
         statement: "How is your bowel movements?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"More than 3 watery stools a day", value: '1'},
@@ -321,7 +325,7 @@ var statementData = [
             {label:"1 movement in each day", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.9,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -330,7 +334,7 @@ var statementData = [
         no:19,
         Category:"Strength & Energy",
         statement: "How often do you catch cold?",
-        statementType:"Select_Single",
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"More than twice a month", value: '1'},
@@ -339,7 +343,7 @@ var statementData = [
             {label:"I rarely catch cold", value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.8,
+        progressBar: 0.95,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -348,7 +352,7 @@ var statementData = [
         no:20,
         Category:"Strength & Energy",
         statement: "Have you been diagnosed with any of the following conditions:",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"Arthritis", value: '1'},
@@ -368,7 +372,7 @@ var statementData = [
             {label:"None of the above", value: '15'}
         ],
         ansType: 'multiple',
-        progressBar: 0.8,
+        progressBar: 0.955,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -377,7 +381,7 @@ var statementData = [
         no:21,
         Category:"Strength & Energy",
         statement: "Do you have a family history of any of the following conditions:",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"Asthma", value: '1'},
@@ -390,7 +394,7 @@ var statementData = [
             {label:"I do not have a family history of any condition", value: '8'}
         ],
         ansType: 'multiple',
-        progressBar: 0.8,
+        progressBar: 1,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null

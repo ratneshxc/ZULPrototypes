@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Wholesomeness",
         statement: "How often have you fallen ill in the past year?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"More than 15 times", value:'1'},
@@ -22,7 +22,7 @@ var statementData = [
         no:2,
         Category:"Wholesomeness",
         statement: "What do you do on a daily basis to ensure that you stay healthy?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"I exercise", value:'1'},
@@ -41,7 +41,7 @@ var statementData = [
         no:3,
         Category:"Wholesomeness",
         statement: "Do you spend more time working than socializing or pursuing a hobby?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Never", value:'1'},
@@ -60,7 +60,7 @@ var statementData = [
         no:4,
         Category:"Wholesomeness",
         statement: "Are you aware of things that you are passionate about?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I do not find anything that I am passionate about", value:'1'},
@@ -79,7 +79,7 @@ var statementData = [
         no:5,
         Category:"Wholesomeness",
         statement: "Are you troubled or saddened by day to day activities?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value:'1'},
@@ -98,7 +98,7 @@ var statementData = [
         no:6,
         Category:"Wholesomeness",
         statement: "Are you disappointed with yourself?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I am always dissapointed with myself", value:'1'},
@@ -117,7 +117,7 @@ var statementData = [
         no:7,
         Category:"Wholesomeness",
         statement: "How is your interaction with family and friends?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I dont like talking to people",value:'1'},
@@ -136,7 +136,7 @@ var statementData = [
         no:8,
         Category:"Wholesomeness",
         statement: "Are you disappointed with the level of your sexual activity, desire and satisfaction?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Always",value:'1'},

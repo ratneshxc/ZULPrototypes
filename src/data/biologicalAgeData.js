@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Biological Age",
         statement: "How often do you exercise in a week?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"0 to 1 day",value: '1'},
@@ -21,7 +21,7 @@ var statementData = [
         no:2,
         Category:"Biological Age",
         statement: "How many stairs can you climb at a time?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:">5 steps",value: '1'},
@@ -39,7 +39,7 @@ var statementData = [
         no:3,
         Category:"Biological Age",
         statement: "Which of these form a part of your regular diet?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"Processed food and fast food",value: '1'},
@@ -59,7 +59,7 @@ var statementData = [
         no:4,
         Category:"Biological Age",
         statement: "How many hours of sleep do you get each night?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"Less than 4 hours of sleep",value: '1'},
@@ -77,7 +77,7 @@ var statementData = [
         no:5,
         Category:"Biological Age",
         statement: "Do you smoke?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"20 or more cigarettes/day",value: '1'},
@@ -95,7 +95,7 @@ var statementData = [
         no:6,
         Category:"Biological Age",
         statement: "How often do you consume alcohol?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I drink alcohol everyday",value: '1'},
@@ -113,7 +113,7 @@ var statementData = [
         no:7,
         Category:"Biological Age",
         statement: "Who forms your support system?",
-        imageURL: require('../../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/illness-image.png'),
         statementSuggestion:"",
         options:[
             {label:"I do not have a support system",value: '1'},

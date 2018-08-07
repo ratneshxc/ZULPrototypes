@@ -9,7 +9,7 @@ const AssessmentOverdueComponent = (props) => {
             </View>
             <View>
                 <Text style={{fontSize:20,color:'#353535'}}>{props.assessObj.overdue}</Text>
-                <Text style={{textAlign:'center',fontSize:13}}>days overdue</Text>
+                <Text style={{textAlign:'center',fontSize:10}}>days overdue</Text>
             </View>
         </Card>
     )
