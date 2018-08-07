@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     points: {
-        fontSize: 20,
+        fontSize: 30,
         color: '#353535',
         textAlign: 'center'
     },

@@ -15,7 +15,7 @@ const initialState = {
             target: 8,
             ideal: '>'
         }, {
-            title: 'Calories',
+            title: 'Calories Burnt',
             value: 600,
             unit: 'Cal',
             target: 300,
