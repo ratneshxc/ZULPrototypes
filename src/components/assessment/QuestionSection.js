@@ -22,7 +22,7 @@ class QuestionSection extends Component {
     return (
 
       <ImageBackground source={currentQuestion.imageURL} resizeMode="cover" style={styles.backImage}>
-        <QuestionHeader />
+        <QuestionHeader currentQuestion={currentQuestion}/>
         <Progress.Bar style={{ borderRadius: 0, borderWidth: 0, marginLeft: -1, padding: 0 }} progress={currentQuestion.progressBar} width={null} color={currentQuestion.progressBarColor} unfilledColor={'#ffffff'} />
         {!this.props.isNextQuestionLoading && <SlideRightView>
           <View style={styles.questionView}>
