@@ -137,19 +137,19 @@ class ZulaWakeUpbtn extends Component {
         return selectedIndex;
     }
     zulaAction = (ordermsg) => {
-        if (ordermsg.contains('question') && ordermsg.contains('read')) {
+        if (ordermsg.indexOf('question') !=-1&& ordermsg.indexOf('read')!=-1) {
             this.zulaSpeak(this.props.currentQuestion.statement);
             this.zulaSpeak('The options are ,');
             this.zulaSpeak(this.props.currentQuestion.options[0].label);
             this.zulaSpeak(this.props.currentQuestion.options[1].label);
             this.zulaSpeak(this.props.currentQuestion.options[2].label);
             this.zulaSpeak(this.props.currentQuestion.options[3].label);
-        } else if (ordermsg.contains('bye')) {
+        } else if (ordermsg.indexOf('bye')!=-1) {
             this.zulaSpeak('Bye KK!');
             this.props.zulaSleep();
-        } else if (ordermsg.contains('hey')) {
+        } else if (ordermsg.indexOf('hey')!=-1) {
             this.wakeUpZula();
-        } else if (ordermsg.contains('select')) {
+        } else if (ordermsg.indexOf('select'!=-1)) {
             let selectedOption = ordermsg.split(" ");
             selectedOption.shift();
             selectedOption = selectedOption.join(" ").trim();
@@ -161,7 +161,7 @@ class ZulaWakeUpbtn extends Component {
                 this.zulaSpeak(`${selectedOption} is selected`);
             }
 
-        } else {
+         } else {
             this.zulaSpeak('I beg your parden.');
 
         }
