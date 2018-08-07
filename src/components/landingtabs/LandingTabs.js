@@ -34,13 +34,15 @@ export default class LandingTab extends React.Component {
   filterList = () => {
     this.props.navigation.navigate('ExpertFilter');
   }
-
+  goToScreen = (screenName) => {
+    this.props.navigation.navigate(screenName);
+  }
   render() {
     return (
       <Drawer
         ref={(ref) => drawer = ref}
         type="overlay"
-        content={<ControlPanel closeDrawer={closeControlPanel} />}
+        content={<ControlPanel closeDrawer={closeControlPanel}  goToScreen={this.goToScreen} />}
         tapToClose={true}
         openDrawerOffset={0.3} // 20% gap on the right side of drawer
         panCloseMask={0.3}

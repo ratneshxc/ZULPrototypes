@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Thumbnail, List, ListItem, Left, Body, Right, Button, Icon, Card } from 'native-base';
 
+
 export default class ControlPanel extends React.Component {
+  
     render() {
         let { closeDrawer } = this.props
         return (
@@ -23,7 +25,8 @@ export default class ControlPanel extends React.Component {
                             </Body>
                             <Right></Right>
                         </ListItem>
-                        <ListItem icon>
+                        
+                        <ListItem icon onPress={()=>{this.props.goToScreen('AssessmentLayout')}}>
                             <Left>
                                 <Icon name="paperclip" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>

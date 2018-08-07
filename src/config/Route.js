@@ -1,11 +1,12 @@
-import { createSwitchNavigator } from 'react-navigation';
+import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
 import Login from '../components/login/Login';
 import Assessment from '../components/assessment/Assessment';
 import Register from '../components/register/Register';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
 import AssessmentReport from '../components/report/AssessmentReport';
 import LandingTab from '../components/landingtabs/LandingTabs';
-import ExpertFilter from '../components/expertconnect/screens/ExpertFilter'
+import ExpertFilter from '../components/expertconnect/screens/ExpertFilter';
+import AssessmentLayout from '../components/assessment/assessmentSummary/AssessmentSummaryLayout';
 
 
 // const AppRoute = createSwitchNavigator({
@@ -25,7 +26,8 @@ const AppRoute = createSwitchNavigator({
   Register: { screen: Register },
   AssessmentReport: { screen: AssessmentReport },
   AssessmentInfo: { screen: AssessmentInfo },
-  ExpertFilter:{screen:ExpertFilter}
+  ExpertFilter:{screen:ExpertFilter},
+  AssessmentLayout:{screen:AssessmentLayout}
 });
 
 
