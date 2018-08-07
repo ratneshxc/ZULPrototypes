@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
 import AssessmentSummaryComponent from './AssessmentSummaryComponent';
 import { connect } from 'react-redux';
 
@@ -25,6 +26,7 @@ const chunkArray = (myArray, chunk_size) => {
     return tempArray;
 }
 
+
 class AssessmentSummaryLayout extends Component {
 
     goAssessmentInfo = () => {
@@ -33,11 +35,18 @@ class AssessmentSummaryLayout extends Component {
     render() {
         let arrayGroup = chunkArray(this.props.assessmentReport, 3)
         return (
-            <View style={styles.container}>
-                <View>
-                    <Text style={{ fontSize: 18, marginLeft: 5 }}>Assessment</Text>
-                </View>
-                <View>
+            <Container>
+                <Header>
+                    <Body>
+                        <Title>Assessments</Title>
+                    </Body>
+                    <Right>
+                        <Button transparent>
+                            <Icon name='bell' type="FontAwesome" />
+                        </Button>
+                    </Right>
+                </Header>
+                <Content style={styles.container}>
                     {
                         arrayGroup.map((x, i) => (
                             <View key={i} style={{ flexDirection: 'row' }}>
@@ -46,12 +55,13 @@ class AssessmentSummaryLayout extends Component {
                                         <AssessmentSummaryComponent goAssessmentInfo={this.goAssessmentInfo} assessObj={n} />
                                     </View>
                                 ))}
-                                
+
                             </View>
                         ))
                     }
-                </View>
-            </View>
+                </Content>
+            </Container>
+
         )
     }
 }

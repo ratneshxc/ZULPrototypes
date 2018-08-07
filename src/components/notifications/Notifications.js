@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Container, Header, Body, Left, Button, Icon,Right, Title, Content } from 'native-base';
+import { Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
 
-const Community = (props) => {
+
+const Notifications = (props) => {
     return (
         <Container>
             <Header>
@@ -12,10 +13,11 @@ const Community = (props) => {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Community</Title>
+                    <Title>Notifications</Title>
                 </Body>
                 <Right>
                 </Right>
+
             </Header>
             <Content style={styles.container}>
 
@@ -27,4 +29,4 @@ const styles = StyleSheet.create({
     container: {
     }
 })
-export default Community;
+export default Notifications;

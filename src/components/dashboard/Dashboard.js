@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
+import { View, StyleSheet } from 'react-native';
+import { Container, Header, Right, Body, Left, Button, Icon, Title, Content } from 'native-base';
 import { connect } from 'react-redux';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import OverallScore from './overallscore/OverallScore';
@@ -8,6 +8,7 @@ import StatusLayout from './status/StatusLayout';
 import StatusHeader from './StatusHeader';
 import AssessmentList from './assessment/AssessmentList';
 // import { H3 } from 'native-base';
+
 
 const mapDispatchToProps = dispatch => ({
 
@@ -19,13 +20,15 @@ class Dashboard extends React.Component {
         return (
             <Container>
                 <Header>
+                    <Left>
+                        <Button onPress={this.props.screenProps.OpenDrawer} transparent>
+                            <Icon name='menu' />
+                        </Button>
+                    </Left>
                     <Body>
                         <Title>Dashboard</Title>
                     </Body>
                     <Right>
-                        <Button transparent>
-                            <Icon name='menu' />
-                        </Button>
                     </Right>
                 </Header>
                 <Content style={styles.body}>

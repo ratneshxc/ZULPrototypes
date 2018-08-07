@@ -13,6 +13,7 @@ const mapDispatchToProps=(dispatch)=>({
     })
 })
 
+
 const AssessmentSummaryComponent = (props) => {
      selectAssessment = () => {
         props.goAssessmentInfo();
