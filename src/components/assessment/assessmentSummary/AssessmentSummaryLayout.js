@@ -28,9 +28,8 @@ const chunkArray = (myArray, chunk_size) => {
 
 
 class AssessmentSummaryLayout extends Component {
-
     goAssessmentInfo = () => {
-        this.props.screenProps.goAssessmentInfo();
+        this.props.navigation.navigate('AssessmentInfo');
     }
     render() {
         let arrayGroup = chunkArray(this.props.assessmentReport, 3)

@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion
 })
 
-class ShareAction extends React.Component {
+class InfoAction extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -25,7 +25,7 @@ class ShareAction extends React.Component {
                 <View style={styles.optionsBody}>
                     <TouchableOpacity onPress={this.iconClickHandler}>
                         <Text>
-                            <Icon name="share-alt" size={23} style={{color:'black',marginRight:15}} />
+                            <Icon name="info-circle" size={20} style={{color:'black',marginRight:5}} />
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -33,7 +33,7 @@ class ShareAction extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(ShareAction)
+export default connect(mapStateToProps)(InfoAction)
 
 const styles = StyleSheet.create({
     optionsBody: {
