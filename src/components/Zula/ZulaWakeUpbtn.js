@@ -162,7 +162,7 @@ class ZulaWakeUpbtn extends Component {
             }
 
         } else {
-            this.zulaSpeak('I beg your parden.');
+            this.zulaSpeak('I beg your pardon.');
 
         }
     }

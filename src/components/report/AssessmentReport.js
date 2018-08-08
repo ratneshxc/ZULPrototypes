@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import ReportHeader from './ReportHeader';
-import AssesmentSummaryLayout from './AssesmentSummaryLayout';
+import AssesmentStats from './AssesmentStats';
 import RecommendationPanel from './RecommendationPanel';
 import ExpertsPanel from './ExpertsPanel';
 import AssesmentAction from './AssesmentAction';
@@ -17,7 +17,7 @@ export default class AssessmentReport extends React.Component {
             <View style={styles.container}>
                 <ReportHeader />
                 <ScrollView style={styles.container}>
-                    <AssesmentSummaryLayout />
+                    <AssesmentStats />
                     <RecommendationPanel />
                     <ExpertsPanel />
                  
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#dddddd52'
+        backgroundColor:'#ffffff'
+        // backgroundColor: '#dddddd52'
         
     }
 })

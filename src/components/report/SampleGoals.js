@@ -43,7 +43,8 @@ export default class App extends Component {
                         <Card
                             transparent
                             style={{
-        backgroundColor: '#dddddd52'
+        // backgroundColor: '#dddddd52'
+        backgroundColor:"#ffffff"
                                
                             }}>
 
