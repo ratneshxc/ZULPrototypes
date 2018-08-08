@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Diet Score",
         statement: "How much water do you drink everyday?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10051.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Less than 1 litre", value: '1'},
