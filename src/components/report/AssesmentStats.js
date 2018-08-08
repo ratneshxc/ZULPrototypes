@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
-import ShareAction from './SharAction';
+import InfoAction from './InfoAction';
 export default class AssesmentStatus extends Component {
   render() {
     return (
@@ -16,7 +16,7 @@ export default class AssesmentStatus extends Component {
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <Text style={{ flex: 1, color: '#000000', fontWeight: 'bold', fontSize: 16 }}>Summary</Text>
           <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-            <ShareAction />
+            <InfoAction />
 
           </View>
         </View>

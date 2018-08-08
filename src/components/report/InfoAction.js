@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion
 })
 
-class ShareAction extends React.Component {
+class InfoAction extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -33,7 +33,7 @@ class ShareAction extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(ShareAction)
+export default connect(mapStateToProps)(InfoAction)
 
 const styles = StyleSheet.create({
     optionsBody: {
