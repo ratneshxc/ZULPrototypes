@@ -9,17 +9,17 @@ const OverallScore = (props) => {
     let state = {
         entries: [
             {
-            title: 'Physical',
-            score: 16
+            title: 'Expresion',
+            score: 70
         }, {
-            title: 'Spiritual',
-            score: 15
+            title: 'Attitude',
+            score: 80
         }, {
-            title: 'Social',
-            score: 12
+            title: 'Emotions',
+            score: 90
         }, {
-            title: 'Emotional',
-            score: 10
+            title: 'Vision',
+            score: 80
         }]
     }
     return (
