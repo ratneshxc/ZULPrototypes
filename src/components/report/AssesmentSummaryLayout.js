@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet,Text } from 'react-native';
-import TodayScore from '../dashboard/overallscore/TodayScore';
+import ReportScore from './ReportScore';
 import TrackScore from '../dashboard/overallscore/TrackScore';
 
 
@@ -11,7 +11,7 @@ const OverallScore = (props) => {
         <View style={styles.container}>
 
             <View style={{ flex: 1, padding: 10,paddingTop:1 }}>
-                <TodayScore />
+                <ReportScore />
             </View>
             <View style={{ width: 1, marginVertical: 15, backgroundColor: '#ddd' }}></View>
             <View style={{ flex: 1, padding: 10,paddingTop:1 }}>
