@@ -1,21 +1,53 @@
 import React from 'react';
-import { View, StyleSheet,Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import ReportScore from './ReportScore';
-import TrackScore from '../dashboard/overallscore/TrackScore';
+import AssesmentSubSectionScore from './AssesmentSubSectionScore';
 
 
 
 const OverallScore = (props) => {
+    let state = {
+        entries: [
+            {
+            title: 'Physical',
+            score: 16
+        }, {
+            title: 'Spiritual',
+            score: 15
+        }, {
+            title: 'Social',
+            score: 12
+        }, {
+            title: 'Emotional',
+            score: 10
+        }]
+    }
     return (
 
         <View style={styles.container}>
 
-            <View style={{ flex: 1, padding: 10,paddingTop:1 }}>
+            <View style={{ flex: 2, padding: 10, paddingTop: 1 }}>
                 <ReportScore />
             </View>
             <View style={{ width: 1, marginVertical: 15, backgroundColor: '#ddd' }}></View>
-            <View style={{ flex: 1, padding: 10,paddingTop:1 }}>
-                <TrackScore />
+            <View style={{ flex: 3, padding: 10, paddingTop: 1, flexDirection: 'column' }}>
+                <View style={{ flex: 1 ,flexDirection:'row'}}>
+                    <View  style={{ flex: 1}}>
+                        <AssesmentSubSectionScore assessObj={state.entries[0]} />
+                    </View>
+                    <View style={{ flex: 1}}>
+                        <AssesmentSubSectionScore assessObj={state.entries[1]} />
+                    </View>
+                </View>
+                <View style={{ flex: 1,flexDirection:'row' }}>
+                    <View style={{ flex: 1}}>
+                        <AssesmentSubSectionScore assessObj={state.entries[2]} />
+                    </View>
+                    <View style={{ flex: 1}}>
+                        <AssesmentSubSectionScore assessObj={state.entries[3]} />
+                    </View>
+                </View>
+
             </View>
         </View>
     )
@@ -23,7 +55,7 @@ const OverallScore = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
+        flex: 1,
         flexDirection: 'row',
         backgroundColor: '#ffffff'
     }

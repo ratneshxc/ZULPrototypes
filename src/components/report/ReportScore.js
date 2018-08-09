@@ -5,7 +5,7 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 const TodayScore = (props) => {
     return (
         <View style={styles.container}>
-            <Text style={{ marginBottom: 10, fontSize: 13, color: '#353535' }}>Your Score</Text>
+            {/* <Text style={{ marginBottom: 10, fontSize: 13, color: '#353535' }}>Your Score</Text> */}
             <View style={{ alignItems: 'center' }}>
 
                 <AnimatedCircularProgress
