@@ -16,7 +16,7 @@ export default class AssessmentReport extends React.Component {
 
             <View style={styles.container}>
                 <ReportHeader />
-                <ScrollView style={styles.container}>
+                <ScrollView style={[styles.container,{  paddingLeft:10,paddingRight:10}]}>
                     <AssesmentStats />
                     <RecommendationPanel />
                     <ExpertsPanel />
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         //backgroundColor:'#ffffff'
+      
         backgroundColor: '#dddddd52'
         
     }
