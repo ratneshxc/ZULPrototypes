@@ -10,6 +10,10 @@ const mapDispatchToProps=(dispatch)=>({
     selectCurrentAssessment:(value)=>dispatch({
         type:'AssessmentReducer_SelectAssessmentType',
         payload:value
+    }),
+    selectCurrentAssessmentDetails:(value)=>dispatch({
+        type:'AssessmentReducer_SelectAssessmentDetails',
+        payload:value
     })
 })
 
@@ -18,6 +22,7 @@ const AssessmentSummaryComponent = (props) => {
      selectAssessment = () => {
         props.goAssessmentInfo();
         props.selectCurrentAssessment(props.assessObj.title.toUpperCase());
+        props.selectCurrentAssessmentDetails(props.assessObj.title.toUpperCase());
     }
 
     return (
