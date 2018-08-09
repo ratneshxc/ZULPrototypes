@@ -11,11 +11,18 @@ import AssessmentList from './assessment/AssessmentList';
 
 
 const mapDispatchToProps = dispatch => ({
-
+    showWishModal: () => dispatch({
+        type: 'ZulaReducer_Wish',
+        payload: true
+    })
 })
 
 class Dashboard extends React.Component {
-
+    componentDidMount() {
+        setTimeout(() => {
+            this.props.showWishModal();
+        }, 4000)
+    }
     render() {
         return (
             <Container>
@@ -38,9 +45,9 @@ class Dashboard extends React.Component {
                         <View style={{ backgroundColor: '#ddd', height: 1, marginHorizontal: 15 }}></View>
                         <StatusLayout />
                     </View>
-                    <View style={{ backgroundColor: '#ffffff' }}>
+                    {/* <View style={{ backgroundColor: '#ffffff' }}>
                         <AssessmentList />
-                    </View>
+                    </View> */}
                 </Content>
             </Container>
         )

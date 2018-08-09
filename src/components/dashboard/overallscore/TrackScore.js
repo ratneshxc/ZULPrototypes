@@ -9,7 +9,7 @@ const TrackScore = (props) => {
         <View style={styles.container}>
             <View style={{flexDirection:'row'}}>
                 <View style={{flex:1}}>
-                    <Text style={{ fontSize: 13, color: '#353535' }}>Daily Score</Text>
+                    <Text style={{ fontSize: 13, color: '#353535' }}>Wellness Trend</Text>
                 </View>
                 <View>
                     <Text style={{ fontWeight: 'bold', color: '#00b386' }}>30%<Icon name="arrow-up" style={{ fontSize: 20 }} /></Text>
