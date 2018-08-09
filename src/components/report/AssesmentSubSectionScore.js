@@ -15,7 +15,7 @@ const AssesmentSubScore = (props) => {
 }
 const styles = StyleSheet.create({
     container: {
-        padding:10
+        padding:5,
     }
 })
 export default AssesmentSubScore;

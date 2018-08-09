@@ -26,11 +26,11 @@ const OverallScore = (props) => {
 
         <View style={styles.container}>
 
-            <View style={{ flex: 2, padding: 10, paddingTop: 1 }}>
+            <View style={{ flex: 2, padding: 5, paddingTop: 1 }}>
                 <ReportScore />
             </View>
             <View style={{ width: 1, marginVertical: 15, backgroundColor: '#ddd' }}></View>
-            <View style={{ flex: 3, padding: 10, paddingTop: 1, flexDirection: 'column' }}>
+            <View style={{ flex: 3, padding: 5, paddingTop: 1, flexDirection: 'column' }}>
                 <View style={{ flex: 1 ,flexDirection:'row'}}>
                     <View  style={{ flex: 1}}>
                         <AssesmentSubSectionScore assessObj={state.entries[0]} />

@@ -48,7 +48,7 @@ export default class App extends Component {
                         <Card
                             transparent
                             style={{
-        // backgroundColor: '#dddddd52'
+         //backgroundColor: '#dddddd52'
         backgroundColor:"#ffffff"
                             }}>
 
@@ -56,7 +56,8 @@ export default class App extends Component {
 
                                 flex: 2,
                                 flexDirection: 'column',
-                                backgroundColor: '#fbfbfb'
+                                backgroundColor:"#ffffff"
+                                //backgroundColor: '#fbfbfb'
                             }}>
                                 <Image
                                     style={{ height: 70, width: 70 }}
@@ -65,7 +66,7 @@ export default class App extends Component {
                                 <Text  style={{marginTop:5,color:'#000000'}}>
                                     {rowData.title}
                                 </Text>
-                                <Text style={{ marginBottom: 5 ,color:'#000000'}}>
+                                <Text style={{ color:'#000000'}}>
                                     {rowData.desc}
                                 </Text>
                             </CardItem>
