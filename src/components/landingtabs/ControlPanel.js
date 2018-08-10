@@ -40,7 +40,7 @@ export default class ControlPanel extends React.Component {
                                 <Icon name="user" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
-                                <Text style={styles.menuText}>Oppointments</Text>
+                                <Text style={styles.menuText}>Appointments</Text>
                             </Body>
                             <Right></Right>
                         </ListItem>

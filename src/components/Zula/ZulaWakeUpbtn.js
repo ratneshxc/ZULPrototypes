@@ -161,8 +161,8 @@ class ZulaWakeUpbtn extends Component {
                 this.zulaSpeak(`${selectedOption} is selected`);
             }
 
-         } else {
-            this.zulaSpeak('I beg your parden.');
+        } else {
+            this.zulaSpeak('I beg your pardon.');
 
         }
     }

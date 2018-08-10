@@ -60,7 +60,7 @@ var statementData = [
         no:4,
         Category:"Zest For Life",
         statement: "Do you wear natural fabrics like cotton or wool ?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10052.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Cotton and wool are not part of my clothing", value: '1'},
