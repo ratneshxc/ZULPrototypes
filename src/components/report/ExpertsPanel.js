@@ -60,7 +60,7 @@ export class ExpertsPanel extends Component {
         return (
             <View style={styles.container}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Text style={{ flex: 1, color: '#000000', fontWeight: 'bold', fontSize: 16 }}>Experts</Text>
+                    <Text style={{ flex: 1, color: '#000000', fontWeight: 'bold', fontSize: 16 }}> Experts</Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
                         <MoreAction />
 
@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
         backgroundColor: '#ffffff',
-        padding: 5,
         marginTop: 10
     },
     blocks: {

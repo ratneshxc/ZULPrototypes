@@ -4,6 +4,7 @@ const initialState = {
     currentQuestion: {},
     questions: [],
     currentAssessment:"",
+    currentAssessmentDetails:[],
     isNextQuestionLoading: false,
     assessmentReport: [ {
             title: 'Strength & Energy',
@@ -54,6 +55,10 @@ const AssessmentReducer = (state = initialState, action) => {
         }
         case 'AssessmentReducer_SelectAssessmentType': {
             state = { ...state, currentAssessment: action.payload }
+            break;
+        }
+        case 'AssessmentReducer_SelectAssessmentDetails': {
+            state = { ...state, currentAssessmentDetails: action.payload }
             break;
         }
     }
