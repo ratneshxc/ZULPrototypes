@@ -19,10 +19,10 @@ const TodayScore = (props) => {
                         (fill) => (
                             <View>
                                 <Text style={styles.points}>
-                                    80%
+                                    {props.stats.overall}%
                                 </Text>
-                                <Text style={styles.caption}>
-                                    Excellent
+                                <Text style={[styles.caption,{color: props.stats.desccolor}]}>
+                                {props.stats.shortdescription}
                                 </Text>
                             </View>
                         )
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     caption: {
         fontSize: 15,
         textAlign: 'center',
-        color: 'green'
+        
     }
 })
 export default TodayScore;

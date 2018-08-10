@@ -29,7 +29,7 @@ export default class AssesmentStatus extends Component {
           }}
         >
 
-          <AssesmentSummaryLayout />
+          <AssesmentSummaryLayout stats={this.props.stats}/>
         </View>
       </View>
     )

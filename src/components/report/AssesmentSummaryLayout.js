@@ -7,27 +7,14 @@ import AssesmentSubSectionScore from './AssesmentSubSectionScore';
 
 const OverallScore = (props) => {
     let state = {
-        entries: [
-            {
-            title: 'Expresion',
-            score: 70
-        }, {
-            title: 'Attitude',
-            score: 80
-        }, {
-            title: 'Emotions',
-            score: 90
-        }, {
-            title: 'Vision',
-            score: 80
-        }]
+        entries:props.stats.subsection
     }
     return (
 
         <View style={styles.container}>
 
             <View style={{ flex: 2, padding: 5, paddingTop: 1 }}>
-                <ReportScore />
+                <ReportScore stats={props.stats} />
             </View>
             <View style={{ width: 1, marginVertical: 15, backgroundColor: '#ddd' }}></View>
             <View style={{ flex: 3, padding: 5, paddingTop: 1, flexDirection: 'column' }}>
