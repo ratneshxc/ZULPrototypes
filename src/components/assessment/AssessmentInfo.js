@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
+import { Platform, Text, View, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
 import { Header, Footer, FooterTab, Left, Right, Body, Button, Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import assessmentDetailsData from '../../data/assessmentDetailsData';
@@ -38,11 +38,18 @@ class AssessmentInfo extends Component {
     render() {
         return (
             <Container>
-                <Header>
-                    <Body>
-                        <Text style={{color:'white', fontSize:18, fontWeight: 'bold',alignSelf: 'center'}}>Assessment Details</Text>
-                    </Body>
-                </Header>
+                {(Platform.OS === 'ios') ?
+                    <Header>
+                        <Body>
+                            <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold', alignSelf: 'center' }}>Assessment Details</Text>
+                        </Body>
+                    </Header>
+                    : <Header>
+                        <Body>
+                            <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold', alignSelf: 'center' }}>Assessment Details</Text>
+                        </Body>
+                    </Header>
+                }
                 <Content>
                     <ImageBackground source={this.state.updatedList.imageURL} style={styles.imageURL} resizeMode="cover">
                         <View style={styles.questionView}>
@@ -53,13 +60,23 @@ class AssessmentInfo extends Component {
                         <Text style={styles.textStyle}>{this.state.updatedList.statement}</Text>
                     </View>
                 </Content>
+                {(Platform.OS === 'ios') ?
                 <Footer>
                     <FooterTab>
-                        <Button  onPress={this.goAssessment} full>
-                            <Text style={{color:'white', fontSize:18, fontWeight: 'bold'}}>Take Assessment</Text>
+                        <Button onPress={this.goAssessment} full>
+                            <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold' }}>Take Assessment</Text>
                         </Button>
                     </FooterTab>
                 </Footer>
+                :
+                <Footer>
+                    <FooterTab>
+                        <Button onPress={this.goAssessment} full>
+                            <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Take Assessment</Text>
+                        </Button>
+                    </FooterTab>
+                </Footer>
+                }
             </Container>
         );
     }
