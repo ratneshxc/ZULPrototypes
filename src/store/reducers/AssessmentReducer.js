@@ -13,7 +13,7 @@ const initialState = {
         },{
             title: 'Biological Age',
             remainingTime: '5 days ago',
-            compPercentage: '35%'
+            compPercentage: '35'
         },{
             title: 'Diet Score',
             remainingTime: '65 days ago',
