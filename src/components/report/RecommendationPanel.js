@@ -3,59 +3,10 @@ import { View, StyleSheet, Text, Dimensions } from 'react-native';
 
 import { H3 } from 'native-base';
 import MoreAction from './MoreAction';
-import Sample from './SampleGoals';
+import Goals from './SampleGoals';
 export class RecommendationPanel extends Component {
     constructor() {
         super();
-        this.state = {
-
-            assessment: {
-                physical: {
-                    title: 'Run 5k steps',
-                    remainingTime: '2 days ago',
-                    compPercentage: '0%',
-                    notification: '',
-                    icon: require('../../assests/images/dashboard/physical.svg')
-                },
-                emotional: {
-                    title: 'Go on a date',
-                    remainingTime: '5 days ago',
-                    compPercentage: '0%',
-                    notification: '',
-                    icon: require('../../assests/images/dashboard/emotional.svg')
-                },
-                
-                occupational: {
-                    title: 'Define OKR',
-                    remainingTime: '83 days ago',
-                    compPercentage: '0%',
-                    notification: '',
-                    icon: require('../../assests/images/dashboard/occupational.svg')
-                },
-                spiritual: {
-                    title: 'Mediate',
-                    remainingTime: '73 days ago',
-                    compPercentage: '0%',
-                    notification: '',
-                    icon: require('../../assests/images/dashboard/spiritual.svg')
-                },
-           
-                financial: {
-                    title: 'Save 50K',
-                    remainingTime: '25 days ago',
-                    compPercentage: '0%',
-                    notification: '',
-                    icon: require('../../assests/images/dashboard/financial.svg')
-                },
-                environmental: {
-                    title: 'Plant a tree',
-                    remainingTime: '20 days ago',
-                    compPercentage: '0%',
-                    notification: '',
-                    icon: require('../../assests/images/dashboard/environmental.svg')
-                }
-            }
-        };
     }
     render() {
         return (
@@ -68,7 +19,7 @@ export class RecommendationPanel extends Component {
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <Sample />
+                    <Goals data={this.props.data} />
                 </View>
             </View>
         )

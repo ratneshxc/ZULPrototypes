@@ -2,34 +2,13 @@ import React, { Component } from "react";
 import { FlatList, Text ,Image} from "react-native";
 import { Card, CardItem } from "native-base";
 
-const data = [
-    {
-        imageUrl: require('../../assests/images/experts/run.png'),
-        title: "Run 5k steps"
-    },
-    {
-        imageUrl: require('../../assests/images/experts/date.png'),
-        title: "Go on a date"
-    },
-    {
-        imageUrl: require('../../assests/images/experts/okr.png'),
-        title: "Define OKR"
-    },
-    {
-        imageUrl:require('../../assests/images/experts/mediate.png'),
-        title: "Mediate"
-    },
-    {
-        imageUrl: require('../../assests/images/experts/money.png'),
-        title: "Save 50K"
-    }
-];
+
 
 export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: data
+            data: this.props.data
         };
     }
 
