@@ -10,7 +10,7 @@ export default class AssesmentAction extends Component {
   render() {
     return (
       <View style={styles.container}>    
-      <Button full primary style={styles.mt15} onPress={this.goToDashboard}>
+      <Button full  style={styles.mt15} onPress={this.goToDashboard}>
             <Text style={{color:'white'}} >Go To Dashboard</Text>
           </Button>
       </View>
@@ -20,12 +20,13 @@ export default class AssesmentAction extends Component {
 
 const styles = StyleSheet.create({
     mt15:{
-        marginBottom:20
+        marginBottom:20,
+        backgroundColor:'#5067ffd1'
     },
     container: {
         flex:1,
         flexDirection:'column',
-        padding:10
+        paddingTop:10
     },
     textStyle:{
         color:'#222222',
