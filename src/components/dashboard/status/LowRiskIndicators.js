@@ -1,18 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import Image from 'react-native-remote-svg';
 import { connect } from 'react-redux';
 
 import StatusComponent from './StatusComponent';
 
 const mapStateToProps = state => ({
-    wellnessStatusSummary: state.Dashboard.wellnessStatusSummary
+    lowRiskIndicators: state.Dashboard.lowRiskIndicators
 })
 
 const mapDispatchToProps = dispatch => ({
-    showConfigModal: (value) => dispatch({
-        type: 'DashboardReducer_ShowConfirationModal',
-        payload: value
-    })
+
 })
 
 const chunkArray = (myArray, chunk_size) => {
@@ -29,15 +27,15 @@ const chunkArray = (myArray, chunk_size) => {
     return tempArray;
 }
 
-const StatusBody = (props) => {
-    let arrayGroup = chunkArray(props.wellnessStatusSummary, 3)
-    let arrayLength = props.wellnessStatusSummary.length;
-    openConfigurableModal = () => {
-        props.showConfigModal(true);
-    }
+const LowRiskIndicators = (props) => {
+    let arrayGroup = chunkArray(props.lowRiskIndicators, 3)
+    let arrayLength = props.lowRiskIndicators.length;
     return (
-        <TouchableWithoutFeedback onLongPress={this.openConfigurableModal}>
-            <View style={styles.container}>
+        <View>
+            <View style={{ alignItems: 'center',paddingTop:5 }}>
+                <Image style={{ width: 30, height: 30 }} source={require('../../../assests/images/emoji/01.svg')} />
+            </View>
+            <View style={styles.innerContainer}>
                 {
                     arrayGroup.map((x, i) => (
                         <View style={styles.sectionRow} key={i}>
@@ -56,11 +54,11 @@ const StatusBody = (props) => {
                     ))
                 }
             </View>
-        </TouchableWithoutFeedback>
+        </View>
     )
 }
 const styles = StyleSheet.create({
-    container: {
+    innerContainer: {
         flexDirection: 'column'
     },
     sectionRow: {
@@ -73,4 +71,4 @@ const styles = StyleSheet.create({
         borderColor: '#ddd'
     }
 })
-export default connect(mapStateToProps, mapDispatchToProps)(StatusBody);
+export default connect(mapStateToProps, mapDispatchToProps)(LowRiskIndicators);

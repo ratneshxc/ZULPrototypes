@@ -1,17 +1,17 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { Icon } from 'native-base';
-import Image from 'react-native-remote-svg'
+// import Image from 'react-native-remote-svg'
 const StatusHeader = (props) => {
     return (
         <View style={styles.headerSection}>
             <View style={{ flexDirection: 'row', padding: 10 }}>
                 <View style={{ flex: 1,flexDirection: 'row',paddingHorizontal:10 }}>
-                    <Text style={{fontSize:17,color:'#353535'}}>Great, I am feeling </Text>
-                    <Image
+                    <Text style={{fontSize:17,color:'#353535'}}>I am feeling Happy, today</Text>
+                    {/* <Image
                         source={require('../../assests/images/emoji/01.svg')}
                         style={{ width: 25, height: 25 }}
-                    />
+                    /> */}
                 </View>
                 <TouchableOpacity style={{ flexDirection: 'row',paddingHorizontal:10 }}>
                     <Text style={{paddingVertical:5}}>Today</Text><Icon name="caret-down" style={{ marginLeft: 5 }} type="FontAwesome" />

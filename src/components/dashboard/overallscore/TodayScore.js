@@ -7,10 +7,9 @@ const TodayScore = (props) => {
         <View style={styles.container}>
             <Text style={{ marginBottom: 10, fontSize: 13, color: '#353535' }}>Today's Score</Text>
             <View style={{ alignItems: 'center' }}>
-
                 <AnimatedCircularProgress
                     size={120}
-                    width={8}
+                    width={6}
                     fill={80}
                     tintColor="#5067FF"
                     onAnimationComplete={() => console.log('onAnimationComplete')}
@@ -19,7 +18,7 @@ const TodayScore = (props) => {
                         (fill) => (
                             <View>
                                 <Text style={styles.points}>
-                                    8
+                                    7
                                 </Text>
                                 <Text style={styles.caption}>
                                     Excellent

@@ -7,6 +7,8 @@ import AssessmentReport from '../components/report/AssessmentReport';
 import LandingTab from '../components/landingtabs/LandingTabs';
 import ExpertFilter from '../components/expertconnect/screens/ExpertFilter';
 import AssessmentLayout from '../components/assessment/assessmentSummary/AssessmentSummaryLayout';
+import ConfigurableStatusLayout from '../components/dashboard/status/ConfigurableStatusLayout';
+import IndicatorDetails from '../components/dashboard/status/indicatorDetails/IndicatorDetails';
 
 
 // const AppRoute = createSwitchNavigator({
@@ -16,19 +18,40 @@ import AssessmentLayout from '../components/assessment/assessmentSummary/Assessm
 //   Home: { screen: LandingTab },
 //   AssessmentReport: { screen: AssessmentReport }
 // });
+const Dashboard = createStackNavigator({
+  IndicatorDetails: {
+    screen: IndicatorDetails,
+    navigationOptions: () => ({
+      title: 'Steps'
+    })
+  },
+  Home: {
+    screen: LandingTab,
+    navigationOptions: () => ({
+      header: null
+    }),
+  },
+  Indicators: {
+    screen: ConfigurableStatusLayout,
+    navigationOptions: () => ({
+      title: 'Indicators'
+    })
+  }
 
+})
 
 const AppRoute = createSwitchNavigator({
-  
-  Home: { screen: LandingTab },
+  Home: { screen: Dashboard },
   Login: { screen: Login },
   Assessment: { screen: Assessment },
   Register: { screen: Register },
   AssessmentReport: { screen: AssessmentReport },
   AssessmentInfo: { screen: AssessmentInfo },
-  ExpertFilter:{screen:ExpertFilter},
-  AssessmentLayout:{screen:AssessmentLayout}
+  ExpertFilter: { screen: ExpertFilter },
+  AssessmentLayout: { screen: AssessmentLayout }
 });
+
+
 
 
 export default AppRoute;

@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Diet Score",
         statement: "How much water do you drink everyday?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10051.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Less than 1 litre", value: '1'},
@@ -22,7 +22,7 @@ var statementData = [
         no:2,
         Category:"Diet Score",
         statement: "Which of these nutrients does your diet include/s everyday?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10020.jpg'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"Carbohydrates- Present in wheat, rice, maize, potato etc",value: '1'},
@@ -42,7 +42,7 @@ var statementData = [
         no:3,
         Category:"Diet Score",
         statement: "Which of these do you consume regularly (at least once in 2 days)",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10017.jpg'),
         statementSuggestion:"(Select all that apply)",
         options:[
             {label:"Fizzy drinks, golas, slushies and milk shakes",value: '1'},
@@ -63,7 +63,7 @@ var statementData = [
         no:4,
         Category:"Diet Score",
         statement: "Do you eat breakfast?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10005.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Never",value: '1'},
@@ -81,7 +81,7 @@ var statementData = [
         no:5,
         Category:"Diet Score",
         statement: "How many days in a week do you have at least one meal outside?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10012.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Everyday",value: '1'},

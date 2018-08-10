@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Icon } from 'native-base';
+
+
 const StatusComponent = (props) => {
+
     let { title, value, target, unit, ideal } = props.statusObj;
     let comPercentage = value * 100 / target;
-    let finalStatus = target - value;
     let textColor = (target > value && ideal === '>') || (target <= value && ideal === '<') ? '#ed1727' : '#00b386'
+    
     return (
         <View style={styles.container}>
             <View style={styles.section}>
@@ -13,13 +16,6 @@ const StatusComponent = (props) => {
                 <Text style={{ color: '#353535', textAlign: 'center', fontWeight: '200', fontSize: 30 }}>{value}</Text>
                 <Text style={{ fontSize: 12, textAlign: 'center' }}>{unit}</Text>
             </View>
-            {/* <View style={{ paddingVertical: 3, flexDirection: 'row' }} >
-                {
-                    finalStatus >= 0 ?
-                        <Text style={{ fontSize: 12, color: textColor }}> <Icon name="arrow-down" style={{ fontSize: 15 }} /> <Text>{finalStatus + ' ' + unit}</Text> </Text> :
-                        <Text style={{ fontSize: 12, color: textColor }}><Icon name="arrow-up" style={{ fontSize: 15 }} /> <Text>{-finalStatus + ' ' + unit}</Text> </Text>
-                }
-            </View> */}
             <View style={{ backgroundColor: '#ddd', marginVertical: 10 }}>
                 <View style={{ height: 3, width: comPercentage + '%', backgroundColor: textColor }}></View>
             </View>
