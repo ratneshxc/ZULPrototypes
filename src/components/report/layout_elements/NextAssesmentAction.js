@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Button } from 'native-base';
 
-export default class AssesmentAction extends Component {
+export default class NextAssesmentAction extends Component {
 
-    goToDashboard = () => {
-        this.props.goToDashboard();
+    goToAssesment = () => {
+        this.props.goToAssesment();
     }
     render() {
         return (
             <View style={styles.container}>
-                <Button full style={styles.mt15} onPress={this.goToDashboard}>
-                    <Text style={styles.textStyle} >Go To Dashboard</Text>
+                <Button full style={styles.mt15} onPress={this.goToAssesment}>
+                    <Text style={styles.textStyle} >Take Next Assesment</Text>
                 </Button>
             </View>
         )
@@ -20,6 +20,7 @@ export default class AssesmentAction extends Component {
 
 const styles = StyleSheet.create({
     mt15: {
+        marginBottom: 20,
         backgroundColor: '#5067ffd1'
     },
     container: {
