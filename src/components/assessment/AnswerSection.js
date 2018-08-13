@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Animated, Text, View, StyleSheet, ScrollView, Alert, Dimensions} from 'react-native';
+import { Animated, Text, View, StyleSheet, ScrollView, Alert, Dimensions } from 'react-native';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
 import { connect } from 'react-redux';
 import FadeInView from '../animations/FadeInView';
@@ -8,7 +8,7 @@ import { CheckBox } from 'react-native-elements'
 import { Header, Footer, FooterTab, Left, Right, Body, Button, Container, Content } from 'native-base';
 
 const windowObj = Dimensions.get('window');
-const screenheight = windowObj.height / 2;
+const screenheight = windowObj.height * 2/ 5;
 const mapStateToProps = state => ({
   currentQuestion: state.Assessment.currentQuestion,
   questions: state.Assessment.questions
@@ -139,6 +139,10 @@ class AnswerSection extends Component {
                 title={x.label}
                 checked={x.checked}
                 onPress={() => this.selectCheckBox(i)}
+                containerStyle={{backgroundColor:'#ffffff', borderWidth:0}}
+                checkedColor='#1e90ff'
+                size={35}
+                textStyle={{fontSize:17}}
               />
             ))
           }
@@ -158,7 +162,7 @@ const styles = StyleSheet.create({
   optionView: {
     paddingHorizontal: 10,
     paddingVertical: 5,
-    height:screenheight
+    height: screenheight
   },
   radio: {
     padding: 20,
