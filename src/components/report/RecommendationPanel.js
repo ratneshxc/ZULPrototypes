@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import MoreAction from './ActionComponent';
-import Goals from './SampleGoals';
+import Goals from './GoalCard';
 export class RecommendationPanel extends Component {
     constructor() {
         super();

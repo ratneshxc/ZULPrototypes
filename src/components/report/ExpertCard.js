@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { FlatList, Text ,Image} from "react-native";
+import { FlatList, Text, Image, StyleSheet } from "react-native";
 import { Card, CardItem } from "native-base";
-
-
 
 export default class App extends Component {
     constructor(props) {
@@ -21,25 +19,18 @@ export default class App extends Component {
                     return (
                         <Card
                             transparent
-                            style={{
-         //backgroundColor: '#dddddd52'
-        backgroundColor:"#ffffff"
-                               
-                            }}>
+                            style={styles.cardStyle}>
 
-                            <CardItem style={{
-
-                                flex: 2,
-                                flexDirection: 'column',
-                                //backgroundColor: '#fbfbfb'
-                                backgroundColor:'#ffffff'
-                            }}>
+                            <CardItem style={styles.cardItemStyle}>
                                 <Image
                                     style={{ height: 70, width: 70 }}
                                     source={rowData.imageUrl}
                                 />
-                                <Text  style={{marginTop:5,color:'#000000'}}>
+                                <Text style={styles.titleStyle}>
                                     {rowData.title}
+                                </Text>
+                                <Text style={styles.descStyle}>
+                                    {rowData.desc}
                                 </Text>
                             </CardItem>
                         </Card>
@@ -50,3 +41,23 @@ export default class App extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    cardStyle: {
+        backgroundColor: "#ffffff"
+    },
+    cardItemStyle: {
+        flex: 2,
+        flexDirection: 'column',
+        backgroundColor: "#ffffff"
+        //backgroundColor: '#fbfbfb'
+    },
+    titleStyle: {
+        marginTop: 5,
+        color: '#000000'
+
+    },
+    descStyle: {
+        color: '#000000'
+    }
+})

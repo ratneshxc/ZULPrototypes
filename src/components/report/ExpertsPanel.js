@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import MoreAction from './ActionComponent';
-import ExpertCard from './SampleExperts';
+import ExpertCard from './ExpertCard';
 export class ExpertsPanel extends Component {
     constructor() {
         super();
