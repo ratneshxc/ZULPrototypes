@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 
-import { H3 } from 'native-base';
-import MoreAction from './MoreAction';
+import MoreAction from './ActionComponent';
 import Goals from './SampleGoals';
 export class RecommendationPanel extends Component {
     constructor() {
@@ -14,7 +13,7 @@ export class RecommendationPanel extends Component {
                 <View style={{ flex: 1,flexDirection:'row' }}>
                     <Text  style={{ flex: 1,color:'#000000',fontWeight:'bold',fontSize:16 }}> Recommendations</Text>
                     <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-                        <MoreAction />
+                        <MoreAction name="ellipsis-h"/>
 
                     </View>
                 </View>

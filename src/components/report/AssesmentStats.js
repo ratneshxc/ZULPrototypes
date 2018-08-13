@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import InfoAction from './InfoAction';
+import InfoAction from './ActionComponent';
 import AssesmentSummaryLayout from './AssesmentSummaryLayout';
 export default class AssesmentStatus extends Component {
   render() {
@@ -13,7 +13,7 @@ export default class AssesmentStatus extends Component {
             Summary
           </Text>
           <View style={styles.actionArea}>
-            <InfoAction />
+            <InfoAction name="info-circle"/>
 
           </View>
         </View>
