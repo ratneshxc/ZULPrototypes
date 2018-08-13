@@ -15,6 +15,7 @@ export default class App extends Component {
             <FlatList
                 horizontal
                 data={this.state.data}
+                style={{padding:0}}
                 renderItem={({ item: rowData }) => {
                     return (
                         <Card
@@ -23,7 +24,7 @@ export default class App extends Component {
 
                             <CardItem style={styles.cardItemStyle}>
                                 <Image
-                                    style={{ height: 70, width: 70 }}
+                                    style={{ height: 40, width: 40 }}
                                     source={rowData.imageUrl}
                                 />
                                 <Text style={styles.titleStyle}>
@@ -44,13 +45,16 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
     cardStyle: {
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ffffff",
+        padding:0
     },
     cardItemStyle: {
         flex: 2,
         flexDirection: 'column',
-        backgroundColor: "#ffffff"
+        backgroundColor: "#ffffff",
         //backgroundColor: '#fbfbfb'
+        padding:0,
+        margin:0
     },
     titleStyle: {
         marginTop: 5,
