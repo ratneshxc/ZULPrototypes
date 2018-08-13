@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import MoreAction from './ActionComponent';
-import Sample from './SampleExperts';
+import ExpertCard from './SampleExperts';
 export class ExpertsPanel extends Component {
     constructor() {
         super();
@@ -9,15 +9,15 @@ export class ExpertsPanel extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Text style={{ flex: 1, color: '#000000', fontWeight: 'bold', fontSize: 16 }}> Experts</Text>
-                    <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                <View style={styles.headingStyles}>
+                    <Text style={styles.headingText}> Experts</Text>
+                    <View style={styles.actionArea}>
                         <MoreAction name="ellipsis-h" />
 
                     </View>
                 </View>
-                <View style={{ flexDirection: 'row' }}>
-                    <Sample data={this.props.data}/>
+                <View style={styles.actionArea}>
+                    <ExpertCard data={this.props.data} />
                 </View>
             </View>
         )
@@ -30,11 +30,24 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         marginTop: 10
     },
-    blocks: {
+    headingStyles: {
         flex: 1,
-        height: Dimensions.get('window').width / 3,
-        padding: 3
+        flexDirection: 'row'
+    },
+    headingText: {
+        flex: 1,
+        color: '#000000',
+        fontWeight: 'bold',
+        fontSize: 16
+    },
+    actionArea: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
+    },
+    contentArea: {
+        flexDirection: 'row'
     }
+
 });
 
 export default ExpertsPanel
