@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
-import MoreAction from './ActionComponent';
-import Goals from './GoalCard';
-export class RecommendationPanel extends Component {
+import { View, StyleSheet, Text } from 'react-native';
+import MoreAction from '../components/ActionComponent';
+import ExpertCard from '../components/ExpertCard';
+export class ExpertsPanel extends Component {
     constructor() {
         super();
     }
@@ -10,14 +10,14 @@ export class RecommendationPanel extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.headingStyles}>
-                    <Text style={styles.headingText}> Recommendations</Text>
+                    <Text style={styles.headingText}> Experts</Text>
                     <View style={styles.actionArea}>
                         <MoreAction name="ellipsis-h" />
 
                     </View>
                 </View>
                 <View style={styles.actionArea}>
-                    <Goals data={this.props.data} />
+                    <ExpertCard data={this.props.data} />
                 </View>
             </View>
         )
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default RecommendationPanel
+export default ExpertsPanel

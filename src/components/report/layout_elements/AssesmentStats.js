@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import InfoAction from './ActionComponent';
+import InfoAction from '../components/ActionComponent';
 import AssesmentSummaryLayout from './AssesmentSummaryLayout';
 export default class AssesmentStatus extends Component {
   render() {

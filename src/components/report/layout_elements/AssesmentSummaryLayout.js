@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import ReportScore from './ReportScore';
-import AssesmentSubSectionScore from './AssesmentSubSectionScore';
+import ReportScore from '../components/ReportScore';
+import AssesmentSubSectionScore from '../components/AssesmentSubSectionScore';
 
 
 

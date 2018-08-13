@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import ReportHeader from './ReportHeader';
-import AssesmentStats from './AssesmentStats';
-import RecommendationPanel from './RecommendationPanel';
-import ExpertsPanel from './ExpertsPanel';
-import AssesmentAction from './AssesmentAction';
-import reportData from '../../data/ReportData';
+import ReportHeader from '../layout_elements/ReportHeader';
+import AssesmentStats from '../layout_elements/AssesmentStats';
+import RecommendationPanel from '../layout_elements/RecommendationPanel';
+import ExpertsPanel from '../layout_elements/ExpertsPanel';
+import AssesmentAction from '../layout_elements/AssesmentAction';
+import reportData from '../../../data/ReportData';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
