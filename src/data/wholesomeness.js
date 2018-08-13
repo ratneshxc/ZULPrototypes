@@ -25,10 +25,10 @@ var statementData = [
         imageURL: require('../assests/images/health-image.png'),
         statementSuggestion:"(Select all that apply)",
         options:[
-            {label:"I exercise", value:'1'},
-            {label:"I eat right", value:'2'},
-            {label:"I sleep right", value:'3'},
-            {label:"I do not do anything", value:'4'}
+            {label:"I exercise", value:'1', checked:false},
+            {label:"I eat right", value:'2', checked:false},
+            {label:"I sleep right", value:'3', checked:false},
+            {label:"I do not do anything", value:'4', checked:false}
         ],
         ansType: 'multiple',
         progressBar: 0.250,
