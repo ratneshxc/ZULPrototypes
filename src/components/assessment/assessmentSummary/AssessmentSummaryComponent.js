@@ -41,7 +41,7 @@ const AssessmentSummaryComponent = (props) => {
             <View style={{ alignItems: 'center', padding: 10 }}>
                 <Text>{props.assessObj.title}</Text>
             </View>
-        </Card >
+        </Card>
         </TouchableOpacity>
     )
 }
