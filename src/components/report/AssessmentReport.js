@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView, Text} from 'react-native';
+import { View, StyleSheet, ScrollView} from 'react-native';
 import ReportHeader from './ReportHeader';
 import AssesmentStats from './AssesmentStats';
 import RecommendationPanel from './RecommendationPanel';
 import ExpertsPanel from './ExpertsPanel';
 import AssesmentAction from './AssesmentAction';
-import ReportData from '../../data/ReportData';
 import reportData from '../../data/ReportData';
 import { connect } from 'react-redux';
 
