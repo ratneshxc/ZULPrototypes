@@ -42,12 +42,12 @@ var statementData = [
         imageURL: require('../assests/images/assessment/A1/A10047.jpg'),
         statementSuggestion:"(Select all that apply)",
         options:[
-            {label:"Processed food and fast food",value: '1'},
-            {label:"Rice, wheat and pulses",value: '2'},
-            {label:"Chicken or fish(white meat)",value: '3'},
-            {label:"Red meat",value: '4'},
-            {label:"Dairy based products",value: '5'},
-            {label:"Fresh Fruits and vegetables",value: '6'}
+            {label:"Processed food and fast food",value: '1', checked:false},
+            {label:"Rice, wheat and pulses",value: '2', checked:false},
+            {label:"Chicken or fish(white meat)",value: '3', checked:false},
+            {label:"Red meat",value: '4', checked:false},
+            {label:"Dairy based products",value: '5', checked:false},
+            {label:"Fresh Fruits and vegetables",value: '6', checked:false}
         ],
         ansType: 'multiple',
         progressBar: 0.2,

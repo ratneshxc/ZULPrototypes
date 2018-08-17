@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Platform, View, Text, StyleSheet } from 'react-native';
 import { Badge } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { connect } from 'react-redux';
@@ -12,17 +12,32 @@ const mapStateToProps = state => ({
 class QuestionHeader extends React.Component {
     render() {
         return (
-            <Header>
-                <Left>
-                    <Text style={styles.header}>{this.props.currentQuestion.Category}</Text>
-                </Left>
-                <Right>
-                    <Text style={{  fontWeight: 'bold'}}>
-                        <Icon name="trophy" style={{ marginRight: 5 }} size={20} />
-                        <Text>{this.props.totalReward}</Text>
-                    </Text>
-                </Right>
-            </Header>
+            <View>
+                {(Platform.OS === 'ios') ?
+                    <Header>
+                        <Left>
+                            <Text style={styles.headerIos}>{this.props.currentQuestion.Category}</Text>
+                        </Left>
+                        <Right>
+                            <Text style={{ fontWeight: 'bold' }}>
+                                <Icon name="trophy" style={{ marginRight: 5 }} size={20} />
+                                <Text>{this.props.totalReward}</Text>
+                            </Text>
+                        </Right>
+                    </Header> :
+                    <Header>
+                        <Left>
+                            <Text style={styles.header}>{this.props.currentQuestion.Category}</Text>
+                        </Left>
+                        <Right>
+                            <Text style={{ fontWeight: 'bold', color: 'white' }}>
+                                <Icon name="trophy" style={{ marginRight: 5 }} size={20} />
+                                <Text>{this.props.totalReward}</Text>
+                            </Text>
+                        </Right>
+                    </Header>
+                }
+            </View>
         )
     }
 }
@@ -39,6 +54,13 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 20,
         fontWeight: 'bold',
+        width: 350,
+        color: '#ffffff'
+    },
+    headerIos: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        width: 350
         // color: '#ffffff'
     },
     headerLeft: {

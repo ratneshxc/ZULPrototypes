@@ -1,10 +1,14 @@
 
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Alert } from 'react-native';
+import { Animated, Text, View, StyleSheet, ScrollView, Alert, Dimensions } from 'react-native';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
 import { connect } from 'react-redux';
 import FadeInView from '../animations/FadeInView';
+import { CheckBox } from 'react-native-elements'
+import { Header, Footer, FooterTab, Left, Right, Body, Button, Container, Content } from 'native-base';
 
+const windowObj = Dimensions.get('window');
+const screenheight = windowObj.height * 2/ 5;
 const mapStateToProps = state => ({
   currentQuestion: state.Assessment.currentQuestion,
   questions: state.Assessment.questions
@@ -38,6 +42,14 @@ const mapDispatchToProps = dispatch => ({
 })
 
 class AnswerSection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      optionAnswer: this.props.currentQuestion.options,
+      checkFadeIn: '',
+      fadeAnimation: new Animated.Value(0)
+    };
+  }
 
   selectAnswer = (index) => {
     this.props.questions[this.props.currentQuestion.no - 1].selectedIndex = index;
@@ -82,29 +94,64 @@ class AnswerSection extends Component {
     }
   }
 
+  selectCheckBox = (index) => {
+    this.state.optionAnswer[index].checked = !this.state.optionAnswer[index].checked;
+    this.setState({
+      optionAnswer: this.state.optionAnswer,
+      checkFadeIn: ''
+    });
+    for (let item of this.state.optionAnswer) {
+      if (item.checked) {
+        this.setState({
+          checkFadeIn: this.renderButton(this.props.currentQuestion.no - 1)
+        });
+      }
+    }
+  }
+  renderButton = (index) => {
+    return <Button onPress={(index) => this.selectAnswer(index)} full>
+      <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Next</Text>
+    </Button>
+  }
   render() {
     return (
-      <ScrollView style={styles.optionView}>
-        <RadioGroup
-          size={24}
-          thickness={2}
-          color='rgb(0, 96, 168)'
-          highlightColor='#3956976b'
-          selectedIndex={this.props.currentQuestion.selectedIndex}
-          onSelect={(index, value) => this.selectAnswer(index)}
-        >
-          {this.props.currentQuestion.options.map((x, i) => (
+      <View>
+        <ScrollView style={styles.optionView}>
+          {(this.props.currentQuestion.ansType === 'single') ?
+            <RadioGroup
+              size={24}
+              thickness={2}
+              color='rgb(0, 96, 168)'
+              highlightColor='#3956976b'
+              selectedIndex={this.props.currentQuestion.selectedIndex}
+              onSelect={(index, value) => this.selectAnswer(index)}
+            >
+              {this.props.currentQuestion.options.map((x, i) => (
+                <RadioButton style={styles.radio} key={i} value={x.value} >
+                  <FadeInView duration={500} delay={i * 100 + 200}>
+                    <Text style={styles.labeltext}>{x.label}</Text>
+                  </FadeInView>
+                </RadioButton>
+              ))}
+            </RadioGroup> :
+            this.state.optionAnswer.map((x, i) => (
+              <CheckBox
+                title={x.label}
+                checked={x.checked}
+                onPress={() => this.selectCheckBox(i)}
+                containerStyle={{backgroundColor:'#ffffff', borderWidth:0}}
+                checkedColor='#1e90ff'
+                size={35}
+                textStyle={{fontSize:17}}
+              />
+            ))
+          }
 
-            <RadioButton style={styles.radio} key={i} value={x.value} >
-              <FadeInView duration={500} delay={i * 100 + 200}>
-                <Text style={styles.labeltext}>{x.label}</Text>
-              </FadeInView>
-            </RadioButton>
-
-          ))}
-        </RadioGroup>
-        <View></View>
-      </ScrollView>
+        </ScrollView>
+        {(this.props.currentQuestion.ansType === 'multiple') ?
+          this.state.checkFadeIn : ''
+        }
+      </View>
 
     );
   }
@@ -114,7 +161,8 @@ class AnswerSection extends Component {
 const styles = StyleSheet.create({
   optionView: {
     paddingHorizontal: 10,
-    paddingVertical: 5
+    paddingVertical: 5,
+    height: screenheight
   },
   radio: {
     padding: 20,

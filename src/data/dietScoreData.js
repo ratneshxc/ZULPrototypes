@@ -25,12 +25,12 @@ var statementData = [
         imageURL: require('../assests/images/assessment/A1/A10020.jpg'),
         statementSuggestion:"(Select all that apply)",
         options:[
-            {label:"Carbohydrates- Present in wheat, rice, maize, potato etc",value: '1'},
-            {label:"Proteins-Present in beans, dal, milk, nuts, chicken, eggs etc",value: '2'},
-            {label:"Vitamins- Present in sprouts, fruits, vegetables etc",value: '3'},
-            {label:"Minerals- Present in nuts, whole grains, fish, legumes etc",value: '4'},
-            {label:"Fibre- Present in oats, cereals, lentils, fruits etc",value: '5'},
-            {label:"Fats- Present in Butter, ghee, milk etc", value: '6'}
+            {label:"Carbohydrates- Present in wheat, rice, maize, potato etc",value: '1', checked:false},
+            {label:"Proteins-Present in beans, dal, milk, nuts, chicken, eggs etc",value: '2', checked:false},
+            {label:"Vitamins- Present in sprouts, fruits, vegetables etc",value: '3', checked:false},
+            {label:"Minerals- Present in nuts, whole grains, fish, legumes etc",value: '4', checked:false},
+            {label:"Fibre- Present in oats, cereals, lentils, fruits etc",value: '5', checked:false},
+            {label:"Fats- Present in Butter, ghee, milk etc", value: '6', checked:false}
         ],
         ansType: 'multiple',
         progressBar: 0.4,
