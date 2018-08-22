@@ -5,7 +5,7 @@ import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
 import ExportConnect from '../components/expertconnect/ExpertConnect';
-import AssessmentLayout from '../components/assessment/assessmentSummary/AssessmentSummaryLayout';
+import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
 
 
