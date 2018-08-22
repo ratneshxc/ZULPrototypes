@@ -1,72 +1,203 @@
 const initialState = {
     isConfigurableDashboard: false,
-    wellnessStatusSummary: [
-        {
-            title: 'Walk',
-            value: 6,
-            unit: 'Km',
-            target: 5,
-            ideal: '>'
+    riskIndicators: [{
+        title: 'Walk',
+        value: 1,
+        unit: 'Km',
+        target: 5,
+        ideal: '>'
 
-        }, {
-            title: 'Sleep',
-            value: 6,
-            unit: 'Hrs',
-            target: 8,
-            ideal: '>'
-        }, {
-            title: 'Calories',
-            value: 600,
-            unit: 'Cal',
-            target: 300,
-            ideal: '>'
-        }, {
-            title: 'Mobile Usage',
-            value: 3,
-            unit: 'Hrs',
-            target: 5,
-            ideal: '<'
-        },
-        {
-            title: 'Travel',
-            value: 18,
-            unit: 'Km',
-            target: 20,
-            ideal: '<'
-        }, {
-            title: 'Office Time',
-            value: 4,
-            unit: 'Hrs',
-            target: 8,
-            ideal: '>'
-        }, {
-            title: 'Home Time',
-            value: 18,
-            unit: 'Hrs',
-            target: 20,
-            ideal: '>'
-        },
-        {
-            title: 'Credit Card Usage',
-            value: 500,
-            unit: 'Rs',
-            target: 300,
-            ideal: '<'
-        },{
-            title: 'Debit Card Usage',
-            value: 500,
-            unit: 'Rs',
-            target: 300,
-            ideal: '<'
-        }
-    ]
+    }, {
+        title: 'Sleep',
+        value: 4,
+        unit: 'Hrs',
+        target: 8,
+        ideal: '>'
+    }, {
+        title: 'Calories Burnt',
+        value: 100,
+        unit: 'Cal',
+        target: 300,
+        ideal: '>'
+    }],
+    lowRiskIndicators: [{
+        title: 'Mobile Usage',
+        value: 3,
+        unit: 'Hrs',
+        target: 5,
+        ideal: '<'
+    },
+    {
+        title: 'Travel',
+        value: 18,
+        unit: 'Km',
+        target: 20,
+        ideal: '<'
+    }, {
+        title: 'Office Time',
+        value: 9,
+        unit: 'Hrs',
+        target: 8,
+        ideal: '>'
+    }],
+    indicators: [{
+        dimensionName: 'Physical',
+        dimensionIcon: require('../../assests/images/dashboard/physical.svg'),
+        indicators: [
+            {
+                title: 'Walk',
+                value: 1,
+                unit: 'Km',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Sleep',
+                value: 2,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Run',
+                value: 4,
+                unit: 'Km',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Heart Beat',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Cycling',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }
+        ]
+    }, {
+        dimensionName: 'Emotional',
+        dimensionIcon: require('../../assests/images/dashboard/emotional.svg'),
+        indicators: [
+            {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }
+        ]
+    }, {
+        dimensionName: 'Intellectual',
+        dimensionIcon: require('../../assests/images/dashboard/intellectual.svg'),
+        indicators: [
+            {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }
+        ]
+    }, {
+        dimensionName: 'Environmental',
+        dimensionIcon: require('../../assests/images/dashboard/environmental.svg'),
+        indicators: [
+            {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }, {
+                title: 'Office Time',
+                value: 9,
+                unit: 'Hrs',
+                target: 8,
+                ideal: '>'
+            }
+        ]
+    }]
 }
 
 
 const DashboardReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'DashboardReducer_GetWellnessStatusDetails': {
-            state = { ...state, wellnessStatusSummary: action.payload }
+        case 'DashboardReducer_GetRiskIndicators': {
+            state = { ...state, riskIndicators: action.payload }
             break;
         }
         case 'DashboardReducer_ShowConfirationModal': {

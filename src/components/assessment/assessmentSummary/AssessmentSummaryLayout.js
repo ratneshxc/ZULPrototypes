@@ -37,13 +37,11 @@ class AssessmentSummaryLayout extends Component {
         return (
             <Container>
                 <Header>
+                    
                     <Body>
                         <Title>Assessments</Title>
                     </Body>
                     <Right>
-                        <Button transparent>
-                            <Icon name='bell' type="FontAwesome" />
-                        </Button>
                     </Right>
                 </Header>
                 <View style={{ alignSelf: 'center' }}>

@@ -140,11 +140,10 @@ class ZulaWakeUpbtn extends Component {
         if (ordermsg.indexOf('question') !=-1&& ordermsg.indexOf('read')!=-1) {
             this.zulaSpeak(this.props.currentQuestion.statement);
             this.zulaSpeak('The options are ,');
-            this.zulaSpeak(this.props.currentQuestion.options[0].label);
-            this.zulaSpeak(this.props.currentQuestion.options[1].label);
-            this.zulaSpeak(this.props.currentQuestion.options[2].label);
-            this.zulaSpeak(this.props.currentQuestion.options[3].label);
-        } else if (ordermsg.indexOf('bye')!=-1) {
+            this.props.currentQuestion.options.map((x) => {
+                this.zulaSpeak(x.label);
+            })
+        } else if (ordermsg.contains('bye')) {
             this.zulaSpeak('Bye KK!');
             this.props.zulaSleep();
         } else if (ordermsg.indexOf('hey')!=-1) {
@@ -194,7 +193,7 @@ const styles = StyleSheet.create({
     zulaBtn: {
         position: 'absolute',
         bottom: 50,
-        right:10,
+        right: 10,
         borderRadius: 50
     },
     zula: {

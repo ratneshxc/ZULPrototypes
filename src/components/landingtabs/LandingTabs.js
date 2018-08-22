@@ -7,8 +7,8 @@ import FontIcon from 'react-native-vector-icons/FontAwesome';
 import Drawer from 'react-native-drawer'
 import ControlPanel from './ControlPanel';
 
-import Dashboard from '../dashboard/Dashboard';
-import ExpertConnect from '../expertconnect/screens/ExpertConnect';
+import Dashboard from '../dashboardRewamp/Dashboard';
+import ExpertConnect from '../expertconnect/ExpertConnect';
 import Goals from '../goals/Goals';
 import Community from '../community/Community';
 import Notifications from '../notifications/Notifications';
@@ -42,14 +42,14 @@ export default class LandingTab extends React.Component {
       <Drawer
         ref={(ref) => drawer = ref}
         type="overlay"
-        content={<ControlPanel closeDrawer={closeControlPanel}  goToScreen={this.goToScreen} />}
+        content={<ControlPanel closeDrawer={closeControlPanel} goToScreen={this.goToScreen} />}
         tapToClose={true}
         openDrawerOffset={0.3} // 20% gap on the right side of drawer
         panCloseMask={0.3}
         closedDrawerOffset={-3}
         styles={drawerStyles}
       >
-        <TabRoute screenProps={{ OpenDrawer: openControlPanel, goAssessmentInfo: this.goAssessmentInfo, filterList: this.filterList }} />
+        <TabRoute screenProps={{ OpenDrawer: openControlPanel, goToScreen: this.goToScreen, goAssessmentInfo: this.goAssessmentInfo, filterList: this.filterList }} />
       </Drawer>
     );
   }
@@ -107,7 +107,7 @@ const TabRoute = createBottomTabNavigator({
           <IconBadge
             MainElement={<FontIcon name={iconName} size={25} color={tintColor} />}
             BadgeElement={<Text style={{ color: 'white' }}>3</Text>}
-            IconBadgeStyle={{left:15,top:-10}}
+            IconBadgeStyle={{ left: 15, top: -10 }}
           />
         );
       }
@@ -128,7 +128,7 @@ const TabRoute = createBottomTabNavigator({
       style: {
         backgroundColor: '#ffffff',
       },
-      showLabel:false
+      showLabel: false
     },
     showIcon: true,
     swipeEnabled: false

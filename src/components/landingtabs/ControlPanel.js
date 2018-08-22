@@ -64,6 +64,24 @@ export default class ControlPanel extends React.Component {
                         </ListItem>
                         <ListItem icon>
                             <Left>
+                                <Icon name="info" style={{ fontSize: 15 }} type="FontAwesome" />
+                            </Left>
+                            <Body>
+                                <Text style={styles.menuText}>About Us</Text>
+                            </Body>
+                            <Right></Right>
+                        </ListItem>
+                        <ListItem icon>
+                            <Left>
+                                <Icon name="phone" style={{ fontSize: 15 }} type="FontAwesome" />
+                            </Left>
+                            <Body>
+                                <Text style={styles.menuText}>Support</Text>
+                            </Body>
+                            <Right></Right>
+                        </ListItem>
+                        <ListItem icon>
+                            <Left>
                                 <Icon name="sign-out" style={{ fontSize: 15 }} type="FontAwesome" />
                             </Left>
                             <Body>
@@ -89,6 +107,7 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     menuText: {
-        fontSize: 18
+        fontSize: 16,
+        color: '#353535'
     }
 })

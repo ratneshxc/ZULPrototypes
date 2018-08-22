@@ -19,7 +19,7 @@ const ZulaWelcomeMessage = (props) => {
             <Card style={styles.innerContainer}>
                 <View style={styles.body}>
                     <View style={{ flex: 1, marginBottom: 10 }}>
-                        <Text style={{ color: '#ffffff', fontSize: 20 }}>Good morning KK, how are you feeling today?</Text>
+                        <Text style={{ color: '#ffffff', fontSize: 17 }}>Good morning KK, how are you feeling today?</Text>
                     </View>
                     <View style={{ flexDirection: 'row', flex: 1 }}>
                         <TouchableOpacity style={styles.emojiContainer} onPress={props.hideWishModal}>

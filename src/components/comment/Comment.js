@@ -64,7 +64,6 @@ class Comment extends Component {
                         <View style={styles.modalHeader}>
                             <View style={styles.header}>
                                 <H2>Comments</H2>
-                                <Text>Total {this.props.comments.length} comments</Text>
                             </View>
                             <View style={styles.close}>
                                 <TouchableHighlight

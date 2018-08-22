@@ -9,19 +9,19 @@ class AssessmentList extends React.Component {
         super();
         this.state = {
             entries: [{
-                title: 'Financial',
+                title: 'Zest For Life',
                 overdue: 20
             }, {
-                title: 'Physical',
+                title: 'Biological Age',
                 overdue: 16
             }, {
-                title: 'Spiritual',
+                title: 'Wholesomeness',
                 overdue: 15
             }, {
-                title: 'Social',
+                title: 'Strength & Energy',
                 overdue: 12
             }, {
-                title: 'Emotional',
+                title: 'Diet Score',
                 overdue: 10
             }]
         }
