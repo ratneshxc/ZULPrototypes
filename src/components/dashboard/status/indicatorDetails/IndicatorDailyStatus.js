@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, SectionList, Text } from 'react-native';
+import { Icon } from 'native-base';
 
 const IndicatorDailyStatus = (props) => {
     return (
@@ -12,15 +13,29 @@ const IndicatorDailyStatus = (props) => {
                 sections={[
                     {
                         title: 'This Week',
-                        value: '505 Km',
+                        value: '30',
+                        unit: 'Km',
                         data: [
-                            { day: 'Thu', value: '50 Km' },
-                            { day: 'Wed', value: '30 Km' },
-                            { day: 'Tue', value: '80 Km' },
-                            { day: 'Mon', value: '80 Km' },
-                            { day: 'Sun', value: '80 Km' },
-                            { day: 'Sat', value: '80 Km' },
-                            { day: 'Fri', value: '80 Km' }
+                            { day: 'Today', value: '5', unit: 'Km' },
+                            { day: 'Wed', value: '3', unit: 'Km' },
+                            { day: 'Tue', value: '4', unit: 'Km' },
+                            { day: 'Mon', value: '5', unit: 'Km' },
+                            { day: 'Sun', value: '2', unit: 'Km' },
+                            { day: 'Sat', value: '4', unit: 'Km' },
+                            { day: 'Fri', value: '5', unit: 'Km' }
+                        ]
+                    }, {
+                        title: 'Last Week',
+                        value: '20',
+                        unit: 'Km',
+                        data: [
+                            { day: 'Thu', value: '3', unit: 'Km' },
+                            { day: 'Wed', value: '2', unit: 'Km' },
+                            { day: 'Tue', value: '3', unit: 'Km' },
+                            { day: 'Mon', value: '4', unit: 'Km' },
+                            { day: 'Sun', value: '2', unit: 'Km' },
+                            { day: 'Sat', value: '3', unit: 'Km' },
+                            { day: 'Fri', value: '5', unit: 'Km' }
                         ]
                     }
                 ]}
@@ -32,24 +47,43 @@ const IndicatorDailyStatus = (props) => {
 
 const SectionHeader = (props) => {
     return (
-        <View>
-            <Text>{props.item.title}</Text>
-            <Text>{props.item.value}</Text>
+        <View style={{ flexDirection: 'row', paddingVertical: 5, paddingHorizontal: 20, backgroundColor: 'teal' }}>
+            <View style={{ flex: 1 }}>
+                <Text style={{ color: '#ffffff' }}>{props.item.title}</Text>
+            </View>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }}>
+                <Text style={{ color: '#ffffff', fontWeight: 'bold' }}>{props.item.value}</Text>
+                <Text style={{ fontSize: 10, color: '#ffffff', fontWeight: 'normal', marginLeft: 5, marginTop: 4 }}>{props.item.unit}</Text>
+            </View>
         </View>
     )
 }
 
 const SectionItem = (props) => {
     return (
-        <View>
-            <Text>{props.item.day}</Text>
-            <Text>{props.item.value}</Text>
+        <View style={styles.itemContainer}>
+            <View style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ width: 70 }}>
+                    <Text>{props.item.day}</Text>
+                </View>
+                <View style={{ flex: 1, flexDirection: 'row' }}>
+                    <Text style={{ fontWeight: 'bold', color: '#353535' }}>{props.item.value}</Text><Text style={{ fontSize: 10, fontWeight: 'normal', marginLeft: 3, marginTop: 4 }}>{props.item.unit}</Text>
+                </View>
+            </View>
+            <View>
+                <Icon name="arrow-forward" style={{ color: '#d2d2d2', fontSize: 20 }} />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
+    itemContainer: {
+        flexDirection: 'row',
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        borderWidth: 0.5,
+        borderColor: '#ddd'
     }
 })
 export default IndicatorDailyStatus;

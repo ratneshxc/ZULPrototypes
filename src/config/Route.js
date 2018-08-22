@@ -19,12 +19,6 @@ import IndicatorDetails from '../components/dashboard/status/indicatorDetails/In
 //   AssessmentReport: { screen: AssessmentReport }
 // });
 const Dashboard = createStackNavigator({
-  IndicatorDetails: {
-    screen: IndicatorDetails,
-    navigationOptions: () => ({
-      title: 'Steps'
-    })
-  },
   Home: {
     screen: LandingTab,
     navigationOptions: () => ({
@@ -36,8 +30,13 @@ const Dashboard = createStackNavigator({
     navigationOptions: () => ({
       title: 'Indicators'
     })
+  },
+  IndicatorDetails: {
+    screen: IndicatorDetails,
+    navigationOptions: () => ({
+      title: 'Steps'
+    })
   }
-
 })
 
 const AppRoute = createSwitchNavigator({

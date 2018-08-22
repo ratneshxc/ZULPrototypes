@@ -7,8 +7,8 @@ import FontIcon from 'react-native-vector-icons/FontAwesome';
 import Drawer from 'react-native-drawer'
 import ControlPanel from './ControlPanel';
 
-import Dashboard from '../dashboard/Dashboard';
-import ExpertConnect from '../expertconnect/screens/ExpertConnect';
+import Dashboard from '../dashboardRewamp/Dashboard';
+import ExpertConnect from '../expertconnect/ExpertConnect';
 import Goals from '../goals/Goals';
 import Community from '../community/Community';
 import Notifications from '../notifications/Notifications';
