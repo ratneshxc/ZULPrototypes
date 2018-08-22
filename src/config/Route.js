@@ -1,56 +1,114 @@
-import { createSwitchNavigator, createStackNavigator } from 'react-navigation';
-import Login from '../components/login/Login';
-import Assessment from '../components/assessment/Assessment';
-import Register from '../components/register/Register';
-import AssessmentInfo from '../components/assessment/AssessmentInfo';
-import AssessmentReport from '../components/report/screen/AssessmentReport';
-import LandingTab from '../components/landingtabs/LandingTabs';
-import ExpertFilter from '../components/expertconnect/screens/ExpertFilter';
+import React from 'react';
+import FontIcon from 'react-native-vector-icons/FontAwesome';
+import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator } from 'react-navigation';
+import Dashboard from '../components/dashboard/Dashboard';
+import Calendar from '../components/Calendar/Calendar';
+import Community from '../components/community/Community';
+import ExportConnect from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/assessmentSummary/AssessmentSummaryLayout';
-import ConfigurableStatusLayout from '../components/dashboard/status/ConfigurableStatusLayout';
-import IndicatorDetails from '../components/dashboard/status/indicatorDetails/IndicatorDetails';
+import Goals from '../components/goals/Goals';
 
 
-// const AppRoute = createSwitchNavigator({
-//   Login: { screen: Login },
-//   Assessment: { screen: Assessment },
-//   Register: { screen: Register },
-//   Home: { screen: LandingTab },
-//   AssessmentReport: { screen: AssessmentReport }
-// });
-const Dashboard = createStackNavigator({
-  Home: {
-    screen: LandingTab,
-    navigationOptions: () => ({
-      header: null
-    }),
+const TabRoute = createBottomTabNavigator({
+  Dashboard: {
+    screen: Dashboard,
+    navigationOptions: {
+      title: 'Dashboard',
+      tabBarIcon: ({ focused, tintColor }) => {
+        const iconName = `home${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
   },
-  Indicators: {
-    screen: ConfigurableStatusLayout,
-    navigationOptions: () => ({
-      title: 'Indicators'
-    })
+  Community: {
+    screen: Community,
+    navigationOptions: {
+      title: 'Community',
+      tabBarIcon: ({ focused, tintColor }) => {
+        const iconName = `comments${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
   },
-  IndicatorDetails: {
-    screen: IndicatorDetails,
-    navigationOptions: () => ({
-      title: 'Steps'
-    })
+  Calendar: {
+    screen: Calendar,
+    navigationOptions: {
+      title: 'Calendar',
+      tabBarIcon: ({ focused, tintColor }) => {
+        const iconName = `calendar${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
   }
-})
+}, {
+    tabBarPosition: 'bottom',
+    animationEnabled: false,
+    tabBarOptions: {
+      activeTintColor: '#5067FF',
+      inactiveTintColor: '#000000',
+      inactiveBackgroundColor: '#ffffff',
+      activeBackgroundColor: '#ffffff',
+      labelStyle: {
+        fontSize: 10,
+        paddingBottom: 3,
+      },
+      style: {
+        backgroundColor: '#ffffff',
+      },
+      showLabel: false
+    },
+    showIcon: true,
+    swipeEnabled: false
+  }, )
 
-const AppRoute = createSwitchNavigator({
-  Home: { screen: Dashboard },
-  Login: { screen: Login },
-  Assessment: { screen: Assessment },
-  Register: { screen: Register },
-  AssessmentReport: { screen: AssessmentReport },
-  AssessmentInfo: { screen: AssessmentInfo },
-  ExpertFilter: { screen: ExpertFilter },
-  AssessmentLayout: { screen: AssessmentLayout }
+
+const MainApp = createDrawerNavigator({
+  LandingTab: {
+    screen: TabRoute,
+    navigationOptions: {
+      title: 'Home',
+      drawerIcon: ({ focused, tintColor }) => {
+        const iconName = `home${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  },
+  AssessmentLayout: {
+    screen: AssessmentLayout,
+    navigationOptions: {
+      title: 'Check your wellness',
+      drawerIcon: ({ focused, tintColor }) => {
+        const iconName = `adjust${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  },
+  Goals: {
+    screen: Goals,
+    navigationOptions: {
+      title: 'Goals',
+      drawerIcon: ({ focused, tintColor }) => {
+        const iconName = `bullseye${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  },
+  ExportConnect: {
+    screen: ExportConnect,
+    navigationOptions: {
+      title: 'Connect with Experts',
+      drawerIcon: ({ focused, tintColor }) => {
+        const iconName = `users${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  }
 });
 
 
+const AppRoute = createSwitchNavigator({
+  MainApp: { screen: MainApp },
+});
 
 
 export default AppRoute;

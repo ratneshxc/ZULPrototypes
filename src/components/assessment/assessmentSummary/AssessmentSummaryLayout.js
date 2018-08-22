@@ -37,7 +37,11 @@ class AssessmentSummaryLayout extends Component {
         return (
             <Container>
                 <Header>
-                    
+                    <Left>
+                        <Button transparent>
+                            <Icon name='menu' />
+                        </Button>
+                    </Left>
                     <Body>
                         <Title>Assessments</Title>
                     </Body>
@@ -68,9 +72,9 @@ class AssessmentSummaryLayout extends Component {
                         }
                     </AnimatedCircularProgress>
                 </View>
-                
+
                 <Content style={styles.container}>
-                <Text style={{alignSelf:'flex-start'}}>Assessment Inventory</Text>
+                    <Text style={{ alignSelf: 'flex-start' }}>Assessment Inventory</Text>
                     {
                         arrayGroup.map((x, i) => (
                             <View key={i} style={{ flexDirection: 'row' }}>

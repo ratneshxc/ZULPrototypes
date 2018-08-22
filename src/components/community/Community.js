@@ -7,7 +7,7 @@ const Community = (props) => {
         <Container>
             <Header>
                 <Left>
-                    <Button onPress={props.screenProps.OpenDrawer} transparent>
+                    <Button transparent>
                         <Icon name='menu' />
                     </Button>
                 </Left>
