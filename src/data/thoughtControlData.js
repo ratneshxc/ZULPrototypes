@@ -3,7 +3,7 @@ var statementData = [
         no:1,
         Category:"Thought Control",
         statement: "Do you get angry?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10011.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I easily get angry", value: '1'},
@@ -21,7 +21,7 @@ var statementData = [
         no:2,
         Category:"Thought Control",
         statement: "How do you react when angry?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10043.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I become verbally and physically aggressive", value: '1'},
@@ -39,7 +39,7 @@ var statementData = [
         no:3,
         Category:"Thought Control",
         statement: "Describe your behaviour/attitude with respect to smoking:",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10041.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I smoke when I am stressed /angry/upset/depressed/bored", value: '1'},
@@ -57,7 +57,7 @@ var statementData = [
         no:4,
         Category:"Thought Control",
         statement: "Describe your behaviour/attitude with respect to alcohol:",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10024.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I drink alcohol when I am stressed /angry/upset/depressed/bored", value: '1'},
@@ -75,7 +75,7 @@ var statementData = [
         no:5,
         Category:"Thought Control",
         statement: "Describe your behavior/attitude with respect to use of recreational drugs such as cocaine, opioids etc:",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10015.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I take drugs when I am stressed /angry/upset/depressed/bored", value: '1'},
@@ -93,7 +93,7 @@ var statementData = [
         no:6,
         Category:"Thought Control",
         statement: "Do you wash your hands more than necessary?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10036.jpg'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -111,7 +111,7 @@ var statementData = [
         no:7,
         Category:"Thought Control",
         statement: "Are you compelled to repeat certain tasks unnecessarily?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10007.jpg'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -129,7 +129,7 @@ var statementData = [
         no:8,
         Category:"Thought Control",
         statement: "Do you get anxious if others change the way you have arranged things?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10042.jpg'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -148,7 +148,7 @@ var statementData = [
         no:9,
         Category:"Thought Control",
         statement: "Are you bothered by repeated unpleasant thought?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10036.jpg'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -167,7 +167,7 @@ var statementData = [
         no:10,
         Category:"Thought Control",
         statement: "Are you unnecessarily cautious about hurting people by your actions?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10003.jpg'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -185,7 +185,7 @@ var statementData = [
         no:11,
         Category:"Thought Control",
         statement: "Do you follow superstitious acts when you are worried and feel something might go wrong?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10050.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Always", value: '1'},
@@ -203,7 +203,7 @@ var statementData = [
         no:12,
         Category:"Thought Control",
         statement: "Are you going through any traumatic experience due to separation/loss of someone close?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10029.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Yes, to a great extent", value: '1'},
@@ -221,7 +221,7 @@ var statementData = [
         no:13,
         Category:"Thought Control",
         statement: "If you have lost someone close to you, how are you coping with it?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10048.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I feel it shouldn't have happened to me", value: '1'},
@@ -239,7 +239,7 @@ var statementData = [
         no:14,
         Category:"Thought Control",
         statement: "Do you have difficulty in sleeping?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10040.jpg'),
         statementSuggestion:"",
         options:[
             {label:"Nearly everyday", value: '1'},
@@ -257,7 +257,7 @@ var statementData = [
         no:15,
         Category:"Thought Control",
         statement: "Are you able to cry and let out your emotions during episodes of deep sadness?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10001.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I want to but not able to cry", value: '1'},
@@ -275,7 +275,7 @@ var statementData = [
         no:16,
         Category:"Thought Control",
         statement: "Do you feel that your self-confidence has reduced?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10039.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I have always had low self-confidence", value: '1'},
@@ -293,7 +293,7 @@ var statementData = [
         no:17,
         Category:"Thought Control",
         statement: "How hopeful are you about the future?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10027.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I believe there is no hope for my future", value: '1'},
@@ -311,7 +311,7 @@ var statementData = [
         no:18,
         Category:"Thought Control",
         statement: "Are any recent failures bothering you?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10032.jpg'),
         statementSuggestion:"",
         options:[
             {label:"To a great extent", value: '1'},
@@ -329,7 +329,7 @@ var statementData = [
         no:19,
         Category:"Thought Control",
         statement: "Are you finding it difficult to make decisions due to recent emotional disturbance?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10044.jpg'),
         statementSuggestion:"",
         options:[
             {label:"To a great extent", value: '1'},
@@ -347,7 +347,7 @@ var statementData = [
         no:20,
         Category:"Thought Control",
         statement: "Have you been feeling worthless?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10025.jpg'),
         statementSuggestion:"",
         options:[
             {label:"All the time", value: '1'},
@@ -365,7 +365,7 @@ var statementData = [
         no:21,
         Category:"Thought Control",
         statement: "Have you been feeling depressed?",
-        imageURL: require('../assests/images/illness-image.png'),
+        imageURL: require('../assests/images/assessment/A1/A10036.jpg'),
         statementSuggestion:"",
         options:[
             {label:"I feel I am always depressed", value: '1'},

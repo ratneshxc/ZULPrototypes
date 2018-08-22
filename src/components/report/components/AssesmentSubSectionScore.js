@@ -5,17 +5,24 @@ const AssesmentSubScore = (props) => {
     return (
         <Card style={styles.container}>
             <View>
-                <Text style={{color:'#353535'}}>{props.assessObj.title}</Text>
+                <Text style={styles.titleStyles}>{props.assessObj.title}</Text>
             </View>
             <View>
-                <Text style={{fontSize:20,color:'#353535'}}>{props.assessObj.score}%</Text>
+                <Text style={styles.scoreStyles}>{props.assessObj.score}%</Text>
             </View>
         </Card>
     )
 }
 const styles = StyleSheet.create({
     container: {
-        padding:5,
+        padding: 5,
+    },
+    titleStyles: {
+        color: '#353535'
+    },
+    scoreStyles: {
+        fontSize: 20,
+        color: '#353535'
     }
 })
 export default AssesmentSubScore;

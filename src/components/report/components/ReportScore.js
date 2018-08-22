@@ -5,8 +5,7 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 const TodayScore = (props) => {
     return (
         <View style={styles.container}>
-            {/* <Text style={{ marginBottom: 10, fontSize: 13, color: '#353535' }}>Your Score</Text> */}
-            <View style={{ alignItems: 'center' }}>
+            <View style={styles.mainDivision}>
 
                 <AnimatedCircularProgress
                     size={120}
@@ -19,10 +18,10 @@ const TodayScore = (props) => {
                         (fill) => (
                             <View>
                                 <Text style={styles.points}>
-                                    80%
+                                    {props.stats.overall}%
                                 </Text>
-                                <Text style={styles.caption}>
-                                    Excellent
+                                <Text style={[styles.caption,{color: props.stats.desccolor}]}>
+                                {props.stats.shortdescription}
                                 </Text>
                             </View>
                         )
@@ -45,7 +44,10 @@ const styles = StyleSheet.create({
     caption: {
         fontSize: 15,
         textAlign: 'center',
-        color: 'green'
-    }
+        
+    },
+    mainDivision:{ 
+        alignItems: 'center'
+     }
 })
 export default TodayScore;

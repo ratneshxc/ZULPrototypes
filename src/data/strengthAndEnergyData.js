@@ -86,13 +86,13 @@ var statementData = [
 
         options: [
 
-            { label: "More than 10 cups", value: '1' },
+            { label: "More than 10 cups", value: '1', checked:false},
 
-            { label: "5-10 cups", value: '2' },
+            { label: "5-10 cups", value: '2' , checked:false},
 
-            { label: "2-5 cups", value: '3' },
+            { label: "2-5 cups", value: '3' , checked:false},
 
-            { label: "Less than 2 cups", value: '4' }
+            { label: "Less than 2 cups", value: '4' , checked:false}
 
         ],
 
@@ -266,17 +266,17 @@ var statementData = [
 
         options: [
 
-            { label: "Walk or cycle for short distances instead of driving", value: '1' },
+            { label: "Walk or cycle for short distances instead of driving", value: '1' , checked:false},
 
-            { label: "Involve with household activity to be fit and healthy", value: '2' },
+            { label: "Involve with household activity to be fit and healthy", value: '2' , checked:false},
 
-            { label: "Take stairs over elevators", value: '3' },
+            { label: "Take stairs over elevators", value: '3' , checked:false},
 
-            { label: "Exercise or play sports regularly", value: '4' },
+            { label: "Exercise or play sports regularly", value: '4' , checked:false},
 
-            { label: "Involve in job that requires moving and standing", value: '5' },
+            { label: "Involve in job that requires moving and standing", value: '5' , checked:false},
 
-            { label: "None of these", value: '6' }
+            { label: "None of these", value: '6' , checked:false}
 
         ],
 
@@ -306,19 +306,19 @@ var statementData = [
 
         options: [
 
-            { label: "My days are busy and exercise is not a high priority", value: '1' },
+            { label: "My days are busy and exercise is not a high priority", value: '1' , checked:false},
 
-            { label: "None among my family or friends like to do anything active", value: '1' },
+            { label: "None among my family or friends like to do anything active", value: '1' , checked:false},
 
-            { label: "I feel exercise is risky and can cause injury", value: '1' },
+            { label: "I feel exercise is risky and can cause injury", value: '1' , checked:false},
 
-            { label: "I am not able to start exercising even if I often think of it", value: '1' },
+            { label: "I am not able to start exercising even if I often think of it", value: '1' , checked:false},
 
-            { label: "I feel exercising is too expensive", value: '1' },
+            { label: "I feel exercising is too expensive", value: '1' , checked:false},
 
-            { label: "I am too tired after work to exercise", value: '1' },
+            { label: "I am too tired after work to exercise", value: '1' , checked:false},
 
-            { label: "I do not have access for exercising facilities", value: '1' }
+            { label: "I do not have access for exercising facilities", value: '1' , checked:false}
 
         ]
 
@@ -770,21 +770,21 @@ var statementData = [
 
         options: [
 
-            { label: "Asthma", value: '1' },
+            { label: "Asthma", value: '1' , checked:false},
 
-            { label: "Cancer", value: '2' },
+            { label: "Cancer", value: '2' , checked:false},
 
-            { label: "Diabetes", value: '3' },
+            { label: "Diabetes", value: '3' , checked:false},
 
-            { label: "Heart disease (includes conditions such as angina, heart attack)", value: '4' },
+            { label: "Heart disease (includes conditions such as angina, heart attack)", value: '4' , checked:false},
 
-            { label: "High blood pressure", value: '5' },
+            { label: "High blood pressure", value: '5' , checked:false},
 
-            { label: "High cholesterol", value: '6' },
+            { label: "High cholesterol", value: '6' , checked:false},
 
-            { label: "Stroke / Brain stroke / TIA (Transient Ischemic Attack)", value: '7' },
+            { label: "Stroke / Brain stroke / TIA (Transient Ischemic Attack)", value: '7' , checked:false},
 
-            { label: "I do not have a family history of any condition", value: '8' }
+            { label: "I do not have a family history of any condition", value: '8' , checked:false}
 
         ],
 

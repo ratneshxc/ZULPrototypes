@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion
 })
 
-class InfoAction extends React.Component {
+class ActionComponent extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -25,7 +25,7 @@ class InfoAction extends React.Component {
                 <View style={styles.optionsBody}>
                     <TouchableOpacity onPress={this.iconClickHandler}>
                         <Text>
-                            <Icon name="info-circle" size={20} style={{color:'black',marginRight:5}} />
+                            <Icon name={this.props.name} size={20} style={{color:'black',marginRight:5}} />
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -33,7 +33,7 @@ class InfoAction extends React.Component {
     }
 }
 
-export default connect(mapStateToProps)(InfoAction)
+export default connect(mapStateToProps)(ActionComponent)
 
 const styles = StyleSheet.create({
     optionsBody: {

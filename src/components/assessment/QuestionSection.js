@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Text, View, ImageBackground, StyleSheet } from 'react-native';
-import { Badge } from 'native-base';
+import {Badge, Header, Footer, FooterTab, Left, Right, Body, Button, Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import * as Progress from 'react-native-progress';
 import FadeInView from '../animations/FadeInView';
 import SlideRightView from '../animations/SlideRightView';
-import QuestionHeader from './QuestionHeader';
+// import QuestionHeader from './QuestionHeader';
 
 
 const mapStateToProps = state => ({
@@ -22,7 +22,7 @@ class QuestionSection extends Component {
     return (
 
       <ImageBackground source={currentQuestion.imageURL} resizeMode="cover" style={styles.backImage}>
-        <QuestionHeader currentQuestion={currentQuestion}/>
+        {/* <QuestionHeader currentQuestion={currentQuestion}/> */}
         <Progress.Bar style={{ borderRadius: 0, borderWidth: 0, marginLeft: -1, padding: 0 }} progress={currentQuestion.progressBar} width={null} color={currentQuestion.progressBarColor} unfilledColor={'#ffffff'} />
         {!this.props.isNextQuestionLoading && <SlideRightView>
           <View style={styles.questionView}>

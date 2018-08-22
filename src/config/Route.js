@@ -3,7 +3,7 @@ import Login from '../components/login/Login';
 import Assessment from '../components/assessment/Assessment';
 import Register from '../components/register/Register';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
-import AssessmentReport from '../components/report/AssessmentReport';
+import AssessmentReport from '../components/report/screen/AssessmentReport';
 import LandingTab from '../components/landingtabs/LandingTabs';
 import ExpertFilter from '../components/expertconnect/screens/ExpertFilter';
 import AssessmentLayout from '../components/assessment/assessmentSummary/AssessmentSummaryLayout';

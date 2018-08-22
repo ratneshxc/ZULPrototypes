@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, Dimensions } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
 import AssessmentSummaryComponent from './AssessmentSummaryComponent';
 import { connect } from 'react-redux';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 const mapStateToProps = state => ({
     assessmentReport: state.Assessment.assessmentReport
@@ -43,7 +44,33 @@ class AssessmentSummaryLayout extends Component {
                     <Right>
                     </Right>
                 </Header>
+                <View style={{ alignSelf: 'center' }}>
+                    <Text style={{ alignSelf: 'center' }}>Assessment overall Score</Text>
+                    <AnimatedCircularProgress style={{ alignSelf: 'center' }}
+                        top={2}
+                        size={120}
+                        width={5}
+                        fill={80}
+                        tintColor="#5067FF"
+                        onAnimationComplete={() => console.log('onAnimationComplete')}
+                        backgroundColor="#ddd">
+                        {
+                            (fill) => (
+                                <View>
+                                    <Text style={styles.points}>
+                                        8
+                                </Text>
+                                    <Text style={styles.caption}>
+                                        Excellent
+                                </Text>
+                                </View>
+                            )
+                        }
+                    </AnimatedCircularProgress>
+                </View>
+                
                 <Content style={styles.container}>
+                <Text style={{alignSelf:'flex-start'}}>Assessment Inventory</Text>
                     {
                         arrayGroup.map((x, i) => (
                             <View key={i} style={{ flexDirection: 'row' }}>
@@ -74,6 +101,16 @@ const styles = StyleSheet.create({
         flex: 1,
         height: Dimensions.get('window').width / 3,
         padding: 3
+    },
+    points: {
+        fontSize: 20,
+        color: '#353535',
+        textAlign: 'center'
+    },
+    caption: {
+        fontSize: 15,
+        textAlign: 'center',
+        color: 'green'
     }
 })
 
