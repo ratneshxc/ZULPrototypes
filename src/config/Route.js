@@ -1,12 +1,17 @@
 import React from 'react';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
-import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
 import ExportConnect from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
+import Vitals from '../components/assessment/vitals/Vitals';
+import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
+import AssessmentInfo from '../components/assessment/AssessmentInfo';
+import Assessment from '../components/assessment/Assessment';
+import AssessmentReport from '../components/report/screen/AssessmentReport';
 
 
 const TabRoute = createBottomTabNavigator({
@@ -62,6 +67,42 @@ const TabRoute = createBottomTabNavigator({
   }, )
 
 
+const WellnessStack = createStackNavigator({
+  AssessmentLayout: {
+    screen: AssessmentLayout,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Vitals: {
+    screen: Vitals,
+    navigationOptions: {
+      title: 'Vitals'
+    }
+  },
+  AssessmentList: {
+    screen: AssessmentList,
+    navigationOptions: {
+      title: 'Assessments'
+    }
+  },
+  AssessmentInfo: {
+    screen: AssessmentInfo
+  }
+})
+
+const WellnessSwitch = createSwitchNavigator({
+  WellnessStack: {
+    screen: WellnessStack
+  },
+  Assessment: {
+    screen: Assessment
+  },
+  AssessmentReport: {
+    screen: AssessmentReport
+  }
+})
+
 const MainApp = createDrawerNavigator({
   LandingTab: {
     screen: TabRoute,
@@ -74,7 +115,7 @@ const MainApp = createDrawerNavigator({
     }
   },
   AssessmentLayout: {
-    screen: AssessmentLayout,
+    screen: WellnessSwitch,
     navigationOptions: {
       title: 'Check your wellness',
       drawerIcon: ({ focused, tintColor }) => {

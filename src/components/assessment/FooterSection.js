@@ -66,7 +66,7 @@ class FooterSection extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.comment}>
-                    <TouchableOpacity style={styles.btn} onPress={this.props.closeCommentModal}>
+                    <TouchableOpacity style={styles.btn}>
                         <Text>Write a Comment...</Text>
                     </TouchableOpacity>
                 </View>
@@ -74,9 +74,9 @@ class FooterSection extends React.Component {
                     <TouchableOpacity style={styles.btn} onPress={this.props.openTutorialModal}>
                         <Icon name="info-circle" size={25} color="#000000" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.btn} onPress={this.iconClickHandler}>
+                    {/* <TouchableOpacity style={styles.btn} onPress={this.iconClickHandler}>
                         <Icon name="heart" size={25} color={this.state.iconColor} />
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                     <TouchableOpacity style={styles.btn} onPress={() =>
                         ActionSheet.show(
                             {
@@ -93,7 +93,7 @@ class FooterSection extends React.Component {
                                         'Are you sure you want to exit from wellness assessment?',
                                         [
                                             { text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
-                                            { text: 'Yes', onPress: () => this.props.goToLoginClick() },
+                                            { text: 'Yes', onPress: () => this.props.quitAssessment() },
                                         ],
                                         { cancelable: false }
                                     )
@@ -113,10 +113,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(FooterSection)
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        backgroundColor: '#fff',
+        padding: 5,
+        borderColor: '#ddd',
+        borderTopWidth: 1
     },
     comment: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#ffffff'
     },
     btnContainer: {
         flex: 1,
@@ -124,7 +129,8 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end'
     },
     btn: {
-        padding: 10,
+        paddingVertical: 5,
+        paddingHorizontal: 10,
         marginHorizontal: 5
     }
 })

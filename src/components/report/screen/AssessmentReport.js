@@ -20,7 +20,7 @@ class AssessmentReport extends React.Component {
         return (
 
             <View style={styles.container}>
-                <ReportHeader title={reportData[this.props.currentAssessmentDetails].title} />
+                {/* <ReportHeader title={reportData[this.props.currentAssessmentDetails].title} />
                 <ScrollView style={[styles.container, styles.paddingleftright]}>
                     <AssesmentStats stats={reportData[this.props.currentAssessmentDetails].score} />
                     <RecommendationPanel data={reportData[this.props.currentAssessmentDetails].recommendations} />
@@ -28,7 +28,7 @@ class AssessmentReport extends React.Component {
 
                     <AssesmentAction goToDashboard={this.goToDashboard} />
 
-                </ScrollView>
+                </ScrollView> */}
             </View>
         )
     }
