@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { Container, Header, Item, Input, Icon, Button, Text, Content, Badge,Left,Body,Title,Right } from 'native-base';
-import ExpertList from './ExpertList';
+import SpecialityList from './SpecialityList';
 
 
-const ExportConnect = (props) => {
+const Speciality = (props) => {
     return (
         <Container>
                <Header>
@@ -31,7 +31,7 @@ const ExportConnect = (props) => {
             </Header>
             <Content>
                 <View style={{ backgroundColor: '#ddd' }}>
-                    <ExpertList />
+                    <SpecialityList />
                 </View>
             </Content>
         </Container>
@@ -48,5 +48,5 @@ const styles = StyleSheet.create({
         //fontSize: 17
     },
 })
-export default ExportConnect;
+export default Speciality;
 
