@@ -31,13 +31,8 @@ class AssessmentReport extends React.Component {
                     <ExpertsPanel data={reportData[this.props.currentAssessmentDetails].experts} />
 
                     <AssesmentAction goToDashboard={this.goToDashboard} />
-<<<<<<< HEAD
-
-                </ScrollView> */}
-=======
                     <NextAssesmentAction goToAssesment={this.goToAssesment} />
-                </ScrollView>
->>>>>>> 46d9d6075b1ad2799943265ae91fedf4a747092f
+        </ScrollView>*/}
             </View>
         )
     }
