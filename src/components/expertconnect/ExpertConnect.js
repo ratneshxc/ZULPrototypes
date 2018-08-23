@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { Container, Header, Item, Input, Icon, Button, Text, Content, Badge, Left, Body, Title, Right } from 'native-base';
 import IconBadge from 'react-native-icon-badge';
 import ExpertList from './ExpertList';
@@ -55,10 +55,10 @@ const ExportConnect = (props) => {
                 </ScrollView>
                 <IconBadge
                     MainElement={
-                    <View style={{width:40}}>    
-                        <Icon name="filter" type="FontAwesome" style={{ fontSize: 30, marginTop: 4, marginLeft: 2 }} />
-                    </View>
-                    
+                        <View style={{ width: 40 }}>
+                            <Icon name="filter" type="FontAwesome" style={{ fontSize: 30, marginTop: 4, marginLeft: 2 }} />
+                        </View>
+
                     }
                     BadgeElement={
                         <Text style={{ color: '#FFFFFF' }}>{3}</Text>
@@ -70,9 +70,19 @@ const ExportConnect = (props) => {
                             backgroundColor: '#007bff'
                         }
                     }
-                    
+
                 />
-                
+
+            </View>
+            {/*  Results column */}
+            <View style={{ padding: 5, flexDirection: 'row' }} >
+                <Text style={{ flex: 1 }}>Seen <Text style={{ color: '#00b386' }}>15</Text> out of 150 results</Text>
+                <TouchableOpacity>
+                    <Icon name='arrow-up' type="FontAwesome" style={{ fontSize: 20, marginHorizontal: 5 }} />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Icon name='arrow-down' type="FontAwesome" style={{ fontSize: 20, marginHorizontal: 5 }} />
+                </TouchableOpacity>
             </View>
             <Content >
                 <View style={{ backgroundColor: '#ddd' }}>
