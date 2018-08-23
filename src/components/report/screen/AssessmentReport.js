@@ -5,6 +5,7 @@ import AssesmentStats from '../layout_elements/AssesmentStats';
 import RecommendationPanel from '../layout_elements/RecommendationPanel';
 import ExpertsPanel from '../layout_elements/ExpertsPanel';
 import AssesmentAction from '../layout_elements/AssesmentAction';
+import NextAssesmentAction from '../layout_elements/NextAssesmentAction';
 import reportData from '../../../data/ReportData';
 import { connect } from 'react-redux';
 
@@ -15,6 +16,9 @@ class AssessmentReport extends React.Component {
 
     goToDashboard = () => {
         this.props.navigation.navigate('Home');
+    }
+    goToAssesment =() => {
+        this.props.navigation.navigate('AssessmentLayout');
     }
     render() {
         return (
@@ -27,8 +31,13 @@ class AssessmentReport extends React.Component {
                     <ExpertsPanel data={reportData[this.props.currentAssessmentDetails].experts} />
 
                     <AssesmentAction goToDashboard={this.goToDashboard} />
+<<<<<<< HEAD
 
                 </ScrollView> */}
+=======
+                    <NextAssesmentAction goToAssesment={this.goToAssesment} />
+                </ScrollView>
+>>>>>>> 46d9d6075b1ad2799943265ae91fedf4a747092f
             </View>
         )
     }

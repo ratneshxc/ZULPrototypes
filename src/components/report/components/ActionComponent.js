@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     optionsBody: {
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        height:30,
+        height:20,
         marginRight:10
     },
     likeText: {

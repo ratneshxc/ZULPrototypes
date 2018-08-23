@@ -16,7 +16,7 @@ export class ExpertsPanel extends Component {
 
                     </View>
                 </View>
-                <View style={styles.actionArea}>
+                <View style={styles.contentArea}>
                     <ExpertCard data={this.props.data} />
                 </View>
             </View>
@@ -32,13 +32,14 @@ const styles = StyleSheet.create({
     },
     headingStyles: {
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingBottom:0
     },
     headingText: {
         flex: 1,
         color: '#000000',
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 14
     },
     actionArea: {
         flexDirection: 'row',
