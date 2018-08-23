@@ -25,13 +25,14 @@ const ExpertComponent = () => {
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
                     <View style={{ flexDirection: 'row', marginTop: 5 }}>
+                    <Text style={{color:'#00b386'}}>4.2</Text>
                         <StarRating
                             disabled={false}
-                            maxStars={5}
-                            rating={4}
+                            maxStars={1}
+                            rating={1}
                             style={{ width: 50 }}
                             fullStarColor={'#00b386'}
-                            starSize={20}
+                            starSize={18}
                         />
                     </View>
                     <Text style={{ fontSize: 12, color: '#00b386', textDecorationLine: 'underline' }}>350 Reviews</Text>
@@ -40,9 +41,9 @@ const ExpertComponent = () => {
                 <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 }}>Samira Reddy</Text>
-                            <Icon name='heart' type="FontAwesome" style={{ fontSize:20, color:'red',marginRight:5 ,}} />
+                            <Icon name='heart' type="FontAwesome" style={{ fontSize:18, color:'red',marginRight:15 ,}} />
                          <TouchableOpacity>
-                            <Icon name='ellipsis-v' type="FontAwesome" style={{ fontSize:20,}} />
+                            <Icon name='ellipsis-v' type="FontAwesome" style={{ fontSize:18,}} />
                             </TouchableOpacity>
                     </View>
                     <Text style={{ fontSize: 13, color: '#505050', margin:0}}>Dermatologiest, MBBS</Text>
@@ -69,18 +70,18 @@ const ExpertComponent = () => {
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 }}>
-                        <Text style={{ textAlign: 'center' }}>Free <Icon name='wechat' type="FontAwesome" style={{ fontSize:20,marginLeft:5}} /></Text>
+                    <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}}>
+                        <Text style={{ textAlign: 'center' }}>Free <Icon name='wechat' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 }}>
-                        <Text style={{ textAlign: 'center' }}>₹100 <Icon name='play-circle' type="FontAwesome" style={{ fontSize:20,marginLeft:5}} /></Text>
+                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10,borderColor:'#ddd' }}>
+                        <Text style={{ textAlign: 'center' }}>₹100 <Icon name='play-circle' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 }}>
-                        <Text style={{ textAlign: 'center'}}>₹300 <Icon name='calendar-plus-o' type="FontAwesome" style={{ fontSize:20,marginLeft:5}} /></Text>
+                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}}>
+                        <Text style={{ textAlign: 'center'}}>₹300 <Icon name='calendar-plus-o' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
             </View>

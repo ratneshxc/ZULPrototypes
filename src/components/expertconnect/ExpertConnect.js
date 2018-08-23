@@ -72,13 +72,13 @@ class ExportConnect extends React.Component {
 
                 </View>
                 {/*  Results column */}
-                <View style={{ padding: 5, flexDirection: 'row' }} >
+                <View style={{ padding: 5, flexDirection: 'row' ,borderBottomWidth:2,borderBottomColor:'#ddd'}} >
                     <Text style={{ flex: 1 }}>Seen <Text style={{ color: '#00b386' }}>15</Text> out of 150 results</Text>
                     <TouchableOpacity>
-                        <Icon name='arrow-up' type="FontAwesome" style={{ fontSize: 20, marginHorizontal: 5 }} />
+                        <Icon name='arrow-up' type="FontAwesome" style={{ fontSize: 18, marginHorizontal: 5 }} />
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        <Icon name='arrow-down' type="FontAwesome" style={{ fontSize: 20, marginHorizontal: 5 }} />
+                        <Icon name='arrow-down' type="FontAwesome" style={{ fontSize: 18, marginHorizontal: 5 }} />
                     </TouchableOpacity>
                 </View>
                 {/*  Results column */}
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     header: {
         // fontWeight: 'bold',
         color: '#ffffff',
-        fontSize: 17
+        //fontSize: 17
     },
     headerLeft: {
         flex: 2,
