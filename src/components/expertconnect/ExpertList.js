@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { Thumbnail, Badge, Text, Icon } from 'native-base';
+import StarRating from 'react-native-star-rating';
 
 
 const ExpertList = (props) => {
@@ -23,22 +24,33 @@ const ExpertComponent = () => {
             <View style={{ flex: 1, flexDirection: 'row' }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
-                    <View style={{ flexDirection: 'row', backgroundColor: '#00b386', borderRadius: 10, marginVertical: 3, paddingHorizontal: 5, paddingVertical: 3 }}>
-                        <Icon name="thumbs-up" type="FontAwesome" style={{ color: '#ffffff', fontSize: 15 }} />
-                        <Text style={{ fontSize: 12, color: '#ffffff',marginLeft:3 }}>90 %</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 5 }}>
+                        <StarRating
+                            disabled={false}
+                            maxStars={5}
+                            rating={4}
+                            style={{ width: 50 }}
+                            fullStarColor={'#00b386'}
+                            starSize={20}
+                        />
                     </View>
-                    <Text style={{ fontSize: 12 }}>350 votes</Text>
-                    <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text>
+                    <Text style={{ fontSize: 12, color: '#00b386', textDecorationLine: 'underline' }}>350 Reviews</Text>
+                    {/* <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text> */}
                 </View>
-                <View style={{ flex: 1, paddingHorizontal: 10 }}>
-                    <Text>Samira Reddy</Text>
-                    <Text style={{ fontSize: 13, color: '#505050' }}>Dermatologies, MBBS</Text>
-                    <Text style={{ fontSize: 13, color: '#505050', marginVertical: 5 }}>BTM,Thavarekere Main Road, Bengaluru</Text>
+                <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
+                    <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
+                        <Text style={{ flex: 1 }}>Samira Reddy</Text>
+                            <Icon name='heart' type="FontAwesome" style={{ fontSize:20, color:'red',marginRight:5 ,}} />
+                         <TouchableOpacity>
+                            <Icon name='ellipsis-v' type="FontAwesome" style={{ fontSize:20,}} />
+                            </TouchableOpacity>
+                    </View>
+                    <Text style={{ fontSize: 13, color: '#505050', margin:0}}>Dermatologiest, MBBS</Text>
+                    <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialists</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Text style={{ fontSize: 12 }}>5 Yrs Exp</Text>
-                        <Text style={{ fontSize: 12, marginLeft: 20 }}>250 Rs</Text>
                     </View>
-                    <Text style={{ fontSize: 14, marginVertical: 5 }}>Services available:</Text>
+                    <Text style={{ fontSize: 14, marginTop: 5 }}>Services available:</Text>
                     <ScrollView horizontal={true} style={{ flexDirection: 'row' }}>
                         <Badge style={{ backgroundColor: '#e8e8e8', borderRadius: 5, padding: 5, marginRight: 5 }}>
                             <Text style={{ color: '#353535', fontSize: 14 }}>Skin therapy</Text>

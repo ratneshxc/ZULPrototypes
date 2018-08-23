@@ -7,12 +7,12 @@ import ExpertList from './ExpertList';
 
 class ExportConnect extends React.Component {
     componentDidMount(){
-        Toast.show({
-            text: "Use online and enjoy the services of experts through phone",
-            buttonText: "Apply",
-            type:'success',
-            duration:10000
-          });
+        // Toast.show({
+        //     text: "Use online and enjoy the services of experts through phone",
+        //     buttonText: "Apply",
+        //     type:'success',
+        //     duration:10000
+        //   });
     }
     render() {
         return (
@@ -46,8 +46,8 @@ class ExportConnect extends React.Component {
                         <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }} >
                             <Text>Family Specialist</Text>
                         </Badge>
-                        <Badge style={{ marginHorizontal: 5, backgroundColor: '#6c757d' }}  >
-                            <Text>BTM Second Stage</Text>
+                        <Badge style={{ marginHorizontal: 5, backgroundColor: '#e8e8e8' }}  >
+                            <Text style={{color:"#000000"}}>BTM Second Stage</Text>
                         </Badge>
                     </ScrollView>
                     <IconBadge
@@ -81,6 +81,7 @@ class ExportConnect extends React.Component {
                         <Icon name='arrow-down' type="FontAwesome" style={{ fontSize: 20, marginHorizontal: 5 }} />
                     </TouchableOpacity>
                 </View>
+                {/*  Results column */}
                 <Content >
                     <View style={{ backgroundColor: '#ddd' }}>
                         <ExpertList />
