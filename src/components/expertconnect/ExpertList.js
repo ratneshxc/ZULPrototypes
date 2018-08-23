@@ -70,12 +70,17 @@ const ExpertComponent = () => {
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
                     <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 }}>
-                        <Text style={{ textAlign: 'center' }}>Contact</Text>
+                        <Text style={{ textAlign: 'center' }}>Free <Icon name='wechat' type="FontAwesome" style={{ fontSize:20,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#5067FF', margin: 10 }}>
-                        <Text style={{ textAlign: 'center', color: '#ffffff' }}>Book Appointment</Text>
+                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 }}>
+                        <Text style={{ textAlign: 'center' }}>₹100 <Icon name='play-circle' type="FontAwesome" style={{ fontSize:20,marginLeft:5}} /></Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={{ flex: 1 }}>
+                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 }}>
+                        <Text style={{ textAlign: 'center'}}>₹300 <Icon name='calendar-plus-o' type="FontAwesome" style={{ fontSize:20,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
             </View>
