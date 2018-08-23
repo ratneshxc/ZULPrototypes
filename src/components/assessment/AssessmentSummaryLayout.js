@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions, TouchableHighlight } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, Text, Badge, Card } from 'native-base';
 import { connect } from 'react-redux';
 import Image from 'react-native-remote-svg';
@@ -41,12 +41,12 @@ class AssessmentSummaryLayout extends Component {
                 </Header>
                 <Content style={styles.container}>
                     <View style={{ flexDirection: 'row' }}>
-                        <View style={{ flex: 1 }}>
+                        <TouchableHighlight style={{ flex: 1 }} onPress={() => this.props.navigation.navigate("Vitals")}>
                             <CardInfo title="Vitals" data={[{ type: 'active', value: 23 }]} />
-                        </View>
-                        <View style={{ flex: 1 }}>
+                        </TouchableHighlight>
+                        <TouchableHighlight style={{ flex: 1 }} onPress={() => this.props.navigation.navigate("AssessmentList")}>
                             <CardInfo title="Assessments" data={[{ type: 'pending', value: 4 }]} />
-                        </View>
+                        </TouchableHighlight>
                     </View>
                     <View>
                         <View>
@@ -70,7 +70,7 @@ class AssessmentSummaryLayout extends Component {
                             }
                         </AnimatedCircularProgress>
                     </View>
-                    <View style={{marginTop:10}}>
+                    <View style={{ marginTop: 10 }}>
                         <View>
                             <Text style={styles.title}>Wellness Dimensions</Text>
                         </View>

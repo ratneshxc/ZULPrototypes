@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import QuestionSection from './QuestionSection';
@@ -21,24 +20,17 @@ class Question extends Component {
         const currentQuestion = this.props.currentQuestion;
         return (
             <Container>
-               
-                        <QuestionHeader currentQuestion={currentQuestion} />
-                
-                <Content>
-                    <View style={{ flex: 1 }}>
-                        <QuestionSection />
-                    </View>
-                    <View style={{ flex: 1 }}>
-                        {!this.props.isNextQuestionLoading && <AnswerSection goToReportClick={this.props.goToReportClick} />}
-                    </View>
-                </Content>
-                <Footer>
-                    <FooterTab>
-                        <View style={{ flex: 1 }}>
-                            <FooterSection goToLoginClick={this.props.goToLoginClick} />
-                        </View>
-                    </FooterTab>
-                </Footer>
+                <QuestionHeader currentQuestion={currentQuestion} />
+
+                <View style={{ flex: 2 }}>
+                    <QuestionSection />
+                </View>
+                <View style={{ flex: 3 }}>
+                    {!this.props.isNextQuestionLoading && <AnswerSection goToReportClick={this.props.goToReportClick} />}
+                </View>
+                <View>
+                    <FooterSection quitAssessment={this.props.quitAssessment} />
+                </View>
 
             </Container>
         );

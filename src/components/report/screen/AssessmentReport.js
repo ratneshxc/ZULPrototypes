@@ -24,15 +24,20 @@ class AssessmentReport extends React.Component {
         return (
 
             <View style={styles.container}>
-                <ReportHeader title={reportData[this.props.currentAssessmentDetails].title} />
+                {/* <ReportHeader title={reportData[this.props.currentAssessmentDetails].title} />
                 <ScrollView style={[styles.container, styles.paddingleftright]}>
                     <AssesmentStats stats={reportData[this.props.currentAssessmentDetails].score} />
                     <RecommendationPanel data={reportData[this.props.currentAssessmentDetails].recommendations} />
                     <ExpertsPanel data={reportData[this.props.currentAssessmentDetails].experts} />
 
                     <AssesmentAction goToDashboard={this.goToDashboard} />
+<<<<<<< HEAD
+
+                </ScrollView> */}
+=======
                     <NextAssesmentAction goToAssesment={this.goToAssesment} />
                 </ScrollView>
+>>>>>>> 46d9d6075b1ad2799943265ae91fedf4a747092f
             </View>
         )
     }

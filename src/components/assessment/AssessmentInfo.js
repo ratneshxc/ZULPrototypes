@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import assessmentDetailsData from '../../data/assessmentDetailsData';
 
 const mapStateToProps = state => ({
-    currentAssessmentDetails: state.Assessment.currentAssessmentDetails
+    currentAssessment: state.Assessment.currentAssessment
 })
 
 const windowObj = Dimensions.get('window');
@@ -30,9 +30,8 @@ class AssessmentInfo extends Component {
     goAssessment = () => {
         this.props.navigation.navigate('Assessment');
     }
-
     componentWillMount() {
-        this.filterobject(this.props.currentAssessmentDetails);
+        this.filterobject(this.props.currentAssessment);
     }
 
     render() {
