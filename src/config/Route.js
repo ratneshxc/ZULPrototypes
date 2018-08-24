@@ -8,9 +8,9 @@ import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConn
 import ExpertList from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
-// import AddGoal from '../components/goals/AddGoal';
-// import YourGoal from '../components/goals/YourGoal';
-// import GoalStatus from '../components/goals/GoalStatus';
+import AddGoal from '../components/goals/AddGoal';
+import YourGoal from '../components/goals/YourGoal';
+import GoalStatus from '../components/goals/GoalStatus';
 import Vitals from '../components/assessment/vitals/Vitals';
 import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
@@ -102,6 +102,8 @@ const WellnessStack = createStackNavigator({
   }
 })
 
+
+
 const WellnessSwitch = createSwitchNavigator({
   WellnessStack: {
     screen: WellnessStack
@@ -122,6 +124,32 @@ const ExpertStack = createStackNavigator({
   },
   ExpertList: {
     screen: ExpertList,
+    navigationOptions: {
+      header: null
+    }
+  }
+})
+const GoalStack = createStackNavigator({
+  Goals: {
+    screen: Goals,
+    navigationOptions: {
+      header: null
+    }
+  },
+  AddGoal: {
+    screen: AddGoal,
+    navigationOptions: {
+      header: null
+    }
+  },
+  YourGoal: {
+    screen: YourGoal,
+    navigationOptions: {
+      header: null
+    }
+  },
+  GoalStatus: {
+    screen: GoalStatus,
     navigationOptions: {
       header: null
     }
@@ -149,7 +177,7 @@ const MainApp = createDrawerNavigator({
     }
   },
   Goals: {
-    screen: Goals,
+    screen: GoalStack,
     navigationOptions: {
       title: 'Goals',
       drawerIcon: ({ focused, tintColor }) => {
