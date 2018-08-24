@@ -12,7 +12,7 @@ class AddGoal extends Component {
     render() {
         return (
             <Container>
-                {(Platform.OS === 'ios') ?
+                {/* {(Platform.OS === 'ios') ?
                     <Header>
 
                         <Left>
@@ -38,7 +38,7 @@ class AddGoal extends Component {
                         <Right>
                         </Right>
                     </Header>
-                }
+                } */}
                 <View>
                 </View>
                 <Content style={styles.container}>

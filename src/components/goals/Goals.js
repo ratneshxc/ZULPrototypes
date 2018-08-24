@@ -20,7 +20,7 @@ class Goals extends Component {
     render() {
         return (
             <Container>
-                <Header>
+                {/* <Header>
                     <Left>
                         <Button transparent>
                             <Icon name='menu' />
@@ -31,7 +31,7 @@ class Goals extends Component {
                     </Body>
                     <Right>
                     </Right>
-                </Header>
+                </Header> */}
                 <View>
                 </View>
                 <Content style={styles.container}>
@@ -65,10 +65,6 @@ class Goals extends Component {
                                 </Right>
                             </View>
                         </View>
-
-
-
-
                     </ImageBackground>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
                         <CheckBox
