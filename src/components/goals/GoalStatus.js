@@ -14,7 +14,7 @@ class GoalStatus extends Component {
     render() {
         return (
             <Container>
-                 {(Platform.OS === 'ios') ?
+                 {/* {(Platform.OS === 'ios') ?
                     <Header>
                         <Left>
                             <Button transparent>
@@ -39,7 +39,7 @@ class GoalStatus extends Component {
                         <Right>
                         </Right>
                     </Header>
-                }
+                } */}
                 <View>
                 </View>
                 <Content style={styles.container}>

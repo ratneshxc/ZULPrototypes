@@ -20,7 +20,7 @@ class Goals extends Component {
     render() {
         return (
             <Container>
-                <Header>
+                {/* <Header>
                     <Left>
                         <Button transparent>
                             <Icon name='menu' />
@@ -31,7 +31,7 @@ class Goals extends Component {
                     </Body>
                     <Right>
                     </Right>
-                </Header>
+                </Header> */}
                 <View>
                 </View>
                 <Content style={styles.container}>
@@ -65,10 +65,6 @@ class Goals extends Component {
                                 </Right>
                             </View>
                         </View>
-
-
-
-
                     </ImageBackground>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
                         <CheckBox
@@ -91,7 +87,7 @@ class Goals extends Component {
                     <View>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <View style={{ padding: 10 }}>
-                                <Title style={{ alignSelf: 'flex-start' }}>Save your income tax</Title>
+                                <Text style={{ alignSelf: 'flex-start', fontWeight:'bold', fontSize:18  }}>Save your income tax</Text>
                             </View>
                             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                                 <TouchableOpacity onPress={this.goalStatus}> 
@@ -134,7 +130,7 @@ class Goals extends Component {
                         </Card>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <View style={{ padding: 10 }}>
-                                <Title style={{ alignSelf: 'flex-start' }}>Relieve stress and anger</Title>
+                                <Text style={{ alignSelf: 'flex-start', fontWeight:'bold', fontSize:18  }}>Relieve stress and anger</Text>
                             </View>
                             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             
@@ -160,7 +156,7 @@ class Goals extends Component {
                         </Card>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <View style={{ padding: 10 }}>
-                                <Title style={{ alignSelf: 'flex-start' }}>Lose 4 kg weight</Title>
+                                <Text style={{ alignSelf: 'flex-start', fontWeight:'bold', fontSize:18  }}>Lose 4 kg weight</Text>
                             </View>
                             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <TouchableOpacity onPress={this.goalStatus}> 
