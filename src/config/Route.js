@@ -7,6 +7,9 @@ import Community from '../components/community/Community';
 import ExportConnect from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
+import AddGoal from '../components/goals/AddGoal';
+import YourGoal from '../components/goals/YourGoal';
+import GoalStatus from '../components/goals/GoalStatus';
 
 
 const TabRoute = createBottomTabNavigator({
