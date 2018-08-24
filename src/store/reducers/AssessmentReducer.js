@@ -7,38 +7,38 @@ const initialState = {
     dimensionReport: [{
         title: 'Physical',
         score: '25%',
-        icon:require('../../assests/images/dashboard/physical.svg'),
-        emoji:require('../../assests/images/emoji/01.svg')
+        icon: require('../../assests/images/dashboard/physical.svg'),
+        emoji: require('../../assests/images/emoji/01.svg')
     }, {
         title: 'Emotional',
         score: '35%',
-        icon:require('../../assests/images/dashboard/emotional.svg'),
-        emoji:require('../../assests/images/emoji/02.svg')
+        icon: require('../../assests/images/dashboard/emotional.svg'),
+        emoji: require('../../assests/images/emoji/02.svg')
     }, {
         title: 'Spiritual',
         score: '65%',
-        icon:require('../../assests/images/dashboard/spiritual.svg'),
-        emoji:require('../../assests/images/emoji/03.svg')
+        icon: require('../../assests/images/dashboard/spiritual.svg'),
+        emoji: require('../../assests/images/emoji/03.svg')
     }, {
         title: 'Environmental',
         score: '85%',
-        icon:require('../../assests/images/dashboard/environmental.svg'),
-        emoji:require('../../assests/images/emoji/04.svg')
+        icon: require('../../assests/images/dashboard/environmental.svg'),
+        emoji: require('../../assests/images/emoji/04.svg')
     }, {
         title: 'Financial',
         score: '21%',
-        icon:require('../../assests/images/dashboard/financial.svg'),
-        emoji:require('../../assests/images/emoji/04.svg')
+        icon: require('../../assests/images/dashboard/financial.svg'),
+        emoji: require('../../assests/images/emoji/04.svg')
     }, {
         title: 'Social',
         score: '85%',
-        icon:require('../../assests/images/dashboard/social.svg'),
-        emoji:require('../../assests/images/emoji/03.svg')
+        icon: require('../../assests/images/dashboard/social.svg'),
+        emoji: require('../../assests/images/emoji/03.svg')
     }, {
         title: 'Intellectual',
         score: '21%',
-        icon:require('../../assests/images/dashboard/intellectual.svg'),
-        emoji:require('../../assests/images/emoji/01.svg')
+        icon: require('../../assests/images/dashboard/intellectual.svg'),
+        emoji: require('../../assests/images/emoji/01.svg')
     }],
     assessmentReport: [{
         title: 'Strength & Energy',

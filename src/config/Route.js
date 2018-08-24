@@ -11,7 +11,7 @@ import Vitals from '../components/assessment/vitals/Vitals';
 import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
 import Assessment from '../components/assessment/Assessment';
-import AssessmentReport from '../components/report/AssessmentReport';
+import AssessmentReport from '../components/report/assessmentReports/AssessmentReport';
 
 
 const TabRoute = createBottomTabNavigator({
@@ -151,7 +151,7 @@ const MainApp = createDrawerNavigator({
 
 
 const AppRoute = createSwitchNavigator({
-  MainApp: { screen: MainApp },
+  MainApp: { screen: AssessmentReport },
 });
 
 
