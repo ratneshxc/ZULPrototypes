@@ -8,6 +8,7 @@ import ZulaReducer from './reducers/ZulaReducer';
 import RewardReducer from './reducers/RewardReducer';
 import CommentReducer from './reducers/CommentReducer';
 import DashboardReducer from './reducers/DashboardReducer';
+import ReportReducer from './reducers/ReportReducer';
 
 const middleware = applyMiddleware(logger, thunk, promise())
 
@@ -17,7 +18,8 @@ const ZingUpLifeReducers = combineReducers({
     Zula: ZulaReducer,
     Reward: RewardReducer,
     Comment: CommentReducer,
-    Dashboard: DashboardReducer
+    Dashboard: DashboardReducer,
+    Report: ReportReducer
 }, middleware);
 
 const ZingUpLifeStore = createStore(ZingUpLifeReducers);
