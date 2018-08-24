@@ -7,6 +7,7 @@ import Community from '../components/community/Community';
 import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
 import ExpertList from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
+import Booking from '../components/expertconnect/Booking'
 import Goals from '../components/goals/Goals';
 import AddGoal from '../components/goals/AddGoal';
 import YourGoal from '../components/goals/YourGoal';
@@ -122,6 +123,12 @@ const ExpertStack = createStackNavigator({
   },
   ExpertList: {
     screen: ExpertList,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Booking: {
+    screen: Booking,
     navigationOptions: {
       header: null
     }

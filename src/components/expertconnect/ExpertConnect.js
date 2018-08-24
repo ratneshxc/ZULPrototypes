@@ -84,7 +84,7 @@ class ExportConnect extends React.Component {
                 {/*  Results column */}
                 <Content >
                     <View style={{ backgroundColor: '#ddd' }}>
-                        <ExpertList />
+                        <ExpertList  bookExperts={()=>this.props.navigation.navigate("Booking")}/>
                     </View>
                 </Content>
             </Container >

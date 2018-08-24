@@ -8,7 +8,7 @@ const ExpertList = (props) => {
     return (
         <FlatList
             data={[{ key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }]}
-            renderItem={({ item }) => <ExpertComponent item={item} />}
+            renderItem={({ item }) => <ExpertComponent item={item} bookExperts={props.bookExperts} />}
         />
     )
 }
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 })
 
 
-const ExpertComponent = () => {
+const ExpertComponent = (props) => {
     return (
         <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
             <View style={{ flex: 1, flexDirection: 'row' }}>
@@ -68,19 +68,19 @@ const ExpertComponent = () => {
                     </ScrollView>
                 </View>
             </View>
-            <View style={{ flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'row' }} >
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}}>
+                    <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}} onPress={()=>props.bookExperts()}>
                         <Text style={{ textAlign: 'center' }}>Free <Icon name='wechat' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10,borderColor:'#ddd' }}>
+                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10,borderColor:'#ddd' }}  onPress={()=>props.bookExperts()}>
                         <Text style={{ textAlign: 'center' }}>₹100 <Icon name='play-circle' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}}>
+                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}} onPress={()=>props.bookExperts()}>
                         <Text style={{ textAlign: 'center'}}>₹300 <Icon name='calendar-plus-o' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
                     </TouchableOpacity>
                 </View>
