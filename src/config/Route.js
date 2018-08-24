@@ -133,25 +133,25 @@ const GoalStack = createStackNavigator({
   Goals: {
     screen: Goals,
     navigationOptions: {
-      header: null
+      title:'Goal'
     }
   },
   AddGoal: {
     screen: AddGoal,
     navigationOptions: {
-      header: null
+      title:'Add Goal'
     }
   },
   YourGoal: {
     screen: YourGoal,
     navigationOptions: {
-      header: null
+      title:'Your Goal'
     }
   },
   GoalStatus: {
     screen: GoalStatus,
     navigationOptions: {
-      header: null
+      title:'Run 5km Daily'
     }
   }
 })
