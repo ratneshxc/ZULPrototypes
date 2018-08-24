@@ -1,12 +1,12 @@
 
 import React, { Component } from 'react';
-import { Platform, Text, View, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
-import { Header, Footer, FooterTab, Left, Right, Body, Button, Container, Content } from 'native-base';
+import { Platform, View, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
+import { Header, Footer, FooterTab, Left, Right, Text, Button, Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import assessmentDetailsData from '../../data/assessmentDetailsData';
 
 const mapStateToProps = state => ({
-    currentAssessmentDetails: state.Assessment.currentAssessmentDetails
+    currentAssessment: state.Assessment.currentAssessment
 })
 
 const windowObj = Dimensions.get('window');
@@ -30,26 +30,13 @@ class AssessmentInfo extends Component {
     goAssessment = () => {
         this.props.navigation.navigate('Assessment');
     }
-
     componentWillMount() {
-        this.filterobject(this.props.currentAssessmentDetails);
+        this.filterobject(this.props.currentAssessment);
     }
 
     render() {
         return (
             <Container>
-                {(Platform.OS === 'ios') ?
-                    <Header>
-                        <Body>
-                            <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold', alignSelf: 'center' }}>Assessment Details</Text>
-                        </Body>
-                    </Header>
-                    : <Header>
-                        <Body>
-                            <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold', alignSelf: 'center' }}>Assessment Details</Text>
-                        </Body>
-                    </Header>
-                }
                 <Content>
                     <ImageBackground source={this.state.updatedList.imageURL} style={styles.imageURL} resizeMode="cover">
                         <View style={styles.questionView}>
@@ -59,24 +46,13 @@ class AssessmentInfo extends Component {
                     <View>
                         <Text style={styles.textStyle}>{this.state.updatedList.statement}</Text>
                     </View>
+
                 </Content>
-                {(Platform.OS === 'ios') ?
-                <Footer>
-                    <FooterTab>
-                        <Button onPress={this.goAssessment} full>
-                            <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold' }}>Take Assessment</Text>
-                        </Button>
-                    </FooterTab>
-                </Footer>
-                :
-                <Footer>
-                    <FooterTab>
-                        <Button onPress={this.goAssessment} full>
-                            <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Take Assessment</Text>
-                        </Button>
-                    </FooterTab>
-                </Footer>
-                }
+                <View style={{ padding: 10 }}>
+                    <Button onPress={this.goAssessment} block>
+                        <Text style={{ color: '#fff', fontSize: 18 }}>Take Assessment</Text>
+                    </Button>
+                </View>
             </Container>
         );
     }
@@ -88,13 +64,11 @@ const styles = StyleSheet.create({
         margin: 30,
         backgroundColor: '#00000066',
         flex: 1,
-        padding: 3,
-        flexDirection: 'column',
-        height: 50
+        justifyContent:'center',
+        alignItems:'center'
     },
     title: {
-        fontWeight: 'bold',
-        fontSize: 24,
+        fontSize: 30,
         padding: 5,
         color: 'white',
         alignSelf: 'center'
@@ -109,8 +83,8 @@ const styles = StyleSheet.create({
         height: 30
     },
     textStyle: {
-        fontSize: 21,
-        padding: 16
+        fontSize: 18,
+        padding: 10
     }
 })
 

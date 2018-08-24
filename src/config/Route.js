@@ -4,13 +4,13 @@ import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator,
 import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
-import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
-import ExpertList from '../components/expertconnect/ExpertConnect';
+// import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
+// import ExpertList from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
-import AddGoal from '../components/goals/AddGoal';
-import YourGoal from '../components/goals/YourGoal';
-import GoalStatus from '../components/goals/GoalStatus';
+// import AddGoal from '../components/goals/AddGoal';
+// import YourGoal from '../components/goals/YourGoal';
+// import GoalStatus from '../components/goals/GoalStatus';
 import Vitals from '../components/assessment/vitals/Vitals';
 import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
@@ -113,20 +113,20 @@ const WellnessSwitch = createSwitchNavigator({
     screen: AssessmentReport
   }
 })
-const ExpertStack = createStackNavigator({
-  SpecialitiyConnect: {
-    screen: SpecialitiyConnect,
-    navigationOptions: {
-      header: null
-    }
-  },
-  ExpertList: {
-    screen: ExpertList,
-    navigationOptions: {
-      header: null
-    }
-  }
-})
+// const ExpertStack = createStackNavigator({
+//   SpecialitiyConnect: {
+//     screen: SpecialitiyConnect,
+//     navigationOptions: {
+//       header: null
+//     }
+//   },
+//   ExpertList: {
+//     screen: ExpertList,
+//     navigationOptions: {
+//       header: null
+//     }
+//   }
+// })
 const MainApp = createDrawerNavigator({
   LandingTab: {
     screen: TabRoute,
@@ -158,16 +158,16 @@ const MainApp = createDrawerNavigator({
       }
     }
   },
-  ExpertConnect: {
-    screen: ExpertStack,
-    navigationOptions: {
-      title: 'Connect with Experts',
-      drawerIcon: ({ focused, tintColor }) => {
-        const iconName = `users${focused ? '' : ''}`;
-        return <FontIcon name={iconName} size={25} color={tintColor} />;
-      }
-    }
-  }
+  // ExpertConnect: {
+  //   screen: ExpertStack,
+  //   navigationOptions: {
+  //     title: 'Connect with Experts',
+  //     drawerIcon: ({ focused, tintColor }) => {
+  //       const iconName = `users${focused ? '' : ''}`;
+  //       return <FontIcon name={iconName} size={25} color={tintColor} />;
+  //     }
+  //   }
+  // }
 });
 
 const RegisterApp=createStackNavigator({

@@ -56,8 +56,8 @@ class Assessment extends Component {
         }
     }
 
-    goToLogin = () => {
-        this.props.navigation.navigate('Login');
+    quitAssessment = () => {
+        this.props.navigation.navigate('AssessmentList');
     }
 
     goToReport = () => {
@@ -68,34 +68,34 @@ class Assessment extends Component {
     componentWillMount() {
         let questions = null;
         let question = null;
-        switch (this.props.currentAssessment) {
+        switch (this.props.currentAssessment.toUpperCase()) {
             case 'Strength & Energy'.toUpperCase():
-            question=QuestionData[0];
-            questions=QuestionData;
+                question = QuestionData[0];
+                questions = QuestionData;
                 break;
             case 'BIOLOGICAL AGE'.toUpperCase():
-            question=biologicalAgeData[0];
-            questions=biologicalAgeData;
+                question = biologicalAgeData[0];
+                questions = biologicalAgeData;
                 break;
             case 'Diet Score'.toUpperCase():
-            question=dietScoreData[0];
-            questions=dietScoreData;
+                question = dietScoreData[0];
+                questions = dietScoreData;
                 break;
             case 'Relationship & Intimacy'.toUpperCase():
-            question=relationshipAndIntimacyData[0];
-            questions=relationshipAndIntimacyData;
+                question = relationshipAndIntimacyData[0];
+                questions = relationshipAndIntimacyData;
                 break;
             case 'Thought Control'.toUpperCase():
-            question=thoughtControlData[0];
-            questions=thoughtControlData;
+                question = thoughtControlData[0];
+                questions = thoughtControlData;
                 break;
             case 'Wholesomeness'.toUpperCase():
-            question=wholesomeness[0];
-            questions=wholesomeness;
+                question = wholesomeness[0];
+                questions = wholesomeness;
                 break;
             case 'Zest For Life'.toUpperCase():
-            question=zestForLifeData[0];
-            questions=zestForLifeData;
+                question = zestForLifeData[0];
+                questions = zestForLifeData;
                 break;
         }
         this.props.getAllQuestion(questions);
@@ -107,7 +107,7 @@ class Assessment extends Component {
             <GestureRecognizer
                 style={{ flex: 1 }}
                 onSwipe={(direction, state) => this.onSwipe(direction, state)}>
-                <Question onDismiss={this.onDismiss} goToReportClick={this.goToReport} goToLoginClick={this.goToLogin} />
+                <Question onDismiss={this.onDismiss} goToReportClick={this.goToReport} quitAssessment={this.quitAssessment} />
             </GestureRecognizer>
         );
     }

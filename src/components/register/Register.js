@@ -1,43 +1,54 @@
 import React, { Component } from 'react';
-import {
-  View, Text, Image, StyleSheet, Dimensions,
-  ImageBackground, KeyboardAvoidingView, ScrollView
-} from 'react-native';
-import Button from 'react-native-button'
-import Form from './Form';
+import { View, Image, StyleSheet, TextInput } from 'react-native';
+import { Button, Text, H2 } from 'native-base';
 
 export default class Register extends React.Component {
 
-  
+
   Dashboard = () => {
     this.props.navigation.navigate('Dashboard');
   }
 
   render() {
-    let screenWidth = Dimensions.get('window').width
-    let screenHeight = Dimensions.get('window').height
     return (
-      <ScrollView contentContainerStyle={{}}>
-
-        <View>
-          <ImageBackground source={require('../../assests/images/reg-bg1.jpg')}
-            style={{ width: screenWidth, height: screenHeight-25 }}>
-
-            <View><Form Dashboard={this.Dashboard} /></View>
-
-          </ImageBackground>
+      <View style={{ flex: 1 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
         </View>
-      </ScrollView>
+        <View style={{ flexDirection: 'column', flex: 1, justifyContent: 'center', paddingHorizontal: 20 }}>
+          <View>
+            <H2 style={{ textAlign: 'center', marginVertical: 20 }}>Create an account</H2>
+            <TextInput
+              placeholder={'Name'}
+              style={styles.input}
+            />
+            <TextInput
+              placeholder={'Mobile Number'}
+              keyboardType={"numeric"}  
+              style={styles.input}
+            />
+            <Button block onPress={()=>this.props.navigation.navigate("OTP")}>
+              <Text>Next</Text>
+            </Button>
+          </View>
+        </View>
+      </View>
     )
   }
 }
 const styles = StyleSheet.create({
-
-  backgroundVideo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
+  loginLogo: {
+    height: 150,
+    width: 150
   },
+  input: {
+    width: "100%",
+    height: 44,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ABABAB',
+    marginBottom: 10,
+    borderRadius: 5
+  }
+
 });
