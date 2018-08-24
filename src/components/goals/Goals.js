@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
-import { Footer, FooterTab, Card, CardItem, List, ListItem, Badge } from 'native-base';
-import { CheckBox } from 'react-native-elements'
+import { Footer, FooterTab, Card, CardItem, List, ListItem, Accordion, Badge } from 'native-base';
+import { CheckBox } from 'react-native-elements';
 import { Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
 
 const windowObj = Dimensions.get('window');

@@ -73,7 +73,7 @@ class AddGoal extends Component {
                                 </Right> */}
                             </CardItem>
                             </TouchableOpacity>
-                            
+                            <TouchableOpacity onPress={this.goToYourAddGoal}>
                             <CardItem bordered onPress={this.goToYourAddGoal}>
                                 <Icon active />
                                 <Text>Save your income tax</Text>
@@ -81,6 +81,8 @@ class AddGoal extends Component {
                                     <Icon name="arrow-forward" />
                                 </Right> */}
                             </CardItem>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.goToYourAddGoal}>
                             <CardItem bordered onPress={this.goToYourAddGoal}>
                                 <Icon active type="MaterialCommunityIcons" name="run" />
                                 <Text>Lose 6 kg weight</Text>
@@ -88,6 +90,8 @@ class AddGoal extends Component {
                                     <Icon name="arrow-forward" />
                                 </Right> */}
                             </CardItem>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.goToYourAddGoal}>
                             <CardItem bordered onPress={this.goToYourAddGoal}>
                                 <Icon active name="logo-googleplus" />
                                 <Text>Relieve stress and anger</Text>
@@ -95,6 +99,8 @@ class AddGoal extends Component {
                                     <Icon name="arrow-forward" />
                                 </Right> */}
                             </CardItem>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.goToYourAddGoal}>
                             <CardItem bordered>
                                 <Text>Create your own</Text>
                                 <Icon active type="EvilIcons" name="plus"/>
@@ -102,6 +108,7 @@ class AddGoal extends Component {
                                     <Icon name="arrow-forward" />
                                 </Right> */}
                             </CardItem>
+                            </TouchableOpacity>
                         </Card>
                     </View>
                 </Content>
