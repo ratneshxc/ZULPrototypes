@@ -13,7 +13,7 @@ const mapStateToProps = state => (
 const Observations = (props) => {
     return (
         <View style={styles.container}>
-            <Text>Observations</Text>
+            <Text style={{ marginBottom: 10 }}>Observations</Text>
             <View style={{ flexWrap: 'wrap', alignItems: 'flex-start', flexDirection: 'row' }}>
                 {props.observations.map((x, i) => (
                     x.type === 'danger' ?
@@ -26,6 +26,9 @@ const Observations = (props) => {
 }
 const styles = StyleSheet.create({
     container: {
+        marginTop: 2,
+        backgroundColor:'#ffffff',
+        padding:10
     },
     tag: {
         paddingHorizontal: 5,

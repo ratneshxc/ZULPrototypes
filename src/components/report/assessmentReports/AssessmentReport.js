@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { Container, Content, Header, Body, Title } from 'native-base';
+import { Container, Content, Header, Body, Title, Button, Text } from 'native-base';
 import { connect } from 'react-redux';
 import OverallScore from './OverallScore';
 import Observations from './Observations';
@@ -28,12 +28,17 @@ class AssessmentReport extends React.Component {
                         <Title>{report.title}</Title>
                     </Body>
                 </Header>
-                <Content>
+                <Content style={{ backgroundColor: '#ebeff1' }}>
                     <OverallScore />
                     <Observations />
                     <ActionPlan />
                     <ExpertSuggestions />
                     <NavigationSection />
+                    <View style={{ padding: 10 }}>
+                        <Button block onPress={() => this.props.navigation.navigate('AssessmentLayout')}>
+                            <Text>I will come back later</Text>
+                        </Button>
+                    </View>
                 </Content>
             </Container>
         )
@@ -42,7 +47,6 @@ class AssessmentReport extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
     }
 })
 export default connect(mapStateToProps, null)(AssessmentReport)

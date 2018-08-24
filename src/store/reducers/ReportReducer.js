@@ -1,6 +1,6 @@
 const initialState = {
     assessmentReport: {
-        title: 'Zest for life',
+        title: 'Report of Zest for life',
         score: {
             value: 35,
             caption: 'Average'
@@ -33,11 +33,26 @@ const initialState = {
         actionPlan: [
             {
                 Goal: 'Reduce Weight',
-                icon: require('../../assests/images/suresh.png')
+                icon: require('../../assests/images/suresh.png'),
+                description:'Reduce 10 Kg weight'
             },
             {
                 Goal: 'Manage Sleep',
-                icon: require('../../assests/images/suresh.png')
+                icon: require('../../assests/images/suresh.png'),
+                description:'Reduce 10 Kg weight'
+            },{
+                Goal: 'Reduce Weight',
+                icon: require('../../assests/images/suresh.png'),
+                description:'Reduce 10 Kg weight'
+            },
+            {
+                Goal: 'Manage Sleep',
+                icon: require('../../assests/images/suresh.png'),
+                description:'Reduce 10 Kg weight'
+            },{
+                Goal: 'Reduce Weight',
+                icon: require('../../assests/images/suresh.png'),
+                description:'Reduce 10 Kg weight'
             }
         ],
         expertList: [
@@ -45,27 +60,45 @@ const initialState = {
                 name: 'Pritam K',
                 profileImage: require('../../assests/images/suresh.png'),
                 speciality: 'Dermatologist',
-                score:5
+                score: 4.5
             },
             {
                 name: 'Pritam K',
                 profileImage: require('../../assests/images/suresh.png'),
-                speciality: 'Dermatologist'
+                speciality: 'Dermatologist',
+                score: 3
             },
             {
                 name: 'Pritam K',
                 profileImage: require('../../assests/images/suresh.png'),
-                speciality: 'Dermatologist'
+                speciality: 'Dermatologist',
+                score: 2
             },
             {
                 name: 'Pritam K',
                 profileImage: require('../../assests/images/suresh.png'),
-                speciality: 'Dermatologist'
+                speciality: 'Dermatologist',
+                score: 2.5
             },
             {
                 name: 'Pritam K',
                 profileImage: require('../../assests/images/suresh.png'),
-                speciality: 'Dermatologist'
+                speciality: 'Dermatologist',
+                score: 2
+            }
+        ],
+        next: [
+            {
+                title: 'Check Biological Age',
+                icon: require('../../assests/images/suresh.png')
+            },
+            {
+                title: 'Zest for life',
+                icon: require('../../assests/images/suresh.png')
+            },
+            {
+                title: 'Wholesomeness',
+                icon: require('../../assests/images/suresh.png')
             }
         ]
 

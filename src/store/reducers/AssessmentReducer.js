@@ -6,37 +6,37 @@ const initialState = {
     isNextQuestionLoading: false,
     dimensionReport: [{
         title: 'Physical',
-        score: '25%',
+        score: '90%',
         icon: require('../../assests/images/dashboard/physical.svg'),
         emoji: require('../../assests/images/emoji/01.svg')
     }, {
         title: 'Emotional',
-        score: '35%',
+        score: '70%',
         icon: require('../../assests/images/dashboard/emotional.svg'),
         emoji: require('../../assests/images/emoji/02.svg')
     }, {
         title: 'Spiritual',
-        score: '65%',
+        score: '50%',
         icon: require('../../assests/images/dashboard/spiritual.svg'),
         emoji: require('../../assests/images/emoji/03.svg')
     }, {
         title: 'Environmental',
-        score: '85%',
+        score: '20%',
         icon: require('../../assests/images/dashboard/environmental.svg'),
         emoji: require('../../assests/images/emoji/04.svg')
     }, {
         title: 'Financial',
-        score: '21%',
+        score: '10%',
         icon: require('../../assests/images/dashboard/financial.svg'),
         emoji: require('../../assests/images/emoji/04.svg')
     }, {
         title: 'Social',
-        score: '85%',
+        score: '50%',
         icon: require('../../assests/images/dashboard/social.svg'),
         emoji: require('../../assests/images/emoji/03.svg')
     }, {
         title: 'Intellectual',
-        score: '21%',
+        score: '99%',
         icon: require('../../assests/images/dashboard/intellectual.svg'),
         emoji: require('../../assests/images/emoji/01.svg')
     }],

@@ -4,7 +4,8 @@ import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator,
 import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
-import ExportConnect from '../components/expertconnect/ExpertConnect';
+import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
+import ExpertList from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
 import Vitals from '../components/assessment/vitals/Vitals';
@@ -12,6 +13,10 @@ import AssessmentList from '../components/assessment/wellnessTests/AssessmentLis
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
 import Assessment from '../components/assessment/Assessment';
 import AssessmentReport from '../components/report/assessmentReports/AssessmentReport';
+import LogIn from '../components/login/Login';
+import Register from '../components/register/Register';
+import OTP from '../components/register/OTP';
+import Passcode from '../components/register/Passcode';
 
 
 const TabRoute = createBottomTabNavigator({
@@ -105,7 +110,20 @@ const WellnessSwitch = createSwitchNavigator({
     screen: AssessmentReport
   }
 })
-
+const ExpertStack = createStackNavigator({
+  SpecialitiyConnect: {
+    screen: SpecialitiyConnect,
+    navigationOptions: {
+      header: null
+    }
+  },
+  ExpertList: {
+    screen: ExpertList,
+    navigationOptions: {
+      header: null
+    }
+  }
+})
 const MainApp = createDrawerNavigator({
   LandingTab: {
     screen: TabRoute,
@@ -137,8 +155,8 @@ const MainApp = createDrawerNavigator({
       }
     }
   },
-  ExportConnect: {
-    screen: ExportConnect,
+  ExpertConnect: {
+    screen: ExpertStack,
     navigationOptions: {
       title: 'Connect with Experts',
       drawerIcon: ({ focused, tintColor }) => {
@@ -149,9 +167,30 @@ const MainApp = createDrawerNavigator({
   }
 });
 
+const RegisterApp=createStackNavigator({
+  Register: {
+    screen: Register,
+    navigationOptions: {
+      header: null
+    }
+  },
+  OTP: {
+    screen: OTP,
+    navigationOptions: {
+    }
+  },
+  Passcode: {
+    screen: Passcode,
+    navigationOptions: {
+    }
+  },
+})
+
 
 const AppRoute = createSwitchNavigator({
-  MainApp: { screen: AssessmentReport },
+  LogIn: { screen: LogIn },
+  Register: { screen: RegisterApp },
+  MainApp: { screen: MainApp }
 });
 
 
