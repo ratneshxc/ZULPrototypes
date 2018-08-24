@@ -102,6 +102,8 @@ const WellnessStack = createStackNavigator({
   }
 })
 
+
+
 const WellnessSwitch = createSwitchNavigator({
   WellnessStack: {
     screen: WellnessStack
@@ -122,6 +124,32 @@ const ExpertStack = createStackNavigator({
   },
   ExpertList: {
     screen: ExpertList,
+    navigationOptions: {
+      header: null
+    }
+  }
+})
+const GoalStack = createStackNavigator({
+  Goals: {
+    screen: Goals,
+    navigationOptions: {
+      header: null
+    }
+  },
+  AddGoal: {
+    screen: AddGoal,
+    navigationOptions: {
+      header: null
+    }
+  },
+  YourGoal: {
+    screen: YourGoal,
+    navigationOptions: {
+      header: null
+    }
+  },
+  GoalStatus: {
+    screen: GoalStatus,
     navigationOptions: {
       header: null
     }
@@ -149,7 +177,7 @@ const MainApp = createDrawerNavigator({
     }
   },
   Goals: {
-    screen: Goals,
+    screen: GoalStack,
     navigationOptions: {
       title: 'Goals',
       drawerIcon: ({ focused, tintColor }) => {
