@@ -31,7 +31,7 @@ const Speciality = (props) => {
             </Header>
             <Content>
                 <View style={{ backgroundColor: '#ddd' }}>
-                    <SpecialityList />
+                    <SpecialityList goToExperts={()=>props.navigation.navigate("ExpertList")}/>
                 </View>
             </Content>
         </Container>

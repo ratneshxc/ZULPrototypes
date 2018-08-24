@@ -8,7 +8,7 @@ const ExpertList = (props) => {
     return (
         <View>
             {/*Recently Contacted*/}
-            <View style={{flexDirection:'row',padding:5,backgroundColor:'#fff'}}>
+            <View style={{flexDirection:'row',padding:5,backgroundColor:'#fff'}} >
                 <Text style={{flex:1}}>Recently Contacted</Text>
                 <Text style={{color:"#00b386",textDecorationLine:'underline'}}>View More</Text>
             </View>
@@ -46,7 +46,7 @@ const ExpertList = (props) => {
             </View>
             <FlatList
                 data={[{ key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }]}
-                renderItem={({ item }) => <SpecialityComponent item={item} />}
+                renderItem={({ item }) => <SpecialityComponent item={item} goToExperts={props.goToExperts}/>}
             />
         </View>
     )
@@ -57,9 +57,10 @@ const styles = StyleSheet.create({
 })
 
 
-const SpecialityComponent = () => {
+const SpecialityComponent = (props) => {
     return (
-        <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
+        <TouchableOpacity onPress={()=>props.goToExperts()} >
+        <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }} >
             <View style={{ flex: 1, flexDirection: 'row' }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail medium square source={require('../../assests/images/profilepic/yogi.jpg')} />
@@ -87,6 +88,7 @@ const SpecialityComponent = () => {
                 </View>
             </View>
         </View>
+        </TouchableOpacity>
     )
 }
 

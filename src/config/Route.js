@@ -4,7 +4,8 @@ import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator,
 import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
-import ExportConnect from '../components/expertconnect/ExpertSpecialityConnect';
+import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
+import ExpertList from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
 import Vitals from '../components/assessment/vitals/Vitals';
@@ -102,7 +103,20 @@ const WellnessSwitch = createSwitchNavigator({
     screen: AssessmentReport
   }
 })
-
+const ExpertStack = createStackNavigator({
+  SpecialitiyConnect: {
+    screen: SpecialitiyConnect,
+    navigationOptions: {
+      header: null
+    }
+  },
+  ExpertList: {
+    screen: ExpertList,
+    navigationOptions: {
+      header: null
+    }
+  }
+})
 const MainApp = createDrawerNavigator({
   LandingTab: {
     screen: TabRoute,
@@ -134,8 +148,8 @@ const MainApp = createDrawerNavigator({
       }
     }
   },
-  ExportConnect: {
-    screen: ExportConnect,
+  ExpertConnect: {
+    screen: ExpertStack,
     navigationOptions: {
       title: 'Connect with Experts',
       drawerIcon: ({ focused, tintColor }) => {
