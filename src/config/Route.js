@@ -8,11 +8,9 @@ import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConn
 import ExpertList from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
-<<<<<<< HEAD
 import AddGoal from '../components/goals/AddGoal';
 import YourGoal from '../components/goals/YourGoal';
 import GoalStatus from '../components/goals/GoalStatus';
-=======
 import Vitals from '../components/assessment/vitals/Vitals';
 import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
@@ -22,7 +20,6 @@ import LogIn from '../components/login/Login';
 import Register from '../components/register/Register';
 import OTP from '../components/register/OTP';
 import Passcode from '../components/register/Passcode';
->>>>>>> 69c2fdb9bf95cd92a4c2a321cb25d75b3b3f86e8
 
 
 const TabRoute = createBottomTabNavigator({
