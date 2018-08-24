@@ -1,15 +1,28 @@
 import React from 'react';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
-import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
-import ExportConnect from '../components/expertconnect/ExpertConnect';
+import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
+import ExpertList from '../components/expertconnect/ExpertConnect';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
+<<<<<<< HEAD
 import AddGoal from '../components/goals/AddGoal';
 import YourGoal from '../components/goals/YourGoal';
 import GoalStatus from '../components/goals/GoalStatus';
+=======
+import Vitals from '../components/assessment/vitals/Vitals';
+import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
+import AssessmentInfo from '../components/assessment/AssessmentInfo';
+import Assessment from '../components/assessment/Assessment';
+import AssessmentReport from '../components/report/assessmentReports/AssessmentReport';
+import LogIn from '../components/login/Login';
+import Register from '../components/register/Register';
+import OTP from '../components/register/OTP';
+import Passcode from '../components/register/Passcode';
+>>>>>>> 69c2fdb9bf95cd92a4c2a321cb25d75b3b3f86e8
 
 
 const TabRoute = createBottomTabNavigator({
@@ -65,6 +78,58 @@ const TabRoute = createBottomTabNavigator({
   }, )
 
 
+const WellnessStack = createStackNavigator({
+  AssessmentLayout: {
+    screen: AssessmentLayout,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Vitals: {
+    screen: Vitals,
+    navigationOptions: {
+      title: 'Vitals'
+    }
+  },
+  AssessmentList: {
+    screen: AssessmentList,
+    navigationOptions: {
+      title: 'Assessments'
+    }
+  },
+  AssessmentInfo: {
+    screen: AssessmentInfo,
+    navigationOptions: {
+      title: 'Introduction'
+    }
+  }
+})
+
+const WellnessSwitch = createSwitchNavigator({
+  WellnessStack: {
+    screen: WellnessStack
+  },
+  Assessment: {
+    screen: Assessment
+  },
+  AssessmentReport: {
+    screen: AssessmentReport
+  }
+})
+const ExpertStack = createStackNavigator({
+  SpecialitiyConnect: {
+    screen: SpecialitiyConnect,
+    navigationOptions: {
+      header: null
+    }
+  },
+  ExpertList: {
+    screen: ExpertList,
+    navigationOptions: {
+      header: null
+    }
+  }
+})
 const MainApp = createDrawerNavigator({
   LandingTab: {
     screen: TabRoute,
@@ -77,7 +142,7 @@ const MainApp = createDrawerNavigator({
     }
   },
   AssessmentLayout: {
-    screen: AssessmentLayout,
+    screen: WellnessSwitch,
     navigationOptions: {
       title: 'Check your wellness',
       drawerIcon: ({ focused, tintColor }) => {
@@ -96,8 +161,8 @@ const MainApp = createDrawerNavigator({
       }
     }
   },
-  ExportConnect: {
-    screen: ExportConnect,
+  ExpertConnect: {
+    screen: ExpertStack,
     navigationOptions: {
       title: 'Connect with Experts',
       drawerIcon: ({ focused, tintColor }) => {
@@ -108,9 +173,30 @@ const MainApp = createDrawerNavigator({
   }
 });
 
+const RegisterApp=createStackNavigator({
+  Register: {
+    screen: Register,
+    navigationOptions: {
+      header: null
+    }
+  },
+  OTP: {
+    screen: OTP,
+    navigationOptions: {
+    }
+  },
+  Passcode: {
+    screen: Passcode,
+    navigationOptions: {
+    }
+  },
+})
+
 
 const AppRoute = createSwitchNavigator({
-  MainApp: { screen: MainApp },
+  LogIn: { screen: LogIn },
+  Register: { screen: RegisterApp },
+  MainApp: { screen: MainApp }
 });
 
 
