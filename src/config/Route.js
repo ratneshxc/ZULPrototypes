@@ -6,6 +6,7 @@ import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
 import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
 import ExpertList from '../components/expertconnect/ExpertConnect';
+import Booking from '../components/expertconnect/Booking';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Goals from '../components/goals/Goals';
 import Vitals from '../components/assessment/vitals/Vitals';
@@ -104,6 +105,12 @@ const WellnessSwitch = createSwitchNavigator({
   }
 })
 const ExpertStack = createStackNavigator({
+  Booking: {
+    screen: Booking,
+    navigationOptions: {
+      header: null
+    }
+  },
   SpecialitiyConnect: {
     screen: SpecialitiyConnect,
     navigationOptions: {
@@ -115,7 +122,9 @@ const ExpertStack = createStackNavigator({
     navigationOptions: {
       header: null
     }
-  }
+  },
+ 
+
 })
 const MainApp = createDrawerNavigator({
   LandingTab: {
