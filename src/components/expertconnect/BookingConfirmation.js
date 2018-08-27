@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity, ScrollView } from 'react-native';
+import { TouchableOpacity, ScrollView,StyleSheet } from 'react-native';
 import {
     Container,
     Header,
@@ -14,20 +14,63 @@ import {
     Text,
     View,
     Thumbnail,
-    Picker,
+    List,
+    ListItem,
     Item,
-    Form,
     Input,
     Label,
-    CheckBox
+    Card
 } from "native-base";
-import StarRating from 'react-native-star-rating';
 const AppointmentDetails = [
     { title: "Booking Details", content: "Lorem ipsum dolor sit amet" },
 ];
 const PerosnelDetails = [
     { title: "Next Actions", content: "Lorem ipsum dolor sit amet" },
-]
+];
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#F5FCFF',
+    },
+
+});
+const chunkArray = (myArray, chunk_size) => {
+    var index = 0;
+    var arrayLength = myArray.length;
+    var tempArray = [];
+    for (index = 0; index < arrayLength; index += chunk_size) {
+        myChunk = myArray.slice(index, index + chunk_size);
+        // Do something if you want with the group
+        tempArray.push(myChunk);
+    }
+    return tempArray;
+}
+
+const Page = ({ vitals }) => {
+    let arrayGroup = chunkArray(vitals, 2)
+    return (
+        <View style={styles.container}>
+            <View>
+                {arrayGroup.map((x, i) => (
+                    <View key={i} style={{ flexDirection: 'row' }}>
+                        {x.map((y, j) => (
+                            <Card style={{ flex: 1, padding: 10 }} key={j}>
+                                <Text style={{ fontSize: 20 }}>
+                                    {y.title}
+                                </Text>
+                                <Text style={{ fontSize: 40 ,textAlign:'center',marginTop:10}}>
+                                <Icon style={{ fontSize: 40 }} name={y.value} type="FontAwesome" />
+                                </Text>
+                            </Card>
+                        ))}
+                    </View>
+                ))}
+            </View>
+        </View>
+    )
+};
+
+
 export default class BookingConfirmation extends Component {
 
     _renderAppointmentHeader(dataArray, expanded) {
@@ -39,7 +82,7 @@ export default class BookingConfirmation extends Component {
                     {" "}{dataArray.title}
                 </Text>
 
-               
+
                 {expanded
                     ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
                     : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
@@ -49,27 +92,27 @@ export default class BookingConfirmation extends Component {
     _renderAppointmentContent(dataArray) {
         return (
             <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
-            
+
                 <Item fixedLabel>
                     <Label style={{ color: 'black' }}>Expert</Label>
-                    <Input value="Samira Reddy" disabled/>
-                   
+                    <Input value="Samira Reddy" disabled />
+
                 </Item>
-              <Item fixedLabel  >
+                <Item fixedLabel  >
                     <Label style={{ color: 'black' }}>Via</Label>
                     <Input value="Video call" disabled />
                 </Item>
                 <Item fixedLabel>
                     <Label style={{ color: 'black' }}>Date</Label>
-                    <Input value="12th August 2018 10:00AM" disabled/>
-                   
+                    <Input value="12th August 2018 10:00AM" disabled />
+
                 </Item>
                 <Item fixedLabel last>
                     <Label style={{ color: 'black' }}>Location</Label>
-                    <Input value="ONLINE" disabled/>
-                   
+                    <Input value="ONLINE" disabled />
+
                 </Item>
-     
+
             </View>
         );
     }
@@ -94,38 +137,12 @@ export default class BookingConfirmation extends Component {
     _renderPersonnelContent(dataArray) {
         return (
             <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
-            
-                <Item fixedLabel>
-                    <Label style={{ color: 'black' }}>Name</Label>
-                    <Input value="Shakti Singh Chouhan" />
+                <View style={{ flexDirection: 'row' }}>
                    
-                </Item>
-                <Item fixedLabel last >
-                    <Label style={{ color: 'black' }}>Email</Label>
-                    <Input value="svpsctg11@yahoo.com" />
-                </Item>
-                <View style={{ flex: 1, flexDirection: 'column' }}>
-                    <Text style={{ fontSize: 16, marginTop: 5 }}>Want to share vital information with Expert?  <Icon style={{ fontSize: 10 }} name='info-circle' type="FontAwesome" /></Text>
-                    <View style={{ flexDirection: 'row', marginTop: 5 }}>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
-                            <CheckBox
-                                color="green"
-                                checked={true}
-                            />
-                            <Text style={{ marginLeft: 10 }}> Yes </Text>
-                        </View>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
-                            <CheckBox
-                                color="red"
-                                checked={false}
-                            />
-                            <Text style={{ marginLeft: 10 }}> No </Text>
-                        </View>
-                    </View>
+                <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Experience Meetup', value: 'usb',  }, { title: 'Fill S & E assesment', value: 'book', }]} />
                 </View>
-                <View style={{ flex: 1, flexDirection: 'row' }}>
-                <Text style={{flex:1}}></Text>
-                <Text style={{ color: '#007bff', textDecorationLine: 'underline' }}>Not you?</Text>
+                <View style={{ flexDirection: 'row' }}>
+                <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Upload Documents',value: 'plus',  }, { title: 'Go To Appointments', value: 'calendar-plus-o',  }]} />
                 </View>
             </View>
         );
