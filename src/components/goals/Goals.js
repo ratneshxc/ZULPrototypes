@@ -142,18 +142,6 @@ class Goals extends Component {
     render() {
         return (
             <Container>
-                {/* <Header>
-                    <Left>
-                        <Button transparent>
-                            <Icon name='menu' />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Goals</Title>
-                    </Body>
-                    <Right>
-                    </Right>
-                </Header> */}
                 <View>
                 </View>
                 <Content style={styles.container}>

@@ -12,32 +12,6 @@ class AddGoal extends Component {
     render() {
         return (
             <Container>
-                {/* {(Platform.OS === 'ios') ?
-                    <Header>
-                        <Left>
-                            <Button transparent>
-                                <Icon name='menu' />
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Title>Add Goal</Title>
-                        </Body>
-                        <Right>
-                        </Right>
-                    </Header>
-                    : <Header>
-                        <Left>
-                            <Button transparent>
-                                <Icon name='menu' />
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Title style={{ color: 'white' }}>Add Goal</Title>
-                        </Body>
-                        <Right>
-                        </Right>
-                    </Header>
-                } */}
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
                         <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column' }}>

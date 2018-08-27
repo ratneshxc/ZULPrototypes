@@ -12,33 +12,6 @@ class AddGoal extends Component {
     render() {
         return (
             <Container>
-                {/* {(Platform.OS === 'ios') ?
-                    <Header>
-
-                        <Left>
-                            <Button transparent>
-                                <Icon name='menu' />
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Title>Your Goal</Title>
-                        </Body>
-                        <Right>
-                        </Right>
-                    </Header>
-                    : <Header>
-                        <Left>
-                            <Button transparent>
-                                <Icon name='menu' />
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Title style={{ color: 'white' }}>Your Goal</Title>
-                        </Body>
-                        <Right>
-                        </Right>
-                    </Header>
-                } */}
                 <View>
                 </View>
                 <Content style={styles.container}>
