@@ -233,7 +233,7 @@ export default class Booking extends Component {
                         </View>
                         <View style={{ flexDirection: 'row',marginTop:5 }}>
                             <Text style={{ flex: 1 }}></Text>
-                            <Button bordered primary style={{width:100,height:50,alignItems:'center'}}>
+                            <Button bordered primary style={{width:100,height:50,alignItems:'center'}} onPress={()=>this.props.navigation.navigate("BookingConfirmation")}>
                                 <Text style={{alignSelf:'center'}}>Book</Text>
                             </Button>
                         </View>
