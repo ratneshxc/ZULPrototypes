@@ -22,7 +22,7 @@ const AppointmentDetails = [
     { title: "Appointment Details", content: "Lorem ipsum dolor sit amet" },
 ];
 const PerosnelDetails = [
-    { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
+    { title: "Personnel Details", content: "Lorem ipsum dolor sit amet" },
 ]
 export default class Booking extends Component {
 
@@ -134,6 +134,23 @@ export default class Booking extends Component {
             </View>
         );
     }
+
+    _renderPersonnelHeader(dataArray, expanded) {
+        return (
+            <View
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252" }}
+            >
+                <Text style={{ flex: 1, color: 'white' }}>
+                    {" "}{dataArray.title}
+                </Text>
+
+               
+                {expanded
+                    ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
+                    : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+            </View>
+        );
+    }
     render() {
         return (
             <Container>
@@ -157,13 +174,15 @@ export default class Booking extends Component {
                         renderHeader={this._renderAppointmentHeader}
                         renderContent={this._renderAppointmentContent}
                     />
-                    {/* <Accordion
+                    <Accordion
                         dataArray={PerosnelDetails}
                         animation={true}
                         expanded={0}
-                        renderHeader={this._renderAppointmentHeader}
+                        renderHeader={this._renderPersonnelHeader}
                         renderContent={this._renderAppointmentContent}
-                    /> */}
+                        style={{marginTop:5}}
+                    />
+              
                 </Content>
             </Container>
         )
