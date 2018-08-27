@@ -5,14 +5,16 @@ import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width - 20;
-const GoalsDetails = [
-    { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points" }
-];
-const GoalsTwoDetails = [
-    { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points" }
-];
 
 class Goals extends Component {
+    componentWillMount() {
+         GoalsDetails = [
+            { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points",data:this.addGoal }
+        ];
+         GoalsTwoDetails = [
+            { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points",data:this.addGoal }
+        ];
+        }
     constructor(props) {
         super(props);
         this.state = { toBeDone: true, Completed: false };
@@ -25,7 +27,7 @@ class Goals extends Component {
     }
     _goalCardOneHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#202020", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#215E21", height: 45 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'white', bottom: 6 }}>Save your income tax</Text>
                     {expanded
@@ -39,10 +41,10 @@ class Goals extends Component {
             </View>
         );
     }
-    _goalCardOneContent() {
+    _goalCardOneContent(dataArray) {
         return (
             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                <TouchableOpacity onPress={this.goalStatus}>
+                <TouchableOpacity onPress={dataArray.data}>
                     <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf:'center' }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
@@ -60,7 +62,7 @@ class Goals extends Component {
                         </View>
                     </Card>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={this.goalStatus}>
+                <TouchableOpacity onPress={dataArray.data}>
                     <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf:'center' }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
@@ -83,7 +85,7 @@ class Goals extends Component {
     }
     _goalCardTwoHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#202020", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#215E21", height: 45 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'white', bottom: 6 }}>Relieve stress and anger</Text>
                     {expanded
@@ -99,7 +101,7 @@ class Goals extends Component {
     }
     _goalCardThreeHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#202020", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#215E21", height: 45 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'white', bottom: 6 }}>Lose 4kg weight</Text>
                     {expanded
@@ -116,7 +118,7 @@ class Goals extends Component {
     _goalCardTwoContent(dataArray) {
         return (
             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                <TouchableOpacity onPress={this.goalStatus}>
+                <TouchableOpacity onPress={dataArray.data}>
                     <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf:'center' }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
@@ -184,7 +186,7 @@ class Goals extends Component {
                                 </Item>
                                 <Badge style={{ height: 55, alignSelf: 'flex-end', backgroundColor: '#00000066' }}>
                                     <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>2 Pending</Text>
-                                    <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>1 Completed</Text>
+                                    <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>3 Total</Text>
                                 </Badge>
                             </View>
                         </View>
@@ -201,7 +203,7 @@ class Goals extends Component {
                     </View>
                     <View>
                         <Accordion
-                            dataArray={[{}]}
+                            dataArray={[{data:this.addGoal}]}
                             animation={true}
                             expanded={0}
                             renderHeader={this._goalCardOneHeader}
