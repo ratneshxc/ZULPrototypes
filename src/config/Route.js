@@ -18,8 +18,6 @@ import Assessment from '../components/assessment/Assessment';
 import AssessmentReport from '../components/report/assessmentReports/AssessmentReport';
 import LogIn from '../components/login/Login';
 import Register from '../components/register/Register';
-import OTP from '../components/register/OTP';
-import Passcode from '../components/register/Passcode';
 
 
 const TabRoute = createBottomTabNavigator({
@@ -198,29 +196,9 @@ const MainApp = createDrawerNavigator({
   }
 });
 
-const RegisterApp=createStackNavigator({
-  Register: {
-    screen: Register,
-    navigationOptions: {
-      header: null
-    }
-  },
-  OTP: {
-    screen: OTP,
-    navigationOptions: {
-    }
-  },
-  Passcode: {
-    screen: Passcode,
-    navigationOptions: {
-    }
-  },
-})
-
-
 const AppRoute = createSwitchNavigator({
   LogIn: { screen: LogIn },
-  Register: { screen: RegisterApp },
+  Register: { screen: Register },
   MainApp: { screen: MainApp }
 });
 

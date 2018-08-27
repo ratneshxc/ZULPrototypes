@@ -7,7 +7,7 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={ZingUpLifeStore}>
-          <ZingUpLifeApp />
+        <ZingUpLifeApp />
       </Provider>
     );
   }

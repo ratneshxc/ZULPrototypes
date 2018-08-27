@@ -3,70 +3,94 @@ import { View, Image, StyleSheet, TextInput } from 'react-native';
 import { Button, Text, H2 } from 'native-base';
 
 export default class Passcode extends React.Component {
-
-
-
     render() {
         return (
-            <View style={{ flex: 1 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                    <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
-                </View>
-                <View style={{ flexDirection: 'column', flex: 1, justifyContent: 'center', paddingHorizontal: 20 }}>
-                    <View>
-                        <H2 style={{ textAlign: 'center', marginVertical: 20 }}>Enter your 4 digit passcode</H2>
-                        <View style={{ flexDirection: 'row' }}>
-                            <TextInput
-                                keyboardType={"numeric"}
-                                style={styles.input}
-                            />
-                            <TextInput
-                                keyboardType={"numeric"}
-                                style={styles.input}
-                            />
-                            <TextInput
-                                keyboardType={"numeric"}
-                                style={styles.input}
-                            />
-                            <TextInput
-                                keyboardType={"numeric"}
-                                style={styles.input}
-                            />
-                        </View>
-                        <View style={{ flexDirection: 'row' }}>
-                            <TextInput
-                                style={styles.input}
-                            />
-                            <TextInput
-                                style={styles.input}
-                            />
-                            <TextInput
-                                style={styles.input}
-                            />
-                            <TextInput
-                                style={styles.input}
-                            />
-                        </View>
-                        <Button block onPress={() => this.props.navigation.navigate("MainApp")}>
-                            <Text>Let's Go</Text>
-                        </Button>
+            <View style={styles.container}>
+                <Text style={{ marginLeft: 5, marginBottom: 5 }}>Passcode:</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
                     </View>
                 </View>
+                <Text style={{ marginLeft: 5, marginBottom: 5 }}>Re-enter Passcode:</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                </View>
+                <Button block onPress={this.props.goToDashboard}>
+                    <Text>Let's Go</Text>
+                </Button>
             </View>
         )
     }
 }
 const styles = StyleSheet.create({
+    container: {
+        padding: 10
+    },
     loginLogo: {
         height: 150,
         width: 150
     },
     input: {
-        flex: 1,
         fontSize: 20,
         padding: 10,
         marginBottom: 10,
-        borderRadius: 5
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#ddd',
+        marginHorizontal: 5
     }
 
 });
