@@ -14,32 +14,6 @@ class GoalStatus extends Component {
     render() {
         return (
             <Container>
-                 {/* {(Platform.OS === 'ios') ?
-                    <Header>
-                        <Left>
-                            <Button transparent>
-                                <Icon name='menu' />
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Title>Run 5km Daily</Title>
-                        </Body>
-                        <Right>
-                        </Right>
-                    </Header>
-                    : <Header>
-                        <Left>
-                            <Button transparent>
-                                <Icon name='menu' />
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Title style={{ color: 'white' }}>Run 5km Daily</Title>
-                        </Body>
-                        <Right>
-                        </Right>
-                    </Header>
-                } */}
                 <View>
                 </View>
                 <Content style={styles.container}>
