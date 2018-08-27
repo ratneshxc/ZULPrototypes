@@ -140,7 +140,7 @@ class Goals extends Component {
     render() {
         return (
             <Container>
-                <Header>
+                {/* <Header>
                     <Left>
                         <Button transparent>
                             <Icon name='menu' />
@@ -151,7 +151,7 @@ class Goals extends Component {
                     </Body>
                     <Right>
                     </Right>
-                </Header>
+                </Header> */}
                 <View>
                 </View>
                 <Content style={styles.container}>
