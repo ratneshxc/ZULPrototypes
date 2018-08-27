@@ -44,8 +44,6 @@ class AddGoal extends Component {
                         </Right>
                     </Header>
                 } */}
-                <View>
-                </View>
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
                         
