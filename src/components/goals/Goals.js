@@ -9,6 +9,12 @@ import { Container, Header, Body, Left, Button, Icon, Right, Title, Content } fr
 const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width - 20;
 const screenheight = windowObj.height / 3;
+const GoalsDetails = [
+    { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points" }
+];
+const GoalsTwoDetails = [
+    { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points" }
+];
 
 class Goals extends Component {
     addGoal = () => {
@@ -17,10 +23,106 @@ class Goals extends Component {
     goalStatus = () => {
         this.props.navigation.navigate('GoalStatus');
     }
+    _goalCardOneHeader(dataArray,expanded) {
+        return (
+            <View style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252"  }}>
+                <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color:'white' }}>Save your income tax</Text>
+                {expanded
+                    ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
+                    : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+            </View>
+        );
+    }
+    _goalCardOneContent() {
+        return (
+            <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+                                <TouchableOpacity onPress={this.goalStatus}>
+                                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth }}>
+                                        <View style={{ flexDirection: 'row' }}>
+                                            <Left>
+                                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Track your daily expenses</Text>
+                                            </Left>
+                                            <Right>
+                                                <Text style={{ fontSize: 12 }}>60 points</Text>
+                                            </Right>
+                                        </View>
+                                        <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
+                                            <Text>Log your expenses</Text>
+                                        </View>
+                                        <View>
+                                            <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
+                                        </View>
+                                    </Card>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goalStatus}>
+                                    <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth }}>
+                                        <View style={{ flexDirection: 'row' }}>
+                                            <Left>
+                                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Invest in ELSS fund</Text>
+                                            </Left>
+                                            <Right>
+                                                <Text style={{ fontSize: 12 }}>50 points</Text>
+                                            </Right>
+                                        </View>
+                                        <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
+                                            <Text>Make a payemnt for this month</Text>
+                                        </View>
+                                        <View>
+                                            <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
+                                        </View>
+                                    </Card>
+                                </TouchableOpacity>
+                            </View>
+        );
+    }
+    _goalCardTwoHeader(dataArray, expanded) {
+        return (
+            <View style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252"  }}>
+                <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color:'white' }}>Relieve stress and anger</Text>
+                {expanded
+                    ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
+                    : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+            </View>
+        );
+    }
+    _goalCardThreeHeader(dataArray, expanded) {
+        return (
+            <View style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252"  }}>
+                <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color:'white' }}>Lose 4kg weight</Text>
+                {expanded
+                    ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
+                    : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+            </View>
+        );
+    }
+    _goalCardTwoContent(dataArray) {
+        return (
+            <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+                                <TouchableOpacity onPress={this.goalStatus}>
+                                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth }}>
+                                        <View style={{ flexDirection: 'row' }}>
+                                            <Left>
+                                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>{dataArray.titleOne}</Text>
+                                            </Left>
+                                            <Right>
+                                                <Text style={{ fontSize: 12 }}>{dataArray.pointOne}</Text>
+                                            </Right>
+                                        </View>
+                                        <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
+                                            <Text>{dataArray.contentOne}</Text>
+                                        </View>
+                                        <View>
+                                            <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
+                                        </View>
+                                    </Card>
+                                </TouchableOpacity>
+                            </View>
+        );
+    }
     render() {
         return (
             <Container>
-                {/* <Header>
+                <Header>
                     <Left>
                         <Button transparent>
                             <Icon name='menu' />
@@ -31,12 +133,12 @@ class Goals extends Component {
                     </Body>
                     <Right>
                     </Right>
-                </Header> */}
+                </Header>
                 <View>
                 </View>
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
-                        <View style={{ backgroundColor: '#00000066', padding:10, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+                        <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
                                 <Left style={{ padding: 10 }}>
                                     <Badge style={{ backgroundColor: '#7B68EE', height: 35 }}>
@@ -85,100 +187,27 @@ class Goals extends Component {
                         />
                     </View>
                     <View>
-                        <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <View style={{ padding: 10 }}>
-                                <Text style={{ alignSelf: 'flex-start', fontWeight:'bold', fontSize:18  }}>Save your income tax</Text>
-                            </View>
-                            <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                                <TouchableOpacity onPress={this.goalStatus}> 
-                                <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth }}>
-                                    <View style={{ flexDirection: 'row' }}>
-                                        <Left>
-                                            <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Track your daily expenses</Text>
-                                        </Left>
-                                        <Right>
-                                            <Text style={{ fontSize: 12 }}>60 points</Text>
-                                        </Right>
-                                    </View>
-                                    <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                                        <Text>Log your expenses</Text>
-                                    </View>
-                                    <View>
-                                        <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
-                                    </View>
-                                </Card>
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={this.goalStatus}> 
-                                <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth }}>
-                                    <View style={{ flexDirection: 'row' }}>
-                                        <Left>
-                                            <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Invest in ELSS fund</Text>
-                                        </Left>
-                                        <Right>
-                                            <Text style={{ fontSize: 12 }}>50 points</Text>
-                                        </Right>
-                                    </View>
-                                    <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                                        <Text>Make a payemnt for this month</Text>
-                                    </View>
-                                    <View>
-                                        <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
-                                    </View>
-                                </Card>
-                                </TouchableOpacity>
-                            </View>
-                        </Card>
-                        <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <View style={{ padding: 10 }}>
-                                <Text style={{ alignSelf: 'flex-start', fontWeight:'bold', fontSize:18  }}>Relieve stress and anger</Text>
-                            </View>
-                            <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            
-                                <TouchableOpacity onPress={this.goalStatus}> 
-                                <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth }}>
-                                    <View style={{ flexDirection: 'row' }}>
-                                        <Left>
-                                            <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Daily 10 min meditation</Text>
-                                        </Left>
-                                        <Right>
-                                            <Text style={{ fontSize: 12 }}>30 points</Text>
-                                        </Right>
-                                    </View>
-                                    <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                                        <Text>Body</Text>
-                                    </View>
-                                    <View>
-                                        <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
-                                    </View>
-                                </Card>
-                                </TouchableOpacity>
-                            </View>
-                        </Card>
-                        <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <View style={{ padding: 10 }}>
-                                <Text style={{ alignSelf: 'flex-start', fontWeight:'bold', fontSize:18  }}>Lose 4 kg weight</Text>
-                            </View>
-                            <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <TouchableOpacity onPress={this.goalStatus}> 
-                                <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth }}>
-                                    <View style={{ flexDirection: 'row' }}>
-                                        <Left>
-                                            <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Drink 3l water daily</Text>
-                                        </Left>
-                                        <Right>
-                                            <Text style={{ fontSize: 12 }}>10 points</Text>
-                                        </Right>
-                                    </View>
-                                    <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                                        <Text>2l more for the day</Text>
-                                    </View>
-                                    <View>
-                                        <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
-                                    </View>
-                                </Card>
-                                </TouchableOpacity>
-                            </View>
-                        </Card>
+                        <Accordion
+                            dataArray={[{}]}
+                            animation={true}
+                            expanded={0}
+                            renderHeader={this._goalCardOneHeader}
+                            renderContent={this._goalCardOneContent}
+                        />
+                         <Accordion
+                            dataArray={GoalsDetails}
+                            animation={true}
+                            expanded={1}
+                            renderHeader={this._goalCardTwoHeader}
+                            renderContent={this._goalCardTwoContent}
+                        />
+                        <Accordion
+                            dataArray={GoalsTwoDetails}
+                            animation={true}
+                            expanded={1}
+                            renderHeader={this._goalCardThreeHeader}
+                            renderContent={this._goalCardTwoContent}
+                        />
                     </View>
                 </Content>
                 {(Platform.OS === 'ios') ?
