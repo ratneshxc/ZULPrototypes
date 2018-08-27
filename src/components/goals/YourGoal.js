@@ -79,9 +79,6 @@ class AddGoal extends Component {
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
                             </CardItem>
                             <CardItem bordered>
                                 <Left>
@@ -91,9 +88,6 @@ class AddGoal extends Component {
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
                             </CardItem>
                             <CardItem bordered>
                                 <Left>
@@ -103,22 +97,21 @@ class AddGoal extends Component {
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
                             </CardItem>
                             <CardItem bordered>
                                 <Left>
-                                    <Icon active type="MaterialCommunityIcons" name="food-fork-drink"  />
+                                    <Icon active type="MaterialCommunityIcons" name="food-fork-drink" />
                                     <Text style={{ left: 8 }}>Eat your food slowly</Text>
                                 </Left>
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
                             </CardItem>
+                            <CardItem bordered style={{ height: 60 }}>
+                                <Text>Add an activity</Text>
+                                <Icon active type="EvilIcons" name="plus" />
+                            </CardItem>
+
                         </Card>
                     </View>
                 </Content>
