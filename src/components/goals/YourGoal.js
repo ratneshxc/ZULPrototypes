@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground } from 'react-native';
+import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { Footer, FooterTab, Card, CardItem, List, ListItem, Badge } from 'native-base';
 import { Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
 
@@ -9,11 +9,12 @@ const screenheight = windowObj.height / 3;
 
 
 class AddGoal extends Component {
+    goToYourActivity = () => {
+        this.props.navigation.navigate('AddActivity');
+    }
     render() {
         return (
             <Container>
-                <View>
-                </View>
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
 
@@ -44,7 +45,7 @@ class AddGoal extends Component {
                     </View>
                     <View>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <CardItem bordered>
+                            <CardItem bordered onPress={this.goToYourActivity}>
                                 <Left>
                                     <Icon active type="MaterialCommunityIcons" name="run" />
                                     <Text style={{ left: 8 }}>Take 5000 steps</Text>
@@ -80,13 +81,15 @@ class AddGoal extends Component {
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered style={{ height: 60 }}>
-                                <Text>Add an activity</Text>
-                                <Icon active type="EvilIcons" name="plus" />
-                            </CardItem>
-
+                            <TouchableOpacity bordered style={{  height: 50 }} onPress={this.goToYourActivity}>
+                                <View style={{ flexDirection: 'row', alignSelf: 'center', top: 10}}>
+                                    <Text style={{  top: 5 }}>Add an activity</Text>
+                                    <Icon active type="EvilIcons" name="plus" />
+                                </View>
+                            </TouchableOpacity>
                         </Card>
                     </View>
+
                 </Content>
                 {(Platform.OS === 'ios') ?
                     <Footer>
