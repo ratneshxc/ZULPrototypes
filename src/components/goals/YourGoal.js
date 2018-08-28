@@ -7,7 +7,6 @@ const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width - 20;
 const screenheight = windowObj.height / 3;
 
-
 class AddGoal extends Component {
     goToYourActivity = () => {
         this.props.navigation.navigate('AddActivity');
@@ -17,24 +16,16 @@ class AddGoal extends Component {
             <Container>
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
-
                         <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column' }}>
-
                             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
                                 <Text style={{ padding: 10, color: 'white', fontSize: 26, fontWeight: 'bold' }}>Lose 6 kg weight</Text>
                                 <Icon style={{ fontSize: 20, color: 'white' }} active type="Entypo" name="info-with-circle" />
                             </View>
                             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', top: 30 }}>
                                 <Left style={{ padding: 10 }}>
-                                    {/* <Badge style={{ backgroundColor: '#7B68EE', height: 28 }}>
-                                        <Text style={{ color: 'white', top: 2, fontSize: 17, fontWeight: 'bold' }}>Duration 4 week</Text>
-                                    </Badge> */}
                                     <Text style={{ color: 'white', top: 2, fontSize: 17, fontWeight: 'bold' }}>Duration 4 week</Text>
                                 </Left>
                                 <Right style={{ flex: 1, flexDirection: 'row', left: 16 }}>
-                                    {/* <Badge style={{ backgroundColor: '#7B68EE', padding: 4, alignSelf: 'flex-end' }}>
-                                        <Text style={{ color: 'white', top: 2, fontWeight: 'bold' }}>Suggested by: Pratian</Text>
-                                    </Badge> */}
                                     <Text style={{ color: 'white', top: 2, fontWeight: 'bold' }}>Suggested by: Pratian</Text>
                                 </Right>
                             </View>
@@ -45,51 +36,50 @@ class AddGoal extends Component {
                     </View>
                     <View>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <CardItem bordered onPress={this.goToYourActivity}>
+                            <CardItem bordered onPress={this.goToYourActivity} style={{ height: 60 }}>
                                 <Left>
                                     <Icon active type="MaterialCommunityIcons" name="run" />
-                                    <Text style={{ left: 8 }}>Take 5000 steps</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width: 300 }}>Take 5000 steps</Text>
                                 </Left>
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60 }}>
                                 <Left>
                                     <Icon active name="logo-googleplus" />
-                                    <Text style={{ left: 8 }}>Daily 10 min meditation</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width: 300 }}>Daily 10 min meditation</Text>
                                 </Left>
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60 }}>
                                 <Left>
                                     <Icon active type="MaterialCommunityIcons" name="run" />
-                                    <Text style={{ left: 8 }}>Drink water a half hour before your meal</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width: 300 }}>Drink water a half hour before your meal</Text>
                                 </Left>
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60 }}>
                                 <Left>
                                     <Icon active type="MaterialCommunityIcons" name="food-fork-drink" />
-                                    <Text style={{ left: 8 }}>Eat your food slowly</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width: 300 }}>Eat your food slowly</Text>
                                 </Left>
                                 <Right>
                                     <Text style={{ fontSize: 12, bottom: 17 }}>60 points</Text>
                                 </Right>
                             </CardItem>
                             <TouchableOpacity bordered style={{  height: 50 }} onPress={this.goToYourActivity}>
-                                <View style={{ flexDirection: 'row', alignSelf: 'center', top: 10}}>
-                                    <Text style={{  top: 5 }}>Add an activity</Text>
-                                    <Icon active type="EvilIcons" name="plus" />
+                                <View style={{ flexDirection: 'row', top: 10, alignSelf: 'center'}}>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Add an activity</Text>
+                                    <Icon active type="EvilIcons" name="plus" style={{ fontWeight: 'bold' }}/>
                                 </View>
                             </TouchableOpacity>
                         </Card>
                     </View>
-
                 </Content>
                 {(Platform.OS === 'ios') ?
                     <Footer>
@@ -102,8 +92,8 @@ class AddGoal extends Component {
                     :
                     <Footer>
                         <FooterTab>
-                            <Button full>
-                                <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Start</Text>
+                            <Button full style={{ backgroundColor: 'white'}}>
+                                <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold' }}>Start</Text>
                             </Button>
                         </FooterTab>
                     </Footer>
