@@ -9,6 +9,15 @@ const VerficationDetails = [
     { title: "Verification", content: "MEDICAL LICENSE" },
 ];
 
+const ConsultationDetails = [
+    { title: "Consultation Available", content: "MEDICAL LICENSE" },
+];
+const ReviewDetails = [
+    { title: "Reviews", content: "MEDICAL LICENSE" },
+];
+const AddressDetails = [
+    { title: "Address Details", content: "MEDICAL LICENSE" },
+];
 export default class ExpertProfile extends Component {
     _renderHeader(dataArray, expanded) {
         return (
@@ -117,6 +126,24 @@ export default class ExpertProfile extends Component {
                     />
                      <Accordion
                         dataArray={VerficationDetails}
+                        animation={true}
+                        renderHeader={this._renderHeader}
+                        style={{marginTop:1}}
+                    />
+                    <Accordion
+                        dataArray={ConsultationDetails}
+                        animation={true}
+                        renderHeader={this._renderHeader}
+                        style={{marginTop:1}}
+                    />
+                    <Accordion
+                        dataArray={ReviewDetails}
+                        animation={true}
+                        renderHeader={this._renderHeader}
+                        style={{marginTop:1}}
+                    />
+                    <Accordion
+                        dataArray={AddressDetails}
                         animation={true}
                         renderHeader={this._renderHeader}
                         style={{marginTop:1}}

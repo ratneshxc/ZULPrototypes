@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity, ScrollView,StyleSheet } from 'react-native';
+import { TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import {
     Container,
     Header,
@@ -21,12 +21,7 @@ import {
     Label,
     Card
 } from "native-base";
-const AppointmentDetails = [
-    { title: "Booking Details", content: "Lorem ipsum dolor sit amet" },
-];
-const PerosnelDetails = [
-    { title: "Next Actions", content: "Lorem ipsum dolor sit amet" },
-];
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -58,8 +53,8 @@ const Page = ({ vitals }) => {
                                 <Text style={{ fontSize: 20 }}>
                                     {y.title}
                                 </Text>
-                                <Text style={{ fontSize: 40 ,textAlign:'center',marginTop:10}}>
-                                <Icon style={{ fontSize: 40 }} name={y.value} type="FontAwesome" />
+                                <Text style={{ fontSize: 40, textAlign: 'center', marginTop: 10 }}>
+                                    <Icon style={{ fontSize: 40 }} name={y.value} type="FontAwesome" />
                                 </Text>
                             </Card>
                         ))}
@@ -72,7 +67,20 @@ const Page = ({ vitals }) => {
 
 
 export default class BookingConfirmation extends Component {
-
+    fillAssesment = () => {
+        this.props.navigation.navigate('AssessmentList');
+    }
+    fixAppointment = () => {
+        this.props.navigation.navigate('AppointmentList');
+    }
+    componentWillMount() {
+        AppointmentDetails = [
+            { title: "Booking Details", content: "Lorem ipsum dolor sit amet" },
+        ];
+        PerosnelDetails = [
+            { title: "Next Actions", content: "Lorem ipsum dolor sit amet", fillAssesment: this.fillAssesment,fixAppointment:this.fixAppointment },
+        ];
+    }
     _renderAppointmentHeader(dataArray, expanded) {
         return (
             <View
@@ -136,15 +144,23 @@ export default class BookingConfirmation extends Component {
 
     _renderPersonnelContent(dataArray) {
         return (
-            <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
-                <View style={{ flexDirection: 'row' }}>
-                   
-                <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Experience Meetup', value: 'usb',  }, { title: 'Fill S & E assesment', value: 'book', }]} />
+            
+                <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
+                    <View style={{ flexDirection: 'row' }}>
+                    <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Experience Meetup', value: 'usb', }]} />
+                    <TouchableOpacity onPress={dataArray.fillAssesment} style={{flex: 1}}>
+                    <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Fill S & E assesment', value: 'book' }]} />
+                    </TouchableOpacity>
+                    </View>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Upload Documents', value: 'plus', }]} />
+                        <TouchableOpacity onPress={dataArray.fixAppointment} style={{flex: 1}}>
+                        <Page tabLabel={{ label: "Physical" }} vitals={[ { title: 'Go To Appointments', value: 'calendar-plus-o', }]} />
+                        </TouchableOpacity>
+
+                    </View>
                 </View>
-                <View style={{ flexDirection: 'row' }}>
-                <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Upload Documents',value: 'plus',  }, { title: 'Go To Appointments', value: 'calendar-plus-o',  }]} />
-                </View>
-            </View>
+      
         );
     }
     render() {
