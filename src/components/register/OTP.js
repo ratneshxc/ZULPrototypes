@@ -3,58 +3,64 @@ import { View, Image, StyleSheet, TextInput } from 'react-native';
 import { Button, Text, H2 } from 'native-base';
 
 export default class OTP extends React.Component {
-
-
     render() {
         return (
-            <View style={{ flex: 1 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                    <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
-                </View>
-                <View style={{ flexDirection: 'column', flex: 1, justifyContent: 'center', paddingHorizontal: 20 }}>
-                    <View>
-                        <H2 style={{ textAlign: 'center', marginVertical: 20 }}>Enter your OTP number</H2>
-                        <View style={{ flexDirection: 'row' }}>
-                            <TextInput
-                                keyboardType={"numeric"}                                
-                                style={styles.input}
-                            />
-                            <TextInput
-                                keyboardType={"numeric"}
-                                style={styles.input}
-                            />
-                            <TextInput
-                                keyboardType={"numeric"}
-                                style={styles.input}
-                            />
-                            <TextInput
-                                keyboardType={"numeric"}
-                                style={styles.input}
-                            />
-                        </View>
-                        <Button block onPress={() => this.props.navigation.navigate("Passcode")}>
-                            <Text>Submit OTP</Text>
-                        </Button>
+            <View style={styles.container}>
+                <Text style={{ marginLeft: 5, marginBottom: 5 }}>Enter OTP which is sent on ur mobile:</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
+                    </View>
+                    <View style={{ flex: 1 }}>
+                        <TextInput
+                            underlineColorAndroid='transparent'
+                            keyboardType={"numeric"}
+                            style={styles.input}
+                        />
                     </View>
                 </View>
+                <Text style={{ marginLeft: 5, marginVertical: 10, padding: 5, textAlign: 'center', fontWeight: 'bold', color: '#3d5aae' }}>Dint get OTP?</Text>
+                <Button block onPress={this.props.nextHandler}>
+                    <Text>Submit OTP</Text>
+                </Button>
             </View>
         )
     }
 }
 const styles = StyleSheet.create({
+    container: {
+        padding: 10
+    },
     loginLogo: {
         height: 150,
         width: 150
     },
     input: {
-        flex: 1,
-        height: 44,
+        fontSize: 20,
         padding: 10,
-        borderWidth: 1,
-        borderColor: '#ABABAB',
         marginBottom: 10,
         borderRadius: 5,
-        margin: 5
+        borderWidth: 1,
+        borderColor: '#ddd',
+        marginHorizontal: 5
     }
 
 });

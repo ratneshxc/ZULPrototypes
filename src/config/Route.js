@@ -6,6 +6,7 @@ import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
 import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
 import ExpertList from '../components/expertconnect/ExpertConnect';
+import ExpertProfile from '../components/expertconnect/ExpertProfile';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Booking from '../components/expertconnect/Booking';
 import BookingConfirmation from '../components/expertconnect/BookingConfirmation';
@@ -22,8 +23,6 @@ import Assessment from '../components/assessment/Assessment';
 import AssessmentReport from '../components/report/assessmentReports/AssessmentReport';
 import LogIn from '../components/login/Login';
 import Register from '../components/register/Register';
-import OTP from '../components/register/OTP';
-import Passcode from '../components/register/Passcode';
 
 
 const TabRoute = createBottomTabNavigator({
@@ -149,6 +148,12 @@ const ExpertStack = createStackNavigator({
     navigationOptions: {
       header: null
     }
+  },
+  ExpertProfile:{
+    screen: ExpertProfile,
+    navigationOptions: {
+      header: null
+    }
   }
 })
 const GoalStack = createStackNavigator({
@@ -226,29 +231,9 @@ const MainApp = createDrawerNavigator({
   }
 });
 
-const RegisterApp=createStackNavigator({
-  Register: {
-    screen: Register,
-    navigationOptions: {
-      header: null
-    }
-  },
-  OTP: {
-    screen: OTP,
-    navigationOptions: {
-    }
-  },
-  Passcode: {
-    screen: Passcode,
-    navigationOptions: {
-    }
-  },
-})
-
-
 const AppRoute = createSwitchNavigator({
   LogIn: { screen: LogIn },
-  Register: { screen: RegisterApp },
+  Register: { screen: Register },
   MainApp: { screen: MainApp }
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Container, Header, Right, Body, Left, Button, Icon, Title, Content } from 'native-base';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Container, Header, Right, Body, Left, Button, Icon, Title, Content, Text } from 'native-base';
 import { connect } from 'react-redux';
 
 
@@ -31,6 +31,10 @@ class Dashboard extends React.Component {
                         <Title>Dashboard</Title>
                     </Body>
                     <Right>
+                        <TouchableOpacity style={{ backgroundColor: '#fff', flexDirection: 'row', padding: 5, borderRadius: 10 }}>
+                            <Text style={{ fontSize: 20 }}>5</Text>
+                            <Icon name="bell" style={{ fontSize: 15 }} type="FontAwesome" />
+                        </TouchableOpacity>
                     </Right>
                 </Header>
                 <Content style={styles.body}>
