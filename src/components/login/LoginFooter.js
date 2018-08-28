@@ -15,7 +15,7 @@ export default class LoginFooter extends React.Component {
         return (
             <View style={styles.container}>
                 <TouchableOpacity style={styles.registerBtn} onPress={this.goRegister}>
-                    <Text style={styles.textWhite}>Register</Text>
+                    <Text style={styles.textWhite}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
         )
