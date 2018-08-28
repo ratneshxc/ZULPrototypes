@@ -9,15 +9,15 @@ const screenwidth = windowObj.width - 20;
 class Goals extends Component {
     componentWillMount() {
         GoalsDetails = [
-            { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points", data: this.addGoal }
+            { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points", data: this.goalStatus }
         ];
         GoalsTwoDetails = [
-            { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points", data: this.addGoal }
+            { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points", data: this.goalStatus }
         ];
     }
     constructor(props) {
         super(props);
-        this.state = { toBeDone: true, Completed: false };
+        this.state = { toBeDone: true, Completed: false, toBeDoneStyle:'lightgray', completedStyle:'white' };
     }
     addGoal = () => {
         this.props.navigation.navigate('AddGoal');
@@ -27,7 +27,7 @@ class Goals extends Component {
     }
     _goalCardOneHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 50 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'black', bottom: 6 }}>Save your income tax</Text>
                     {expanded
@@ -85,7 +85,7 @@ class Goals extends Component {
     }
     _goalCardTwoHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 50 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'black', bottom: 6 }}>Relieve stress and anger</Text>
                     {expanded
@@ -101,7 +101,7 @@ class Goals extends Component {
     }
     _goalCardThreeHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 50 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                     <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'black', bottom: 6 }}>Lose 4kg weight</Text>
                     {expanded
@@ -142,56 +142,59 @@ class Goals extends Component {
     render() {
         return (
             <Container>
-                <View>
-                </View>
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
-                        <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
-                            <AnimatedCircularProgress style={{ alignSelf: 'flex-start', padding: 10 }}
-                                size={150}
-                                width={7}
-                                fill={80}
-                                tintColor="silver"
-                                onAnimationComplete={() => console.log('onAnimationComplete')}
-                                backgroundColor="#66616b">
-                                {
-                                    (fill) => (
-                                        <View style={{ left: 10 }}>
-                                            <Text style={{ fontSize: 24, color: 'white', alignSelf: 'center', fontWeight: 'bold' }}>
-                                                {'Level 1'}
-                                            </Text>
-                                            <Text style={{ top: 8, fontSize: 20, color: 'white', alignSelf: 'center' }}>
-                                                {'319 Points'}
-                                            </Text>
-                                        </View>
-                                    )
-                                }
-                            </AnimatedCircularProgress>
-                            <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
-                                <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth / 2, backgroundColor: 'white' }}>
+                        <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+                            <View style={{ flexDirection: 'row' }}>
+                                <Item style={{ left:12, borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth, backgroundColor: 'white' }}>
                                     <Icon name="ios-search" />
                                     <Input placeholder="Search" />
+                                    <Icon name="ios-people" />
                                 </Item>
-                                <Badge style={{ height: 55, alignSelf: 'flex-end', backgroundColor: '#00000066' }}>
-                                    <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>2 Pending</Text>
-                                    <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>3 Total</Text>
-                                </Badge>
+                            </View>
+                            <View style={{ flexDirection: 'row'}}>
+                                <AnimatedCircularProgress style={{ alignSelf: 'flex-start', padding: 10 }}
+                                    size={150}
+                                    width={7}
+                                    fill={80}
+                                    tintColor="silver"
+                                    onAnimationComplete={() => console.log('onAnimationComplete')}
+                                    backgroundColor="#66616b">
+                                    {
+                                        (fill) => (
+                                            <View style={{ left: 10 }}>
+                                                <Text style={{ fontSize: 24, color: 'white', alignSelf: 'center', fontWeight: 'bold' }}>
+                                                    {'Level 1'}
+                                                </Text>
+                                                <Text style={{ top: 8, fontSize: 20, color: 'white', alignSelf: 'center' }}>
+                                                    {'319 Points'}
+                                                </Text>
+                                            </View>
+                                        )
+                                    }
+                                </AnimatedCircularProgress>
+                                <View style={{ flexDirection: 'column', justifyContent: 'space-between', alignSelf:'center', left: 90  }}>
+                                    <Badge style={{ height: 65, alignSelf: 'flex-end', backgroundColor: '#00000066' }}>
+                                        <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>2 Pending</Text>
+                                        <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>3 Total</Text>
+                                    </Badge>
+                                </View>
                             </View>
                         </View>
                     </ImageBackground>
                     <View style={{ flex: 1, flexDirection: 'row', alignSelf: 'center' }}>
-                        <Segment style={{ padding: 5 }}>
-                            <Button first active={this.state.toBeDone === true} onPress={() => { this.setState({ toBeDone: true, Completed: false }) }}>
-                                <Text style={{ padding: 5 }}>Activities to be done</Text>
+                        <View style={{ padding: 5, flexDirection: 'row' }}>
+                            <Button style={{ backgroundColor:this.state.toBeDoneStyle }} first active={this.state.toBeDone === true} onPress={() => { this.setState({ toBeDone: true, Completed: false, toBeDoneStyle:'lightgray', completedStyle:'white' }) }}>
+                                <Text style={{ padding: 5, fontWeight: 'bold' }}>Activities to be done</Text>
                             </Button>
-                            <Button active={this.state.Completed === true} onPress={() => { this.setState({ toBeDone: false, Completed: true }) }}>
-                                <Text style={{ padding: 5 }}>Completed</Text>
+                            <Button style={{ backgroundColor:this.state.completedStyle }} active={this.state.Completed === true} onPress={() => { this.setState({ toBeDone: false, Completed: true, toBeDoneStyle:'white', completedStyle:'lightgray' }) }}>
+                                <Text style={{ padding: 5, fontWeight: 'bold' }}>Completed</Text>
                             </Button>
-                        </Segment>
+                        </View>
                     </View>
                     <View>
                         <Accordion
-                            dataArray={[{ data: this.addGoal }]}
+                            dataArray={[{ data: this.goalStatus }]}
                             animation={true}
                             expanded={0}
                             renderHeader={this._goalCardOneHeader}
@@ -224,8 +227,8 @@ class Goals extends Component {
                     :
                     <Footer>
                         <FooterTab>
-                            <Button full onPress={this.addGoal}>
-                                <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Add Goal</Text>
+                            <Button full onPress={this.addGoal} style={{ backgroundColor: 'white'}}>
+                                <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold' }}>Add Goal</Text>
                             </Button>
                         </FooterTab>
                     </Footer>

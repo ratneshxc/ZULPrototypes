@@ -15,12 +15,13 @@ class AddGoal extends Component {
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
                         <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column' }}>
-                            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', }}>
-                                <Text style={{ padding: 10, color: 'white', fontSize: 26, fontWeight: 'bold' }}>Select a goal</Text>
-                                <Item style={{ borderRadius: 25, padding: 5, height: 30, flexDirection: 'row', width: screenwidth / 2, backgroundColor: 'white' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+                                <Item style={{ left: 12, borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth, backgroundColor: 'white' }}>
                                     <Icon name="ios-search" />
                                     <Input placeholder="Search" />
+                                    <Icon name="ios-people" />
                                 </Item>
+                                <Text style={{ padding: 10, color: 'white', fontSize: 26, fontWeight: 'bold' }}>Select a goal</Text>
                             </View>
                         </View>
                     </ImageBackground>
@@ -30,32 +31,10 @@ class AddGoal extends Component {
                                 <CardItem bordered >
                                     <Left>
                                         <Icon active name="logo-googleplus" />
-                                        <Text>Practice self-disclosure</Text>
+                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Practice self-disclosure</Text>
                                     </Left>
                                     <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end' }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
-                                        <Icon active />
-                                        <Text>Save your income tax</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end' }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
-                                        <Icon active type="MaterialCommunityIcons" name="run" />
-                                        <Text>Lose 6 kg weight</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end' }} />
+                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
                                     </Right>
                                 </CardItem>
                             </TouchableOpacity>
@@ -63,17 +42,39 @@ class AddGoal extends Component {
                                 <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
                                     <Left>
                                         <Icon active name="logo-googleplus" />
-                                        <Text>Relieve stress and anger</Text>
+                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Save your income tax</Text>
                                     </Left>
                                     <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end' }} />
+                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
                                     </Right>
                                 </CardItem>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered style={{ height: 60 }}>
-                                    <Text>Create your own</Text>
-                                    <Icon active type="EvilIcons" name="plus" />
+                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
+                                    <Left>
+                                        <Icon active type="MaterialCommunityIcons" name="run" />
+                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Lose 6 kg weight</Text>
+                                    </Left>
+                                    <Right>
+                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
+                                    </Right>
+                                </CardItem>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.goToYourAddGoal}>
+                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
+                                    <Left>
+                                        <Icon active name="logo-googleplus" />
+                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Relieve stress and anger</Text>
+                                    </Left>
+                                    <Right>
+                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
+                                    </Right>
+                                </CardItem>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={this.goToYourAddGoal}>
+                                <CardItem bordered style={{ height: 60, alignSelf:'center' }}>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Create your own</Text>
+                                    <Icon active type="EvilIcons" name="plus" style={{ fontWeight: 'bold' }}/>
                                 </CardItem>
                             </TouchableOpacity>
                         </Card>
