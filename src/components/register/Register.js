@@ -21,7 +21,7 @@ export default class Register extends React.Component {
 
   render() {
     return (
-      <View style={{ padding: 5 }}>
+      <View style={{ padding: 5, flex: 1 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
           <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
         </View>

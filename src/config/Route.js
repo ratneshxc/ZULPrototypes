@@ -6,6 +6,7 @@ import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
 import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
 import ExpertList from '../components/expertconnect/ExpertConnect';
+import ExpertProfile from '../components/expertconnect/ExpertProfile';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Booking from '../components/expertconnect/Booking';
 import BookingConfirmation from '../components/expertconnect/BookingConfirmation';
@@ -14,6 +15,7 @@ import Goals from '../components/goals/Goals';
 import AddGoal from '../components/goals/AddGoal';
 import YourGoal from '../components/goals/YourGoal';
 import GoalStatus from '../components/goals/GoalStatus';
+import AddActivity from '../components/goals/AddActivity';
 import Vitals from '../components/assessment/vitals/Vitals';
 import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
@@ -22,6 +24,8 @@ import AssessmentReport from '../components/report/assessmentReports/AssessmentR
 import LogIn from '../components/login/Login';
 import Register from '../components/register/Register';
 import Notification from '../components/notifications/Notifications';
+import AppIntro from '../components/taketour/AppIntro';
+import LandingComponent from '../components/taketour/LandingComponent';
 
 
 const TabRoute = createBottomTabNavigator({
@@ -86,7 +90,7 @@ const NotificationApp = createStackNavigator({
   Notification: {
     screen: Notification,
     navigationOptions: {
-     title:'Notifications'
+      title: 'Notifications'
     }
   }
 })
@@ -163,6 +167,12 @@ const ExpertStack = createStackNavigator({
     navigationOptions: {
       header: null
     }
+  },
+  ExpertProfile: {
+    screen: ExpertProfile,
+    navigationOptions: {
+      header: null
+    }
   }
 })
 const GoalStack = createStackNavigator({
@@ -188,6 +198,12 @@ const GoalStack = createStackNavigator({
     screen: GoalStatus,
     navigationOptions: {
       title: 'Run 5km Daily'
+    }
+  },
+  AddActivity: {
+    screen: AddActivity,
+    navigationOptions: {
+      title: 'Select an activity'
     }
   }
 })
@@ -232,10 +248,22 @@ const MainApp = createDrawerNavigator({
         return <FontIcon name={iconName} size={25} color={tintColor} />;
       }
     }
+  },
+  SignOut: {
+    screen: LandingComponent,
+    navigationOptions: {
+      title: 'Sign Out',
+      drawerIcon: ({ focused, tintColor }) => {
+        const iconName = `users${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
   }
 });
 
 const AppRoute = createSwitchNavigator({
+  AppIntro: { screen: AppIntro },
+  LandingComponent: { screen: LandingComponent },
   LogIn: { screen: LogIn },
   Register: { screen: Register },
   MainApp: { screen: MainApp }
