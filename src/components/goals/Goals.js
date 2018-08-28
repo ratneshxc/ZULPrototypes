@@ -8,13 +8,13 @@ const screenwidth = windowObj.width - 20;
 
 class Goals extends Component {
     componentWillMount() {
-         GoalsDetails = [
-            { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points",data:this.addGoal }
+        GoalsDetails = [
+            { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points", data: this.addGoal }
         ];
-         GoalsTwoDetails = [
-            { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points",data:this.addGoal }
+        GoalsTwoDetails = [
+            { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points", data: this.addGoal }
         ];
-        }
+    }
     constructor(props) {
         super(props);
         this.state = { toBeDone: true, Completed: false };
@@ -27,16 +27,16 @@ class Goals extends Component {
     }
     _goalCardOneHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#215E21", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 45 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                    <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'white', bottom: 6 }}>Save your income tax</Text>
+                    <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'black', bottom: 6 }}>Save your income tax</Text>
                     {expanded
-                        ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                        : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                        ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'black' }} />
+                        : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'black' }} />}
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", width: screenwidth - 70, bottom: 9 }}>
-                    <Text style={{ color: 'white' }}>Level 1</Text>
-                    <Text style={{ color: 'white' }}>1/3 Activity pending</Text>
+                    <Text style={{ color: 'black' }}>Level 1</Text>
+                    <Text style={{ color: 'black' }}>1/3 Activity pending</Text>
                 </View>
             </View>
         );
@@ -45,7 +45,7 @@ class Goals extends Component {
         return (
             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                 <TouchableOpacity onPress={dataArray.data}>
-                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf:'center' }}>
+                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
                                 <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Track your daily expenses</Text>
@@ -63,7 +63,7 @@ class Goals extends Component {
                     </Card>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={dataArray.data}>
-                    <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf:'center' }}>
+                    <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
                                 <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Invest in ELSS fund</Text>
@@ -85,32 +85,32 @@ class Goals extends Component {
     }
     _goalCardTwoHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#215E21", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 45 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                    <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'white', bottom: 6 }}>Relieve stress and anger</Text>
+                    <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'black', bottom: 6 }}>Relieve stress and anger</Text>
                     {expanded
-                        ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                        : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                        ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'black' }} />
+                        : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'black' }} />}
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", width: screenwidth - 70, bottom: 9 }}>
-                    <Text style={{ color: 'white' }}>Level 2</Text>
-                    <Text style={{ color: 'white' }}>1/2 Activity pending</Text>
+                    <Text style={{ color: 'black' }}>Level 2</Text>
+                    <Text style={{ color: 'black' }}>1/2 Activity pending</Text>
                 </View>
             </View>
         );
     }
     _goalCardThreeHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "#215E21", height: 45 }}>
+            <View style={{ flexDirection: "column", padding: 10, justifyContent: "space-between", backgroundColor: "white", height: 45 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                    <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'white', bottom: 6 }}>Lose 4kg weight</Text>
+                    <Text style={{ alignSelf: 'flex-start', fontWeight: 'bold', fontSize: 18, color: 'black', bottom: 6 }}>Lose 4kg weight</Text>
                     {expanded
-                        ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                        : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                        ? <Icon style={{ fontSize: 5 }} name='chevron-up' type="FontAwesome" style={{ color: 'black' }} />
+                        : <Icon style={{ fontSize: 5 }} name='chevron-down' type="FontAwesome" style={{ color: 'black' }} />}
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", width: screenwidth - 70, bottom: 9 }}>
-                    <Text style={{ color: 'white' }}>Level 3</Text>
-                    <Text style={{ color: 'white' }}>1/1 Activity pending</Text>
+                    <Text style={{ color: 'black' }}>Level 3</Text>
+                    <Text style={{ color: 'black' }}>1/1 Activity pending</Text>
                 </View>
             </View>
         );
@@ -119,7 +119,7 @@ class Goals extends Component {
         return (
             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                 <TouchableOpacity onPress={dataArray.data}>
-                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf:'center' }}>
+                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
                                 <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>{dataArray.titleOne}</Text>
@@ -168,7 +168,7 @@ class Goals extends Component {
                                 }
                             </AnimatedCircularProgress>
                             <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
-                                <Item style={{ borderRadius: 25, padding:5, height: 30, flexDirection: 'row', width: screenwidth / 2, backgroundColor: 'white' }}>
+                                <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth / 2, backgroundColor: 'white' }}>
                                     <Icon name="ios-search" />
                                     <Input placeholder="Search" />
                                 </Item>
@@ -191,7 +191,7 @@ class Goals extends Component {
                     </View>
                     <View>
                         <Accordion
-                            dataArray={[{data:this.addGoal}]}
+                            dataArray={[{ data: this.addGoal }]}
                             animation={true}
                             expanded={0}
                             renderHeader={this._goalCardOneHeader}

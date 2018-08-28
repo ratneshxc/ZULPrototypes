@@ -14,6 +14,7 @@ import Goals from '../components/goals/Goals';
 import AddGoal from '../components/goals/AddGoal';
 import YourGoal from '../components/goals/YourGoal';
 import GoalStatus from '../components/goals/GoalStatus';
+import AddActivity from '../components/goals/AddActivity';
 import Vitals from '../components/assessment/vitals/Vitals';
 import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
@@ -173,6 +174,12 @@ const GoalStack = createStackNavigator({
     screen: GoalStatus,
     navigationOptions: {
       title:'Run 5km Daily'
+    }
+  },
+  AddActivity: {
+    screen: AddActivity,
+    navigationOptions: {
+      title:'Select an activity'
     }
   }
 })
