@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity,TouchableHighlight, FlatList, ScrollView } from 'react-native';
 import { Thumbnail, Badge, Text, Icon } from 'native-base';
 import StarRating from 'react-native-star-rating';
 
@@ -8,7 +8,7 @@ const ExpertList = (props) => {
     return (
         <FlatList
             data={[{ key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }]}
-            renderItem={({ item }) => <ExpertComponent item={item} bookExperts={props.bookExperts} />}
+            renderItem={({ item }) => <ExpertComponent item={item} bookExperts={props.bookExperts} viewExperts={props.viewExperts}/>}
         />
     )
 }
@@ -22,6 +22,7 @@ const ExpertComponent = (props) => {
     return (
         <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
             <View style={{ flex: 1, flexDirection: 'row' }}>
+            <TouchableHighlight onPress={()=>props.viewExperts()}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
                     <View style={{ flexDirection: 'row', marginTop: 5 }}>
@@ -38,6 +39,8 @@ const ExpertComponent = (props) => {
                     <Text style={{ fontSize: 12, color: '#00b386', textDecorationLine: 'underline' }}>350 Reviews</Text>
                     {/* <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text> */}
                 </View>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={()=>props.viewExperts()}>
                 <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 }}>Samira Reddy</Text>
@@ -67,6 +70,7 @@ const ExpertComponent = (props) => {
                         </Badge>
                     </ScrollView>
                 </View>
+                </TouchableHighlight>
             </View>
             <View style={{ flexDirection: 'row' }} >
                 <View style={{ flex: 1 }}>

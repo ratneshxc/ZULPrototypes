@@ -6,6 +6,7 @@ import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
 import SpecialitiyConnect from '../components/expertconnect/ExpertSpecialityConnect';
 import ExpertList from '../components/expertconnect/ExpertConnect';
+import ExpertProfile from '../components/expertconnect/ExpertProfile';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Booking from '../components/expertconnect/Booking';
 import BookingConfirmation from '../components/expertconnect/BookingConfirmation';
@@ -143,6 +144,12 @@ const ExpertStack = createStackNavigator({
   },
   AppointmentList:{
     screen: AppointmentList,
+    navigationOptions: {
+      header: null
+    }
+  },
+  ExpertProfile:{
+    screen: ExpertProfile,
     navigationOptions: {
       header: null
     }
