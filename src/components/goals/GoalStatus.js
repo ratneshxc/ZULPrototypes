@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground } from 'react-native';
-
-import {Card, CardItem, Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
-//import { BarChart } from 'react-native-charts';
+import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground, processColor } from 'react-native';
+import { Card, CardItem, Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
+import { BarChart } from 'react-native-charts-wrapper';
 
 
 const windowObj = Dimensions.get('window');
@@ -11,99 +10,157 @@ const screenheight = windowObj.height / 3;
 
 
 class GoalStatus extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            legend: {
+                enabled: true,
+                textSize: 14,
+                form: 'SQUARE',
+                formSize: 14,
+                xEntrySpace: 10,
+                yEntrySpace: 5,
+                formToTextSpace: 5,
+                wordWrapEnabled: true,
+                maxSizePercent: 0.5
+            },
+            data: {
+                dataSets: [{
+                    values: [{ y: 4000 }, { y: 6000 }, { y: 8000 }, { y: 2000 }, { y: 8000 }, { y: 10000 }, { y: 5000 }],
+                    label: 'Steps',
+                    config: {
+                        color: processColor('teal'),
+                        barShadowColor: processColor('lightgrey'),
+                        highlightAlpha: 90,
+                        highlightColor: processColor('red'),
+                    }
+                }],
+                config: {
+                    barWidth: 0.7,
+                }
+            },
+            highlights: [{ x: 3 }, { x: 6 }],
+            xAxis: {
+                valueFormatter: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+                granularityEnabled: true,
+                granularity: 1,
+            }
+        };
+    }
+
+    handleSelect(event) {
+        let entry = event.nativeEvent
+        if (entry == null) {
+            this.setState({ ...this.state, selectedEntry: null })
+        } else {
+            this.setState({ ...this.state, selectedEntry: JSON.stringify(entry) })
+        }
+        console.log(event.nativeEvent)
+    }
     render() {
         return (
             <Container>
-                <View>
+                <View style={styles.container}>
+                    <BarChart
+                        style={styles.chart}
+                        data={this.state.data}
+                        xAxis={this.state.xAxis}
+                        animation={{ durationX: 2000 }}
+                        legend={this.state.legend}
+                        gridBackgroundColor={processColor('#ffffff')}
+                        visibleRange={{ x: { min: 5, max: 5 } }}
+                        drawBarShadow={false}
+                        drawValueAboveBar={true}
+                        drawHighlightArrow={true}
+                        onSelect={this.handleSelect.bind(this)}
+                        highlights={this.state.highlights}
+                        onChange={(event) => console.log(event.nativeEvent)}
+                    />
                 </View>
                 <Content style={styles.container}>
-                {/* <BarChart
-  dataSets={[
-    { 
-      fillColor: '#46b3f7', 
-      data: [
-        { value: 15 },
-        { value: 10 },
-        { value: 12 },
-        { value: 11 },
-      ]
-    },
-    { 
-      fillColor: '#3386b9', 
-      data: [
-        { value: 14 },
-        { value: 11 },
-        { value: 14 },
-        { value: 13 },
-      ]
-    },
-  ]}
-  graduation={1}
-  horizontal={false}
-  showGrid={true}
-  barSpacing={5}
-  style={{
-    height: 300,
-    margin: 15,
-  }}/> */}
-                    {/* <View style={{ padding: 10, flex:1, flexDirection:'row'}}>
-                        <Text style={{ fontSize:20, padding: 10 }}>Select a goal</Text>
-                        <Icon active type="Entypo" name="flag" style={{ fontSize:30, top:5 }}/>
-                    </View> */}
+
                     <View>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <CardItem bordered>
-                                <Icon active name="logo-googleplus" />
-                                <Text>Practice self-disclosure</Text>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Monday</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </Right>
                             </CardItem>
                             <CardItem bordered>
-                                <Icon active />
-                                <Text>Save your income tax</Text>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Tuesday</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </Right>
                             </CardItem>
                             <CardItem bordered>
-                                <Icon active type="MaterialCommunityIcons" name="run" />
-                                <Text>Lose 6 kg weight</Text>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Wednesday</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </Right>
                             </CardItem>
                             <CardItem bordered>
-                                <Icon active name="logo-googleplus" />
-                                <Text>Relieve stress and anger</Text>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Thursday</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </Right>
                             </CardItem>
                             <CardItem bordered>
-                                <Text>Create your own</Text>
-                                <Icon active type="EvilIcons" name="plus"/>
-                                {/* <Right>
-                                    <Icon name="arrow-forward" />
-                                </Right> */}
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Friday</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </Right>
+                            </CardItem>
+                            <CardItem bordered>
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Saturday</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </Right>
+                            </CardItem>
+                            <CardItem bordered>
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Sunday</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </Right>
                             </CardItem>
                         </Card>
                     </View>
                 </Content>
-               
+
             </Container>
         )
     }
 
 }
 const styles = StyleSheet.create({
-    questionView: {
-        margin: 30,
-        backgroundColor: '#00000066',
+    container: {
         flex: 1,
-        padding: 3,
-        flexDirection: 'column',
-        height: 50
+        padding: 10
+    },
+    chart: {
+        flex: 1
     }
 })
 export default GoalStatus;

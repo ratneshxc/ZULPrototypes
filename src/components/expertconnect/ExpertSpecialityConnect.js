@@ -20,7 +20,7 @@ const Speciality = (props) => {
                     </Right>
                 </Header>
             <Header searchBar rounded>
-                <Item>
+                <Item  style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                     <Icon name="ios-search" />
                     <Input placeholder="Search Experts, Specialities etc.." />
                     <Icon name="ios-people" />
