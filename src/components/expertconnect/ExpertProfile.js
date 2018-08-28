@@ -137,19 +137,19 @@ export default class ExpertProfile extends Component {
                         animation={true}
                         renderHeader={this._renderHeader}
                         style={{marginTop:1}}
-                        expanded={0}
+                        
                     />
                     <Accordion
                         dataArray={ReviewDetails}
                         animation={true}
                         renderHeader={this._renderHeader}
                         style={{marginTop:1}}
-                        expanded={0}
+                        
                     />
                     <Accordion
                         dataArray={AddressDetails}
                         animation={true}
-                        expanded={0}
+                       
                         renderHeader={this._renderHeader}
                         style={{marginTop:1}}
                     />
