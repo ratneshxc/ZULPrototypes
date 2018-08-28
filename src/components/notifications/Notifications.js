@@ -1,26 +1,32 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
+import { Container, List, Content, ListItem, Text } from 'native-base';
+import { connect } from 'react-redux';
+import NotificationComponent from '../notifications/NotificationComponent';
 
+const mapStateToProps = state => ({
+    newNotifications: state.Notification.newNotifications,
+    oldNotifications: state.Notification.oldNotifications
+})
 
 const Notifications = (props) => {
     return (
         <Container>
-            <Header>
-                <Left>
-                    <Button onPress={props.screenProps.OpenDrawer} transparent>
-                        <Icon name='menu' />
-                    </Button>
-                </Left>
-                <Body>
-                    <Title>Notifications</Title>
-                </Body>
-                <Right>
-                </Right>
-
-            </Header>
             <Content style={styles.container}>
-
+                <List>
+                    <ListItem itemDivider>
+                        <Text>Latest</Text>
+                    </ListItem>
+                    {props.newNotifications.map((x, i) => (
+                        <NotificationComponent key={i} noti={x} />
+                    ))}
+                    <ListItem itemDivider>
+                        <Text>Earlier</Text>
+                    </ListItem>
+                    {props.oldNotifications.map((x, i) => (
+                        <NotificationComponent key={i} noti={x} />
+                    ))}
+                </List>
             </Content>
         </Container>
     )
@@ -29,4 +35,4 @@ const styles = StyleSheet.create({
     container: {
     }
 })
-export default Notifications;
+export default connect(mapStateToProps)(Notifications);

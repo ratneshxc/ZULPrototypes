@@ -31,9 +31,10 @@ class Dashboard extends React.Component {
                         <Title>Dashboard</Title>
                     </Body>
                     <Right>
-                        <TouchableOpacity style={{ backgroundColor: '#fff', flexDirection: 'row', padding: 5, borderRadius: 10 }}>
-                            <Text style={{ fontSize: 20 }}>5</Text>
-                            <Icon name="bell" style={{ fontSize: 15 }} type="FontAwesome" />
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate("Notification")} style={{ backgroundColor: '#26386b', flexDirection: 'row', padding: 5, borderRadius: 10 }}>
+                            <Icon name="bell" style={{ fontSize: 20, color: '#fff' }} type="FontAwesome" />
+                            <Text style={{ fontSize: 15, color: '#fff',fontWeight:'bold' }}>10</Text>
+
                         </TouchableOpacity>
                     </Right>
                 </Header>

@@ -9,6 +9,7 @@ import RewardReducer from './reducers/RewardReducer';
 import CommentReducer from './reducers/CommentReducer';
 import DashboardReducer from './reducers/DashboardReducer';
 import ReportReducer from './reducers/ReportReducer';
+import NotificationReducer from './reducers/NotificationReducer';
 
 const middleware = applyMiddleware(logger, thunk, promise())
 
@@ -19,7 +20,8 @@ const ZingUpLifeReducers = combineReducers({
     Reward: RewardReducer,
     Comment: CommentReducer,
     Dashboard: DashboardReducer,
-    Report: ReportReducer
+    Report: ReportReducer,
+    Notification: NotificationReducer
 }, middleware);
 
 const ZingUpLifeStore = createStore(ZingUpLifeReducers);

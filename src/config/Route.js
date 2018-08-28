@@ -21,6 +21,7 @@ import Assessment from '../components/assessment/Assessment';
 import AssessmentReport from '../components/report/assessmentReports/AssessmentReport';
 import LogIn from '../components/login/Login';
 import Register from '../components/register/Register';
+import Notification from '../components/notifications/Notifications';
 
 
 const TabRoute = createBottomTabNavigator({
@@ -74,6 +75,22 @@ const TabRoute = createBottomTabNavigator({
     showIcon: true,
     swipeEnabled: false
   }, )
+
+const NotificationApp = createStackNavigator({
+  TabRoute: {
+    screen: TabRoute,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Notification: {
+    screen: Notification,
+    navigationOptions: {
+     title:'Notifications'
+    }
+  }
+})
+
 
 
 const WellnessStack = createStackNavigator({
@@ -135,13 +152,13 @@ const ExpertStack = createStackNavigator({
       header: null
     }
   },
-  BookingConfirmation:{
+  BookingConfirmation: {
     screen: BookingConfirmation,
     navigationOptions: {
       header: null
     }
   },
-  AppointmentList:{
+  AppointmentList: {
     screen: AppointmentList,
     navigationOptions: {
       header: null
@@ -152,31 +169,32 @@ const GoalStack = createStackNavigator({
   Goals: {
     screen: Goals,
     navigationOptions: {
-      title:'Goal'
+      title: 'Goal'
     }
   },
   AddGoal: {
     screen: AddGoal,
     navigationOptions: {
-      title:'Add Goal'
+      title: 'Add Goal'
     }
   },
   YourGoal: {
     screen: YourGoal,
     navigationOptions: {
-      title:'Your Goal'
+      title: 'Your Goal'
     }
   },
   GoalStatus: {
     screen: GoalStatus,
     navigationOptions: {
-      title:'Run 5km Daily'
+      title: 'Run 5km Daily'
     }
   }
 })
+
 const MainApp = createDrawerNavigator({
   LandingTab: {
-    screen: TabRoute,
+    screen: NotificationApp,
     navigationOptions: {
       title: 'Home',
       drawerIcon: ({ focused, tintColor }) => {
