@@ -1,8 +1,31 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, TouchableOpacity,TouchableHighlight, FlatList, ScrollView } from 'react-native';
-import { Container, Header, Thumbnail,Item, Input, Icon, Button, Text, Content, Badge, Left, Body, Title, Right,Toast } from 'native-base';
+import { View, TouchableOpacity, ScrollView } from 'react-native';
+import { Container, Header, Thumbnail,Item, Input, Icon, Button, Text, Content, Badge, Left, Body, Title, Right ,Accordion} from 'native-base';
 import StarRating from 'react-native-star-rating';
+const ExpertDetails = [
+    { title: "About Dr. Samira", content: "Dr. P. Sameera Reddy is a leading Paediatric Neonatologist with 23 years of clinical experience. " },
+];
+const VerficationDetails = [
+    { title: "Verification", content: "MEDICAL LICENSE" },
+];
+
 export default class ExpertProfile extends Component {
+    _renderHeader(dataArray, expanded) {
+        return (
+            <View
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252" }}
+            >
+                <Text style={{ flex: 1, color: 'white' }}>
+                    {" "}{dataArray.title}
+                </Text>
+
+
+                {expanded
+                    ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
+                    : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+            </View>
+        );
+    }
     render() {
         return (
             <Container>
@@ -41,7 +64,7 @@ export default class ExpertProfile extends Component {
                 <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 }}>Samira Reddy</Text>
-                            <Icon name='heart' type="FontAwesome" style={{ fontSize:18, color:'red',marginRight:15 ,}} />
+                            <Icon name='heart' type="FontAwesome" style={{ fontSize:18, color:'red',marginRight:1 ,}} />
                          
                     </View>
                     <Text style={{ fontSize: 13, color: '#505050', margin:0}}>Dermatologiest, MBBS</Text>
@@ -84,6 +107,20 @@ export default class ExpertProfile extends Component {
                 </View>
             </View>
         </View>
+
+        {/*About Accordian*/}
+        <Accordion
+                        dataArray={ExpertDetails}
+                        animation={true}
+                        renderHeader={this._renderHeader}
+                        style={{marginTop:5}}
+                    />
+                     <Accordion
+                        dataArray={VerficationDetails}
+                        animation={true}
+                        renderHeader={this._renderHeader}
+                        style={{marginTop:1}}
+                    />
                 </Content>
             </Container>
         )
