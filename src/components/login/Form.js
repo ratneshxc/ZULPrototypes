@@ -28,12 +28,12 @@ export default class App extends Component {
           <View style={{ flexDirection: 'row' }}>
             <View style={{ flex: 1 }}>
               <TouchableOpacity style={styles.forgotBtn}>
-                <Text style={styles.whiteText}>Forgot password?</Text>
+                <Text style={[styles.whiteText, { textDecorationLine: 'underline' }]}>Forgot password?</Text>
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }}>
               <TouchableOpacity style={styles.registerBtn} onPress={this.props.goRegister}>
-                <Text style={styles.whiteText}>Sign Up</Text>
+                <Text style={[styles.whiteText, { textDecorationLine: 'underline' }]}>Sign Up</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -84,8 +84,7 @@ const styles = StyleSheet.create({
   },
   whiteText: {
     color: '#ffffff',
-    fontSize: 15,
-    textDecorationLine:'underline'
+    fontSize: 15
   },
   registerBtn: {
     padding: 5

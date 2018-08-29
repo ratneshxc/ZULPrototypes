@@ -31,6 +31,7 @@
     "react-native-panel": "^1.0.4",
     "react-native-percentage-circle": "^1.0.7",
     "react-native-progress": "^3.5.0",
+    "react-native-progress-bar-classic": "^1.2.1",
     "react-native-progress-circle": "^2.0.0",
     "react-native-remote-svg": "^1.2.0",
     "react-native-scrollable-tab-view": "^0.8.0",

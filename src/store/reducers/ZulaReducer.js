@@ -2,7 +2,8 @@ const initialState = {
     zulaMessageText: '',
     isZulaMessageContainerVisible: false,
     isZulaAccessible: false,
-    isZulaWishContainerVisible: false
+    isZulaWishContainerVisible: true,
+    isZulaVitalContainerVisible:false
 }
 
 
@@ -22,6 +23,10 @@ const ZulaReducer = (state = initialState, action) => {
         }
         case 'ZulaReducer_Wish': {
             state = { ...state, isZulaWishContainerVisible: action.payload }
+            break;
+        }
+        case 'ZulaReducer_Vital': {
+            state = { ...state, isZulaVitalContainerVisible: action.payload }
             break;
         }
     }
