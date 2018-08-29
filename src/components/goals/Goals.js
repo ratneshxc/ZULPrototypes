@@ -194,12 +194,12 @@ class Goals extends Component {
                                         <Badge style={{ flexDirection: 'row', height: 100, alignSelf: 'center', backgroundColor: '#00000066', width:160 }}>
                                             <View style={{ flexDirection: 'column', height: 60, alignSelf: 'center', bottom: 35}}>
                                                 <Text style={{ fontSize: 60, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>2</Text>
-                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold' }}>Pending</Text>
+                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold', bottom:10 }}>Pending</Text>
                                             </View>
                                             <View style={{ right: 50, top: 60, transform: [{ rotate: '90deg' }], backgroundColor: 'white', height: 2, width: 120 }}></View>
                                             <View style={{ flexDirection: 'column', right: 90, height: 60, alignSelf: 'center', bottom: 35 }}>
                                                 <Text style={{ fontSize: 60, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>3</Text>
-                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold' }}>Total</Text>
+                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold', bottom:10 }}>Total</Text>
                                             </View>
                                         </Badge>
                                     </View>
