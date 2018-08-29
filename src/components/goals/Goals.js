@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
 import { Footer, FooterTab, Card, Container, Header, Body, Left, Button, Icon, Right, Title, Content, Accordion, Badge, Segment, Item, Input } from 'native-base';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import ProgressBarClassic from 'react-native-progress-bar-classic';
+import GoalVideo from './GoalVideo';
 
 const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width - 20;
@@ -9,15 +11,15 @@ const screenwidth = windowObj.width - 20;
 class Goals extends Component {
     componentWillMount() {
         GoalsDetails = [
-            { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points", data: this.goalStatus }
+            { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points", data: this.goalStatus, video:true }
         ];
         GoalsTwoDetails = [
-            { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points", data: this.goalStatus }
+            { titleOne: "Drink 3l water daily", contentOne: "2l more for the day", pointOne: "40 points", data: this.goalStatus, video:false }
         ];
     }
     constructor(props) {
         super(props);
-        this.state = { toBeDone: true, Completed: false, toBeDoneStyle:'lightgray', completedStyle:'white' };
+        this.state = { toBeDone: true, Completed: false, toBeDoneStyle: 'lightgray', completedStyle: 'white' };
     }
     addGoal = () => {
         this.props.navigation.navigate('AddGoal');
@@ -48,36 +50,26 @@ class Goals extends Component {
                     <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
-                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Track your daily expenses</Text>
+                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight:'bold' }}>Track your daily expenses</Text>
                             </Left>
                             <Right>
                                 <Text style={{ fontSize: 12 }}>60 points</Text>
                             </Right>
                         </View>
-                        <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                            <Text>Log your expenses</Text>
-                        </View>
-                        <View>
-                            <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
-                        </View>
+                        <View style={{ height: 20 }}><Text style={{ fontSize: 13, fontWeight:'bold', alignSelf:'center', top:8  }}>Log your today's expenses</Text></View>
                     </Card>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={dataArray.data}>
                     <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
-                        <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'row' }}>
                             <Left>
-                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>Invest in ELSS fund</Text>
+                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight:'bold' }}>Invest in ELSS fund</Text>
                             </Left>
                             <Right>
                                 <Text style={{ fontSize: 12 }}>50 points</Text>
                             </Right>
                         </View>
-                        <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                            <Text>Make a payemnt for this month</Text>
-                        </View>
-                        <View>
-                            <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
-                        </View>
+                        <View style={{ height: 20 }}><Text style={{ fontSize: 13, fontWeight:'bold', alignSelf:'center', top:8  }}>Pay for this month</Text></View>
                     </Card>
                 </TouchableOpacity>
             </View>
@@ -118,24 +110,30 @@ class Goals extends Component {
     _goalCardTwoContent(dataArray) {
         return (
             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+            {(dataArray.video)?
+            <GoalVideo />
+                :
                 <TouchableOpacity onPress={dataArray.data}>
                     <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
-                        <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'row' }}>
                             <Left>
-                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3 }}>{dataArray.titleOne}</Text>
+                                <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight:'bold' }}>{dataArray.titleOne}</Text>
                             </Left>
                             <Right>
                                 <Text style={{ fontSize: 12 }}>{dataArray.pointOne}</Text>
                             </Right>
                         </View>
-                        <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                            <Text>{dataArray.contentOne}</Text>
-                        </View>
+                        <View style={{ height: 20 }}><Text style={{ fontSize: 13, fontWeight:'bold', alignSelf:'center', top:8  }}>{dataArray.contentOne}</Text></View>
                         <View>
-                            <View style={{ height: 5, backgroundColor: '#4dad4a' }}></View>
-                        </View>
+                            <ProgressBarClassic
+                                progress={60}
+                                label={'3L'}
+                                valueStyle={'default'}
+                            />
+                        </View> 
                     </Card>
                 </TouchableOpacity>
+            }
             </View>
         );
     }
@@ -146,13 +144,13 @@ class Goals extends Component {
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
                         <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <View style={{ flexDirection: 'row' }}>
-                                <Item style={{ left:12, borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth, backgroundColor: 'white' }}>
+                                <Item style={{ left: 12, borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth, backgroundColor: 'white' }}>
                                     <Icon name="ios-search" />
                                     <Input placeholder="Search" />
                                     <Icon name="ios-people" />
                                 </Item>
                             </View>
-                            <View style={{ flexDirection: 'row'}}>
+                            <View style={{ flexDirection: 'row' }}>
                                 <AnimatedCircularProgress style={{ alignSelf: 'flex-start', padding: 10 }}
                                     size={150}
                                     width={7}
@@ -173,7 +171,7 @@ class Goals extends Component {
                                         )
                                     }
                                 </AnimatedCircularProgress>
-                                <View style={{ flexDirection: 'column', justifyContent: 'space-between', alignSelf:'center', left: 90  }}>
+                                <View style={{ flexDirection: 'column', justifyContent: 'space-between', alignSelf: 'center', left: 90 }}>
                                     <Badge style={{ height: 65, alignSelf: 'flex-end', backgroundColor: '#00000066' }}>
                                         <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>2 Pending</Text>
                                         <Text style={{ fontSize: 22, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>3 Total</Text>
@@ -184,28 +182,28 @@ class Goals extends Component {
                     </ImageBackground>
                     <View style={{ flex: 1, flexDirection: 'row', alignSelf: 'center' }}>
                         <View style={{ padding: 5, flexDirection: 'row' }}>
-                            <Button style={{ backgroundColor:this.state.toBeDoneStyle }} first active={this.state.toBeDone === true} onPress={() => { this.setState({ toBeDone: true, Completed: false, toBeDoneStyle:'lightgray', completedStyle:'white' }) }}>
+                            <Button style={{ backgroundColor: this.state.toBeDoneStyle, borderBottomLeftRadius: 30, borderTopLeftRadius: 30 }} first active={this.state.toBeDone === true} onPress={() => { this.setState({ toBeDone: true, Completed: false, toBeDoneStyle: 'lightgray', completedStyle: 'white' }) }}>
                                 <Text style={{ padding: 5, fontWeight: 'bold' }}>Activities to be done</Text>
                             </Button>
-                            <Button style={{ backgroundColor:this.state.completedStyle }} active={this.state.Completed === true} onPress={() => { this.setState({ toBeDone: false, Completed: true, toBeDoneStyle:'white', completedStyle:'lightgray' }) }}>
+                            <Button style={{ backgroundColor: this.state.completedStyle, borderBottomRightRadius: 30, borderTopRightRadius: 30 }} active={this.state.Completed === true} onPress={() => { this.setState({ toBeDone: false, Completed: true, toBeDoneStyle: 'white', completedStyle: 'lightgray' }) }}>
                                 <Text style={{ padding: 5, fontWeight: 'bold' }}>Completed</Text>
                             </Button>
                         </View>
                     </View>
                     <View>
+                    <Accordion
+                            dataArray={GoalsDetails}
+                            animation={true}
+                            expanded={1}
+                            renderHeader={this._goalCardTwoHeader}
+                            renderContent={this._goalCardTwoContent}
+                        />
                         <Accordion
                             dataArray={[{ data: this.goalStatus }]}
                             animation={true}
                             expanded={0}
                             renderHeader={this._goalCardOneHeader}
                             renderContent={this._goalCardOneContent}
-                        />
-                        <Accordion
-                            dataArray={GoalsDetails}
-                            animation={true}
-                            expanded={1}
-                            renderHeader={this._goalCardTwoHeader}
-                            renderContent={this._goalCardTwoContent}
                         />
                         <Accordion
                             dataArray={GoalsTwoDetails}
@@ -227,7 +225,7 @@ class Goals extends Component {
                     :
                     <Footer>
                         <FooterTab>
-                            <Button full onPress={this.addGoal} style={{ backgroundColor: 'white'}}>
+                            <Button full onPress={this.addGoal} style={{ backgroundColor: 'white' }}>
                                 <Text style={{ color: 'black', fontSize: 18, fontWeight: 'bold' }}>Add Goal</Text>
                             </Button>
                         </FooterTab>
