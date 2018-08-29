@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TextInput } from 'react-native';
+import { View, Image, StyleSheet, TextInput,TouchableOpacity } from 'react-native';
 import { Button, Text, H2 } from 'native-base';
 
 export default class Passcode extends React.Component {
@@ -68,9 +68,9 @@ export default class Passcode extends React.Component {
                         />
                     </View>
                 </View>
-                <Button block onPress={this.props.goToDashboard}>
-                    <Text>Let's Go</Text>
-                </Button>
+                <TouchableOpacity style={styles.zulBtn} onPress={this.props.goToDashboard}>
+                    <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{"Let's Go".toUpperCase()}</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -91,6 +91,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ddd',
         marginHorizontal: 5
+    },zulBtn: {
+        backgroundColor: '#00c497',
+        alignItems: 'center',
+        paddingVertical: 15,
+        marginVertical: 15,
+        borderRadius: 10
+    },
+    whiteText:{
+        color:'#fff'
     }
 
 });

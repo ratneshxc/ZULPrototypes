@@ -1,7 +1,7 @@
 const initialState = {
     zulaMessageText: '',
     isZulaMessageContainerVisible: false,
-    isZulaAccessible: true,
+    isZulaAccessible: false,
     isZulaWishContainerVisible: false
 }
 

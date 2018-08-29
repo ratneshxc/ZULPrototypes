@@ -1,8 +1,18 @@
 import React from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity, Dimensions } from 'react-native';
 import WallpaperAnimation from '../animations/WallpaperAnimation';
+import { connect } from 'react-redux';
 
-export default class login extends React.Component {
+const mapDispatchToProps = dispatch => (
+    {
+        hideZula: () => dispatch({
+            type: 'ZulaReducer_Access',
+            payload: false
+        })
+    }
+)
+
+class LandingComponent extends React.Component {
     constructor() {
         super();
         this.wallpaperPaths = [
@@ -17,6 +27,7 @@ export default class login extends React.Component {
     }
 
     componentDidMount() {
+        this.props.hideZula();
         let i = 1;
         this.backInterval = setInterval(() => {
             this.setState({
@@ -103,7 +114,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         alignItems: 'center',
         padding: 10,
-        marginTop:20
+        marginTop: 20
     },
     registerBtn: {
         backgroundColor: '#2980b9',
@@ -125,3 +136,5 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
 })
+
+export default connect(null, mapDispatchToProps)(LandingComponent);

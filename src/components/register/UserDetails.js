@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { Button, Text, H3 } from 'native-base';
 
 export default class UserDetails extends React.Component {
@@ -7,22 +7,22 @@ export default class UserDetails extends React.Component {
         return (
             <View style={styles.container}>
                 <View>
-                    <Text>UserName :</Text>
+                    <Text style={{ marginBottom: 5 }}>UserName :</Text>
                     <TextInput
                         underlineColorAndroid='transparent'
                         style={styles.input}
                     />
                 </View>
                 <View>
-                    <Text>Mobile Number :</Text>
+                    <Text style={{ marginBottom: 5 }}>Mobile Number :</Text>
                     <TextInput
                         underlineColorAndroid='transparent'
                         style={styles.input}
                     />
                 </View>
-                <Button block onPress={this.props.nextHandler}>
-                    <Text>Next</Text>
-                </Button>
+                <TouchableOpacity style={styles.zulBtn} onPress={this.props.nextHandler}>
+                    <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{'Next'.toUpperCase()}</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -40,6 +40,16 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1,
         borderColor: '#ddd'
+    },
+    zulBtn: {
+        backgroundColor: '#00c497',
+        alignItems: 'center',
+        paddingVertical: 15,
+        marginVertical: 15,
+        borderRadius: 10
+    },
+    whiteText: {
+        color: '#fff'
     }
 
 });

@@ -175,10 +175,7 @@ class ZulaWakeUpbtn extends Component {
         });
     }
 
-    componentWillUnmount() {
-        Voice.destroy().then(Voice.removeAllListeners);
-        Tts.removeAllListeners();
-    }
+   
     render() {
         return (
             <TouchableHighlight style={styles.zulaBtn} onPress={this._startRecognizing.bind(this)}>
