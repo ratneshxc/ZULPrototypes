@@ -3,6 +3,8 @@ package com.zinguplife;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import net.no_mad.tts.TextToSpeechPackage;
+import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import com.brentvatne.react.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -32,10 +34,10 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new TextToSpeechPackage(),
             new MPAndroidChartPackage(),
             new ReactVideoPackage(),
             new VectorIconsPackage(),
-            new TextToSpeechPackage(),
             new SvgPackage(),
             new LinearGradientPackage(),
             new VoicePackage()

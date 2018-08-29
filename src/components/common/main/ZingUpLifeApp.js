@@ -11,7 +11,8 @@ const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 
 const mapStateToProps = state => ({
-    isCongratulationVisible: state.Reward.isCongratulationVisible
+    isCongratulationVisible: state.Reward.isCongratulationVisible,
+    isZulaAccessible: state.Zula.isZulaAccessible
 })
 
 class ZingUpLifeApp extends Component {
@@ -21,7 +22,7 @@ class ZingUpLifeApp extends Component {
                 <Root>
                     <AppRoute />
                 </Root>
-                <Zula />
+                {this.props.isZulaAccessible && <Zula />}
                 <Reward />
                 <Comment />
                 {this.props.isCongratulationVisible && <Image style={{ position: 'absolute', top: 0, left: 0, width: deviceWidth, height: deviceHeight }} source={require('../../../assests/images/congratulation-anim.gif')} />}

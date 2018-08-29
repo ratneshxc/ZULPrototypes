@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { TextInput, View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
+import SVGImage from 'react-native-remote-svg';
 export default class App extends Component {
 
   render() {
     return (
       <View style={styles.container}>
         <View style={{ alignItems: 'center' }}>
-          <View style={{ backgroundColor: '#fff', padding: 5, borderRadius: 10 }}>
+          <View style={{ padding: 5, borderRadius: 10 }}>
             <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
           </View>
         </View>
@@ -21,16 +22,35 @@ export default class App extends Component {
             secureTextEntry={true}
             style={[styles.input, { borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }]}
           />
-          <TouchableOpacity style={styles.logInBtn}>
-            <Text style={styles.whiteText}>Login</Text>
+          <TouchableOpacity style={styles.logInBtn} onPress={this.props.goToDashboard}>
+            <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{'Login'.toUpperCase()}</Text>
           </TouchableOpacity>
+          <View style={{ flexDirection: 'row' }}>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity style={styles.forgotBtn}>
+                <Text style={styles.whiteText}>Forgot password?</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end' }}>
+              <TouchableOpacity style={styles.registerBtn} onPress={this.props.goRegister}>
+                <Text style={styles.whiteText}>Sign Up</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
 
-          <TouchableOpacity style={styles.forgotBtn}>
-            <Text style={styles.whiteText}>Forgot password?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.registerBtn} onPress={this.goRegister}>
-            <Text style={styles.whiteText}>Sign Up</Text>
-          </TouchableOpacity>
+          <View style={{ flexDirection: 'row', marginTop: 10 }}>
+            <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
+              <TouchableOpacity>
+                <SVGImage style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/FaceID.svg')} />
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
+              <TouchableOpacity>
+                <SVGImage style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/TouchID.svg')} />
+              </TouchableOpacity>
+            </View>
+          </View>
+
         </View>
       </View>
     );
@@ -53,21 +73,21 @@ const styles = StyleSheet.create({
     width: 100
   },
   logInBtn: {
-    backgroundColor: '#27ae60',
+    backgroundColor: '#00c497',
     alignItems: 'center',
-    padding: 10,
-    marginVertical: 10
+    paddingVertical: 15,
+    marginVertical: 15,
+    borderRadius: 10
   },
   forgotBtn: {
     padding: 5
   },
   whiteText: {
-    color: '#ffffff'
+    color: '#ffffff',
+    fontSize: 15,
+    textDecorationLine:'underline'
   },
   registerBtn: {
-    backgroundColor: '#2980b9',
-    alignItems: 'center',
-    padding: 10,
-    marginVertical: 10
+    padding: 5
   }
 });

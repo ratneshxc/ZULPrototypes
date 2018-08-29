@@ -8,6 +8,10 @@ const mapDispatchToProps = dispatch => ({
     showWishModal: () => dispatch({
         type: 'ZulaReducer_Wish',
         payload: true
+    }),
+    showZula: () => dispatch({
+        type: 'ZulaReducer_Access',
+        payload: true
     })
 })
 
@@ -16,6 +20,7 @@ class Dashboard extends React.Component {
         setTimeout(() => {
             this.props.showWishModal();
         }, 4000)
+        this.props.showZula();
     }
 
     render() {
@@ -33,7 +38,7 @@ class Dashboard extends React.Component {
                     <Right>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate("Notification")} style={{ backgroundColor: '#26386b', flexDirection: 'row', padding: 5, borderRadius: 10 }}>
                             <Icon name="bell" style={{ fontSize: 20, color: '#fff' }} type="FontAwesome" />
-                            <Text style={{ fontSize: 15, color: '#fff',fontWeight:'bold' }}>10</Text>
+                            <Text style={{ fontSize: 15, color: '#fff', fontWeight: 'bold' }}>10</Text>
 
                         </TouchableOpacity>
                     </Right>

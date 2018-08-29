@@ -1,24 +1,22 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import Form from './Form';
-import LoginFooter from './LoginFooter';
-import WallpaperAnimation from '../animations/WallpaperAnimation';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class login extends React.Component {
-
-  takeAssessment = () => {
-    this.props.navigation.navigate('Assessment');
-  }
 
   goRegister = () => {
     this.props.navigation.navigate('Register');
   }
+  goToDashboard = () => {
+    this.props.navigation.navigate('MainApp');
+  }
 
   render() {
     return (
-      <View style={styles.loginInnerContainer}>
-        <Form />
-      </View>
+      <LinearGradient colors={['#763c79', '#0090c1']} style={styles.loginInnerContainer}>
+        <Form goRegister={this.goRegister} goToDashboard={this.goToDashboard} />
+      </LinearGradient>
     )
   }
 }
@@ -26,7 +24,6 @@ export default class login extends React.Component {
 const styles = StyleSheet.create({
   loginInnerContainer: {
     flex: 1,
-    backgroundColor: '#00a2da',
     padding: 20
   }
 })
