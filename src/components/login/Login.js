@@ -5,7 +5,7 @@ import LoginFooter from './LoginFooter';
 import WallpaperAnimation from '../animations/WallpaperAnimation';
 
 export default class login extends React.Component {
- 
+
   takeAssessment = () => {
     this.props.navigation.navigate('Assessment');
   }
@@ -16,11 +16,8 @@ export default class login extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <View style={styles.loginInnerContainer}>
-          <Form />
-          <LoginFooter takeAssessment={this.takeAssessment} goRegister={this.goRegister} />
-        </View>
+      <View style={styles.loginInnerContainer}>
+        <Form />
       </View>
     )
   }
@@ -28,6 +25,8 @@ export default class login extends React.Component {
 
 const styles = StyleSheet.create({
   loginInnerContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#00a2da',
+    padding: 20
   }
 })

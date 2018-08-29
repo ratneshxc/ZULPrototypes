@@ -5,27 +5,31 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.logoContainer}>
-          <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
+        <View style={{ alignItems: 'center' }}>
+          <View style={{ backgroundColor: '#fff', padding: 5, borderRadius: 10 }}>
+            <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
+          </View>
         </View>
-        <TextInput underlineColorAndroid='transparent'
-          placeholder={'Username'}
-          placeholderTextColor='white'
-          style={styles.input}
-        />
+        <View style={{ flexDirection: 'column', flex: 1, justifyContent: 'center' }}>
+          <Text style={{ fontSize: 25, color: '#fff', textAlign: 'center', marginVertical: 10 }}>Login To Account</Text>
+          <TextInput underlineColorAndroid='transparent'
+            placeholder={'Username'}
+            style={[styles.input, { borderTopLeftRadius: 10, borderTopRightRadius: 10 }]}
+          />
+          <TextInput underlineColorAndroid='transparent'
+            placeholder={'Password'}
+            secureTextEntry={true}
+            style={[styles.input, { borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }]}
+          />
+          <TouchableOpacity style={styles.logInBtn}>
+            <Text style={styles.whiteText}>Login</Text>
+          </TouchableOpacity>
 
-        <TextInput underlineColorAndroid='transparent'
-          placeholder={'Password'}
-          placeholderTextColor='white'
-          secureTextEntry={true}
-          style={styles.input}
-        />
-        <TouchableOpacity style={styles.logInBtn}>
-          <Text style={styles.whiteText}>Login</Text>
-        </TouchableOpacity>
-        <View>          
           <TouchableOpacity style={styles.forgotBtn}>
             <Text style={styles.whiteText}>Forgot password?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.registerBtn} onPress={this.goRegister}>
+            <Text style={styles.whiteText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -35,30 +39,35 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 7
+    flex: 1,
+    flexDirection: 'column'
   },
   input: {
-    margin: 5,
-    backgroundColor:'#dedede63',
-    padding:10
+    backgroundColor: '#ffffff',
+    paddingHorizontal: 10,
+    paddingVertical: 20,
+    fontSize: 20
   },
   loginLogo: {
-    height: 150,
-    width: 150
-  },
-  logoContainer: {
-    alignItems: 'center'
+    height: 100,
+    width: 100
   },
   logInBtn: {
     backgroundColor: '#27ae60',
-    margin: 5,
     alignItems: 'center',
-    padding: 10
+    padding: 10,
+    marginVertical: 10
   },
   forgotBtn: {
-   padding:5
+    padding: 5
   },
-  whiteText:{
-    color:'#ffffff'
+  whiteText: {
+    color: '#ffffff'
+  },
+  registerBtn: {
+    backgroundColor: '#2980b9',
+    alignItems: 'center',
+    padding: 10,
+    marginVertical: 10
   }
 });

@@ -60,7 +60,7 @@ export default class login extends React.Component {
                     <View style={{ flexDirection: 'row', marginTop: 90 }}>
                         <View style={{ flex: 1 }}>
                             <TouchableOpacity style={styles.registerBtn} onPress={this.goRegister}>
-                                <Text style={styles.textWhite}>{'Register'.toUpperCase()}</Text>
+                                <Text style={styles.textWhite}>{'Sign Up'.toUpperCase()}</Text>
                             </TouchableOpacity>
                         </View>
                         <View style={{ flex: 1, justifyContent: 'flex-end', flexDirection: 'row' }}>
