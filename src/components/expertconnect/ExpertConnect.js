@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { Container, Header, Item, Input, Icon, Button, Text, Content, Badge, Left, Body, Title, Right,Toast } from 'native-base';
+import { Container, Header, Item, Input, Icon, Button, Text, Content, Badge, Left, Body, Title, Right, Toast } from 'native-base';
 import IconBadge from 'react-native-icon-badge';
 import ExpertList from './ExpertList';
 
 
 class ExportConnect extends React.Component {
-    componentDidMount(){
+    componentDidMount() {
         // Toast.show({
         //     text: "Use online and enjoy the services of experts through phone",
         //     buttonText: "Apply",
@@ -18,73 +18,66 @@ class ExportConnect extends React.Component {
         return (
             <Container>
                 {/* Expert Header*/}
-                <Header>
-                    <Left>
-                        <Button transparent>
-                            <Icon name='arrow-left' type="FontAwesome" style={{ fontSize: 15 }} />
-                        </Button>
-                    </Left>
-                    <Body style={{ flexDirection: 'row' }}>
-                        <Text style={styles.header}>Parent's Coach <Icon name='chevron-down' type="FontAwesome" style={{ color: "white", fontSize: 15 }} /></Text>
+                <View style={{ flexDirection: 'column', backgroundColor: "#294787" }}>
+                    <View style={{ flexDirection: 'row', paddingVertical: 8 }}>
 
-                    </Body>
-                    <Right style={{ flexDirection: 'row' }}>
-                        <View style={{ flexDirection: 'column' }}>
-                            <Text style={styles.header}>Location</Text>
+                        <View style={{ flexDirection: 'row', flex: 1, alignSelf: 'center' }}>
+                            <Text style={styles.header}>{' '}</Text>
+                            <Icon name='arrow-left' type="FontAwesome" style={{ fontSize: 18, color: 'white' }} />
+                            <Text style={styles.header}>{'   '}</Text>
+                            <Text style={styles.header}> Parent's Coach <Icon name='chevron-down' type="FontAwesome" style={{ color: "white", fontSize: 15 }} /></Text>
+
+                        </View>
+                        <View style={{ flexDirection: 'row' }}>
                             <Text style={styles.header}>Online <Icon name='chevron-down' type="FontAwesome" style={{ color: "white", fontSize: 15 }} /></Text>
                         </View>
-                    </Right>
+                    </View>
+                    <View style={{ flexDirection: 'row', paddingVertical: 5, }}>
+                        <ScrollView horizontal={true} style={{ flexDirection: 'row', flex: 1 }}>
+                            <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }}>
+                                <Text>Online</Text>
+                            </Badge>
+                            <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }} >
+                                <Text>Family Specialist</Text>
+                            </Badge>
+                            <Badge style={{ marginHorizontal: 5, backgroundColor: '#e8e8e8' }}  >
+                                <Text style={{ color: "#000000" }}>BTM Second Stage</Text>
+                            </Badge>
+                        </ScrollView>
+                        <IconBadge
+                            MainElement={
+                                <View style={{ width: 40 }}>
+                                    <Icon name="filter" type="FontAwesome" style={{ fontSize: 30, marginTop: 0, marginLeft: 2, color: 'white' }} />
+                                </View>
 
-
-                </Header >
-                {/* Filters Tags*/}
-                <View style={{ padding: 5, flexDirection: 'row' }} >
-                    <ScrollView horizontal={true} style={{ padding: 5, flexDirection: 'row', flex: 1 }}>
-                        <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }}>
-                            <Text>Online</Text>
-                        </Badge>
-                        <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }} >
-                            <Text>Family Specialist</Text>
-                        </Badge>
-                        <Badge style={{ marginHorizontal: 5, backgroundColor: '#e8e8e8' }}  >
-                            <Text style={{color:"#000000"}}>BTM Second Stage</Text>
-                        </Badge>
-                    </ScrollView>
-                    <IconBadge
-                        MainElement={
-                            <View style={{ width: 40 }}>
-                                <Icon name="filter" type="FontAwesome" style={{ fontSize: 30, marginTop: 4, marginLeft: 2 }} />
-                            </View>
-
-                        }
-                        BadgeElement={
-                            <Text style={{ color: '#FFFFFF' }}>{3}</Text>
-                        }
-                        IconBadgeStyle={
-                            {
-                                width: 20,
-                                height: 20,
-                                backgroundColor: '#007bff'
                             }
-                        }
+                            BadgeElement={
+                                <Text style={{ color: '#FFFFFF' }}>{3}</Text>
+                            }
+                            IconBadgeStyle={
+                                {
+                                    width: 20,
+                                    height: 20,
+                                    backgroundColor: '#007bff'
+                                }
+                            }
 
-                    />
+                        />
+                    </View>
+                    {/* <View style={{  flexDirection: 'row', padding: 5, }}>
+                        <Text style={{ color: 'white',flex:1 }}>Seen <Text style={{ color: '#00b386' }}>15</Text> out of 150 results</Text>
+                        <TouchableOpacity>
+                            <Icon name='arrow-up' type="FontAwesome" style={{ fontSize: 18, marginHorizontal: 5, color: 'white' }} />
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Icon name='arrow-down' type="FontAwesome" style={{ fontSize: 18, marginLeft: 5, marginRight: 2, color: 'white' }} />
+                        </TouchableOpacity>
+                    </View> */}
+                </View>
 
-                </View>
-                {/*  Results column */}
-                <View style={{ padding: 5, flexDirection: 'row' ,borderBottomWidth:2,borderBottomColor:'#ddd'}} >
-                    <Text style={{ flex: 1 }}>Seen <Text style={{ color: '#00b386' }}>15</Text> out of 150 results</Text>
-                    <TouchableOpacity>
-                        <Icon name='arrow-up' type="FontAwesome" style={{ fontSize: 18, marginHorizontal: 5 }} />
-                    </TouchableOpacity>
-                    <TouchableOpacity>
-                        <Icon name='arrow-down' type="FontAwesome" style={{ fontSize: 18, marginHorizontal: 5 }} />
-                    </TouchableOpacity>
-                </View>
-                {/*  Results column */}
                 <Content >
                     <View style={{ backgroundColor: '#ddd' }}>
-                        <ExpertList  bookExperts={()=>this.props.navigation.navigate("Booking")} viewExperts={()=>this.props.navigation.navigate("ExpertProfile")}/>
+                        <ExpertList bookExperts={() => this.props.navigation.navigate("Booking")} viewExperts={() => this.props.navigation.navigate("ExpertProfile")} />
                     </View>
                 </Content>
             </Container >

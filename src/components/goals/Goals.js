@@ -53,7 +53,7 @@ class Goals extends Component {
         return (
             <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
                 <TouchableOpacity>
-                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor: 'gray', borderWidth: 1 }}>
+                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor:'gray', borderWidth:1 }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
                                 <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold' }}>Track your daily expenses</Text>
@@ -66,7 +66,7 @@ class Goals extends Component {
                     </Card>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor: 'gray', borderWidth: 1 }}>
+                    <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor:'gray', borderWidth:1 }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
                                 <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold' }}>Invest in ELSS fund</Text>
@@ -130,7 +130,7 @@ class Goals extends Component {
                     <GoalVideo />
                     :
                     <TouchableOpacity onPress={dataArray.data}>
-                        <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor: 'gray', borderWidth: 1 }}>
+                        <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor:'gray', borderWidth:1 }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <Left>
                                     <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold' }}>{dataArray.titleOne}</Text>
@@ -171,8 +171,10 @@ class Goals extends Component {
                 </Header>
                 <Content style={styles.container}>
                     <Card style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
+
                         <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
                             <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
+
                                 <View style={{ flexDirection: 'row' }}>
                                     <Item style={{ left: 18, borderRadius: 30, padding: 5, height: 40, flexDirection: 'row', width: screenwidth, backgroundColor: '#ededed' }}>
                                         <Icon name="ios-search" />
@@ -202,15 +204,15 @@ class Goals extends Component {
                                         }
                                     </AnimatedCircularProgress>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center', left: 70 }}>
-                                        <Badge style={{ flexDirection: 'row', height: 100, alignSelf: 'center', backgroundColor: '#00000066', width: 160 }}>
-                                            <View style={{ flexDirection: 'column', height: 60, alignSelf: 'center', bottom: 35 }}>
+                                        <Badge style={{ flexDirection: 'row', height: 100, alignSelf: 'center', backgroundColor: '#00000066', width:160 }}>
+                                            <View style={{ flexDirection: 'column', height: 60, alignSelf: 'center', bottom: 35}}>
                                                 <Text style={{ fontSize: 60, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>2</Text>
-                                                <Text style={{ fontSize: 16, color: 'white', fontWeight: 'bold', bottom: 10 }}>Pending</Text>
+                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold', bottom:10 }}>Pending</Text>
                                             </View>
                                             <View style={{ right: 50, top: 60, transform: [{ rotate: '90deg' }], backgroundColor: 'white', height: 2, width: 120 }}></View>
                                             <View style={{ flexDirection: 'column', right: 90, height: 60, alignSelf: 'center', bottom: 35 }}>
                                                 <Text style={{ fontSize: 60, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>3</Text>
-                                                <Text style={{ fontSize: 16, color: 'white', fontWeight: 'bold', bottom: 10 }}>Total</Text>
+                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold', bottom:10 }}>Total</Text>
                                             </View>
                                         </Badge>
                                     </View>
@@ -243,14 +245,15 @@ class Goals extends Component {
                             expanded={1}
                             renderHeader={this._goalCardThreeHeader}
                             renderContent={this._goalCardTwoContent}
-                        /> <Accordion
+                        />
+                         <View style={{ height: 5 }}></View>
+                        <Accordion
                             dataArray={[{ data: this.goalStatus }]}
                             animation={true}
-                            expanded={0}
+                            expanded={1}
                             renderHeader={this._goalCardOneHeader}
                             renderContent={this._goalCardOneContent}
                         />
-                        <View style={{ height: 5 }}></View>
                     </View>
                 </Content>
                 {(Platform.OS === 'ios') ?
