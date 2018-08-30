@@ -263,7 +263,7 @@ const GoalStack = createStackNavigator({
   GoalStatus: {
     screen: GoalStatus,
     navigationOptions: {
-      title: 'Run 5km Daily'
+      title: 'Run 2km Daily'
     }
   },
   AddActivity: {
@@ -339,6 +339,7 @@ const MainApp = createDrawerNavigator({
 });
 
 const AppRoute = createSwitchNavigator({
+  Goals: { screen: Goals },
   AppIntro: { screen: AppIntro },
   LandingComponent: { screen: LandingComponent },
   LogIn: { screen: LogIn },
