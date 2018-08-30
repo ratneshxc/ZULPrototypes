@@ -107,7 +107,7 @@ class ZulaWakeUpbtn extends Component {
 
     }
     wakeUpZula = () => {
-        let text = 'Hello kk, I am Zula, How may I help you?';
+        let text = 'Hello John, I am Zula, How may I help you?';
         this.zulaSpeak(text);
     }
     zulaSpeak(text) {
@@ -144,7 +144,7 @@ class ZulaWakeUpbtn extends Component {
                 this.zulaSpeak(x.label);
             })
         } else if (ordermsg.contains('bye')) {
-            this.zulaSpeak('Bye KK!');
+            this.zulaSpeak('Bye John!');
             this.props.zulaSleep();
         } else if (ordermsg.indexOf('hey')!=-1) {
             this.wakeUpZula();

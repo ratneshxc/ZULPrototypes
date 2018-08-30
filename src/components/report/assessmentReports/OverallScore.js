@@ -15,7 +15,7 @@ const OverallScore = (props) => {
     return (
         <View style={styles.container}>
             <View>
-                <Text style={styles.title}>Status</Text>
+                <Text style={styles.title}>Overall Score</Text>
             </View>
             <AnimatedCircularProgress style={{ alignSelf: 'center' }}
                 size={180}
@@ -39,8 +39,11 @@ const OverallScore = (props) => {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:'#ffffff',
-        padding:10
+        backgroundColor: '#ffffff',
+        padding: 10
+    },
+    title: {
+      
     }
 })
 export default connect(mapStateToProps)(OverallScore);

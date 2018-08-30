@@ -1,6 +1,7 @@
 import React from 'react';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
 import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+
 import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
@@ -27,6 +28,7 @@ import Notification from '../components/notifications/Notifications';
 import AppIntro from '../components/taketour/AppIntro';
 import LandingComponent from '../components/taketour/LandingComponent';
 
+import store from '../store/ZingUpLifeStore';
 
 const TabRoute = createBottomTabNavigator({
   Dashboard: {
@@ -93,7 +95,18 @@ const NotificationApp = createStackNavigator({
       title: 'Notifications'
     }
   }
-})
+},
+  {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#3f51b5',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      }
+    }
+  })
 
 
 
@@ -121,10 +134,49 @@ const WellnessStack = createStackNavigator({
     navigationOptions: {
       title: 'Introduction'
     }
+  },
+  AssessmentReportStack: {
+    screen: AssessmentReport,
+    navigationOptions: ({ navigation }) => {
+      return {
+        title: `${navigation.getParam('title', '')} Report`,
+      };
+    }
   }
-})
+},
+  {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#3f51b5',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      }
+    }
+  })
 
-
+const AssessmentReportSwitch = createStackNavigator({
+  AssessmentReport: {
+    screen: AssessmentReport,
+    navigationOptions: ({ navigation }) => {
+      return {
+        title: `${store.getState().Assessment.currentAssessment} Report`,
+      };
+    }
+  }
+},
+  {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#3f51b5',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      }
+    }
+  });
 
 const WellnessSwitch = createSwitchNavigator({
   WellnessStack: {
@@ -134,9 +186,10 @@ const WellnessSwitch = createSwitchNavigator({
     screen: Assessment
   },
   AssessmentReport: {
-    screen: AssessmentReport
+    screen: AssessmentReportSwitch
   }
 })
+
 const ExpertStack = createStackNavigator({
   SpecialitiyConnect: {
     screen: SpecialitiyConnect,
@@ -174,12 +227,25 @@ const ExpertStack = createStackNavigator({
       header: null
     }
   }
-})
+},
+  {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#3f51b5',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      }
+    }
+  })
+
+
 const GoalStack = createStackNavigator({
   Goals: {
     screen: Goals,
     navigationOptions: {
-      title: 'Goal'
+      header: null
     }
   },
   AddGoal: {
@@ -206,7 +272,18 @@ const GoalStack = createStackNavigator({
       title: 'Select an activity'
     }
   }
-})
+},
+  {
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#3f51b5',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      }
+    }
+  })
 
 const MainApp = createDrawerNavigator({
   LandingTab: {
@@ -222,7 +299,7 @@ const MainApp = createDrawerNavigator({
   AssessmentLayout: {
     screen: WellnessSwitch,
     navigationOptions: {
-      title: 'Check your wellness',
+      title: 'Wellness',
       drawerIcon: ({ focused, tintColor }) => {
         const iconName = `adjust${focused ? '' : ''}`;
         return <FontIcon name={iconName} size={25} color={tintColor} />;
