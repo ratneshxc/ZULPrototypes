@@ -130,16 +130,19 @@ class Goals extends Component {
                     <GoalVideo />
                     :
                     <TouchableOpacity onPress={dataArray.data}>
-                        <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor:'gray', borderWidth:1 }}>
+                    {/* <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover"> */}
+                        <Card style={{ flex: 1, padding: 10,  width: screenwidth, alignSelf: 'center', borderColor:'gray', borderWidth:1 }}>
+                        <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ bottom: 5, height: "120%", width: screenwidth, alignSelf: 'center' }}>
+                            <View style={{ flexDirection: 'column', backgroundColor: '#00000066', height: "120%"}}>
                             <View style={{ flexDirection: 'row' }}>
                                 <Left>
-                                    <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold' }}>{dataArray.titleOne}</Text>
+                                    <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold', color:'white' }}>{dataArray.titleOne}</Text>
                                 </Left>
                                 <Right>
-                                    <Text style={{ fontSize: 12 }}>{dataArray.pointOne}</Text>
+                                    <Text style={{ fontSize: 12, color:'white' }}>{dataArray.pointOne}</Text>
                                 </Right>
                             </View>
-                            <View style={{ height: 20 }}><Text style={{ fontSize: 13, fontWeight: 'bold', alignSelf: 'center', top: 8 }}>{dataArray.contentOne}</Text></View>
+                            <View style={{ height: 20 }}><Text style={{ fontSize: 13, fontWeight: 'bold', alignSelf: 'center', top: 8, color:'white' }}>{dataArray.contentOne}</Text></View>
                             <View>
                                 <ProgressBarClassic
                                     progress={60}
@@ -147,6 +150,8 @@ class Goals extends Component {
                                     valueStyle={'default'}
                                 />
                             </View>
+                            </View>
+                            </ImageBackground>
                         </Card>
                     </TouchableOpacity>
                 }
@@ -158,10 +163,8 @@ class Goals extends Component {
             <Container>
                 <Content style={styles.container}>
                     <Card style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
-
                         <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
                             <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-
                                 <View style={{ flexDirection: 'row' }}>
                                     <Item style={{ left: 18, borderRadius: 30, padding: 5, height: 40, flexDirection: 'row', width: screenwidth, backgroundColor: '#ededed' }}>
                                         <Icon name="ios-search" />
@@ -229,7 +232,7 @@ class Goals extends Component {
                         <Accordion
                             dataArray={GoalsTwoDetails}
                             animation={true}
-                            expanded={1}
+                            expanded={0}
                             renderHeader={this._goalCardThreeHeader}
                             renderContent={this._goalCardTwoContent}
                         />
