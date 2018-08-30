@@ -31,7 +31,7 @@ class AssessmentSummaryLayout extends Component {
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent>
+                    <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
                             <Icon name='menu' />
                         </Button>
                     </Left>
@@ -129,8 +129,8 @@ const DimensionCard = (props) => {
             <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
                 <Image style={{ width: 50, height: 50 }} source={props.dimension.emoji} />
             </View>
-            <View>
-                <View style={{ height: 5, width: props.dimension.score, backgroundColor: '#4dad4a' }}></View>
+            <View style={{backgroundColor:'#e4e4e4'}}>
+                <View style={{ height: 5, width: props.dimension.score, backgroundColor: props.dimension.progressColor }}></View>
             </View>
         </Card>
     )

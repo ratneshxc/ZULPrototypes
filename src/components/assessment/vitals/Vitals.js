@@ -99,7 +99,7 @@ const Tab = ({ tab, page, isTabActive, onPressHandler, onTabLayout, styles }) =>
 export default class Vitals extends Component {
     _scrollX = new Animated.Value(0);
     // 6 is a quantity of tabs
-    interpolators = Array.from({ length: 7 }, (_, i) => i).map(idx => ({
+    interpolators = Array.from({ length: 8 }, (_, i) => i).map(idx => ({
         scale: this._scrollX.interpolate({
             inputRange: [idx - 1, idx, idx + 1],
             outputRange: [1, 1.2, 1],
@@ -144,12 +144,13 @@ export default class Vitals extends Component {
                     onScroll={(x) => this._scrollX.setValue(x)}>
 
                     <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }, { title: 'Blood Pressure', value: '132/88', unit: 'mmHg' }]} />
-                    <Page tabLabel={{ label: "Emotional" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }]} />
-                    <Page tabLabel={{ label: "Spiritual" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }]} />
-                    <Page tabLabel={{ label: "Environmental" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }]} />
-                    <Page tabLabel={{ label: "Financial" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }]} />
-                    <Page tabLabel={{ label: "Social" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }]} />
-                    <Page tabLabel={{ label: "Intellectual" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }]} />
+                    <Page tabLabel={{ label: "Emotional" }} vitals={[]} />
+                    <Page tabLabel={{ label: "Spiritual" }} vitals={[]} />
+                    <Page tabLabel={{ label: "Environmental" }} vitals={[]} />
+                    <Page tabLabel={{ label: "Financial" }} vitals={[]} />
+                    <Page tabLabel={{ label: "Social" }} vitals={[]} />
+                    <Page tabLabel={{ label: "Intellectual" }} vitals={[]} />
+                    <Page tabLabel={{ label: "Occupational" }} vitals={[]} />
                 </ScrollableTabView>
             </View>
         );

@@ -95,7 +95,7 @@ const Tab = ({ tab, page, isTabActive, onPressHandler, onTabLayout, styles }) =>
 class AssessmentList extends Component {
     _scrollX = new Animated.Value(0);
     // 6 is a quantity of tabs
-    interpolators = Array.from({ length: 7 }, (_, i) => i).map(idx => ({
+    interpolators = Array.from({ length: 8 }, (_, i) => i).map(idx => ({
         scale: this._scrollX.interpolate({
             inputRange: [idx - 1, idx, idx + 1],
             outputRange: [1, 1.2, 1],
@@ -163,6 +163,7 @@ class AssessmentList extends Component {
                     <Page tabLabel={{ label: "Financial" }} pressHandler={this.selectAssessment} assessments={[]} />
                     <Page tabLabel={{ label: "Social" }} pressHandler={this.selectAssessment} assessments={[]} />
                     <Page tabLabel={{ label: "Intellectual" }} pressHandler={this.selectAssessment} assessments={[]} />
+                    <Page tabLabel={{ label: "Occupational" }} pressHandler={this.selectAssessment} assessments={[]} />
                 </ScrollableTabView>
             </View>
         );
