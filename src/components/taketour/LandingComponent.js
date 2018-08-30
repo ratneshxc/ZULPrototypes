@@ -63,7 +63,7 @@ class LandingComponent extends React.Component {
                         <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
                     </View>
                     <Text style={{ fontSize: 35, textAlign: 'center', color: '#fff', marginBottom: 100 }}>Re-Discover Yourself</Text>
-                    <Text style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center', color: '#fff' }}>78,20,083</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center', color: '#fff' }}>20,083</Text>
                     <Text style={styles.statement}> People have already taken assessments</Text>
                     <TouchableOpacity style={styles.takeAssessmentBtn} onPress={this.takeAssessment}>
                         <Text style={styles.textWhite}>{'Check Your Wellness'.toUpperCase()}</Text>
@@ -107,26 +107,33 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     textWhite: {
-        color: '#ffffff'
+        color: '#ffffff',
+        fontSize: 15,
+        fontWeight: 'bold'
     },
     takeAssessmentBtn: {
         backgroundColor: '#80399d',
         marginHorizontal: 20,
         alignItems: 'center',
-        padding: 10,
-        marginTop: 20
+        paddingVertical: 15,
+        marginTop: 20,
+        borderRadius: 10
     },
     registerBtn: {
         backgroundColor: '#2980b9',
         alignItems: 'center',
-        padding: 10,
-        width: 130
+        paddingVertical: 15,
+        width: 130,
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10
     },
     logInBtn: {
         backgroundColor: '#27ae60',
         alignItems: 'center',
-        padding: 10,
-        width: 130
+        paddingVertical: 15,
+        width: 130,
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10
     },
     loginLogo: {
         height: 150,

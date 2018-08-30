@@ -32,10 +32,10 @@ const VitalWarning = (props) => {
                 </View>
                 <View style={{ flexDirection: 'column', flex: 1 }}>
                     <View style={{ flex: 1, padding: 3 }}>
-                        <Text style={{ fontWeight: 'bold' }}>1500 Rs/Month</Text>
+                        <Text style={{ fontWeight: 'bold' }}>10,000 Rs/Month</Text>
                     </View>
                     <View style={{ flex: 1, borderColor: '#ddd', borderTopWidth: 1, padding: 3 }}>
-                        <Text style={{ fontWeight: 'bold' }}>500 Rs/Month</Text>
+                        <Text style={{ fontWeight: 'bold' }}>15,000 Rs/Month</Text>
                     </View>
                 </View>
             </View>

@@ -156,6 +156,19 @@ class Goals extends Component {
     render() {
         return (
             <Container>
+                <Header>
+                    <Left>
+                        <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
+                            <Icon name='menu' />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Goals</Title>
+                    </Body>
+                    <Right>
+                    
+                    </Right>
+                </Header>
                 <Content style={styles.container}>
                     <Card style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
 
@@ -191,15 +204,15 @@ class Goals extends Component {
                                         }
                                     </AnimatedCircularProgress>
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'center', left: 70 }}>
-                                        <Badge style={{ flexDirection: 'row', height: 100, alignSelf: 'center', backgroundColor: '#00000066', width:160 }}>
-                                            <View style={{ flexDirection: 'column', height: 60, alignSelf: 'center', bottom: 35}}>
+                                        <Badge style={{ flexDirection: 'row', height: 100, alignSelf: 'center', backgroundColor: '#00000066', width: 160 }}>
+                                            <View style={{ flexDirection: 'column', height: 60, alignSelf: 'center', bottom: 35 }}>
                                                 <Text style={{ fontSize: 60, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>2</Text>
-                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold', bottom:10 }}>Pending</Text>
+                                                <Text style={{ fontSize: 16, color: 'white', fontWeight: 'bold', bottom: 10 }}>Pending</Text>
                                             </View>
                                             <View style={{ right: 50, top: 60, transform: [{ rotate: '90deg' }], backgroundColor: 'white', height: 2, width: 120 }}></View>
                                             <View style={{ flexDirection: 'column', right: 90, height: 60, alignSelf: 'center', bottom: 35 }}>
                                                 <Text style={{ fontSize: 60, alignSelf: 'center', color: 'white', top: 2, fontWeight: 'bold' }}>3</Text>
-                                                <Text style={{ fontSize: 16,  color: 'white', fontWeight: 'bold', bottom:10 }}>Total</Text>
+                                                <Text style={{ fontSize: 16, color: 'white', fontWeight: 'bold', bottom: 10 }}>Total</Text>
                                             </View>
                                         </Badge>
                                     </View>

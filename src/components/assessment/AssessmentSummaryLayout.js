@@ -36,8 +36,9 @@ class AssessmentSummaryLayout extends Component {
                         </Button>
                     </Left>
                     <Body>
-                        <Title>Check your wellness</Title>
+                        <Title>Wellness</Title>
                     </Body>
+                    <Right></Right>
                 </Header>
                 <Content style={styles.container}>
                     <View style={{ flexDirection: 'row' }}>

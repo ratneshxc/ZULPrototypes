@@ -10,13 +10,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textAlign: 'center',
     paddingHorizontal: 16,
+    color: '#fff'
   },
   title: {
     fontSize: 30,
     backgroundColor: 'transparent',
     textAlign: 'center',
     marginBottom: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: '#fff'
   }
 });
 
