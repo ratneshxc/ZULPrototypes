@@ -2,7 +2,27 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { Thumbnail, Badge, Text, Icon } from 'native-base';
 import StarRating from 'react-native-star-rating';
-
+const expertData = [{
+    key: 'key1',
+    title: "Meditation Experts",
+    icon: 'tripadvisor',
+    img: require('../../assests/images/profilepic/yogi.jpg'),
+    description: 'Mind fit classes, Meditation Session ...'
+},
+{
+    key: 'key2',
+    title: "Financial Experts",
+    icon: 'rupee',
+    img: require('../../assests/images/profilepic/financialExpert.jpg'),
+    description: 'Investment Advice, Financial Coaching ...'
+},
+{
+    key: 'key2',
+    title: "Relationship Experts",
+    icon: 'heart',
+    img: require('../../assests/images/profilepic/loveguru.jpg'),
+    description: 'Relationship advice, Marraige Counsilling ...'
+}]
 
 const ExpertList = (props) => {
     return (
@@ -21,12 +41,10 @@ const ExpertList = (props) => {
                     <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                         <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
                             <Text style={{ flex: 1 }}>Samira Reddy</Text>
-                            <Icon name='heart' type="FontAwesome" style={{ fontSize: 18, color: 'red', marginRight: 15, }} />
-                            <TouchableOpacity>
-                                <Icon name='ellipsis-v' type="FontAwesome" style={{ fontSize: 18, }} />
-                            </TouchableOpacity>
+                            <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 }} />
+
                         </View>
-                        <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialists</Text>
+                        <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialist</Text>
                         <View style={{ flexDirection: 'row' }}>
 
                             <View style={{ flex: 2 }}>
@@ -45,7 +63,7 @@ const ExpertList = (props) => {
 
             </View>
             <FlatList
-                data={[{ key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }]}
+                data={expertData}
                 renderItem={({ item }) => <SpecialityComponent item={item} goToExperts={props.goToExperts} />}
             />
         </View>
@@ -63,32 +81,18 @@ const SpecialityComponent = (props) => {
         <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }} >
             <View style={{ flex: 1, flexDirection: 'row' }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
-                    <Thumbnail medium square source={require('../../assests/images/profilepic/yogi.jpg')} />
+                    <Thumbnail small square source={props.item.img} />
                 </View>
                 <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                     <TouchableOpacity onPress={() => props.goToExperts()} >
                         <View>
                             <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                                <Text style={{ flex: 1 }}>Meditation Experts</Text>
-                                <Icon name='tripadvisor' type="FontAwesome" style={{ fontSize: 18, color: 'red', }} />
-                                {/* <TouchableOpacity>
-                            <Icon name='ellipsis-v' type="FontAwesome" style={{ fontSize: 18, }} />
-                        </TouchableOpacity> */}
+                                <Text style={{ flex: 1 }}>{props.item.title}</Text>
+                                <Icon name={props.item.icon} type="FontAwesome" style={{ fontSize: 18 }} />
                             </View>
-                            <Text style={{ fontSize: 14, marginTop: 2 }}>Services available:</Text>
+                            <Text style={{ fontSize: 14, marginTop: 2 }}>{props.item.description}</Text>
                         </View>
                     </TouchableOpacity>
-                    <ScrollView horizontal={true} style={{ flexDirection: 'row' }}>
-                        <Badge style={{ backgroundColor: '#ffffff', borderRadius: 5, padding: 5, marginRight: 5, borderWidth: 1, borderColor: '#ddd' }}>
-                            <Text style={{ color: '#007bff', fontSize: 14 }}>Meditation Session</Text>
-                        </Badge>
-                        <Badge style={{ backgroundColor: '#ffffff', borderRadius: 5, padding: 5, marginRight: 5, borderWidth: 1, borderColor: '#ddd' }}>
-                            <Text style={{ color: '#007bff', fontSize: 14 }}>Peaceful living</Text>
-                        </Badge>
-                        <Badge style={{ backgroundColor: '#ffffff', borderRadius: 5, padding: 5, marginRight: 5, borderWidth: 1, borderColor: '#ddd' }}>
-                            <Text style={{ color: '#007bff', fontSize: 14 }}>Life Advice</Text>
-                        </Badge>
-                    </ScrollView>
                 </View>
             </View>
         </View>
