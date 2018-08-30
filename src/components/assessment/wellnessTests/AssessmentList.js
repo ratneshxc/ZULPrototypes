@@ -48,7 +48,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                 </Left>
                                 <Body>
                                     <Text>{x.title}</Text>
-                                    <Text style={{color:'red'}} note>{x.note}</Text>
+                                    <Text style={{ color: 'red' }} note>{x.note}</Text>
                                 </Body>
                                 <Right>
                                     <TouchableOpacity style={{ padding: 10 }} onPress={() => takeAssessment(x.title)}>
@@ -119,11 +119,11 @@ class AssessmentList extends Component {
 
     selectAssessment = (data) => {
         this.props.setAssessmentType(data);
-        this.props.navigation.navigate("AssessmentInfo");
+        this.props.navigation.navigate("AssessmentInfo", { title: data });
     }
 
     selectReport = (data) => {
-        this.props.navigation.navigate("AssessmentReportStack");
+        this.props.navigation.navigate("AssessmentReportStack", { title: data });
     }
 
     render() {

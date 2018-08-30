@@ -1,8 +1,7 @@
 import React from 'react';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
-import Image from 'react-native-remote-svg';
-
 import { createSwitchNavigator, createDrawerNavigator, createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+
 import Dashboard from '../components/dashboard/Dashboard';
 import Calendar from '../components/Calendar/Calendar';
 import Community from '../components/community/Community';
@@ -29,6 +28,7 @@ import Notification from '../components/notifications/Notifications';
 import AppIntro from '../components/taketour/AppIntro';
 import LandingComponent from '../components/taketour/LandingComponent';
 
+import store from '../store/ZingUpLifeStore';
 
 const TabRoute = createBottomTabNavigator({
   Dashboard: {
@@ -137,8 +137,10 @@ const WellnessStack = createStackNavigator({
   },
   AssessmentReportStack: {
     screen: AssessmentReport,
-    navigationOptions: {
-      title: 'Report'
+    navigationOptions: ({ navigation }) => {
+      return {
+        title: `${navigation.getParam('title', '')} Report`,
+      };
     }
   }
 },
@@ -157,8 +159,10 @@ const WellnessStack = createStackNavigator({
 const AssessmentReportSwitch = createStackNavigator({
   AssessmentReport: {
     screen: AssessmentReport,
-    navigationOptions: {
-      title: 'Report'
+    navigationOptions: ({ navigation }) => {
+      return {
+        title: `${store.getState().Assessment.currentAssessment} Report`,
+      };
     }
   }
 },
