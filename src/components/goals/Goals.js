@@ -15,7 +15,7 @@ class Goals extends Component {
             { titleOne: "Daily 10 min meditation", contentOne: "Today's task is done", pointOne: "30 points", data: this.goalStatus, video: true }
         ];
         GoalsTwoDetails = [
-            { titleOne: "Drink 5l water daily", contentOne: "2l more for the day", pointOne: "40 points", data: this.goalStatus, video: false }
+            { titleOne: "Run 2km daily", contentOne: "0.6km more for the day", pointOne: "40 points", data: this.goalStatus, video: false }
         ];
     }
     constructor(props) {
@@ -30,7 +30,7 @@ class Goals extends Component {
     }
     _goalCardOneHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "row", padding: 10, backgroundColor: "white", height: 60 }}>
+            <View style={{ flexDirection: "row", padding: 10, backgroundColor: "white", height: 70 }}>
                 <View style={{ flexDirection: "column", width: 40 }}>
                     <Icon name='money' type="FontAwesome" />
                 </View>
@@ -51,9 +51,9 @@ class Goals extends Component {
     }
     _goalCardOneContent(dataArray) {
         return (
-            <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                <TouchableOpacity onPress={dataArray.data}>
-                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
+            <View bordered style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
+                <TouchableOpacity>
+                    <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor: 'gray', borderWidth: 1 }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
                                 <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold' }}>Track your daily expenses</Text>
@@ -65,8 +65,8 @@ class Goals extends Component {
                         <View style={{ height: 20 }}><Text style={{ fontSize: 13, fontWeight: 'bold', alignSelf: 'center', top: 8 }}>Log your today's expenses</Text></View>
                     </Card>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={dataArray.data}>
-                    <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
+                <TouchableOpacity>
+                    <Card bordered style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor: 'gray', borderWidth: 1 }}>
                         <View style={{ flexDirection: 'row' }}>
                             <Left>
                                 <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold' }}>Invest in ELSS fund</Text>
@@ -83,7 +83,7 @@ class Goals extends Component {
     }
     _goalCardTwoHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "row", padding: 10, backgroundColor: "white", height: 60 }}>
+            <View style={{ flexDirection: "row", padding: 10, backgroundColor: "white", height: 70 }}>
                 <View style={{ flexDirection: "column", width: 40 }}>
                     <Icon name='peace' type="MaterialCommunityIcons" />
                 </View>
@@ -104,7 +104,7 @@ class Goals extends Component {
     }
     _goalCardThreeHeader(dataArray, expanded) {
         return (
-            <View style={{ flexDirection: "row", padding: 10, backgroundColor: "white", height: 60 }}>
+            <View style={{ flexDirection: "row", padding: 10, backgroundColor: "white", height: 70 }}>
                 <View style={{ flexDirection: "column", width: 40 }}>
                     <Icon name='walk' type="MaterialCommunityIcons" />
                 </View>
@@ -130,7 +130,7 @@ class Goals extends Component {
                     <GoalVideo />
                     :
                     <TouchableOpacity onPress={dataArray.data}>
-                        <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center' }}>
+                        <Card style={{ flex: 1, padding: 10, flexDirection: 'column', width: screenwidth, alignSelf: 'center', borderColor: 'gray', borderWidth: 1 }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <Left>
                                     <Text style={{ fontSize: 16, width: screenwidth * 2 / 3, fontWeight: 'bold' }}>{dataArray.titleOne}</Text>
@@ -143,7 +143,7 @@ class Goals extends Component {
                             <View>
                                 <ProgressBarClassic
                                     progress={60}
-                                    label={'3L'}
+                                    label={'1.4km'}
                                     valueStyle={'default'}
                                 />
                             </View>
@@ -171,10 +171,8 @@ class Goals extends Component {
                 </Header>
                 <Content style={styles.container}>
                     <Card style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
-
                         <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
                             <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-
                                 <View style={{ flexDirection: 'row' }}>
                                     <Item style={{ left: 18, borderRadius: 30, padding: 5, height: 40, flexDirection: 'row', width: screenwidth, backgroundColor: '#ededed' }}>
                                         <Icon name="ios-search" />
@@ -240,6 +238,12 @@ class Goals extends Component {
                         />
                         <View style={{ height: 5 }}></View>
                         <Accordion
+                            dataArray={GoalsTwoDetails}
+                            animation={true}
+                            expanded={1}
+                            renderHeader={this._goalCardThreeHeader}
+                            renderContent={this._goalCardTwoContent}
+                        /> <Accordion
                             dataArray={[{ data: this.goalStatus }]}
                             animation={true}
                             expanded={0}
@@ -247,13 +251,6 @@ class Goals extends Component {
                             renderContent={this._goalCardOneContent}
                         />
                         <View style={{ height: 5 }}></View>
-                        <Accordion
-                            dataArray={GoalsTwoDetails}
-                            animation={true}
-                            expanded={1}
-                            renderHeader={this._goalCardThreeHeader}
-                            renderContent={this._goalCardTwoContent}
-                        />
                     </View>
                 </Content>
                 {(Platform.OS === 'ios') ?
