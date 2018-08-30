@@ -17,7 +17,28 @@ const expertData = [{
     description: 'Investment Advice, Financial Coaching ...'
 },
 {
-    key: 'key2',
+    key: 'key3',
+    title: "Relationship Experts",
+    icon: 'heart',
+    img: require('../../assests/images/profilepic/loveguru.jpg'),
+    description: 'Relationship advice, Marraige Counsilling ...'
+},
+{ 
+    key: 'key4',
+    title: "Carrier Counsellors",
+    icon: 'child',
+    img: require('../../assests/images/profilepic/teacher.jpg'),
+    description: 'Carrier Guidance, Parent advice...'
+},
+{
+    key: 'key5',
+    title: "Fitness Experts",
+    icon: 'spotify',
+    img: require('../../assests/images/profilepic/gym.jpg'),
+    description: 'Weight loss, Abs and Muscles ...'
+},
+{
+    key: 'key6',
     title: "Relationship Experts",
     icon: 'heart',
     img: require('../../assests/images/profilepic/loveguru.jpg'),
@@ -28,13 +49,13 @@ const ExpertList = (props) => {
     return (
         <View>
             {/*Recently Contacted*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#fff' }} >
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5F5F5' }} >
                 <Text style={{ flex: 1 }}>Recently Contacted</Text>
                 <Text style={{ color: "#00b386", textDecorationLine: 'underline' }}>View More</Text>
             </View>
             {/*Recent Experts*/}
-            <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
-                <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F5F5F5' }}>
+                <View style={{ flex: 1, flexDirection: 'row',backgroundColor: '#fff'  }}>
                     <View style={{ alignItems: 'center', padding: 5 }}>
                         <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
                     </View>
@@ -48,7 +69,7 @@ const ExpertList = (props) => {
                         <View style={{ flexDirection: 'row' }}>
 
                             <View style={{ flex: 2 }}>
-                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#ddd', borderRadius: 2 }}>
+                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#F5F5F5', borderRadius: 2 }}>
                                     <Text style={{ textAlign: 'center', color: 'white' }}><Icon name='usb' type="FontAwesome" style={{ fontSize: 18, color: 'white' }} /> Connect</Text>
                                 </TouchableOpacity>
                             </View>
@@ -58,7 +79,7 @@ const ExpertList = (props) => {
                 </View>
             </View>
             {/*Find and connect*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#fff', marginTop: 5 }}>
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5F5F5' }}>
                 <Text style={{ flex: 1 }}>Find & Connect</Text>
 
             </View>
@@ -78,8 +99,8 @@ const styles = StyleSheet.create({
 const SpecialityComponent = (props) => {
     return (
 
-        <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }} >
-            <View style={{ flex: 1, flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F5F5F5' }} >
+            <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff' }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail small square source={props.item.img} />
                 </View>
