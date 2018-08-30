@@ -31,12 +31,12 @@ class AddActivity extends Component {
     render() {
         return (
             <Container>
-                 <Item style={{ top:8, left: 12, borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth, backgroundColor: 'lightgray' }}>
-                                    <Icon name="ios-search" />
-                                    <Input placeholder="Search" />
-                                    <Icon name="ios-people" />
-                                </Item>
-                                <View style={{ height: 20 }}></View>
+                    <Item style={{ alignSelf:'center' ,top:8, borderRadius: 30, padding: 5, height: 40, flexDirection: 'row', width: screenwidth, backgroundColor: '#ededed' }}>
+                        <Icon name="ios-search" />
+                        <Input placeholder="Search" />
+                        <Icon name="ios-people" />
+                    </Item>
+                <View style={{ height: 20 }}></View>
                 <Content>
                     <ListView
                         style={styles.container}
@@ -46,7 +46,7 @@ class AddActivity extends Component {
                             <TouchableOpacity onPress={this.goToYourGoal}>
                                 <View style={{ flex: 1, padding: 10, flexDirection: 'row', width: screenwidth, alignSelf: 'center' }}>
                                     <Left style={{ flexDirection: 'column', }}>
-                                        <Text style={{ fontWeight:'bold', fontSize:20, width: 300 }}>{data.title}</Text>
+                                        <Text style={{ fontWeight: 'bold', fontSize: 20, width: 300 }}>{data.title}</Text>
                                         <Text style={{ top: 8, fontSize: 12, }}>{data.points}</Text>
                                     </Left>
                                     <Right>
@@ -66,6 +66,6 @@ const styles = StyleSheet.create({
         flex: 1,
         height: StyleSheet.hairlineWidth,
         backgroundColor: '#8E8E8E',
-      }
+    }
 });
 export default AddActivity;

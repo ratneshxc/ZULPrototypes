@@ -10,13 +10,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textAlign: 'center',
     paddingHorizontal: 16,
+    color: '#fff'
   },
   title: {
     fontSize: 30,
     backgroundColor: 'transparent',
     textAlign: 'center',
     marginBottom: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: '#fff'
   }
 });
 
@@ -45,7 +47,7 @@ const slides = [
   {
     key: 'sd3',
     title: 'Financial',
-    text: 'The component is also super customizable, so you can adapt it to cover your needs and wants.',
+    text: "Financial Wellness is the ability to have control over one's financial future and to take appropriate financial decisions in accordance with one's life needs",
     icon: require('../../assests/images/dashboard/financial.svg'),
     colors: ['#63E2FF', '#B066FE']
   },
