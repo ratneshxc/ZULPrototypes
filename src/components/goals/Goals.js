@@ -158,6 +158,19 @@ class Goals extends Component {
     render() {
         return (
             <Container>
+                <Header>
+                    <Left>
+                        <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
+                            <Icon name='menu' />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Goals</Title>
+                    </Body>
+                    <Right>
+                    
+                    </Right>
+                </Header>
                 <Content style={styles.container}>
                     <Card style={{ right: 5, width: windowObj.width + 20, alignSelf: 'center' }} resizeMode="cover">
 
