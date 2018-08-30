@@ -14,14 +14,18 @@ class AddGoal extends Component {
             <Container>
                 <Content style={styles.container}>
                     <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
-                        <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1, flexDirection: 'column' }}>
+                        <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1 }}>
                             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                                <Item style={{ left: 12, borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', width: screenwidth, backgroundColor: 'white' }}>
-                                    <Icon name="ios-search" />
-                                    <Input placeholder="Search" />
-                                    <Icon name="ios-people" />
-                                </Item>
-                                <Text style={{ padding: 10, color: 'white', fontSize: 26, fontWeight: 'bold' }}>Select a goal</Text>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Item style={{ left: 10, top: 8, borderRadius: 30, padding: 5, height: 40, flexDirection: 'row', width: screenwidth, backgroundColor: '#ededed' }}>
+                                        <Icon name="ios-search" />
+                                        <Input placeholder="Search" />
+                                        <Icon name="ios-people" />
+                                    </Item>
+                                </View>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Text style={{ padding: 10, color: 'white', fontSize: 26, fontWeight: 'bold' }}>Select a goal</Text>
+                                </View>
                             </View>
                         </View>
                     </ImageBackground>
@@ -72,9 +76,9 @@ class AddGoal extends Component {
                                 </CardItem>
                             </TouchableOpacity>
                             <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered style={{ height: 60, alignSelf:'center' }}>
+                                <CardItem bordered style={{ height: 60, alignSelf: 'center' }}>
                                     <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Create your own</Text>
-                                    <Icon active type="EvilIcons" name="plus" style={{ fontWeight: 'bold' }}/>
+                                    <Icon active type="EvilIcons" name="plus" style={{ fontWeight: 'bold' }} />
                                 </CardItem>
                             </TouchableOpacity>
                         </Card>

@@ -263,7 +263,7 @@ const GoalStack = createStackNavigator({
   GoalStatus: {
     screen: GoalStatus,
     navigationOptions: {
-      title: 'Run 5km Daily'
+      title: 'Run 2km Daily'
     }
   },
   AddActivity: {

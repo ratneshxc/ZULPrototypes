@@ -27,7 +27,7 @@ class GoalStatus extends Component {
             },
             data: {
                 dataSets: [{
-                    values: [{ y: 4000 }, { y: 6000 }, { y: 8000 }, { y: 2000 }, { y: 8000 }, { y: 10000 }, { y: 5000 }],
+                    values: [{ y: 4257 }, { y: 6084 }, { y: 8029 }, { y: 2368 }, { y: 7937 }, { y: 2093 }, { y: 6590 }],
                     label: 'Steps',
                     config: {
                         color: processColor('teal'),
@@ -37,10 +37,10 @@ class GoalStatus extends Component {
                     }
                 }],
                 config: {
-                    barWidth: 0.7,
+                    barWidth: 0.6,
                 }
             },
-            highlights: [{ x: 3 }, { x: 6 }],
+            highlights: [{ x: 3 }, { x: 5 }],
             xAxis: {
                 valueFormatter: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
                 granularityEnabled: true,
@@ -82,67 +82,67 @@ class GoalStatus extends Component {
 
                     <View>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60}}>
                                 <Left>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Monday</Text>
-                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Mon</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>4257 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>30 points</Text>
+                                </Right>
+                            </CardItem>
+                            <CardItem bordered style={{ height: 60}}>
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Tue</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>6084 steps</Text>
+                                </Left>
+                                <Right>
+                                    <Text style={{ fontSize: 12 }}>40 points</Text>
+                                </Right>
+                            </CardItem>
+                            <CardItem bordered style={{ height: 60}}>
+                                <Left>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Wed</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>8029 steps</Text>
                                 </Left>
                                 <Right>
                                     <Text style={{ fontSize: 12 }}>60 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60}}>
                                 <Left>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Tuesday</Text>
-                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Thu</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>2368 steps</Text>
                                 </Left>
                                 <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                    <Text style={{ fontSize: 12 }}>20 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60}}>
                                 <Left>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Wednesday</Text>
-                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Fri</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>7937 steps</Text>
                                 </Left>
                                 <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                    <Text style={{ fontSize: 12 }}>50 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60}}>
                                 <Left>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Thursday</Text>
-                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Sat</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>2093 steps</Text>
                                 </Left>
                                 <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                    <Text style={{ fontSize: 12 }}>20 points</Text>
                                 </Right>
                             </CardItem>
-                            <CardItem bordered>
+                            <CardItem bordered style={{ height: 60}}>
                                 <Left>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Friday</Text>
-                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Sun</Text>
+                                    <Text style={{ fontSize: 18, left: 20 }}>6590 steps</Text>
                                 </Left>
                                 <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
-                                </Right>
-                            </CardItem>
-                            <CardItem bordered>
-                                <Left>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Saturday</Text>
-                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
-                                </Left>
-                                <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
-                                </Right>
-                            </CardItem>
-                            <CardItem bordered>
-                                <Left>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18, width:100 }}>Sunday</Text>
-                                    <Text style={{ fontSize: 18, left: 20 }}>4000 steps</Text>
-                                </Left>
-                                <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                    <Text style={{ fontSize: 12 }}>40 points</Text>
                                 </Right>
                             </CardItem>
                         </Card>
