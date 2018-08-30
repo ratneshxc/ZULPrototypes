@@ -27,7 +27,7 @@ const ExpertComponent = (props) => {
                    
                     {/* <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text> */}
                 </View>
-            
+                <TouchableOpacity  style={{ flex: 2}} onPress={()=>props.viewExperts()}>
                 <View style={{ flex: 2, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 }}>Samira Reddy</Text>
@@ -38,6 +38,7 @@ const ExpertComponent = (props) => {
                         <Text style={{ fontSize: 12 }}>5 Yrs Exp</Text>
                     </View>
                 </View>
+                </TouchableOpacity>
                 <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
                 <View style={{ flexDirection: 'row', marginTop: 5 }}>
                     <Text style={{color:'#00b386'}}>4.2</Text>
@@ -52,29 +53,13 @@ const ExpertComponent = (props) => {
                     </View>
                     <Text style={{ fontSize: 12, color: '#00b386', textDecorationLine: 'underline' }}>350 Reviews</Text>
                     <View >
-                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#F0F0F0', borderRadius: 2 }}>
-                                    <Text style={{ textAlign: 'center', color: 'white' }}>{/*<Icon name='usb' type="FontAwesome" style={{ fontSize: 18, color: 'white' }} />*/}Connect </Text>
+                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#F0F0F0', borderRadius: 2 }} onPress={()=>props.bookExperts()}>
+                                    <Text style={{ textAlign: 'center', color: 'white' }}>Connect </Text>
                                 </TouchableOpacity>
                             </View>
                 </View>
             </View>
-            {/* <View style={{ flexDirection: 'row' }} >
-                <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}} onPress={()=>props.bookExperts()}>
-                        <Text style={{ textAlign: 'center' }}>Free <Icon name='wechat' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10,borderColor:'#ddd' }}  onPress={()=>props.bookExperts()}>
-                        <Text style={{ textAlign: 'center' }}>₹100 <Icon name='play-circle' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={{ flex: 1 }}>
-                    <TouchableOpacity style={{ paddingVertical: 5, backgroundColor: '#ffffff', borderWidth: 1, margin: 10 ,borderColor:'#ddd'}} onPress={()=>props.bookExperts()}>
-                        <Text style={{ textAlign: 'center'}}>₹300 <Icon name='calendar-plus-o' type="FontAwesome" style={{ fontSize:18,marginLeft:5}} /></Text>
-                    </TouchableOpacity>
-                </View>
-            </View> */}
+
         </View>
     )
 }

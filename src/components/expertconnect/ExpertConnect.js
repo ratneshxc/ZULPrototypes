@@ -23,7 +23,9 @@ class ExportConnect extends React.Component {
 
                         <View style={{ flexDirection: 'row', flex: 1, alignSelf: 'center' }}>
                             <Text style={styles.header}>{' '}</Text>
+                            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
                             <Icon name='arrow-left' type="FontAwesome" style={{ fontSize: 18, color: 'white' }} />
+                            </TouchableOpacity>
                             <Text style={styles.header}>{'   '}</Text>
                             <Text style={styles.header}> Parent's Coach <Icon name='chevron-down' type="FontAwesome" style={{ color: "white", fontSize: 15 }} /></Text>
 
