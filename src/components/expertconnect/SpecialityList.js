@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { Thumbnail, Badge, Text, Icon } from 'native-base';
-import StarRating from 'react-native-star-rating';
 const expertData = [{
     key: 'key1',
     title: "Meditation Experts",
