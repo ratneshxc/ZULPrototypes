@@ -43,18 +43,25 @@ const expertData = [{
     icon: 'heart',
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice, Marraige Counsilling ...'
-}]
+},
+{
+    key: 'key7',
+    title: "Meditation Experts",
+    icon: 'tripadvisor',
+    img: require('../../assests/images/profilepic/yogi.jpg'),
+    description: 'Mind fit classes, Meditation Session ...'
+},]
 
 const ExpertList = (props) => {
     return (
         <View>
             {/*Recently Contacted*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5F5F5' }} >
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
                 <Text style={{ flex: 1 }}>Recently Contacted</Text>
                 <Text style={{ color: "#00b386", textDecorationLine: 'underline' }}>View More</Text>
             </View>
             {/*Recent Experts*/}
-            <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F5F5F5' }}>
+            <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
                 <View style={{ flex: 1, flexDirection: 'row',backgroundColor: '#fff'  }}>
                     <View style={{ alignItems: 'center', padding: 5 }}>
                         <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
@@ -69,7 +76,7 @@ const ExpertList = (props) => {
                         <View style={{ flexDirection: 'row' }}>
 
                             <View style={{ flex: 2 }}>
-                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#F5F5F5', borderRadius: 2 }}>
+                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#F0F0F0', borderRadius: 2 }}>
                                     <Text style={{ textAlign: 'center', color: 'white' }}><Icon name='usb' type="FontAwesome" style={{ fontSize: 18, color: 'white' }} /> Connect</Text>
                                 </TouchableOpacity>
                             </View>
@@ -79,7 +86,7 @@ const ExpertList = (props) => {
                 </View>
             </View>
             {/*Find and connect*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5F5F5' }}>
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
                 <Text style={{ flex: 1 }}>Find & Connect</Text>
 
             </View>
@@ -99,7 +106,7 @@ const styles = StyleSheet.create({
 const SpecialityComponent = (props) => {
     return (
 
-        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F5F5F5' }} >
+        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }} >
             <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff' }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail small square source={props.item.img} />
