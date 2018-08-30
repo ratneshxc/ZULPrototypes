@@ -12,7 +12,7 @@ var statementData = [
             {label:"Everyday of the week",value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.2,
+        progressBar: 0.14,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -30,7 +30,7 @@ var statementData = [
             {label:"> 40 steps",value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.2,
+        progressBar: 0.28,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -50,7 +50,7 @@ var statementData = [
             {label:"Fresh Fruits and vegetables",value: '6', checked:false}
         ],
         ansType: 'multiple',
-        progressBar: 0.2,
+        progressBar: 0.42,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -68,7 +68,7 @@ var statementData = [
             {label:"More than 10 hours of sleep",value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.2,
+        progressBar: 0.56,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -86,7 +86,7 @@ var statementData = [
             {label:"I do not smoke",value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.2,
+        progressBar: 0.71,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -104,7 +104,7 @@ var statementData = [
             {label:"I do not drink alcohol",value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.2,
+        progressBar: 0.85,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
@@ -122,7 +122,7 @@ var statementData = [
             {label:"I have a large support group consisting of professional help, friends and family",value: '4'}
         ],
         ansType: 'single',
-        progressBar: 0.2,
+        progressBar: 1,
         progressBarColor: '#ff2626',
         likes: 25,
         selectedIndex: null
