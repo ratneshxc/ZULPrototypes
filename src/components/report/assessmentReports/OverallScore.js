@@ -27,6 +27,9 @@ const OverallScore = (props) => {
                 {
                     (fill) => (
                         <View>
+                            <Text style={{ fontSize: 20, textAlign: 'center' }}>
+                                {`${score.value}%`}
+                            </Text>
                             <Text style={{ fontSize: 25 }}>
                                 {score.caption}
                             </Text>
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     title: {
-      
+
     }
 })
 export default connect(mapStateToProps)(OverallScore);

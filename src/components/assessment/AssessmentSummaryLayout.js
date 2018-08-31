@@ -31,7 +31,7 @@ class AssessmentSummaryLayout extends Component {
             <Container>
                 <Header>
                     <Left>
-                    <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
+                        <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
                             <Icon name='menu' />
                         </Button>
                     </Left>
@@ -61,8 +61,10 @@ class AssessmentSummaryLayout extends Component {
                             onAnimationComplete={() => console.log('onAnimationComplete')}
                             backgroundColor="#ddd">
                             {
+
                                 (fill) => (
                                     <View>
+                                        <Text style={{ fontSize: 15, textAlign: 'center' }}>65%</Text>
                                         <Text style={{ fontSize: 20 }}>
                                             Excellent
                                         </Text>
@@ -94,7 +96,8 @@ const styles = StyleSheet.create({
     container: {
     },
     title: {
-        padding: 10
+        padding: 10,
+        color: '#495057'
     }
 })
 const CardInfo = (props) => {
@@ -112,7 +115,7 @@ const CardInfo = (props) => {
                     ))}
                 </View>
                 <View style={{ marginTop: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center' }}>{props.title}</Text>
+                    <Text style={{ fontSize: 20, textAlign: 'center',color: '#495057' }}>{props.title}</Text>
                 </View>
             </Card>
         </View>
@@ -124,12 +127,17 @@ const DimensionCard = (props) => {
     return (
         <Card style={{ padding: 10 }}>
             <View style={{ flexDirection: 'row' }}>
-                <Text style={{ fontSize: 20 }}>{props.dimension.title}</Text>
+                <View style={{ flex: 1 }}>
+                    <Text style={{ fontSize: 20, color: '#495057' }}>{props.dimension.title}</Text>
+                </View>
+                <View>
+                    <Image style={{ width: 30, height: 30 }} source={props.dimension.emoji} />
+                </View>
             </View>
             <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                <Image style={{ width: 50, height: 50 }} source={props.dimension.emoji} />
+                <Text style={{ fontSize: 35 }}>{props.dimension.score}</Text>
             </View>
-            <View style={{backgroundColor:'#e4e4e4'}}>
+            <View style={{ backgroundColor: '#e4e4e4' }}>
                 <View style={{ height: 5, width: props.dimension.score, backgroundColor: props.dimension.progressColor }}></View>
             </View>
         </Card>
