@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { Thumbnail, Badge, Text, Icon } from 'native-base';
-import StarRating from 'react-native-star-rating';
 const expertData = [{
     key: 'key1',
     title: "Meditation Experts",
@@ -106,8 +105,8 @@ const styles = StyleSheet.create({
 const SpecialityComponent = (props) => {
     return (
 
-        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }} >
-            <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff' }}>
+        <View style={{ flexDirection: 'column', padding: 3,paddingVertical:2, backgroundColor: '#F0F0F0' }} >
+            <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff',padding:5 }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail small square source={props.item.img} />
                 </View>

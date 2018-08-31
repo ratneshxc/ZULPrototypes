@@ -22,7 +22,7 @@ export default class ExpertProfile extends Component {
     _renderHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#294787" }}
             >
                 <Text style={{ flex: 1, color: 'white' }}>
                     {" "}{dataArray.title}

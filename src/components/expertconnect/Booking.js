@@ -33,7 +33,7 @@ export default class Booking extends Component {
     _renderAppointmentHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#294787" }}
             >
                 <Text style={{ flex: 1, color: 'white' }}>
                     {" "}{dataArray.title}
@@ -142,7 +142,7 @@ export default class Booking extends Component {
     _renderPersonnelHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#294787" }}
             >
                 <Text style={{ flex: 1, color: 'white' }}>
                     {" "}{dataArray.title}
