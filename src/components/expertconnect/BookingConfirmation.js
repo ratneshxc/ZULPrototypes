@@ -84,16 +84,16 @@ export default class BookingConfirmation extends Component {
     _renderAppointmentHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between",backgroundColor: "#F0F0F0" }}
             >
-                <Text style={{ flex: 1, color: 'white' }}>
+                <Text style={{ flex: 1, }}>
                     {" "}{dataArray.title}
                 </Text>
 
 
                 {expanded
-                    ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                    : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                    ? <Icon style={{ fontSize: 20 }} name='chevron-up' type="FontAwesome" />
+                    : <Icon style={{ fontSize: 20 }} name='chevron-down' type="FontAwesome"  />}
             </View>
         );
     }
@@ -128,16 +128,16 @@ export default class BookingConfirmation extends Component {
     _renderPersonnelHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#374252" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#F0F0F0" }}
             >
-                <Text style={{ flex: 1, color: 'white' }}>
+                <Text style={{ flex: 1 }}>
                     {" "}{dataArray.title}
                 </Text>
 
 
                 {expanded
-                    ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                    : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                    ? <Icon style={{ fontSize: 20 }} name='chevron-up' type="FontAwesome"  />
+                    : <Icon style={{ fontSize: 20 }} name='chevron-down' type="FontAwesome"  />}
             </View>
         );
     }
@@ -178,7 +178,7 @@ export default class BookingConfirmation extends Component {
                     <Right>
                     </Right>
                 </Header>
-                <Content padder style={{ backgroundColor: "white" }}>
+                <Content  style={{ backgroundColor: "white" }}>
                     <Accordion
                         dataArray={AppointmentDetails}
                         animation={true}
