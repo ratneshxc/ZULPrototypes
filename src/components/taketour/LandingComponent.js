@@ -8,6 +8,10 @@ const mapDispatchToProps = dispatch => (
         hideZula: () => dispatch({
             type: 'ZulaReducer_Access',
             payload: false
+        }),
+        setAssessmentType: (data) => dispatch({
+            type: 'AssessmentReducer_SelectAssessmentType',
+            payload: data
         })
     }
 )
@@ -39,11 +43,6 @@ class LandingComponent extends React.Component {
     componentWillUnmount() {
         clearInterval(this.backInterval);
     }
-
-    takeAssessment = () => {
-        this.props.navigation.navigate('Assessment');
-    }
-
     goRegister = () => {
         this.props.navigation.navigate('Register');
     }
@@ -51,6 +50,10 @@ class LandingComponent extends React.Component {
         this.props.navigation.navigate('LogIn');
     }
 
+    selectAssessment = () => {
+        this.props.setAssessmentType("Wholesomeness");
+        this.props.navigation.navigate("AssessmentInfo", { title: "Wholesomeness" });
+    }
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -65,7 +68,7 @@ class LandingComponent extends React.Component {
                     <Text style={{ fontSize: 35, textAlign: 'center', color: '#fff', marginBottom: 100 }}>Re-Discover Yourself</Text>
                     <Text style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center', color: '#fff' }}>20,083</Text>
                     <Text style={styles.statement}> People have already taken assessments</Text>
-                    <TouchableOpacity style={styles.takeAssessmentBtn} onPress={this.takeAssessment}>
+                    <TouchableOpacity style={styles.takeAssessmentBtn} onPress={this.selectAssessment}>
                         <Text style={styles.textWhite}>{'Check Your Wellness'.toUpperCase()}</Text>
                     </TouchableOpacity>
                     <View style={{ flexDirection: 'row', marginTop: 90 }}>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Form from './Form';
 import LinearGradient from 'react-native-linear-gradient';
 
-export default class login extends React.Component {
+class Login extends React.Component {
 
   goRegister = () => {
     this.props.navigation.navigate('Register');
@@ -27,3 +27,5 @@ const styles = StyleSheet.create({
     padding: 20
   }
 })
+
+export default Login;

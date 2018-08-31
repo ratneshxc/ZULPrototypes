@@ -5,28 +5,11 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import Image from 'react-native-remote-svg';
 import LinearGradient from 'react-native-linear-gradient';
 
-const styles = StyleSheet.create({
-  text: {
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-    paddingHorizontal: 16,
-    color: '#fff'
-  },
-  title: {
-    fontSize: 30,
-    backgroundColor: 'transparent',
-    textAlign: 'center',
-    marginBottom: 16,
-    fontWeight: 'bold',
-    color: '#fff'
-  }
-});
-
 const slides = [
   {
     key: 'sd0',
     title: 'Physical',
-    text: 'Physical Wellness is the ability to maintain a healthy quality of life that allows us to get through our daily activities without undue fatigue or physical stress. The ability to recognize that our behaviors have a significant impact on our wellness and adopting healthful habits (routine check ups, a balanced diet, exercise, etc.) while avoiding destructive habits (tobacco, drugs, alcohol, etc.) will lead to optimal Physical Wellness.',
+    text: 'Physical Wellness is the ability to maintain a healthy quality of life that allows us to get through our daily activities without undue fatigue or physical stress. The ability to recognize that our behaviors have a significant impact on our wellness and adopting healthful habits while avoiding destructive habits will lead to optimal Physical Wellness.',
     icon: require('../../assests/images/dashboard/physical.svg'),
     colors: ['#63E2FF', '#B066FE']
   },
@@ -81,14 +64,33 @@ const slides = [
   }
 ];
 
+const styles = StyleSheet.create({
+  text: {
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    paddingHorizontal: 16,
+    color: '#fff'
+  },
+  title: {
+    fontSize: 30,
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    marginBottom: 16,
+    fontWeight: 'bold',
+    color: '#fff'
+  }
+});
+
 export default class AppIntro extends React.Component {
   _renderItem = props => (
-    <LinearGradient colors={props.colors} style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height, alignItems: 'center', padding: 20 }}>
+    <LinearGradient colors={props.colors} style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height, alignItems: 'center', padding: 20, flexDirection: 'column' }}>
       <Text style={styles.title}>{props.title}</Text>
-      <View style={{ backgroundColor: '#fff', padding: 10, borderRadius: 20, marginVertical: 20 }}>
-        <Image source={props.icon} style={{ width: 200, height: 200 }} />
+      <View style={{ backgroundColor: '#fff', padding: 10, borderRadius: 20, marginVertical: 20, flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Image source={props.icon} style={{ width: 150, height: 150 }} />
       </View>
-      <Text style={styles.text}>{props.text}</Text>
+      <View style={{ flex: 2 }}>
+        <Text style={styles.text}>{props.text}</Text>
+      </View>
     </LinearGradient>
   );
   _done = () => {
