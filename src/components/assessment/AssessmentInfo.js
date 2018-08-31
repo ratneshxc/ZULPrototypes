@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import { Platform, View, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
-import { Header, Footer, FooterTab, Left, Right, Text, Button, Container, Content } from 'native-base';
+import { View, StyleSheet, ImageBackground, Dimensions } from 'react-native';
+import { Text, Button, Container, Content } from 'native-base';
 import { connect } from 'react-redux';
 import assessmentDetailsData from '../../data/assessmentDetailsData';
 
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
         margin: 30,
         backgroundColor: '#00000066',
         flex: 1,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     title: {
         fontSize: 30,

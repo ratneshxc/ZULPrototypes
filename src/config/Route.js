@@ -321,7 +321,7 @@ const MainApp = createDrawerNavigator({
     navigationOptions: {
       title: 'Connect with Experts',
       drawerIcon: ({ focused, tintColor }) => {
-        const iconName = `users${focused ? '' : ''}`;
+        const iconName = `plug${focused ? '' : ''}`;
         return <FontIcon name={iconName} size={25} color={tintColor} />;
       }
     }
@@ -331,7 +331,7 @@ const MainApp = createDrawerNavigator({
     navigationOptions: {
       title: 'Sign Out',
       drawerIcon: ({ focused, tintColor }) => {
-        const iconName = `users${focused ? '' : ''}`;
+        const iconName = `sign-out${focused ? '' : ''}`;
         return <FontIcon name={iconName} size={25} color={tintColor} />;
       }
     }

@@ -24,7 +24,7 @@ export default class Register extends React.Component {
     return (
       <View style={{ flex: 1, flexDirection: 'column' }}>
 
-        <LinearGradient colors={['#a47ca7', '#0090c1']} style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+        <LinearGradient colors={['#63E2FF', '#B066FE']} style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
           <View style={{ padding: 5, borderRadius: 10, marginTop: 20 }}>
             <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
           </View>

@@ -7,39 +7,52 @@ const initialState = {
     isNextQuestionLoading: false,
     dimensionReport: [{
         title: 'Physical',
-        score: '25%',
+        score: '95%',
         icon:require('../../assests/images/dashboard/physical.svg'),
-        emoji:require('../../assests/images/emoji/01.svg')
+        emoji:require('../../assests/images/emoji/01.svg'),
+        progressColor:'rgb(34, 208, 51)'
     }, {
         title: 'Emotional',
-        score: '35%',
+        score: '75%',
         icon:require('../../assests/images/dashboard/emotional.svg'),
-        emoji:require('../../assests/images/emoji/02.svg')
+        emoji:require('../../assests/images/emoji/02.svg'),
+        progressColor:'rgb(130, 227, 61)'
     }, {
         title: 'Spiritual',
-        score: '65%',
+        score: '45%',
         icon:require('../../assests/images/dashboard/spiritual.svg'),
-        emoji:require('../../assests/images/emoji/03.svg')
+        emoji:require('../../assests/images/emoji/03.svg'),
+        progressColor:'rgb(255, 247, 73)'
     }, {
         title: 'Environmental',
-        score: '85%',
+        score: '25%',
         icon:require('../../assests/images/dashboard/environmental.svg'),
-        emoji:require('../../assests/images/emoji/04.svg')
+        emoji:require('../../assests/images/emoji/04.svg'),
+        progressColor:'rgb(254, 136, 55)'
     }, {
         title: 'Financial',
         score: '21%',
         icon:require('../../assests/images/dashboard/financial.svg'),
-        emoji:require('../../assests/images/emoji/04.svg')
+        emoji:require('../../assests/images/emoji/04.svg'),
+        progressColor:'rgb(254, 136, 55)'
     }, {
         title: 'Social',
-        score: '85%',
+        score: '54%',
         icon:require('../../assests/images/dashboard/social.svg'),
-        emoji:require('../../assests/images/emoji/03.svg')
+        emoji:require('../../assests/images/emoji/03.svg'),
+        progressColor:'rgb(255, 247, 73)'
     }, {
         title: 'Intellectual',
-        score: '21%',
+        score: '92%',
         icon:require('../../assests/images/dashboard/intellectual.svg'),
-        emoji:require('../../assests/images/emoji/01.svg')
+        emoji:require('../../assests/images/emoji/01.svg'),
+        progressColor:'rgb(34, 208, 51)'
+    },{
+        title: 'Occupational',
+        score: '92%',
+        icon:require('../../assests/images/dashboard/intellectual.svg'),
+        emoji:require('../../assests/images/emoji/01.svg'),
+        progressColor:'rgb(34, 208, 51)'
     }],
     assessmentReport: [{
         title: 'Strength & Energy',

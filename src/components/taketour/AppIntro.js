@@ -47,7 +47,7 @@ const slides = [
   {
     key: 'sd3',
     title: 'Financial',
-    text: "Financial Wellness is the ability to have control over one's financial future and to take appropriate financial decisions in accordance with one's life needs",
+    text: "Financial Wellness is the ability to have control over one's financial future and to take appropriate financial decisions in accordance with one's life needs.",
     icon: require('../../assests/images/dashboard/financial.svg'),
     colors: ['#63E2FF', '#B066FE']
   },

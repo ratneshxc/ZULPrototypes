@@ -2,7 +2,7 @@ const initialState = {
     assessmentReport: {
         title: 'Report of Zest for life',
         score: {
-            value: 70,
+            value: 55,
             caption: 'Average'
         },
         observations: [{
