@@ -19,21 +19,17 @@ class ExportConnect extends React.Component {
             <Container>
                 {/* Expert Header*/}
                 <View style={{ flexDirection: 'column', backgroundColor: "#294787" }}>
-                    <View style={{ flexDirection: 'row', paddingVertical: 8 }}>
+                <Header searchBar rounded>
 
-                        <View style={{ flexDirection: 'row', flex: 1, alignSelf: 'center' }}>
-                            <Text style={styles.header}>{' '}</Text>
-                            <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-                            <Icon name='arrow-left' type="FontAwesome" style={{ fontSize: 18, color: 'white' }} />
-                            </TouchableOpacity>
-                            <Text style={styles.header}>{'   '}</Text>
-                            <Text style={styles.header}> Parent's Coach <Icon name='chevron-down' type="FontAwesome" style={{ color: "white", fontSize: 15 }} /></Text>
-
-                        </View>
-                        <View style={{ flexDirection: 'row' }}>
-                            <Text style={styles.header}>Online <Icon name='chevron-down' type="FontAwesome" style={{ color: "white", fontSize: 15 }} /></Text>
-                        </View>
-                    </View>
+                <Item  style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
+                    <Icon name="ios-search" />
+                    <Input placeholder="Search Experts, Specialities etc.." />
+                    <Icon name="ios-people" />
+                </Item>
+                <Button transparent>
+                    <Text>Search</Text>
+                </Button>
+            </Header>
                     <View style={{ flexDirection: 'row', paddingVertical: 5, }}>
                         <ScrollView horizontal={true} style={{ flexDirection: 'row', flex: 1 }}>
                             <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }}>
