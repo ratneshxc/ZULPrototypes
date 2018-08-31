@@ -2,12 +2,83 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity,TouchableHighlight, FlatList, ScrollView } from 'react-native';
 import { Thumbnail, Badge, Text, Icon } from 'native-base';
 import StarRating from 'react-native-star-rating';
-
+const expertData =[
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/gym.jpg'),
+        name:'Sanjay Singhania',
+        degree:'MBBS, DOMS',
+        speciality:'Yoga expert',
+        experience:5,
+        rating:4.3,
+        reviews:150
+    },
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/cute1.jpg'),
+        name:'Samira Reddy',
+        degree:'MBBS, BODMS',
+        speciality:'Child Specialists',
+        experience:10,
+        rating:4.2,
+        reviews:150
+    },
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/suresh.png'),
+        name:'Dr. Suresh Kumar',
+        degree:'PhD, M.S, B.S',
+        speciality:'Family expert',
+        experience:5,
+        rating:4.1,
+        reviews:250
+    },
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/girl.jpg'),
+        name:'Sukhi Rukhi',
+        degree:'M.S, B.S',
+        speciality:'Yoga expert',
+        experience:5,
+        rating:4.3,
+        reviews:150
+    },
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/beautiful-girl.jpg'),
+        name:'Sanjana Ranawat',
+        degree:'M.S, B.S',
+        speciality:'Yoga expert',
+        experience:5,
+        rating:4.3,
+        reviews:150
+    },
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/stylish-girl.jpg'),
+        name:'Hima Soni',
+        degree:'M.Sc, B.Sc',
+        speciality:'Meditation expert',
+        experience:5,
+        rating:4.3,
+        reviews:150
+    },
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/suresh.png'),
+        name:'Dr. Ramesh Kumar',
+        degree:'PhD, M.S, B.S',
+        speciality:'Family expert',
+        experience:5,
+        rating:4.1,
+        reviews:250
+    },
+];
 
 const ExpertList = (props) => {
     return (
         <FlatList
-            data={[{ key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }, { key: 'a' }, { key: 'b' }]}
+            data={expertData}
             renderItem={({ item }) => <ExpertComponent item={item} bookExperts={props.bookExperts} viewExperts={props.viewExperts}/>}
         />
     )
@@ -23,38 +94,38 @@ const ExpertComponent = (props) => {
         <View style={{ flexDirection: 'column', padding: 5 , backgroundColor: '#F0F0F0'}}>
             <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff' }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
-                    <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
+                    <Thumbnail medium square source={props.item.img} style={{height:65}}/>
                    
                     {/* <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text> */}
                 </View>
                 <TouchableOpacity  style={{ flex: 2}} onPress={()=>props.viewExperts()}>
                 <View style={{ flex: 2, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
-                        <Text style={{ flex: 1 }}>Samira Reddy</Text>
+                        <Text style={{ flex: 1 }}>{props.item.name}</Text>
                     </View>
-                    <Text style={{ fontSize: 13, color: '#505050', margin:0}}>Dermatologiest, MBBS</Text>
-                    <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialists</Text>
+                    <Text style={{ fontSize: 13, color: '#505050', margin:0}}>{props.item.degree}</Text>
+                    <Text style={{ fontSize: 13, color: '#505050' }}>{props.item.speciality}</Text>
                     <View style={{ flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 12 }}>5 Yrs Exp</Text>
+                        <Text style={{ fontSize: 12 }}>{props.item.experience} Yrs Exp</Text>
                     </View>
                 </View>
                 </TouchableOpacity>
                 <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
-                <View style={{ flexDirection: 'row', marginTop: 5 }}>
-                    <Text style={{color:'#00b386'}}>4.2</Text>
+                <View style={{ flexDirection: 'row', marginTop: 0 ,marginLeft:10}}>
+                    <Text style={{color:'#294787'}}>{props.item.rating}</Text>
                         <StarRating
                             disabled={false}
                             maxStars={1}
                             rating={1}
                             style={{ width: 50 }}
-                            fullStarColor={'#00b386'}
+                            fullStarColor={'#294787'}
                             starSize={18}
                         />
                     </View>
-                    <Text style={{ fontSize: 12, color: '#00b386', textDecorationLine: 'underline' }}>350 Reviews</Text>
+                     <Text style={{ fontSize: 12, color: '#294787', marginLeft:10 }}>{props.item.reviews} Reviews</Text> 
                     <View >
-                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#F0F0F0', borderRadius: 2 }} onPress={()=>props.bookExperts()}>
-                                    <Text style={{ textAlign: 'center', color: 'white' }}>Connect </Text>
+                                <TouchableOpacity  style={{ paddingVertical: 4, backgroundColor:'white' , borderWidth: 1, margin: 0, marginLeft: 0, borderColor: '#294787', borderRadius: 50 }} onPress={()=>props.bookExperts()}>
+                                    <Text style={{ textAlign: 'center', color: '#294787' }}>Connect </Text>
                                 </TouchableOpacity>
                             </View>
                 </View>

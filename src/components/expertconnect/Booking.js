@@ -33,25 +33,25 @@ export default class Booking extends Component {
     _renderAppointmentHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#294787" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#F0F0F0" }}
             >
-                <Text style={{ flex: 1, color: 'white' }}>
+                <Text style={{ flex: 1 }}>
                     {" "}{dataArray.title}
                 </Text>
 
-                <Icon style={{ fontSize: 10 }} name='wechat' type="FontAwesome" style={{ marginHorizontal: 5, color: 'white' }} />
-                <Text style={{ marginHorizontal: 5, color: 'white' }}>
+                <Icon name='wechat' type="FontAwesome" style={{ marginHorizontal: 5, fontSize:20 }} />
+                <Text style={{ marginHorizontal: 5}}>
                     ₹150
             </Text>
                 {expanded
-                    ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                    : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                    ? <Icon style={{ fontSize: 20 }} name='chevron-up' type="FontAwesome"  />
+                    : <Icon style={{ fontSize: 20 }} name='chevron-down' type="FontAwesome"  />}
             </View>
         );
     }
     _renderAppointmentContent(dataArray) {
         return (
-            <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff', minHeight: 120 }}>
+            <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#FFFFFF', minHeight: 120 }}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
                     <View style={{ alignItems: 'center', padding: 5 }}>
                         <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
@@ -142,23 +142,23 @@ export default class Booking extends Component {
     _renderPersonnelHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#294787" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#F0F0F0" }}
             >
-                <Text style={{ flex: 1, color: 'white' }}>
+                <Text style={{ flex: 1 }}>
                     {" "}{dataArray.title}
                 </Text>
 
 
                 {expanded
-                    ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                    : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                    ? <Icon style={{ fontSize: 20 }} name='chevron-up' type="FontAwesome" />
+                    : <Icon style={{ fontSize: 20 }} name='chevron-down' type="FontAwesome" />}
             </View>
         );
     }
 
     _renderPersonnelContent(dataArray) {
         return (
-            <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
+            <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#FFFFFF' }}>
             
                 <Item fixedLabel>
                     <Label style={{ color: 'black' }}>Name</Label>
@@ -210,7 +210,7 @@ export default class Booking extends Component {
                     <Right>
                     </Right>
                 </Header>
-                <Content padder style={{ backgroundColor: "white" }}>
+                <Content  style={{ backgroundColor: "white" }}>
                     <Accordion
                         dataArray={AppointmentDetails}
                         animation={true}

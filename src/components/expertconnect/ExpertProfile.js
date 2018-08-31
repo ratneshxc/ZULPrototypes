@@ -22,16 +22,16 @@ export default class ExpertProfile extends Component {
     _renderHeader(dataArray, expanded) {
         return (
             <View
-                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#294787" }}
+                style={{ flexDirection: "row", padding: 10, justifyContent: "space-between", backgroundColor: "#ffffff" }}
             >
-                <Text style={{ flex: 1, color: 'white' }}>
+                <Text style={{ flex: 1,  }}>
                     {" "}{dataArray.title}
                 </Text>
 
 
                 {expanded
-                    ? <Icon style={{ fontSize: 10 }} name='chevron-up' type="FontAwesome" style={{ color: 'white' }} />
-                    : <Icon style={{ fontSize: 10 }} name='chevron-down' type="FontAwesome" style={{ color: 'white' }} />}
+                    ? <Icon style={{ fontSize: 20 }} name='chevron-up' type="FontAwesome"  />
+                    : <Icon style={{ fontSize: 20 }} name='chevron-down' type="FontAwesome" />}
             </View>
         );
     }
@@ -50,7 +50,7 @@ export default class ExpertProfile extends Component {
                     <Right>
                     </Right>
                 </Header>
-                <Content  style={{ backgroundColor: "#ddd",padding:5 }}>
+                <Content  style={{ backgroundColor: "#F0F0F0" }}>
                 {/*Expert Card*/}
                 <View style={{ flexDirection: 'column', padding: 0, marginVertical: 1, backgroundColor: '#ffffff' }}>
             <View style={{ flex: 1, flexDirection: 'row' }}>
