@@ -251,7 +251,7 @@ const GoalStack = createStackNavigator({
   AddGoal: {
     screen: AddGoal,
     navigationOptions: {
-      title: 'Choose your goal'
+      title: 'Add Goal'
     }
   },
   YourGoal: {
@@ -286,16 +286,16 @@ const GoalStack = createStackNavigator({
   })
 
 const MainApp = createDrawerNavigator({
-  LandingTab: {
-    screen: NotificationApp,
-    navigationOptions: {
-      title: 'Home',
-      drawerIcon: ({ focused, tintColor }) => {
-        const iconName = `home${focused ? '' : ''}`;
-        return <FontIcon name={iconName} size={25} color={tintColor} />;
-      }
-    }
-  },
+  // LandingTab: {
+  //   screen: NotificationApp,
+  //   navigationOptions: {
+  //     title: 'Home',
+  //     drawerIcon: ({ focused, tintColor }) => {
+  //       const iconName = `home${focused ? '' : ''}`;
+  //       return <FontIcon name={iconName} size={25} color={tintColor} />;
+  //     }
+  //   }
+  // },
   AssessmentLayout: {
     screen: WellnessSwitch,
     navigationOptions: {
@@ -339,7 +339,7 @@ const MainApp = createDrawerNavigator({
 });
 
 const AppRoute = createSwitchNavigator({
-  AppIntro: { screen: Goals },
+  AppIntro: { screen: AppIntro },
   LandingComponent: { screen: LandingComponent },
   LogIn: { screen: LogIn },
   Register: { screen: Register },

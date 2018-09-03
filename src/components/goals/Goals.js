@@ -8,10 +8,7 @@ import StepIndicator from 'react-native-step-indicator';
 
 
 class Goals extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { toBeDone: true, Completed: false, toBeDoneStyle: 'lightgray', completedStyle: 'white' };
-    }
+   
     addGoal = () => {
         this.props.navigation.navigate('AddGoal');
     }
@@ -41,7 +38,8 @@ class Goals extends Component {
                 <Fab
                     containerStyle={{}}
                     style={{ backgroundColor: '#5067FF' }}
-                    position="bottomLeft">
+                    position="bottomLeft"
+                    onPress={this.addGoal}>
                     <Icon name="plus" type="FontAwesome" />
                 </Fab>
             </Container>
@@ -172,7 +170,7 @@ const Activity = () => {
                     <View style={{ height: 5, width: '20%', backgroundColor: '#ce3c3e' }}></View>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-                    <Text style={{ fontSize: 12, fontStyle: 'italic' }}>Completed <Text style={{ fontWeight: 'bold' }}>1 Km</Text></Text>
+                    <Text style={{ fontSize: 12, fontStyle: 'italic' }}>Completed <Text style={{ fontWeight: 'bold' }}>1Km</Text></Text>
                 </View>
             </View>
             <Text style={{ fontSize: 11 }}>{"week".toUpperCase()}</Text>
