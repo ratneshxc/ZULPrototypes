@@ -44,77 +44,34 @@ class AddGoal extends Component {
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
                             <Text style={{ flex: 1 }}>Your searches</Text>
                         </View>
-                        {/*Recent Experts*/}
-                        <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered >
-                                    <Left>
-                                        <Icon active name="logo-googleplus" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Practice self-disclosure</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
-                                        <Icon active name="logo-googleplus" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Save your income tax</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
+                        {/*Search results*/}
+
+                        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#fff' }}>
+
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
                                         <Icon active type="MaterialCommunityIcons" name="run" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Lose 6 kg weight</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
-                                        <Icon active name="logo-googleplus" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Relieve stress and anger</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                        </Card>
-                        {/* <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
-                <View style={{ flex: 1, flexDirection: 'row',backgroundColor: '#fff'  }}>
-                    <View style={{ alignItems: 'center', padding: 5 }}>
-                        <Thumbnail large square source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
-                    </View>
-                    <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
-                        <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                            <Text style={{ flex: 1 }}>Samira Reddy</Text>
-                            <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 }} />
+                                        <Text style={{ marginLeft: 12, fontSize: 18, flex: 1 }}>Lose 6 kg weight</Text>
 
-                        </View>
-                        <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialist</Text>
-                        <View style={{ flexDirection: 'row' }}>
+                                        <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} />
 
-                            <View style={{ flex: 2 }}>
-                                <TouchableOpacity style={{ paddingVertical: 4, backgroundColor: '#007bff', borderWidth: 1, margin: 5, marginLeft: 0, borderColor: '#F0F0F0', borderRadius: 2 }}>
-                                    <Text style={{ textAlign: 'center', color: 'white' }}><Icon name='usb' type="FontAwesome" style={{ fontSize: 18, color: 'white' }} /> Connect</Text>
+                                    </View>
                                 </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column', flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                         <Icon active type="MaterialCommunityIcons" name="run" />
+                                        <Text style={{ marginLeft: 12, fontSize: 18, flex: 1 }}>Save your income tax</Text>
+
+                                        <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} />
+
+                                    </View>
+                                </TouchableOpacity>
+
                             </View>
-                            <View style={{ flex: 2 }}></View>
                         </View>
-                    </View>
-                </View>
-            </View> */}
                         {/*Find and connect*/}
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
                             <Text style={{ flex: 1 }}>Find & Connect</Text>
