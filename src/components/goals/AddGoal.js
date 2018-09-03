@@ -12,12 +12,35 @@ class AddGoal extends Component {
     render() {
         return (
             <Container>
-                <View style={{ backgroundColor: "#294787", padding: 10 }}>
+                               <Header>
+                    <Left>
+                        <Button transparent>
+                        <Icon name='arrow-left' type="FontAwesome"  />
+
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Search goals</Title>
+                    </Body>
+                    <Right>
+                    </Right>
+                </Header>
+            <Header searchBar rounded>
+                <Item  style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
+                    <Icon name="ios-search" />
+                    <Input placeholder="Goals" />
+                    <Icon name="ios-people" />
+                </Item>
+                <Button transparent>
+                    <Text>Search</Text>
+                </Button>
+            </Header>
+                {/* <View style={{ backgroundColor: "#294787", padding: 10 }}>
                     <View style={{ flexDirection: 'row' }}>
 
                         <Icon name='arrow-left' type="FontAwesome" style={{ color: 'white',fontSize:18 }} />
 
-                        <Text style={{ flex: 1, color: 'white',left: 15, fontSize: 18 }}>Choose your Goals</Text>
+                        <Text style={{ flex: 1, color: 'white',left: 15, fontSize: 18 }}>Choose your goals</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         <Item style={{ left: 20, top: 2, borderRadius: 30, padding: 2, height: 30, flexDirection: 'row', width: (screenwidth-15), backgroundColor: '#ededed', }}>
@@ -26,17 +49,8 @@ class AddGoal extends Component {
                             <Icon name="ios-people" />
                         </Item>
                     </View>
-                </View>
+                </View> */}
                 <Content style={styles.container}>
-                    <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
-                        <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1 }}>
-                            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Text style={{ padding: 10, color: 'white', fontSize: 26, fontWeight: 'bold' }}>Select a goal</Text>
-                                </View>
-                            </View>
-                        </View>
-                    </ImageBackground>
                     <View>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <TouchableOpacity onPress={this.goToYourAddGoal}>
@@ -81,12 +95,6 @@ class AddGoal extends Component {
                                     <Right>
                                         <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
                                     </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered style={{ height: 60, alignSelf: 'center' }}>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Create your own</Text>
-                                    <Icon active type="EvilIcons" name="plus" style={{ fontWeight: 'bold' }} />
                                 </CardItem>
                             </TouchableOpacity>
                         </Card>
