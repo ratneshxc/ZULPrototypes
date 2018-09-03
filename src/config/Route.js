@@ -251,7 +251,7 @@ const GoalStack = createStackNavigator({
   AddGoal: {
     screen: AddGoal,
     navigationOptions: {
-      title: 'Add Goal'
+      header:null
     }
   },
   YourGoal: {
