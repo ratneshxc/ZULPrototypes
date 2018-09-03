@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
-import { Header, Button, Title, Container, Icon, Content, Footer, FooterTab, Card, CardItem, List, ListItem, Badge, Item, Input, Right, Left, Body } from 'native-base';
+import { Platform, View, StyleSheet, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
+import { Header, Button, Text, Title, Container, Icon, Content, Footer, FooterTab, Card, CardItem, List, ListItem, Badge, Item, Input, Right, Left, Body } from 'native-base';
 
 const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width - 20;
@@ -9,79 +9,140 @@ class AddGoal extends Component {
     goToYourAddGoal = () => {
         this.props.navigation.navigate('YourGoal');
     }
+    goToPreviousPage = () => {
+        this.props.navigation.goBack();
+    }
     render() {
         return (
             <Container>
-                <Content style={styles.container}>
-                    <ImageBackground source={require('../../assests/images/goals/Goal.jpg')} style={{ right: 5, width: windowObj.width + 20, height: windowObj.height / 4, alignSelf: 'center' }} resizeMode="cover">
-                        <View style={{ backgroundColor: '#00000066', padding: 10, flex: 1 }}>
-                            <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Item style={{ left: 10, top: 8, borderRadius: 30, padding: 5, height: 40, flexDirection: 'row', width: screenwidth, backgroundColor: '#ededed' }}>
-                                        <Icon name="ios-search" />
-                                        <Input placeholder="Search" />
-                                        <Icon name="ios-people" />
-                                    </Item>
-                                </View>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Text style={{ padding: 10, color: 'white', fontSize: 26, fontWeight: 'bold' }}>Select a goal</Text>
-                                </View>
+                <Header searchBar rounded>
+                    <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
+                        <Icon name="ios-search" />
+                        <Input placeholder="Goals" />
+                        <Icon name="ios-people" />
+                    </Item>
+                    <Button transparent>
+                        <Text>Search</Text>
+                    </Button>
+                </Header>
+                <Content style={[styles.container, { backgroundColor: '#ddd' }]}>
+                    <View>
+                        {/*Search results*/}
+                        <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
+                            <Text style={{ flex: 1 }}>Your searches</Text>
+                        </View>
+                        {/*Search results*/}
+
+                        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#fff' }}>
+
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                        <Icon active type="MaterialCommunityIcons" name="emoticon-happy" style={{marginLeft:2}} />
+                                        <Text style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Complete Isha meditation track</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                        <Icon active type="MaterialCommunityIcons" name="dumbbell" style={{marginLeft:2}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Lose 6 kg in 1 month</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column', flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                         <Icon active type="MaterialCommunityIcons" name="ear-hearing" style={{marginLeft:2}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Complete NLP training track</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+
                             </View>
                         </View>
-                    </ImageBackground>
-                    <View>
-                        <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered >
-                                    <Left>
-                                        <Icon active name="logo-googleplus" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Practice self-disclosure</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
-                                        <Icon active name="logo-googleplus" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Save your income tax</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
-                                        <Icon active type="MaterialCommunityIcons" name="run" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Lose 6 kg weight</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered onPress={this.goToYourAddGoal} style={{ height: 60 }}>
-                                    <Left>
-                                        <Icon active name="logo-googleplus" />
-                                        <Text style={{ left: 8, fontWeight: 'bold', fontSize: 18, width: 300 }}>Relieve stress and anger</Text>
-                                    </Left>
-                                    <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'black', fontSize: 24 }} />
-                                    </Right>
-                                </CardItem>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={this.goToYourAddGoal}>
-                                <CardItem bordered style={{ height: 60, alignSelf: 'center' }}>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Create your own</Text>
-                                    <Icon active type="EvilIcons" name="plus" style={{ fontWeight: 'bold' }} />
-                                </CardItem>
-                            </TouchableOpacity>
-                        </Card>
+                        {/*Suggestions*/}
+                        <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
+                            <Text style={{ flex: 1 }}>Suggested goals</Text>
+
+                        </View>
+                        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
+                            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#fff' }}>
+
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                        <Icon active type="MaterialCommunityIcons" name="human" style={{marginLeft:2}} />
+                                        <Text style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Get down to single digit body fat %</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                        <Icon active type="MaterialCommunityIcons" name="web" style={{marginLeft:2}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Generate $1000 from online</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                        <Icon active type="MaterialCommunityIcons" name="trending-up" style={{marginLeft:2}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Invest in the stock market (10K)</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                        <Icon active type="MaterialCommunityIcons" name="gift" style={{marginLeft:2}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Make 20+ donations in a year</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                        <Icon active type="MaterialCommunityIcons" name="voice" style={{marginLeft:2}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Speak conversational Spanish</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column', flex: 1 }}>
+                                    <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
+
+                                         <Icon active type="MaterialCommunityIcons" name="yin-yang" style={{marginLeft:2}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 }}>Learn and perform Reiki</Text>
+
+                                        {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
+
+                                    </View>
+                                </TouchableOpacity>
+                                
+                           
+                            </View>
+                        </View>
+                      
                     </View>
                 </Content>
 
