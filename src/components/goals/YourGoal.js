@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text, Image, Dimensions, ImageBackground, TouchableHighlight, TouchableOpacity } from 'react-native';
-import { Footer, FooterTab, Card, CardItem, Badge } from 'native-base';
-import { Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
-import Divider from 'react-native-divider';
+import { Platform, View, StyleSheet, Image, Dimensions, ImageBackground, TouchableHighlight, TouchableOpacity, Text } from 'react-native';
+import { Footer, FooterTab, Card, CardItem, Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
+import Divider from './Divider';
 import StepProgress from './StepProgress';
+import { Pages } from 'react-native-pages';
+
 
 class YourGoal extends Component {
+    constructor() {
+        super();
+        this.state = {
 
+        }
+    }
     goToYourActivity = () => {
         this.props.navigation.navigate('AddActivity');
+    }
+    goToGoal = () => {
+        this.props.navigation.navigate('Goals');
     }
     render() {
         return (
             <Container>
+                <Header>
+                    <Left>
+                        <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
+                            <Icon name='menu' />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Goals</Title>
+                    </Body>
+                    <Right>
+
+                    </Right>
+                </Header>
                 <Content style={styles.container}>
+
                     <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', padding: 5 }}>
                             <Image style={{ width: 50, height: 50, alignSelf: 'center', borderRadius: 25 }} source={require('../../assests/images/goals/loseweight.jpg')} />
@@ -27,60 +50,66 @@ class YourGoal extends Component {
                         <Divider borderColor="black" color="black" orientation="left">
                             <Text style={{ fontSize: 14, color: 'black' }}>Duration 4 week</Text>
                         </Divider>
-                        <View>
-                            <Text style={{ fontSize: 20, color: 'white', borderRadius: 100 }}></Text>
-                        </View>
                     </Card>
                     <View style={{ padding: 10 }}>
                         <StepProgress />
                     </View>
+                    {/* <View style={{ height:100}}>
+                        <Pages>
+                            <View style={{ flex: 1, backgroundColor: 'red' }} />
+                            <View style={{ flex: 1, backgroundColor: 'green' }} />
+                            <View style={{ flex: 1, backgroundColor: 'blue' }} />
+                        </Pages>
+                    </View> */}
                     <View>
-
-                    </View>
-                    <View>
+                    {/* <View style={{flex:1, flexDirection: 'row' }}>
+                                <Text style={{ left:20, fontSize: 18, flex:2,alignSelf:'flex-start' }}>Activities</Text>
+                                <Icon onPress={this.goToYourActivity} style={{ flex:2, left:20, alignSelf:'flex-end'  }} active type="FontAwesome" name="plus" />
+                            </View> */}
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
-                            <CardItem bordered onPress={this.goToYourActivity} style={{ height: 60 }}>
-                                <Left>
+                            <CardItem bordered style={{ height: 60 }}>
+                                <View style={{ flex: 1 }}>
                                     <Icon active type="MaterialCommunityIcons" name="run" />
-                                    <Text style={{ padding: 7, fontSize: 16, width: 300 }}>Take 5000 steps</Text>
-                                </Left>
-                                <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </View>
+                                <View style={{ flex: 8 }}>
+                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16 }}>Take 5000 steps</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
                                     <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
-                                </Right>
+                                </View>
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
-                                <Left>
-                                    <Icon active name="logo-googleplus" />
-                                    <Text style={{ padding: 7, fontSize: 16, width: 300 }}>Daily 10 min meditation</Text>
-                                </Left>
-                                <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
-                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
-                                </Right>
-                            </CardItem>
-                            <CardItem bordered style={{ height: 60 }}>
-                                <Left>
-                                    <Icon active type="MaterialCommunityIcons" name="run" />
-                                    <Text style={{ padding: 7, fontSize: 16, width: 300 }}>Drink water a half hour before your meal</Text>
-                                </Left>
-                                <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
-                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
-                                </Right>
-                            </CardItem>
-                            <CardItem bordered style={{ height: 60 }}>
-                                <Left>
+                                <View style={{ flex: 1 }}>
                                     <Icon active type="MaterialCommunityIcons" name="food-fork-drink" />
-                                    <Text style={{ padding: 7, fontSize: 16, width: 300 }}>Eat your food slowly</Text>
-                                </Left>
-                                {/* <Body>
-                                    <Text style={{ fontSize: 12, alignSelf: 'flex-end' }}>60 points</Text>
-                                </Body> */}
-                                <Right>
-                                    <Text style={{ fontSize: 12 }}>60 points</Text>
+                                </View>
+                                <View style={{ flex: 8 }}>
+                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16 }}>Daily 10 min meditation</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
                                     <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
-                                </Right>
+                                </View>
+                            </CardItem>
+                            <CardItem bordered style={{ height: 60 }}>
+                                <View style={{ flex: 1 }}>
+                                    <Icon active type="MaterialCommunityIcons" name="run" />
+                                </View>
+                                <View style={{ flex: 8 }}>
+                                    <Text style={{ fontSize: 16, alignSelf: 'flex-start' }}>Drink water a half hour before your meal</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
+                                </View>
+                            </CardItem>
+                            <CardItem bordered style={{ height: 60 }}>
+                                <View style={{ flex: 1 }}>
+                                    <Icon active type="MaterialCommunityIcons" name="food-fork-drink" />
+                                </View>
+                                <View style={{ flex: 8 }}>
+                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16 }}>Eat your food slowly</Text>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
+                                </View>
                             </CardItem>
                             {/* <TouchableOpacity bordered style={{ height: 50 }} onPress={this.goToYourActivity}>
                                 <View style={{ flexDirection: 'row', top: 10, alignSelf: 'center' }}>
@@ -94,7 +123,7 @@ class YourGoal extends Component {
                 {(Platform.OS === 'ios') ?
                     <Footer>
                         <FooterTab>
-                            <Button full>
+                            <Button full onPress={this.goToGoal}>
                                 <Text style={{ color: 'black', fontSize: 16, }}>Start</Text>
                             </Button>
                         </FooterTab>
@@ -102,7 +131,7 @@ class YourGoal extends Component {
                     :
                     <Footer>
                         <FooterTab>
-                            <Button full style={{ backgroundColor: 'white' }}>
+                            <Button full style={{ backgroundColor: 'white' }} onPress={this.goToGoal}>
                                 <Text style={{ color: 'black', fontSize: 16, }}>Start</Text>
                             </Button>
                         </FooterTab>
@@ -114,6 +143,6 @@ class YourGoal extends Component {
 
 }
 const styles = StyleSheet.create({
-   
+
 })
 export default YourGoal;
