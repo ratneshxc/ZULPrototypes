@@ -29,7 +29,7 @@ class AddGoal extends Component {
                     <View>
                         {/*Search results*/}
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
-                            <Text style={{ flex: 1 }}>Your searches</Text>
+                            <Text style={{ flex: 1 }}>Your recent searches</Text>
                         </View>
                         {/*Search results*/}
 
