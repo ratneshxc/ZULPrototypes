@@ -13,19 +13,6 @@ class YourGoal extends Component {
     render() {
         return (
             <Container>
-                <Header>
-                    <Left>
-                        <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
-                            <Icon name='menu' />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Goals</Title>
-                    </Body>
-                    <Right>
-
-                    </Right>
-                </Header>
                 <Content style={styles.container}>
                     <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', padding: 5 }}>
@@ -91,7 +78,7 @@ class YourGoal extends Component {
                                     <Text style={{ fontSize: 12, alignSelf: 'flex-end' }}>60 points</Text>
                                 </Body> */}
                                 <Right>
-                                <Text style={{ fontSize: 12 }}>60 points</Text>
+                                    <Text style={{ fontSize: 12 }}>60 points</Text>
                                     <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
                                 </Right>
                             </CardItem>
@@ -127,13 +114,6 @@ class YourGoal extends Component {
 
 }
 const styles = StyleSheet.create({
-    questionView: {
-        margin: 30,
-        backgroundColor: '#00000066',
-        flex: 1,
-        padding: 3,
-        flexDirection: 'column',
-        height: 50
-    }
+   
 })
 export default YourGoal;
