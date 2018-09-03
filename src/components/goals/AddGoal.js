@@ -9,12 +9,15 @@ class AddGoal extends Component {
     goToYourAddGoal = () => {
         this.props.navigation.navigate('YourGoal');
     }
+    goToPreviousPage = () => {
+        this.props.navigation.goBack();
+    }
     render() {
         return (
             <Container>
                                <Header>
                     <Left>
-                        <Button transparent>
+                        <Button transparent onPress={()=>{this.goToPreviousPage()}}>
                         <Icon name='arrow-left' type="FontAwesome"  />
 
                         </Button>
