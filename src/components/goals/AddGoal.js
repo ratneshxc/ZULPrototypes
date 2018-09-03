@@ -71,7 +71,7 @@ class AddGoal extends Component {
                         </View>
                         {/*Suggestions*/}
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
-                            <Text style={{ flex: 1 }}>Suggested Goals</Text>
+                            <Text style={{ flex: 1 }}>Suggested goals</Text>
 
                         </View>
                         <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
