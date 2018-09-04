@@ -9,7 +9,7 @@ import LinearGradient from 'react-native-linear-gradient';
 export default class Register extends React.Component {
 
   Dashboard = () => {
-    this.props.navigation.navigate('Dashboard');
+    this.props.navigation.navigate('MainApp');
   }
 
   goToNext = () => {

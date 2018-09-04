@@ -21,20 +21,20 @@ const VitalWarning = (props) => {
                 <Text style={{ fontSize: 18 }}>You seem to have spent more money than expected, I would suggest you to plan your expenses accordingly.</Text>
             </View>
             <Text style={{ fontSize: 13 }}>Details :</Text>
-            <View style={{ flexDirection: 'row', borderColor: '#ddd', borderWidth: 1 }}>
-                <View style={{ flexDirection: 'column', flex: 1, borderColor: '#ddd', borderRightWidth: 1 }}>
-                    <View style={{ flex: 1, padding: 3 }}>
-                        <Text>Actual Expenditure</Text>
+            <View style={{ flexDirection: 'row'}}>
+                <View style={{ flexDirection: 'column', flex: 1}}>
+                    <View style={{ flex: 1 }}>
+                        <Text>Actual Expenditure:</Text>
                     </View>
-                    <View style={{ flex: 1, borderColor: '#ddd', borderTopWidth: 1, padding: 3 }}>
-                        <Text>Expected Expenditure</Text>
+                    <View style={{ flex: 1}}>
+                        <Text>Expected Expenditure:</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'column', flex: 1 }}>
-                    <View style={{ flex: 1, padding: 3 }}>
+                    <View style={{ flex: 1}}>
                         <Text style={{ fontWeight: 'bold' }}>15,000 Rs/Month</Text>
                     </View>
-                    <View style={{ flex: 1, borderColor: '#ddd', borderTopWidth: 1, padding: 3 }}>
+                    <View style={{ flex: 1}}>
                         <Text style={{ fontWeight: 'bold' }}>10,000 Rs/Month</Text>
                     </View>
                 </View>

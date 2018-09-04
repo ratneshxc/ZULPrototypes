@@ -96,11 +96,10 @@ const GoalDetails = () => {
                         <Text><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10 }}> Level 1</Text></Text>
                     </View>
                 </View>
-                <View>
-                    <Badge success small>
-                        <Text>On Track</Text>
-                    </Badge>
-                </View>
+                <TouchableOpacity>
+                    <Text><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10 }}> Not on track </Text></Text>
+                    <Text style={{ fontSize: 13 }}>Need expert help?</Text>
+                </TouchableOpacity>
             </View>
             <ActivityDetails />
         </Card>

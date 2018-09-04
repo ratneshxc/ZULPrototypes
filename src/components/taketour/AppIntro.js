@@ -11,56 +11,56 @@ const slides = [
     title: 'Physical',
     text: 'Physical Activity & Fitness, Diet & Nutrition, Medical Self-Care',
     icon: require('../../assests/images/dashboard/physical.svg'),
-    colors: ['#63E2FF', '#B066FE']
+    colors: ['#43cea2', '#185a9d']
   },
   {
     key: 'sd1',
     title: 'Emotional',
     text: 'Stress Management, Depression & Anxiety, Crisis Care',
     icon: require('../../assests/images/dashboard/emotional.svg'),
-    colors: ['#A3A1FF', '#3A3897']
+    colors: ['#1A2980', '#26D0CE']
   },
   {
     key: 'sd2',
     title: 'Environmental',
     text: 'Respect for & Awareness of Surroundings, Community Impact ',
     icon: require('../../assests/images/dashboard/environmental.svg'),
-    colors: ['#29ABE2', '#4F00BC']
+    colors: ['#348F50', '#56B4D3']
   },
   {
     key: 'sd3',
     title: 'Financial',
     text: "Financial Behaviour & Outcomes, Managing Expenses & Financial Stress",
     icon: require('../../assests/images/dashboard/financial.svg'),
-    colors: ['#63E2FF', '#B066FE']
+    colors: ['#02AAB0', '#00CDAC']
   },
   {
     key: 'sd4',
     title: 'Intellectual',
     text: 'Creativity, Curiosity & Lifelong Learning for Personal and Career Development',
     icon: require('../../assests/images/dashboard/intellectual.svg'),
-    colors: ['#A3A1FF', '#3A3897']
+    colors: ['#314755', '#26a0da']
   },
   {
     key: 'sd5',
     title: 'Occupational',
     text: 'Safe and Nurturing Workplace Environment, Addressing Stress',
     icon: require('../../assests/images/dashboard/occupational.svg'),
-    colors: ['#29ABE2', '#4F00BC']
+    colors: ['#373B44', '#4286f4']
   },
   {
     key: 'sd6',
     title: 'Social',
     text: 'Meaningful Relationships with Family, Friends, Community & Co-Workers ',
     icon: require('../../assests/images/dashboard/social.svg'),
-    colors: ['#63E2FF', '#B066FE']
+    colors: ['#8360c3', '#2ebf91']
   },
   {
     key: 'sd7',
     title: 'Spiritual',
     text: 'Love, Hope, Charity, Values & Beliefs',
     icon: require('../../assests/images/dashboard/spiritual.svg'),
-    colors: ['#A3A1FF', '#3A3897']
+    colors: ['#283c86', '#45a247']
   }
 ];
 
@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     textAlign: 'center',
     paddingHorizontal: 16,
-    color: '#fff'
+    color: '#fff',
+    fontSize: 20
   },
   title: {
     fontSize: 30,
