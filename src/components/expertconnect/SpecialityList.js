@@ -3,52 +3,52 @@ import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-
 import { Thumbnail, Badge, Text, Icon } from 'native-base';
 const expertData = [{
     key: 'key1',
-    title: "Meditation Experts",
+    title: "Meditation gurus",
     icon: 'tripadvisor',
     img: require('../../assests/images/profilepic/yogi.jpg'),
-    description: 'Mind fit classes, Meditation Session ...'
+    description: 'Mind fit classes, Meditation session, Advanced yoga session...'
 },
 {
     key: 'key2',
-    title: "Financial Experts",
+    title: "Financial advisors",
     icon: 'rupee',
     img: require('../../assests/images/profilepic/financialExpert.jpg'),
-    description: 'Investment Advice, Financial Coaching ...'
+    description: 'Investment Advice, Financial coaching, Retirement planning ...'
 },
 {
     key: 'key3',
-    title: "Relationship Experts",
+    title: "Relationship experts",
     icon: 'heart',
     img: require('../../assests/images/profilepic/loveguru.jpg'),
-    description: 'Relationship advice, Marraige Counsilling ...'
+    description: 'Relationship advice, Marraige counsilling, Parenting tips ...'
 },
 { 
     key: 'key4',
-    title: "Carrier Counsellors",
+    title: "Carrier counsellors",
     icon: 'child',
     img: require('../../assests/images/profilepic/teacher.jpg'),
-    description: 'Carrier Guidance, Parent advice...'
+    description: 'Carrier guidance, Parent advice, Interest development...'
 },
 {
     key: 'key5',
-    title: "Fitness Experts",
+    title: "Fitness trainer",
     icon: 'spotify',
     img: require('../../assests/images/profilepic/gym.jpg'),
-    description: 'Weight loss, Abs and Muscles ...'
+    description: 'Weight loss, Abs and Muscles, Lean body workout ...'
 },
 {
     key: 'key6',
     title: "Relationship Experts",
     icon: 'heart',
     img: require('../../assests/images/profilepic/loveguru.jpg'),
-    description: 'Relationship advice, Marraige Counsilling ...'
+    description: 'Relationship advice, Marraige counsilling, Parenting tips ...'
 },
 {
     key: 'key7',
-    title: "Meditation Experts",
+    title: "Meditation gurus",
     icon: 'tripadvisor',
     img: require('../../assests/images/profilepic/yogi.jpg'),
-    description: 'Mind fit classes, Meditation Session ...'
+    description: 'Mind fit classes, Meditation session, Advanced yoga session...'
 },]
 
 const ExpertList = (props) => {
@@ -67,7 +67,7 @@ const ExpertList = (props) => {
                     </View>
                     <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                         <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                            <Text style={{ flex: 1 }}>Samira Reddy</Text>
+                            <Text style={{ flex: 1 ,fontSize:18}}>Samira Reddy</Text>
                             <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 }} />
 
                         </View>
@@ -113,10 +113,10 @@ const SpecialityComponent = (props) => {
                     <TouchableOpacity onPress={() => props.goToExperts()} >
                         <View>
                             <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                                <Text style={{ flex: 1 }}>{props.item.title}</Text>
+                                <Text style={{ flex: 1 ,fontSize:18}}>{props.item.title}</Text>
                                 <Icon name={props.item.icon} type="FontAwesome" style={{ fontSize: 18 }} />
                             </View>
-                            <Text style={{ fontSize: 14, marginTop: 2 }}>{props.item.description}</Text>
+                            <Text style={{ fontSize: 12, marginTop: 2 }}>{props.item.description}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
