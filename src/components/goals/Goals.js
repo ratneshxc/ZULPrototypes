@@ -52,7 +52,7 @@ const LevelHeader = () => {
         <View style={{ backgroundColor: '#ffffff', padding: 10 }}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
-                    <LinearGradient colors={['#63E2FF', '#B066FE']} start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} style={{ borderRadius: 40, flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 5 }} >
+                    <LinearGradient colors={['#1A2980', '#26D0CE']} start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} style={{ borderRadius: 40, flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 5 }} >
                         <Text style={{ color: '#fff', fontSize: 25, marginRight: 10 }}>Level 1</Text>
                         <Icon name="angle-right" type="FontAwesome" style={{ color: '#fff' }} />
                     </LinearGradient>
@@ -67,9 +67,9 @@ const LevelHeader = () => {
                     <Text style={{ fontSize: 18 }}>30 points in 30 days</Text>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <View style={{ height: 8, backgroundColor: '#fff', marginTop: 10 }}>
+                    <View style={{ height: 8, backgroundColor: '#f5f5f5', marginTop: 10 }}>
                         <View style={{ height: 8, width: '70%' }}>
-                            <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} colors={['#63E2FF', '#B066FE']} >
+                            <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} colors={['#1A2980', '#26D0CE']} >
                                 <View style={{ height: 8 }}></View>
                             </LinearGradient>
                         </View>
@@ -139,7 +139,7 @@ const Activity = () => {
             </View>
             <View>
                 <Text style={{ fontSize: 11, marginBottom: 5 }}>{"Today".toUpperCase()}</Text>
-                <View style={{ backgroundColor: '#ddd' }}>
+                <View style={{ backgroundColor: '#f5f5f5' }}>
                     <View style={{ height: 5, width: '20%', backgroundColor: '#ce3c3e' }}></View>
                 </View>
                 <View style={{ flexDirection: 'row' }}>

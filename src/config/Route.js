@@ -27,6 +27,7 @@ import Register from '../components/register/Register';
 import Notification from '../components/notifications/Notifications';
 import AppIntro from '../components/taketour/AppIntro';
 import LandingComponent from '../components/taketour/LandingComponent';
+import GoalAssessment from '../components/goals/GoalAssessment';
 
 import store from '../store/ZingUpLifeStore';
 
@@ -252,6 +253,12 @@ const GoalStack = createStackNavigator({
     screen: AddGoal,
     navigationOptions: {
       title: 'Add Goal'
+    }
+  },
+  GoalAssessment: {
+    screen: GoalAssessment,
+    navigationOptions: {
+      title: 'Setting Up goal'
     }
   },
   YourGoal: {
