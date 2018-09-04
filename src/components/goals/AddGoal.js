@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text,Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
-import { Header, Button, Title, Container, Icon, Content, Footer, FooterTab, Card, CardItem, List, ListItem, Badge, Item, Input, Right, Left, Body } from 'native-base';
+import { Platform, View, StyleSheet, Dimensions, ImageBackground, TouchableOpacity } from 'react-native';
+import { Header, Button, Title,Text, Container, Icon, Content, Footer, FooterTab, Card, CardItem, List, ListItem, Badge, Item, Input, Right, Left, Body } from 'native-base';
 
 const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width - 20;
