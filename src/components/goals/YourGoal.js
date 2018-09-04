@@ -3,7 +3,6 @@ import { Platform, View, StyleSheet, Image, Dimensions, ImageBackground, Touchab
 import { Footer, FooterTab, Card, CardItem, Container, Header, Body, Left, Button, Icon, Right, Title, Content } from 'native-base';
 import Divider from './Divider';
 import StepProgress from './StepProgress';
-import { Pages } from 'react-native-pages';
 
 
 class YourGoal extends Component {
