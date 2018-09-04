@@ -22,7 +22,7 @@ class YourGoal extends Component {
     render() {
         return (
             <Container>
-                <Header>
+                {/* <Header>
                     <Left>
                         <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
                             <Icon name='menu' />
@@ -34,7 +34,7 @@ class YourGoal extends Component {
                     <Right>
 
                     </Right>
-                </Header>
+                </Header> */}
                 <Content style={styles.container}>
 
                     <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
