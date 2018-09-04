@@ -10,6 +10,7 @@ const expertData =[
         degree:'MBBS, DOMS',
         speciality:'Yoga expert',
         experience:5,
+        dimension:'dumbbell',
         rating:4.3,
         reviews:150
     },
@@ -21,6 +22,7 @@ const expertData =[
         speciality:'Child Specialists',
         experience:10,
         rating:4.2,
+        dimension:'face',
         reviews:150
     },
     {
@@ -31,7 +33,19 @@ const expertData =[
         speciality:'Family expert',
         experience:5,
         rating:4.1,
+        dimension:'heart',
         reviews:250
+    },
+    {
+        key:'a',
+        img:require('../../assests/images/profilepic/stylish-girl.jpg'),
+        name:'Hima Soni',
+        degree:'M.Sc, B.Sc',
+        speciality:'Meditation expert',
+        dimension:'owl',
+        experience:5,
+        rating:4.3,
+        reviews:150
     },
     {
         key:'a',
@@ -39,6 +53,7 @@ const expertData =[
         name:'Sukhi Rukhi',
         degree:'M.S, B.S',
         speciality:'Yoga expert',
+        dimension:'dumbbell',
         experience:5,
         rating:4.3,
         reviews:150
@@ -50,25 +65,18 @@ const expertData =[
         degree:'M.S, B.S',
         speciality:'Yoga expert',
         experience:5,
+        dimension:'dumbbell',
         rating:4.3,
         reviews:150
     },
-    {
-        key:'a',
-        img:require('../../assests/images/profilepic/stylish-girl.jpg'),
-        name:'Hima Soni',
-        degree:'M.Sc, B.Sc',
-        speciality:'Meditation expert',
-        experience:5,
-        rating:4.3,
-        reviews:150
-    },
+  
     {
         key:'a',
         img:require('../../assests/images/profilepic/suresh.png'),
         name:'Dr. Ramesh Kumar',
         degree:'PhD, M.S, B.S',
         speciality:'Family expert',
+        dimension:'heart',
         experience:5,
         rating:4.1,
         reviews:250
@@ -103,7 +111,7 @@ const ExpertComponent = (props) => {
                 <View style={{ flex: 2, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 ,fontSize:18,marginLeft:10}}>{props.item.name}</Text>
-                         <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 ,marginRight:4}} />
+                         <Icon name={props.item.dimension} type="MaterialCommunityIcons" style={{ fontSize: 18 ,marginRight:4}} />
                          
                     </View>
                     <Text style={{ fontSize: 14,marginLeft:10  }}>{props.item.speciality}</Text>

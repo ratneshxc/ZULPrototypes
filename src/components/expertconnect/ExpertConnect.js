@@ -18,20 +18,32 @@ class ExportConnect extends React.Component {
         return (
             <Container>
                 {/* Expert Header*/}
-                <View style={{ flexDirection: 'column', backgroundColor: "#294787" }}>
-                <Header searchBar rounded>
-
+                <View style={{ flexDirection: 'column' }}>
+                <Header>
+                    <Left>
+                        <Button transparent>
+                            <Icon name='arrow-back' />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Expert search</Title>
+                    </Body>
+                    <Right>
+                    </Right>
+                </Header>
+            <Header searchBar rounded>
                 <Item  style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                     <Icon name="ios-search" />
-                    <Input placeholder="Search Experts, Specialities etc.." />
+                    <Input placeholder="Search Experts, Specialities etc.." placeholderTextColor="#ddd" />
                     <Icon name="ios-people" />
                 </Item>
                 <Button transparent>
                     <Text>Search</Text>
                 </Button>
             </Header>
-                    <View style={{ flexDirection: 'row', paddingVertical: 5, }}>
-                        <ScrollView horizontal={true} style={{ flexDirection: 'row', flex: 1 }}>
+
+                    <View style={{ flexDirection: 'row' }}>
+                        <ScrollView horizontal={true} style={{ flexDirection: 'row', flex: 1 ,paddingVertical:8}}>
                             <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }}>
                                 <Text>Online</Text>
                             </Badge>
@@ -45,7 +57,7 @@ class ExportConnect extends React.Component {
                         <IconBadge
                             MainElement={
                                 <View style={{ width: 40 }}>
-                                    <Icon name="filter" type="FontAwesome" style={{ fontSize: 30, marginTop: 0, marginLeft: 2, color: 'white' }} />
+                                    <Icon name="filter" type="FontAwesome" style={{ fontSize: 30, marginTop: 0, marginLeft: 2 }} />
                                 </View>
 
                             }
