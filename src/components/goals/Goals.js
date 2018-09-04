@@ -3,12 +3,11 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Badge, Card } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import Image from 'react-native-remote-svg';
-import StepIndicator from 'react-native-step-indicator';
 
 
 
 class Goals extends Component {
-   
+
     addGoal = () => {
         this.props.navigation.navigate('AddGoal');
     }
@@ -31,7 +30,7 @@ class Goals extends Component {
 
                     </Right>
                 </Header>
-                <Content>
+                <Content style={{ backgroundColor: '#f5f5f5' }}>
                     <LevelHeader />
                     <GoalsSection />
                 </Content>
@@ -50,7 +49,7 @@ class Goals extends Component {
 
 const LevelHeader = () => {
     return (
-        <View style={{ backgroundColor: '#f5f5f5', padding: 10 }}>
+        <View style={{ backgroundColor: '#ffffff', padding: 10 }}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
                     <LinearGradient colors={['#63E2FF', '#B066FE']} start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} style={{ borderRadius: 40, flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 5 }} >
@@ -84,13 +83,17 @@ const LevelHeader = () => {
 
 const GoalDetails = () => {
     return (
-        <Card style={{ padding: 5, backgroundColor: '#f5f5f5', marginVertical: 4 }}>
+        <Card style={{ padding: 5, backgroundColor: '#ffffff', marginVertical: 4 }}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
                     <Image source={require('../../assests/icons/Running.svg')} style={{ width: 50, height: 50 }} />
                     <View style={{ flex: 1 }}>
-                        <Text style={{ fontSize: 18 }}>Loose 15 Kg Weight</Text>
+                        <TouchableOpacity style={{ flexDirection: 'row' }}>
+                            <Text style={{ fontSize: 18 }}>Loose 15 Kg Weight</Text>
+                            <Icon name="angle-right" type="FontAwesome" style={{ marginLeft: 10 }} />
+                        </TouchableOpacity>
                         <Text style={{ fontSize: 12 }}>Started 20 days ago</Text>
+                        <Text><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10 }}> Level 1</Text></Text>
                     </View>
                 </View>
                 <View>
@@ -114,40 +117,11 @@ const GoalsSection = () => {
     )
 }
 
-const labels = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"];
-const customStyles = {
-    stepIndicatorSize: 25,
-    currentStepIndicatorSize: 30,
-    separatorStrokeWidth: 2,
-    currentStepStrokeWidth: 3,
-    stepStrokeCurrentColor: '#fe7013',
-    stepStrokeWidth: 3,
-    stepStrokeFinishedColor: '#fe7013',
-    stepStrokeUnFinishedColor: '#aaaaaa',
-    separatorFinishedColor: '#fe7013',
-    separatorUnFinishedColor: '#aaaaaa',
-    stepIndicatorFinishedColor: '#fe7013',
-    stepIndicatorUnFinishedColor: '#ffffff',
-    stepIndicatorCurrentColor: '#ffffff',
-    stepIndicatorLabelFontSize: 13,
-    currentStepIndicatorLabelFontSize: 13,
-    stepIndicatorLabelCurrentColor: '#fe7013',
-    stepIndicatorLabelFinishedColor: '#ffffff',
-    stepIndicatorLabelUnFinishedColor: '#aaaaaa',
-    labelColor: '#999999',
-    labelSize: 13,
-    currentStepLabelColor: '#fe7013'
-}
-
 const ActivityDetails = () => {
     return (
         <View>
-            <Text style={{ fontSize: 11, marginVertical: 10 }}>{'Activities'.toUpperCase()}</Text>
-            <StepIndicator
-                customStyles={customStyles}
-                currentPosition={3}
-                labels={labels}
-            />
+            <Text style={{ fontSize: 11, marginTop: 10, marginHorizontal: 5 }}>{'Activities'.toUpperCase()}</Text>
+
             <View style={{}}>
                 <Activity />
                 <Activity />
@@ -162,18 +136,18 @@ const Activity = () => {
     return (
         <Card style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
             <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                <Text style={{ fontSize: 17 }}>Run 5 Km daily</Text>
+                <Text style={{ fontSize: 16 }}>Run 5 Km daily</Text>
             </View>
             <View>
                 <Text style={{ fontSize: 11, marginBottom: 5 }}>{"Today".toUpperCase()}</Text>
                 <View style={{ backgroundColor: '#ddd' }}>
                     <View style={{ height: 5, width: '20%', backgroundColor: '#ce3c3e' }}></View>
                 </View>
-                <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+                <View style={{ flexDirection: 'row' }}>
                     <Text style={{ fontSize: 12, fontStyle: 'italic' }}>Completed <Text style={{ fontWeight: 'bold' }}>1Km</Text></Text>
                 </View>
             </View>
-            <Text style={{ fontSize: 11 }}>{"week".toUpperCase()}</Text>
+            <Text style={{ fontSize: 11, marginTop: 5 }}>{"week".toUpperCase()}</Text>
             <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
                 <DayActivityStatus iconName="check-circle" day="M" />
                 <DayActivityStatus iconName="times-circle" day="T" />
