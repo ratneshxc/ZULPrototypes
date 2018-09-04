@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity,TouchableHighlight, FlatList, ScrollView } from 'react-native';
-import { Thumbnail, Badge, Text, Icon } from 'native-base';
+import { Thumbnail, Badge, Text, Icon,Button } from 'native-base';
 import StarRating from 'react-native-star-rating';
 const expertData =[
     {
@@ -91,26 +91,44 @@ const styles = StyleSheet.create({
 
 const ExpertComponent = (props) => {
     return (
-        <View style={{ flexDirection: 'column', padding: 5 , backgroundColor: '#F0F0F0'}}>
-            <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff' }}>
+        <View style={{ flexDirection: 'column', padding: 3 , backgroundColor: '#F0F0F0'}}>
+            <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff',paddingBottom:2 }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
-                    <Thumbnail medium square source={props.item.img} style={{height:65}}/>
+                    <Thumbnail medium round source={props.item.img} />
                    
                     {/* <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text> */}
                 </View>
                 <TouchableOpacity  style={{ flex: 2}} onPress={()=>props.viewExperts()}>
                 <View style={{ flex: 2, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
-                        <Text style={{ flex: 1 }}>{props.item.name}</Text>
+                        <Text style={{ flex: 1 ,fontSize:18,marginLeft:10}}>{props.item.name}</Text>
+                         <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 ,marginRight:4}} />
+                         
                     </View>
-                    <Text style={{ fontSize: 13, color: '#505050', margin:0}}>{props.item.degree}</Text>
-                    <Text style={{ fontSize: 13, color: '#505050' }}>{props.item.speciality}</Text>
-                    <View style={{ flexDirection: 'row' }}>
+                    <Text style={{ fontSize: 14,marginLeft:10  }}>{props.item.speciality}</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 3,marginLeft:10 }}>
+                    <Text style={{color:'#000',fontSize:14}}>{props.item.rating} </Text>
+                        <StarRating
+                            disabled={false}
+                            maxStars={1}
+                            rating={1}
+                            fullStarColor={'#000'}
+                            starSize={16}
+                        />
+                        
+                    </View>
+                    <Button rounded primary style={{height:25,marginVertical:1}}  >
+                                {/* onPress={()=>props.goToBooking()} */}
+                                    <Text>Connect</Text>
+                                </Button>
+                    {/* <Text style={{ fontSize: 13, color: '#505050', margin:0}}>{props.item.degree}</Text> */}
+                   
+                    {/* <View style={{ flexDirection: 'row' }}>
                         <Text style={{ fontSize: 12 }}>{props.item.experience} Yrs Exp</Text>
-                    </View>
+                    </View> */}
                 </View>
                 </TouchableOpacity>
-                <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
+                {/* <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
                 <View style={{ flexDirection: 'row', marginTop: 0 ,marginLeft:10}}>
                     <Text style={{color:'#294787'}}>{props.item.rating}</Text>
                         <StarRating
@@ -128,7 +146,7 @@ const ExpertComponent = (props) => {
                                     <Text style={{ textAlign: 'center', color: '#294787' }}>Connect </Text>
                                 </TouchableOpacity>
                             </View>
-                </View>
+                </View> */}
             </View>
 
         </View>
