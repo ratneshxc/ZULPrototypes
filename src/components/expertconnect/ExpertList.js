@@ -98,7 +98,8 @@ const ExpertComponent = (props) => {
                    
                     {/* <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text> */}
                 </View>
-                <TouchableOpacity  style={{ flex: 2}} onPress={()=>props.viewExperts()}>
+                <TouchableOpacity  style={{ flex: 2}} >
+                {/* onPress={()=>props.viewExperts()} */}
                 <View style={{ flex: 2, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 ,fontSize:18,marginLeft:10}}>{props.item.name}</Text>
@@ -115,12 +116,14 @@ const ExpertComponent = (props) => {
                             fullStarColor={'#000'}
                             starSize={16}
                         />
-                        
-                    </View>
-                    <Button rounded primary style={{height:25,marginVertical:1}}  >
+                        <View style={{flex:1}}>
+                        </View>
+                        <Button rounded primary style={{height:25,marginVertical:1}}  onPress={()=>props.bookExperts()} >
                                 {/* onPress={()=>props.goToBooking()} */}
                                     <Text>Connect</Text>
                                 </Button>
+                    </View>
+                    
                     {/* <Text style={{ fontSize: 13, color: '#505050', margin:0}}>{props.item.degree}</Text> */}
                    
                     {/* <View style={{ flexDirection: 'row' }}>
