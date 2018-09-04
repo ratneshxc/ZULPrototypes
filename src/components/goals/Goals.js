@@ -3,17 +3,18 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Badge, Card } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import Image from 'react-native-remote-svg';
+import GoalVideo from './GoalVideo';
 
 class Goals extends Component {
     componentWillMount() {
         Goals = [{
             cardType: "multiple",
-            headerTitle: 'Save your income tax', headerContent: 'Started 54 days ago', trackStatus: 'Not on track', level: 'Level 2',
+            headerTitle: 'Save your income tax', headerContent: 'Started 54 days ago', trackStatus: 'On track', level: 'Level 2',
             data: [{ title: "Track your daily expenses", content: "Log your today's expenses", point: "40 points" },
             { title: "Invest in ELSS fund", content: "Pay for this month", point: "40 points" }]
         },
-        { cardType: "single", headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'On Track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', point: "30 points" },
-        { cardType: "single", headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On Track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", point: "30 points" }
+        { cardType: "single", headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Not on track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
+        { cardType: "single", headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On Track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
         ];
     }
     addGoal = () => {
@@ -62,7 +63,7 @@ const LevelHeader = () => {
                 <View style={{ flex: 1 }}>
                     <LinearGradient colors={['#1A2980', '#26D0CE']} start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} style={{ borderRadius: 40, flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 5 }} >
                         <Text style={{ color: '#fff', fontSize: 25, marginRight: 10 }}>Level 1</Text>
-                        <Icon name="angle-right" type="FontAwesome" style={{ color: '#fff' }} />
+                        <Icon name="angle-right" type="FontAwesome" style={{ color: '#fff', alignSelf: 'center' }} />
                     </LinearGradient>
                 </View>
                 <View style={{ flex: 1 }}>
@@ -100,20 +101,16 @@ const GoalDetails = (props) => {
                             <Text style={{ fontSize: 18 }}>{props.GoalsDetails.headerTitle}</Text>
                             <Icon name="angle-right" type="FontAwesome" style={{ marginLeft: 10 }} />
                         </TouchableOpacity>
-                        <Text style={{ fontSize: 12 }}>{props.GoalsDetails.headerContent}</Text>
-                        <Text><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10 }}>{props.GoalsDetails.level}</Text></Text>
+                        {/* <Text style={{ fontSize: 12 }}>{props.GoalsDetails.headerContent}</Text> */}
+                        <View><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'flex-start', padding: 2 }}>{props.GoalsDetails.level}</Text></View>
                     </View>
                 </View>
                 <TouchableOpacity>
-                    <Text><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10 }}>{props.GoalsDetails.trackStatus}</Text></Text>
+                    <View><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10, alignSelf: 'center', padding: 2 }}>{props.GoalsDetails.trackStatus}</Text></View>
                     <Text style={{ fontSize: 13 }}>Need expert help?</Text>
                 </TouchableOpacity>
             </View>
-            {props.GoalDetails==='single'?
-            <ActivityDetails GoalsDetails={props.GoalsDetails} /> :
             <ActivityDetails GoalsDetails={props.GoalsDetails} />
-        }
-            
         </Card>
     )
 }
@@ -122,7 +119,9 @@ const GoalsSection = (props) => {
     return (
         <View>
             <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10 }}>{'Your Goals'.toUpperCase()}</Text>
+            <GoalDetails GoalsDetails={props.Goals[2]} />
             <GoalDetails GoalsDetails={props.Goals[1]} />
+            <GoalDetails GoalsDetails={props.Goals[0]} />
         </View>
     )
 }
@@ -131,9 +130,11 @@ const ActivityDetails = (props) => {
     return (
         <View>
             <Text style={{ fontSize: 11, marginTop: 10, marginHorizontal: 5 }}>{'Activities'.toUpperCase()}</Text>
-
             <View style={{}}>
-                <Activity GoalsDetails={props.GoalsDetails} />
+                {props.GoalsDetails.cardType === 'single' ?
+                    <Activity GoalsDetails={props.GoalsDetails} /> :
+                    <MultipleActivity GoalsDetails={props.GoalsDetails} />
+                }
             </View>
         </View>
     )
@@ -141,31 +142,55 @@ const ActivityDetails = (props) => {
 
 const Activity = (props) => {
     return (
-        <Card style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
-            <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                <Text style={{ fontSize: 16 }}>{props.GoalsDetails.title}</Text>
-            </View>
-            <View>
-                <Text style={{ fontSize: 11, marginBottom: 5 }}>{"Today".toUpperCase()}</Text>
-                <View style={{ backgroundColor: '#f5f5f5' }}>
-                    <View style={{ height: 5, width: '20%', backgroundColor: '#ce3c3e' }}></View>
+        props.GoalsDetails.video ? <GoalVideo /> :
+            <Card style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
+                <View style={{ flexDirection: 'row', marginBottom: 5 }}>
+                    <Text style={{ fontSize: 16 }}>{props.GoalsDetails.title}</Text>
                 </View>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={{ fontSize: 12, fontStyle: 'italic' }}>Completed <Text style={{ fontWeight: 'bold' }}>1Km</Text></Text>
+                <View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start' }}></Text><Text style={{ alignSelf: 'flex-end' }}>2km</Text></View>
+                    <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: '#1e90ff' }}>
+                        <View style={{ height: 22, width: '45%', backgroundColor: '#00bfff', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>1km</Text></View>
+                    </View>
                 </View>
-            </View>
-            <Text style={{ fontSize: 11, marginTop: 5 }}>{"week".toUpperCase()}</Text>
-            <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
-                <DayActivityStatus iconName="check-circle" day="M" />
-                <DayActivityStatus iconName="times-circle" day="T" />
-                <DayActivityStatus iconName="check-circle" day="W" />
-                <DayActivityStatus iconName="times-circle" day="T" />
-                <DayActivityStatus iconName="check-circle" day="F" />
-                <DayActivityStatus iconName="times-circle" day="S" />
-                <DayActivityStatus iconName="check-circle" day="Today" />
-            </View>
-
-        </Card>
+                <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
+                    <DayActivityStatus iconName="eercast" day="Today" />
+                    <DayActivityStatus iconName="check-circle" day="M" />
+                    <DayActivityStatus iconName="times-circle" day="T" />
+                    <DayActivityStatus iconName="check-circle" day="W" />
+                    <DayActivityStatus iconName="times-circle" day="T" />
+                    <DayActivityStatus iconName="check-circle" day="F" />
+                    <DayActivityStatus iconName="times-circle" day="S" />
+                </View>
+            </Card>
+    )
+}
+const MultipleActivity = (props) => {
+    return (
+        <View>
+            {props.GoalsDetails.data.map((x, i) => (
+                <Card key={i} style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
+                    <View style={{ flexDirection: 'row', marginBottom: 5 }}>
+                        <Text style={{ fontSize: 16 }}>{x.title}</Text>
+                    </View>
+                    <View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start' }}></Text><Text style={{ alignSelf: 'flex-end' }}>2km</Text></View>
+                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: '#1e90ff' }}>
+                            <View style={{ height: 22, width: '45%', backgroundColor: '#00bfff', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>1km</Text></View>
+                        </View>
+                    </View>
+                    <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
+                        <DayActivityStatus iconName="eercast" day="Today" />
+                        <DayActivityStatus iconName="check-circle" day="M" />
+                        <DayActivityStatus iconName="times-circle" day="T" />
+                        <DayActivityStatus iconName="check-circle" day="W" />
+                        <DayActivityStatus iconName="times-circle" day="T" />
+                        <DayActivityStatus iconName="check-circle" day="F" />
+                        <DayActivityStatus iconName="times-circle" day="S" />
+                    </View>
+                </Card>
+            ))}
+        </View>
     )
 }
 

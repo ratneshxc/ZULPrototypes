@@ -18,9 +18,9 @@ class GoalVideo extends Component {
                     paused={true}
                     controls={true}
                     posterResizeMode={"center"}
-                    onBuffer={this.onBuffer}                // Callback when remote video is buffering
-                    onEnd={this.onEnd}                      // Callback when playback finishes
-                    onError={this.videoError}               // Callback when video cannot be loaded
+                    onBuffer={this.onBuffer}          // Callback when remote video is buffering
+                    onEnd={this.onEnd}                // Callback when playback finishes
+                    onError={this.videoError}         // Callback when video cannot be loaded
                     style={styles.backgroundVideo} />
             </View>
         )
