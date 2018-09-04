@@ -88,8 +88,6 @@ const LevelHeader = () => {
         </View>
     )
 }
-
-
 const GoalDetails = (props) => {
     return (
         <Card style={{ padding: 5, backgroundColor: '#ffffff', marginVertical: 4 }}>
