@@ -29,6 +29,7 @@
     "react-native-linear-gradient": "^2.4.2",
     "react-native-material-cards": "^1.0.9",
     "react-native-media-controls": "^1.1.1",
+    "react-native-pages": "^0.7.0",
     "react-native-panel": "^1.0.4",
     "react-native-percentage-circle": "^1.0.7",
     "react-native-progress": "^3.5.0",

@@ -339,7 +339,7 @@ const MainApp = createDrawerNavigator({
 });
 
 const AppRoute = createSwitchNavigator({
-  AppIntro: { screen: AppIntro },
+  AppIntro: { screen: Goals },
   LandingComponent: { screen: LandingComponent },
   LogIn: { screen: LogIn },
   Register: { screen: Register },
