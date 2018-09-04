@@ -4,10 +4,18 @@ import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Tex
 import LinearGradient from 'react-native-linear-gradient';
 import Image from 'react-native-remote-svg';
 
-
-
 class Goals extends Component {
-
+    componentWillMount() {
+        Goals = [{
+            cardType: "multiple",
+            headerTitle: 'Save your income tax', headerContent: 'Started 54 days ago', trackStatus: 'Not on track', level: 'Level 2',
+            data: [{ title: "Track your daily expenses", content: "Log your today's expenses", point: "40 points" },
+            { title: "Invest in ELSS fund", content: "Pay for this month", point: "40 points" }]
+        },
+        { cardType: "single", headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'On Track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', point: "30 points" },
+        { cardType: "single", headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On Track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", point: "30 points" }
+        ];
+    }
     addGoal = () => {
         this.props.navigation.navigate('AddGoal');
     }
@@ -32,7 +40,7 @@ class Goals extends Component {
                 </Header>
                 <Content style={{ backgroundColor: '#f5f5f5' }}>
                     <LevelHeader />
-                    <GoalsSection />
+                    <GoalsSection Goals={Goals} />
                 </Content>
                 <Fab
                     containerStyle={{}}
@@ -81,7 +89,7 @@ const LevelHeader = () => {
 }
 
 
-const GoalDetails = () => {
+const GoalDetails = (props) => {
     return (
         <Card style={{ padding: 5, backgroundColor: '#ffffff', marginVertical: 4 }}>
             <View style={{ flexDirection: 'row' }}>
@@ -89,53 +97,53 @@ const GoalDetails = () => {
                     <Image source={require('../../assests/icons/Running.svg')} style={{ width: 50, height: 50 }} />
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity style={{ flexDirection: 'row' }}>
-                            <Text style={{ fontSize: 18 }}>Loose 15 Kg Weight</Text>
+                            <Text style={{ fontSize: 18 }}>{props.GoalsDetails.headerTitle}</Text>
                             <Icon name="angle-right" type="FontAwesome" style={{ marginLeft: 10 }} />
                         </TouchableOpacity>
-                        <Text style={{ fontSize: 12 }}>Started 20 days ago</Text>
-                        <Text><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10 }}> Level 1</Text></Text>
+                        <Text style={{ fontSize: 12 }}>{props.GoalsDetails.headerContent}</Text>
+                        <Text><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10 }}>{props.GoalsDetails.level}</Text></Text>
                     </View>
                 </View>
                 <TouchableOpacity>
-                    <Text><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10 }}> Not on track </Text></Text>
+                    <Text><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10 }}>{props.GoalsDetails.trackStatus}</Text></Text>
                     <Text style={{ fontSize: 13 }}>Need expert help?</Text>
                 </TouchableOpacity>
             </View>
-            <ActivityDetails />
+            {props.GoalDetails==='single'?
+            <ActivityDetails GoalsDetails={props.GoalsDetails} /> :
+            <ActivityDetails GoalsDetails={props.GoalsDetails} />
+        }
+            
         </Card>
     )
 }
 
-const GoalsSection = () => {
+const GoalsSection = (props) => {
     return (
         <View>
             <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10 }}>{'Your Goals'.toUpperCase()}</Text>
-            <GoalDetails />
-            <GoalDetails />
+            <GoalDetails GoalsDetails={props.Goals[1]} />
         </View>
     )
 }
 
-const ActivityDetails = () => {
+const ActivityDetails = (props) => {
     return (
         <View>
             <Text style={{ fontSize: 11, marginTop: 10, marginHorizontal: 5 }}>{'Activities'.toUpperCase()}</Text>
 
             <View style={{}}>
-                <Activity />
-                <Activity />
-                <Activity />
-                <Activity />
+                <Activity GoalsDetails={props.GoalsDetails} />
             </View>
         </View>
     )
 }
 
-const Activity = () => {
+const Activity = (props) => {
     return (
         <Card style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
             <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                <Text style={{ fontSize: 16 }}>Run 5 Km daily</Text>
+                <Text style={{ fontSize: 16 }}>{props.GoalsDetails.title}</Text>
             </View>
             <View>
                 <Text style={{ fontSize: 11, marginBottom: 5 }}>{"Today".toUpperCase()}</Text>

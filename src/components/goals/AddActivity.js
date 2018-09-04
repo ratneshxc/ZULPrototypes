@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, View, StyleSheet, Text, Dimensions, ImageBackground, TouchableHighlight, TouchableOpacity, ListView, ScrollView } from 'react-native';
-import { Header, Button, Title, Container, Icon, Content, Footer, FooterTab, Card, CardItem, List, ListItem, Badge, Item, Input, Right, Left, Body } from 'native-base';
+import { Platform, View, StyleSheet, Dimensions, ImageBackground, TouchableHighlight, TouchableOpacity, ListView, ScrollView } from 'react-native';
+import { Header, Button, Title, Container, Icon, Content, Footer, FooterTab, Card, CardItem, List, ListItem, Badge, Item, Input, Right, Left, Body, Text } from 'native-base';
 
 const windowObj = Dimensions.get('window');
 const screenwidth = windowObj.width - 20;
@@ -31,11 +31,16 @@ class AddActivity extends Component {
     render() {
         return (
             <Container>
-                    <Item style={{ alignSelf:'center' ,top:8, borderRadius: 30, padding: 5, height: 40, flexDirection: 'row', width: screenwidth, backgroundColor: '#ededed' }}>
+                <Header searchBar rounded>
+                    <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                         <Icon name="ios-search" />
-                        <Input placeholder="Search" />
+                        <Input placeholder="Search" placeholderTextColor="#ddd" />
                         <Icon name="ios-people" />
                     </Item>
+                    <Button transparent>
+                        <Text>Search</Text>
+                    </Button>
+                </Header>
                 <View style={{ height: 20 }}></View>
                 <Content>
                     <ListView
@@ -50,7 +55,7 @@ class AddActivity extends Component {
                                         <Text style={{ top: 8, fontSize: 12, }}>{data.points}</Text>
                                     </Left>
                                     <Right>
-                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end',color:'lightgray', fontSize:22 }} />
+                                        <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'lightgray', fontSize: 22 }} />
                                     </Right>
                                 </View>
                             </TouchableOpacity>
