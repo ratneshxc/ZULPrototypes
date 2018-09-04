@@ -38,7 +38,7 @@ class LandingComponent extends React.Component {
                 imageURL: this.wallpaperPaths[i].path
             })
             i === 4 ? i = 0 : i++;
-        }, 20000);
+        }, 5000);
     }
     componentWillUnmount() {
         clearInterval(this.backInterval);

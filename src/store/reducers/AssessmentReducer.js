@@ -50,7 +50,7 @@ const initialState = {
     },{
         title: 'Occupational',
         score: '92%',
-        icon:require('../../assests/images/dashboard/intellectual.svg'),
+        icon:require('../../assests/images/dashboard/occupational.svg'),
         emoji:require('../../assests/images/emoji/01.svg'),
         progressColor:'rgb(34, 208, 51)'
     }],
