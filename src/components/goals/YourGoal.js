@@ -22,21 +22,7 @@ class YourGoal extends Component {
     render() {
         return (
             <Container>
-                {/* <Header>
-                    <Left>
-                        <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
-                            <Icon name='menu' />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Goals</Title>
-                    </Body>
-                    <Right>
-
-                    </Right>
-                </Header> */}
                 <Content style={styles.container}>
-
                     <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', padding: 5 }}>
                             <Image style={{ width: 50, height: 50, alignSelf: 'center', borderRadius: 25 }} source={require('../../assests/images/goals/loseweight.jpg')} />
@@ -62,10 +48,14 @@ class YourGoal extends Component {
                         </Pages>
                     </View> */}
                     <View>
-                    {/* <View style={{flex:1, flexDirection: 'row' }}>
-                                <Text style={{ left:20, fontSize: 18, flex:2,alignSelf:'flex-start' }}>Activities</Text>
-                                <Icon onPress={this.goToYourActivity} style={{ flex:2, left:20, alignSelf:'flex-end'  }} active type="FontAwesome" name="plus" />
-                            </View> */}
+                        <View style={{ flex: 1, flexDirection: 'row' }}>
+                            <Left>
+                                <Text style={{ left: 20, fontSize: 18, flex: 2, alignSelf: 'flex-start' }}>Activities</Text>
+                            </Left>
+                            <Right>
+                                <Icon onPress={this.goToYourActivity} style={{ flex: 2, alignSelf: 'flex-end', right: 15 }} active type="Ionicons" name="ios-add-circle-outline" />
+                            </Right>
+                        </View>
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <CardItem bordered style={{ height: 60 }}>
                                 <View style={{ flex: 1 }}>
@@ -111,12 +101,6 @@ class YourGoal extends Component {
                                     <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
                                 </View>
                             </CardItem>
-                            {/* <TouchableOpacity bordered style={{ height: 50 }} onPress={this.goToYourActivity}>
-                                <View style={{ flexDirection: 'row', top: 10, alignSelf: 'center' }}>
-                                    <Text style={{ fontSize: 16 }}>Add an activity</Text>
-                                    <Icon active type="EvilIcons" name="plus" style={{}} />
-                                </View>
-                            </TouchableOpacity> */}
                         </Card>
                     </View>
                 </Content>
