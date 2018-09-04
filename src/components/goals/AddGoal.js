@@ -7,7 +7,7 @@ const screenwidth = windowObj.width - 20;
 
 class AddGoal extends Component {
     goToYourAddGoal = () => {
-        this.props.navigation.navigate('YourGoal');
+        this.props.navigation.navigate('GoalAssessment');
     }
     goToPreviousPage = () => {
         this.props.navigation.goBack();

@@ -10,6 +10,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+    showZula: () => dispatch({
+        type: 'ZulaReducer_Access',
+        payload: true
+    })
 })
 
 const chunkArray = (myArray, chunk_size) => {
@@ -25,6 +29,9 @@ const chunkArray = (myArray, chunk_size) => {
 }
 
 class AssessmentSummaryLayout extends Component {
+    componentDidMount() {
+        this.props.showZula();
+    }
     groupArray = chunkArray(this.props.dimensionReport, 2);
     render() {
         return (
@@ -43,15 +50,15 @@ class AssessmentSummaryLayout extends Component {
                 <Content style={styles.container}>
                     <View style={{ flexDirection: 'row' }}>
                         <TouchableHighlight style={{ flex: 1 }} onPress={() => this.props.navigation.navigate("Vitals")}>
-                            <CardInfo title="Vitals" data={[{ type: 'active', value: 23 }]} />
+                            <CardInfo title="VITALS" data={[{ type: 'active', value: 23 }]} />
                         </TouchableHighlight>
                         <TouchableHighlight style={{ flex: 1 }} onPress={() => this.props.navigation.navigate("AssessmentList")}>
-                            <CardInfo title="Assessments" data={[{ type: 'pending', value: 4 }]} />
+                            <CardInfo title="CHECKS" data={[{ type: 'pending', value: 4 }]} />
                         </TouchableHighlight>
                     </View>
                     <View>
                         <View>
-                            <Text style={styles.title}>Overall Wellness Status</Text>
+                            <Text style={styles.title}>{"Overall Wellness Status".toUpperCase()}</Text>
                         </View>
                         <AnimatedCircularProgress style={{ alignSelf: 'center' }}
                             size={180}
@@ -75,7 +82,7 @@ class AssessmentSummaryLayout extends Component {
                     </View>
                     <View style={{ marginTop: 10 }}>
                         <View>
-                            <Text style={styles.title}>Wellness Dimensions</Text>
+                            <Text style={styles.title}>{'Wellness Dimensions'.toUpperCase()}</Text>
                         </View>
                         {this.groupArray.map((x, i) => (
                             <View key={i} style={{ flexDirection: 'row' }}>
@@ -115,7 +122,7 @@ const CardInfo = (props) => {
                     ))}
                 </View>
                 <View style={{ marginTop: 20 }}>
-                    <Text style={{ fontSize: 20, textAlign: 'center',color: '#495057' }}>{props.title}</Text>
+                    <Text style={{ fontSize: 14, textAlign: 'center', color: '#495057' }}>{props.title.toUpperCase()}</Text>
                 </View>
             </Card>
         </View>
@@ -128,10 +135,10 @@ const DimensionCard = (props) => {
         <Card style={{ padding: 10 }}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
-                    <Text style={{ fontSize: 20, color: '#495057' }}>{props.dimension.title}</Text>
+                    <Text style={{ fontSize: 14, color: '#495057' }}>{props.dimension.title.toUpperCase()}</Text>
                 </View>
                 <View>
-                    <Image style={{ width: 30, height: 30 }} source={props.dimension.emoji} />
+                    <Image style={{ width: 30, height: 30 }} source={props.dimension.icon} />
                 </View>
             </View>
             <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
