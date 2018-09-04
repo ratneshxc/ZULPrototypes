@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
-import { Thumbnail, Badge, Text, Icon } from 'native-base';
+import { Thumbnail, Badge, Text, Icon, Button } from 'native-base';
 const expertData = [{
     key: 'key1',
     title: "Meditation gurus",
@@ -22,7 +22,7 @@ const expertData = [{
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice, Marraige counsilling, Parenting tips ...'
 },
-{ 
+{
     key: 'key4',
     title: "Carrier counsellors",
     icon: 'child',
@@ -61,22 +61,23 @@ const ExpertList = (props) => {
             </View>
             {/*Recent Experts*/}
             <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
-                <View style={{ flex: 1, flexDirection: 'row',backgroundColor: '#fff'  }}>
+                <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#fff' }}>
                     <View style={{ alignItems: 'center', padding: 5 }}>
                         <Thumbnail medium round source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
                     </View>
                     <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                         <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                            <Text style={{ flex: 1 ,fontSize:18}}>Samira Reddy</Text>
+                            <Text style={{ flex: 1, fontSize: 18 }}>Samira Reddy</Text>
                             <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 }} />
 
                         </View>
-                        <View style={{ flexDirection: 'row' ,marginTop:5}}>
+                        <View style={{ flexDirection: 'row', marginTop: 5 }}>
 
                             <View style={{ flex: 2 }}>
-                            <TouchableOpacity  style={{ paddingVertical: 4, backgroundColor:'white' , borderWidth: 1, margin: 0, marginLeft: 0, borderColor: '#294787', borderRadius: 50 }} onPress={()=>props.bookExperts()}>
-                                    <Text style={{ textAlign: 'center', color: '#294787' }}>Connect </Text>
-                                </TouchableOpacity>
+                                <Button rounded primary style={{height:30}}  >
+                                {/* onPress={()=>props.goToBooking()} */}
+                                    <Text>Connect</Text>
+                                </Button>
                             </View>
                             <View style={{ flex: 3 }}></View>
                         </View>
@@ -104,16 +105,16 @@ const styles = StyleSheet.create({
 const SpecialityComponent = (props) => {
     return (
 
-        <View style={{ flexDirection: 'column', padding: 3,paddingVertical:1, backgroundColor: '#F0F0F0' }} >
-            <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff',padding:2 }}>
+        <View style={{ flexDirection: 'column', padding: 3, paddingVertical: 1, backgroundColor: '#F0F0F0' }} >
+            <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff', padding: 2 }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
-                    <Thumbnail  round source={props.item.img} style={{height:50}}/>
+                    <Thumbnail round source={props.item.img} style={{ height: 50 }} />
                 </View>
                 <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                     <TouchableOpacity onPress={() => props.goToExperts()} >
                         <View>
                             <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                                <Text style={{ flex: 1 ,fontSize:18}}>{props.item.title}</Text>
+                                <Text style={{ flex: 1, fontSize: 18 }}>{props.item.title}</Text>
                                 <Icon name={props.item.icon} type="FontAwesome" style={{ fontSize: 18 }} />
                             </View>
                             <Text style={{ fontSize: 12, marginTop: 2 }}>{props.item.description}</Text>
