@@ -1,13 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Image, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { Text, Card } from 'native-base';
 import UserDetails from './UserDetails';
 import OTP from './OTP';
 import Passcode from './Passcode';
 import LinearGradient from 'react-native-linear-gradient';
+import AwesomeAlert from 'react-native-awesome-alerts';
 
 export default class Register extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      showAlert: false,
+      title: '',
+      description: '',
+      showConfirm: true,
+      showProgress: false
+    };
+  };
+
+  showAlert = (title, desc, showConfirm, showProgress) => {
+    this.setState({
+      showAlert: true,
+      title: title,
+      description: desc,
+      showConfirm: showConfirm,
+      showProgress: showProgress
+    });
+  };
+
+  hideAlert = () => {
+    this.setState({
+      showAlert: false,
+      title: '',
+      description: ''
+    });
+  };
+  goLandingPage = () => {
+    this.props.navigation.navigate('LandingComponent');
+  }
   Dashboard = () => {
     this.props.navigation.navigate('MainApp');
   }
@@ -21,20 +53,50 @@ export default class Register extends React.Component {
   }
 
   render() {
+    const { showAlert, title, description, showConfirm, showProgress } = this.state;
     return (
-      <LinearGradient colors={['#63E2FF', '#B066FE']} style={{ flex: 1 }}>
+      <LinearGradient colors={['#26D0CE', '#1A2980']} style={{ flex: 1 }}>
         <View style={{ alignItems: 'center' }}>
           <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
+          <Text style={{ fontSize: 25, color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>Sign Up</Text>
         </View>
 
         <View style={{ flexDirection: 'column', justifyContent: 'center', flex: 1 }}>
-          <Text style={{ fontSize: 25, color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>Sign Up</Text>
           <WizardTab ref='WizardRef'>
-            <UserDetails title="Zinger Details" nextHandler={this.goToNext} prevHandler={this.goToPrevious} />
-            <OTP title="Enter OTP" nextHandler={this.goToNext} prevHandler={this.goToPrevious} />
-            <Passcode title="Set Passcode" nextHandler={this.goToNext} prevHandler={this.goToPrevious} goToDashboard={this.Dashboard} />
+            <UserDetails title="Zinger Details" showAlert={this.showAlert} nextHandler={this.goToNext} prevHandler={this.goToPrevious} />
+            <OTP title="Enter OTP" showAlert={this.showAlert} nextHandler={this.goToNext} prevHandler={this.goToPrevious} />
+            <Passcode title="Set Passcode" showAlert={this.showAlert} nextHandler={this.goToNext} prevHandler={this.goToPrevious} goToDashboard={this.Dashboard} />
           </WizardTab>
+          <TouchableOpacity style={{ padding: 5 }} onPress={this.goLandingPage}>
+            <Text style={{ textDecorationLine: 'underline', color: '#ffffff', textAlign: 'center' }}>Quit Sign Up</Text>
+          </TouchableOpacity>
         </View>
+
+        <AwesomeAlert
+          contentContainerStyle={{ width: Dimensions.get('window').width }}
+          // titleStyle={{ fontSize: 20, color: '#3a3a3a' }}
+          messageStyle={{ fontSize: 15, color: '#3a3a3a' }}
+          confirmButtonTextStyle={{ fontSize: 16, paddingVertical: 5, textAlign: 'center' }}
+          confirmButtonStyle={{ width: 200 }}
+          show={showAlert}
+          showProgress={showProgress}
+          title={title}
+          message={description}
+          closeOnTouchOutside={true}
+          closeOnHardwareBackPress={false}
+          showCancelButton={false}
+          showConfirmButton={showConfirm}
+          cancelText=""
+          confirmText="Continue"
+          confirmButtonColor="#00c497"
+          onCancelPressed={() => {
+            this.hideAlert();
+          }}
+          onConfirmPressed={() => {
+            this.hideAlert();
+            this.goToNext();
+          }}
+        />
       </LinearGradient>
     )
   }
