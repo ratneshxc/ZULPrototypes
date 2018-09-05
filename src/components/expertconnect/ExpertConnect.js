@@ -21,7 +21,7 @@ class ExportConnect extends React.Component {
                 <View style={{ flexDirection: 'column' }}>
                 <Header>
                     <Left>
-                        <Button transparent>
+                        <Button transparent  onPress={() => { this.props.navigation.goBack() }}>
                             <Icon name='arrow-back' />
                         </Button>
                     </Left>
@@ -34,7 +34,7 @@ class ExportConnect extends React.Component {
             <Header searchBar rounded>
                 <Item  style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                     <Icon name="ios-search" />
-                    <Input placeholder="Search Experts, Specialities etc.." placeholderTextColor="#ddd" />
+                    <Input placeholder="Search experts" placeholderTextColor="#ddd" />
                     <Icon name="ios-people" />
                 </Item>
                 <Button transparent>
