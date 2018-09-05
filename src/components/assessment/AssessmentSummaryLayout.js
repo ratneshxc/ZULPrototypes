@@ -48,42 +48,50 @@ class AssessmentSummaryLayout extends Component {
                     <Right></Right>
                 </Header>
                 <Content style={styles.container}>
-                    <View style={{ flexDirection: 'row' }}>
-                        <TouchableHighlight style={{ flex: 1 }} onPress={() => this.props.navigation.navigate("Vitals")}>
-                            <CardInfo title="VITALS" data={[{ type: 'active', value: 23 }]} />
-                        </TouchableHighlight>
-                        <TouchableHighlight style={{ flex: 1 }} onPress={() => this.props.navigation.navigate("AssessmentList")}>
-                            <CardInfo title="CHECKS" data={[{ type: 'pending', value: 4 }]} />
-                        </TouchableHighlight>
-                    </View>
-                    <View>
-                        <View>
-                            <Text style={styles.title}>{"Overall Wellness Status".toUpperCase()}</Text>
+                    <Card>
+                        <View style={{ flexDirection: 'row' }}>
+                            <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("Vitals")}>
+                                <CardInfo title="VITALS" position="flex-start" data={[{ type: 'active', value: 14 }]} />
+                            </TouchableHighlight>
+                            <View style={{ width: 1, backgroundColor: '#ddd' }}></View>
+                            <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-end', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("AssessmentList")}>
+                                <CardInfo title="CHECKS" position="flex-end" data={[{ type: 'pending', value: 4 }]} />
+                            </TouchableHighlight>
                         </View>
-                        <AnimatedCircularProgress style={{ alignSelf: 'center' }}
-                            size={180}
-                            width={15}
-                            fill={80}
-                            tintColor="#4dad4a"
-                            onAnimationComplete={() => console.log('onAnimationComplete')}
-                            backgroundColor="#ddd">
-                            {
+                        <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                            <View style={{ flex: 1, height: 1, backgroundColor: '#ddd' }}></View>
+                            <AnimatedCircularProgress style={{ alignSelf: 'center' }}
+                                size={220}
+                                width={13}
+                                fill={80}
+                                tintColor="#00b386"
+                                onAnimationComplete={() => console.log('onAnimationComplete')}
+                                backgroundColor="#ddd">
+                                {
 
-                                (fill) => (
-                                    <View>
-                                        <Text style={{ fontSize: 15, textAlign: 'center' }}>65%</Text>
-                                        <Text style={{ fontSize: 20 }}>
-                                            Excellent
-                                        </Text>
-                                    </View>
-                                )
-                            }
-                        </AnimatedCircularProgress>
-                    </View>
-                    <View style={{ marginTop: 10 }}>
-                        <View>
-                            <Text style={styles.title}>{'Wellness Dimensions'.toUpperCase()}</Text>
+                                    (fill) => (
+                                        <View>
+                                            <Text style={{ fontSize: 15, textAlign: 'center', color: '#495057' }}>{'Your wellness'.toUpperCase()}</Text>
+                                            <Text style={{ fontSize: 35, textAlign: 'center', color: '#3a3a3a' }}>85%</Text>
+                                            <Text style={{ fontSize: 20, textAlign: 'center', color: '#3a3a3a' }}>Very Good</Text>
+                                        </View>
+                                    )
+                                }
+                            </AnimatedCircularProgress>
+                            <View style={{ flex: 1, height: 1, backgroundColor: '#ddd' }}></View>
                         </View>
+                        <View style={{ flexDirection: 'row' }}>
+                            <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("AppointmentList")}>
+                                <CardInfo title="Experts" position="flex-start" data={[{ type: 'meetups', value: 3 }]} />
+                            </TouchableHighlight>
+                            <View style={{ width: 1, backgroundColor: '#ddd' }}></View>
+                            <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-end', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("Goals")}>
+                                <CardInfo title="Goals" position="flex-end" data={[{ type: 'created', value: 2 }]} />
+                            </TouchableHighlight>
+                        </View>
+                    </Card>
+                    <View style={{ marginTop: 10 }}>
+                        <Text style={styles.title}>{'Wellness Overview'.toUpperCase()}</Text>
                         {this.groupArray.map((x, i) => (
                             <View key={i} style={{ flexDirection: 'row' }}>
                                 {x.map((y, j) => (
@@ -101,30 +109,32 @@ class AssessmentSummaryLayout extends Component {
 }
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#F5FCFF'
     },
     title: {
-        padding: 10,
-        color: '#495057'
+        paddingHorizontal: 10,
+        color: '#495057',
+        fontSize: 13,
+        fontWeight: 'bold'
     }
 })
 const CardInfo = (props) => {
     return (
-        <View>
-            <Card style={{ padding: 10 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ padding: 15, flex: 1, justifyContent: props.position, flexDirection: 'row' }}>
+            <View>
+                <Text style={{ fontSize: 14, color: '#495057', marginBottom: 10 }}>{props.title.toUpperCase()}</Text>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginLeft: 15 }}>
                     {props.data.map((x, i) => (
                         <View key={i} style={{ flexDirection: 'row' }}>
-                            <Text style={{ fontSize: 40 }}>{x.value}</Text>
-                            <Badge success>
+                            <Text style={{ fontSize: 40, color: '#3a3a3a' }}>{x.value}</Text>
+                            <Badge style={{ backgroundColor: '#00b386' }} success>
                                 <Text>{x.type}</Text>
                             </Badge>
                         </View>
                     ))}
                 </View>
-                <View style={{ marginTop: 20 }}>
-                    <Text style={{ fontSize: 14, textAlign: 'center', color: '#495057' }}>{props.title.toUpperCase()}</Text>
-                </View>
-            </Card>
+            </View>
+
         </View>
     )
 }
@@ -142,7 +152,7 @@ const DimensionCard = (props) => {
                 </View>
             </View>
             <View style={{ paddingVertical: 20, flexDirection: 'row', justifyContent: 'center' }}>
-                <Text style={{ fontSize: 35 }}>{props.dimension.score}</Text>
+                <Text style={{ fontSize: 35, color: '#3a3a3a' }}>{props.dimension.score}</Text>
             </View>
             <View style={{ backgroundColor: '#e4e4e4' }}>
                 <View style={{ height: 5, width: props.dimension.score, backgroundColor: props.dimension.progressColor }}></View>

@@ -127,7 +127,7 @@ const WellnessStack = createStackNavigator({
   AssessmentList: {
     screen: AssessmentList,
     navigationOptions: {
-      title: 'Assessments'
+      title: 'Checks'
     }
   },
   AssessmentInfo: {
@@ -346,7 +346,7 @@ const MainApp = createDrawerNavigator({
 });
 
 const AppRoute = createSwitchNavigator({
-  AppIntro: { screen: AppIntro },
+  AppIntro: { screen: MainApp },
   LandingComponent: { screen: LandingComponent },
   LogIn: { screen: LogIn },
   Register: { screen: Register },

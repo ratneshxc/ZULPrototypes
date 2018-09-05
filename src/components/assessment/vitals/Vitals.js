@@ -3,61 +3,44 @@ import { StyleSheet, View, TouchableOpacity, Animated } from 'react-native';
 import { Card, Text } from 'native-base';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from 'react-native-underline-tabbar';
+import Image from 'react-native-remote-svg';
+import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#ffffff',
     },
 
 });
 
-const chunkArray = (myArray, chunk_size) => {
-    var index = 0;
-    var arrayLength = myArray.length;
-    var tempArray = [];
-    for (index = 0; index < arrayLength; index += chunk_size) {
-        myChunk = myArray.slice(index, index + chunk_size);
-        // Do something if you want with the group
-        tempArray.push(myChunk);
-    }
-    return tempArray;
-}
 
 const Page = ({ vitals }) => {
-    let arrayGroup = chunkArray(vitals, 2)
     return (
         <View style={styles.container}>
-            <View>
-                {arrayGroup.map((x, i) => (
-                    <View key={i} style={{ flexDirection: 'row' }}>
-                        {x.map((y, j) => (
-                            <Card style={{ flex: 1, padding: 10 }} key={j}>
-                                <Text style={{ fontSize: 20 }}>
-                                    {y.title}
-                                </Text>
-                                <Text style={{ fontSize: 40 ,textAlign:'center',marginTop:10}}>
-                                    {y.value}
-                                </Text>
-                                <Text style={{ fontSize: 15,textAlign:'center' }}>
-                                    {y.unit}
-                                </Text>
-                            </Card>
-                        ))}
+            {vitals.map((n, i) => (
+                <View key={i} style={{ flexDirection: 'row', marginVertical: 10, backgroundColor: '#ffffff' }}>
+                    <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
+                        <Text style={{ fontSize: 15, paddingHorizontal: 10 }}>{n.title.toUpperCase()}</Text>
                     </View>
-                ))}
-            </View>
+                    <LinearGradient colors={n.color} style={{ padding: 15, borderRadius: 50 }}>
+                        <Image source={n.icon} style={{ width: 50, height: 50 }} />
+                    </LinearGradient>
+                    <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                        <View style={{ paddingHorizontal: 10 }}>
+                            <Text style={{ fontSize: 35 }}>{n.value}<Text style={{ fontSize: 15 }}>{n.unit}</Text></Text>
+                            {n.idealValue !== null && <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                                <Text style={{ fontSize: 12, color: '#676767' }}>{'Ideal '.toUpperCase()}</Text>
+                                <Text style={{ color: '#676767', fontSize: 12 }}>{`${n.idealValue}${n.unit}`}</Text>
+                            </View>}
+                        </View>
+                    </View>
+                </View>
+            ))}
         </View>
     )
 };
-// const iconsSet = {
-//     hot: require('../../../assests/images/suresh.png'),
-//     trending: require('../../../assests/images/suresh.png'),
-//     fresh: require('../../../assests/images/suresh.png'),
-//     funny: require('../../../assests/images/suresh.png'),
-//     movieAndTv: require('../../../assests/images/suresh.png'),
-//     sport: require('../../../assests/images/suresh.png'),
-// };
+
 
 const Tab = ({ tab, page, isTabActive, onPressHandler, onTabLayout, styles }) => {
     const { label, icon } = tab;
@@ -79,18 +62,11 @@ const Tab = ({ tab, page, isTabActive, onPressHandler, onTabLayout, styles }) =>
         color: styles.textColor,
         fontWeight: '600',
     };
-    // const iconStyle = {
-    //     tintColor: styles.textColor,
-    //     resizeMode: 'contain',
-    //     width: 22,
-    //     height: 22,
-    //     marginLeft: 10,
-    // };
+
     return (
         <TouchableOpacity style={style} onPress={onPressHandler} onLayout={onTabLayout} key={page}>
             <Animated.View style={containerStyle}>
                 <Animated.Text style={textStyle}>{label}</Animated.Text>
-                {/* <Animated.Image style={iconStyle} source={icon} /> */}
             </Animated.View>
         </TouchableOpacity>
     );
@@ -143,12 +119,32 @@ export default class Vitals extends Component {
                     )}
                     onScroll={(x) => this._scrollX.setValue(x)}>
 
-                    <Page tabLabel={{ label: "Physical" }} vitals={[{ title: 'Body Temperature', value: 36, unit: '°C' }, { title: 'Pulse', value: 60, unit: 'bhp' }, { title: 'Blood Pressure', value: '132/88', unit: 'mmHg' }]} />
-                    <Page tabLabel={{ label: "Emotional" }} vitals={[]} />
+                    <Page tabLabel={{ label: "Physical" }}
+                        vitals={[
+                            { title: 'BMI', value: 24.6, unit: '', icon: require('../../../assests/icons/vitals/BMI.svg'), color: ['#1A2980', '#26D0CE'], idealValue: 25 },
+                            { title: 'Heart Rate', value: 72, unit: 'bps', icon: require('../../../assests/icons/vitals/heart.svg'), color: ['#43cea2', '#185a9d'], idealValue: 68 },
+                            { title: 'Sleep', value: 8, unit: 'hrs', icon: require('../../../assests/icons/vitals/sleep.svg'), color: ['#348F50', '#56B4D3'], idealValue: 8 },                            
+                            { title: 'Activity', value: '2', unit: 'hrs', icon: require('../../../assests/icons/vitals/activity.svg'), color: ['#20BDFF', '#A5FECB'], idealValue: 10 },
+                            { title: 'Walk', value: '4.7', unit: 'km', icon: require('../../../assests/icons/vitals/walk.svg'), color: ['#4CB8C4', '#3CD3AD'], idealValue: 5.5 }
+                        ]} />
+                    <Page tabLabel={{ label: "Emotional" }} vitals={[
+                        { title: 'Mood', value: 'Happy', unit: null, icon: require('../../../assests/icons/vitals/mood.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null },
+                        { title: 'Stress', value: 2, unit: 'hrs', icon: require('../../../assests/icons/vitals/stress.svg'), color: ['#02AAB0', '#00CDAC'], idealValue: 1 }
+                    ]} />
+                    <Page tabLabel={{ label: "Environmental" }} vitals={[
+                        { title: 'Temperature', value: 28, unit: '°C', icon: require('../../../assests/icons/vitals/Temperature.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null },
+                        { title: 'UV Index', value: 9, unit: null, icon: require('../../../assests/icons/vitals/UV.svg'), color: ['#43cea2', '#185a9d'], idealValue: null },
+                        { title: 'Humidity', value: 48, unit: '%', icon: require('../../../assests/icons/vitals/humidity.svg'), color: ['#4CB8C4', '#3CD3AD'], idealValue: null }
+                    ]} />
+                    <Page tabLabel={{ label: "Financial" }} vitals={[
+                        { title: 'Net Worth', value: '12.8K', unit: 'Rs', icon: require('../../../assests/icons/vitals/income.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null },                        
+                        { title: 'Liquid Cash', value: '22K', unit: 'Rs', icon: require('../../../assests/icons/vitals/liquid-cash.svg'), color: ['#348F50', '#56B4D3'], idealValue: null },
+                        { title: 'Total Debit', value: '45K', unit: 'Rs', icon: require('../../../assests/icons/vitals/debit.svg'), color: ['#02AAB0', '#00CDAC'], idealValue: null }
+                    ]} />
+                    <Page tabLabel={{ label: "Social" }} vitals={[
+                        { title: "Manoj's b'day", value: '2', unit: 'days to go', icon: require('../../../assests/icons/vitals/cake.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null }
+                    ]} />
                     <Page tabLabel={{ label: "Spiritual" }} vitals={[]} />
-                    <Page tabLabel={{ label: "Environmental" }} vitals={[]} />
-                    <Page tabLabel={{ label: "Financial" }} vitals={[]} />
-                    <Page tabLabel={{ label: "Social" }} vitals={[]} />
                     <Page tabLabel={{ label: "Intellectual" }} vitals={[]} />
                     <Page tabLabel={{ label: "Occupational" }} vitals={[]} />
                 </ScrollableTabView>
