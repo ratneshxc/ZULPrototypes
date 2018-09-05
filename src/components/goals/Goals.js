@@ -39,11 +39,7 @@ class Goals extends Component {
     }
     render() {
         return (
-<<<<<<< HEAD
-            <Container style={{ backgroundColor: '#F5FCFF' }}>
-=======
             <Container>
->>>>>>> 14cae17bc389e980d5b2cd10bcc9e347381bf791
                 <Header>
                     <Left>
                         <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
