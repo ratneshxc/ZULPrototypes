@@ -226,7 +226,7 @@ export default class Booking extends Component {
                 {(Platform.OS === 'ios') ?
                     <Footer>
                         <FooterTab>
-                            <Button full  onPress={()=>this.props.navigation.navigate("BookingConfirmation")}>
+                            <Button full  onPress={()=>this.props.navigation.navigate("AppointmentList")}>
                                 <Text style={{ color: 'black', fontSize: 16, }}>Book</Text>
                             </Button>
                         </FooterTab>
@@ -234,7 +234,7 @@ export default class Booking extends Component {
                     :
                     <Footer>
                         <FooterTab>
-                            <Button block  onPress={()=>this.props.navigation.navigate("BookingConfirmation")}>
+                            <Button block  onPress={()=>this.props.navigation.navigate("AppointmentList")}>
                                 <Text style={{ color: 'white', fontSize: 16, }}>Book</Text>
                             </Button>
                         </FooterTab>
