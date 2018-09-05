@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { TextInput, View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
-export default class App extends Component {
+export default class Form extends Component {
 
   render() {
     return (
       <View style={styles.container}>
         <View style={{ alignItems: 'center' }}>
-          <View style={{ padding: 5, borderRadius: 10 }}>
-            <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
-          </View>
+          {!this.props.isKeyboardOpen && <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />}
+          <Text style={{ fontSize: 25, color: '#fff', textAlign: 'center' }}>Login To Account</Text>
         </View>
         <View style={{ flexDirection: 'column', flex: 1, justifyContent: 'center' }}>
-          <Text style={{ fontSize: 25, color: '#fff', textAlign: 'center', marginVertical: 10 }}>Login To Account</Text>
           <TextInput underlineColorAndroid='transparent'
             placeholder={'Username'}
             style={[styles.input, { borderTopLeftRadius: 10, borderTopRightRadius: 10 }]}

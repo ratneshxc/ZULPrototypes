@@ -54,7 +54,7 @@ class YourGoal extends Component {
                     <View>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <Left>
-                                <Text style={{ left: 20, fontSize: 17, flex: 2, alignSelf: 'flex-start' }}>ACTIVITIES</Text>
+                                <Text style={{ left: 20, fontSize: 13, flex: 2, alignSelf: 'flex-start' ,color: '#495057', fontWeight: 'bold' }}>ACTIVITIES</Text>
                             </Left>
                             <Right>
                                 <Icon onPress={this.goToYourActivity} style={{ flex: 2, alignSelf: 'flex-end', right: 15 }} active type="Ionicons" name="ios-add-circle-outline" />

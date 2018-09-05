@@ -1,9 +1,36 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Keyboard } from 'react-native';
 import Form from './Form';
 import LinearGradient from 'react-native-linear-gradient';
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isKeyboardOpen: false
+    }
+  }
+  componentWillMount() {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+  }
+
+  componentWillUnmount() {
+    this.keyboardDidShowListener.remove();
+    this.keyboardDidHideListener.remove();
+  }
+
+  _keyboardDidShow = () => {
+    this.setState({
+      isKeyboardOpen: true
+    })
+  }
+
+  _keyboardDidHide = () => {
+    this.setState({
+      isKeyboardOpen: false
+    })
+  }
 
   goRegister = () => {
     this.props.navigation.navigate('Register');
@@ -15,7 +42,7 @@ class Login extends React.Component {
   render() {
     return (
       <LinearGradient colors={['#26D0CE', '#1A2980']} style={styles.loginInnerContainer}>
-        <Form goRegister={this.goRegister} goToDashboard={this.goToDashboard} />
+        <Form isKeyboardOpen={this.state.isKeyboardOpen} goRegister={this.goRegister} goToDashboard={this.goToDashboard} />
       </LinearGradient>
     )
   }

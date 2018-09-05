@@ -24,7 +24,6 @@ export default class UserDetails extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10,
     },
     input: {
         backgroundColor: '#ffffff',

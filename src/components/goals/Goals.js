@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity,Image } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Card } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import GoalVideo from './GoalVideo';
+import NotificationCount from '../common/header/NotificationCount';
 
 class Goals extends Component {
     constructor(props) {
         super(props);
-        this.state = { Goals : [{
-            cardType: "multiple", imageURL: require('../../assests/icons/piggy-bank.png'),
-            headerTitle: 'Save 35k income tax', headerContent: 'Started 54 days ago', trackStatus: 'On track', level: 'Level 2',
-            data: [{
-                title: "Track your daily expenses", content: "₹ 15,578 expense for this month",
-                progressBar: true, progress: '60', totalProgess: '₹ 2,87,539', endProgess: '1 year',
-                point: "40 points"
+        this.state = {
+            Goals: [{
+                cardType: "multiple", imageURL: require('../../assests/icons/piggy-bank.png'),
+                headerTitle: 'Save 35k income tax', headerContent: 'Started 54 days ago', trackStatus: 'On track', level: 'Level 2',
+                data: [{
+                    title: "Track your daily expenses", content: "₹ 15,578 expense for this month",
+                    progressBar: true, progress: '60', totalProgess: '₹ 2,87,539', endProgess: '1 year',
+                    point: "40 points"
+                },
+                { title: "Invest in ELSS fund", content: "Pay for this month", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points" }]
             },
-            { title: "Invest in ELSS fund", content: "Pay for this month", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points" }]
-        },
-        { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, imageURL: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
-        { cardType: "single", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
-        ]
-    }}
-   
+            { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, imageURL: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
+            { cardType: "single", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
+            ]
+        }
+    }
+
     addGoal = () => {
         this.props.navigation.navigate('AddGoal');
     }
@@ -36,7 +39,11 @@ class Goals extends Component {
     }
     render() {
         return (
-            <Container style={{ backgroundColor:'#F5FCFF'}}>
+<<<<<<< HEAD
+            <Container style={{ backgroundColor: '#F5FCFF' }}>
+=======
+            <Container>
+>>>>>>> 14cae17bc389e980d5b2cd10bcc9e347381bf791
                 <Header>
                     <Left>
                         <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
@@ -47,13 +54,13 @@ class Goals extends Component {
                         <Title>Your Goals</Title>
                     </Body>
                     <Right>
-
+                        <NotificationCount getAllNotifications={() => this.props.navigation.navigate("NotificationGoals")} />
                     </Right>
                 </Header>
-                <Content style={{ backgroundColor: '#f5f5f5' }}>
+                <Content style={{ backgroundColor: '#F5FCFF' }}>
                     <LevelHeader />
                     <GoalsSection Goals={this.state.Goals} />
-                    <View style={{ height:60 }}></View>
+                    <View style={{ height: 60 }}></View>
                 </Content>
                 <Fab
                     containerStyle={{}}
@@ -105,20 +112,20 @@ const GoalHeaderDetails = (props) => {
         <TouchableOpacity onPress={props.GoalsDetails.yourGoal}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Image source={props.GoalsDetails.imageURL} style={{ width: 50, height: 50,marginRight:5 }} />
+                    <Image source={props.GoalsDetails.imageURL} style={{ width: 50, height: 50, marginRight: 5 }} />
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity style={{ flexDirection: 'row' }}>
-                            <Text style={{ fontSize: 18, color:'#3a3a3a' }}>{props.GoalsDetails.headerTitle}</Text>
+                            <Text style={{ fontSize: 18, color: '#3a3a3a' }}>{props.GoalsDetails.headerTitle}</Text>
                         </TouchableOpacity>
-                        <View><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'flex-start', paddingLeft:5, paddingRight:5 }}>{props.GoalsDetails.level}</Text></View>
+                        <View><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'flex-start', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.level}</Text></View>
                     </View>
                 </View>
                 {props.GoalsDetails.trackStatus === 'On track' ?
                     <TouchableOpacity>
-                        <View><Text style={{ fontSize: 13, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'center', paddingLeft:5, paddingRight:5  }}>{props.GoalsDetails.trackStatus}</Text></View>
+                        <View><Text style={{ fontSize: 13, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'center', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
                     </TouchableOpacity> :
                     <TouchableOpacity onPress={props.GoalsDetails.expertNavigation}>
-                        <View><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10, alignSelf: 'flex-end', paddingLeft:5, paddingRight:5  }}>{props.GoalsDetails.trackStatus}</Text></View>
+                        <View><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10, alignSelf: 'flex-end', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
                         <Text style={{ fontSize: 13 }}>Need expert help?</Text>
                     </TouchableOpacity>
                 }
@@ -145,7 +152,7 @@ const GoalDetails = (props) => {
 const GoalsSection = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10,color: '#495057', fontWeight:'bold' }}>{'Your Goals'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10, color: '#495057', fontWeight: 'bold' }}>{'Your Goals'.toUpperCase()}</Text>
             <GoalDetails GoalsDetails={props.Goals[2]} />
             <GoalDetails GoalsDetails={props.Goals[1]} />
             <GoalDetails GoalsDetails={props.Goals[0]} />
@@ -173,7 +180,7 @@ const Activity = (props) => {
             <TouchableOpacity onPress={props.GoalsDetails.goalStatus}>
                 <Card style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{ fontSize: 16, color:'#3a3a3a' }}>{props.GoalsDetails.title}</Text>
+                        <Text style={{ fontSize: 16, color: '#3a3a3a' }}>{props.GoalsDetails.title}</Text>
                     </View>
                     <View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start' }}></Text><Text style={{ alignSelf: 'flex-end' }}>2km</Text></View>
@@ -201,10 +208,10 @@ const MultipleActivity = (props) => {
                 x.progressBar ?
                     <Card key={i} style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                         <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                            <Text style={{ fontSize: 16, color:'#3a3a3a' }}>{x.title}</Text>
+                            <Text style={{ fontSize: 16, color: '#3a3a3a' }}>{x.title}</Text>
                         </View>
                         <View>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding:4 }}><Text style={{ alignSelf: 'flex-start' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end' }}>{x.endProgess}</Text></View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end' }}>{x.endProgess}</Text></View>
                             <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: '#1e90ff' }}>
                                 <View style={{ height: 22, width: x.progress + '%', backgroundColor: '#00bfff', borderRadius: 20 }}><Text style={{ left: 12 * x.progress / 11.6 + '%', color: 'white' }}>{x.totalProgess}</Text></View>
                             </View>
@@ -212,7 +219,7 @@ const MultipleActivity = (props) => {
                     </Card> :
                     <Card key={i} style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                         <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                            <Text style={{ fontSize: 16, color:'#3a3a3a' }}>{x.title}</Text>
+                            <Text style={{ fontSize: 16, color: '#3a3a3a' }}>{x.title}</Text>
                         </View>
                         <View style={{ flexDirection: 'row' }}>
                             <View style={{ flex: 2 }}></View>

@@ -50,7 +50,7 @@ class AssessmentInfo extends Component {
                 </Content>
                 <View style={{ padding: 10 }}>
                     <Button onPress={this.goAssessment} block>
-                        <Text style={{ color: '#fff', fontSize: 18 }}>Take Assessment</Text>
+                        <Text style={{ color: '#fff', fontSize: 18 }}>Let's start</Text>
                     </Button>
                 </View>
             </Container>

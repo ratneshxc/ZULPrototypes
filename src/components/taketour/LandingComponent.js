@@ -64,10 +64,10 @@ class LandingComponent extends React.Component {
                 <View style={styles.loginInnerContainer}>
                     <View style={styles.logoContainer}>
                         <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
-                        <Text style={{ fontSize: 35, textAlign: 'center', color: '#fff' }}>Re-Discover Yourself</Text>
+                        <Text style={{ fontSize: 25, textAlign: 'center', color: '#fff' }}>Re-Discover Yourself</Text>
                     </View>
                     <View style={{ flex: 1, justifyContent: 'center' }}>
-                        <Text style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center', color: '#fff' }}>20,083</Text>
+                        <Text style={{ fontSize: 30, textAlign: 'center', color: '#fff' }}>20,083</Text>
                         <Text style={styles.statement}>People have already taken assessments</Text>
                         <TouchableOpacity style={styles.takeAssessmentBtn} onPress={this.selectAssessment}>
                             <Text style={styles.textWhite}>{'Check Your Wellness'.toUpperCase()}</Text>

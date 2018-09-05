@@ -66,10 +66,10 @@ class AppointmentList extends React.Component {
     }
     render(){
     return (
-        <View style={{ backgroundColor: '#F0F0F0' }}>
+        <View style={{ backgroundColor: '#F5FCFF' }}>
             {/*Recently Contacted*/}
             <View style={{ flexDirection: 'row', padding: 5 }} >
-                <Text style={{ flex: 1 }}>Upcoming</Text>
+                <Text style={{ flex: 1 }}>{'Upcoming'.toUpperCase()}</Text>
             </View>
             {/*Recent Experts*/}
             <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
@@ -98,7 +98,7 @@ class AppointmentList extends React.Component {
             </View>
             {/*Find and connect*/}
             <View style={{ flexDirection: 'row', padding: 5, }} >
-                <Text style={{ flex: 1 }}>Previous</Text>
+                <Text style={{ flex: 1 }}>{'Previous'.toUpperCase()}</Text>
             </View>
             <FlatList
                 data={expertData}

@@ -37,9 +37,6 @@ class AddActivity extends Component {
                         <Input placeholder="Search" placeholderTextColor="#ddd" />
                         <Icon name="ios-people" />
                     </Item>
-                    <Button transparent>
-                        <Text>Search</Text>
-                    </Button>
                 </Header>
                 <View style={{ height: 20 }}></View>
                 <Content>
