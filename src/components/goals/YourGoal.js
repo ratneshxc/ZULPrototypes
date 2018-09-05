@@ -3,7 +3,7 @@ import { Platform, View, StyleSheet, Image, Dimensions, ImageBackground, Touchab
 import { Footer, FooterTab, Card, CardItem, Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text  } from 'native-base';
 //import Divider from './Divider';
 import StepProgress from './StepProgress';
-import { Pages } from 'react-native-pages';
+//import { Pages } from 'react-native-pages';
 
 
 class YourGoal extends Component {
@@ -74,7 +74,7 @@ class YourGoal extends Component {
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
                                 <View style={{ flex: 1 }}>
-                                    <Icon active type="MaterialCommunityIcons" name="food-fork-drink" />
+                                    <Image style={{ width: 30, height: 30, right:4 }} source={require('../../assests/icons/buddhist-yoga-pose.png')} /> 
                                 </View>
                                 <View style={{ flex: 8 }}>
                                     <Text style={{ alignSelf: 'flex-start', fontSize: 16 }}>Daily 10 min meditation</Text>
@@ -85,7 +85,7 @@ class YourGoal extends Component {
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
                                 <View style={{ flex: 1 }}>
-                                    <Icon active type="MaterialCommunityIcons" name="run" />
+                                    <Icon active type="MaterialIcons" name="local-drink" />
                                 </View>
                                 <View style={{ flex: 8 }}>
                                     <Text style={{ fontSize: 16, alignSelf: 'flex-start' }}>Drink water a half hour before your meal</Text>
