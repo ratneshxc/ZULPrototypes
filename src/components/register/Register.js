@@ -22,25 +22,20 @@ export default class Register extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, flexDirection: 'column' }}>
-
-        <LinearGradient colors={['#63E2FF', '#B066FE']} style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
-          <View style={{ padding: 5, borderRadius: 10, marginTop: 20 }}>
-            <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
-          </View>
-          <Text style={{ fontSize: 25, color: '#fff', fontWeight: 'bold' }}>Sign Up</Text>
-        </LinearGradient>
-        <View style={{ flex: 1, backgroundColor: '#dcf6ff' }}>
-
+      <LinearGradient colors={['#63E2FF', '#B066FE']} style={{ flex: 1 }}>
+        <View style={{ alignItems: 'center' }}>
+          <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
         </View>
-        <View style={{ position: 'absolute', borderRadius: 10, backgroundColor: '#fff', top: Dimensions.get('screen').height / 2 - 100, right: 10, left: 10 }}>
+
+        <View style={{ flexDirection: 'column', justifyContent: 'center', flex: 1 }}>
+          <Text style={{ fontSize: 25, color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>Sign Up</Text>
           <WizardTab ref='WizardRef'>
             <UserDetails title="Zinger Details" nextHandler={this.goToNext} prevHandler={this.goToPrevious} />
             <OTP title="Enter OTP" nextHandler={this.goToNext} prevHandler={this.goToPrevious} />
             <Passcode title="Set Passcode" nextHandler={this.goToNext} prevHandler={this.goToPrevious} goToDashboard={this.Dashboard} />
           </WizardTab>
         </View>
-      </View>
+      </LinearGradient>
     )
   }
 }
@@ -70,28 +65,8 @@ class WizardTab extends React.Component {
     let { children } = this.props;
 
     return (
-
       <View style={styles.container}>
-        <View style={{ flexDirection: 'row' }}>
-          {children.map((x, i) => (
-            i == this.state.currentStep ?
-              <TouchableOpacity key={i} onPress={() => this.setCurrentStep(i)} style={styles.selectedWizardStep}>
-                <View style={styles.selectedWizardInternal}>
-                  <Text style={{ color: '#00c497' }}>Step {i + 1}</Text>
-                  <Text style={{ fontWeight: 'bold', fontSize: 16, marginTop: 10, color: '#00c497' }}>{x.props.title}</Text>
-                </View>
-              </TouchableOpacity> :
-              <TouchableOpacity key={i} onPress={() => this.setCurrentStep(i)} style={styles.wizardStep}>
-                <View style={styles.wizardInternal}>
-                  <Text>Step {i + 1}</Text>
-                  <Text style={{ fontWeight: 'bold', fontSize: 16, marginTop: 10 }}>{x.props.title}</Text>
-                </View>
-              </TouchableOpacity>
-          ))}
-        </View>
-        <View style={{ padding: 5 }}>
-          {children[this.state.currentStep]}
-        </View>
+        {children[this.state.currentStep]}
       </View>
     )
   }

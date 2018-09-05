@@ -9,7 +9,7 @@ const Speciality = (props) => {
         <Container>
                <Header>
                     <Left>
-                        <Button transparent>
+                        <Button transparent  onPress={() => { props.navigation.openDrawer() }}>
                             <Icon name='menu' />
                         </Button>
                     </Left>
@@ -31,7 +31,7 @@ const Speciality = (props) => {
             </Header>
             <Content>
                 <View style={{ backgroundColor: '#ddd' }}>
-                    <SpecialityList goToExperts={()=>props.navigation.navigate("ExpertList")}/>
+                    <SpecialityList goToExperts={()=>props.navigation.navigate("ExpertList")} goToBooking={()=>props.navigation.navigate("Booking")}/>
                 </View>
             </Content>
         </Container>

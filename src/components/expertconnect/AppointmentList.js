@@ -9,7 +9,7 @@ const Appointment = (props) => {
         <Container>
                <Header>
                     <Left>
-                        <Button transparent>
+                        <Button transparent  onPress={() => { props.navigation.openDrawer() }}>
                             <Icon name='menu' />
                         </Button>
                     </Left>
@@ -22,7 +22,7 @@ const Appointment = (props) => {
             <Header searchBar rounded>
                 <Item>
                     <Icon name="ios-search" />
-                    <Input placeholder="Search Appointments" />
+                    <Input placeholder="Search appointments" placeholderTextColor="#ddd" />
                     <Icon name="ios-people" />
                 </Item>
                 <Button transparent>
@@ -31,7 +31,7 @@ const Appointment = (props) => {
             </Header>
             <Content>
                 <View style={{ backgroundColor: '#ddd' }}>
-                    <ApppointmentList goToExperts={()=>props.navigation.navigate("ExpertList")}/>
+                    <ApppointmentList goToBooking={()=>props.navigation.navigate("Booking")} goToReport={()=>props.navigation.navigate("AssessmentReport")}/>
                 </View>
             </Content>
         </Container>

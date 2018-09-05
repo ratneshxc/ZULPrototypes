@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity, ScrollView } from 'react-native';
+import { TouchableOpacity, ScrollView ,Platform} from 'react-native';
 import {
     Container,
     Header,
@@ -7,7 +7,9 @@ import {
     Content,
     Button,
     Left,
+    Footer,
     Right,
+    FooterTab,
     Body,
     Icon,
     Accordion,
@@ -39,10 +41,7 @@ export default class Booking extends Component {
                     {" "}{dataArray.title}
                 </Text>
 
-                <Icon name='wechat' type="FontAwesome" style={{ marginHorizontal: 5, fontSize:20 }} />
-                <Text style={{ marginHorizontal: 5}}>
-                    ₹150
-            </Text>
+              
                 {expanded
                     ? <Icon style={{ fontSize: 20 }} name='chevron-up' type="FontAwesome"  />
                     : <Icon style={{ fontSize: 20 }} name='chevron-down' type="FontAwesome"  />}
@@ -174,14 +173,14 @@ export default class Booking extends Component {
                     <View style={{ flexDirection: 'row', marginTop: 5 }}>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <CheckBox
-                                color="green"
+                               color="black"
                                 checked={true}
                             />
                             <Text style={{ marginLeft: 10 }}> Yes </Text>
                         </View>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <CheckBox
-                                color="red"
+                                color="black"
                                 checked={false}
                             />
                             <Text style={{ marginLeft: 10 }}> No </Text>
@@ -198,18 +197,6 @@ export default class Booking extends Component {
     render() {
         return (
             <Container>
-                <Header>
-                    <Left>
-                        <Button transparent>
-                            <Icon name='menu' />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Booking</Title>
-                    </Body>
-                    <Right>
-                    </Right>
-                </Header>
                 <Content  style={{ backgroundColor: "white" }}>
                     <Accordion
                         dataArray={AppointmentDetails}
@@ -227,19 +214,32 @@ export default class Booking extends Component {
                         style={{ marginTop: 5 }}
                     />
                     <View style={{ flex: 1, flexDirection: 'column',marginTop:5,borderTopWidth:1,borderTopColor:'#ddd' }}>
-                        <View style={{ flexDirection: 'row',flex:1 ,marginTop:5}}>
+                        <View style={{ flexDirection: 'column',flex:1 ,marginTop:5}}>
                             <Text style={{ flex: 1 }}>Total: ₹150</Text>
                             <Text style={{ color: '#28a745', textDecorationLine: 'underline' }}>Apply coupon</Text>
                         </View>
-                        <View style={{ flexDirection: 'row',marginTop:5 }}>
-                            <Text style={{ flex: 1 }}></Text>
-                            <Button bordered primary style={{width:100,height:50,alignItems:'center'}} onPress={()=>this.props.navigation.navigate("BookingConfirmation")}>
-                                <Text style={{alignSelf:'center'}}>Book</Text>
-                            </Button>
-                        </View>
+                        
                     </View>
 
+                        
                 </Content>
+                {(Platform.OS === 'ios') ?
+                    <Footer>
+                        <FooterTab>
+                            <Button full  onPress={()=>this.props.navigation.navigate("AppointmentList")}>
+                                <Text style={{ color: 'black', fontSize: 16, }}>Book</Text>
+                            </Button>
+                        </FooterTab>
+                    </Footer>
+                    :
+                    <Footer>
+                        <FooterTab>
+                            <Button block  onPress={()=>this.props.navigation.navigate("AppointmentList")}>
+                                <Text style={{ color: 'white', fontSize: 16, }}>Book</Text>
+                            </Button>
+                        </FooterTab>
+                    </Footer>
+                }
             </Container>
         )
     }

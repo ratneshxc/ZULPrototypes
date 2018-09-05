@@ -74,7 +74,7 @@ const ExpertList = (props) => {
                         <View style={{ flexDirection: 'row', marginTop: 5 }}>
 
                             <View style={{ flex: 2 }}>
-                                <Button rounded primary style={{height:30}}  >
+                                <Button rounded primary style={{height:30}}  onPress={()=>props.goToBooking()} >
                                 {/* onPress={()=>props.goToBooking()} */}
                                     <Text>Connect</Text>
                                 </Button>

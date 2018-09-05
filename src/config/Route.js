@@ -118,6 +118,12 @@ const WellnessStack = createStackNavigator({
       header: null
     }
   },
+  Notification: {
+    screen: Notification,
+    navigationOptions: {
+      title: 'Notifications'
+    }
+  },
   Vitals: {
     screen: Vitals,
     navigationOptions: {
@@ -127,7 +133,7 @@ const WellnessStack = createStackNavigator({
   AssessmentList: {
     screen: AssessmentList,
     navigationOptions: {
-      title: 'Assessments'
+      title: 'Checks'
     }
   },
   AssessmentInfo: {
@@ -207,7 +213,7 @@ const ExpertStack = createStackNavigator({
   Booking: {
     screen: Booking,
     navigationOptions: {
-      header: null
+      title: 'Booking'
     }
   },
   BookingConfirmation: {
