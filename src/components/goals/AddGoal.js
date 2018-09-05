@@ -14,22 +14,19 @@ class AddGoal extends Component {
     }
     render() {
         return (
-            <Container>
+            <Container style={{ backgroundColor:'#F5FCFF'}}>
                 <Header searchBar rounded>
                     <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                         <Icon name="ios-search" />
                         <Input placeholder="Goals" placeholderTextColor="#ddd"/>
                         <Icon name="ios-people" />
                     </Item>
-                    <Button transparent>
-                        <Text>Search</Text>
-                    </Button>
                 </Header>
                 <Content style={[styles.container, { backgroundColor: '#ddd' }]}>
                     <View>
                         {/*Search results*/}
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
-                            <Text style={{ flex: 1 ,color:'black',fontSize:16}}>Your recent searches</Text>
+                            <Text style={{ flex: 1 ,color:'black',fontSize:16, color: '#3a3a3a'}}>YOUR RECENT SEARCHES</Text>
                         </View>
                         {/*Search results*/}
 
@@ -71,7 +68,7 @@ class AddGoal extends Component {
                         </View>
                         {/*Suggestions*/}
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
-                            <Text style={{ flex: 1 ,color:'black',fontSize:16}}>Suggested goals</Text>
+                            <Text style={{ flex: 1 ,color:'black',fontSize:16, color: '#3a3a3a'}}>SUGGESTED GOALS</Text>
 
                         </View>
                         <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>

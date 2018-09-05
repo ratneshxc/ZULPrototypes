@@ -36,11 +36,11 @@ class Goals extends Component {
         this.props.navigation.navigate('YourGoal');
     }
     expertNavigation = () => {
-        this.props.navigation.navigate('ExpertList');
+        this.props.navigation.navigate('ExpertListGoals');
     }
     render() {
         return (
-            <Container>
+            <Container style={{ backgroundColor:'#F5FCFF'}}>
                 <Header>
                     <Left>
                         <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
@@ -128,7 +128,7 @@ const GoalHeaderDetails = (props) => {
                     <Image source={props.GoalsDetails.image} style={{ width: 50, height: 50 }} />
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity style={{ flexDirection: 'row' }}>
-                            <Text style={{ fontSize: 18 }}>{props.GoalsDetails.headerTitle}</Text>
+                            <Text style={{ fontSize: 18, color:'#3a3a3a' }}>{props.GoalsDetails.headerTitle}</Text>
                         </TouchableOpacity>
                         <View><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'flex-start', paddingLeft:5, paddingRight:5 }}>{props.GoalsDetails.level}</Text></View>
                     </View>
@@ -149,7 +149,7 @@ const GoalHeaderDetails = (props) => {
 const GoalsSection = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10 }}>{'Your Goals'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10,color: '#495057', fontWeight:'bold' }}>{'Your Goals'.toUpperCase()}</Text>
             <GoalDetails GoalsDetails={props.Goals[2]} />
             <GoalDetails GoalsDetails={props.Goals[1]} />
             <GoalDetails GoalsDetails={props.Goals[0]} />
@@ -177,7 +177,7 @@ const Activity = (props) => {
             <TouchableOpacity onPress={props.GoalsDetails.goalStatus}>
                 <Card style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{ fontSize: 16 }}>{props.GoalsDetails.title}</Text>
+                        <Text style={{ fontSize: 16, color:'#3a3a3a' }}>{props.GoalsDetails.title}</Text>
                     </View>
                     <View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start' }}></Text><Text style={{ alignSelf: 'flex-end' }}>2km</Text></View>
@@ -205,7 +205,7 @@ const MultipleActivity = (props) => {
                 x.progressBar ?
                     <Card key={i} style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                         <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                            <Text style={{ fontSize: 16 }}>{x.title}</Text>
+                            <Text style={{ fontSize: 16, color:'#3a3a3a' }}>{x.title}</Text>
                         </View>
                         <View>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding:4 }}><Text style={{ alignSelf: 'flex-start' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end' }}>{x.endProgess}</Text></View>
@@ -216,7 +216,7 @@ const MultipleActivity = (props) => {
                     </Card> :
                     <Card key={i} style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                         <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                            <Text style={{ fontSize: 16 }}>{x.title}</Text>
+                            <Text style={{ fontSize: 16, color:'#3a3a3a' }}>{x.title}</Text>
                         </View>
                         <View style={{ flexDirection: 'row' }}>
                             <View style={{ flex: 2 }}></View>

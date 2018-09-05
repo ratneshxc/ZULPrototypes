@@ -10,7 +10,7 @@ class GoalVideo extends Component {
     render() {
         return (
             <View style={{backgroundColor:'#f0f0f0',}}>
-                <Text style={{ alignSelf:'center', color:'black', fontWeight:'bold' }}>Watch this video to complete your activity</Text>
+                <Text style={{ alignSelf:'center', color:'black' }}>Watch this video to complete your activity</Text>
                 <Image source={require("../../assests/icons/imagesVideo.jpeg") } style={{ alignSelf:'center'}} />
                 {/* <Video source={require("../../assests/videos/DSC_0082.mp4") }   // Can be a URL or a local file.
                     ref={(ref) => {
