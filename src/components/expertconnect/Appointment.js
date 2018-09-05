@@ -80,7 +80,7 @@ const AppointmentList = (props) => {
 
                             <View style={{ flex: 1 }}>
                             </View>
-                            <Button rounded primary style={{ height: 25, marginVertical: 1 }} onPress={() => props.navigation.navigate("Booking")} >
+                            <Button rounded primary style={{ height: 25, marginVertical: 1 }} onPress={() => props.goToBooking()} >
 
                                 <Text>Reschedule</Text>
                             </Button>
@@ -94,7 +94,7 @@ const AppointmentList = (props) => {
             </View>
             <FlatList
                 data={expertData}
-                renderItem={({ item }) => <AppointmentComponent item={item} goToExperts={props.goToExperts} />}
+                renderItem={({ item }) => <AppointmentComponent item={item} goToReport={props.goToReport} />}
             />
         </View>
     )
@@ -123,7 +123,7 @@ const AppointmentComponent = (props) => {
 
                         <View style={{ flex: 1 }}>
                         </View>
-                        <Button rounded primary style={{ height: 25, marginVertical: 1 }} onPress={() => props.bookExperts()} >
+                        <Button rounded primary style={{ height: 25, marginVertical: 1 }} onPress={() => props.goToReport()} >
                             <Text>Get Report</Text>
                         </Button>
                     </View>
