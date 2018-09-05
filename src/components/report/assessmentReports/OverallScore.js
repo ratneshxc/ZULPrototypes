@@ -22,7 +22,7 @@ const OverallScore = (props) => {
                     size={180}
                     width={15}
                     fill={score.value}
-                    tintColor="#4dad4a"
+                    tintColor="#00b386"
                     onAnimationComplete={() => console.log('onAnimationComplete')}
                     backgroundColor="#ddd">
                     {
