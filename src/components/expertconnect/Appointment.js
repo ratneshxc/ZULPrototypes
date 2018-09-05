@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
-import { Thumbnail, Badge, Text, Icon, Button } from 'native-base';
+import { Thumbnail, Badge, Text, Icon, Button ,Toast} from 'native-base';
 
 const expertData =[
     {
@@ -56,7 +56,15 @@ const expertData =[
 ];
 
 
-const AppointmentList = (props) => {
+class AppointmentList extends React.Component {
+    componentDidMount() {
+        Toast.show({
+            text: "Booking confirmed !",
+            type:'success',
+            duration:3000
+          });
+    }
+    render(){
     return (
         <View style={{ backgroundColor: '#F0F0F0' }}>
             {/*Recently Contacted*/}
@@ -80,7 +88,7 @@ const AppointmentList = (props) => {
 
                             <View style={{ flex: 1 }}>
                             </View>
-                            <Button rounded primary style={{ height: 25, marginVertical: 1 }} onPress={() => props.goToBooking()} >
+                            <Button rounded primary style={{ height: 25, marginVertical: 1 }} onPress={() => this.props.goToBooking()} >
 
                                 <Text>Reschedule</Text>
                             </Button>
@@ -94,10 +102,11 @@ const AppointmentList = (props) => {
             </View>
             <FlatList
                 data={expertData}
-                renderItem={({ item }) => <AppointmentComponent item={item} goToReport={props.goToReport} />}
+                renderItem={({ item }) => <AppointmentComponent item={item} goToReport={this.props.goToReport} />}
             />
         </View>
     )
+}
 }
 const styles = StyleSheet.create({
     container: {
