@@ -29,8 +29,8 @@ class ZulaWelcomeMessage extends React.Component {
             <View style={styles.body}>
                 <View style={{ alignItems: 'center' }}>
                     <Image source={require('../../../assests/images/sun.png')} style={{ width: 70, height: 70 }} />
-                    <Text style={{ fontSize: 20, marginBottom: 30 }}>Good Morning</Text>
-                    <Text style={{ fontSize: 25, marginBottom: 20 }}>How are you feeling today?</Text>
+                    <Text style={{ fontSize: 20, marginBottom: 30,color: '#3a3a3a' }}>Good Morning</Text>
+                    <Text style={{ fontSize: 25, marginBottom: 20,color: '#3a3a3a' }}>How are you feeling today?</Text>
                 </View>
                 <View style={{ flexDirection: 'row', flex: 1 }}>
                     <TouchableOpacity style={[styles.emojiContainer]} onPress={this.hideWishModal}>
@@ -49,8 +49,8 @@ class ZulaWelcomeMessage extends React.Component {
                         <Image style={styles.emoji} source={require('../../../assests/images/emoji/05.png')} />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={{ backgroundColor: '#5067ffe3', marginHorizontal: 30, padding: 5, marginTop: 30, width: 'auto', borderRadius: 10 }} onPress={this.hideWishModal}>
-                    <Text style={{ color: '#fff', textAlign: 'center' }}>I DON'T WANT TO ANSWER</Text>
+                <TouchableOpacity style={{ marginHorizontal: 30, padding: 5, marginTop: 30, width: 'auto', borderRadius: 10 }} onPress={this.hideWishModal}>
+                    <Text style={{ textAlign: 'center',textDecorationLine:'underline' }}>I don't want to answer</Text>
                 </TouchableOpacity>
             </View>
         )

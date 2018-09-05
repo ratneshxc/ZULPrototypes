@@ -12,9 +12,9 @@ const mapStateToProps = state => (
 
 const Observations = (props) => {
     return (
-        <View style={styles.container}>
-            <Text style={{ marginBottom: 10 }}>Observations</Text>
-            <View style={{ flexWrap: 'wrap', alignItems: 'flex-start', flexDirection: 'row' }}>
+        <View>
+            <Text style={styles.title}>{'Observations'.toUpperCase()}</Text>
+            <View style={{ flexWrap: 'wrap', alignItems: 'flex-start', flexDirection: 'row', backgroundColor: '#ffffff', padding: 10 }}>
                 {props.observations.map((x, i) => (
                     x.type === 'danger' ?
                         <Text style={[styles.tag, { color: 'red' }]} key={i}>{x.text}</Text> :
@@ -25,11 +25,6 @@ const Observations = (props) => {
     )
 }
 const styles = StyleSheet.create({
-    container: {
-        marginTop: 2,
-        backgroundColor: '#ffffff',
-        padding: 10
-    },
     tag: {
         paddingHorizontal: 5,
         paddingVertical: 2,
@@ -39,6 +34,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ddd',
         borderRadius: 10
+    },
+    title: {
+        color: '#495057',
+        fontSize: 13,
+        fontWeight: 'bold',
+        padding: 10
     }
 })
 export default connect(mapStateToProps)(Observations);

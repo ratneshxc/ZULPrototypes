@@ -120,11 +120,11 @@ export default class Vitals extends Component {
 
                     <Page tabLabel={{ label: "Physical" }}
                         vitals={[
-                            { title: 'BMI', value: 24.6, unit: '', icon: require('../../../assests/icons/vitals/BMI.png'), color: ['#1A2980', '#26D0CE'], idealValue: 25 },
-                            { title: 'Heart Rate', value: 72, unit: 'bps', icon: require('../../../assests/icons/vitals/heart.png'), color: ['#43cea2', '#185a9d'], idealValue: 68 },
+                            { title: 'BMI', value: 18.6, unit: '', icon: require('../../../assests/icons/vitals/BMI.png'), color: ['#1A2980', '#26D0CE'], idealValue: 18.5 },
+                            { title: 'Heart Rate', value: 72, unit: 'bpm', icon: require('../../../assests/icons/vitals/heart.png'), color: ['#43cea2', '#185a9d'], idealValue: 75 },
                             { title: 'Sleep', value: 8, unit: 'hrs', icon: require('../../../assests/icons/vitals/sleep.png'), color: ['#348F50', '#56B4D3'], idealValue: 8 },                            
-                            { title: 'Activity', value: '2', unit: 'hrs', icon: require('../../../assests/icons/vitals/activity.png'), color: ['#20BDFF', '#A5FECB'], idealValue: 10 },
-                            { title: 'Walk', value: '4.7', unit: 'km', icon: require('../../../assests/icons/vitals/walk.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: 5.5 }
+                            { title: 'Work out', value: '2', unit: 'hrs', icon: require('../../../assests/icons/vitals/activity.png'), color: ['#20BDFF', '#A5FECB'], idealValue: 1 },
+                            { title: 'Walk', value: '4.7', unit: 'km', icon: require('../../../assests/icons/vitals/walk.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: 8 }
                         ]} />
                     <Page tabLabel={{ label: "Emotional" }} vitals={[
                         { title: 'Mood', value: 'Happy', unit: null, icon: require('../../../assests/icons/vitals/mood.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },
@@ -132,8 +132,8 @@ export default class Vitals extends Component {
                     ]} />
                     <Page tabLabel={{ label: "Environmental" }} vitals={[
                         { title: 'Temperature', value: 28, unit: '°C', icon: require('../../../assests/icons/vitals/Temperature.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },
-                        { title: 'UV Index', value: 9, unit: null, icon: require('../../../assests/icons/vitals/UV.png'), color: ['#43cea2', '#185a9d'], idealValue: null },
-                        { title: 'Humidity', value: 48, unit: '%', icon: require('../../../assests/icons/vitals/humidity.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: null }
+                        { title: 'UV Index', value: 7, unit: null, icon: require('../../../assests/icons/vitals/UV.png'), color: ['#43cea2', '#185a9d'], idealValue: null },
+                        { title: 'Humidity', value: 50, unit: '%', icon: require('../../../assests/icons/vitals/humidity.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: null }
                     ]} />
                     <Page tabLabel={{ label: "Financial" }} vitals={[
                         { title: 'Net Worth', value: '12.8K', unit: 'Rs', icon: require('../../../assests/icons/vitals/income.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },                        

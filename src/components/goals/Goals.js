@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Image, Card } from 'native-base';
+import { View, StyleSheet, TouchableOpacity,Image } from 'react-native';
+import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Card } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import GoalVideo from './GoalVideo';
 
@@ -8,7 +8,7 @@ class Goals extends Component {
     constructor(props) {
         super(props);
         this.state = { Goals : [{
-            cardType: "multiple", image: require('../../assests/icons/piggy-bank.png'),
+            cardType: "multiple", imageURL: require('../../assests/icons/piggy-bank.png'),
             headerTitle: 'Save 35k income tax', headerContent: 'Started 54 days ago', trackStatus: 'On track', level: 'Level 2',
             data: [{
                 title: "Track your daily expenses", content: "₹ 15,578 expense for this month",
@@ -17,14 +17,11 @@ class Goals extends Component {
             },
             { title: "Invest in ELSS fund", content: "Pay for this month", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points" }]
         },
-        { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, image: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
-        { cardType: "single", image: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
+        { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, imageURL: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
+        { cardType: "single", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
         ]
     }}
-    componentWillMount() {
-        
-    }
-
+   
     addGoal = () => {
         this.props.navigation.navigate('AddGoal');
     }
@@ -103,28 +100,12 @@ const LevelHeader = () => {
         </View>
     )
 }
-const GoalDetails = (props) => {
-    return (
-        <Card style={{ padding: 5, backgroundColor: '#ffffff', marginVertical: 4 }}>
-            <GoalHeaderDetails GoalsDetails={props.GoalsDetails} />
-            <ActivityDetails GoalsDetails={props.GoalsDetails} />
-
-            {/* <Accordion
-                dataArray={props.GoalsDetails}
-                animation={true}
-                expanded={1}
-                renderHeader={this.GoalHeaderDetails}
-                renderContent={this.ActivityDetails}
-            />  */}
-        </Card>
-    )
-}
 const GoalHeaderDetails = (props) => {
     return (
         <TouchableOpacity onPress={props.GoalsDetails.yourGoal}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Image source={props.GoalsDetails.image} style={{ width: 50, height: 50 }} />
+                    <Image source={props.GoalsDetails.imageURL} style={{ width: 50, height: 50,marginRight:5 }} />
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity style={{ flexDirection: 'row' }}>
                             <Text style={{ fontSize: 18 }}>{props.GoalsDetails.headerTitle}</Text>
@@ -143,6 +124,22 @@ const GoalHeaderDetails = (props) => {
                 }
             </View>
         </TouchableOpacity>
+    )
+}
+const GoalDetails = (props) => {
+    return (
+        <Card style={{ padding: 5, backgroundColor: '#ffffff', marginVertical: 4 }}>
+            <GoalHeaderDetails GoalsDetails={props.GoalsDetails} />
+            <ActivityDetails GoalsDetails={props.GoalsDetails} />
+
+            {/* <Accordion
+                dataArray={props.GoalsDetails}
+                animation={true}
+                expanded={1}
+                renderHeader={this.GoalHeaderDetails}
+                renderContent={this.ActivityDetails}
+            />  */}
+        </Card>
     )
 }
 const GoalsSection = (props) => {

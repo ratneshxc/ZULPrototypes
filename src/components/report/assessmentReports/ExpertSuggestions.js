@@ -14,10 +14,10 @@ const ProfileCard = (props) => {
     return (
         <Card style={{ width: 150, paddingVertical: 10, marginHorizontal: 5, alignItems: 'center' }}>
             <Thumbnail source={props.profile.profileImage} />
-            <Text style={{ marginVertical: 5 }}>{props.profile.name}</Text>
-            <Text style={{ fontSize: 12 }}>{props.profile.speciality}</Text>
+            <Text style={{ marginVertical: 2,color:'#3a3a3a' }}>{props.profile.name}</Text>
+            <Text style={{ fontSize: 12,color:'#3a3a3a' }}>{props.profile.speciality}</Text>
             <View style={{ flexDirection: 'row' }}>
-                <Text style={{ color: '#00b386' }}>{props.profile.score}</Text>
+                <Text style={{ color: '#3a3a3a' }}>{props.profile.score}</Text>
                 <StarRating
                     disabled={false}
                     maxStars={1}
@@ -33,8 +33,8 @@ const ProfileCard = (props) => {
 
 const ExpertSuggestions = (props) => {
     return (
-        <View style={styles.container}>
-            <Text style={{ marginBottom: 10 }}>Suggested Experts</Text>
+        <View>
+            <Text style={styles.title}>{'Suggested Experts'.toUpperCase()}</Text>
             <ScrollView horizontal={true}>
                 {props.expertList.map((x, i) => (
                     <ProfileCard profile={x} key={i} />
@@ -44,10 +44,11 @@ const ExpertSuggestions = (props) => {
     )
 }
 const styles = StyleSheet.create({
-    container: {
-        marginTop: 2,
-        padding: 10,
-        backgroundColor: '#ffffff'
+    title: {
+        color: '#495057',
+        fontSize: 13,
+        fontWeight: 'bold',
+        padding: 10
     }
 })
 export default connect(mapStateToProps)(ExpertSuggestions);

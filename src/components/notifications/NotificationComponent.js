@@ -8,7 +8,7 @@ const NotificationComponent = (props) => {
                 <Thumbnail source={props.noti.imageURL} />
             </Left>
             <Body>
-                <Text><Text style={{ fontWeight: 'bold' }}>{props.noti.name}</Text> {props.noti.task}</Text>
+                <Text style={{color:'#3a3a3a'}}><Text style={{ fontWeight: 'bold',color:'#3a3a3a' }}>{props.noti.name}</Text> {props.noti.task}</Text>
                 <Text note>{props.noti.time}</Text>
             </Body>
         </ListItem>

@@ -92,7 +92,7 @@ export default class AppIntro extends React.Component {
   _renderItem = props => (
     <LinearGradient colors={props.colors} style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height, alignItems: 'center', padding: 20, flexDirection: 'column' }}>
       <Text style={styles.title}>{props.title}</Text>
-      <View style={{ backgroundColor: '#fff', padding: 10, borderRadius: 20, marginVertical: 20, flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ backgroundColor: '#fff', padding: 10, borderRadius: 20, marginVertical: 20, justifyContent: 'center', alignItems: 'center' }}>
         <Image source={props.icon} style={{ width: 150, height: 150 }} />
       </View>
       <View style={{ flex: 2 }}>

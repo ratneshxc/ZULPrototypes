@@ -11,32 +11,35 @@ const mapStateToProps = state => (
 
 const ActionPlan = (props) => {
     return (
-        <View style={styles.container}>
-            <Text style={{ marginBottom: 10 }}>Suggested Goals</Text>
-            <List>
-                {props.actionPlan.map((x, i) => (
-                    <ListItem thumbnail key={i}>
-                        <Left>
-                            <Thumbnail square source={x.icon} />
-                        </Left>
-                        <Body>
-                            <Text>{x.Goal}</Text>
-                            <Text note>{x.description}</Text>
-                        </Body>
-                        <Right>
-                            <Icon name="arrow-forward" />
-                        </Right>
-                    </ListItem>
-                ))}
-            </List>
+        <View>
+            <Text style={styles.title}>{'Suggested Goals'.toUpperCase()}</Text>
+            <View style={{ backgroundColor: '#ffffff' }}>
+                <List>
+                    {props.actionPlan.map((x, i) => (
+                        <ListItem thumbnail key={i}>
+                            <Left>
+                                <Thumbnail source={x.icon} />
+                            </Left>
+                            <Body>
+                                <Text style={{ color: '#3a3a3a' }}>{x.Goal}</Text>
+                                <Text note>{x.description}</Text>
+                            </Body>
+                            <Right>
+                                <Icon name="arrow-forward" />
+                            </Right>
+                        </ListItem>
+                    ))}
+                </List>
+            </View>
         </View>
     )
 }
 const styles = StyleSheet.create({
-    container: {
-        marginTop: 2,
-        padding: 10,
-        backgroundColor: '#ffffff'
+    title: {
+        color: '#495057',
+        fontSize: 13,
+        fontWeight: 'bold',
+        padding: 10
     }
 })
 export default connect(mapStateToProps)(ActionPlan);
