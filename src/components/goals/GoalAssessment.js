@@ -44,11 +44,10 @@ export default class GoalAssessment extends Component {
                         ref={(pane1) => { this.pane1 = pane1 }}>
                         <QuestionPage
                             colors={['#1A2980', '#26D0CE']}
-                            questionStatement="Do you have swimming pool near you?"
+                            questionStatement="Do you have a gym nearby you?"
                             options={[
                                 { text: 'Yes', value: 'Yes' },
-                                { text: 'No', value: 'No' },
-                                { text: 'Yes but opened only on weekends', value: 'weekends' },
+                                { text: 'No', value: 'No' }
                             ]}
                             index={0}
                             goToNextQuestion={goToNextQuestion}
@@ -58,7 +57,7 @@ export default class GoalAssessment extends Component {
                         ref={(pane2) => { this.pane2 = pane2 }}>
                         <QuestionPage
                             colors={['#1A2980', '#26D0CE']}
-                            questionStatement="Do you have swimming pool near you?"
+                            questionStatement="Do you have a swimming pool near you?"
                             options={[
                                 { text: 'Yes', value: 'Yes' },
                                 { text: 'No', value: 'No' },
@@ -72,11 +71,11 @@ export default class GoalAssessment extends Component {
                         ref={(pane3) => { this.pane3 = pane3 }}>
                         <QuestionPage
                             colors={['#1A2980', '#26D0CE']}
-                            questionStatement="Do you have swimming pool near you?"
+                            questionStatement="Would you like to go for a walk daily?"
                             options={[
                                 { text: 'Yes', value: 'Yes' },
                                 { text: 'No', value: 'No' },
-                                { text: 'Yes but opened only on weekends', value: 'weekends' },
+                                { text: 'Twice or thrice a week', value: 'weekends' },
                             ]}
                             index={2}
                             goToNextQuestion={goToNextQuestion}
@@ -84,11 +83,11 @@ export default class GoalAssessment extends Component {
                     </SlidingPane>
                     <SlidingPane style={{ borderColor: '#ddd', borderWidth: 1 }}
                         ref={(pane4) => { this.pane4 = pane4 }}>
-                        <QuestionPage colors={['#1A2980', '#26D0CE']} questionStatement="Do you have swimming pool near you?"
+                        <QuestionPage colors={['#1A2980', '#26D0CE']}
+                         questionStatement="Are you willing to avoid junk food?"
                             options={[
                                 { text: 'Yes', value: 'Yes' },
-                                { text: 'No', value: 'No' },
-                                { text: 'Opened only on weekends', value: 'weekends' },
+                                { text: 'No', value: 'No' }
                             ]}
                             index={3}
                             goToNextQuestion={this.endAssessment}
