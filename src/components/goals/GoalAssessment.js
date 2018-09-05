@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import { SlidingPane, SlidingPaneWrapper } from 'react-native-sliding-panes';
 import LinearGradient from 'react-native-linear-gradient';
 import AwesomeAlert from 'react-native-awesome-alerts';
@@ -64,7 +64,7 @@ export default class GoalAssessment extends Component {
                     <SlidingPane style={{ borderColor: '#ddd', borderWidth: 1 }}
                         ref={(pane1) => { this.pane1 = pane1 }}>
                         <QuestionPage
-                            colors={['#1A2980', '#26D0CE']}
+                            colors={['skyblue', '#FFFFFF']}
                             questionStatement="Do you have a gym nearby you?"
                             options={[
                                 { text: 'Yes', value: 'Yes' },
@@ -141,7 +141,7 @@ export default class GoalAssessment extends Component {
 
 const QuestionPage = ({ colors, questionStatement, options, goToNextQuestion, index }) => {
     return (
-        <LinearGradient colors={colors} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ImageBackground source={require("../../assests/images/goals/runningGoal.jpg")} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <View style={{ backgroundColor: '#00000066', padding: 10, margin: 10 }}>
                 <Text style={{ color: '#fff', fontSize: 25 }}>{questionStatement}</Text>
                 <View style={{ marginTop: 25 }}>
@@ -152,6 +152,6 @@ const QuestionPage = ({ colors, questionStatement, options, goToNextQuestion, in
                     ))}
                 </View>
             </View>
-        </LinearGradient>
+        </ImageBackground>
     )
 }

@@ -36,7 +36,7 @@ class Goals extends Component {
     }
     render() {
         return (
-            <Container style={{ backgroundColor:'#F5FCFF'}}>
+            <Container>
                 <Header>
                     <Left>
                         <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
@@ -50,7 +50,7 @@ class Goals extends Component {
 
                     </Right>
                 </Header>
-                <Content style={{ backgroundColor: '#f5f5f5' }}>
+                <Content style={{ backgroundColor: '#F5FCFF' }}>
                     <LevelHeader />
                     <GoalsSection Goals={this.state.Goals} />
                     <View style={{ height:60 }}></View>
