@@ -4,6 +4,7 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, Tex
 import { connect } from 'react-redux';
 import Image from 'react-native-remote-svg';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import NotificationCount from '../common/header/NotificationCount';
 
 const mapStateToProps = state => ({
     dimensionReport: state.Assessment.dimensionReport
@@ -32,6 +33,9 @@ class AssessmentSummaryLayout extends Component {
     componentDidMount() {
         this.props.showZula();
     }
+
+    getAllNotifications = () => this.props.navigation.navigate("Notification");
+
     groupArray = chunkArray(this.props.dimensionReport, 2);
     render() {
         return (
@@ -45,7 +49,9 @@ class AssessmentSummaryLayout extends Component {
                     <Body>
                         <Title>Wellness</Title>
                     </Body>
-                    <Right></Right>
+                    <Right>
+                        <NotificationCount getAllNotifications={this.getAllNotifications} />
+                    </Right>
                 </Header>
                 <Content style={styles.container}>
                     <Card>

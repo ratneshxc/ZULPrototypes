@@ -118,6 +118,12 @@ const WellnessStack = createStackNavigator({
       header: null
     }
   },
+  Notification: {
+    screen: Notification,
+    navigationOptions: {
+      title: 'Notifications'
+    }
+  },
   Vitals: {
     screen: Vitals,
     navigationOptions: {
@@ -207,7 +213,7 @@ const ExpertStack = createStackNavigator({
   Booking: {
     screen: Booking,
     navigationOptions: {
-      title:'Booking'
+      title: 'Booking'
     }
   },
   BookingConfirmation: {
@@ -346,7 +352,7 @@ const MainApp = createDrawerNavigator({
 });
 
 const AppRoute = createSwitchNavigator({
-  AppIntro: { screen: MainApp },
+  AppIntro: { screen: AppIntro },
   LandingComponent: { screen: LandingComponent },
   LogIn: { screen: LogIn },
   Register: { screen: Register },
