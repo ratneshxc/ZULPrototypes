@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { SlidingPane, SlidingPaneWrapper } from 'react-native-sliding-panes';
 import LinearGradient from 'react-native-linear-gradient';
+import AwesomeAlert from 'react-native-awesome-alerts';
 
 const styles = {
     container: {
@@ -15,7 +16,19 @@ const styles = {
 export default class GoalAssessment extends Component {
     constructor(props) {
         super(props);
+        this.state = { showAlert: false };
     }
+    showAlert = () => {
+        this.setState({
+            showAlert: true
+        });
+    };
+
+    hideAlert = () => {
+        this.setState({
+            showAlert: false
+        });
+    };
 
     componentDidMount() {
         this.setupSlidingPanes();
@@ -29,14 +42,22 @@ export default class GoalAssessment extends Component {
         this.slidingPaneWrapper.childPanes = [this.pane1, this.pane2, this.pane3, this.pane4];
     }
     endAssessment = () => {
-        this.props.navigation.navigate("YourGoal");
+        this.setState({
+            showAlert: true
+        });
+        setTimeout(() => {
+            this.setState({
+                showAlert: false
+            });
+            this.props.navigation.navigate("YourGoal");
+        }, 5000)
     }
 
     render() {
         let goToNextQuestion = (index) => {
             this.slidingPaneWrapper.setActive(++index)
         }
-
+        const { showAlert } = this.state;
         return (
             <View style={styles.container}>
                 <SlidingPaneWrapper style={{}} ref={(slidingPaneWrapper) => { this.slidingPaneWrapper = slidingPaneWrapper }}>
@@ -84,13 +105,32 @@ export default class GoalAssessment extends Component {
                     <SlidingPane style={{ borderColor: '#ddd', borderWidth: 1 }}
                         ref={(pane4) => { this.pane4 = pane4 }}>
                         <QuestionPage colors={['#1A2980', '#26D0CE']}
-                         questionStatement="Are you willing to avoid junk food?"
+                            questionStatement="Are you willing to avoid junk food?"
                             options={[
                                 { text: 'Yes', value: 'Yes' },
                                 { text: 'No', value: 'No' }
                             ]}
                             index={3}
                             goToNextQuestion={this.endAssessment}
+                        />
+                        <AwesomeAlert
+                            show={showAlert}
+                            showProgress={true}
+                            title="We are preparing goal for you!"
+                            message="Just a moment"
+                            closeOnTouchOutside={true}
+                            closeOnHardwareBackPress={false}
+                            showCancelButton={false}
+                            showConfirmButton={false}
+                            cancelText=""
+                            confirmText=""
+                            confirmButtonColor="#DD6B55"
+                            onCancelPressed={() => {
+                                this.hideAlert();
+                            }}
+                            onConfirmPressed={() => {
+                                this.hideAlert();
+                            }}
                         />
                     </SlidingPane>
                 </SlidingPaneWrapper>
