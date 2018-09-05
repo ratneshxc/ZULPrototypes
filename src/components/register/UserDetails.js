@@ -6,22 +6,17 @@ export default class UserDetails extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View>
-                    <Text style={{ marginBottom: 5 }}>UserName :</Text>
-                    <TextInput
-                        underlineColorAndroid='transparent'
-                        style={styles.input}
-                    />
-                </View>
-                <View>
-                    <Text style={{ marginBottom: 5 }}>Mobile Number :</Text>
-                    <TextInput
-                        underlineColorAndroid='transparent'
-                        style={styles.input}
-                    />
-                </View>
+                <TextInput underlineColorAndroid='transparent'
+                    placeholder={'Username'}
+                    style={[styles.input, { borderTopLeftRadius: 10, borderTopRightRadius: 10 }]}
+                />
+                <TextInput underlineColorAndroid='transparent'
+                    placeholder={'Mobile Number'}
+                    secureTextEntry={true}
+                    style={[styles.input, { borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }]}
+                />
                 <TouchableOpacity style={styles.zulBtn} onPress={this.props.nextHandler}>
-                    <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{'Next'.toUpperCase()}</Text>
+                    <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{'Create'.toUpperCase()}</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -33,13 +28,10 @@ const styles = StyleSheet.create({
         padding: 10
     },
     input: {
-        width: "100%",
-        fontSize: 20,
-        padding: 10,
-        marginBottom: 10,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: '#ddd'
+        backgroundColor: '#ffffff',
+        paddingHorizontal: 10,
+        paddingVertical: 20,
+        fontSize: 20
     },
     zulBtn: {
         backgroundColor: '#00c497',
