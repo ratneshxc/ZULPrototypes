@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
-import { Text, Card } from 'native-base';
+import { View, Image, StyleSheet, TouchableOpacity, Dimensions ,Keyboard} from 'react-native';
+import { Text } from 'native-base';
 import UserDetails from './UserDetails';
 import OTP from './OTP';
 import Passcode from './Passcode';
@@ -16,9 +16,32 @@ export default class Register extends React.Component {
       title: '',
       description: '',
       showConfirm: true,
-      showProgress: false
+      showProgress: false,
+      isKeyboardOpen: false
     };
   };
+
+  componentWillMount() {
+    this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+    this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+  }
+
+  componentWillUnmount() {
+    this.keyboardDidShowListener.remove();
+    this.keyboardDidHideListener.remove();
+  }
+
+  _keyboardDidShow = () => {
+    this.setState({
+      isKeyboardOpen: true
+    })
+  }
+
+  _keyboardDidHide = () => {
+    this.setState({
+      isKeyboardOpen: false
+    })
+  }
 
   showAlert = (title, desc, showConfirm, showProgress) => {
     this.setState({
@@ -55,10 +78,10 @@ export default class Register extends React.Component {
   render() {
     const { showAlert, title, description, showConfirm, showProgress } = this.state;
     return (
-      <LinearGradient colors={['#26D0CE', '#1A2980']} style={{ flex: 1 }}>
+      <LinearGradient colors={['#26D0CE', '#1A2980']} style={{ flex: 1, padding: 20 }}>
         <View style={{ alignItems: 'center' }}>
-          <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />
-          <Text style={{ fontSize: 25, color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>Sign Up</Text>
+          {!this.state.isKeyboardOpen && <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />}
+          <Text style={{ fontSize: 25, color: '#fff', textAlign: 'center' }}>Sign Up</Text>
         </View>
 
         <View style={{ flexDirection: 'column', justifyContent: 'center', flex: 1 }}>

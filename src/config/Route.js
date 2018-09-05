@@ -233,6 +233,12 @@ const ExpertStack = createStackNavigator({
     navigationOptions: {
       header: null
     }
+  },
+  NotificationExpert: {
+    screen: Notification,
+    navigationOptions: {
+      title: 'Notifications'
+    }
   }
 },
   {
@@ -289,6 +295,12 @@ const GoalStack = createStackNavigator({
     screen: ExpertList,
     navigationOptions: {
       header: null
+    }
+  },
+  NotificationGoals: {
+    screen: Notification,
+    navigationOptions: {
+      title: 'Notifications'
     }
   }
 },

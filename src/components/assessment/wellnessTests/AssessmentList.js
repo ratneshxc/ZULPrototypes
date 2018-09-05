@@ -28,7 +28,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                 <List>
                     {assessments.map((x, i) => (
                         x.isGiven ?
-                            <ListItem noIndent thumbnail key={i}>
+                            <ListItem noIndent thumbnail key={i} onPress={() => selectReport(x.title)}>
                                 <Left>
                                     <Thumbnail source={x.icon} />
                                 </Left>
@@ -42,7 +42,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                     </TouchableOpacity>
                                 </Right>
                             </ListItem> :
-                            <ListItem noIndent thumbnail key={i} style={{ backgroundColor: '#73a4f53b' }}>
+                            <ListItem noIndent thumbnail key={i} onPress={() => takeAssessment(x.title)} style={{ backgroundColor: '#73a4f53b' }}>
                                 <Left>
                                     <Thumbnail source={x.icon} />
                                 </Left>

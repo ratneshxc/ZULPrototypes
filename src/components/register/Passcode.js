@@ -85,7 +85,7 @@ export default class Passcode extends React.Component {
 }
 const styles = StyleSheet.create({
     container: {
-        padding: 10
+       
     },
     loginLogo: {
         height: 150,
