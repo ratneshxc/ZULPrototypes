@@ -49,8 +49,8 @@ const expertData =[
     },
     {
         key:'a',
-        img:require('../../assests/images/profilepic/girl.jpg'),
-        name:'Sukhi Rukhi',
+        img:require('../../assests/images/profilepic/yogagirl.jpg'),
+        name:'Sonam Bothra',
         degree:'M.S, B.S',
         speciality:'Yoga expert',
         dimension:'dumbbell',

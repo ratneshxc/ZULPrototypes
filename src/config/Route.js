@@ -207,7 +207,7 @@ const ExpertStack = createStackNavigator({
   Booking: {
     screen: Booking,
     navigationOptions: {
-      header: null
+      title:'Booking'
     }
   },
   BookingConfirmation: {
