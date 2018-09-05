@@ -110,11 +110,11 @@ const ExpertComponent = (props) => {
                 {/* onPress={()=>props.viewExperts()} */}
                 <View style={{ flex: 2, paddingHorizontal: 10,paddingRight:2 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
-                        <Text style={{ flex: 1 ,fontSize:18,marginLeft:10}}>{props.item.name}</Text>
+                        <Text style={{ flex: 1 ,marginLeft:10}}>{props.item.name}</Text>
                          <Icon name={props.item.dimension} type="MaterialCommunityIcons" style={{ fontSize: 18 ,marginRight:4}} />
                          
                     </View>
-                    <Text style={{ fontSize: 14,marginLeft:10  }}>{props.item.speciality}</Text>
+                    <Text style={{ fontSize: 13,marginLeft:10  }}>{props.item.speciality}</Text>
                     <View style={{ flexDirection: 'row', marginTop: 3,marginLeft:10 }}>
                     <Text style={{color:'#000',fontSize:14}}>{props.item.rating} </Text>
                         <StarRating
