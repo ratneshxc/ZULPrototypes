@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Text } from 'native-base';
-import Image from 'react-native-remote-svg';
 import { connect } from 'react-redux';
 
 const mapDispatchToProps = dispatch => ({
@@ -29,29 +28,29 @@ class ZulaWelcomeMessage extends React.Component {
         return (
             <View style={styles.body}>
                 <View style={{ alignItems: 'center' }}>
-                    <Image source={require('../../../assests/images/sun.svg')} style={{ width: 70, height: 70 }} />
-                    <Text style={{ fontSize: 20, marginBottom: 30 }}>Good Morning</Text>
-                    <Text style={{ fontSize: 25, marginBottom: 20 }}>How are you feeling today?</Text>
+                    <Image source={require('../../../assests/images/sun.png')} style={{ width: 70, height: 70 }} />
+                    <Text style={{ fontSize: 20, marginBottom: 30,color: '#3a3a3a' }}>Good Morning</Text>
+                    <Text style={{ fontSize: 25, marginBottom: 20,color: '#3a3a3a' }}>How are you feeling today?</Text>
                 </View>
                 <View style={{ flexDirection: 'row', flex: 1 }}>
                     <TouchableOpacity style={[styles.emojiContainer]} onPress={this.hideWishModal}>
-                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/01.svg')} />
+                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/01.png')} />
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.emojiContainer]} onPress={this.hideWishModal}>
-                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/02.svg')} />
+                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/02.png')} />
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.emojiContainer]} onPress={this.hideWishModal}>
-                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/03.svg')} />
+                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/03.png')} />
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.emojiContainer]} onPress={this.hideWishModal}>
-                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/04.svg')} />
+                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/04.png')} />
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.emojiContainer]} onPress={this.hideWishModal}>
-                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/05.svg')} />
+                        <Image style={styles.emoji} source={require('../../../assests/images/emoji/05.png')} />
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity style={{ backgroundColor: '#5067ffe3', marginHorizontal: 30, padding: 5, marginTop: 30, width: 'auto', borderRadius: 10 }} onPress={this.hideWishModal}>
-                    <Text style={{ color: '#fff', textAlign: 'center' }}>I DON'T WANT TO ANSWER</Text>
+                <TouchableOpacity style={{ marginHorizontal: 30, padding: 5, marginTop: 30, width: 'auto', borderRadius: 10 }} onPress={this.hideWishModal}>
+                    <Text style={{ textAlign: 'center',textDecorationLine:'underline' }}>I don't want to answer</Text>
                 </TouchableOpacity>
             </View>
         )

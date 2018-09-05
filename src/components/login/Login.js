@@ -14,7 +14,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <LinearGradient colors={['#1A2980', '#26D0CE']} style={styles.loginInnerContainer}>
+      <LinearGradient colors={['#26D0CE', '#1A2980']} style={styles.loginInnerContainer}>
         <Form goRegister={this.goRegister} goToDashboard={this.goToDashboard} />
       </LinearGradient>
     )

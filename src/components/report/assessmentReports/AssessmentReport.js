@@ -23,7 +23,7 @@ class AssessmentReport extends React.Component {
         let report = this.props.report;
         return (
             <Container style={styles.container}>
-                <Content style={{ backgroundColor: '#ebeff1' }}>
+                <Content style={{ backgroundColor: '#F5FCFF' }}>
                     <OverallScore />
                     <Observations />
                     <ActionPlan />
@@ -31,7 +31,7 @@ class AssessmentReport extends React.Component {
                     <NavigationSection />
                     <View style={{ padding: 10 }}>
                         <Button block onPress={() => this.props.navigation.navigate('AssessmentLayout')}>
-                            <Text>I will come back later</Text>
+                            <Text>Home</Text>
                         </Button>
                     </View>
                 </Content>

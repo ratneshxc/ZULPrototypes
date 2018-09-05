@@ -12,11 +12,10 @@ export default class UserDetails extends React.Component {
                 />
                 <TextInput underlineColorAndroid='transparent'
                     placeholder={'Mobile Number'}
-                    secureTextEntry={true}
                     style={[styles.input, { borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }]}
                 />
-                <TouchableOpacity style={styles.zulBtn} onPress={this.props.nextHandler}>
-                    <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{'Create'.toUpperCase()}</Text>
+                <TouchableOpacity style={styles.zulBtn} onPress={() => this.props.showAlert('Congratulations!', 'Now you are Zinger. We will take care of your wellness.', true, false)}>
+                    <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{'Create new account'.toUpperCase()}</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -25,7 +24,7 @@ export default class UserDetails extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10
+        padding: 10,
     },
     input: {
         backgroundColor: '#ffffff',

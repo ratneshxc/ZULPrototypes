@@ -33,12 +33,12 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                     <Thumbnail source={x.icon} />
                                 </Left>
                                 <Body>
-                                    <Text>{x.title}</Text>
+                                    <Text style={{ color: '#3a3a3a' }}>{x.title}</Text>
                                     <Text note>{x.note}</Text>
                                 </Body>
                                 <Right>
                                     <TouchableOpacity onPress={() => selectReport(x.title)}>
-                                        <Text style={{ fontSize: 12, padding: 10 }}>View Report</Text>
+                                        <Text style={{ fontSize: 12, padding: 10, color: '#495057' }}>{'View Report'.toUpperCase()}</Text>
                                     </TouchableOpacity>
                                 </Right>
                             </ListItem> :
@@ -47,7 +47,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                     <Thumbnail source={x.icon} />
                                 </Left>
                                 <Body>
-                                    <Text>{x.title}</Text>
+                                    <Text style={{ color: '#3a3a3a' }}>{x.title}</Text>
                                     <Text style={{ color: 'red' }} note>{x.note}</Text>
                                 </Body>
                                 <Right>

@@ -15,27 +15,26 @@ const VitalWarning = (props) => {
         <View style={styles.container}>
             <View style={{ alignItems: 'center' }}>
                 <Icon name="exclamation-triangle" style={{ fontSize: 60, color: '#de9630' }} type="FontAwesome" />
-                <Text style={{ fontSize: 20, marginTop: 10, fontWeight: 'bold' }}>High Expenditure</Text>
+                <Text style={{ fontSize: 20, marginTop: 10, color: '#3a3a3a' }}>High Expenditure</Text>
             </View>
             <View style={{ marginVertical: 30 }}>
-                <Text style={{ fontSize: 18 }}>You seem to have spent more money than expected, I would suggest you to plan your expenses accordingly.</Text>
+                <Text style={{ fontSize: 18,color: '#3a3a3a' }}>You have spent more money than expected, plan your expenses accordingly.</Text>
             </View>
-            <Text style={{ fontSize: 13 }}>Details :</Text>
-            <View style={{ flexDirection: 'row'}}>
-                <View style={{ flexDirection: 'column', flex: 1}}>
+            <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'column', flex: 1 }}>
                     <View style={{ flex: 1 }}>
-                        <Text>Actual Expenditure:</Text>
+                        <Text style={{color: '#3a3a3a'}}>Actual</Text>
                     </View>
-                    <View style={{ flex: 1}}>
-                        <Text>Expected Expenditure:</Text>
+                    <View style={{ flex: 1 }}>
+                        <Text style={{color: '#3a3a3a'}}>Expected</Text>
                     </View>
                 </View>
                 <View style={{ flexDirection: 'column', flex: 1 }}>
-                    <View style={{ flex: 1}}>
-                        <Text style={{ fontWeight: 'bold' }}>15,000 Rs/Month</Text>
+                    <View style={{ flex: 1 }}>
+                        <Text style={{ fontWeight: 'bold',color: '#3a3a3a' }}>15,000 Rs/Month</Text>
                     </View>
-                    <View style={{ flex: 1}}>
-                        <Text style={{ fontWeight: 'bold' }}>10,000 Rs/Month</Text>
+                    <View style={{ flex: 1 }}>
+                        <Text style={{ fontWeight: 'bold',color: '#3a3a3a' }}>10,000 Rs/Month</Text>
                     </View>
                 </View>
             </View>

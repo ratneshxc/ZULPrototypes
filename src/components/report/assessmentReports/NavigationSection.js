@@ -11,31 +11,34 @@ const mapStateToProps = state => (
 
 const NavigationSection = (props) => {
     return (
-        <View style={styles.container}>
-            <Text style={{ marginBottom: 10 }}>What Next?</Text>
-            <List>
-                {props.next.map((x, i) => (
-                    <ListItem thumbnail key={i}>
-                        <Left>
-                            <Thumbnail small source={x.icon} />
-                        </Left>
-                        <Body>
-                            <Text>{x.title}</Text>
-                        </Body>
-                        <Right>
-                            <Icon name="arrow-forward" />
-                        </Right>
-                    </ListItem>
-                ))}
-            </List>
+        <View>
+            <Text style={styles.title}>{'What Next?'.toUpperCase()}</Text>
+            <View style={{backgroundColor:'#ffffff'}}>
+                <List>
+                    {props.next.map((x, i) => (
+                        <ListItem thumbnail key={i}>
+                            <Left>
+                                <Thumbnail small source={x.icon} />
+                            </Left>
+                            <Body>
+                                <Text>{x.title}</Text>
+                            </Body>
+                            <Right>
+                                <Icon name="arrow-forward" />
+                            </Right>
+                        </ListItem>
+                    ))}
+                </List>
+            </View>
         </View>
     )
 }
 const styles = StyleSheet.create({
-    container: {
-        marginTop: 2,
-        padding: 10,
-        backgroundColor: '#ffffff'
+    title: {
+        color: '#495057',
+        fontSize: 13,
+        fontWeight: 'bold',
+        padding: 10
     }
 })
 export default connect(mapStateToProps)(NavigationSection);

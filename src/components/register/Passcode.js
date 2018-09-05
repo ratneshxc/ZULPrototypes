@@ -6,13 +6,14 @@ export default class Passcode extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={{ marginLeft: 5, marginBottom: 5 }}>Passcode:</Text>
+                <Text style={{ marginLeft: 5, marginBottom: 5,color:'#ffffff',fontSize:20 }}>Passcode:</Text>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ flex: 1 }}>
                         <TextInput
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
@@ -20,6 +21,7 @@ export default class Passcode extends React.Component {
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
@@ -27,6 +29,7 @@ export default class Passcode extends React.Component {
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
@@ -34,16 +37,18 @@ export default class Passcode extends React.Component {
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                 </View>
-                <Text style={{ marginLeft: 5, marginBottom: 5 }}>Re-enter Passcode:</Text>
+                <Text style={{ marginLeft: 5, marginBottom: 5,color:'#ffffff',fontSize:20 }}>Re-enter Passcode:</Text>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ flex: 1 }}>
                         <TextInput
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
@@ -51,6 +56,7 @@ export default class Passcode extends React.Component {
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
@@ -58,6 +64,7 @@ export default class Passcode extends React.Component {
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
@@ -65,6 +72,7 @@ export default class Passcode extends React.Component {
                             underlineColorAndroid='transparent'
                             keyboardType={"numeric"}
                             style={styles.input}
+                            placeholder={'___'}
                         />
                     </View>
                 </View>
@@ -84,13 +92,13 @@ const styles = StyleSheet.create({
         width: 150
     },
     input: {
+        backgroundColor: '#ffffff',
+        paddingHorizontal: 10,
+        paddingVertical: 20,
         fontSize: 20,
-        padding: 10,
-        marginBottom: 10,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: '#ddd',
-        marginHorizontal: 5
+        marginHorizontal: 5,
+        borderRadius: 10,
+        textAlign:'center'
     },zulBtn: {
         backgroundColor: '#00c497',
         alignItems: 'center',

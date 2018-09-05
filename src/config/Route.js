@@ -284,6 +284,12 @@ const GoalStack = createStackNavigator({
     navigationOptions: {
       title: 'Select an activity'
     }
+  },
+  ExpertListGoals: {
+    screen: ExpertList,
+    navigationOptions: {
+      header: null
+    }
   }
 },
   {

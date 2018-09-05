@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableOpacity, Animated } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Animated,Image } from 'react-native';
 import { Card, Text } from 'native-base';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from 'react-native-underline-tabbar';
-import Image from 'react-native-remote-svg';
 import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({
@@ -121,28 +120,28 @@ export default class Vitals extends Component {
 
                     <Page tabLabel={{ label: "Physical" }}
                         vitals={[
-                            { title: 'BMI', value: 24.6, unit: '', icon: require('../../../assests/icons/vitals/BMI.svg'), color: ['#1A2980', '#26D0CE'], idealValue: 25 },
-                            { title: 'Heart Rate', value: 72, unit: 'bps', icon: require('../../../assests/icons/vitals/heart.svg'), color: ['#43cea2', '#185a9d'], idealValue: 68 },
-                            { title: 'Sleep', value: 8, unit: 'hrs', icon: require('../../../assests/icons/vitals/sleep.svg'), color: ['#348F50', '#56B4D3'], idealValue: 8 },                            
-                            { title: 'Activity', value: '2', unit: 'hrs', icon: require('../../../assests/icons/vitals/activity.svg'), color: ['#20BDFF', '#A5FECB'], idealValue: 10 },
-                            { title: 'Walk', value: '4.7', unit: 'km', icon: require('../../../assests/icons/vitals/walk.svg'), color: ['#4CB8C4', '#3CD3AD'], idealValue: 5.5 }
+                            { title: 'BMI', value: 18.6, unit: '', icon: require('../../../assests/icons/vitals/BMI.png'), color: ['#1A2980', '#26D0CE'], idealValue: 18.5 },
+                            { title: 'Heart Rate', value: 72, unit: 'bpm', icon: require('../../../assests/icons/vitals/heart.png'), color: ['#43cea2', '#185a9d'], idealValue: 75 },
+                            { title: 'Sleep', value: 8, unit: 'hrs', icon: require('../../../assests/icons/vitals/sleep.png'), color: ['#348F50', '#56B4D3'], idealValue: 8 },                            
+                            { title: 'Work out', value: '2', unit: 'hrs', icon: require('../../../assests/icons/vitals/activity.png'), color: ['#20BDFF', '#A5FECB'], idealValue: 1 },
+                            { title: 'Walk', value: '4.7', unit: 'km', icon: require('../../../assests/icons/vitals/walk.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: 8 }
                         ]} />
                     <Page tabLabel={{ label: "Emotional" }} vitals={[
-                        { title: 'Mood', value: 'Happy', unit: null, icon: require('../../../assests/icons/vitals/mood.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null },
-                        { title: 'Stress', value: 2, unit: 'hrs', icon: require('../../../assests/icons/vitals/stress.svg'), color: ['#02AAB0', '#00CDAC'], idealValue: 1 }
+                        { title: 'Mood', value: 'Happy', unit: null, icon: require('../../../assests/icons/vitals/mood.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },
+                        { title: 'Stress', value: 2, unit: 'hrs', icon: require('../../../assests/icons/vitals/stress.png'), color: ['#02AAB0', '#00CDAC'], idealValue: 1 }
                     ]} />
                     <Page tabLabel={{ label: "Environmental" }} vitals={[
-                        { title: 'Temperature', value: 28, unit: '°C', icon: require('../../../assests/icons/vitals/Temperature.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null },
-                        { title: 'UV Index', value: 9, unit: null, icon: require('../../../assests/icons/vitals/UV.svg'), color: ['#43cea2', '#185a9d'], idealValue: null },
-                        { title: 'Humidity', value: 48, unit: '%', icon: require('../../../assests/icons/vitals/humidity.svg'), color: ['#4CB8C4', '#3CD3AD'], idealValue: null }
+                        { title: 'Temperature', value: 28, unit: '°C', icon: require('../../../assests/icons/vitals/Temperature.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },
+                        { title: 'UV Index', value: 7, unit: null, icon: require('../../../assests/icons/vitals/UV.png'), color: ['#43cea2', '#185a9d'], idealValue: null },
+                        { title: 'Humidity', value: 50, unit: '%', icon: require('../../../assests/icons/vitals/humidity.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: null }
                     ]} />
                     <Page tabLabel={{ label: "Financial" }} vitals={[
-                        { title: 'Net Worth', value: '12.8K', unit: 'Rs', icon: require('../../../assests/icons/vitals/income.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null },                        
-                        { title: 'Liquid Cash', value: '22K', unit: 'Rs', icon: require('../../../assests/icons/vitals/liquid-cash.svg'), color: ['#348F50', '#56B4D3'], idealValue: null },
-                        { title: 'Total Debit', value: '45K', unit: 'Rs', icon: require('../../../assests/icons/vitals/debit.svg'), color: ['#02AAB0', '#00CDAC'], idealValue: null }
+                        { title: 'Net Worth', value: '12.8K', unit: 'Rs', icon: require('../../../assests/icons/vitals/income.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },                        
+                        { title: 'Liquid Cash', value: '22K', unit: 'Rs', icon: require('../../../assests/icons/vitals/liquid-cash.png'), color: ['#348F50', '#56B4D3'], idealValue: null },
+                        { title: 'Total Debit', value: '45K', unit: 'Rs', icon: require('../../../assests/icons/vitals/debit.png'), color: ['#02AAB0', '#00CDAC'], idealValue: null }
                     ]} />
                     <Page tabLabel={{ label: "Social" }} vitals={[
-                        { title: "Manoj's b'day", value: '2', unit: 'days to go', icon: require('../../../assests/icons/vitals/cake.svg'), color: ['#1A2980', '#26D0CE'], idealValue: null }
+                        { title: "Manoj's b'day", value: '2', unit: 'days to go', icon: require('../../../assests/icons/vitals/cake.png'), color: ['#1A2980', '#26D0CE'], idealValue: null }
                     ]} />
                     <Page tabLabel={{ label: "Spiritual" }} vitals={[]} />
                     <Page tabLabel={{ label: "Intellectual" }} vitals={[]} />

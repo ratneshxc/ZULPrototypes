@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Dimensions, TouchableHighlight } from 'react-native';
+import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, Text, Badge, Card } from 'native-base';
 import { connect } from 'react-redux';
-import Image from 'react-native-remote-svg';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import NotificationCount from '../common/header/NotificationCount';
 

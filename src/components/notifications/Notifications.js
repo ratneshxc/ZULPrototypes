@@ -15,13 +15,21 @@ const Notifications = (props) => {
             <Content style={styles.container}>
                 <List>
                     <ListItem itemDivider>
-                        <Text>Latest</Text>
+                        <Text style={{
+                            color: '#495057',
+                            fontSize: 13,
+                            fontWeight: 'bold'
+                        }}>{'Latest'.toUpperCase()}</Text>
                     </ListItem>
                     {props.newNotifications.map((x, i) => (
                         <NotificationComponent key={i} noti={x} />
                     ))}
                     <ListItem itemDivider>
-                        <Text>Earlier</Text>
+                        <Text style={{
+                            color: '#495057',
+                            fontSize: 13,
+                            fontWeight: 'bold'
+                        }}>{'Earlier'.toUpperCase()}</Text>
                     </ListItem>
                     {props.oldNotifications.map((x, i) => (
                         <NotificationComponent key={i} noti={x} />
