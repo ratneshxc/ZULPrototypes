@@ -31,7 +31,7 @@ const Appointment = (props) => {
             </Header>
             <Content>
                 <View style={{ backgroundColor: '#ddd' }}>
-                    <ApppointmentList goToExperts={()=>props.navigation.navigate("ExpertList")}/>
+                    <ApppointmentList goToBooking={()=>props.navigation.navigate("Booking")} goToReport={()=>props.navigation.navigate("AssessmentReport")}/>
                 </View>
             </Content>
         </Container>
