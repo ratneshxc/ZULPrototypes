@@ -56,7 +56,7 @@ const ExpertList = (props) => {
         <View>
             {/*Recently Contacted*/}
             <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
-                <Text style={{ flex: 1 }}>Recently connected</Text>
+                <Text style={{ flex: 1 }}>{'Recently connected'.toUpperCase()}</Text>
                 <Text style={{ color: "#294787", textDecorationLine: 'underline' }}>View More</Text>
             </View>
             {/*Recent Experts*/}
@@ -86,7 +86,7 @@ const ExpertList = (props) => {
             </View>
             {/*Find and connect*/}
             <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
-                <Text style={{ flex: 1 }}>Find & Connect</Text>
+                <Text style={{ flex: 1 }}>{'Find & Connect'.toUpperCase()}</Text>
 
             </View>
             <FlatList

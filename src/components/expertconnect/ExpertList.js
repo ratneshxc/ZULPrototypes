@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
 
 const ExpertComponent = (props) => {
     return (
-        <View style={{ flexDirection: 'column', padding: 3 , backgroundColor: '#F0F0F0'}}>
+        <View style={{ flexDirection: 'column', padding: 3 , backgroundColor: '#F5FCFF'}}>
             <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff',paddingBottom:2 }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail medium round source={props.item.img} />

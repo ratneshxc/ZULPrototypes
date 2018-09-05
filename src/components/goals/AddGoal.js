@@ -14,7 +14,7 @@ class AddGoal extends Component {
     }
     render() {
         return (
-            <Container style={{ backgroundColor:'#F5FCFF'}}>
+            <Container>
                 <Header searchBar rounded>
                     <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                         <Icon name="ios-search" />
@@ -22,7 +22,7 @@ class AddGoal extends Component {
                         <Icon name="ios-people" />
                     </Item>
                 </Header>
-                <Content style={[styles.container, { backgroundColor: '#ddd' }]}>
+                <Content style={[styles.container, { backgroundColor: '#F5FCFF' }]}>
                     <View>
                         {/*Search results*/}
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >

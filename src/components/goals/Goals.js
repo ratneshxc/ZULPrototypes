@@ -39,7 +39,11 @@ class Goals extends Component {
     }
     render() {
         return (
+<<<<<<< HEAD
             <Container style={{ backgroundColor: '#F5FCFF' }}>
+=======
+            <Container>
+>>>>>>> 14cae17bc389e980d5b2cd10bcc9e347381bf791
                 <Header>
                     <Left>
                         <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
@@ -53,7 +57,7 @@ class Goals extends Component {
                         <NotificationCount getAllNotifications={() => this.props.navigation.navigate("NotificationGoals")} />
                     </Right>
                 </Header>
-                <Content style={{ backgroundColor: '#f5f5f5' }}>
+                <Content style={{ backgroundColor: '#F5FCFF' }}>
                     <LevelHeader />
                     <GoalsSection Goals={this.state.Goals} />
                     <View style={{ height: 60 }}></View>
