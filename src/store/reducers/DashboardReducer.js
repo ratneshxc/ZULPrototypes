@@ -42,7 +42,7 @@ const initialState = {
     }],
     indicators: [{
         dimensionName: 'Physical',
-        dimensionIcon: require('../../assests/images/dashboard/physical.svg'),
+        dimensionIcon: require('../../assests/images/dashboard/physical.png'),
         indicators: [
             {
                 title: 'Walk',
@@ -78,7 +78,7 @@ const initialState = {
         ]
     }, {
         dimensionName: 'Emotional',
-        dimensionIcon: require('../../assests/images/dashboard/emotional.svg'),
+        dimensionIcon: require('../../assests/images/dashboard/emotional.png'),
         indicators: [
             {
                 title: 'Office Time',
@@ -108,7 +108,7 @@ const initialState = {
         ]
     }, {
         dimensionName: 'Intellectual',
-        dimensionIcon: require('../../assests/images/dashboard/intellectual.svg'),
+        dimensionIcon: require('../../assests/images/dashboard/intellectual.png'),
         indicators: [
             {
                 title: 'Office Time',
@@ -150,7 +150,7 @@ const initialState = {
         ]
     }, {
         dimensionName: 'Environmental',
-        dimensionIcon: require('../../assests/images/dashboard/environmental.svg'),
+        dimensionIcon: require('../../assests/images/dashboard/environmental.png'),
         indicators: [
             {
                 title: 'Office Time',

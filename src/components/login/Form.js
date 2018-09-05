@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TextInput, View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
-import SVGImage from 'react-native-remote-svg';
 export default class App extends Component {
 
   render() {
@@ -41,12 +40,12 @@ export default class App extends Component {
           <View style={{ flexDirection: 'row', marginTop: 10 }}>
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
               <TouchableOpacity>
-                <SVGImage style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/FaceID.svg')} />
+                <Image style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/FaceID.png')} />
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
               <TouchableOpacity>
-                <SVGImage style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/TouchID.svg')} />
+                <Image style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/TouchID.png')} />
               </TouchableOpacity>
             </View>
           </View>
