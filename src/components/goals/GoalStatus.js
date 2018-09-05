@@ -60,7 +60,7 @@ class GoalStatus extends Component {
     }
     render() {
         return (
-            <Container>
+            <Container style={{ backgroundColor:'#F5FCFF'}}>
                 <View style={styles.container}>
                     <BarChart
                         style={styles.chart}
