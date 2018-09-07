@@ -105,19 +105,19 @@ const styles = StyleSheet.create({
 const SpecialityComponent = (props) => {
     return (
 
-        <View style={{ flexDirection: 'column', padding: 3, paddingVertical: 1, backgroundColor: '#F0F0F0' }} >
+        <View style={{ flexDirection: 'column', padding: 3, paddingVertical: 1, backgroundColor: '#FFF' }} >
             <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff', padding: 2 }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail round source={props.item.img} style={{ height: 50 }} />
                 </View>
                 <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                     <TouchableOpacity onPress={() => props.goToExperts()} >
-                        <View>
+                        <View style={{borderBottomColor:'#ddd',borderBottomWidth:1}}>
                             <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
                                 <Text style={{ flex: 1, fontSize: 18 }}>{props.item.title}</Text>
                                 <Icon name={props.item.icon} type="FontAwesome" style={{ fontSize: 18 }} />
                             </View>
-                            <Text style={{ fontSize: 12, marginTop: 2 }}>{props.item.description}</Text>
+                            <Text style={{ fontSize: 12, marginTop: 1,marginBottom:10 }}>{props.item.description}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
