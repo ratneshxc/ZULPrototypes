@@ -20,14 +20,14 @@ const expertData = [{
     title: "Relationship experts",
     icon: 'heart',
     img: require('../../assests/images/profilepic/loveguru.jpg'),
-    description: 'Relationship advice, Marraige counsilling, Parenting tips ...'
+    description: 'Relationship advice,Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key4',
-    title: "Carrier counsellors",
+    title: "Career counsellors",
     icon: 'child',
     img: require('../../assests/images/profilepic/teacher.jpg'),
-    description: 'Carrier guidance, Parent advice, Interest development...'
+    description: 'Career guidance, Parent advice, Interest development...'
 },
 {
     key: 'key5',
@@ -41,7 +41,7 @@ const expertData = [{
     title: "Relationship Experts",
     icon: 'heart',
     img: require('../../assests/images/profilepic/loveguru.jpg'),
-    description: 'Relationship advice, Marraige counsilling, Parenting tips ...'
+    description: 'Relationship advice, Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key7',

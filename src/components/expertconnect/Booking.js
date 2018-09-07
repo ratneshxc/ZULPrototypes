@@ -23,13 +23,7 @@ import {
     Label,
     CheckBox
 } from "native-base";
-import StarRating from 'react-native-star-rating';
-const AppointmentDetails = [
-    { title: "Appointment Details", content: "Lorem ipsum dolor sit amet" },
-];
-const PerosnelDetails = [
-    { title: "Personnel Details", content: "Lorem ipsum dolor sit amet" },
-]
+
 export default class Booking extends Component {
 
     render() {
