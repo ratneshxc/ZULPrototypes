@@ -1,52 +1,52 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView,Image } from 'react-native';
 import { Thumbnail, Badge, Text, Icon, Button } from 'native-base';
 const expertData = [{
     key: 'key1',
     title: "Meditation gurus",
-    icon: 'tripadvisor',
+    icon: require('../../assests/images/dashboard/spiritual.png'),
     img: require('../../assests/images/profilepic/yogi.jpg'),
     description: 'Mind fit classes, Meditation session, Advanced yoga session...'
 },
 {
     key: 'key2',
     title: "Financial advisors",
-    icon: 'rupee',
+    icon: require('../../assests/images/dashboard/financial.png'),
     img: require('../../assests/images/profilepic/financialExpert.jpg'),
     description: 'Investment Advice, Financial coaching, Retirement planning ...'
 },
 {
     key: 'key3',
     title: "Relationship experts",
-    icon: 'heart',
+    icon: require('../../assests/images/dashboard/social.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice,Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key4',
     title: "Career counsellors",
-    icon: 'child',
+    icon: require('../../assests/images/dashboard/intellectual.png'),
     img: require('../../assests/images/profilepic/teacher.jpg'),
     description: 'Career guidance, Parent advice, Interest development...'
 },
 {
     key: 'key5',
     title: "Fitness trainer",
-    icon: 'spotify',
+    icon: require('../../assests/images/dashboard/physical.png'),
     img: require('../../assests/images/profilepic/gym.jpg'),
     description: 'Weight loss, Abs and Muscles, Lean body workout ...'
 },
 {
     key: 'key6',
     title: "Relationship Experts",
-    icon: 'heart',
+    icon:require('../../assests/images/dashboard/social.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice, Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key7',
     title: "Meditation gurus",
-    icon: 'tripadvisor',
+    icon: require('../../assests/images/dashboard/spiritual.png'),
     img: require('../../assests/images/profilepic/yogi.jpg'),
     description: 'Mind fit classes, Meditation session, Advanced yoga session...'
 },]
@@ -68,7 +68,7 @@ const ExpertList = (props) => {
                     <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                         <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
                             <Text style={{ flex: 1, fontSize: 18 }}>Samira Reddy</Text>
-                            <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 }} />
+                            <Image style={{ width: 20, height: 20 }} source={require('../../assests/images/dashboard/physical.png')} />
 
                         </View>
                         <View style={{ flexDirection: 'row', marginTop: 5 }}>
@@ -115,7 +115,7 @@ const SpecialityComponent = (props) => {
                         <View style={{borderBottomColor:'#ddd',borderBottomWidth:1}}>
                             <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
                                 <Text style={{ flex: 1, fontSize: 18 }}>{props.item.title}</Text>
-                                <Icon name={props.item.icon} type="FontAwesome" style={{ fontSize: 18 }} />
+                                <Image style={{ width: 20, height: 20 }} source={props.item.icon} />
                             </View>
                             <Text style={{ fontSize: 12, marginTop: 1,marginBottom:10 }}>{props.item.description}</Text>
                         </View>
