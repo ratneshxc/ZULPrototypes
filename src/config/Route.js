@@ -264,13 +264,13 @@ const GoalStack = createStackNavigator({
   AddGoal: {
     screen: AddGoal,
     navigationOptions: {
-      title: 'Add Goal'
+      header: null
     }
   },
   GoalAssessment: {
     screen: GoalAssessment,
     navigationOptions: {
-      title: 'Setting Up goal'
+      title: 'Setting up goal'
     }
   },
   YourGoal: {
@@ -288,7 +288,7 @@ const GoalStack = createStackNavigator({
   AddActivity: {
     screen: AddActivity,
     navigationOptions: {
-      title: 'Select an activity'
+      header: null
     }
   },
   ExpertListGoals: {

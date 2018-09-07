@@ -15,6 +15,18 @@ class AddGoal extends Component {
     render() {
         return (
             <Container>
+                           <Header>
+                    <Left>
+                        <Button transparent  onPress={() => { this.props.navigation.goBack() }}>
+                            <Icon name='arrow-back' />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Add goal</Title>
+                    </Body>
+                    <Right>
+                    </Right>
+                </Header>
                 <Header searchBar rounded>
                     <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                         <Icon name="ios-search" />
