@@ -42,7 +42,7 @@ class ExportConnect extends React.Component {
                 </Button>
             </Header>
 
-                    <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'row',backgroundColor:'#F7F7F7' }}>
                         <ScrollView horizontal={true} style={{ flexDirection: 'row', flex: 1 ,paddingVertical:8}}>
                             <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }}>
                                 <Text>Online</Text>
@@ -74,15 +74,7 @@ class ExportConnect extends React.Component {
 
                         />
                     </View>
-                    {/* <View style={{  flexDirection: 'row', padding: 5, }}>
-                        <Text style={{ color: 'white',flex:1 }}>Seen <Text style={{ color: '#00b386' }}>15</Text> out of 150 results</Text>
-                        <TouchableOpacity>
-                            <Icon name='arrow-up' type="FontAwesome" style={{ fontSize: 18, marginHorizontal: 5, color: 'white' }} />
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Icon name='arrow-down' type="FontAwesome" style={{ fontSize: 18, marginLeft: 5, marginRight: 2, color: 'white' }} />
-                        </TouchableOpacity>
-                    </View> */}
+             
                 </View>
 
                 <Content >
