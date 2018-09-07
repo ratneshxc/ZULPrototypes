@@ -104,7 +104,7 @@ const ExpertComponent = (props) => {
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail medium round source={props.item.img} />
                             </View>
-                <TouchableOpacity  style={{ flex: 2}} >
+                <TouchableOpacity  style={{ flex: 2}} onPress={()=>props.bookExperts()} >
            
                 <View style={{ flex: 2, paddingHorizontal: 1,borderBottomColor:'#ddd',borderBottomWidth:1 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
@@ -113,7 +113,7 @@ const ExpertComponent = (props) => {
 
                     </View>
                     <Text style={{ fontSize: 13,marginLeft:10  }}>{props.item.speciality}</Text>
-                    <View style={{ flexDirection: 'row', marginTop: 3,marginLeft:10 }}>
+                    <View style={{ flexDirection: 'row', marginTop: 0,marginLeft:10 }}>
                     <Text style={{color:'#000',fontSize:14}}>{props.item.rating} </Text>
                         <StarRating
                             disabled={false}
@@ -124,10 +124,10 @@ const ExpertComponent = (props) => {
                         />
                         <View style={{flex:1}}>
                         </View>
-                        <Button rounded primary style={{height:25,marginVertical:1}}  onPress={()=>props.bookExperts()} >
+                        {/* <Button rounded primary style={{height:25,marginVertical:0}}  onPress={()=>props.bookExperts()} >
                       
                                     <Text>Connect</Text>
-                                </Button>
+                                </Button> */}
                     </View>
                     
                 </View>
