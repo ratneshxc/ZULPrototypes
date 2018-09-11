@@ -18,7 +18,7 @@ const expertData = [{
 {
     key: 'key3',
     title: "Relationship experts",
-    icon: require('../../assests/images/dashboard/social.png'),
+    icon: require('../../assests/images/dashboard/emotional.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice,Marriage counselling, Parenting tips ...'
 },
@@ -39,7 +39,7 @@ const expertData = [{
 {
     key: 'key6',
     title: "Relationship Experts",
-    icon:require('../../assests/images/dashboard/social.png'),
+    icon:require('../../assests/images/dashboard/emotional.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice, Marriage counselling, Parenting tips ...'
 },
@@ -55,12 +55,12 @@ const ExpertList = (props) => {
     return (
         <View>
             {/*Recently Contacted*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5FCFF' }} >
                 <Text style={{ flex: 1 }}>{'Recently connected'.toUpperCase()}</Text>
-                <Text style={{ color: "#294787", textDecorationLine: 'underline' }}>View More</Text>
+                <Text style={{ color: "#294787", textDecorationLine: 'underline' }}>View more</Text>
             </View>
             {/*Recent Experts*/}
-            <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
+            <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F5FCFF' }}>
                 <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#fff' }}>
                     <View style={{ alignItems: 'center', padding: 5 }}>
                         <Thumbnail medium round source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
@@ -85,7 +85,7 @@ const ExpertList = (props) => {
                 </View>
             </View>
             {/*Find and connect*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5FCFF' }}>
                 <Text style={{ flex: 1 }}>{'Find & Connect'.toUpperCase()}</Text>
 
             </View>
