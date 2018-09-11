@@ -34,7 +34,7 @@ class Divider extends Component {
                         props.orientation === 'left' ? styles.shortWidth : { flex: 1 }
                     ]}
                 />
-                <View style={{ backgroundColor: 'lightgray', borderRadius: 25 }}><Text style={[styles.text, { color: props.color }]}>{props.children}</Text></View>
+                <View style={{ backgroundColor: 'white', borderRadius: 25 }}><Text style={[styles.text, { color: props.color }]}>{props.children}</Text></View>
                 <View
                     style={[
                         styles.line,

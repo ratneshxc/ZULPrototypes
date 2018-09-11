@@ -26,19 +26,19 @@ class YourGoal extends Component {
                     <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', padding: 5 }}>
                             {/* <Image style={{ width: 50, height: 50, alignSelf: 'center', borderRadius: 25 }} source={require('../../assests/images/goals/loseweight.jpg')} /> */}
-                            <Icon name="target" type="Feather" style={{ padding: 5, alignSelf: 'center', color: 'black', fontSize: 32 }} />
+                            <Icon name="target" type="Feather" style={{ padding: 5, alignSelf: 'center', color:'gray', fontSize: 32 }} />
                             <View style={{ flexDirection: 'column', padding:5 }}>
                                 <Text style={{ fontSize: 18 }}>Lose 6 kg weight</Text>
-                                <Text style={{ fontSize: 14 }}>Duration 4 week</Text>
+                                <Text style={{ fontSize: 14, color:'gray' }}>Duration 4 week</Text>
                             </View>
                             <Right>
                                 <TouchableOpacity bordered>
-                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
+                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color:'gray', fontSize: 22 }} />
                                 </TouchableOpacity>
                             </Right>
                         </View>
                         {/* <Divider borderColor="black" color="black" orientation="left">
-                            <Text style={{ fontSize: 14, color: 'black' }}>Duration 4 week</Text>
+                            <Text style={{ fontSize: 14, color:'gray' }}>Duration 4 week</Text>
                         </Divider> */}
                     </Card>
                     <View style={{ padding: 10 }}>
@@ -66,10 +66,10 @@ class YourGoal extends Component {
                                     <Icon active type="MaterialCommunityIcons" name="run" />
                                 </View>
                                 <View style={{ flex: 8 }}>
-                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16 }}>Take 5000 steps</Text>
+                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16, color:'gray' }}>Take 5000 steps</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
+                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color:'gray', fontSize: 22 }} />
                                 </View>
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
@@ -77,10 +77,10 @@ class YourGoal extends Component {
                                     <Image style={{ width: 30, height: 30, right:4 }} source={require('../../assests/icons/buddhist-yoga-pose.png')} /> 
                                 </View>
                                 <View style={{ flex: 8 }}>
-                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16 }}>Daily 10 min meditation</Text>
+                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16, color:'gray' }}>Daily 10 min meditation</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
+                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color:'gray', fontSize: 22 }} />
                                 </View>
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
@@ -88,10 +88,10 @@ class YourGoal extends Component {
                                     <Icon active type="MaterialIcons" name="local-drink" />
                                 </View>
                                 <View style={{ flex: 8 }}>
-                                    <Text style={{ fontSize: 16, alignSelf: 'flex-start' }}>Drink water a half hour before your meal</Text>
+                                    <Text style={{ fontSize: 16, alignSelf: 'flex-start', color:'gray' }}>Drink water a half hour before your meal</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
+                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color:'gray', fontSize: 22 }} />
                                 </View>
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
@@ -99,10 +99,10 @@ class YourGoal extends Component {
                                     <Icon active type="MaterialCommunityIcons" name="food-fork-drink" />
                                 </View>
                                 <View style={{ flex: 8 }}>
-                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16 }}>Eat your food slowly</Text>
+                                    <Text style={{ alignSelf: 'flex-start', fontSize: 16, color:'gray' }}>Eat your food slowly</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color: 'black', fontSize: 22 }} />
+                                    <Icon name="edit" type="FontAwesome" style={{ padding: 5, alignSelf: 'flex-end', color:'gray', fontSize: 22 }} />
                                 </View>
                             </CardItem>
                         </Card>

@@ -4,6 +4,7 @@ import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Tex
 import LinearGradient from 'react-native-linear-gradient';
 import GoalVideo from './GoalVideo';
 import NotificationCount from '../common/header/NotificationCount';
+import Divider from './Divider';
 
 class Goals extends Component {
     constructor(props) {
@@ -75,20 +76,25 @@ const LevelHeader = () => {
     return (
         <View style={{ backgroundColor: '#ffffff', padding: 10 }}>
             <View style={{ flexDirection: 'row' }}>
-                <View style={{ flex: 1 }}>
-                    <LinearGradient colors={['#1A2980', '#26D0CE']} start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} style={{ borderRadius: 40, flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 5 }} >
+                <View style={{ flex: 3 }}>
+                    {/* <LinearGradient colors={['gray', 'lightgray']} start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} style={{ borderRadius: 40, flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 5 }} >
                         <Text style={{ color: '#fff', fontSize: 25, marginRight: 10 }}>Level 1</Text>
                         <Icon name="angle-right" type="FontAwesome" style={{ color: '#fff', alignSelf: 'center' }} />
-                    </LinearGradient>
+                    </LinearGradient> */}
+                    <View style={{ padding:5, borderWidth:0.8 ,borderColor:'gray', borderRadius:15, flexDirection: 'row' }}>
+                        <Text style={{ fontSize: 25, alignSelf: 'center', color:'gray' }}>Level 1</Text>
+                        <Icon name="angle-right" type="FontAwesome" style={{ alignSelf: 'center', color:'gray' }} />
+                    </View>
                 </View>
-                <View style={{ flex: 1 }}>
-                    <Text style={{ fontSize: 25, textAlign: 'center' }}>23</Text>
-                    <Text style={{ fontSize: 13, textAlign: 'center' }}>{'Pending Activities'.toUpperCase()}</Text>
+                <View style={{ flex: 3 }}></View>
+                <View style={{ flex: 4 }}>
+                    <Text style={{ fontSize: 25, textAlign: 'center', color:'gray' }}>23</Text>
+                    <Text style={{ fontSize: 13, textAlign: 'center', color:'gray' }}>{'Pending Activities'.toUpperCase()}</Text>
                 </View>
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
-                    <Text style={{ fontSize: 18 }}>30 points in 30 days</Text>
+                    <Text style={{ fontSize: 18, color:'gray' }}>30 points in 30 days</Text>
                 </View>
                 <View style={{ flex: 1 }}>
                     <View style={{ height: 8, backgroundColor: '#f5f5f5', marginTop: 10 }}>
@@ -105,28 +111,25 @@ const LevelHeader = () => {
 }
 const GoalHeaderDetails = (props) => {
     return (
-        <TouchableOpacity onPress={props.GoalsDetails.yourGoal}>
-            <View style={{ flexDirection: 'row' }}>
-                <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Image source={props.GoalsDetails.imageURL} style={{ width: 50, height: 50, marginRight: 5 }} />
-                    <View style={{ flex: 1 }}>
-                        <TouchableOpacity style={{ flexDirection: 'row' }}>
-                            <Text style={{ fontSize: 18, color: '#3a3a3a' }}>{props.GoalsDetails.headerTitle}</Text>
-                        </TouchableOpacity>
-                        <View><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'flex-start', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.level}</Text></View>
+        <View style={{ flexDirection: 'row' }}>
+            <TouchableOpacity style={{ flex: 1, flexDirection: 'row' }} onPress={props.GoalsDetails.yourGoal}>
+                <Image source={props.GoalsDetails.imageURL} style={{ width: 50, height: 50, marginRight: 5 }} />
+                <View style={{ flex: 1 }}>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={{ fontSize: 18, color: '#696969' }}>{props.GoalsDetails.headerTitle}</Text>
                     </View>
+                    <View><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'flex-start', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.level}</Text></View>
                 </View>
-                {props.GoalsDetails.trackStatus === 'On track' ?
-                    <TouchableOpacity>
-                        <View><Text style={{ fontSize: 13, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'center', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
-                    </TouchableOpacity> :
-                    <TouchableOpacity onPress={props.GoalsDetails.expertNavigation}>
-                        <View><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10, alignSelf: 'flex-end', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
-                        <Text style={{ fontSize: 13 }}>Need expert help?</Text>
-                    </TouchableOpacity>
-                }
-            </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
+            {props.GoalsDetails.trackStatus === 'On track' ?
+                <View><Text style={{ fontSize: 13, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'center', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
+                :
+                <TouchableOpacity onPress={props.GoalsDetails.expertNavigation}>
+                    <View><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10, alignSelf: 'flex-end', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
+                    <Text style={{ fontSize: 13, color: '#696969' }}>Need expert help?</Text>
+                </TouchableOpacity>
+            }
+        </View>
     )
 }
 const GoalDetails = (props) => {
@@ -159,7 +162,10 @@ const GoalsSection = (props) => {
 const ActivityDetails = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 11, marginTop: 10, marginHorizontal: 5 }}>{'Activities'.toUpperCase()}</Text>
+            {/* <Divider borderColor="gray" color="gray" orientation="left">
+                            <Text style={{ fontSize: 14, color: 'black' }}>{'Activities'.toUpperCase()}</Text>
+                        </Divider> */}
+            <Text style={{ fontSize: 14, marginTop: 10, padding: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
             <View style={{}}>
                 {props.GoalsDetails.cardType === 'single' ?
                     <Activity GoalsDetails={props.GoalsDetails} /> :
@@ -174,81 +180,92 @@ const Activity = (props) => {
     return (
         props.GoalsDetails.video ? <GoalVideo /> :
             <TouchableOpacity onPress={props.GoalsDetails.goalStatus}>
-                <Card style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
+                <View style={styles.activity}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{ fontSize: 16, color: '#3a3a3a' }}>{props.GoalsDetails.title}</Text>
+                        <Text style={{ fontSize: 18, color: '#696969' }}>{props.GoalsDetails.title}</Text>
                     </View>
                     <View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start' }}></Text><Text style={{ alignSelf: 'flex-end' }}>2km</Text></View>
-                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: '#1e90ff' }}>
-                            <View style={{ height: 22, width: '45%', backgroundColor: '#00bfff', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>1km</Text></View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>1.2km more for the day</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>2km</Text></View>
+                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: 'lightgray' }}>
+                            <View style={{ height: 22, width: '45%', backgroundColor: '#f17e3a', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>0.8km</Text></View>
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
-                        <DayActivityStatus iconName="eercast" day="Today" />
-                        <DayActivityStatus iconName="check-circle" day="M" />
-                        <DayActivityStatus iconName="times-circle" day="T" />
-                        <DayActivityStatus iconName="check-circle" day="W" />
-                        <DayActivityStatus iconName="times-circle" day="T" />
-                        <DayActivityStatus iconName="check-circle" day="F" />
-                        <DayActivityStatus iconName="times-circle" day="S" />
+                        <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
+                        <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="W" />
+                        <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="F" />
+                        <DayActivityStatus isLive="false" iconName="times-circle" day="S" />
                     </View>
-                </Card>
+                </View>
             </TouchableOpacity>
     )
 }
 const MultipleActivity = (props) => {
     return (
-        <View>
-            {props.GoalsDetails.data.map((x, i) => (
-                x.progressBar ?
-                    <Card key={i} style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
-                        <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                            <Text style={{ fontSize: 16, color: '#3a3a3a' }}>{x.title}</Text>
+        props.GoalsDetails.data.map((x, i) => (
+            x.progressBar ?
+                <View key={i} style={styles.activity}>
+                    <View style={{ flexDirection: 'row', marginBottom: 10 }}>
+                        <Text style={{ fontSize: 18, color: '#696969' }}>{x.title}</Text>
+                    </View>
+                    <View style={{ justifyContent: 'space-between', marginBottom: 20 }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
+                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: 'lightgray' }}>
+                            <View style={{ height: 22, width: x.progress + '%', backgroundColor: '#f17e3a', borderRadius: 20 }}><Text style={{ left: 12 * x.progress / 11.6 + '%', color: 'white' }}>{x.totalProgess}</Text></View>
                         </View>
-                        <View>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end' }}>{x.endProgess}</Text></View>
-                            <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: '#1e90ff' }}>
-                                <View style={{ height: 22, width: x.progress + '%', backgroundColor: '#00bfff', borderRadius: 20 }}><Text style={{ left: 12 * x.progress / 11.6 + '%', color: 'white' }}>{x.totalProgess}</Text></View>
-                            </View>
+                    </View>
+                </View> :
+                <View key={i} style={styles.activity}>
+                    <View style={{ flexDirection: 'row', marginBottom: 5 }}>
+                        <Text style={{ fontSize: 18, color: '#696969' }}>{x.title}</Text>
+                    </View>
+                    <View style={{ flexDirection: 'row' }}>
+                        {/* <View style={{ flex: 2 }}></View> */}
+                        <View style={{ flex: 5, flexDirection: 'row' }}>
+                            {/* <Icon name="check" type="FontAwesome" style={{ fontSize: 20, color: '#00b386' }} /> */}
+                            <Text style={{ color: 'gray' }}>{'Pay for this month'}</Text>
                         </View>
-                    </Card> :
-                    <Card key={i} style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
-                        <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                            <Text style={{ fontSize: 16, color: '#3a3a3a' }}>{x.title}</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row' }}>
-                            <View style={{ flex: 2 }}></View>
-                            <View style={{ flex: 5, flexDirection: 'row' }}>
-                                <Icon name="check" type="FontAwesome" style={{ fontSize: 20, color: '#00b386' }} />
-                                <Text style={{ fontSize: 13 }}>{'Done for this month'}</Text>
-                            </View>
-                        </View>
-                        <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
-                            <DayActivityStatus iconName="check-circle" day="Jul" />
-                            <DayActivityStatus iconName="check-circle" day="Aug" />
-                            <DayActivityStatus iconName="check-circle" day="Sep" />
-                            <DayActivityStatus iconName="check-circle" day="Oct" />
-                            <DayActivityStatus iconName="check-circle" day="Nov" />
-                            <DayActivityStatus iconName="check-circle" day="Dec" />
-                            <DayActivityStatus iconName="check-circle" day="Jan" />
-                        </View>
-                    </Card>
-            ))}
-        </View>
+                    </View>
+                    <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
+                        <DayActivityStatus isLive="true" iconName="eercast" day="Jan" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="Dec" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="Nov" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="Oct" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="Sep" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="Aug" />
+                        <DayActivityStatus isLive="false" iconName="check-circle" day="Jul" />
+                    </View>
+                </View>
+        ))
     )
 }
 
 const DayActivityStatus = (props) => {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Icon name={props.iconName} type="FontAwesome" style={{ fontSize: 15, color: props.iconName == "times-circle" ? '#ce3c3e' : '#00b386' }} />
-            <Text style={{ fontSize: 13 }}>{props.day}</Text>
-        </View>
+        props.isLive === "false" ?
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Icon name={props.iconName} type="FontAwesome" style={{ fontSize: 15, color: props.iconName == "times-circle" ? '#ce3c3e' : '#00b386' }} />
+                <Text style={{ fontSize: 13, color: 'gray' }}>{props.day}</Text>
+            </View>
+            :
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Icon name={props.iconName} type="FontAwesome" style={{ fontSize: 15, color: props.iconName == "times-circle" ? '#ce3c3e' : '#f17e3a' }} />
+                <Text style={{ fontSize: 13, color: 'gray' }}>{props.day}</Text>
+            </View>
     )
 }
 
 const styles = StyleSheet.create({
-
+    activity: {
+        padding: 5,
+        backgroundColor: '#fff',
+        marginVertical: 2,
+        justifyContent: 'space-between',
+        borderBottomWidth: 0.5,
+        borderBottomColor: 'lightgray'
+    }
 })
 export default Goals;
