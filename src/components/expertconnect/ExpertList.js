@@ -124,10 +124,6 @@ const ExpertComponent = (props) => {
                         />
                         <View style={{flex:1}}>
                         </View>
-                        {/* <Button rounded primary style={{height:25,marginVertical:0}}  onPress={()=>props.bookExperts()} >
-                      
-                                    <Text>Connect</Text>
-                                </Button> */}
                     </View>
                     
                 </View>
