@@ -116,7 +116,7 @@ const GoalHeaderDetails = (props) => {
                 <Image source={props.GoalsDetails.imageURL} style={{ width: 50, height: 50, marginRight: 5 }} />
                 <View style={{ flex: 1 }}>
                     <View style={{ flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 18, color: '#696969' }}>{props.GoalsDetails.headerTitle}</Text>
+                        <Text style={{ fontSize: 18 }}>{props.GoalsDetails.headerTitle}</Text>
                     </View>
                     <View><Text style={{ fontSize: 10, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'flex-start', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.level}</Text></View>
                 </View>
