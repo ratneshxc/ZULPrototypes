@@ -117,7 +117,7 @@ const SpecialityComponent = (props) => {
                                 <Text style={{ flex: 1, fontSize: 18 }}>{props.item.title}</Text>
                                 <Image style={{ width: 20, height: 20 }} source={props.item.icon} />
                             </View>
-                            <Text style={{ fontSize: 12, marginTop: 1,marginBottom:10 }}>{props.item.description}</Text>
+                            <Text style={{ fontSize: 12, marginTop: 1,marginBottom:10,color: '#505050' }}>{props.item.description}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>

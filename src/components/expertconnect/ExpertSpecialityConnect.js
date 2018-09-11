@@ -15,7 +15,7 @@ const Speciality = (props) => {
                     </Button>
                 </Left>
                 <Body>
-                    <Title>Find Experts</Title>
+                    <Title>Find experts</Title>
                 </Body>
                 <Right>
                     <NotificationCount getAllNotifications={() => props.navigation.navigate("NotificationExpert")} />
