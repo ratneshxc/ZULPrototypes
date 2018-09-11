@@ -61,7 +61,7 @@ class AddActivity extends Component {
                                 <View style={{ flex: 1, padding: 10, flexDirection: 'row', width: screenwidth, alignSelf: 'center' }}>
                                     <Left style={{ flexDirection: 'column', }}>
                                         <Text style={{ fontSize: 18, width: 300 }}>{data.title}</Text>
-                                        <Text style={{ top: 8, fontSize: 12, }}>{data.points}</Text>
+                                        <Text style={{ top: 8, fontSize: 12, color:'gray' }}>{data.points}</Text>
                                     </Left>
                                     <Right>
                                         <Icon name="arrow-forward" style={{ alignSelf: 'flex-end', color: 'lightgray', fontSize: 22 }} />
