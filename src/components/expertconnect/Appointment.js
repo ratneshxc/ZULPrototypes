@@ -70,6 +70,9 @@ class AppointmentList extends React.Component {
             {/*Recently Contacted*/}
             <View style={{ flexDirection: 'row', padding: 5 }} >
                 <Text style={{ flex: 1 }}>{'Upcoming'.toUpperCase()}</Text>
+               <TouchableOpacity onPress={() => this.props.goToSearch()}> 
+               <Text style={{ color: "#294787", textDecorationLine: 'underline' }}>Find experts</Text>
+               </TouchableOpacity>
             </View>
             {/*Recent Experts*/}
             <View style={{ flexDirection: 'column', padding: 5, marginVertical: 3, backgroundColor: '#ffffff' }}>
