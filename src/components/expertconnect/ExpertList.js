@@ -22,7 +22,7 @@ const expertData =[
         speciality:'Child Specialists',
         experience:10,
         rating:4.2,
-        dimension:require('../../assests/images/dashboard/social.png'),
+        dimension:require('../../assests/images/dashboard/emotional.png'),
         reviews:150
     },
     {
@@ -33,7 +33,7 @@ const expertData =[
         speciality:'Family expert',
         experience:5,
         rating:4.1,
-        dimension:require('../../assests/images/dashboard/social.png'),
+        dimension:require('../../assests/images/dashboard/spiritual.png'),
         reviews:250
     },
     {
@@ -42,7 +42,7 @@ const expertData =[
         name:'Hima Soni',
         degree:'M.Sc, B.Sc',
         speciality:'Meditation expert',
-        dimension:require('../../assests/images/dashboard/spiritual.png'),
+        dimension:require('../../assests/images/dashboard/intellectual.png'),
         experience:5,
         rating:4.3,
         reviews:150
@@ -76,7 +76,7 @@ const expertData =[
         name:'Dr. Ramesh Kumar',
         degree:'PhD, M.S, B.S',
         speciality:'Family expert',
-        dimension:require('../../assests/images/dashboard/social.png'),
+        dimension:require('../../assests/images/dashboard/emotional.png'),
         experience:5,
         rating:4.1,
         reviews:250
@@ -109,21 +109,25 @@ const ExpertComponent = (props) => {
                 <View style={{ flex: 2, paddingHorizontal: 1,borderBottomColor:'#ddd',borderBottomWidth:1 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 ,marginLeft:10}}>{props.item.name}</Text>
-                        <Image style={{ width: 20, height: 20 }} source={props.item.dimension} />
+                        <Image style={{ width: 20, height: 20}} source={props.item.dimension} />
 
                     </View>
-                    <Text style={{ fontSize: 13,marginLeft:10  }}>{props.item.speciality}</Text>
+                    <Text style={{ fontSize: 12,marginLeft:10 ,color: '#505050'  }}>{props.item.speciality}</Text>
                     <View style={{ flexDirection: 'row', marginTop: 0,marginLeft:10 }}>
-                    <Text style={{color:'#000',fontSize:14}}>{props.item.rating} </Text>
+                    <Text style={{color: '#505050',fontSize:12}}>{props.item.rating} </Text>
                         <StarRating
                             disabled={false}
                             maxStars={1}
                             rating={1}
-                            fullStarColor={'#000'}
-                            starSize={16}
+                            fullStarColor={'#505050'}
+                            starSize={13}
                         />
                         <View style={{flex:1}}>
                         </View>
+                        <Button rounded primary style={{height:25,marginVertical:3}}  onPress={()=>props.bookExperts()} >
+                      
+                                    <Text>Connect</Text>
+                                </Button>
                     </View>
                     
                 </View>
