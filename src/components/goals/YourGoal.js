@@ -63,7 +63,7 @@ class YourGoal extends Component {
                         <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                             <CardItem bordered style={{ height: 60 }}>
                                 <View style={{ flex: 1 }}>
-                                    <Icon active type="MaterialCommunityIcons" name="run" />
+                                    <Icon active type="MaterialCommunityIcons" name="run" style={{ color:'#696969' }} />
                                 </View>
                                 <View style={{ flex: 8 }}>
                                     <Text style={{ alignSelf: 'flex-start', fontSize: 16, color:'gray' }}>Take 5000 steps</Text>
@@ -74,7 +74,7 @@ class YourGoal extends Component {
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
                                 <View style={{ flex: 1 }}>
-                                    <Image style={{ width: 30, height: 30, right:4 }} source={require('../../assests/icons/buddhist-yoga-pose.png')} /> 
+                                    <Image style={{ width: 30, height: 30, right:4 }} source={require('../../assests/icons/buddhist-yoga-pose-gray.png')} /> 
                                 </View>
                                 <View style={{ flex: 8 }}>
                                     <Text style={{ alignSelf: 'flex-start', fontSize: 16, color:'gray' }}>Daily 10 min meditation</Text>
@@ -85,7 +85,7 @@ class YourGoal extends Component {
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
                                 <View style={{ flex: 1 }}>
-                                    <Icon active type="MaterialIcons" name="local-drink" />
+                                    <Icon active type="MaterialIcons" name="local-drink" style={{ color:'#696969' }} />
                                 </View>
                                 <View style={{ flex: 8 }}>
                                     <Text style={{ fontSize: 16, alignSelf: 'flex-start', color:'gray' }}>Drink water a half hour before your meal</Text>
@@ -96,7 +96,7 @@ class YourGoal extends Component {
                             </CardItem>
                             <CardItem bordered style={{ height: 60 }}>
                                 <View style={{ flex: 1 }}>
-                                    <Icon active type="MaterialCommunityIcons" name="food-fork-drink" />
+                                    <Icon active type="MaterialCommunityIcons" name="food-fork-drink" style={{ color:'#696969' }} />
                                 </View>
                                 <View style={{ flex: 8 }}>
                                     <Text style={{ alignSelf: 'flex-start', fontSize: 16, color:'gray' }}>Eat your food slowly</Text>

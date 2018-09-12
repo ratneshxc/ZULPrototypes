@@ -71,30 +71,25 @@ class Goals extends Component {
     }
 }
 
-
 const LevelHeader = () => {
     return (
         <View style={{ backgroundColor: '#ffffff', padding: 10 }}>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 3 }}>
-                    {/* <LinearGradient colors={['gray', 'lightgray']} start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} style={{ borderRadius: 40, flexDirection: 'row', paddingHorizontal: 10, paddingVertical: 5 }} >
-                        <Text style={{ color: '#fff', fontSize: 25, marginRight: 10 }}>Level 1</Text>
-                        <Icon name="angle-right" type="FontAwesome" style={{ color: '#fff', alignSelf: 'center' }} />
-                    </LinearGradient> */}
-                    <View style={{ padding:5, borderWidth:0.8 ,borderColor:'gray', borderRadius:15, flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 25, alignSelf: 'center', color:'gray' }}>Level 1</Text>
-                        <Icon name="angle-right" type="FontAwesome" style={{ alignSelf: 'center', color:'gray' }} />
+                    <View style={{ padding: 5, borderWidth: 0.8, borderColor: 'gray', borderRadius: 8, flexDirection: 'row' }}>
+                        <Text style={{ fontSize: 25, alignSelf: 'center', color: 'gray' }}>Level 1</Text>
+                        <Icon name="angle-right" type="FontAwesome" style={{ alignSelf: 'center', color: 'gray' }} />
                     </View>
                 </View>
                 <View style={{ flex: 3 }}></View>
                 <View style={{ flex: 4 }}>
-                    <Text style={{ fontSize: 25, textAlign: 'center', color:'gray' }}>23</Text>
-                    <Text style={{ fontSize: 13, textAlign: 'center', color:'gray' }}>{'Pending Activities'.toUpperCase()}</Text>
+                    <Text style={{ fontSize: 25, textAlign: 'center', color: 'gray' }}>23</Text>
+                    <Text style={{ fontSize: 13, textAlign: 'center', color: 'gray' }}>{'Pending Activities'.toUpperCase()}</Text>
                 </View>
             </View>
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
-                    <Text style={{ fontSize: 18, color:'gray' }}>30 points in 30 days</Text>
+                    <Text style={{ fontSize: 18, color: 'gray' }}>30 points in 30 days</Text>
                 </View>
                 <View style={{ flex: 1 }}>
                     <View style={{ height: 8, backgroundColor: '#f5f5f5', marginTop: 10 }}>
@@ -137,14 +132,6 @@ const GoalDetails = (props) => {
         <Card style={{ padding: 5, backgroundColor: '#ffffff', marginVertical: 4 }}>
             <GoalHeaderDetails GoalsDetails={props.GoalsDetails} />
             <ActivityDetails GoalsDetails={props.GoalsDetails} />
-
-            {/* <Accordion
-                dataArray={props.GoalsDetails}
-                animation={true}
-                expanded={1}
-                renderHeader={this.GoalHeaderDetails}
-                renderContent={this.ActivityDetails}
-            />  */}
         </Card>
     )
 }
@@ -162,9 +149,6 @@ const GoalsSection = (props) => {
 const ActivityDetails = (props) => {
     return (
         <View>
-            {/* <Divider borderColor="gray" color="gray" orientation="left">
-                            <Text style={{ fontSize: 14, color: 'black' }}>{'Activities'.toUpperCase()}</Text>
-                        </Divider> */}
             <Text style={{ fontSize: 14, marginTop: 10, padding: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
             <View style={{}}>
                 {props.GoalsDetails.cardType === 'single' ?
@@ -223,9 +207,7 @@ const MultipleActivity = (props) => {
                         <Text style={{ fontSize: 18, color: '#696969' }}>{x.title}</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
-                        {/* <View style={{ flex: 2 }}></View> */}
                         <View style={{ flex: 5, flexDirection: 'row' }}>
-                            {/* <Icon name="check" type="FontAwesome" style={{ fontSize: 20, color: '#00b386' }} /> */}
                             <Text style={{ color: 'gray' }}>{'Pay for this month'}</Text>
                         </View>
                     </View>
