@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableOpacity, Animated, Image } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Animated, Image,ScrollView } from 'react-native';
 import { Card, Text } from 'native-base';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from 'react-native-underline-tabbar';
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 
 const Page = ({ vitals }) => {
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             {vitals.map((n, i) => (
                 <View key={i} style={{ flexDirection: 'row', marginVertical: 5, paddingVertical: 10, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
@@ -41,7 +41,7 @@ const Page = ({ vitals }) => {
                     </View>
                 </View>
             ))}
-        </View>
+        </ScrollView>
     )
 };
 

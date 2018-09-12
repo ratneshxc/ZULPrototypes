@@ -5,10 +5,8 @@ import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
 import { connect } from 'react-redux';
 import FadeInView from '../animations/FadeInView';
 import { CheckBox } from 'react-native-elements'
-import { Header, Footer, FooterTab, Left, Right, Body, Button, Container, Content } from 'native-base';
-
+import { Button } from 'native-base';
 const windowObj = Dimensions.get('window');
-const screenheight = windowObj.height * 2 / 5;
 const mapStateToProps = state => ({
   currentQuestion: state.Assessment.currentQuestion,
   questions: state.Assessment.questions
@@ -47,9 +45,11 @@ class AnswerSection extends Component {
     this.state = {
       optionAnswer: this.props.currentQuestion.options,
       checkFadeIn: null,
-      fadeAnimation: new Animated.Value(0)
+      fadeAnimation: new Animated.Value(0),
+      showAlert: false
     };
   }
+
 
   selectAnswer = (index) => {
     this.props.questions[this.props.currentQuestion.no - 1].selectedIndex = index;
@@ -115,44 +115,44 @@ class AnswerSection extends Component {
   }
   render() {
     return (
-        <ScrollView>
-          <View style={styles.optionView}>
-            {(this.props.currentQuestion.ansType === 'single') ?
-              <RadioGroup
-                size={24}
-                thickness={2}
-                color='rgb(0, 96, 168)'
-                highlightColor='#3956976b'
-                selectedIndex={this.props.currentQuestion.selectedIndex}
-                onSelect={(index, value) => this.selectAnswer(index)}
-              >
-                {this.props.currentQuestion.options.map((x, i) => (
-                  <RadioButton style={styles.radio} key={i} value={x.value} >
-                    <FadeInView duration={500} delay={i * 100 + 200}>
-                      <Text style={styles.labeltext}>{x.label}</Text>
-                    </FadeInView>
-                  </RadioButton>
-                ))}
-              </RadioGroup>
-              :
-              this.state.optionAnswer.map((x, i) => (
-                <CheckBox
-                  key={i}
-                  title={x.label}
-                  checked={x.checked}
-                  onPress={() => this.selectCheckBox(i)}
-                  containerStyle={{ backgroundColor: '#ffffff', borderWidth: 0 }}
-                  checkedColor='#1e90ff'
-                  size={35}
-                  textStyle={{ fontSize: 17 }}
-                />
-              ))
-            }
-            {(this.props.currentQuestion.ansType === 'multiple') ?
-              this.state.checkFadeIn : null
-            }
-          </View>
-        </ScrollView>
+      <ScrollView>
+        <View style={styles.optionView}>
+          {(this.props.currentQuestion.ansType === 'single') ?
+            <RadioGroup
+              size={24}
+              thickness={2}
+              color='rgb(0, 96, 168)'
+              highlightColor='#3956976b'
+              selectedIndex={this.props.currentQuestion.selectedIndex}
+              onSelect={(index, value) => this.selectAnswer(index)}
+            >
+              {this.props.currentQuestion.options.map((x, i) => (
+                <RadioButton style={styles.radio} key={i} value={x.value} >
+                  <FadeInView duration={500} delay={i * 100 + 200}>
+                    <Text style={styles.labeltext}>{x.label}</Text>
+                  </FadeInView>
+                </RadioButton>
+              ))}
+            </RadioGroup>
+            :
+            this.state.optionAnswer.map((x, i) => (
+              <CheckBox
+                key={i}
+                title={x.label}
+                checked={x.checked}
+                onPress={() => this.selectCheckBox(i)}
+                containerStyle={{ backgroundColor: '#ffffff', borderWidth: 0 }}
+                checkedColor='#1e90ff'
+                size={35}
+                textStyle={{ fontSize: 17 }}
+              />
+            ))
+          }
+          {(this.props.currentQuestion.ansType === 'multiple') ?
+            this.state.checkFadeIn : null
+          }
+        </View>
+      </ScrollView>
     );
   }
 }
