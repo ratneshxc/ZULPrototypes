@@ -29,8 +29,8 @@ export default class Booking extends Component {
     render() {
         return (
             <Container>
-                <Content style={{ backgroundColor: "#F5FCFF",padding:3 }}>
-                    <View style={{ flexDirection: 'column', paddingVertical: 10, marginVertical: 5, backgroundColor: '#FFFFFF',borderTopWidth:1,borderBottomWidth:1,borderColor:"#F5fdf1" }}>
+                <Content style={{ backgroundColor: "#F8F8FF",paddingHorizontal:3 }}>
+                    <View style={{ flexDirection: 'column', padding: 10, backgroundColor: '#FFFFFF',borderBottomWidth:1,borderColor:"#ddd" }}>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <View style={{ alignItems: 'center' }}>
                                 <Thumbnail medium round source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
@@ -40,18 +40,18 @@ export default class Booking extends Component {
                                     <Text style={{ flex: 1 }}>Samira Reddy</Text>
                                     <Icon name='dumbbell' type="MaterialCommunityIcons" style={{ fontSize: 18, marginRight: 5, }} />
                                 </View>
-                                <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialist</Text>
-                                <View style={{ flexDirection: 'row',position:'absolute', top:25,left:1 }}>
+                                {/* <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialist</Text> */}
+                                <View style={{ flexDirection: 'row',position:'absolute', top:10,left:2 }}>
                                     <Picker
 
                                         iosHeader="Select Your Sim"
                                         iosIcon={<Icon name="ios-arrow-down-outline" />}
                                         mode="dialog"
-                                        style={{ width: 200, flex: 1}}
+                                       
                                         textStyle={{ fontWeight: 'bold' }}
                                     >
-                                        <Picker.Item label="Video Conference" value="key0" />
-                                        <Picker.Item label="Text Chat" value="key1" />
+                                        <Picker.Item label="Video conference" value="key0" />
+                                        <Picker.Item label="Text chat" value="key1" />
 
 
                                         <Picker.Item label="Appointment" value="key2" />
@@ -61,7 +61,7 @@ export default class Booking extends Component {
                              </View>
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'column', paddingVertical: 10, marginVertical: 5, backgroundColor: '#FFFFFF' ,borderTopWidth:1,borderBottomWidth:1,borderColor:"#F5fdf1"}}>
+                    <View style={{ flexDirection: 'column', padding: 10, marginVertical: 0, backgroundColor: '#FFFFFF' ,}}>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                           
                             <View style={{ flex: 1, paddingHorizontal: 5, paddingRight: 2 }}>
@@ -75,18 +75,24 @@ export default class Booking extends Component {
                              </View>
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'column',  paddingVertical: 10, marginVertical: 5, backgroundColor: '#FFFFFF', borderTopColor: '#F5fdf1',  marginTop: 1,borderTopWidth:1,borderBottomWidth:1,borderColor:"#ddd" }}>
+                    <View style={{ flexDirection: 'column',  padding: 15, marginVertical: 10, backgroundColor: '#FFFFFF'   }}>
 
-                        <Item fixedLabel>
-                            <Icon name="user" type="FontAwesome" />
-                            <Input value="Shakti Singh Chouhan" style={{marginLeft:10}} />
+                        <View style={{flex:1,flexDirection:'row',paddingBottom:15}}>
+                            <Icon name="user" type="FontAwesome" style={{position:'absolute',top:18,color:"#505050"}} />
+                            <Input value="Shakti Singh Chouhan" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
 
-                        </Item>
-                        <Item fixedLabel last >
-                            <Icon name="envelope" type="FontAwesome" />
-                            <Input value="svpsctg11@yahoo.com"  style={{marginLeft:4}}/>
-                        </Item>
-                        <View style={{ flex: 1, flexDirection: 'column', }}>
+                        </View>
+                        <View style={{flex:1,flexDirection:'row',paddingBottom:15}}>
+                            <Icon name="envelope" type="FontAwesome" style={{position:'absolute',top:15,color:"#505050"}} />
+                            <Input value="svpsctg11@yahoo.com" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
+
+                        </View>
+                        <View style={{flex:1,flexDirection:'row',paddingBottom:15}}>
+                            <Icon name="phone" type="FontAwesome" style={{position:'absolute',top:15,color:"#505050"}} />
+                            <Input value="9649567734" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
+
+                        </View>
+                        {/* <View style={{ flex: 1, flexDirection: 'column', }}>
                             <Text style={{ fontSize: 16, marginTop: 5 }}>Want to share vital information with Expert?  <Icon style={{ fontSize: 10 }} name='info-circle' type="FontAwesome" /></Text>
                             <View style={{ flexDirection: 'row', marginTop: 5 }}>
                                 <View style={{ flex: 1, flexDirection: 'row' }}>
@@ -104,7 +110,7 @@ export default class Booking extends Component {
                                     <Text style={{ marginLeft: 10 }}> No </Text>
                                 </View>
                             </View>
-                        </View>
+                        </View> */}
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <Text style={{ flex: 1 }}></Text>
                             <Text style={{ color: '#007bff', textDecorationLine: 'underline' }}>Not you?</Text>
