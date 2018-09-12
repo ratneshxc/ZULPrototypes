@@ -29,8 +29,8 @@ export default class Booking extends Component {
     render() {
         return (
             <Container>
-                <Content style={{ backgroundColor: "#F0F0F0",padding:3 }}>
-                    <View style={{ flexDirection: 'column', padding: 5, marginVertical: 5, backgroundColor: '#FFFFFF' }}>
+                <Content style={{ backgroundColor: "#F5FCFF",padding:3 }}>
+                    <View style={{ flexDirection: 'column', paddingVertical: 10, marginVertical: 5, backgroundColor: '#FFFFFF',borderTopWidth:1,borderBottomWidth:1,borderColor:"#F5fdf1" }}>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <View style={{ alignItems: 'center' }}>
                                 <Thumbnail medium round source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
@@ -61,7 +61,7 @@ export default class Booking extends Component {
                              </View>
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'column', padding: 5, marginVertical: 5, backgroundColor: '#FFFFFF' }}>
+                    <View style={{ flexDirection: 'column', paddingVertical: 10, marginVertical: 5, backgroundColor: '#FFFFFF' ,borderTopWidth:1,borderBottomWidth:1,borderColor:"#F5fdf1"}}>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                           
                             <View style={{ flex: 1, paddingHorizontal: 5, paddingRight: 2 }}>
@@ -75,7 +75,7 @@ export default class Booking extends Component {
                              </View>
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'column', padding: 5, marginVertical: 5, backgroundColor: '#FFFFFF', borderTopColor: '#ddd', borderTopWidth: 1, marginTop: 1 }}>
+                    <View style={{ flexDirection: 'column',  paddingVertical: 10, marginVertical: 5, backgroundColor: '#FFFFFF', borderTopColor: '#F5fdf1',  marginTop: 1,borderTopWidth:1,borderBottomWidth:1,borderColor:"#ddd" }}>
 
                         <Item fixedLabel>
                             <Icon name="user" type="FontAwesome" />
@@ -110,7 +110,7 @@ export default class Booking extends Component {
                             <Text style={{ color: '#007bff', textDecorationLine: 'underline' }}>Not you?</Text>
                         </View>
                     </View>
-                    <View style={{ flex: 1, flexDirection: 'column', marginTop: 5, borderTopWidth: 1, borderTopColor: '#ddd',backgroundColor:"#fff",padding:5 }}>
+                    <View style={{ flex: 1, flexDirection: 'column', marginTop: 5,borderTopWidth:1,borderBottomWidth:1,borderColor:"#F5fdf1",backgroundColor:"#fff", paddingVertical: 12 }}>
                         <View style={{ flexDirection: 'column', flex: 1, marginTop: 1 }}>
                             <Text style={{ flex: 1 }}>Total: ₹150</Text>
                             <Text style={{ color: '#28a745', textDecorationLine: 'underline' }}>Apply coupon</Text>
