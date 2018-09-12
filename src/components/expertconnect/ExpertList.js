@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity,TouchableHighlight, FlatList, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity,TouchableHighlight, FlatList, ScrollView,Image } from 'react-native';
 import { Thumbnail, Badge, Text, Icon,Button } from 'native-base';
 import StarRating from 'react-native-star-rating';
 const expertData =[
@@ -10,7 +10,7 @@ const expertData =[
         degree:'MBBS, DOMS',
         speciality:'Yoga expert',
         experience:5,
-        dimension:'dumbbell',
+        dimension: require('../../assests/images/dashboard/physical.png'),
         rating:4.3,
         reviews:150
     },
@@ -22,7 +22,7 @@ const expertData =[
         speciality:'Child Specialists',
         experience:10,
         rating:4.2,
-        dimension:'face',
+        dimension:require('../../assests/images/dashboard/emotional.png'),
         reviews:150
     },
     {
@@ -33,7 +33,7 @@ const expertData =[
         speciality:'Family expert',
         experience:5,
         rating:4.1,
-        dimension:'heart',
+        dimension:require('../../assests/images/dashboard/spiritual.png'),
         reviews:250
     },
     {
@@ -42,7 +42,7 @@ const expertData =[
         name:'Hima Soni',
         degree:'M.Sc, B.Sc',
         speciality:'Meditation expert',
-        dimension:'owl',
+        dimension:require('../../assests/images/dashboard/intellectual.png'),
         experience:5,
         rating:4.3,
         reviews:150
@@ -53,7 +53,7 @@ const expertData =[
         name:'Sonam Bothra',
         degree:'M.S, B.S',
         speciality:'Yoga expert',
-        dimension:'dumbbell',
+        dimension:require('../../assests/images/dashboard/physical.png'),
         experience:5,
         rating:4.3,
         reviews:150
@@ -65,7 +65,7 @@ const expertData =[
         degree:'M.S, B.S',
         speciality:'Yoga expert',
         experience:5,
-        dimension:'dumbbell',
+        dimension:require('../../assests/images/dashboard/physical.png'),
         rating:4.3,
         reviews:150
     },
@@ -76,7 +76,7 @@ const expertData =[
         name:'Dr. Ramesh Kumar',
         degree:'PhD, M.S, B.S',
         speciality:'Family expert',
-        dimension:'heart',
+        dimension:require('../../assests/images/dashboard/emotional.png'),
         experience:5,
         rating:4.1,
         reviews:250
@@ -99,65 +99,40 @@ const styles = StyleSheet.create({
 
 const ExpertComponent = (props) => {
     return (
-        <View style={{ flexDirection: 'column', padding: 3 , backgroundColor: '#F5FCFF'}}>
+        <View style={{ flexDirection: 'column', padding: 3 , backgroundColor: '#ffffff'}}>
             <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff',paddingBottom:2 }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail medium round source={props.item.img} />
-                   
-                    {/* <Text style={{ fontSize: 12, color: '#00b386', marginVertical: 5 }}>Available Today</Text> */}
-                </View>
-                <TouchableOpacity  style={{ flex: 2}} >
-                {/* onPress={()=>props.viewExperts()} */}
-                <View style={{ flex: 2, paddingHorizontal: 10,paddingRight:2 }}>
+                            </View>
+                <TouchableOpacity  style={{ flex: 2}} onPress={()=>props.bookExperts()} >
+           
+                <View style={{ flex: 2, paddingHorizontal: 1,borderBottomColor:'#ddd',borderBottomWidth:1 }}>
                     <View style={{ flexDirection:'row',padding:0 ,margin:0 }}>
                         <Text style={{ flex: 1 ,marginLeft:10}}>{props.item.name}</Text>
-                         <Icon name={props.item.dimension} type="MaterialCommunityIcons" style={{ fontSize: 18 ,marginRight:4}} />
-                         
+                        <Image style={{ width: 20, height: 20}} source={props.item.dimension} />
+
                     </View>
-                    <Text style={{ fontSize: 13,marginLeft:10  }}>{props.item.speciality}</Text>
-                    <View style={{ flexDirection: 'row', marginTop: 3,marginLeft:10 }}>
-                    <Text style={{color:'#000',fontSize:14}}>{props.item.rating} </Text>
+                    <Text style={{ fontSize: 12,marginLeft:10 ,color: '#505050'  }}>{props.item.speciality}</Text>
+                    <View style={{ flexDirection: 'row', marginTop: 0,marginLeft:10 }}>
+                    <Text style={{color: '#505050',fontSize:12}}>{props.item.rating} </Text>
                         <StarRating
                             disabled={false}
                             maxStars={1}
                             rating={1}
-                            fullStarColor={'#000'}
-                            starSize={16}
+                            fullStarColor={'#505050'}
+                            starSize={13}
                         />
                         <View style={{flex:1}}>
                         </View>
-                        <Button rounded primary style={{height:25,marginVertical:1}}  onPress={()=>props.bookExperts()} >
-                                {/* onPress={()=>props.goToBooking()} */}
+                        <Button rounded primary style={{height:25,marginVertical:3}}  onPress={()=>props.bookExperts()} >
+                      
                                     <Text>Connect</Text>
                                 </Button>
                     </View>
                     
-                    {/* <Text style={{ fontSize: 13, color: '#505050', margin:0}}>{props.item.degree}</Text> */}
-                   
-                    {/* <View style={{ flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 12 }}>{props.item.experience} Yrs Exp</Text>
-                    </View> */}
                 </View>
                 </TouchableOpacity>
-                {/* <View style={{ flex: 1, paddingHorizontal: 10,paddingRight:2 }}>
-                <View style={{ flexDirection: 'row', marginTop: 0 ,marginLeft:10}}>
-                    <Text style={{color:'#294787'}}>{props.item.rating}</Text>
-                        <StarRating
-                            disabled={false}
-                            maxStars={1}
-                            rating={1}
-                            style={{ width: 50 }}
-                            fullStarColor={'#294787'}
-                            starSize={18}
-                        />
-                    </View>
-                     <Text style={{ fontSize: 12, color: '#294787', marginLeft:10 }}>{props.item.reviews} Reviews</Text> 
-                    <View >
-                                <TouchableOpacity  style={{ paddingVertical: 4, backgroundColor:'white' , borderWidth: 1, margin: 0, marginLeft: 0, borderColor: '#294787', borderRadius: 50 }} onPress={()=>props.bookExperts()}>
-                                    <Text style={{ textAlign: 'center', color: '#294787' }}>Connect </Text>
-                                </TouchableOpacity>
-                            </View>
-                </View> */}
+
             </View>
 
         </View>

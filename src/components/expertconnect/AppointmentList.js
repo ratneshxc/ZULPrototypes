@@ -20,7 +20,7 @@ const Appointment = (props) => {
                     </Right>
                 </Header>
             <Header searchBar rounded>
-                <Item>
+                <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                     <Icon name="ios-search" />
                     <Input placeholder="Search appointments" placeholderTextColor="#ddd" />
                     <Icon name="ios-people" />
@@ -31,7 +31,7 @@ const Appointment = (props) => {
             </Header>
             <Content>
                 <View style={{ backgroundColor: '#ddd' }}>
-                    <ApppointmentList goToBooking={()=>props.navigation.navigate("Booking")} goToReport={()=>props.navigation.navigate("AssessmentReport")}/>
+                    <ApppointmentList booked={props.navigation.getParam('booked', false)} goToBooking={()=>props.navigation.navigate("Booking")} goToReport={()=>props.navigation.navigate("AssessmentReport")}  goToSearch={()=>props.navigation.navigate("SpecialitiyConnect")}/>
                 </View>
             </Content>
         </Container>

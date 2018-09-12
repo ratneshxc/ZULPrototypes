@@ -10,7 +10,6 @@ import ExpertList from '../components/expertconnect/ExpertConnect';
 import ExpertProfile from '../components/expertconnect/ExpertProfile';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
 import Booking from '../components/expertconnect/Booking';
-import BookingConfirmation from '../components/expertconnect/BookingConfirmation';
 import AppointmentList from '../components/expertconnect/AppointmentList';
 import Goals from '../components/goals/Goals';
 import AddGoal from '../components/goals/AddGoal';
@@ -216,12 +215,6 @@ const ExpertStack = createStackNavigator({
       title: 'Booking'
     }
   },
-  BookingConfirmation: {
-    screen: BookingConfirmation,
-    navigationOptions: {
-      header: null
-    }
-  },
   AppointmentList: {
     screen: AppointmentList,
     navigationOptions: {
@@ -264,13 +257,13 @@ const GoalStack = createStackNavigator({
   AddGoal: {
     screen: AddGoal,
     navigationOptions: {
-      title: 'Add Goal'
+      header: null
     }
   },
   GoalAssessment: {
     screen: GoalAssessment,
     navigationOptions: {
-      title: 'Setting Up goal'
+      title: 'Setting up goal'
     }
   },
   YourGoal: {
@@ -288,7 +281,7 @@ const GoalStack = createStackNavigator({
   AddActivity: {
     screen: AddActivity,
     navigationOptions: {
-      title: 'Select an activity'
+      header: null
     }
   },
   ExpertListGoals: {

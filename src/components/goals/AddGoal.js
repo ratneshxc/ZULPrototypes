@@ -15,6 +15,18 @@ class AddGoal extends Component {
     render() {
         return (
             <Container>
+                           <Header>
+                    <Left>
+                        <Button transparent  onPress={() => { this.props.navigation.goBack() }}>
+                            <Icon name='arrow-back' />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Add goal</Title>
+                    </Body>
+                    <Right>
+                    </Right>
+                </Header>
                 <Header searchBar rounded>
                     <Item style={{ borderRadius: 30, padding: 5, height: 30, flexDirection: 'row', backgroundColor: 'white' }}>
                         <Icon name="ios-search" />
@@ -36,8 +48,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                        <Icon active type="MaterialCommunityIcons" name="emoticon-happy" style={{marginLeft:2}} />
-                                        <Text style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16 }}>Complete Isha meditation track</Text>
+                                        <Icon active type="MaterialCommunityIcons" name="emoticon-happy" style={{marginLeft:2,  color:'#696969'}} />
+                                        <Text style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16, color:'#696969' }}>Complete Isha meditation track</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -46,8 +58,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                        <Icon active type="MaterialCommunityIcons" name="dumbbell" style={{marginLeft:2}}/>
-                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16 }}>Lose 6 kg in 1 month</Text>
+                                        <Icon active type="MaterialCommunityIcons" name="dumbbell" style={{marginLeft:2,  color:'#696969'}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16, color:'#696969' }}>Lose 6 kg in 1 month</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -56,8 +68,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column', flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                         <Icon active type="MaterialCommunityIcons" name="ear-hearing" style={{marginLeft:2}}/>
-                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16 }}>Complete NLP training track</Text>
+                                         <Icon active type="MaterialCommunityIcons" name="ear-hearing" style={{marginLeft:2,  color:'#696969'}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16, color:'#696969' }}>Complete NLP training track</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -77,8 +89,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                        <Icon active type="MaterialCommunityIcons" name="human" style={{marginLeft:2}} />
-                                        <Text style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16 }}>Get down to single digit body fat %</Text>
+                                        <Icon active type="MaterialCommunityIcons" name="human" style={{marginLeft:2,  color:'#696969'}} />
+                                        <Text style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16, color:'#696969' }}>Get down to single digit body fat %</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -87,8 +99,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                        <Icon active type="MaterialCommunityIcons" name="web" style={{marginLeft:2}}/>
-                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 ,fontSize:16}}>Generate $1000 from online</Text>
+                                        <Icon active type="MaterialCommunityIcons" name="web" style={{marginLeft:2,  color:'#696969'}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 ,fontSize:16, color:'#696969' }}>Generate $1000 from online</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -97,8 +109,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                        <Icon active type="MaterialCommunityIcons" name="trending-up" style={{marginLeft:2}}/>
-                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 ,fontSize:16}}>Invest in the stock market (10K)</Text>
+                                        <Icon active type="MaterialCommunityIcons" name="trending-up" style={{marginLeft:2,  color:'#696969'}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1 ,fontSize:16, color:'#696969' }}>Invest in the stock market (10K)</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -107,8 +119,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                        <Icon active type="MaterialCommunityIcons" name="gift" style={{marginLeft:2}}/>
-                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16 }}>Make 20+ donations in a year</Text>
+                                        <Icon active type="MaterialCommunityIcons" name="gift" style={{marginLeft:2,  color:'#696969'}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16, color:'#696969' }}>Make 20+ donations in a year</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -118,8 +130,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                        <Icon active type="MaterialCommunityIcons" name="voice" style={{marginLeft:2}}/>
-                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16 }}>Speak conversational Spanish</Text>
+                                        <Icon active type="MaterialCommunityIcons" name="voice" style={{marginLeft:2, color:'#696969'}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16, color:'#696969' }}>Speak conversational Spanish</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 
@@ -128,8 +140,8 @@ class AddGoal extends Component {
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column', flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
 
-                                         <Icon active type="MaterialCommunityIcons" name="yin-yang" style={{marginLeft:2}}/>
-                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16 }}>Learn and perform Reiki</Text>
+                                         <Icon active type="MaterialCommunityIcons" name="yin-yang" style={{marginLeft:2, color:'#696969'}}/>
+                                        <Text  style={{ marginLeft: 12,marginTop:4, flex: 1,fontSize:16, color:'#696969' }}>Learn and perform Reiki</Text>
 
                                         {/* <Icon name="arrow-forward" style={{ color: 'black', fontSize: 24 }} /> */}
 

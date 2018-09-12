@@ -1,52 +1,52 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView,Image } from 'react-native';
 import { Thumbnail, Badge, Text, Icon, Button } from 'native-base';
 const expertData = [{
     key: 'key1',
     title: "Meditation gurus",
-    icon: 'tripadvisor',
+    icon: require('../../assests/images/dashboard/spiritual.png'),
     img: require('../../assests/images/profilepic/yogi.jpg'),
     description: 'Mind fit classes, Meditation session, Advanced yoga session...'
 },
 {
     key: 'key2',
     title: "Financial advisors",
-    icon: 'rupee',
+    icon: require('../../assests/images/dashboard/financial.png'),
     img: require('../../assests/images/profilepic/financialExpert.jpg'),
     description: 'Investment Advice, Financial coaching, Retirement planning ...'
 },
 {
     key: 'key3',
     title: "Relationship experts",
-    icon: 'heart',
+    icon: require('../../assests/images/dashboard/emotional.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
-    description: 'Relationship advice, Marraige counsilling, Parenting tips ...'
+    description: 'Relationship advice,Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key4',
-    title: "Carrier counsellors",
-    icon: 'child',
+    title: "Career counsellors",
+    icon: require('../../assests/images/dashboard/intellectual.png'),
     img: require('../../assests/images/profilepic/teacher.jpg'),
-    description: 'Carrier guidance, Parent advice, Interest development...'
+    description: 'Career guidance, Parent advice, Interest development...'
 },
 {
     key: 'key5',
     title: "Fitness trainer",
-    icon: 'spotify',
+    icon: require('../../assests/images/dashboard/physical.png'),
     img: require('../../assests/images/profilepic/gym.jpg'),
     description: 'Weight loss, Abs and Muscles, Lean body workout ...'
 },
 {
     key: 'key6',
     title: "Relationship Experts",
-    icon: 'heart',
+    icon:require('../../assests/images/dashboard/emotional.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
-    description: 'Relationship advice, Marraige counsilling, Parenting tips ...'
+    description: 'Relationship advice, Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key7',
     title: "Meditation gurus",
-    icon: 'tripadvisor',
+    icon: require('../../assests/images/dashboard/spiritual.png'),
     img: require('../../assests/images/profilepic/yogi.jpg'),
     description: 'Mind fit classes, Meditation session, Advanced yoga session...'
 },]
@@ -55,12 +55,12 @@ const ExpertList = (props) => {
     return (
         <View>
             {/*Recently Contacted*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5FCFF' }} >
                 <Text style={{ flex: 1 }}>{'Recently connected'.toUpperCase()}</Text>
-                <Text style={{ color: "#294787", textDecorationLine: 'underline' }}>View More</Text>
+                <Text style={{ color: "#294787", textDecorationLine: 'underline' }}>View more</Text>
             </View>
             {/*Recent Experts*/}
-            <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
+            <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F5FCFF' }}>
                 <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#fff' }}>
                     <View style={{ alignItems: 'center', padding: 5 }}>
                         <Thumbnail medium round source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
@@ -68,7 +68,7 @@ const ExpertList = (props) => {
                     <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                         <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
                             <Text style={{ flex: 1, fontSize: 18 }}>Samira Reddy</Text>
-                            <Icon name='heart' type="FontAwesome" style={{ fontSize: 18 }} />
+                            <Image style={{ width: 20, height: 20 }} source={require('../../assests/images/dashboard/physical.png')} />
 
                         </View>
                         <View style={{ flexDirection: 'row', marginTop: 5 }}>
@@ -85,7 +85,7 @@ const ExpertList = (props) => {
                 </View>
             </View>
             {/*Find and connect*/}
-            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
+            <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F5FCFF' }}>
                 <Text style={{ flex: 1 }}>{'Find & Connect'.toUpperCase()}</Text>
 
             </View>
@@ -105,19 +105,19 @@ const styles = StyleSheet.create({
 const SpecialityComponent = (props) => {
     return (
 
-        <View style={{ flexDirection: 'column', padding: 3, paddingVertical: 1, backgroundColor: '#F0F0F0' }} >
+        <View style={{ flexDirection: 'column', padding: 3, paddingVertical: 1, backgroundColor: '#FFF' }} >
             <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#ffffff', padding: 2 }}>
                 <View style={{ alignItems: 'center', padding: 5 }}>
                     <Thumbnail round source={props.item.img} style={{ height: 50 }} />
                 </View>
                 <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                     <TouchableOpacity onPress={() => props.goToExperts()} >
-                        <View>
+                        <View style={{borderBottomColor:'#ddd',borderBottomWidth:1}}>
                             <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
                                 <Text style={{ flex: 1, fontSize: 18 }}>{props.item.title}</Text>
-                                <Icon name={props.item.icon} type="FontAwesome" style={{ fontSize: 18 }} />
+                                <Image style={{ width: 20, height: 20 }} source={props.item.icon} />
                             </View>
-                            <Text style={{ fontSize: 12, marginTop: 2 }}>{props.item.description}</Text>
+                            <Text style={{ fontSize: 15, marginTop: 1,marginBottom:10,color: '#505050' }}>{props.item.description}</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
