@@ -6,11 +6,15 @@ export default class UserDetails extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextInput underlineColorAndroid='transparent'
+                <TextInput 
+                underlineColorAndroid="#fff"
+                    placeholderTextColor="#fff"
                     placeholder={'Username'}
                     style={[styles.input, { borderTopLeftRadius: 10, borderTopRightRadius: 10 }]}
                 />
-                <TextInput underlineColorAndroid='transparent'
+                <TextInput
+                    underlineColorAndroid="#fff"
+                    placeholderTextColor="#fff"
                     placeholder={'Mobile Number'}
                     style={[styles.input, { borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }]}
                 />
@@ -26,17 +30,17 @@ const styles = StyleSheet.create({
     container: {
     },
     input: {
-        backgroundColor: '#ffffff',
         paddingHorizontal: 10,
         paddingVertical: 20,
-        fontSize: 20
+        fontSize: 20,
+        color:'#fff'
     },
     zulBtn: {
         backgroundColor: '#00c497',
         alignItems: 'center',
         paddingVertical: 15,
         marginVertical: 15,
-        borderRadius: 10
+        borderRadius: 5
     },
     whiteText: {
         color: '#fff'

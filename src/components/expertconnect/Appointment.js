@@ -58,11 +58,13 @@ const expertData =[
 
 class AppointmentList extends React.Component {
     componentDidMount() {
-        // Toast.show({
-        //     text: "Booking confirmed !",
-        //     type:'success',
-        //     duration:3000
-        //   });
+        if(this.props.booked){
+        Toast.show({
+            text: "Booking confirmed !",
+            type:'success',
+            duration:3000
+          });
+        }
     }
     render(){
     return (

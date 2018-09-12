@@ -9,8 +9,8 @@ class Zula extends Component {
         return (
             <View style={styles.container}>
                 <ZulaMessageContainer />
-                <ZulaWakeUpbtn />
                 <ZulaPopUpCollection />
+                <ZulaWakeUpbtn />
             </View>
         )
     }

@@ -1,78 +1,113 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, TextInput,TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { Button, Text, H2 } from 'native-base';
 
 export default class Passcode extends React.Component {
+    curFocInput = 1;
+    goToNextTextInput = (text) => {
+        setTimeout(() => {
+            if (this.curFocInput > 0 && this.curFocInput < 8) {
+                this.curFocInput++;
+            }
+            this.refs[this.curFocInput].focus();
+
+        }, 400)
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <Text style={{ marginLeft: 5, marginBottom: 5,color:'#ffffff',fontSize:20 }}>Passcode:</Text>
+                <Text style={{ marginLeft: 5, color: '#ffffff', fontSize: 20 }}>Passcode:</Text>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'1'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'2'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'3'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'4'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                 </View>
-                <Text style={{ marginLeft: 5, marginBottom: 5,color:'#ffffff',fontSize:20 }}>Re-enter Passcode:</Text>
+                <Text style={{ marginLeft: 5, color: '#ffffff', marginTop: 10, fontSize: 20 }}>Re-enter Passcode:</Text>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'5'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'6'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'7'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            ref={'8'}
+                            underlineColorAndroid="#fff"
+                            secureTextEntry={true}
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
+                            onChangeText={(text) => this.goToNextTextInput(text)}
                         />
                     </View>
                 </View>
@@ -85,29 +120,30 @@ export default class Passcode extends React.Component {
 }
 const styles = StyleSheet.create({
     container: {
-       
+
     },
     loginLogo: {
         height: 150,
         width: 150
     },
     input: {
-        backgroundColor: '#ffffff',
         paddingHorizontal: 10,
-        paddingVertical: 20,
+        paddingVertical: 10,
         fontSize: 20,
         marginHorizontal: 5,
-        borderRadius: 10,
-        textAlign:'center'
-    },zulBtn: {
+        borderRadius: 5,
+        textAlign: 'center',
+        color: '#fff'
+    },
+    zulBtn: {
         backgroundColor: '#00c497',
         alignItems: 'center',
         paddingVertical: 15,
         marginVertical: 15,
-        borderRadius: 10
+        borderRadius: 5
     },
-    whiteText:{
-        color:'#fff'
+    whiteText: {
+        color: '#fff'
     }
 
 });

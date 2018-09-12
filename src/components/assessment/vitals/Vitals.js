@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableOpacity, Animated,Image } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Animated, Image } from 'react-native';
 import { Card, Text } from 'native-base';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 import TabBar from 'react-native-underline-tabbar';
-import LinearGradient from 'react-native-linear-gradient';
+//import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f5f5f5',
     },
 
 });
@@ -18,20 +18,25 @@ const Page = ({ vitals }) => {
     return (
         <View style={styles.container}>
             {vitals.map((n, i) => (
-                <View key={i} style={{ flexDirection: 'row', marginVertical: 10, backgroundColor: '#ffffff' }}>
+                <View key={i} style={{ flexDirection: 'row', marginVertical: 5, paddingVertical: 10, backgroundColor: '#ffffff' }}>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
-                        <Text style={{ fontSize: 15, paddingHorizontal: 10 }}>{n.title.toUpperCase()}</Text>
+                        <Text style={{ fontSize: 15, color: '#495057', paddingHorizontal: 10 }}>{n.title.toUpperCase()}</Text>
                     </View>
-                    <LinearGradient colors={n.color} style={{ padding: 15, borderRadius: 50 }}>
-                        <Image source={n.icon} style={{ width: 50, height: 50 }} />
-                    </LinearGradient>
+                    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                        <View style={{ borderColor: '#ddd', borderWidth: 1, borderRadius: 50, padding: 15 }}>
+                            <Image source={n.icon} style={{ width: 50, height: 50 }} />
+                        </View>
+                    </View>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <View style={{ paddingHorizontal: 10 }}>
-                            <Text style={{ fontSize: 35 }}>{n.value}<Text style={{ fontSize: 15 }}>{n.unit}</Text></Text>
+                            {n.risk.toUpperCase() === "HIGH" ?
+                                <Text style={{ fontSize: 35, color: '#dc3545' }}>{n.value}<Text style={{ fontSize: 15, color: '#dc3545' }}>{n.unit}</Text></Text> :
+                                <Text style={{ fontSize: 35, color: '#3a3a3a' }}>{n.value}<Text style={{ fontSize: 15, color: '#3a3a3a' }}>{n.unit}</Text></Text>}
                             {n.idealValue !== null && <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
-                                <Text style={{ fontSize: 12, color: '#676767' }}>{'Ideal '.toUpperCase()}</Text>
-                                <Text style={{ color: '#676767', fontSize: 12 }}>{`${n.idealValue}${n.unit}`}</Text>
+                                <Text style={{ fontSize: 12, color: '#3a3a3a' }}>{'Ideal '.toUpperCase()}</Text>
+                                <Text style={{ color: '#3a3a3a', fontSize: 12 }}>{`${n.idealValue}${n.unit}`}</Text>
                             </View>}
+                            {n.risk.toUpperCase() === "HIGH" && <TouchableOpacity style={{ paddingVertical: 5 }}><Text style={{ fontSize: 13,textDecorationLine:'underline' }}>Need expert help?</Text></TouchableOpacity>}
                         </View>
                     </View>
                 </View>
@@ -120,28 +125,28 @@ export default class Vitals extends Component {
 
                     <Page tabLabel={{ label: "Physical" }}
                         vitals={[
-                            { title: 'BMI', value: 18.6, unit: '', icon: require('../../../assests/icons/vitals/BMI.png'), color: ['#1A2980', '#26D0CE'], idealValue: 18.5 },
-                            { title: 'Heart Rate', value: 72, unit: 'bpm', icon: require('../../../assests/icons/vitals/heart.png'), color: ['#43cea2', '#185a9d'], idealValue: 75 },
-                            { title: 'Sleep', value: 8, unit: 'hrs', icon: require('../../../assests/icons/vitals/sleep.png'), color: ['#348F50', '#56B4D3'], idealValue: 8 },                            
-                            { title: 'Work out', value: '2', unit: 'hrs', icon: require('../../../assests/icons/vitals/activity.png'), color: ['#20BDFF', '#A5FECB'], idealValue: 1 },
-                            { title: 'Walk', value: '4.7', unit: 'km', icon: require('../../../assests/icons/vitals/walk.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: 8 }
+                            { title: 'BMI', value: 18.6, unit: '', icon: require('../../../assests/icons/vitals/BMI.png'), color: ['#1A2980', '#26D0CE'], idealValue: 18.5, risk: 'low' },
+                            { title: 'Heart Rate', value: 72, unit: 'bpm', icon: require('../../../assests/icons/vitals/heart.png'), color: ['#43cea2', '#185a9d'], idealValue: 75, risk: 'low' },
+                            { title: 'Sleep', value: 2, unit: 'hrs', icon: require('../../../assests/icons/vitals/sleep.png'), color: ['#348F50', '#56B4D3'], idealValue: 8, risk: 'high' },
+                            { title: 'Work out', value: '2', unit: 'hrs', icon: require('../../../assests/icons/vitals/activity.png'), color: ['#20BDFF', '#A5FECB'], idealValue: 1, risk: 'low' },
+                            { title: 'Walk', value: '4.7', unit: 'km', icon: require('../../../assests/icons/vitals/walk.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: 8, risk: 'low' }
                         ]} />
                     <Page tabLabel={{ label: "Emotional" }} vitals={[
-                        { title: 'Mood', value: 'Happy', unit: null, icon: require('../../../assests/icons/vitals/mood.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },
-                        { title: 'Stress', value: 2, unit: 'hrs', icon: require('../../../assests/icons/vitals/stress.png'), color: ['#02AAB0', '#00CDAC'], idealValue: 1 }
+                        { title: 'Mood', value: 'Happy', unit: null, icon: require('../../../assests/icons/vitals/mood.png'), color: ['#1A2980', '#26D0CE'], idealValue: null, risk: 'low' },
+                        { title: 'Stress', value: 2, unit: 'hrs', icon: require('../../../assests/icons/vitals/stress.png'), color: ['#02AAB0', '#00CDAC'], idealValue: 1, risk: 'low' }
                     ]} />
                     <Page tabLabel={{ label: "Environmental" }} vitals={[
-                        { title: 'Temperature', value: 28, unit: '°C', icon: require('../../../assests/icons/vitals/Temperature.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },
-                        { title: 'UV Index', value: 7, unit: null, icon: require('../../../assests/icons/vitals/UV.png'), color: ['#43cea2', '#185a9d'], idealValue: null },
-                        { title: 'Humidity', value: 50, unit: '%', icon: require('../../../assests/icons/vitals/humidity.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: null }
+                        { title: 'Temperature', value: 28, unit: '°C', icon: require('../../../assests/icons/vitals/Temperature.png'), color: ['#1A2980', '#26D0CE'], idealValue: null, risk: 'low' },
+                        { title: 'UV Index', value: 7, unit: null, icon: require('../../../assests/icons/vitals/UV.png'), color: ['#43cea2', '#185a9d'], idealValue: null, risk: 'low' },
+                        { title: 'Humidity', value: 50, unit: '%', icon: require('../../../assests/icons/vitals/humidity.png'), color: ['#4CB8C4', '#3CD3AD'], idealValue: null, risk: 'low' }
                     ]} />
                     <Page tabLabel={{ label: "Financial" }} vitals={[
-                        { title: 'Net Worth', value: '12.8K', unit: 'Rs', icon: require('../../../assests/icons/vitals/income.png'), color: ['#1A2980', '#26D0CE'], idealValue: null },                        
-                        { title: 'Liquid Cash', value: '22K', unit: 'Rs', icon: require('../../../assests/icons/vitals/liquid-cash.png'), color: ['#348F50', '#56B4D3'], idealValue: null },
-                        { title: 'Total Debit', value: '45K', unit: 'Rs', icon: require('../../../assests/icons/vitals/debit.png'), color: ['#02AAB0', '#00CDAC'], idealValue: null }
+                        { title: 'Net Worth', value: '12.8K', unit: 'Rs', icon: require('../../../assests/icons/vitals/income.png'), color: ['#1A2980', '#26D0CE'], idealValue: null, risk: 'low' },
+                        { title: 'Liquid Cash', value: '22K', unit: 'Rs', icon: require('../../../assests/icons/vitals/liquid-cash.png'), color: ['#348F50', '#56B4D3'], idealValue: null, risk: 'low' },
+                        { title: 'Total Debit', value: '45K', unit: 'Rs', icon: require('../../../assests/icons/vitals/debit.png'), color: ['#02AAB0', '#00CDAC'], idealValue: null, risk: 'low' }
                     ]} />
                     <Page tabLabel={{ label: "Social" }} vitals={[
-                        { title: "Manoj's b'day", value: '2', unit: 'days to go', icon: require('../../../assests/icons/vitals/cake.png'), color: ['#1A2980', '#26D0CE'], idealValue: null }
+                        { title: "Manoj's b'day", value: '2', unit: 'days to go', icon: require('../../../assests/icons/vitals/cake.png'), color: ['#1A2980', '#26D0CE'], idealValue: null, risk: 'low' }
                     ]} />
                     <Page tabLabel={{ label: "Spiritual" }} vitals={[]} />
                     <Page tabLabel={{ label: "Intellectual" }} vitals={[]} />

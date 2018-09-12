@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'native-base';
+import { Text, Card } from 'native-base';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { connect } from 'react-redux';
 
@@ -17,7 +17,7 @@ const OverallScore = (props) => {
             <View>
                 <Text style={styles.title}>{'Overall Score'.toUpperCase()}</Text>
             </View>
-            <View style={{ backgroundColor: '#ffffff', padding: 10 }}>
+            <Card style={{ backgroundColor: '#ffffff', padding: 10 }}>
                 <AnimatedCircularProgress style={{ alignSelf: 'center' }}
                     size={180}
                     width={15}
@@ -38,7 +38,7 @@ const OverallScore = (props) => {
                         )
                     }
                 </AnimatedCircularProgress>
-            </View>
+            </Card>
         </View>
     )
 }
@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
         color: '#495057',
         fontSize: 13,
         fontWeight: 'bold',
-        padding: 10
+        paddingTop: 10,
+        paddingLeft: 10
     }
 })
 export default connect(mapStateToProps)(OverallScore);

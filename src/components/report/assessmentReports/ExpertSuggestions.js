@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
         color: '#495057',
         fontSize: 13,
         fontWeight: 'bold',
-        padding: 10
+        paddingTop: 10,
+        paddingLeft: 10
     }
 })
 export default connect(mapStateToProps)(ExpertSuggestions);

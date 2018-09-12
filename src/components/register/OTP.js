@@ -35,47 +35,47 @@ export default class OTP extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={{ marginLeft: 5, marginBottom: 5, color: '#ffffff', fontSize: 20 }}>Enter OTP which is sent on ur mobile:</Text>
+                <Text style={{ marginLeft: 5, color: '#ffffff', fontSize: 20 }}>Enter OTP which is sent on ur mobile:</Text>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            underlineColorAndroid="#fff"
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
                             value={this.state.digitOne}
                         />
-                        
+
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            underlineColorAndroid="#fff"
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
                             value={this.state.digitTwo}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            underlineColorAndroid="#fff"
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
                             value={this.state.digitThree}
                         />
                     </View>
                     <View style={{ flex: 1 }}>
                         <TextInput
-                            underlineColorAndroid='transparent'
+                            underlineColorAndroid="#fff"
+                            placeholderTextColor="#fff"
                             keyboardType={"numeric"}
                             style={styles.input}
-                            placeholder={'___'}
                             value={this.state.digitFour}
                         />
                     </View>
                 </View>
-                <Text style={{ marginLeft: 5, marginVertical: 10, padding: 5, textAlign: 'center', fontWeight: 'bold', color: '#ffffff' }}>Dint get OTP?</Text>
+                <Text style={{ marginLeft: 5, marginVertical: 10, padding: 5, textAlign: 'center', textDecorationLine: 'underline', color: '#ffffff' }}>Dint get OTP?</Text>
                 <TouchableOpacity style={styles.zulBtn} onPress={this.props.nextHandler}>
                     <Text style={[styles.whiteText, { fontWeight: 'bold' }]}>{'Submit OTP'.toUpperCase()}</Text>
                 </TouchableOpacity>
@@ -85,25 +85,26 @@ export default class OTP extends React.Component {
 }
 const styles = StyleSheet.create({
     container: {
-     
+
     },
     loginLogo: {
         height: 150,
         width: 150
     },
     input: {
-        backgroundColor: '#ffffff',
         paddingHorizontal: 10,
-        paddingVertical: 20,
+        paddingVertical: 10,
         fontSize: 20,
         marginHorizontal: 5,
-        borderRadius: 10,
-        textAlign: 'center'
-    }, zulBtn: {
+        borderRadius: 5,
+        textAlign: 'center',
+        color: '#fff'
+    },
+    zulBtn: {
         backgroundColor: '#00c497',
         alignItems: 'center',
         paddingVertical: 15,
-        borderRadius: 10
+        borderRadius: 5
     },
     whiteText: {
         color: '#fff'
