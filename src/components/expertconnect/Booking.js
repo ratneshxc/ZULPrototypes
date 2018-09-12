@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TouchableOpacity, ScrollView, Platform } from 'react-native';
+import { TouchableOpacity, ScrollView, Platform,Image } from 'react-native';
 import {
     Container,
     Header,
@@ -38,7 +38,7 @@ export default class Booking extends Component {
                             <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                                 <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
                                     <Text style={{ flex: 1 }}>Samira Reddy</Text>
-                                    <Icon name='dumbbell' type="MaterialCommunityIcons" style={{ fontSize: 18, marginRight: 5, }} />
+                                    <Image style={{ width: 20, height: 20 }} source={require('../../assests/images/dashboard/physical.png')} />
                                 </View>
                                 {/* <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialist</Text> */}
                                 <View style={{ flexDirection: 'row',position:'absolute', top:10,left:2 }}>
@@ -79,17 +79,17 @@ export default class Booking extends Component {
 
                         <View style={{flex:1,flexDirection:'row',paddingBottom:15}}>
                             <Icon name="user" type="FontAwesome" style={{position:'absolute',top:18,color:"#505050"}} />
-                            <Input value="Shakti Singh Chouhan" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
+                            <Input value="John Doe" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
 
                         </View>
                         <View style={{flex:1,flexDirection:'row',paddingBottom:15}}>
                             <Icon name="envelope" type="FontAwesome" style={{position:'absolute',top:15,color:"#505050"}} />
-                            <Input value="svpsctg11@yahoo.com" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
+                            <Input value="johndoe@gmail.com" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
 
                         </View>
                         <View style={{flex:1,flexDirection:'row',paddingBottom:15}}>
                             <Icon name="phone" type="FontAwesome" style={{position:'absolute',top:15,color:"#505050"}} />
-                            <Input value="9649567734" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
+                            <Input value="9249567734" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
 
                         </View>
                         {/* <View style={{ flex: 1, flexDirection: 'column', }}>
@@ -113,36 +113,32 @@ export default class Booking extends Component {
                         </View> */}
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <Text style={{ flex: 1 }}></Text>
-                            <Text style={{ color: '#007bff', textDecorationLine: 'underline' }}>Not you?</Text>
+                            <Text style={{ color: '#294787', textDecorationLine: 'underline' }}>Not you?</Text>
                         </View>
                     </View>
-                    <View style={{ flex: 1, flexDirection: 'column', marginTop: 5,borderTopWidth:1,borderBottomWidth:1,borderColor:"#F5fdf1",backgroundColor:"#fff", paddingVertical: 12 }}>
+                    <View style={{ flex: 1, flexDirection: 'column', marginTop: 5,borderTopWidth:1,borderBottomWidth:1,borderColor:"#F5fdf1",backgroundColor:"#fff", padding: 15 }}>
                         <View style={{ flexDirection: 'column', flex: 1, marginTop: 1 }}>
                             <Text style={{ flex: 1 }}>Total: ₹150</Text>
-                            <Text style={{ color: '#28a745', textDecorationLine: 'underline' }}>Apply coupon</Text>
+                            <Text style={{ color: '#294787', textDecorationLine: 'underline' }}>Redeem zing cash</Text>
                         </View>
 
                     </View>
 
-
+        {(Platform.OS === 'ios') ?
+                    
+                    <Button block onPress={() => this.props.navigation.navigate("AppointmentList")}>
+                        <Text style={{ color: 'black', fontSize: 16, }}>Book</Text>
+                    </Button>
+           
+            :
+            
+                    <Button style={{marginTop:10}}block  onPress={() => this.props.navigation.navigate("AppointmentList", { booked: true })}>
+                        <Text style={{ color: 'white', fontSize: 16, }}>Book</Text>
+                    </Button>
+               
+        }
                 </Content>
-                {(Platform.OS === 'ios') ?
-                    <Footer>
-                        <FooterTab>
-                            <Button block onPress={() => this.props.navigation.navigate("AppointmentList")}>
-                                <Text style={{ color: 'black', fontSize: 16, }}>Book</Text>
-                            </Button>
-                        </FooterTab>
-                    </Footer>
-                    :
-                    <Footer>
-                        <FooterTab>
-                            <Button block onPress={() => this.props.navigation.navigate("AppointmentList", { booked: true })}>
-                                <Text style={{ color: 'white', fontSize: 16, }}>Book</Text>
-                            </Button>
-                        </FooterTab>
-                    </Footer>
-                }
+        
             </Container>
         )
     }
