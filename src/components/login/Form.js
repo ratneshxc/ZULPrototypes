@@ -10,12 +10,16 @@ export default class Form extends Component {
           <Text style={{ fontSize: 25, color: '#fff', textAlign: 'center' }}>Login To Account</Text>
         </View>
         <View style={{ flexDirection: 'column', flex: 1, justifyContent: 'center' }}>
-          <TextInput underlineColorAndroid='transparent'
+          <TextInput
+            underlineColorAndroid="#fff"
+            placeholderTextColor="#fff"
             placeholder={'Username'}
             style={[styles.input, { borderTopLeftRadius: 10, borderTopRightRadius: 10 }]}
           />
-          <TextInput underlineColorAndroid='transparent'
-            placeholder={'Password'}
+          <TextInput
+            underlineColorAndroid="#fff"
+            placeholderTextColor="#fff"
+            placeholder={'Passcode'}
             secureTextEntry={true}
             style={[styles.input, { borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }]}
           />
@@ -60,10 +64,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   input: {
-    backgroundColor: '#ffffff',
     paddingHorizontal: 10,
     paddingVertical: 20,
-    fontSize: 20
+    fontSize: 20,
+    color: '#fff'
   },
   loginLogo: {
     height: 100,
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 15,
     marginVertical: 15,
-    borderRadius: 10
+    borderRadius: 5
   },
   forgotBtn: {
     padding: 5

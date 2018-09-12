@@ -22,11 +22,11 @@ class GoalVideo extends Component {
             <View>
                 <View style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{  fontSize: 18, color: '#696969' }}>{'Daily 10 min meditation'}</Text>
+                        <Text style={{  fontSize: 18, color: '#000000' }}>{'Daily 10 min meditation'}</Text>
                     </View>
                     <View>
                         <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
-                            <Text style={{ alignSelf: 'center', color: 'gray' }}>Watch this video to complete your activity</Text>
+                            {/* <Text style={{ alignSelf: 'center', color: 'gray' }}>Watch this video to complete your activity</Text> */}
                             {this.state.visibilityImageState ?
                                 <TouchableOpacity onPress={this.videoToggle}>
                                     <Image style={{ height: 220, width: screenwidth, alignSelf: 'center' }} source={require("../../assests/icons/imagesVideo.jpeg")} />

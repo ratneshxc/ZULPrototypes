@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
-import { Text, Button, Thumbnail, List, ListItem, Left, Right, Body, Icon } from 'native-base';
+import { Text, Card, Thumbnail, List, ListItem, Left, Right, Body, Icon } from 'native-base';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => (
@@ -13,7 +13,7 @@ const ActionPlan = (props) => {
     return (
         <View>
             <Text style={styles.title}>{'Suggested Goals'.toUpperCase()}</Text>
-            <View style={{ backgroundColor: '#ffffff' }}>
+            <Card style={{ backgroundColor: '#ffffff' }}>
                 <List>
                     {props.actionPlan.map((x, i) => (
                         <ListItem thumbnail key={i}>
@@ -30,7 +30,7 @@ const ActionPlan = (props) => {
                         </ListItem>
                     ))}
                 </List>
-            </View>
+            </Card>
         </View>
     )
 }
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
         color: '#495057',
         fontSize: 13,
         fontWeight: 'bold',
-        padding: 10
+        paddingTop: 10,
+        paddingLeft: 10
     }
 })
 export default connect(mapStateToProps)(ActionPlan);

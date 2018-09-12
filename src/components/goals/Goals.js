@@ -85,9 +85,16 @@ const LevelHeader = () => {
                 <View style={{ flex: 4 }}>
                     <Text style={{ fontSize: 25, textAlign: 'center', color: 'gray' }}>23</Text>
                     <Text style={{ fontSize: 13, textAlign: 'center', color: 'gray' }}>{'Pending Activities'.toUpperCase()}</Text>
+                    <View style={{ height: 8, backgroundColor: '#f5f5f5' }}>
+                        <View style={{ height: 8, width: '70%' }}>
+                            <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} colors={['#1A2980', '#26D0CE']} >
+                                <View style={{ height: 8 }}></View>
+                            </LinearGradient>
+                        </View>
+                    </View>
                 </View>
             </View>
-            <View style={{ flexDirection: 'row' }}>
+            {/* <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 1 }}>
                     <Text style={{ fontSize: 18, color: 'gray' }}>30 points in 30 days</Text>
                 </View>
@@ -100,7 +107,7 @@ const LevelHeader = () => {
                         </View>
                     </View>
                 </View>
-            </View>
+            </View> */}
         </View>
     )
 }
@@ -121,7 +128,7 @@ const GoalHeaderDetails = (props) => {
                 :
                 <TouchableOpacity onPress={props.GoalsDetails.expertNavigation}>
                     <View><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10, alignSelf: 'flex-end', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
-                    <Text style={{ fontSize: 13, color: '#696969' }}>Need expert help?</Text>
+                    <Text style={{ fontSize: 13, textDecorationLine: 'underline', color: '#696969' }}>Need expert help?</Text>
                 </TouchableOpacity>
             }
         </View>
@@ -149,7 +156,7 @@ const GoalsSection = (props) => {
 const ActivityDetails = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 14, marginTop: 10, padding: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 14, marginTop: 20, paddingLeft:5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
             <View style={{}}>
                 {props.GoalsDetails.cardType === 'single' ?
                     <Activity GoalsDetails={props.GoalsDetails} /> :
@@ -166,10 +173,10 @@ const Activity = (props) => {
             <TouchableOpacity onPress={props.GoalsDetails.goalStatus}>
                 <View style={styles.activity}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{ fontSize: 18, color: '#696969' }}>{props.GoalsDetails.title}</Text>
+                        <Text style={{ fontSize: 18, color: '#000000' }}>{props.GoalsDetails.title}</Text>
                     </View>
                     <View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>1.2km more for the day</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>2km</Text></View>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}></Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>2km</Text></View>
                         <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: 'lightgray' }}>
                             <View style={{ height: 22, width: '45%', backgroundColor: '#f17e3a', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>0.8km</Text></View>
                         </View>
@@ -193,7 +200,7 @@ const MultipleActivity = (props) => {
             x.progressBar ?
                 <View key={i} style={styles.activity}>
                     <View style={{ flexDirection: 'row', marginBottom: 10 }}>
-                        <Text style={{ fontSize: 18, color: '#696969' }}>{x.title}</Text>
+                        <Text style={{ fontSize: 18, color: '#000000' }}>{x.title}</Text>
                     </View>
                     <View style={{ justifyContent: 'space-between', marginBottom: 20 }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
@@ -204,7 +211,7 @@ const MultipleActivity = (props) => {
                 </View> :
                 <View key={i} style={styles.activity}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{ fontSize: 18, color: '#696969' }}>{x.title}</Text>
+                        <Text style={{ fontSize: 18, color: '#000000' }}>{x.title}</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ flex: 5, flexDirection: 'row' }}>

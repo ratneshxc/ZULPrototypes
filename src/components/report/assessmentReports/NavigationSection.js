@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import { Thumbnail, Text, Icon, List, ListItem, Left, Right, Body } from 'native-base';
+import { Thumbnail, Text, Icon, List, ListItem, Left, Right, Body, Card } from 'native-base';
 
 const mapStateToProps = state => (
     {
@@ -13,7 +13,7 @@ const NavigationSection = (props) => {
     return (
         <View>
             <Text style={styles.title}>{'What Next?'.toUpperCase()}</Text>
-            <View style={{backgroundColor:'#ffffff'}}>
+            <Card style={{ backgroundColor: '#ffffff' }}>
                 <List>
                     {props.next.map((x, i) => (
                         <ListItem thumbnail key={i}>
@@ -29,7 +29,7 @@ const NavigationSection = (props) => {
                         </ListItem>
                     ))}
                 </List>
-            </View>
+            </Card>
         </View>
     )
 }
@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
         color: '#495057',
         fontSize: 13,
         fontWeight: 'bold',
-        padding: 10
+        paddingTop: 10,
+        paddingLeft: 10
     }
 })
 export default connect(mapStateToProps)(NavigationSection);

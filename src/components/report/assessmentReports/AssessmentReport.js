@@ -23,7 +23,7 @@ class AssessmentReport extends React.Component {
         let report = this.props.report;
         return (
             <Container style={styles.container}>
-                <Content style={{ backgroundColor: '#F5FCFF' }}>
+                <Content style={{ backgroundColor: '#f7f7f7' }}>
                     <OverallScore />
                     <Observations />
                     <ActionPlan />
