@@ -78,7 +78,7 @@ export default class Booking extends Component {
                     <View style={{ flexDirection: 'column',  padding: 15, marginVertical: 10, backgroundColor: '#FFFFFF'   }}>
 
                         <View style={{flex:1,flexDirection:'row',paddingBottom:15}}>
-                            <Icon name="user" type="FontAwesome" style={{position:'absolute',top:18,color:"#505050"}} />
+                            <Icon name="user" type="FontAwesome" style={{position:'absolute',top:15,color:"#505050"}} />
                             <Input value="John Doe" style={{flex:1,borderBottomColor:'#111111',borderBottomWidth:1,marginLeft:40}} />
 
                         </View>

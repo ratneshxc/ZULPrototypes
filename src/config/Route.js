@@ -246,7 +246,56 @@ const ExpertStack = createStackNavigator({
     }
   })
 
+  const AppointmentStack = createStackNavigator({
+    AppointmentList: {
+      screen: AppointmentList,
+      navigationOptions: {
+        header: null
+      }
+    },
+    SpecialitiyConnect: {
+      screen: SpecialitiyConnect,
+      navigationOptions: {
+        header: null
+      }
+    },
+    ExpertList: {
+      screen: ExpertList,
+      navigationOptions: {
+        header: null
+      }
+    },
+    Booking: {
+      screen: Booking,
+      navigationOptions: {
+        title: 'Booking'
+      }
+    },
 
+    ExpertProfile: {
+      screen: ExpertProfile,
+      navigationOptions: {
+        header: null
+      }
+    },
+    NotificationExpert: {
+      screen: Notification,
+      navigationOptions: {
+        title: 'Notifications'
+      }
+    }
+  },
+    {
+      navigationOptions: {
+        headerStyle: {
+          backgroundColor: '#3f51b5',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        }
+      }
+    })
 const GoalStack = createStackNavigator({
   Goals: {
     screen: Goals,
@@ -340,6 +389,17 @@ const MainApp = createDrawerNavigator({
       }
     }
   },
+  AppointmentsListConnect: {
+    screen: AppointmentStack,
+    navigationOptions: {
+      title: 'Appointments',
+      drawerIcon: ({ focused, tintColor }) => {
+        const iconName = `list-alt${focused ? '' : ''}`;
+        return <FontIcon name={iconName} size={25} color={tintColor} />;
+      }
+    }
+  }
+  ,
   ExpertConnect: {
     screen: ExpertStack,
     navigationOptions: {
