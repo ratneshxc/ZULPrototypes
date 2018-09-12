@@ -132,7 +132,7 @@ export default class Booking extends Component {
            
             :
             
-                    <Button style={{marginTop:10}}block  onPress={() => this.props.navigation.navigate("AppointmentList", { booked: true })}>
+                    <Button style={{marginTop:1}}block  onPress={() => this.props.navigation.navigate("AppointmentList", { booked: true })}>
                         <Text style={{ color: 'white', fontSize: 16, }}>Book</Text>
                     </Button>
                
