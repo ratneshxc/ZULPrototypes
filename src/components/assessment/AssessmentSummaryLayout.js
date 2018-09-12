@@ -114,7 +114,7 @@ class AssessmentSummaryLayout extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F5FCFF'
+        backgroundColor: '#f7f7f7'
     },
     title: {
         paddingHorizontal: 10,

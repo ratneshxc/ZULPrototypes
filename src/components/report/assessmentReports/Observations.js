@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from 'native-base';
+import { Text, Card } from 'native-base';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => (
@@ -14,13 +14,13 @@ const Observations = (props) => {
     return (
         <View>
             <Text style={styles.title}>{'Observations'.toUpperCase()}</Text>
-            <View style={{ flexWrap: 'wrap', alignItems: 'flex-start', flexDirection: 'row', backgroundColor: '#ffffff', padding: 10 }}>
+            <Card style={{ flexWrap: 'wrap', alignItems: 'flex-start', flexDirection: 'row', backgroundColor: '#ffffff', padding: 10 }}>
                 {props.observations.map((x, i) => (
                     x.type === 'danger' ?
-                        <Text style={[styles.tag, { color: 'red' }]} key={i}>{x.text}</Text> :
-                        <Text style={[styles.tag, { color: 'green' }]} key={i}>{x.text}</Text>
+                        <Text style={[styles.tag, { color: '#dc3545' }]} key={i}>{x.text}</Text> :
+                        <Text style={[styles.tag, { color: '#00b386' }]} key={i}>{x.text}</Text>
                 ))}
-            </View>
+            </Card>
         </View>
     )
 }
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
         color: '#495057',
         fontSize: 13,
         fontWeight: 'bold',
-        padding: 10
+        paddingTop: 10,
+        paddingLeft: 10
     }
 })
 export default connect(mapStateToProps)(Observations);

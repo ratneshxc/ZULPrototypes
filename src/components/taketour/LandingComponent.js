@@ -68,7 +68,7 @@ class LandingComponent extends React.Component {
                     </View>
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <Text style={{ fontSize: 30, textAlign: 'center', color: '#fff' }}>20,083</Text>
-                        <Text style={styles.statement}>People have already taken assessments</Text>
+                        <Text style={styles.statement}>People are happy checking wellness</Text>
                         <TouchableOpacity style={styles.takeAssessmentBtn} onPress={this.selectAssessment}>
                             <Text style={styles.textWhite}>{'Check Your Wellness'.toUpperCase()}</Text>
                         </TouchableOpacity>
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         color: '#ffffff',
         textAlign: 'center',
+        paddingHorizontal: 10
     },
     textWhite: {
         color: '#ffffff',
@@ -123,23 +124,23 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         alignItems: 'center',
         paddingVertical: 15,
-        borderRadius: 10
+        borderRadius: 5
     },
     registerBtn: {
         backgroundColor: '#2980b9',
         alignItems: 'center',
         paddingVertical: 15,
         width: 130,
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10
+        borderTopRightRadius: 5,
+        borderBottomRightRadius: 5
     },
     logInBtn: {
         backgroundColor: '#27ae60',
         alignItems: 'center',
         paddingVertical: 15,
         width: 130,
-        borderTopLeftRadius: 10,
-        borderBottomLeftRadius: 10
+        borderTopLeftRadius: 5,
+        borderBottomLeftRadius: 5
     },
     loginLogo: {
         height: 150,

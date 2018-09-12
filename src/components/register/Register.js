@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, Dimensions ,Keyboard} from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
 import { Text } from 'native-base';
 import UserDetails from './UserDetails';
 import OTP from './OTP';
@@ -96,7 +96,7 @@ export default class Register extends React.Component {
         </View>
 
         <AwesomeAlert
-          contentContainerStyle={{ width: Dimensions.get('window').width }}
+          alertContainerStyle={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
           // titleStyle={{ fontSize: 20, color: '#3a3a3a' }}
           messageStyle={{ fontSize: 15, color: '#3a3a3a' }}
           confirmButtonTextStyle={{ fontSize: 16, paddingVertical: 5, textAlign: 'center' }}
