@@ -118,7 +118,7 @@ export default class GoalAssessment extends Component {
                             showProgress={true}
                             title="We are preparing goal for you!"
                             message="Just a moment"
-                            closeOnTouchOutside={true}
+                            closeOnTouchOutside={false}
                             closeOnHardwareBackPress={false}
                             showCancelButton={false}
                             showConfirmButton={false}
