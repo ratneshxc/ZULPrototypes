@@ -112,6 +112,13 @@ export default class Booking extends Component {
                             </View>
                         </View> */}
                         <View style={{ flex: 1, flexDirection: 'row' }}>
+                        {/* <View >
+                                    <CheckBox
+                                        color="black"
+                                        checked={true}
+                                    />
+                                    <Text style={{ marginLeft: 10 }}> Share vitals</Text>
+                                </View> */}
                             <Text style={{ flex: 1 }}></Text>
                             <Text style={{ color: '#294787', textDecorationLine: 'underline' }}>Not you?</Text>
                         </View>
