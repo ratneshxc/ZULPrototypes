@@ -66,6 +66,6 @@ const styles = StyleSheet.create({
   questionStatement: {
     color: '#ffffff',
     fontWeight: '400',
-    fontSize: 30
+    fontSize: 25
   }
 })
