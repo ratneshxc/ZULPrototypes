@@ -33,11 +33,11 @@ export default class Booking extends Component {
                     <View style={{ flexDirection: 'column', padding: 10, backgroundColor: '#FFFFFF',borderBottomWidth:1,borderColor:"#ddd" }}>
                         <View style={{ flex: 1, flexDirection: 'row' }}>
                             <View style={{ alignItems: 'center' }}>
-                                <Thumbnail medium round source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
+                                <Thumbnail medium round source={require('../../assests/images/profilepic/Ananda_Bodhi.jpeg')} />
                             </View>
                             <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                                 <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                                    <Text style={{ flex: 1 }}>Samira Reddy</Text>
+                                    <Text style={{ flex: 1,fontSize:18 }}>Anandha bodhi</Text>
                                     <Image style={{ width: 20, height: 20 }} source={require('../../assests/images/dashboard/physical.png')} />
                                 </View>
                                 {/* <Text style={{ fontSize: 13, color: '#505050' }}>Child Specialist</Text> */}
