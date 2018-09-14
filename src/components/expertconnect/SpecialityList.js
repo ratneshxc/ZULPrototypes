@@ -3,49 +3,49 @@ import { View, StyleSheet, TouchableOpacity, FlatList, ScrollView,Image } from '
 import { Thumbnail, Badge, Text, Icon, Button } from 'native-base';
 const expertData = [{
     key: 'key1',
-    title: "Meditation gurus",
+    title: "Mind body interventions",
     icon: require('../../assests/images/dashboard/spiritual.png'),
     img: require('../../assests/images/profilepic/yogi.jpg'),
     description: 'Mind fit classes, Meditation session, Advanced yoga session...'
 },
 {
     key: 'key2',
-    title: "Financial advisors",
+    title: "Executive and business coach",
     icon: require('../../assests/images/dashboard/financial.png'),
     img: require('../../assests/images/profilepic/financialExpert.jpg'),
     description: 'Investment Advice, Financial coaching, Retirement planning ...'
 },
 {
     key: 'key3',
-    title: "Relationship experts",
+    title: "Behavior therapist",
     icon: require('../../assests/images/dashboard/emotional.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice,Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key4',
-    title: "Career counsellors",
+    title: "Life and career coach",
     icon: require('../../assests/images/dashboard/intellectual.png'),
     img: require('../../assests/images/profilepic/teacher.jpg'),
     description: 'Career guidance, Parent advice, Interest development...'
 },
 {
     key: 'key5',
-    title: "Fitness trainer",
+    title: "Sports & exercise nutritionist",
     icon: require('../../assests/images/dashboard/physical.png'),
     img: require('../../assests/images/profilepic/gym.jpg'),
     description: 'Weight loss, Abs and Muscles, Lean body workout ...'
 },
 {
     key: 'key6',
-    title: "Relationship Experts",
+    title: "Behavior therapist",
     icon:require('../../assests/images/dashboard/emotional.png'),
     img: require('../../assests/images/profilepic/loveguru.jpg'),
     description: 'Relationship advice, Marriage counselling, Parenting tips ...'
 },
 {
     key: 'key7',
-    title: "Meditation gurus",
+    title: "Mind body interventions",
     icon: require('../../assests/images/dashboard/spiritual.png'),
     img: require('../../assests/images/profilepic/yogi.jpg'),
     description: 'Mind fit classes, Meditation session, Advanced yoga session...'
