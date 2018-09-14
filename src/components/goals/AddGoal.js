@@ -34,7 +34,7 @@ class AddGoal extends Component {
                         <Icon name="ios-people" />
                     </Item>
                 </Header>
-                <Content style={[styles.container, { backgroundColor: '#F5FCFF' }]}>
+                <Content style={[styles.container, { backgroundColor: '#f7f7f7' }]}>
                     <View>
                         {/*Search results*/}
                         <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >

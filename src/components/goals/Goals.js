@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Image } from 'react-native';
-import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Card } from 'native-base';
+import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Card, Badge } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import GoalVideo from './GoalVideo';
 import NotificationCount from '../common/header/NotificationCount';
@@ -12,7 +12,7 @@ class Goals extends Component {
         this.state = {
             Goals: [{
                 cardType: "multiple", imageURL: require('../../assests/icons/Running.png'),
-                headerTitle: 'Lose 4kg weight', headerContent: '', trackStatus: 'On track', level: 'Level 2',
+                headerTitle: 'Lose 4kg weight', headerContent: '', trackStatus: 'On track', level: 'Level 1',
                 goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal,
                 data: [{
                     title: "Run 3 km, five days a week", content: "",
@@ -68,7 +68,7 @@ class Goals extends Component {
                         <NotificationCount getAllNotifications={() => this.props.navigation.navigate("NotificationGoals")} />
                     </Right>
                 </Header>
-                <Content style={{ backgroundColor: '#F5FCFF' }}>
+                <Content style={{ backgroundColor: '#f7f7f7' }}>
                     <LevelHeader />
                     <GoalsSection Goals={this.state.Goals} />
                     <View style={{ height: 60 }}></View>
@@ -108,20 +108,6 @@ const LevelHeader = () => {
                     </View>
                 </View>
             </View>
-            {/* <View style={{ flexDirection: 'row' }}>
-                <View style={{ flex: 1 }}>
-                    <Text style={{ fontSize: 18, color: 'gray' }}>30 points in 30 days</Text>
-                </View>
-                <View style={{ flex: 1 }}>
-                    <View style={{ height: 8, backgroundColor: '#f5f5f5', marginTop: 10 }}>
-                        <View style={{ height: 8, width: '70%' }}>
-                            <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} colors={['#1A2980', '#26D0CE']} >
-                                <View style={{ height: 8 }}></View>
-                            </LinearGradient>
-                        </View>
-                    </View>
-                </View>
-            </View> */}
         </View>
     )
 }
@@ -160,7 +146,6 @@ const GoalsSection = (props) => {
     return (
         <View>
             <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10, color: '#495057', fontWeight: 'bold' }}>{'Your Goals'.toUpperCase()}</Text>
-            {/* <GoalDetails GoalsDetails={props.Goals[2]} /> */}
             <GoalDetails GoalsDetails={props.Goals[1]} />
             <GoalDetails GoalsDetails={props.Goals[0]} />
         </View>
@@ -170,60 +155,33 @@ const GoalsSection = (props) => {
 const ActivityDetails = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 14, marginTop: 20, paddingLeft: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 14,marginTop: 20, paddingLeft: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
             <View style={{}}>
                 <MultipleActivity GoalsDetails={props.GoalsDetails} />
             </View>
         </View>
     )
 }
-
-// const Activity = (props) => {
-//     return (
-//         props.GoalsDetails.video ? <GoalVideo /> :
-//             <TouchableOpacity onPress={props.GoalsDetails.goalStatus}>
-//                 <View style={styles.activity}>
-//                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-//                         <Text style={{ fontSize: 18, color: '#000000' }}>{props.GoalsDetails.title}</Text>
-//                     </View>
-//                     <View>
-//                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}></Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>2km</Text></View>
-//                         <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: 'lightgray' }}>
-//                             <View style={{ height: 22, width: '45%', backgroundColor: '#f17e3a', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>0.8km</Text></View>
-//                         </View>
-//                     </View>
-//                     <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
-//                         <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
-//                         <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
-//                         <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
-//                         <DayActivityStatus isLive="false" iconName="check-circle" day="W" />
-//                         <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
-//                         <DayActivityStatus isLive="false" iconName="check-circle" day="F" />
-//                         <DayActivityStatus isLive="false" iconName="times-circle" day="S" />
-//                     </View>
-//                 </View>
-//             </TouchableOpacity>
-//     )
-// }
 const MultipleActivity = (props) => {
     return (
         props.GoalsDetails.data.map((x, i) => (
             x.progressBar ?
-                <TouchableWithoutFeedback key={i} onPress={ x.totalProgess==='1km'? props.GoalsDetails.goalStatus :null}>
+                <TouchableWithoutFeedback key={i} onPress={x.totalProgess === '1km' ? props.GoalsDetails.goalStatus : null}>
                     <View style={styles.activity}>
-                        <View style={{ flexDirection: 'row', marginBottom: 10 }}>
-                            <Text style={{ fontSize: 18, color: '#000000' }}>{x.title}</Text>
+                        <View style={{ flexDirection: 'row', marginBottom: 5, marginTop:10 }}>
+                            <Text style={{ fontSize: 17, color: '#495057' }}>{x.title}</Text>
                         </View>
-                        <View style={{ justifyContent: 'space-between', marginBottom: 10 }}>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
+                        <View style={{ justifyContent: 'space-between', marginBottom: 5 }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
                             <View style={{ backgroundColor: '#f5f5f5' }}>
                                 <View style={{ height: 5, width: x.progress + '%', backgroundColor: x.progressColor, borderRadius: 20 }}></View>
                             </View>
                             <View>
-                                <Icon name="triangle-up" type="Entypo" style={{ left: 10 * x.progress / 12.5 + '%', padding: 0 }} />
-                                <Text style={{ left: 10 * x.progress / 12.5 + '%' }}>{x.totalProgess}</Text></View>
+                                <Icon name="triangle-up" type="Entypo" style={{ left: 10 * x.progress / 12.5 + '%', padding: 0, color: '#7B68EE' }} />
+                                <Badge style={{ left: 10 * x.progress / 12.5 + '%', backgroundColor: '#7B68EE', bottom: 13 }}><Text style={{ paddingBottom: 0 }}>{x.totalProgess}</Text></Badge>
+                            </View>
                         </View>
-                        <View style={{ flexDirection: 'row', marginBottom: 10  }}>
+                        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                             <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
                             <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
                             <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
@@ -279,7 +237,6 @@ const styles = StyleSheet.create({
     activity: {
         padding: 5,
         backgroundColor: '#fff',
-        marginVertical: 2,
         justifyContent: 'space-between',
         borderBottomWidth: 0.5,
         borderBottomColor: 'lightgray'
