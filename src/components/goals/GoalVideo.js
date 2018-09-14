@@ -19,7 +19,7 @@ class GoalVideo extends Component {
     }
     render() {
         return (
-            <View>
+            <View style={{borderBottomWidth: 0.5, borderBottomColor: 'lightgray'}}>
                 <View style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
                         <Text style={{  fontSize: 18, color: '#000000' }}>{'Daily 10 min meditation'}</Text>
