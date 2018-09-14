@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, Image } from 'react-native';
 import { Container, Header, Body, Left, Button, Icon, Right, Title, Content, Text, Fab, Card } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import GoalVideo from './GoalVideo';
@@ -11,17 +11,31 @@ class Goals extends Component {
         super(props);
         this.state = {
             Goals: [{
-                cardType: "multiple", imageURL: require('../../assests/icons/piggy-bank.png'),
-                headerTitle: 'Save 35k income tax', headerContent: 'Started 54 days ago', trackStatus: 'On track', level: 'Level 2',
+                cardType: "multiple", imageURL: require('../../assests/icons/Running.png'),
+                headerTitle: 'Lose 4kg weight', headerContent: '', trackStatus: 'On track', level: 'Level 2',
+                goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal,
                 data: [{
-                    title: "Track your daily expenses", content: "₹ 15,578 expense for this month",
-                    progressBar: true, progress: '60', totalProgess: '₹ 2,87,539', endProgess: '1 year',
-                    point: "40 points"
+                    title: "Run 3 km, five days a week", content: "",
+                    progressBar: true, progress: '33', totalProgess: '1km', endProgess: '3km', progressColor: '#f17e3a',
+                    point: "40 points", video: false
                 },
-                { title: "Invest in ELSS fund", content: "Pay for this month", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points" }]
+                { title: "Play badminton for 1 hour, 3 days a week", content: "", progressBar: true, progress: '66', totalProgess: '2 hour', endProgess: '3 hour', progressColor: 'green', point: "40 points", video: false },
+                { title: "30 minutes of swimming, 3 days a week", content: "30 more mins", progressBar: true, progress: '66', totalProgess: '1 hour', endProgess: '1.5 hour', progressColor: 'green', point: "40 points", video: false }]
             },
-            { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, imageURL: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
-            { cardType: "single", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
+            {
+                cardType: "multiple", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'),
+                headerTitle: 'Relieve stress and anger', headerContent: '', trackStatus: 'Off track', level: 'Level 2',
+                goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal,
+                data: [{ title: "Practise pranayama for 30 minutes", content: "30 more mins", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points", video: true },
+                {
+                    title: "Sleep for 7-9 hours per day", content: "",
+                    progressBar: true, progress: '30', totalProgess: '2 hour', endProgess: '7 hour', progressColor: '#f17e3a',
+                    point: "40 points", video: false
+                },
+                { title: "Walk in the garden for 30 minutes", content: "", progressBar: true, progress: '80', totalProgess: '20 mins', endProgess: '30 mins', progressColor: 'green', point: "40 points", video: false }]
+            }
+                // { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, imageURL: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
+                // { cardType: "single", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
             ]
         }
     }
@@ -146,7 +160,7 @@ const GoalsSection = (props) => {
     return (
         <View>
             <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10, color: '#495057', fontWeight: 'bold' }}>{'Your Goals'.toUpperCase()}</Text>
-            <GoalDetails GoalsDetails={props.Goals[2]} />
+            {/* <GoalDetails GoalsDetails={props.Goals[2]} /> */}
             <GoalDetails GoalsDetails={props.Goals[1]} />
             <GoalDetails GoalsDetails={props.Goals[0]} />
         </View>
@@ -156,78 +170,92 @@ const GoalsSection = (props) => {
 const ActivityDetails = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 14, marginTop: 20, paddingLeft:5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 14, marginTop: 20, paddingLeft: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
             <View style={{}}>
-                {props.GoalsDetails.cardType === 'single' ?
-                    <Activity GoalsDetails={props.GoalsDetails} /> :
-                    <MultipleActivity GoalsDetails={props.GoalsDetails} />
-                }
+                <MultipleActivity GoalsDetails={props.GoalsDetails} />
             </View>
         </View>
     )
 }
 
-const Activity = (props) => {
-    return (
-        props.GoalsDetails.video ? <GoalVideo /> :
-            <TouchableOpacity onPress={props.GoalsDetails.goalStatus}>
-                <View style={styles.activity}>
-                    <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{ fontSize: 18, color: '#000000' }}>{props.GoalsDetails.title}</Text>
-                    </View>
-                    <View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}></Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>2km</Text></View>
-                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: 'lightgray' }}>
-                            <View style={{ height: 22, width: '45%', backgroundColor: '#f17e3a', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>0.8km</Text></View>
-                        </View>
-                    </View>
-                    <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
-                        <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
-                        <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="W" />
-                        <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="F" />
-                        <DayActivityStatus isLive="false" iconName="times-circle" day="S" />
-                    </View>
-                </View>
-            </TouchableOpacity>
-    )
-}
+// const Activity = (props) => {
+//     return (
+//         props.GoalsDetails.video ? <GoalVideo /> :
+//             <TouchableOpacity onPress={props.GoalsDetails.goalStatus}>
+//                 <View style={styles.activity}>
+//                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
+//                         <Text style={{ fontSize: 18, color: '#000000' }}>{props.GoalsDetails.title}</Text>
+//                     </View>
+//                     <View>
+//                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}></Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>2km</Text></View>
+//                         <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: 'lightgray' }}>
+//                             <View style={{ height: 22, width: '45%', backgroundColor: '#f17e3a', borderRadius: 20 }}><Text style={{ left: '70%', color: 'white' }}>0.8km</Text></View>
+//                         </View>
+//                     </View>
+//                     <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
+//                         <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
+//                         <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
+//                         <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+//                         <DayActivityStatus isLive="false" iconName="check-circle" day="W" />
+//                         <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+//                         <DayActivityStatus isLive="false" iconName="check-circle" day="F" />
+//                         <DayActivityStatus isLive="false" iconName="times-circle" day="S" />
+//                     </View>
+//                 </View>
+//             </TouchableOpacity>
+//     )
+// }
 const MultipleActivity = (props) => {
     return (
         props.GoalsDetails.data.map((x, i) => (
             x.progressBar ?
-                <View key={i} style={styles.activity}>
-                    <View style={{ flexDirection: 'row', marginBottom: 10 }}>
-                        <Text style={{ fontSize: 18, color: '#000000' }}>{x.title}</Text>
-                    </View>
-                    <View style={{ justifyContent: 'space-between', marginBottom: 20 }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
-                        <View style={{ backgroundColor: '#f5f5f5', borderRadius: 20, borderWidth: 1.5, borderColor: 'lightgray' }}>
-                            <View style={{ height: 22, width: x.progress + '%', backgroundColor: '#f17e3a', borderRadius: 20 }}><Text style={{ left: 12 * x.progress / 11.6 + '%', color: 'white' }}>{x.totalProgess}</Text></View>
+                <TouchableWithoutFeedback key={i} onPress={ x.totalProgess==='1km'? props.GoalsDetails.goalStatus :null}>
+                    <View style={styles.activity}>
+                        <View style={{ flexDirection: 'row', marginBottom: 10 }}>
+                            <Text style={{ fontSize: 18, color: '#000000' }}>{x.title}</Text>
+                        </View>
+                        <View style={{ justifyContent: 'space-between', marginBottom: 10 }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
+                            <View style={{ backgroundColor: '#f5f5f5' }}>
+                                <View style={{ height: 5, width: x.progress + '%', backgroundColor: x.progressColor, borderRadius: 20 }}></View>
+                            </View>
+                            <View>
+                                <Icon name="triangle-up" type="Entypo" style={{ left: 10 * x.progress / 12.5 + '%', padding: 0 }} />
+                                <Text style={{ left: 10 * x.progress / 12.5 + '%' }}>{x.totalProgess}</Text></View>
+                        </View>
+                        <View style={{ flexDirection: 'row', marginBottom: 10  }}>
+                            <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
+                            <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
+                            <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+                            <DayActivityStatus isLive="false" iconName="check-circle" day="W" />
+                            <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+                            <DayActivityStatus isLive="false" iconName="check-circle" day="F" />
+                            <DayActivityStatus isLive="false" iconName="times-circle" day="S" />
                         </View>
                     </View>
-                </View> :
-                <View key={i} style={styles.activity}>
-                    <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{ fontSize: 18, color: '#000000' }}>{x.title}</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row' }}>
-                        <View style={{ flex: 5, flexDirection: 'row' }}>
-                            <Text style={{ color: 'gray' }}>{'Pay for this month'}</Text>
+                </TouchableWithoutFeedback> :
+                x.video ?
+                    <GoalVideo key={i} />
+                    :
+                    <View key={i} style={styles.activity}>
+                        <View style={{ flexDirection: 'row', marginBottom: 5 }}>
+                            <Text style={{ fontSize: 18, color: '#000000' }}>{x.title}</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row' }}>
+                            <View style={{ flex: 5, flexDirection: 'row' }}>
+                                <Text style={{ color: 'gray' }}>{''}</Text>
+                            </View>
+                        </View>
+                        <View style={{ flexDirection: 'row' }}>
+                            <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
+                            <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
+                            <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+                            <DayActivityStatus isLive="false" iconName="check-circle" day="W" />
+                            <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
+                            <DayActivityStatus isLive="false" iconName="check-circle" day="F" />
+                            <DayActivityStatus isLive="false" iconName="times-circle" day="S" />
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
-                        <DayActivityStatus isLive="true" iconName="eercast" day="Jan" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="Dec" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="Nov" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="Oct" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="Sep" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="Aug" />
-                        <DayActivityStatus isLive="false" iconName="check-circle" day="Jul" />
-                    </View>
-                </View>
         ))
     )
 }
