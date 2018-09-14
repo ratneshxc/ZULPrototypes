@@ -18,7 +18,8 @@ const Notifications = (props) => {
                         <Text style={{
                             color: '#495057',
                             fontSize: 13,
-                            fontWeight: 'bold'
+                            fontWeight: 'bold',
+                            backgroundColor:'#f7f7f7'
                         }}>{'Latest'.toUpperCase()}</Text>
                     </ListItem>
                     {props.newNotifications.map((x, i) => (
