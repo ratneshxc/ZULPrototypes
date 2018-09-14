@@ -16,11 +16,11 @@ class Goals extends Component {
                 goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal,
                 data: [{
                     title: "Run 3 km, five days a week", content: "",
-                    progressBar: true, progress: '33', totalProgess: '1km', endProgess: '3km',
+                    progressBar: true, progress: '33', totalProgess: '1km', endProgess: '3km', progressColor: '#f17e3a',
                     point: "40 points", video: false
                 },
-                { title: "Play badminton for 1 hour, 3 days a week", content: "", progressBar: true, progress: '66', totalProgess: '2 hour', endProgess: '3 hour', point: "40 points", video: false },
-                { title: "30 minutes of swimming, 3 days a week", content: "30 more mins", progressBar: true, progress: '66', totalProgess: '1 hour', endProgess: '1.5 hour', point: "40 points", video: false }]
+                { title: "Play badminton for 1 hour, 3 days a week", content: "", progressBar: true, progress: '66', totalProgess: '2 hour', endProgess: '3 hour', progressColor: 'green', point: "40 points", video: false },
+                { title: "30 minutes of swimming, 3 days a week", content: "30 more mins", progressBar: true, progress: '66', totalProgess: '1 hour', endProgess: '1.5 hour', progressColor: 'green', point: "40 points", video: false }]
             },
             {
                 cardType: "multiple", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'),
@@ -28,9 +28,9 @@ class Goals extends Component {
                 goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal,
                 data: [{ title: "Practise pranayama for 30 minutes", content: "30 more mins", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points", video: true },
                 { title: "Sleep for 7-9 hours per day", content: "",
-                    progressBar: true, progress: '30', totalProgess: '2 hour', endProgess: '7 hour',
+                    progressBar: true, progress: '30', totalProgess: '2 hour', endProgess: '7 hour', progressColor: '#f17e3a',
                     point: "40 points", video: false },
-                { title: "Walk in the garden for 30 minutes", content: "", progressBar: true, progress: '80', totalProgess: '20 mins', endProgess: '30 mins', point: "40 points", video: false }]
+                { title: "Walk in the garden for 30 minutes", content: "", progressBar: true, progress: '80', totalProgess: '20 mins', endProgess: '30 mins', progressColor: 'green', point: "40 points", video: false }]
             }
                 // { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, imageURL: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
                 // { cardType: "single", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
@@ -214,13 +214,13 @@ const MultipleActivity = (props) => {
                     <View style={{ justifyContent: 'space-between', marginBottom: 20 }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 4 }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
                         <View style={{ backgroundColor: '#f5f5f5' }}>
-                            <View style={{ height: 5, width: x.progress + '%', backgroundColor: '#f17e3a', borderRadius: 20 }}></View>
+                            <View style={{ height: 5, width: x.progress + '%', backgroundColor: x.progressColor, borderRadius: 20 }}></View>
                         </View>
                         <View>
                             <Icon name="triangle-up" type="Entypo" style={{ left: 10 * x.progress / 12.5 + '%', padding: 0 }} />
                             <Text style={{ left: 10 * x.progress / 12.5 + '%' }}>{x.totalProgess}</Text></View>
                     </View>
-                    <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
+                    <View style={{ flexDirection: 'row' }}>
                         <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
                         <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
                         <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
@@ -242,7 +242,7 @@ const MultipleActivity = (props) => {
                             <Text style={{ color: 'gray' }}>{''}</Text>
                         </View>
                     </View>
-                    <View style={{ flexDirection: 'row', paddingVertical: 10 }}>
+                    <View style={{ flexDirection: 'row' }}>
                         <DayActivityStatus isLive="true" iconName="eercast" day="Today" />
                         <DayActivityStatus isLive="false" iconName="check-circle" day="M" />
                         <DayActivityStatus isLive="false" iconName="times-circle" day="T" />
