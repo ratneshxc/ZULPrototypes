@@ -34,16 +34,16 @@ class AddGoal extends Component {
                         <Icon name="ios-people" />
                     </Item>
                 </Header>
-                <Content style={[styles.container, { backgroundColor: '#f7f7f7' }]}>
+                <Content style={[styles.container, { backgroundColor: '#F0F0F0' }]}>
                     <View>
                         {/*Search results*/}
-                        <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }} >
-                            <Text style={{ flex: 1 ,color:'black',fontSize:16, color: '#3a3a3a'}}>YOUR RECENT SEARCHES</Text>
+                        <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0', marginTop:10 }} >
+                            <Text style={{ flex: 1 ,color:'black',fontSize:13, color: '#495057', fontWeight:'bold'}}>YOUR RECENT SEARCHES</Text>
                         </View>
                         {/*Search results*/}
 
-                        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
-                            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#fff' }}>
+                        <View style={{ flexDirection: 'column', backgroundColor: '#F0F0F0' }}>
+                            <View style={{ flex: 1, padding: 5, flexDirection: 'column', backgroundColor: '#fff' }}>
 
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>
@@ -79,12 +79,12 @@ class AddGoal extends Component {
                             </View>
                         </View>
                         {/*Suggestions*/}
-                        <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0' }}>
-                            <Text style={{ flex: 1 ,color:'black',fontSize:16, color: '#3a3a3a'}}>SUGGESTED GOALS</Text>
+                        <View style={{ flexDirection: 'row', padding: 5, backgroundColor: '#F0F0F0', marginTop:10 }}>
+                            <Text style={{ flex: 1 ,color:'black',fontSize:13, color: '#495057', fontWeight:'bold' }}>SUGGESTED GOALS</Text>
 
                         </View>
-                        <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F0F0F0' }}>
-                            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: '#fff' }}>
+                        <View style={{ flexDirection: 'column',  backgroundColor: '#F0F0F0' }}>
+                            <View style={{ flex: 1,padding: 5, flexDirection: 'column', backgroundColor: '#fff' }}>
 
                                 <TouchableOpacity onPress={this.goToYourAddGoal} style={{ flexDirection: 'column',borderBottomColor:'#ddd',borderBottomWidth:1, flex: 1 }}>
                                     <View style={{ flex: 1, flexDirection: 'row', height: 50, paddingTop: 10 }}>

@@ -41,7 +41,7 @@ class YourGoal extends Component {
                             <Text style={{ fontSize: 14, color:'gray' }}>Duration 4 week</Text>
                         </Divider> */}
                     </Card>
-                    <View style={{ padding: 10 }}>
+                    <View style={{ padding: 10, backgroundColor:'white' }}>
                         <StepProgress />
                     </View>
                     {/* <View style={{ height:100}}>
@@ -52,9 +52,9 @@ class YourGoal extends Component {
                         </Pages>
                     </View> */}
                     <View>
-                        <View style={{ flex: 1, flexDirection: 'row' }}>
+                        <View style={{ flex: 1, flexDirection: 'row', marginTop:15 }}>
                             <Left>
-                                <Text style={{ left: 20, fontSize: 13, flex: 2, alignSelf: 'flex-start' ,color: '#495057', fontWeight: 'bold' }}>ACTIVITIES</Text>
+                                <Text style={{ left: 10, fontSize: 13, flex: 2, alignSelf: 'flex-start' ,color: '#495057', fontWeight: 'bold' }}>ACTIVITIES</Text>
                             </Left>
                             <Right>
                                 <Icon onPress={this.goToYourActivity} style={{ flex: 2, alignSelf: 'flex-end', right: 15 }} active type="Ionicons" name="ios-add-circle-outline" />

@@ -127,7 +127,7 @@ const GoalHeaderDetails = (props) => {
                 <View><Text style={{ fontSize: 13, backgroundColor: '#00b386', color: '#fff', borderRadius: 10, alignSelf: 'center', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
                 :
                 <TouchableOpacity onPress={props.GoalsDetails.expertNavigation}>
-                    <View><Text style={{ fontSize: 13, backgroundColor: '#ce3c3e', color: '#fff', borderRadius: 10, alignSelf: 'flex-end', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
+                    <View><Text style={{ fontSize: 13, backgroundColor: 'red', color: '#fff', borderRadius: 10, alignSelf: 'flex-end', paddingLeft: 5, paddingRight: 5 }}>{props.GoalsDetails.trackStatus}</Text></View>
                     <Text style={{ fontSize: 13, textDecorationLine: 'underline', color: '#696969' }}>Need expert help?</Text>
                 </TouchableOpacity>
             }
@@ -145,7 +145,7 @@ const GoalDetails = (props) => {
 const GoalsSection = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 13, marginVertical: 10, marginHorizontal: 10, color: '#495057', fontWeight: 'bold' }}>{'Your Goals'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 13, marginTop:10, marginHorizontal: 10, color: '#495057', fontWeight: 'bold' }}>{'Your Goals'.toUpperCase()}</Text>
             <GoalDetails GoalsDetails={props.Goals[1]} />
             <GoalDetails GoalsDetails={props.Goals[0]} />
         </View>
