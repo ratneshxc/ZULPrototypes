@@ -13,25 +13,23 @@ class GoalVideo extends Component {
         }
     }
     videoToggle = () => {
-            this.setState({
-                visibilityImageState: !this.state.visibilityImageState
-            })
+        this.setState({
+            visibilityImageState: !this.state.visibilityImageState
+        })
     }
     render() {
         return (
             <View style={styles.activity}>
                 <View style={{ backgroundColor: '#fff', marginVertical: 2 }}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{  fontSize: 17, color: '#495057' }}>{'Practise pranayama for 30 minutes'}</Text>
+                        <Text style={{ fontSize: 17, color: '#495057' }}>{'Practise pranayama for 30 minutes'}</Text>
                     </View>
                     <View>
                         <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
-                            {/* <Text style={{ alignSelf: 'center', color: 'gray' }}>Watch this video to complete your activity</Text> */}
                             {this.state.visibilityImageState ?
                                 <TouchableOpacity onPress={this.videoToggle}>
                                     <Image style={{ height: 220, width: screenwidth, alignSelf: 'center' }} source={require("../../assests/icons/imagesVideo.jpeg")} />
-                                </TouchableOpacity>
-                                :
+                                </TouchableOpacity> :
                                 <TouchableOpacity onPress={this.videoToggle}>
                                     <Video source={require("../../assests/videos/DSC_0082.mp4")}   // Can be a URL or a local file.
                                         ref={(ref) => {
@@ -47,10 +45,8 @@ class GoalVideo extends Component {
                                 </TouchableOpacity>
                             }
                         </View>
-
                     </View>
                 </View>
-
             </View>
         )
     }
@@ -66,7 +62,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         justifyContent: 'space-between',
         borderBottomWidth: 0.5,
-        borderBottomColor: 'lightgray'
+        borderBottomColor: 'lightgray',
+        paddingTop: 15
     }
 });
 export default GoalVideo;

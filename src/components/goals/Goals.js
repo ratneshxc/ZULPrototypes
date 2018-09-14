@@ -26,17 +26,13 @@ class Goals extends Component {
                 cardType: "multiple", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'),
                 headerTitle: 'Relieve stress and anger', headerContent: '', trackStatus: 'Off track', level: 'Level 2',
                 goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal,
-                data: [{ title: "Practise pranayama for 30 minutes", content: "30 more mins", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points", video: true },
-                {
+                data: [{
                     title: "Sleep for 7-9 hours per day", content: "",
                     progressBar: true, progress: '30', totalProgess: '2 hour', endProgess: '7 hour', progressColor: '#f17e3a',
                     point: "40 points", video: false
-                },
+                }, { title: "Practise pranayama for 30 minutes", content: "30 more mins", progressBar: false, progress: '', totalProgess: '', endProgess: '', point: "40 points", video: true },
                 { title: "Walk in the garden for 30 minutes", content: "", progressBar: true, progress: '80', totalProgess: '20 mins', endProgess: '30 mins', progressColor: '#00b386', point: "40 points", video: false }]
-            }
-                // { cardType: "single", goalStatus: this.goalStatus, expertNavigation: this.expertNavigation, yourGoal: this.yourGoal, imageURL: require('../../assests/icons/Running.png'), headerTitle: 'Lose 4kg weight', headerContent: 'Started 20 days ago', trackStatus: 'Off track', level: 'Level 1', title: "Run 2km daily", content: "0.6km more for the day", contentStatus: 'Completed', contentStatusData: '1km', video: false, point: "30 points" },
-                // { cardType: "single", imageURL: require('../../assests/icons/buddhist-yoga-pose.png'), headerTitle: 'Relieve stress and anger', headerContent: 'Started 5 days ago', trackStatus: 'On track', level: 'Level 1', title: "Watch this video to complete your activity", content: "Today's task is done", video: true, point: "30 points" }
-            ]
+            }]
         }
     }
 
@@ -89,16 +85,16 @@ const LevelHeader = () => {
     return (
         <View style={{ backgroundColor: '#ffffff', padding: 10 }}>
             <View style={{ flexDirection: 'row' }}>
-                <View style={{ flex: 3 }}>
+                <View style={{ flex: 7, alignSelf: 'center' }}>
                     <View style={{ padding: 5, borderWidth: 0.8, borderColor: 'gray', borderRadius: 8, flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 25, alignSelf: 'center', color: 'gray' }}>Level 1</Text>
-                        <Icon name="angle-right" type="FontAwesome" style={{ alignSelf: 'center', color: 'gray' }} />
+                        <Text style={{ fontSize: 30, alignSelf: 'center', color: 'gray' }}>Level 1</Text>
+                        <Icon name="angle-right" type="FontAwesome" style={{ alignSelf: 'center', color: 'gray', fontSize: 35, left: 5 }} />
                     </View>
                 </View>
-                <View style={{ flex: 3 }}></View>
-                <View style={{ flex: 4 }}>
-                    <Text style={{ fontSize: 25, textAlign: 'center', color: 'gray' }}>23</Text>
-                    <Text style={{ fontSize: 13, textAlign: 'center', color: 'gray' }}>{'Pending Activities'.toUpperCase()}</Text>
+                <View style={{ flex: 1 }}></View>
+                <View style={{ flex: 12 }}>
+                    <Text style={{ fontSize: 23, textAlign: 'center', color: 'gray' }}>6</Text>
+                    <Text style={{ fontSize: 13, textAlign: 'center', color: 'gray', paddingTop: 0 }}>{'Pending Activities'.toUpperCase()}</Text>
                     <View style={{ height: 8, backgroundColor: '#f5f5f5' }}>
                         <View style={{ height: 8, width: '70%' }}>
                             <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} colors={['#1A2980', '#26D0CE']} >
@@ -145,7 +141,7 @@ const GoalDetails = (props) => {
 const GoalsSection = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 13, marginTop:10, marginHorizontal: 10, color: '#495057', fontWeight: 'bold' }}>{'Your Goals'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 13, marginTop: 10, marginHorizontal: 10, color: '#495057', fontWeight: 'bold' }}>{'Your Goals'.toUpperCase()}</Text>
             <GoalDetails GoalsDetails={props.Goals[1]} />
             <GoalDetails GoalsDetails={props.Goals[0]} />
         </View>
@@ -155,7 +151,7 @@ const GoalsSection = (props) => {
 const ActivityDetails = (props) => {
     return (
         <View>
-            <Text style={{ fontSize: 14,marginTop: 20, paddingLeft: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
+            <Text style={{ fontSize: 14, marginTop: 20, paddingLeft: 5, color: 'gray' }}>{'Activities'.toUpperCase()}</Text>
             <View style={{}}>
                 <MultipleActivity GoalsDetails={props.GoalsDetails} />
             </View>
@@ -168,11 +164,11 @@ const MultipleActivity = (props) => {
             x.progressBar ?
                 <TouchableWithoutFeedback key={i} onPress={x.totalProgess === '1km' ? props.GoalsDetails.goalStatus : null}>
                     <View style={styles.activity}>
-                        <View style={{ flexDirection: 'row', marginBottom: 5, marginTop:10 }}>
+                        <View style={{ flexDirection: 'row', marginBottom: 5, marginTop: 10 }}>
                             <Text style={{ fontSize: 17, color: '#495057' }}>{x.title}</Text>
                         </View>
                         <View style={{ justifyContent: 'space-between', marginBottom: 5 }}>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ alignSelf: 'flex-start', color: 'gray' }}>{x.content}</Text><Text style={{ alignSelf: 'flex-end', color: 'gray' }}>{x.endProgess}</Text></View>
                             <View style={{ backgroundColor: '#f5f5f5' }}>
                                 <View style={{ height: 5, width: x.progress + '%', backgroundColor: x.progressColor, borderRadius: 20 }}></View>
                             </View>
