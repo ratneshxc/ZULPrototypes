@@ -14,13 +14,13 @@ const Observations = (props) => {
     return (
         <View>
             <Text style={styles.title}>{'Observations'.toUpperCase()}</Text>
-            <Card style={{ flexWrap: 'wrap', alignItems: 'flex-start', flexDirection: 'row', backgroundColor: '#ffffff', padding: 10 }}>
+            <View style={{ flexWrap: 'wrap', alignItems: 'flex-start', flexDirection: 'row', backgroundColor: '#ffffff', padding: 10 }}>
                 {props.observations.map((x, i) => (
                     x.type === 'danger' ?
                         <Text style={[styles.tag, { color: '#dc3545' }]} key={i}>{x.text}</Text> :
                         <Text style={[styles.tag, { color: '#00b386' }]} key={i}>{x.text}</Text>
                 ))}
-            </Card>
+            </View>
         </View>
     )
 }

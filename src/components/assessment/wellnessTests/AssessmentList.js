@@ -38,7 +38,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                 </Body>
                                 <Right>
                                     <TouchableOpacity onPress={() => selectReport(x.title)}>
-                                        <Text style={{ fontSize: 12, padding: 10, color: '#495057' }}>{'View Report'.toUpperCase()}</Text>
+                                        <Text style={{ fontSize: 12, padding: 10, color: '#495057' }}>View Report</Text>
                                     </TouchableOpacity>
                                 </Right>
                             </ListItem> :

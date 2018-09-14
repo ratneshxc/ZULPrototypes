@@ -17,7 +17,6 @@ const ProfileCard = (props) => {
             <Text style={{ marginVertical: 2,color:'#3a3a3a' }}>{props.profile.name}</Text>
             <Text style={{ fontSize: 12,color:'#3a3a3a' }}>{props.profile.speciality}</Text>
             <View style={{ flexDirection: 'row' }}>
-                <Text style={{ color: '#3a3a3a' }}>{props.profile.score}</Text>
                 <StarRating
                     disabled={false}
                     maxStars={1}
@@ -26,6 +25,7 @@ const ProfileCard = (props) => {
                     fullStarColor={'#00b386'}
                     starSize={18}
                 />
+                <Text style={{ color: '#00b386' }}>{props.profile.score}</Text>
             </View>
         </Card>
     )

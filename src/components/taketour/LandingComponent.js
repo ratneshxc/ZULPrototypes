@@ -20,7 +20,6 @@ class LandingComponent extends React.Component {
     constructor() {
         super();
         this.wallpaperPaths = [
-            { path: require('../../assests/images/loginwallpapers/img01.jpg') },
             { path: require('../../assests/images/loginwallpapers/img02.png') },
             { path: require('../../assests/images/loginwallpapers/img03.png') },
             { path: require('../../assests/images/loginwallpapers/img04.png') },
@@ -38,8 +37,8 @@ class LandingComponent extends React.Component {
             this.setState({
                 imageURL: this.wallpaperPaths[i].path
             })
-            i === 5 ? i = 0 : i++;
-        }, 10000);
+            i === 4 ? i = 0 : i++;
+        }, 5000);
     }
     componentWillUnmount() {
         clearInterval(this.backInterval);

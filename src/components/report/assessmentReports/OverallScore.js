@@ -17,7 +17,7 @@ const OverallScore = (props) => {
             <View>
                 <Text style={styles.title}>{'Overall Score'.toUpperCase()}</Text>
             </View>
-            <Card style={{ backgroundColor: '#ffffff', padding: 10 }}>
+            <View style={{ backgroundColor: '#ffffff', padding: 10 }}>
                 <AnimatedCircularProgress style={{ alignSelf: 'center' }}
                     size={180}
                     width={15}
@@ -38,7 +38,7 @@ const OverallScore = (props) => {
                         )
                     }
                 </AnimatedCircularProgress>
-            </Card>
+            </View>
         </View>
     )
 }
