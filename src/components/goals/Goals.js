@@ -177,8 +177,8 @@ const MultipleActivity = (props) => {
                                 <View style={{ height: 5, width: x.progress + '%', backgroundColor: x.progressColor, borderRadius: 20 }}></View>
                             </View>
                             <View>
-                                <Icon name="triangle-up" type="Entypo" style={{ left: 10 * x.progress / 12.5 + '%', padding: 0, color: '#7B68EE' }} />
-                                <Badge style={{ left: 10 * x.progress / 12.5 + '%', backgroundColor: '#7B68EE', bottom: 13 }}><Text style={{ paddingBottom: 0 }}>{x.totalProgess}</Text></Badge>
+                                <Icon name="triangle-up" type="Entypo" style={{ left: 10 * x.progress / 12.5 + '%', padding: 0, color: 'green' }} />
+                                <Badge style={{ left: 10 * x.progress / 12.5 + '%', backgroundColor: 'green', bottom: 13 }}><Text style={{ paddingBottom: 0 }}>{x.totalProgess}</Text></Badge>
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', marginBottom: 20 }}>
