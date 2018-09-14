@@ -19,10 +19,10 @@ class GoalVideo extends Component {
     }
     render() {
         return (
-            <View style={{borderBottomWidth: 0.5, borderBottomColor: 'lightgray'}}>
-                <View style={{ padding: 5, backgroundColor: '#fff', marginVertical: 2 }}>
+            <View style={styles.activity}>
+                <View style={{ backgroundColor: '#fff', marginVertical: 2 }}>
                     <View style={{ flexDirection: 'row', marginBottom: 5 }}>
-                        <Text style={{  fontSize: 18, color: '#000000' }}>{'Practise pranayama for 30 minutes'}</Text>
+                        <Text style={{  fontSize: 17, color: '#495057' }}>{'Practise pranayama for 30 minutes'}</Text>
                     </View>
                     <View>
                         <View style={{ flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -61,5 +61,12 @@ const styles = StyleSheet.create({
         width: screenwidth,
         alignSelf: 'center'
     },
+    activity: {
+        padding: 5,
+        backgroundColor: '#fff',
+        justifyContent: 'space-between',
+        borderBottomWidth: 0.5,
+        borderBottomColor: 'lightgray'
+    }
 });
 export default GoalVideo;

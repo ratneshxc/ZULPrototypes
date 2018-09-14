@@ -21,7 +21,7 @@ class YourGoal extends Component {
     }
     render() {
         return (
-            <Container style={{ backgroundColor:'#F5FCFF'}}>
+            <Container style={{ backgroundColor:'#f7f7f7'}}>
                 <Content style={styles.container}>
                     <Card style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between', }}>
                         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', padding: 5 }}>
