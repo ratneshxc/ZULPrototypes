@@ -47,8 +47,11 @@ class ExportConnect extends React.Component {
                             <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }}>
                                 <Text>Online</Text>
                             </Badge>
-                            <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }} >
-                                <Text>Family Specialist</Text>
+                            <Badge style={{ marginHorizontal: 5, backgroundColor: '#007bff' }}>
+                                <Text>Yoga experts</Text>
+                            </Badge>
+                            <Badge style={{ marginHorizontal: 5, backgroundColor: '#e8e8e8' }} >
+                                <Text style={{ color: "#000000" }}>Family Specialist</Text>
                             </Badge>
                             <Badge style={{ marginHorizontal: 5, backgroundColor: '#e8e8e8' }}  >
                                 <Text style={{ color: "#000000" }}>BTM Second Stage</Text>

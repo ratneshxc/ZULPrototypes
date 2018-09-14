@@ -63,11 +63,11 @@ const ExpertList = (props) => {
             <View style={{ flexDirection: 'column', padding: 5, backgroundColor: '#F5FCFF' }}>
                 <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#fff' }}>
                     <View style={{ alignItems: 'center', padding: 5 }}>
-                        <Thumbnail medium round source={require('../../assests/images/profilepic/stylish-girl.jpg')} />
+                        <Thumbnail medium round source={require('../../assests/images/profilepic/Ananda_Bodhi.jpeg')} />
                     </View>
                     <View style={{ flex: 1, paddingHorizontal: 10, paddingRight: 2 }}>
                         <View style={{ flexDirection: 'row', padding: 0, margin: 0 }}>
-                            <Text style={{ flex: 1, fontSize: 18 }}>Samira Reddy</Text>
+                            <Text style={{ flex: 1, fontSize: 18 }}>Anandha bodhi</Text>
                             <Image style={{ width: 20, height: 20 }} source={require('../../assests/images/dashboard/physical.png')} />
 
                         </View>
