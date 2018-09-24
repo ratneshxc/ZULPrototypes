@@ -3,6 +3,8 @@ package com.zinguplife;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.entria.views.RNViewOverflowPackage;
+import com.github.yamill.orientation.OrientationPackage;
 import net.no_mad.tts.TextToSpeechPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
@@ -34,6 +36,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNViewOverflowPackage(),
+            new OrientationPackage(),
             new TextToSpeechPackage(),
             new MPAndroidChartPackage(),
             new ReactVideoPackage(),

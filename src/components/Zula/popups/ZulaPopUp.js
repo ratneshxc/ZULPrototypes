@@ -10,9 +10,9 @@ const ZulaPopUp = (props) => {
                 <Card style={styles.innerContainer}>
                     {props.content}
                 </Card>
-                <View style={{ justifyContent: 'flex-end', flexDirection: 'row' }}>
+                {/* <View style={{ justifyContent: 'flex-end', flexDirection: 'row' }}>
                     <View style={styles.triangleShapeCSS} />
-                </View>
+                </View> */}
             </View>
         </View>
     )

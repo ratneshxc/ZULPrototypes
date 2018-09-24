@@ -8,7 +8,7 @@ import TabBar from 'react-native-underline-tabbar';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#f7f7f7',
     },
 
 });
@@ -36,7 +36,7 @@ const Page = ({ vitals }) => {
                                 <Text style={{ fontSize: 12, color: '#3a3a3a' }}>{'Ideal '.toUpperCase()}</Text>
                                 <Text style={{ color: '#3a3a3a', fontSize: 12 }}>{`${n.idealValue}${n.unit}`}</Text>
                             </View>}
-                            {n.risk.toUpperCase() === "HIGH" && <TouchableOpacity style={{ paddingVertical: 5 }}><Text style={{ fontSize: 13,textDecorationLine:'underline' }}>Need expert help?</Text></TouchableOpacity>}
+                            {/* {n.risk.toUpperCase() === "HIGH" && <TouchableOpacity style={{ paddingVertical: 5 }}><Text style={{ fontSize: 13,textDecorationLine:'underline' }}>Need expert help?</Text></TouchableOpacity>} */}
                         </View>
                     </View>
                 </View>

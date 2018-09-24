@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableOpacity, Animated } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Animated, Image, ScrollView } from 'react-native';
 import { List, Text, ListItem, Left, Body, Thumbnail, Right, Icon } from 'native-base';
 import { connect } from 'react-redux'
 import ScrollableTabView from 'react-native-scrollable-tab-view';
@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#f7f7f7',
     },
 
 });
@@ -23,14 +23,17 @@ const styles = StyleSheet.create({
 
 const Page = ({ assessments, selectReport, takeAssessment }) => {
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={{ backgroundColor: '#ffffff' }}>
                 <List>
                     {assessments.map((x, i) => (
                         x.isGiven ?
                             <ListItem noIndent thumbnail key={i} onPress={() => selectReport(x.title)}>
                                 <Left>
-                                    <Thumbnail source={x.icon} />
+                                    {/* <Thumbnail source={x.icon} /> */}
+                                    <View style={{ borderColor: '#ddd', borderWidth: 1, borderRadius: 50, padding: 10 }}>
+                                        <Image source={x.icon} style={{ width: 40, height: 40 }} />
+                                    </View>
                                 </Left>
                                 <Body>
                                     <Text style={{ color: '#3a3a3a' }}>{x.title}</Text>
@@ -38,20 +41,22 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                 </Body>
                                 <Right>
                                     <TouchableOpacity onPress={() => selectReport(x.title)}>
-                                        <Text style={{ fontSize: 12, padding: 10, color: '#495057' }}>View Report</Text>
+                                        <Icon name="arrow-forward" />
                                     </TouchableOpacity>
                                 </Right>
                             </ListItem> :
                             <ListItem noIndent thumbnail key={i} onPress={() => takeAssessment(x.title)} style={{ backgroundColor: '#73a4f53b' }}>
                                 <Left>
-                                    <Thumbnail source={x.icon} />
+                                    <View style={{ borderColor: '#ddd', borderWidth: 1, borderRadius: 50, padding: 10, backgroundColor: '#fff' }}>
+                                        <Image source={x.icon} style={{ width: 40, height: 40 }} />
+                                    </View>
                                 </Left>
                                 <Body>
                                     <Text style={{ color: '#3a3a3a' }}>{x.title}</Text>
                                     <Text style={{ color: 'red' }} note>{x.note}</Text>
                                 </Body>
                                 <Right>
-                                    <TouchableOpacity style={{ padding: 10 }} onPress={() => takeAssessment(x.title)}>
+                                    <TouchableOpacity onPress={() => takeAssessment(x.title)}>
                                         <Icon name="arrow-forward" />
                                     </TouchableOpacity>
                                 </Right>
@@ -59,7 +64,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                     ))}
                 </List>
             </View>
-        </View>
+        </ScrollView>
     )
 };
 
@@ -150,13 +155,13 @@ class AssessmentList extends Component {
                     onScroll={(x) => this._scrollX.setValue(x)}>
 
                     <Page tabLabel={{ label: "Physical" }} takeAssessment={this.selectAssessment} selectReport={this.selectReport} assessments={[
-                        { title: 'Biological Age', isGiven: false, note: '10 days overdue', icon: require('../../../assests/images/assessment/A1/A10022.jpg') },
-                        { title: 'Strength & Energy', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/shutterstock_574800841-nw.jpg') },
-                        { title: 'Diet Score', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/A1/A10020.jpg') },
-                        { title: 'Relationship & Intimacy', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/A1/A10023.jpg') },
-                        { title: 'Thought Control', isGiven: true, note: '5 days ago', icon: require('../../../assests/images/assessment/A1/A10019.jpg') },
-                        { title: 'Wholesomeness', isGiven: true, note: '3 days ago', icon: require('../../../assests/images/assessment/A1/A10033.jpg') },
-                        { title: 'Zest for life', isGiven: true, note: '2 days ago', icon: require('../../../assests/images/assessment/A1/A10026.jpg') }]} />
+                        { title: 'Biological Age', isGiven: false, note: '10 days overdue', icon: require('../../../assests/images/assessment/intro/biological-age.png') },
+                        { title: 'Strength & Energy', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/intro/strength-energy.png') },
+                        { title: 'Diet Score', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/intro/diet.png') },
+                        { title: 'Relationship & Intimacy', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/intro/relationship.png') },
+                        { title: 'Thought Control', isGiven: true, note: '5 days ago', icon: require('../../../assests/images/assessment/intro/thought-control.png') },
+                        { title: 'Wholesomeness', isGiven: true, note: '3 days ago', icon: require('../../../assests/images/assessment/intro/wholesomeness.png') },
+                        { title: 'Zest for life', isGiven: true, note: '2 days ago', icon: require('../../../assests/images/assessment/intro/zest-for-life.png') }]} />
                     <Page tabLabel={{ label: "Emotional" }} pressHandler={this.selectAssessment} assessments={[]} />
                     <Page tabLabel={{ label: "Spiritual" }} pressHandler={this.selectAssessment} assessments={[]} />
                     <Page tabLabel={{ label: "Environmental" }} pressHandler={this.selectAssessment} assessments={[]} />

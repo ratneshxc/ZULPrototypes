@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Zula from '../../Zula/Zula';
 import Reward from '../../reward/Reward';
 import Comment from '../../comment/Comment';
-import ZulaWakeUpbtn from '../../Zula/ZulaWakeUpbtn';
+import Orientation from 'react-native-orientation';
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
@@ -17,6 +17,10 @@ const mapStateToProps = state => ({
 })
 
 class ZingUpLifeApp extends Component {
+
+    componentDidMount() {
+        Orientation.lockToPortrait();
+    }
     render() {
         return (
             <View style={{ flex: 1 }}>

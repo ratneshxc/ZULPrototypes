@@ -3,6 +3,8 @@ import { View, StyleSheet, Text, Dimensions, Image, TouchableHighlight } from 'r
 import Tts from 'react-native-tts';
 import { connect } from 'react-redux';
 import Voice from 'react-native-voice';
+import Draggable from 'react-native-drag';
+import ViewOverflow from 'react-native-view-overflow';
 
 const mapStateToProps = state => ({
     currentQuestion: state.Assessment.currentQuestion,
@@ -137,7 +139,7 @@ class ZulaWakeUpbtn extends Component {
         return selectedIndex;
     }
     zulaAction = (ordermsg) => {
-        if (ordermsg.indexOf('question') !=-1&& ordermsg.indexOf('read')!=-1) {
+        if (ordermsg.indexOf('question') != -1 && ordermsg.indexOf('read') != -1) {
             this.zulaSpeak(this.props.currentQuestion.statement);
             this.zulaSpeak('The options are ,');
             this.props.currentQuestion.options.map((x) => {
@@ -146,9 +148,9 @@ class ZulaWakeUpbtn extends Component {
         } else if (ordermsg.contains('bye')) {
             this.zulaSpeak('Bye John!');
             this.props.zulaSleep();
-        } else if (ordermsg.indexOf('hey')!=-1) {
+        } else if (ordermsg.indexOf('hey') != -1) {
             this.wakeUpZula();
-        } else if (ordermsg.indexOf('select'!=-1)) {
+        } else if (ordermsg.indexOf('select' != -1)) {
             let selectedOption = ordermsg.split(" ");
             selectedOption.shift();
             selectedOption = selectedOption.join(" ").trim();
@@ -175,18 +177,45 @@ class ZulaWakeUpbtn extends Component {
         });
     }
 
-   
+
     render() {
         return (
             <TouchableHighlight style={styles.zulaBtn} onPress={this._startRecognizing.bind(this)}>
                 <Image style={styles.zula} source={require('../../assests/images/zula/zula-anim.gif')} />
             </TouchableHighlight>
+            // <View style={{ height: 0 }}>
+            //     <ViewOverflow style={{ marginTop: -50 }}>
+            //         <Draggable containerStyle={styles.draggable}>
+            //             <Image style={styles.zula} source={require('../../assests/images/zula/zula-anim.gif')} />
+            //         </Draggable>
+            //     </ViewOverflow>
+            // </View>
         )
     }
 }
 
 
 const styles = StyleSheet.create({
+    draggable: {
+        zIndex: 10000,
+        position: 'absolute'
+    },
+    text: {
+        color: 'white',
+        fontSize: 25,
+    },
+    square: {
+        borderRadius: 3,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 100,
+        height: 100,
+        backgroundColor: 'green',
+        shadowOpacity: 0.75,
+        shadowRadius: 1.5,
+        shadowColor: '#000',
+        shadowOffset: { height: 3, width: 3 },
+    },
     zulaBtn: {
         position: 'absolute',
         bottom: 50,

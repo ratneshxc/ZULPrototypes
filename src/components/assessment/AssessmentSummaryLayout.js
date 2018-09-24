@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, Text, Badge, Card } from 'native-base';
+import { Container, Header, Left, Body, Right, Picker, Form, Icon, Title, Content, Text, Badge, Card } from 'native-base';
 import { connect } from 'react-redux';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import NotificationCount from '../common/header/NotificationCount';
@@ -29,6 +29,7 @@ const chunkArray = (myArray, chunk_size) => {
 }
 
 class AssessmentSummaryLayout extends Component {
+
     componentDidMount() {
         this.props.showZula();
     }
@@ -41,20 +42,22 @@ class AssessmentSummaryLayout extends Component {
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
+                        {/* <Button transparent onPress={() => { this.props.navigation.openDrawer() }}>
                             <Icon name='menu' />
-                        </Button>
+                        </Button> */}
+
                     </Left>
                     <Body>
-                        <Title>Wellness</Title>
+                        <Title>Home</Title>
                     </Body>
                     <Right>
                         <NotificationCount getAllNotifications={this.getAllNotifications} />
+
                     </Right>
                 </Header>
                 <Content style={styles.container}>
                     <Card>
-                        <View style={{ flexDirection: 'row' }}>
+                        {/* <View style={{ flexDirection: 'row' }}>
                             <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("Vitals")}>
                                 <CardInfo title="VITALS" position="flex-start" data={[{ type: 'active', value: 14 }]} />
                             </TouchableHighlight>
@@ -62,10 +65,19 @@ class AssessmentSummaryLayout extends Component {
                             <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-end', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("AssessmentList")}>
                                 <CardInfo title="CHECKS" position="flex-end" data={[{ type: 'pending', value: 4 }]} />
                             </TouchableHighlight>
+                        </View> */}
+                        <View style={{ flexDirection: 'row' }}>
+                            <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("Vitals")}>
+                                <CardInfo title="VITALS" icon={require('../../assests/images/dashboard/vitals.png')} position="flex-start" data={[{ type: 'active', value: 14 }]} />
+                            </TouchableHighlight>
+                            <View style={{ width: 1, backgroundColor: '#ddd' }}></View>
+                            <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-end', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("AssessmentList")}>
+                                <CardInfo title="CHECKS" icon={require('../../assests/images/dashboard/checks.png')} position="flex-end" data={[{ type: 'pending', value: 4 }]} />
+                            </TouchableHighlight>
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ flex: 1, height: 1, backgroundColor: '#ddd' }}></View>
-                            <AnimatedCircularProgress style={{ alignSelf: 'center' }}
+                            <AnimatedCircularProgress style={{ alignSelf: 'center', marginBottom: 10 }}
                                 size={220}
                                 width={13}
                                 fill={80}
@@ -85,7 +97,7 @@ class AssessmentSummaryLayout extends Component {
                             </AnimatedCircularProgress>
                             <View style={{ flex: 1, height: 1, backgroundColor: '#ddd' }}></View>
                         </View>
-                        <View style={{ flexDirection: 'row' }}>
+                        {/* <View style={{ flexDirection: 'row' }}>
                             <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-start', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("AppointmentList")}>
                                 <CardInfo title="Experts" position="flex-start" data={[{ type: 'meetups', value: 3 }]} />
                             </TouchableHighlight>
@@ -93,7 +105,7 @@ class AssessmentSummaryLayout extends Component {
                             <TouchableHighlight style={{ flex: 1, justifyContent: 'flex-end', flexDirection: 'row' }} onPress={() => this.props.navigation.navigate("Goals")}>
                                 <CardInfo title="Goals" position="flex-end" data={[{ type: 'created', value: 2 }]} />
                             </TouchableHighlight>
-                        </View>
+                        </View> */}
                     </Card>
                     <View style={{ marginTop: 10 }}>
                         <Text style={styles.title}>{'Wellness Overview'.toUpperCase()}</Text>
@@ -127,7 +139,11 @@ const CardInfo = (props) => {
     return (
         <View style={{ padding: 15, flex: 1, justifyContent: props.position, flexDirection: 'row' }}>
             <View>
-                <Text style={{ fontSize: 14, color: '#495057', marginBottom: 10 }}>{props.title.toUpperCase()}</Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <Image style={{ width: 20, height: 20, marginRight: 5 }} source={props.icon} />
+                    <Text style={{ fontSize: 14, color: '#495057', marginBottom: 10, flex: 1 }}>{props.title.toUpperCase()}</Text>
+
+                </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginLeft: 15 }}>
                     {props.data.map((x, i) => (
                         <View key={i} style={{ flexDirection: 'row' }}>

@@ -8,9 +8,9 @@ class Zula extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ZulaMessageContainer />
+                {/* <ZulaMessageContainer /> */}
                 <ZulaPopUpCollection />
-                <ZulaWakeUpbtn />
+                {/* <ZulaWakeUpbtn /> */}
             </View>
         )
     }

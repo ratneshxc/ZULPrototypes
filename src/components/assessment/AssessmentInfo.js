@@ -1,22 +1,86 @@
 
 import React, { Component } from 'react';
-import { View, StyleSheet, ImageBackground, Dimensions } from 'react-native';
-import { Text, Button, Container, Content } from 'native-base';
+import { View, StyleSheet, ScrollView, Dimensions, Image, processColor } from 'react-native';
+import { Card, H3, Container, Content, Text } from 'native-base';
 import { connect } from 'react-redux';
 import assessmentDetailsData from '../../data/assessmentDetailsData';
+import { LineChart } from 'react-native-charts-wrapper';
 
 const mapStateToProps = state => ({
     currentAssessment: state.Assessment.currentAssessment
 })
 
 const windowObj = Dimensions.get('window');
-const screenwidth = windowObj.width + 10;
-const screenheight = windowObj.height / 3;
+const screenwidth = windowObj.width;
+const screenheight = windowObj.height;
 
 class AssessmentInfo extends Component {
     constructor(props) {
         super(props);
-        this.state = { updatedList: [] };
+        this.state = {
+            updatedList: [],
+            data: {
+                $set: {
+                    dataSets: [{
+                        values: [{ y: 0.88 }, { y: 0.77 }, { y: 105 }, { y: 135 }],
+                        label: 'Company X',
+                        config: {
+                            lineWidth: 2,
+                            drawCircles: false,
+                            highlightColor: processColor('red'),
+                            color: processColor('red'),
+                            drawFilled: true,
+                            fillColor: processColor('red'),
+                            fillAlpha: 60,
+                            valueTextSize: 15,
+                            valueFormatter: ["", "min", "", "max"],
+                            dashedLine: {
+                                lineLength: 20,
+                                spaceLength: 20
+                            }
+                        }
+                    }, {
+                        values: [{ y: 90 }, { y: 130 }, { y: 100 }, { y: 105 }],
+                        label: 'Company Y',
+                        config: {
+                            lineWidth: 1,
+                            drawCubicIntensity: 0.4,
+                            circleRadius: 5,
+                            drawHighlightIndicators: false,
+                            color: processColor('blue'),
+                            drawFilled: true,
+                            fillColor: processColor('blue'),
+                            fillAlpha: 45,
+                            circleColor: processColor('blue')
+                        }
+                    }, {
+                        values: [{ y: 110 }, { y: 105 }, { y: 115 }, { y: 110 }],
+                        label: 'Company Dashed',
+                        config: {
+                            color: processColor('green'),
+                            drawFilled: true,
+                            fillColor: processColor('green'),
+                            fillAlpha: 50
+                        }
+                    }],
+                }
+            },
+            xAxis: {
+                $set: {
+                    fontFamily: "HelveticaNeue-Medium",
+                    fontWeight: "bold",
+                    fontStyle: "italic",
+                    valueFormatter: ['Q1', 'Q2', 'Q3', 'Q4']
+                }
+            },
+            yAxis: {
+                $set: {
+                    left: {
+                        valueFormatter: "#.#%"
+                    }
+                }
+            }
+        }
     }
     filterobject = (reqItem) => {
         for (let item of assessmentDetailsData) {
@@ -38,53 +102,67 @@ class AssessmentInfo extends Component {
         return (
             <Container>
                 <Content>
-                    <ImageBackground source={this.state.updatedList.imageURL} style={styles.imageURL} resizeMode="cover">
-                        <View style={styles.questionView}>
-                            <Text style={styles.title}>{this.state.updatedList.Category}</Text>
+                    <Card>
+                        <Image source={this.state.updatedList.imageURL} style={styles.Icon} />
+                        <H3>{this.state.updatedList.Category}</H3>
+                        <Text>{this.state.updatedList.statement}</Text>
+                    </Card>
+                    <ScrollView horizontal={true} pagingEnabled={true}>
+                        <View style={{ backgroundColor: 'red', width: screenwidth, height: 300 }}>
+                            <trackGraph />
                         </View>
-                    </ImageBackground>
-                    <View>
-                        <Text style={styles.textStyle}>{this.state.updatedList.statement}</Text>
-                    </View>
+                        <View style={{ backgroundColor: 'yellow', width: screenwidth, height: 300 }}>
+                            <Text>2</Text>
+                        </View>
+                    </ScrollView>
 
                 </Content>
-                <View style={{ padding: 10 }}>
-                    <Button onPress={this.goAssessment} block>
-                        <Text style={{ color: '#fff', fontSize: 18 }}>Let's start</Text>
-                    </Button>
-                </View>
             </Container>
         );
     }
 }
+
+const trackGraph = () => {
+    return (
+        <View>
+            <LineChart
+                style={styles.chart}
+                data={this.state.data}
+                chartDescription={{ text: '' }}
+                legend={this.state.legend}
+                marker={this.state.marker}
+                xAxis={this.state.xAxis}
+                yAxis={this.state.yAxis}
+                drawGridBackground={false}
+                borderColor={processColor('teal')}
+                borderWidth={1}
+                drawBorders={true}
+
+                touchEnabled={true}
+                dragEnabled={true}
+                scaleEnabled={true}
+                scaleXEnabled={true}
+                scaleYEnabled={true}
+                pinchZoom={true}
+                doubleTapToZoomEnabled={true}
+                highlightPerTapEnabled={true}
+                highlightPerDragEnabled={false}
+                highlights={[{ x: 3, y: 135 }]}
+
+                dragDecelerationEnabled={true}
+                dragDecelerationFrictionCoef={0.99}
+            />
+        </View>
+    )
+}
+
+
 export default connect(mapStateToProps, null)(AssessmentInfo)
 
 const styles = StyleSheet.create({
-    questionView: {
-        margin: 30,
-        backgroundColor: '#00000066',
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    title: {
-        fontSize: 30,
-        padding: 5,
-        color: 'white',
-        alignSelf: 'center'
-    },
-    imageURL: {
-        right: 5,
-        width: screenwidth,
-        height: screenheight
-    },
-    buttonStyle: {
-        padding: 5,
+    Icon: {
+        width: 30,
         height: 30
-    },
-    textStyle: {
-        fontSize: 18,
-        padding: 10
     }
 })
 
