@@ -7,6 +7,7 @@ import FadeInView from '../animations/FadeInView';
 import { CheckBox } from 'react-native-elements'
 import { Button } from 'native-base';
 const windowObj = Dimensions.get('window');
+
 const mapStateToProps = state => ({
   currentQuestion: state.Assessment.currentQuestion,
   questions: state.Assessment.questions
@@ -44,6 +45,7 @@ class AnswerSection extends Component {
     super(props);
     this.state = {
       optionAnswer: this.props.currentQuestion.options,
+      checksOptionAnswer:[],
       checkFadeIn: null,
       fadeAnimation: new Animated.Value(0),
       showAlert: false
@@ -113,7 +115,22 @@ class AnswerSection extends Component {
       <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Next</Text>
     </Button>
   }
+  
+  // generatechecksOptionAnswer = (num) => {
+  //   var q = num/4;
+  //   var r = num%4;
+  //   for (let i = 0; i < q; i++) {
+  //     var arr = [];
+  //     for (let j = 0; j < 4; j++) {
+  //       arr[j] = this.props.currentQuestion.options[j];
+  //     }
+  //     checksOptionAnswer.push(arr);
+  //   }
+  // }
   render() {
+    // if(this.props.currentQuestion.ansType === 'multiple'){
+    //   generatechecksOptionAnswer(this.props.currentQuestion.options.length);
+    // }
     return (
       <ScrollView>
         <View style={styles.optionView}>

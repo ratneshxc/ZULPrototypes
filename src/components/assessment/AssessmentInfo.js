@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { View, StyleSheet, ScrollView, Dimensions, Image, processColor } from 'react-native';
-import { Card, H3, Container, Content, Text } from 'native-base';
+import { Card, H3, Container, Content, Text, Button } from 'native-base';
 import { connect } from 'react-redux';
 import assessmentDetailsData from '../../data/assessmentDetailsData';
 import { LineChart } from 'react-native-charts-wrapper';
@@ -107,14 +107,15 @@ class AssessmentInfo extends Component {
                         <H3>{this.state.updatedList.Category}</H3>
                         <Text>{this.state.updatedList.statement}</Text>
                     </Card>
-                    <ScrollView horizontal={true} pagingEnabled={true}>
+                    <Button onPress={this.goAssessment}><Text>Take Assessment</Text></Button>
+                    {/* <ScrollView horizontal={true} pagingEnabled={true}>
                         <View style={{ backgroundColor: 'red', width: screenwidth, height: 300 }}>
                             <trackGraph />
                         </View>
                         <View style={{ backgroundColor: 'yellow', width: screenwidth, height: 300 }}>
                             <Text>2</Text>
                         </View>
-                    </ScrollView>
+                    </ScrollView> */}
 
                 </Content>
             </Container>

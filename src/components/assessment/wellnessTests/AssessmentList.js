@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 });
 
 
-const Page = ({ assessments, selectReport, takeAssessment }) => {
+const Page = ({ assessments, selectReport, selectAssessment }) => {
     return (
         <ScrollView style={styles.container}>
             <View style={{ backgroundColor: '#ffffff' }}>
@@ -45,7 +45,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                     </TouchableOpacity>
                                 </Right>
                             </ListItem> :
-                            <ListItem noIndent thumbnail key={i} onPress={() => takeAssessment(x.title)} style={{ backgroundColor: '#73a4f53b' }}>
+                            <ListItem noIndent thumbnail key={i} onPress={() => selectAssessment(x.title)} style={{ backgroundColor: '#73a4f53b' }}>
                                 <Left>
                                     <View style={{ borderColor: '#ddd', borderWidth: 1, borderRadius: 50, padding: 10, backgroundColor: '#fff' }}>
                                         <Image source={x.icon} style={{ width: 40, height: 40 }} />
@@ -56,7 +56,7 @@ const Page = ({ assessments, selectReport, takeAssessment }) => {
                                     <Text style={{ color: 'red' }} note>{x.note}</Text>
                                 </Body>
                                 <Right>
-                                    <TouchableOpacity onPress={() => takeAssessment(x.title)}>
+                                    <TouchableOpacity onPress={() => selectAssessment(x.title)}>
                                         <Icon name="arrow-forward" />
                                     </TouchableOpacity>
                                 </Right>
@@ -154,7 +154,7 @@ class AssessmentList extends Component {
                     )}
                     onScroll={(x) => this._scrollX.setValue(x)}>
 
-                    <Page tabLabel={{ label: "Physical" }} takeAssessment={this.selectAssessment} selectReport={this.selectReport} assessments={[
+                    <Page tabLabel={{ label: "Physical" }} selectAssessment={this.selectAssessment} selectReport={this.selectReport} assessments={[
                         { title: 'Biological Age', isGiven: false, note: '10 days overdue', icon: require('../../../assests/images/assessment/intro/biological-age.png') },
                         { title: 'Strength & Energy', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/intro/strength-energy.png') },
                         { title: 'Diet Score', isGiven: false, note: '5 days overdue', icon: require('../../../assests/images/assessment/intro/diet.png') },

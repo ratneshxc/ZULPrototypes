@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Text, TouchableHighlight, View, StyleSheet, Image } from 'react-native';
 import { connect } from 'react-redux';
-import { Icon, H3, H2 } from 'native-base';
+import { Icon, H3, H2, Left } from 'native-base';
 
 const mapStateToProps = state => ({
     isRewardModalVisible: state.Reward.isRewardModalVisible,
@@ -39,6 +39,7 @@ class Reward extends React.Component {
     }
 
     render() {
+        let rewardsCount = 100;
         return (
             <Modal
                 animationType="fade"
@@ -50,26 +51,47 @@ class Reward extends React.Component {
                 <View style={styles.rewardModal}>
                     <View style={styles.reward}>
                         <View style={styles.modalHeader}>
-                            <TouchableHighlight
+                            {/* <TouchableHighlight
                                 style={styles.closeBtn}
                                 onPress={this.props.closeRewardModal}>
                                 <Icon name="times-circle" style={{ color: 'red' }} type="FontAwesome" size={25} />
-                            </TouchableHighlight>
+                            </TouchableHighlight> */}
                         </View>
 
                         <View style={styles.modalBody}>
-                            <H3 style={{textAlign:'center'}}>Congratulations</H3>
+                            {/* <H3 style={{ textAlign: 'center', fontWeight: 'bold' }}>Congratulations</H3> */}
+
+
                             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                                <Image style={{ width: 250, height: 70 }} source={require('../../assests/images/congrats/congratsFont.jpg')} />
                                 <Image style={{ width: 150, height: 150 }} source={require('../../assests/images/reward.png')} />
-                                <H3 style={{marginTop:10}}>You won</H3>
-                                <H2>100</H2>
-                                <Text>Rewards</Text>
+                                {/* <H3 style={{ marginTop: 10 }}>You won</H3>
+                                <H2>100</H2> */}
+
+                                <H3 style={{ textAlign: 'center', fontWeight: 'bold', color: 'green' }}>You won {rewardsCount} Rewards</H3>
+                                {/* <Text>Rewards</Text> */}
                             </View>
-                            <TouchableHighlight
-                                style={styles.gotBtn}
-                                onPress={this.goToNextQuestion}>
-                                <Text style={{ color: '#ffffff', textAlign: 'center' }}>Got It</Text>
-                            </TouchableHighlight>
+
+
+
+
+
+                            <View style={{ flexDirection: 'row' }}>
+                                <View style={{ flex: 1 }}>
+                                    <TouchableHighlight
+                                        style={styles.cancel_RewardsBtn}
+                                        onPress={this.props.closeRewardModal}>
+                                        <Text style={{ color: '#ffffff', textAlign: 'center' }}>Cancel</Text>
+                                    </TouchableHighlight>
+                                </View>
+                                <View style={{ flex: 1 }}>
+                                    <TouchableHighlight
+                                        style={styles.gotBtn}
+                                        onPress={this.goToNextQuestion}>
+                                        <Text style={{ color: '#ffffff', textAlign: 'center' }}>Got It</Text>
+                                    </TouchableHighlight>
+                                </View>
+                            </View>
                         </View>
                     </View>
                 </View>
@@ -83,15 +105,22 @@ export default connect(mapStateToProps, mapDispatchToProps)(Reward);
 
 const styles = StyleSheet.create({
     rewardModal: {
+        borderColor: '#ddd',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 1,
         flex: 1,
         backgroundColor: '#00000014',
         justifyContent: 'center',
         alignItems: 'center'
     },
     reward: {
+
         backgroundColor: '#ffffff',
-        width: 350,
-        height: 400,
+        width: 300,
+        height: 300,
         borderRadius: 10
     },
     modalHeader: {
@@ -111,6 +140,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#5067FF',
         padding: 10,
         marginHorizontal: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        width: 100
+
+    },
+    cancel_RewardsBtn: {
+        backgroundColor: 'red',
+        padding: 10,
+        marginHorizontal: 10,
+        borderRadius: 10,
+        width: 100
     }
 })

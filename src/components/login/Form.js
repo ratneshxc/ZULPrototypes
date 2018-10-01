@@ -42,12 +42,12 @@ export default class Form extends Component {
           <View style={{ flexDirection: 'row', marginTop: 10 }}>
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
               <TouchableOpacity>
-                <Image style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/FaceID.png')} />
+                <Image style={{ width: 70, height: 50 }} source={require('../../assests/images/loginwallpapers/faceId3.png')} />
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
               <TouchableOpacity>
-                <Image style={{ width: 100, height: 80 }} source={require('../../assests/images/loginwallpapers/TouchID.png')} />
+                <Image style={{ width: 70, height: 50 }} source={require('../../assests/images/loginwallpapers/fingerprint3.png')} />
               </TouchableOpacity>
             </View>
           </View>

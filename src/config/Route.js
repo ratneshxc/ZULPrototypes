@@ -26,6 +26,7 @@ import Vitals from '../components/assessment/vitals/Vitals';
 import AssessmentList from '../components/assessment/wellnessTests/AssessmentList';
 import AssessmentInfo from '../components/assessment/AssessmentInfo';
 import AssessmentLayout from '../components/assessment/AssessmentSummaryLayout';
+import Assessment from '../components/assessment/Assessment';
 
 
 
@@ -48,10 +49,16 @@ const WellnessStack = createStackNavigator({
       title: 'Vitals'
     }
   },
-  AssessmentList: {
-    screen: AssessmentList,
+  Vitals: {
+    screen: Vitals,
     navigationOptions: {
-      title: 'Checks'
+      title: 'Vitals'
+    }
+  },
+  Assessment: {
+    screen: Assessment,
+    navigationOptions: {
+      header: null
     }
   },
   AssessmentInfo: {
