@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, TouchableHighlight, View, StyleSheet, Image } from 'react-native';
+import { Modal, Text, Button, TouchableHighlight, View, StyleSheet, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { Icon, H3, H2, Left } from 'native-base';
 
@@ -63,32 +63,24 @@ class Reward extends React.Component {
 
 
                             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                                <Image style={{ width: 250, height: 70 }} source={require('../../assests/images/congrats/congratsFont.jpg')} />
-                                <Image style={{ width: 150, height: 150 }} source={require('../../assests/images/reward.png')} />
+                                <Image style={{ width: 250, height: 50 }} source={require('../../assests/images/congrats/congratsFont.jpg')} />
+                                <Image style={{ width: 150, height: 130 }} source={require('../../assests/images/reward.png')} />
                                 {/* <H3 style={{ marginTop: 10 }}>You won</H3>
                                 <H2>100</H2> */}
-
-                                <H3 style={{ textAlign: 'center', fontWeight: 'bold', color: 'green' }}>You won {rewardsCount} Rewards</H3>
+                                <H3 style={{ textAlign: 'center', fontWeight: 'bold', fontSize:24 ,color: 'orange', paddingTop:3 }}>You won {rewardsCount} Rewards</H3>
                                 {/* <Text>Rewards</Text> */}
                             </View>
 
-
-
-
-
+                            
                             <View style={{ flexDirection: 'row' }}>
                                 <View style={{ flex: 1 }}>
-                                    <TouchableHighlight
-                                        style={styles.cancel_RewardsBtn}
-                                        onPress={this.props.closeRewardModal}>
-                                        <Text style={{ color: '#ffffff', textAlign: 'center' }}>Cancel</Text>
+                                    <TouchableHighlight  style={styles.cancel_RewardsBtn} onPress={() => this.props.closeRewardModal}>
+                                        <Text style={{ color: 'white', fontSize: 14, fontWeight: 'bold', top: -5}}>Cancel</Text>
                                     </TouchableHighlight>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <TouchableHighlight
-                                        style={styles.gotBtn}
-                                        onPress={this.goToNextQuestion}>
-                                        <Text style={{ color: '#ffffff', textAlign: 'center' }}>Got It</Text>
+                                    <TouchableHighlight style={styles.gotBtn} onPress={() => this.goToNextQuestion}>
+                                        <Text style={{ color: 'white', fontSize: 14, fontWeight: 'bold', top: -5}}>Got It</Text>
                                     </TouchableHighlight>
                                 </View>
                             </View>
@@ -137,18 +129,21 @@ const styles = StyleSheet.create({
         margin: 3
     },
     gotBtn: {
-        backgroundColor: '#5067FF',
+        backgroundColor: 'blue',
         padding: 10,
         marginHorizontal: 10,
         borderRadius: 10,
-        width: 100
-
+        width: 100,
+        height: 25,
+        alignItems: "center"
     },
     cancel_RewardsBtn: {
         backgroundColor: 'red',
         padding: 10,
         marginHorizontal: 10,
         borderRadius: 10,
-        width: 100
+        width: 100,
+        height: 25,
+        alignItems: "center"
     }
 })
