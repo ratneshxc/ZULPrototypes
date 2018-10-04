@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Animated, Text, View, StyleSheet, ScrollView, Alert, Dimensions } from 'react-native';
+import { Animated, Text, View, StyleSheet, TouchableOpacity, ScrollView, Alert, Dimensions } from 'react-native';
 import { RadioGroup, RadioButton } from 'react-native-flexi-radio-button';
 import { connect } from 'react-redux';
 import FadeInView from '../animations/FadeInView';
@@ -44,14 +44,18 @@ class AnswerSection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      optionAnswer: this.props.currentQuestion.options,
-      checksOptionAnswer:[],
+      optionAnswer: this.props.currentQuestion.options.slice(0, this.optionIndex),
       checkFadeIn: null,
+      checkMoreOptionsBtn: null,
+      checkLessOptionsBtn: null,
       fadeAnimation: new Animated.Value(0),
-      showAlert: false
+      showAlert: false,
+      MoreOptions: true
     };
   }
 
+  optionIndex = 4;
+  totalOptions = this.props.currentQuestion.options.length;
 
   selectAnswer = (index) => {
     this.props.questions[this.props.currentQuestion.no - 1].selectedIndex = index;
@@ -100,72 +104,135 @@ class AnswerSection extends Component {
     this.state.optionAnswer[index].checked = !this.state.optionAnswer[index].checked;
     this.setState({
       optionAnswer: this.state.optionAnswer,
-      checkFadeIn: null
+      checkFadeIn: null,
+      checkMoreOptionsBtn: null,
+      checkLessOptionsBtn: null
     });
     for (let item of this.state.optionAnswer) {
       if (item.checked) {
         this.setState({
-          checkFadeIn: this.renderButton(this.props.currentQuestion.no - 1)
+          checkFadeIn: this.renderButton(this.props.currentQuestion.no - 1),
+          checkMoreOptionsBtn: (this.state.MoreOptions) ? this.renderMoreOptionsButton(this.props.currentQuestion.no - 1) : null,
+          checkLessOptionsBtn: (!this.state.MoreOptions) ? this.renderLessOptionsButton(this.props.currentQuestion.no - 1) : null
         });
       }
     }
   }
-  renderButton = (index) => {
-    return <Button onPress={() => this.selectAnswer(index)} full>
-      <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Next</Text>
-    </Button>
+
+  //To Display more CheckBox options on Click of More Options button
+  showMoreOptions = (index) => {
+    for (let i = index; i < this.totalOptions; i++) {
+      this.state.optionAnswer.push(this.props.currentQuestion.options[i]);
+    }
+    this.setState({
+      optionAnswer: this.state.optionAnswer,
+      MoreOptions: false,
+      checkMoreOptionsBtn: null,
+      checkLessOptionsBtn: this.renderLessOptionsButton(this.props.currentQuestion.no - 1)
+    })
   }
-  
-  // generatechecksOptionAnswer = (num) => {
-  //   var q = num/4;
-  //   var r = num%4;
-  //   for (let i = 0; i < q; i++) {
-  //     var arr = [];
-  //     for (let j = 0; j < 4; j++) {
-  //       arr[j] = this.props.currentQuestion.options[j];
-  //     }
-  //     checksOptionAnswer.push(arr);
-  //   }
-  // }
+
+  //To Display only first four options on click of Less Options button
+  showLessOptions() {
+    this.state.optionAnswer = this.props.currentQuestion.options.slice(0, this.optionIndex),
+      this.setState({
+        optionAnswer: this.state.optionAnswer,
+        MoreOptions: true,
+        checkLessOptionsBtn: null,
+        checkMoreOptionsBtn: this.renderMoreOptionsButton(this.props.currentQuestion.no - 1)
+      })
+  }
+
+  //To Render the Next Button
+  renderButton = (index) => {
+    const nextBtn = (this.totalOptions <= 4) ?
+      <Button small onPress={() => this.selectAnswer(index)} full>
+        <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Next</Text>
+      </Button>
+      // <TouchableOpacity onPress={() => this.showMoreOptions(this.optionIndex)}>
+      //   <Text style={{ alignItems='center', borderWidth = 1, borderColor = 'black', padding= 10 }}>Next</Text>
+      // </TouchableOpacity>
+      :
+      <Button small onPress={() => this.selectAnswer(index)} style={styles.NextBtn}>
+        <Text style={{ color: 'white', fontSize: 14, fontWeight: 'bold', textAlign: 'center', alignContent: 'center', marginLeft: 30 }}>Next</Text>
+      </Button>
+      // <TouchableOpacity  onPress={() => this.showMoreOptions(this.optionIndex)}>
+      //   <Text style={{ alignItems='center', borderWidth = 1, borderColor = 'black', padding= 10 }}>Next</Text>
+      // </TouchableOpacity>
+    return nextBtn;
+  }
+
+  //To Render More Options Button
+  renderMoreOptionsButton = (index) => {
+    return <Button small onPress={() => this.showMoreOptions(this.optionIndex)} style={styles.moreOptionsBtn}>
+      <Text style={{ color: 'white', fontSize: 14, fontWeight: 'bold', textAlign: 'center' }}>More Options...</Text>
+    </Button>
+    // return <TouchableOpacity  onPress={() => this.showMoreOptions(this.optionIndex)}>
+    //   <Text style={{ alignItems='center', backgroundColor= '#DDDDDD', padding= 10 }}>More Options</Text>
+    // </TouchableOpacity>
+  }
+
+  //To render Less Options Button
+  renderLessOptionsButton = (index) => {
+    return <Button small onPress={() => this.showLessOptions(index)} style={styles.lessOptionsBtn}>
+      <Text style={{ color: 'white', fontSize: 14, fontWeight: 'bold', textAlign: 'center' }}>Less Options...</Text>
+    </Button>
+  //    return <TouchableOpacity style={{ alignItems='center', backgroundColor= '#DDDDDD', padding= 10 }} onPress={() => this.showMoreOptions(this.optionIndex)}>
+  //    <Text>More Options</Text>
+  //  </TouchableOpacity>
+  }
+
   render() {
-    // if(this.props.currentQuestion.ansType === 'multiple'){
-    //   generatechecksOptionAnswer(this.props.currentQuestion.options.length);
-    // }
+
     return (
       <ScrollView>
+        { this.totalOptions > 4 ? <Text style={{color:'red', textAlign:'right', paddingRight:4}}>This Question contains multiple options</Text>: null}
         <View style={styles.optionView}>
-          {(this.props.currentQuestion.ansType === 'single') ?
-            <RadioGroup
-              size={24}
-              thickness={2}
-              color='rgb(0, 96, 168)'
-              highlightColor='#3956976b'
-              selectedIndex={this.props.currentQuestion.selectedIndex}
-              onSelect={(index, value) => this.selectAnswer(index)}
-            >
-              {this.props.currentQuestion.options.map((x, i) => (
-                <RadioButton style={styles.radio} key={i} value={x.value} >
-                  <FadeInView duration={500} delay={i * 100 + 200}>
-                    <Text style={styles.labeltext}>{x.label}</Text>
-                  </FadeInView>
-                </RadioButton>
-              ))}
-            </RadioGroup>
-            :
-            this.state.optionAnswer.map((x, i) => (
-              <CheckBox
-                key={i}
-                title={x.label}
-                checked={x.checked}
-                onPress={() => this.selectCheckBox(i)}
-                containerStyle={{ backgroundColor: '#ffffff', borderWidth: 0 }}
-                checkedColor='#1e90ff'
-                size={35}
-                textStyle={{ fontSize: 17 }}
-              />
-            ))
+          {
+            (this.props.currentQuestion.ansType === 'single') ?
+              <RadioGroup
+                size={24}
+                thickness={2}
+                color='rgb(0, 96, 168)'
+                highlightColor='#3956976b'
+                selectedIndex={this.props.currentQuestion.selectedIndex}
+                onSelect={(index, value) => this.selectAnswer(index)}
+              >
+                {this.props.currentQuestion.options.map((x, i) => (
+                  <RadioButton style={styles.radio} key={i} value={x.value} >
+                    <FadeInView duration={500} delay={i * 100 + 200}>
+                      <Text style={styles.labeltext}>{x.label}</Text>
+                    </FadeInView>
+                  </RadioButton>
+                ))}
+              </RadioGroup>
+              :
+              this.state.optionAnswer.map((x, i) => (
+                <CheckBox
+                  key={i}
+                  title={x.label}
+                  checked={x.checked}
+                  onPress={() => this.selectCheckBox(i)}
+                  containerStyle={{ backgroundColor: '#ffffff', borderWidth: 0 }}
+                  checkedColor='#1e90ff'
+                  size={35}
+                  textStyle={{ fontSize: 17 }}
+                />
+              ))
           }
-          {(this.props.currentQuestion.ansType === 'multiple') ?
+
+          {/* If there are more than 4 check options, we need More Options &  Next button*/}
+          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+            {(this.state.MoreOptions && this.totalOptions > 4) ?
+              this.state.checkMoreOptionsBtn : this.state.checkLessOptionsBtn
+            }
+            {(this.props.currentQuestion.ansType === 'multiple' && this.totalOptions > 4) ?
+              this.state.checkFadeIn : null
+            }
+          </View>
+
+          {/* If there are only 4 check options, we need only next button*/}
+          {(this.props.currentQuestion.ansType === 'multiple' && this.totalOptions <= 4) ?
             this.state.checkFadeIn : null
           }
         </View>
@@ -189,6 +256,27 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginLeft: 10,
     color: 'rgb(0, 96, 168)'
+  },
+  moreOptionsBtn: {
+    backgroundColor: 'green',
+    padding: 5,
+    marginHorizontal: 10,
+    borderRadius: 10,
+    width: 100
+  },
+  lessOptionsBtn: {
+    backgroundColor: 'orange',
+    padding: 5,
+    marginHorizontal: 10,
+    borderRadius: 10,
+    width: 100
+  },
+  NextBtn: {
+    //backgroundColor: 'blue',
+    padding: 5,
+    marginHorizontal: 10,
+    borderRadius: 10,
+    width: 100
   }
 })
 

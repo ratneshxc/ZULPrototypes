@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextInput, View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
+import { TextInput, View, StyleSheet, Divider, TouchableOpacity, Text, Image } from 'react-native';
 export default class Form extends Component {
 
   render() {
@@ -39,15 +39,18 @@ export default class Form extends Component {
             </View>
           </View>
 
+          <View style={{ height:5 }}></View>
           <View style={{ flexDirection: 'row', marginTop: 10 }}>
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
               <TouchableOpacity>
-                <Image style={{ width: 70, height: 50 }} source={require('../../assests/images/loginwallpapers/faceId3.png')} />
+                <Image style={{ width: 50, height: 45 }} source={require('../../assests/images/loginwallpapers/faceIdWhite.png')} />
+                <Text style={{color:'white', padding:5}}>FaceId</Text>
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
               <TouchableOpacity>
-                <Image style={{ width: 70, height: 50 }} source={require('../../assests/images/loginwallpapers/fingerprint3.png')} />
+                <Image style={{ width: 50, height: 45 }} source={require('../../assests/images/loginwallpapers/touchIdWhite.png')} />
+                <Text style={{color:'white', padding:5}}>TouchId</Text>
               </TouchableOpacity>
             </View>
           </View>
