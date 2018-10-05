@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
+import { View, Image, StyleSheet, ImageBackground, TouchableOpacity, Dimensions, Keyboard } from 'react-native';
 import { Text } from 'native-base';
 import UserDetails from './UserDetails';
 import OTP from './OTP';
@@ -78,12 +78,12 @@ export default class Register extends React.Component {
   render() {
     const { showAlert, title, description, showConfirm, showProgress } = this.state;
     return (
-      <LinearGradient colors={['#26D0CE', '#1A2980']} style={{ flex: 1, padding: 20 }}>
+      <ImageBackground source={require('../../assests/images/registration/youngwoman1.jpg')} resizeMode="cover" style={{ flex: 1 }}>
+        {/* <Image source={require('../../assests/images/registration/joyful.jpg')} style={{ width: 150, height: 150 }} /> */}
         <View style={{ alignItems: 'center' }}>
           {!this.state.isKeyboardOpen && <Image style={styles.loginLogo} source={require('../../assests/images/zul.png')} />}
-          <Text style={{ fontSize: 25, color: '#fff', textAlign: 'center' }}>Sign Up</Text>
+          <Text style={{ fontSize: 25, color: '#fff', textAlign: 'center', fontWeight:'bold' }}>Sign Up</Text>
         </View>
-
         <View style={{ flexDirection: 'column', justifyContent: 'center', flex: 1 }}>
           <WizardTab ref='WizardRef'>
             <UserDetails title="Zinger Details" showAlert={this.showAlert} nextHandler={this.goToNext} prevHandler={this.goToPrevious} />
@@ -94,7 +94,6 @@ export default class Register extends React.Component {
             <Text style={{ textDecorationLine: 'underline', color: '#ffffff', textAlign: 'center' }}>Quit Sign Up</Text>
           </TouchableOpacity>
         </View>
-
         <AwesomeAlert
           alertContainerStyle={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
           // titleStyle={{ fontSize: 20, color: '#3a3a3a' }}
@@ -120,7 +119,7 @@ export default class Register extends React.Component {
             this.goToNext();
           }}
         />
-      </LinearGradient>
+      </ImageBackground>
     )
   }
 }

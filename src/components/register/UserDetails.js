@@ -6,16 +6,10 @@ export default class UserDetails extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextInput 
-                underlineColorAndroid="#fff"
-                    placeholderTextColor="#fff"
-                    placeholder={'Username'}
+                <TextInput fontWeight='bold' underlineColorAndroid="white" placeholderTextColor="white" placeholder={'Username'}
                     style={[styles.input, { borderTopLeftRadius: 10, borderTopRightRadius: 10 }]}
                 />
-                <TextInput
-                    underlineColorAndroid="#fff"
-                    placeholderTextColor="#fff"
-                    placeholder={'Mobile Number'}
+                <TextInput fontWeight='bold' underlineColorAndroid="white" placeholderTextColor="white" placeholder={'Mobile Number'}
                     style={[styles.input, { borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }]}
                 />
                 <TouchableOpacity style={styles.zulBtn} onPress={() => this.props.showAlert('Congratulations!', 'Now you are Zinger. We will take care of your wellness.', true, false)}>

@@ -74,12 +74,12 @@ class Reward extends React.Component {
                             
                             <View style={{ flexDirection: 'row' }}>
                                 <View style={{ flex: 1 }}>
-                                    <TouchableHighlight  style={styles.cancel_RewardsBtn} onPress={() => this.props.closeRewardModal}>
+                                    <TouchableHighlight  style={styles.cancel_RewardsBtn} onPress={this.props.closeRewardModal}>
                                         <Text style={{ color: 'white', fontSize: 14, fontWeight: 'bold', top: -5}}>Cancel</Text>
                                     </TouchableHighlight>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <TouchableHighlight style={styles.gotBtn} onPress={() => this.goToNextQuestion}>
+                                    <TouchableHighlight style={styles.gotBtn} onPress={this.goToNextQuestion}>
                                         <Text style={{ color: 'white', fontSize: 14, fontWeight: 'bold', top: -5}}>Got It</Text>
                                     </TouchableHighlight>
                                 </View>
