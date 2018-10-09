@@ -64,7 +64,7 @@ class Reward extends React.Component {
 
                             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                                 <Image style={{ width: 250, height: 50 }} source={require('../../assests/images/congrats/congratsFont.jpg')} />
-                                <Image style={{ width: 150, height: 130 }} source={require('../../assests/images/reward.png')} />
+                                <Image style={{ width: 150, height: 130 }} source={require('../../assests/images/reward/bonus.gif')} />
                                 {/* <H3 style={{ marginTop: 10 }}>You won</H3>
                                 <H2>100</H2> */}
                                 <H3 style={{ textAlign: 'center', fontWeight: 'bold', fontSize:24 ,color: 'orange', paddingTop:3 }}>You won {rewardsCount} Rewards</H3>
